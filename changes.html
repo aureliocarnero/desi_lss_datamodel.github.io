@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>desidatamodel Change Log &mdash; desidatamodel 23.1.dev1022 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/desidatamodel.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="desidatamodel API" href="api.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> desidatamodel
+          </a>
+              <div class="version">
+                23.1.dev1022
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="DESI_ROOT/index.html">$DESI_ROOT : represents the top level of the DESI directory tree.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESI_SPECTRO_DATA/index.html">$DESI_SPECTRO_DATA : raw data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESI_SPECTRO_REDUX/index.html">$DESI_SPECTRO_REDUX : processed spectro data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESI_SPECTRO_SIM/index.html">$DESI_SPECTRO_SIM : simulated spectro data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESI_SPECTRO_CALIB/index.html">$DESI_SPECTRO_CALIB : spectro calibration data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESI_SURVEYOPS/index.html">$DESI_SURVEYOPS : data files used for day-to-day survey operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESI_TARGET/index.html">$DESI_TARGET : target selection and fiber assignment (see also Myers *et al.* 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESIMODEL/index.html">$DESIMODEL : data used for simulating DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESISURVEY_OUTPUT/index.html">$DESISURVEY_OUTPUT : outputs from desisurvey and surveysim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PROTODESI/index.html">$PROTODESI : data and logs from the ProtoDESI campaign</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESI_LSS_EDA/index.html">$DESI_LSS_EDA: LSS archival data files for public releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bitmasks.html">Bit Masks in DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datamodel.html">Contributing to desidatamodel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">desidatamodel API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">desidatamodel Change Log</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#unreleased">23.1 (unreleased)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id17">22.2 (2022-05-31)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id27">19.2 (2019-10-01)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id32">18.11 (2018-12-11)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id38">18.6 (2018-07-20)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id42">18.3 (2018-05-09)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id45">1.2.0 (2018-03-23)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id47">1.1.1 (2015-11-06)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id49">1.1.0 (2015-11-06)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id51">1.0.0 (2015-10-29)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id53">0.2.0 (2015-05-22)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id54">0.1.0 (2015-01-16)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id55">0.0.4 (2015-01-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id56">0.0.3 (2014-07-21)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id57">0.0.2 (2014-06-10)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id58">0.0.1 (2014-05-29)</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">desidatamodel</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>desidatamodel Change Log</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/changes.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="desidatamodel-change-log">
+<h1>desidatamodel Change Log<a class="headerlink" href="#desidatamodel-change-log" title="Permalink to this headline">¶</a></h1>
+<section id="unreleased">
+<h2>23.1 (unreleased)<a class="headerlink" href="#unreleased" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Update column descriptions for tile-based spectra/redshift/afterburner files
+(PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/145">#145</a>).</p></li>
+<li><p>Update column descriptions from a master list of columns (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/144">#144</a>).</p></li>
+<li><p>Update spectra and coadd text with additional examples (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/143">#143</a>).</p></li>
+<li><p>Rename <code class="docutils literal notranslate"><span class="pre">SURVEYOPS</span></code> (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/142">#142</a>).</p></li>
+<li><p>Add links to maskbit definitions (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/139">#139</a>).</p></li>
+<li><p>Update <a class="reference internal" href="datamodel.html"><span class="doc">the contributing page</span></a> (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/138">#138</a>).</p></li>
+<li><p>Update documentation for QSO afterburner files (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/134">#134</a>).</p></li>
+<li><p>Resolve maggy/maggies discrepancies in DESI_TARGET/DESI_SURVEY (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/133">#133</a>).</p></li>
+<li><p>Update documentation of QA files (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/132">#132</a>).</p></li>
+<li><p>Document top level exposure and tile summary files (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/131">#131</a>).</p></li>
+<li><p>Populate the data model for the zmtl files (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/130">#130</a>).</p></li>
+<li><p>Improve documenetation of <code class="docutils literal notranslate"><span class="pre">emline</span></code> files (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/128">#128</a>).</p></li>
+<li><p>Add documentation of various calibration files (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/127">#127</a>).</p></li>
+<li><p>Further cleanup of <code class="docutils literal notranslate"><span class="pre">fuji</span></code> and <code class="docutils literal notranslate"><span class="pre">guadalupe</span></code> header keywords and columns (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/126">#126</a>).</p></li>
+<li><p>Update data model for target files to reflect ets/dr9 release (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/105">#105</a>).</p></li>
+<li><p>Update data model for fiberassign files in the tiles product (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/103">#103</a>).</p></li>
+</ul>
+</section>
+<section id="id17">
+<h2>22.2 (2022-05-31)<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Updates for <code class="docutils literal notranslate"><span class="pre">fuji</span></code> and <code class="docutils literal notranslate"><span class="pre">guadalupe</span></code> reductions (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/102">#102</a>). Includes support for:</dt><dd><ul>
+<li><p>Variable-length string-valued columns.</p></li>
+<li><p>Cross references to HDUs in other data models.</p></li>
+<li><p>Notation for optional header keywords and columns.</p></li>
+<li><p>Improved visual styling for header keyword and column description tables.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Add data model for MTL ledgers (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/101">#101</a>).</p></li>
+<li><p>Migrated to GitHub Actions for testing.</p></li>
+<li><p>Update <a class="reference internal" href="DESI_SPECTRO_DATA/index.html"><span class="doc">DESI_SPECTRO_DATA</span></a> model based on
+Main Survey data (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/94">#94</a>).</p></li>
+<li><p>Update <a class="reference internal" href="DESI_SPECTRO_REDUX/index.html"><span class="doc">DESI_SPECTRO_REDUX</span></a> model based on
+<code class="docutils literal notranslate"><span class="pre">everest</span></code> production (PRs <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/93">#93</a>, <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/90">#90</a>).</p></li>
+<li><dl class="simple">
+<dt>Update desitarget data model to reflect the ets release (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/85">#85</a>):</dt><dd><ul>
+<li><p>Alter filenames to add <code class="docutils literal notranslate"><span class="pre">PHASE/OBSCON/RESOLVE</span></code> and remove <code class="docutils literal notranslate"><span class="pre">DR</span></code>.</p></li>
+<li><p>Add full directory structure for <code class="docutils literal notranslate"><span class="pre">DESI_TARGET/TARG_DIR</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Use the DR8 data model for targets and deprecate DR7 (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/84">#84</a>):</dt><dd><ul>
+<li><p>Updates columns to match the DR8 target files.</p></li>
+<li><p>Adds a targets-dr8.rst file to deprecate once DR9 is released.</p></li>
+<li><p>Updates the header information to match the DR8 target files.</p></li>
+<li><p>Adds units for some columns.</p></li>
+<li><p>Directory structure now reflects the (HEALPix-split) target files.</p></li>
+<li><p>Adds urls for the DR8 target files for upcoming research notes.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Update Travis test configuration (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/81">#81</a>).</p></li>
+<li><p>Update data model to reflect 19.9 software release (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/78">#78</a>).</p></li>
+</ul>
+</section>
+<section id="id27">
+<h2>19.2 (2019-10-01)<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h2>
+<p><em>This is primarily a reference tag to capture changes prior to the planned
+19.9 release.</em>  The release date <em>does not</em> reflect the state of pipeline
+outputs as of October 2019.</p>
+<ul class="simple">
+<li><p>Update raw data model based on spectrograph tests (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/73">#73</a>).</p></li>
+<li><p>Allow documentation of similar ranges of HDUs (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/75">#75</a>).</p></li>
+<li><p>Update data model for desisurvey and surveysim (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/70">#70</a>, <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/71">#71</a>).</p></li>
+</ul>
+</section>
+<section id="id32">
+<h2>18.11 (2018-12-11)<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Lots of format cleanup updates (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/68">#68</a>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MASK</span></code> HDUs will no longer be compressed (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/60">#60</a>).</p></li>
+<li><p>Deprecate <code class="docutils literal notranslate"><span class="pre">DESI_TARGET</span></code> files (<code class="docutils literal notranslate"><span class="pre">sky</span></code>, <code class="docutils literal notranslate"><span class="pre">stdstar</span></code>) that aren’t in use (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/59">#59</a>).</p></li>
+<li><p>Describe apertures in the skies file as “radius” not “size” (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/59">#59</a>).</p></li>
+<li><p>Add randoms/gfas/skies/pixweight files to the <code class="docutils literal notranslate"><span class="pre">DESI_TARGET</span></code> model (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/57">#57</a>).</p></li>
+<li><p>Update the targets file in the <code class="docutils literal notranslate"><span class="pre">DESI_TARGET</span></code> model (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/57">#57</a>).</p></li>
+<li><p>Ensure that <code class="docutils literal notranslate"><span class="pre">BUNIT</span></code> and <code class="docutils literal notranslate"><span class="pre">TUNIT*</span></code> values obey the FITS standard (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/54">#54</a>).</p></li>
+</ul>
+</section>
+<section id="id38">
+<h2>18.6 (2018-07-20)<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h2>
+<p>Tag for 18.6 software release (with a slight delay).</p>
+<ul class="simple">
+<li><p>Updates for quicklook pipeline (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/48">#48</a>, <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/50">#50</a>).</p></li>
+<li><p>Raw data now stored in <code class="docutils literal notranslate"><span class="pre">NIGHT</span></code>/<code class="docutils literal notranslate"><span class="pre">EXPID</span></code> directories (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/52">#52</a>)</p></li>
+</ul>
+</section>
+<section id="id42">
+<h2>18.3 (2018-05-09)<a class="headerlink" href="#id42" title="Permalink to this headline">¶</a></h2>
+<p>Tag for 18.3 software release (albeit 1.5 months later).</p>
+<ul class="simple">
+<li><p>Switching to YY.[M]M versioning to match software releases.</p></li>
+<li><p>Fill in missing file summaries and HDU descriptions (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/47">#47</a>).</p></li>
+<li><p>Update data model to reflect reference run 18.3 (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/46">#46</a>).</p></li>
+<li><p>Drop support for Python 2.</p></li>
+</ul>
+</section>
+<section id="id45">
+<h2>1.2.0 (2018-03-23)<a class="headerlink" href="#id45" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Vet data model against reference run 18.2a.  Numerous changes to data
+model Python code to support, <em>e.g.</em> compressed HDUs (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/42">#42</a>).</p></li>
+<li><p>Many accumulated changes since 2015.</p></li>
+</ul>
+</section>
+<section id="id47">
+<h2>1.1.1 (2015-11-06)<a class="headerlink" href="#id47" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Some fixes for Python 3 tests (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/5">#5</a>).</p></li>
+</ul>
+</section>
+<section id="id49">
+<h2>1.1.0 (2015-11-06)<a class="headerlink" href="#id49" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Use <a class="reference external" href="https://docs.astropy.org/en/stable/io/fits/index.html#module-astropy.io.fits" title="(in Astropy v5.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">astropy.io.fits</span></code></a> consistently (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/4">#4</a>).</p></li>
+</ul>
+</section>
+<section id="id51">
+<h2>1.0.0 (2015-10-29)<a class="headerlink" href="#id51" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Support for <code class="docutils literal notranslate"><span class="pre">desiInstall</span></code>, etc. (PR <a class="reference external" href="https://github.com/desihub/desidatamodel/pull/1">#1</a>).</p></li>
+</ul>
+</section>
+<section id="id53">
+<h2>0.2.0 (2015-05-22)<a class="headerlink" href="#id53" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>See git log files.</p></li>
+</ul>
+</section>
+<section id="id54">
+<h2>0.1.0 (2015-01-16)<a class="headerlink" href="#id54" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>See git log files.</p></li>
+</ul>
+</section>
+<section id="id55">
+<h2>0.0.4 (2015-01-12)<a class="headerlink" href="#id55" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>See git log files.</p></li>
+</ul>
+</section>
+<section id="id56">
+<h2>0.0.3 (2014-07-21)<a class="headerlink" href="#id56" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>See git log files.</p></li>
+</ul>
+</section>
+<section id="id57">
+<h2>0.0.2 (2014-06-10)<a class="headerlink" href="#id57" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>See git log files.</p></li>
+</ul>
+</section>
+<section id="id58">
+<h2>0.0.1 (2014-05-29)<a class="headerlink" href="#id58" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>See git log files.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="api.html" class="btn btn-neutral float-left" title="desidatamodel API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014-2022, DESI Collaboration.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
