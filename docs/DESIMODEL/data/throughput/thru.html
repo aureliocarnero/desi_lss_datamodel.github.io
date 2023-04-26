@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>thru &mdash; desidatamodel 23.1.dev1022 documentation</title>
@@ -15,7 +15,9 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -72,7 +74,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../DESISURVEY_OUTPUT/index.html">$DESISURVEY_OUTPUT : outputs from desisurvey and surveysim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../PROTODESI/index.html">$PROTODESI : data and logs from the ProtoDESI campaign</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../DESI_LSS_EDA/index.html">$DESI_LSS_EDA: LSS archival data files for public releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DESI_LSS_EDR/index.html">$DESI_LSS_EDR: LSS archival data files for public releases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bitmasks.html">Bit Masks in DESI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../datamodel.html">Contributing to desidatamodel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../api.html">desidatamodel API</a></li>
@@ -107,30 +109,24 @@
            <div itemprop="articleBody">
              
   <section id="thru">
-<h1>thru<a class="headerlink" href="#thru" title="Permalink to this headline">¶</a></h1>
+<h1>thru<a class="headerlink" href="#thru" title="Permalink to this heading">¶</a></h1>
 <dl class="field-list simple">
-<dt class="field-odd">Summary</dt>
+<dt class="field-odd">Summary<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Throughput data file.</p>
 </dd>
-<dt class="field-even">Naming Convention</dt>
+<dt class="field-even">Naming Convention<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">thru-{ARM}.fits</span></code>, where <code class="docutils literal notranslate"><span class="pre">{ARM}</span></code> is ‘b’, ‘r’, ‘z’.</p>
 </dd>
-<dt class="field-odd">Regex</dt>
+<dt class="field-odd">Regex<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">thru-[brz]\.fits</span></code></p>
 </dd>
-<dt class="field-even">File Type</dt>
+<dt class="field-even">File Type<span class="colon">:</span></dt>
 <dd class="field-even"><p>FITS, 1 MB</p>
 </dd>
 </dl>
 <section id="contents">
-<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
+<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this heading">¶</a></h2>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 19%" />
-<col style="width: 15%" />
-<col style="width: 55%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Number</p></th>
 <th class="head"><p>EXTNAME</p></th>
@@ -158,26 +154,20 @@
 </table>
 </section>
 <section id="fits-header-units">
-<h2>FITS Header Units<a class="headerlink" href="#fits-header-units" title="Permalink to this headline">¶</a></h2>
+<h2>FITS Header Units<a class="headerlink" href="#fits-header-units" title="Permalink to this heading">¶</a></h2>
 <section id="hdu0">
-<h3>HDU0<a class="headerlink" href="#hdu0" title="Permalink to this headline">¶</a></h3>
+<h3>HDU0<a class="headerlink" href="#hdu0" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = PRIMARY</p>
 <p>This HDU has no non-standard required keywords.</p>
 <p>Empty HDU.</p>
 </section>
 <section id="hdu1">
-<h3>HDU1<a class="headerlink" href="#hdu1" title="Permalink to this headline">¶</a></h3>
+<h3>HDU1<a class="headerlink" href="#hdu1" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = THROUGHPUT</p>
 <p>Throughput model.</p>
 <section id="required-header-keywords">
-<h4>Required Header Keywords<a class="headerlink" href="#required-header-keywords" title="Permalink to this headline">¶</a></h4>
+<h4>Required Header Keywords<a class="headerlink" href="#required-header-keywords" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 12%" />
-<col style="width: 25%" />
-<col style="width: 7%" />
-<col style="width: 57%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Example Value</p></th>
@@ -230,14 +220,8 @@
 </table>
 </section>
 <section id="required-data-table-columns">
-<h4>Required Data Table Columns<a class="headerlink" href="#required-data-table-columns" title="Permalink to this headline">¶</a></h4>
+<h4>Required Data Table Columns<a class="headerlink" href="#required-data-table-columns" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 13%" />
-<col style="width: 9%" />
-<col style="width: 10%" />
-<col style="width: 69%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Type</p></th>
@@ -271,19 +255,13 @@
 </section>
 </section>
 <section id="hdu2">
-<h3>HDU2<a class="headerlink" href="#hdu2" title="Permalink to this headline">¶</a></h3>
+<h3>HDU2<a class="headerlink" href="#hdu2" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = FIBERINPUT</p>
 <p>Typical fiber input geometric throughput for various object types.
 0 = no transmission; 1 = all light makes it into the fibers.</p>
 <section id="id1">
-<h4>Required Header Keywords<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<h4>Required Header Keywords<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 16%" />
-<col style="width: 29%" />
-<col style="width: 9%" />
-<col style="width: 47%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Example Value</p></th>
@@ -311,14 +289,8 @@
 </table>
 </section>
 <section id="id2">
-<h4>Required Data Table Columns<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<h4>Required Data Table Columns<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 16%" />
-<col style="width: 11%" />
-<col style="width: 13%" />
-<col style="width: 59%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Type</p></th>
@@ -358,7 +330,7 @@
 </section>
 </section>
 <section id="notes-and-examples">
-<h2>Notes and Examples<a class="headerlink" href="#notes-and-examples" title="Permalink to this headline">¶</a></h2>
+<h2>Notes and Examples<a class="headerlink" href="#notes-and-examples" title="Permalink to this heading">¶</a></h2>
 <p><em>Add notes and examples here.  You can also create links to example files.</em></p>
 </section>
 </section>

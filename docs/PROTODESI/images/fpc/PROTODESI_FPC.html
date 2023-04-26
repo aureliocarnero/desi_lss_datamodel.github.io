@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PROTODESI_FPC &mdash; desidatamodel 23.1.dev1022 documentation</title>
@@ -15,7 +15,9 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -68,7 +70,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../logs/index.html">logs</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../DESI_LSS_EDA/index.html">$DESI_LSS_EDA: LSS archival data files for public releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DESI_LSS_EDR/index.html">$DESI_LSS_EDR: LSS archival data files for public releases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bitmasks.html">Bit Masks in DESI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../datamodel.html">Contributing to desidatamodel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../api.html">desidatamodel API</a></li>
@@ -103,33 +105,27 @@
            <div itemprop="articleBody">
              
   <section id="protodesi-fpc">
-<h1>PROTODESI_FPC<a class="headerlink" href="#protodesi-fpc" title="Permalink to this headline">¶</a></h1>
+<h1>PROTODESI_FPC<a class="headerlink" href="#protodesi-fpc" title="Permalink to this heading">¶</a></h1>
 <dl class="field-list simple">
-<dt class="field-odd">Summary</dt>
+<dt class="field-odd">Summary<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Data model for protoDESI Fiber Photometry Camera images for ProtoDESI.</p>
 </dd>
-<dt class="field-even">Naming Convention</dt>
+<dt class="field-even">Naming Convention<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">PROTODESI_FPC_{EXPID}.fits</span></code>, where <code class="docutils literal notranslate"><span class="pre">{EXPID}</span></code>
 is the 8-digit exposure ID.</p>
 </dd>
-<dt class="field-odd">Regex</dt>
+<dt class="field-odd">Regex<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">PROTODESI_FPC_[0-9]{8}.fits</span></code> <em>Give a regular expression for this filename.
 For example, a six-digit number would correspond to ``[0-9]{6}``.</em></p>
 </dd>
-<dt class="field-even">File Type</dt>
+<dt class="field-even">File Type<span class="colon">:</span></dt>
 <dd class="field-even"><p>FITS, 16 MB  <em>This section gives the type of the file
 and its approximate size.</em></p>
 </dd>
 </dl>
 <section id="contents">
-<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
+<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this heading">¶</a></h2>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 13%" />
-<col style="width: 43%" />
-<col style="width: 34%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Number</p></th>
 <th class="head"><p>EXTNAME</p></th>
@@ -147,20 +143,14 @@ and its approximate size.</em></p>
 </table>
 </section>
 <section id="fits-header-units">
-<h2>FITS Header Units<a class="headerlink" href="#fits-header-units" title="Permalink to this headline">¶</a></h2>
+<h2>FITS Header Units<a class="headerlink" href="#fits-header-units" title="Permalink to this heading">¶</a></h2>
 <section id="hdu0">
-<h3>HDU0<a class="headerlink" href="#hdu0" title="Permalink to this headline">¶</a></h3>
+<h3>HDU0<a class="headerlink" href="#hdu0" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = PRIMARY</p>
 <p>Raw image</p>
 <section id="header-keywords-dump">
-<h4>Header Keywords (dump)<a class="headerlink" href="#header-keywords-dump" title="Permalink to this headline">¶</a></h4>
+<h4>Header Keywords (dump)<a class="headerlink" href="#header-keywords-dump" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 7%" />
-<col style="width: 37%" />
-<col style="width: 5%" />
-<col style="width: 51%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Example Value</p></th>
@@ -278,14 +268,8 @@ and its approximate size.</em></p>
 </table>
 </section>
 <section id="other-header-keywords-not-currently-present">
-<h4>Other Header Keywords (not currently present)<a class="headerlink" href="#other-header-keywords-not-currently-present" title="Permalink to this headline">¶</a></h4>
+<h4>Other Header Keywords (not currently present)<a class="headerlink" href="#other-header-keywords-not-currently-present" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 6%" />
-<col style="width: 29%" />
-<col style="width: 4%" />
-<col style="width: 61%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Example Value</p></th>
@@ -422,12 +406,6 @@ and its approximate size.</em></p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 40%" />
-<col style="width: 5%" />
-<col style="width: 47%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Example Value</p></th>
@@ -494,12 +472,6 @@ and its approximate size.</em></p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 40%" />
-<col style="width: 5%" />
-<col style="width: 46%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Example Value</p></th>
@@ -536,12 +508,6 @@ and its approximate size.</em></p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 38%" />
-<col style="width: 5%" />
-<col style="width: 49%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Example Value</p></th>
@@ -637,7 +603,7 @@ and its approximate size.</em></p>
 </section>
 </section>
 <section id="notes-and-examples">
-<h2>Notes and Examples<a class="headerlink" href="#notes-and-examples" title="Permalink to this headline">¶</a></h2>
+<h2>Notes and Examples<a class="headerlink" href="#notes-and-examples" title="Permalink to this heading">¶</a></h2>
 <p>The missing keywords listed above in the Other Keywords section, grouped roughly by categories,
 are either found in an older version of data model, or defined in DESI-1229 and deemed relevant for protoDESI run.</p>
 <p>While this data model is up to date, FPC and GFA images may not be in their final shape and are subject to change.</p>
