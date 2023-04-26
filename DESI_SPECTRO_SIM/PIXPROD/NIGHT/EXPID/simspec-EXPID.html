@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>simspec-EXPID.fits &mdash; desidatamodel 23.1.dev1022 documentation</title>
@@ -15,7 +15,9 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -61,7 +63,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../DESIMODEL/index.html">$DESIMODEL : data used for simulating DESI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../DESISURVEY_OUTPUT/index.html">$DESISURVEY_OUTPUT : outputs from desisurvey and surveysim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../PROTODESI/index.html">$PROTODESI : data and logs from the ProtoDESI campaign</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../DESI_LSS_EDA/index.html">$DESI_LSS_EDA: LSS archival data files for public releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../DESI_LSS_EDR/index.html">$DESI_LSS_EDR: LSS archival data files for public releases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../bitmasks.html">Bit Masks in DESI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../datamodel.html">Contributing to desidatamodel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../api.html">desidatamodel API</a></li>
@@ -97,30 +99,24 @@
            <div itemprop="articleBody">
              
   <section id="simspec-expid-fits">
-<h1>simspec-EXPID.fits<a class="headerlink" href="#simspec-expid-fits" title="Permalink to this headline">¶</a></h1>
+<h1>simspec-EXPID.fits<a class="headerlink" href="#simspec-expid-fits" title="Permalink to this heading">¶</a></h1>
 <dl class="field-list simple">
-<dt class="field-odd">Summary</dt>
+<dt class="field-odd">Summary<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Input spectra to simulate with pixsim.</p>
 </dd>
-<dt class="field-even">Naming Convention</dt>
+<dt class="field-even">Naming Convention<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">simspec-{EXPID}.fits</span></code>, where {EXPID} is the 8-digit exposure ID.</p>
 </dd>
-<dt class="field-odd">Regex</dt>
+<dt class="field-odd">Regex<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">simspec-[0-9]{8}\.fits</span></code></p>
 </dd>
-<dt class="field-even">File Type</dt>
+<dt class="field-even">File Type<span class="colon">:</span></dt>
 <dd class="field-even"><p>FITS, 2 GB</p>
 </dd>
 </dl>
 <section id="contents">
-<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
+<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this heading">¶</a></h2>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 22%" />
-<col style="width: 14%" />
-<col style="width: 54%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Number</p></th>
 <th class="head"><p>EXTNAME</p></th>
@@ -228,20 +224,14 @@
 </table>
 </section>
 <section id="fits-header-units">
-<h2>FITS Header Units<a class="headerlink" href="#fits-header-units" title="Permalink to this headline">¶</a></h2>
+<h2>FITS Header Units<a class="headerlink" href="#fits-header-units" title="Permalink to this heading">¶</a></h2>
 <section id="hdu0">
-<h3>HDU0<a class="headerlink" href="#hdu0" title="Permalink to this headline">¶</a></h3>
+<h3>HDU0<a class="headerlink" href="#hdu0" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = WAVE</p>
 <p>Input wavelength vector.  Simulation inputs are stored in header cards.</p>
 <section id="required-header-keywords">
-<h4>Required Header Keywords<a class="headerlink" href="#required-header-keywords" title="Permalink to this headline">¶</a></h4>
+<h4>Required Header Keywords<a class="headerlink" href="#required-header-keywords" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 26%" />
-<col style="width: 7%" />
-<col style="width: 57%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Value</p></th>
@@ -386,18 +376,12 @@
 </section>
 </section>
 <section id="hdu1">
-<h3>HDU1<a class="headerlink" href="#hdu1" title="Permalink to this headline">¶</a></h3>
+<h3>HDU1<a class="headerlink" href="#hdu1" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = FLUX</p>
 <p>Input object spectra.</p>
 <section id="id1">
-<h4>Required Header Keywords<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<h4>Required Header Keywords<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 15%" />
-<col style="width: 51%" />
-<col style="width: 9%" />
-<col style="width: 25%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Value</p></th>
@@ -427,18 +411,12 @@
 </section>
 </section>
 <section id="hdu2">
-<h3>HDU2<a class="headerlink" href="#hdu2" title="Permalink to this headline">¶</a></h3>
+<h3>HDU2<a class="headerlink" href="#hdu2" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = SKYFLUX</p>
 <p>Input sky flux.</p>
 <section id="id2">
-<h4>Required Header Keywords<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<h4>Required Header Keywords<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 15%" />
-<col style="width: 51%" />
-<col style="width: 9%" />
-<col style="width: 25%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Value</p></th>
@@ -468,18 +446,12 @@
 </section>
 </section>
 <section id="hdu3">
-<h3>HDU3<a class="headerlink" href="#hdu3" title="Permalink to this headline">¶</a></h3>
+<h3>HDU3<a class="headerlink" href="#hdu3" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = WAVE_B</p>
 <p>Input wavelengths b-channel [Angstrom].</p>
 <section id="id3">
-<h4>Required Header Keywords<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<h4>Required Header Keywords<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 21%" />
-<col style="width: 21%" />
-<col style="width: 13%" />
-<col style="width: 46%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Value</p></th>
@@ -499,18 +471,12 @@
 </section>
 </section>
 <section id="hdu4">
-<h3>HDU4<a class="headerlink" href="#hdu4" title="Permalink to this headline">¶</a></h3>
+<h3>HDU4<a class="headerlink" href="#hdu4" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = PHOT_B</p>
 <p>Input object photons b-channel.</p>
 <section id="id4">
-<h4>Required Header Keywords<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<h4>Required Header Keywords<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 14%" />
-<col style="width: 40%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Value</p></th>
@@ -540,18 +506,12 @@
 </section>
 </section>
 <section id="hdu5">
-<h3>HDU5<a class="headerlink" href="#hdu5" title="Permalink to this headline">¶</a></h3>
+<h3>HDU5<a class="headerlink" href="#hdu5" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = SKYPHOT_B</p>
 <p>Input object photons b-channel.</p>
 <section id="id5">
-<h4>Required Header Keywords<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<h4>Required Header Keywords<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 22%" />
-<col style="width: 25%" />
-<col style="width: 14%" />
-<col style="width: 39%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Value</p></th>
@@ -581,18 +541,12 @@
 </section>
 </section>
 <section id="hdu6">
-<h3>HDU6<a class="headerlink" href="#hdu6" title="Permalink to this headline">¶</a></h3>
+<h3>HDU6<a class="headerlink" href="#hdu6" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = WAVE_R</p>
 <p>Input wavelengths r-channel [Angstrom].</p>
 <section id="id6">
-<h4>Required Header Keywords<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<h4>Required Header Keywords<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 21%" />
-<col style="width: 21%" />
-<col style="width: 13%" />
-<col style="width: 46%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Value</p></th>
@@ -612,18 +566,12 @@
 </section>
 </section>
 <section id="hdu7">
-<h3>HDU7<a class="headerlink" href="#hdu7" title="Permalink to this headline">¶</a></h3>
+<h3>HDU7<a class="headerlink" href="#hdu7" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = PHOT_R</p>
 <p>Input object photons r-channel.</p>
 <section id="id7">
-<h4>Required Header Keywords<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<h4>Required Header Keywords<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 14%" />
-<col style="width: 40%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Value</p></th>
@@ -653,18 +601,12 @@
 </section>
 </section>
 <section id="hdu8">
-<h3>HDU8<a class="headerlink" href="#hdu8" title="Permalink to this headline">¶</a></h3>
+<h3>HDU8<a class="headerlink" href="#hdu8" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = SKYPHOT_R</p>
 <p>Input object photons r-channel.</p>
 <section id="id8">
-<h4>Required Header Keywords<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<h4>Required Header Keywords<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 22%" />
-<col style="width: 25%" />
-<col style="width: 14%" />
-<col style="width: 39%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Value</p></th>
@@ -694,18 +636,12 @@
 </section>
 </section>
 <section id="hdu9">
-<h3>HDU9<a class="headerlink" href="#hdu9" title="Permalink to this headline">¶</a></h3>
+<h3>HDU9<a class="headerlink" href="#hdu9" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = WAVE_Z</p>
 <p>Input wavelengths z-channel [Angstrom].</p>
 <section id="id9">
-<h4>Required Header Keywords<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<h4>Required Header Keywords<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 21%" />
-<col style="width: 21%" />
-<col style="width: 13%" />
-<col style="width: 46%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Value</p></th>
@@ -725,18 +661,12 @@
 </section>
 </section>
 <section id="hdu10">
-<h3>HDU10<a class="headerlink" href="#hdu10" title="Permalink to this headline">¶</a></h3>
+<h3>HDU10<a class="headerlink" href="#hdu10" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = PHOT_Z</p>
 <p>Input object photons z-channel.</p>
 <section id="id10">
-<h4>Required Header Keywords<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<h4>Required Header Keywords<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 14%" />
-<col style="width: 40%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Value</p></th>
@@ -766,18 +696,12 @@
 </section>
 </section>
 <section id="hdu11">
-<h3>HDU11<a class="headerlink" href="#hdu11" title="Permalink to this headline">¶</a></h3>
+<h3>HDU11<a class="headerlink" href="#hdu11" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = SKYPHOT_Z</p>
 <p>Input object photons z-channel.</p>
 <section id="id11">
-<h4>Required Header Keywords<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<h4>Required Header Keywords<a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 22%" />
-<col style="width: 25%" />
-<col style="width: 14%" />
-<col style="width: 39%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Value</p></th>
@@ -807,17 +731,11 @@
 </section>
 </section>
 <section id="hdu12">
-<h3>HDU12<a class="headerlink" href="#hdu12" title="Permalink to this headline">¶</a></h3>
+<h3>HDU12<a class="headerlink" href="#hdu12" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = TRUTH</p>
 <section id="id12">
-<h4>Required Header Keywords<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<h4>Required Header Keywords<a class="headerlink" href="#id12" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 30%" />
-<col style="width: 9%" />
-<col style="width: 48%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Example Value</p></th>
@@ -840,14 +758,8 @@
 </table>
 </section>
 <section id="required-data-table-columns">
-<h4>Required Data Table Columns<a class="headerlink" href="#required-data-table-columns" title="Permalink to this headline">¶</a></h4>
+<h4>Required Data Table Columns<a class="headerlink" href="#required-data-table-columns" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 38%" />
-<col style="width: 21%" />
-<col style="width: 13%" />
-<col style="width: 28%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Type</p></th>
@@ -946,19 +858,13 @@
 </section>
 </section>
 <section id="hdu13">
-<h3>HDU13<a class="headerlink" href="#hdu13" title="Permalink to this headline">¶</a></h3>
+<h3>HDU13<a class="headerlink" href="#hdu13" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = FIBERMAP</p>
 <p>Map of which fibers are on which targets.
 See See <a class="reference internal" href="../../../../DESI_SPECTRO_DATA/NIGHT/EXPID/fibermap-EXPID.html"><span class="doc">DESI_SPECTRO_DATA/NIGHT/EXPID/fibermap-EXPID</span></a>.</p>
 <section id="id13">
-<h4>Required Header Keywords<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<h4>Required Header Keywords<a class="headerlink" href="#id13" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 31%" />
-<col style="width: 7%" />
-<col style="width: 51%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Example Value</p></th>
@@ -1051,14 +957,8 @@ See See <a class="reference internal" href="../../../../DESI_SPECTRO_DATA/NIGHT/
 </table>
 </section>
 <section id="id14">
-<h4>Required Data Table Columns<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<h4>Required Data Table Columns<a class="headerlink" href="#id14" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 31%" />
-<col style="width: 13%" />
-<col style="width: 35%" />
-<col style="width: 20%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Type</p></th>
@@ -1457,19 +1357,13 @@ See See <a class="reference internal" href="../../../../DESI_SPECTRO_DATA/NIGHT/
 </section>
 </section>
 <section id="hdu14">
-<h3>HDU14<a class="headerlink" href="#hdu14" title="Permalink to this headline">¶</a></h3>
+<h3>HDU14<a class="headerlink" href="#hdu14" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = OBSCONDITIONS</p>
 <p>Table with a single row defining the observing conditions for this exposure,
 e.g. SEEING, AIRMASS, lunar conditions.</p>
 <section id="id15">
-<h4>Required Header Keywords<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<h4>Required Header Keywords<a class="headerlink" href="#id15" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 30%" />
-<col style="width: 9%" />
-<col style="width: 48%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Example Value</p></th>
@@ -1492,14 +1386,8 @@ e.g. SEEING, AIRMASS, lunar conditions.</p>
 </table>
 </section>
 <section id="id16">
-<h4>Required Data Table Columns<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+<h4>Required Data Table Columns<a class="headerlink" href="#id16" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 16%" />
-<col style="width: 10%" />
-<col style="width: 8%" />
-<col style="width: 66%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Type</p></th>
@@ -1604,18 +1492,12 @@ e.g. SEEING, AIRMASS, lunar conditions.</p>
 </section>
 </section>
 <section id="hdu15">
-<h3>HDU15<a class="headerlink" href="#hdu15" title="Permalink to this headline">¶</a></h3>
+<h3>HDU15<a class="headerlink" href="#hdu15" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = TRUTH_BGS</p>
 <p>Truth metadata that are specific to BGS targets.</p>
 <section id="id17">
-<h4>Required Header Keywords<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+<h4>Required Header Keywords<a class="headerlink" href="#id17" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 30%" />
-<col style="width: 9%" />
-<col style="width: 48%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Example Value</p></th>
@@ -1638,14 +1520,8 @@ e.g. SEEING, AIRMASS, lunar conditions.</p>
 </table>
 </section>
 <section id="id18">
-<h4>Required Data Table Columns<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<h4>Required Data Table Columns<a class="headerlink" href="#id18" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 32%" />
-<col style="width: 21%" />
-<col style="width: 15%" />
-<col style="width: 32%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Type</p></th>
@@ -1724,18 +1600,12 @@ e.g. SEEING, AIRMASS, lunar conditions.</p>
 </section>
 </section>
 <section id="hdu16">
-<h3>HDU16<a class="headerlink" href="#hdu16" title="Permalink to this headline">¶</a></h3>
+<h3>HDU16<a class="headerlink" href="#hdu16" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = TRUTH_ELG</p>
 <p>Truth metadata that are specific to ELG targets.</p>
 <section id="id19">
-<h4>Required Header Keywords<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
+<h4>Required Header Keywords<a class="headerlink" href="#id19" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 30%" />
-<col style="width: 9%" />
-<col style="width: 48%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Example Value</p></th>
@@ -1758,14 +1628,8 @@ e.g. SEEING, AIRMASS, lunar conditions.</p>
 </table>
 </section>
 <section id="id20">
-<h4>Required Data Table Columns<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
+<h4>Required Data Table Columns<a class="headerlink" href="#id20" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 32%" />
-<col style="width: 21%" />
-<col style="width: 15%" />
-<col style="width: 32%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Type</p></th>
@@ -1844,18 +1708,12 @@ e.g. SEEING, AIRMASS, lunar conditions.</p>
 </section>
 </section>
 <section id="hdu17">
-<h3>HDU17<a class="headerlink" href="#hdu17" title="Permalink to this headline">¶</a></h3>
+<h3>HDU17<a class="headerlink" href="#hdu17" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = TRUTH_STAR</p>
 <p>Truth metadata that are specific to STAR targets.</p>
 <section id="id21">
-<h4>Required Header Keywords<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
+<h4>Required Header Keywords<a class="headerlink" href="#id21" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 30%" />
-<col style="width: 9%" />
-<col style="width: 48%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Example Value</p></th>
@@ -1878,14 +1736,8 @@ e.g. SEEING, AIRMASS, lunar conditions.</p>
 </table>
 </section>
 <section id="id22">
-<h4>Required Data Table Columns<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
+<h4>Required Data Table Columns<a class="headerlink" href="#id22" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 26%" />
-<col style="width: 23%" />
-<col style="width: 16%" />
-<col style="width: 35%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Type</p></th>
@@ -1919,18 +1771,12 @@ e.g. SEEING, AIRMASS, lunar conditions.</p>
 </section>
 </section>
 <section id="hdu18">
-<h3>HDU18<a class="headerlink" href="#hdu18" title="Permalink to this headline">¶</a></h3>
+<h3>HDU18<a class="headerlink" href="#hdu18" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = TRUTH_WD</p>
 <p>Truth metadata that are specific to White Dwarf targets.</p>
 <section id="id23">
-<h4>Required Header Keywords<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
+<h4>Required Header Keywords<a class="headerlink" href="#id23" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 30%" />
-<col style="width: 9%" />
-<col style="width: 48%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Example Value</p></th>
@@ -1953,14 +1799,8 @@ e.g. SEEING, AIRMASS, lunar conditions.</p>
 </table>
 </section>
 <section id="id24">
-<h4>Required Data Table Columns<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h4>
+<h4>Required Data Table Columns<a class="headerlink" href="#id24" title="Permalink to this heading">¶</a></h4>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 26%" />
-<col style="width: 23%" />
-<col style="width: 16%" />
-<col style="width: 35%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Type</p></th>
@@ -1990,7 +1830,7 @@ e.g. SEEING, AIRMASS, lunar conditions.</p>
 </section>
 </section>
 <section id="notes-and-examples">
-<h2>Notes and Examples<a class="headerlink" href="#notes-and-examples" title="Permalink to this headline">¶</a></h2>
+<h2>Notes and Examples<a class="headerlink" href="#notes-and-examples" title="Permalink to this heading">¶</a></h2>
 <p><em>Add notes and examples here.  You can also create links to example files.</em></p>
 </section>
 </section>

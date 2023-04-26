@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>fiberflat-CAMERA-EXPID.fits &mdash; desidatamodel 23.1.dev1022 documentation</title>
@@ -15,7 +15,9 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -68,7 +70,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../../DESIMODEL/index.html">$DESIMODEL : data used for simulating DESI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../DESISURVEY_OUTPUT/index.html">$DESISURVEY_OUTPUT : outputs from desisurvey and surveysim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../PROTODESI/index.html">$PROTODESI : data and logs from the ProtoDESI campaign</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../DESI_LSS_EDA/index.html">$DESI_LSS_EDA: LSS archival data files for public releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../DESI_LSS_EDR/index.html">$DESI_LSS_EDR: LSS archival data files for public releases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../bitmasks.html">Bit Masks in DESI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../datamodel.html">Contributing to desidatamodel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../api.html">desidatamodel API</a></li>
@@ -105,31 +107,25 @@
            <div itemprop="articleBody">
              
   <section id="fiberflat-camera-expid-fits">
-<h1>fiberflat-CAMERA-EXPID.fits<a class="headerlink" href="#fiberflat-camera-expid-fits" title="Permalink to this headline">¶</a></h1>
+<h1>fiberflat-CAMERA-EXPID.fits<a class="headerlink" href="#fiberflat-camera-expid-fits" title="Permalink to this heading">¶</a></h1>
 <dl class="field-list simple">
-<dt class="field-odd">Summary</dt>
+<dt class="field-odd">Summary<span class="colon">:</span></dt>
 <dd class="field-odd"><p>This file contains the fiberflat such that newflux = rawflux/fiberflat.</p>
 </dd>
-<dt class="field-even">Naming Convention</dt>
+<dt class="field-even">Naming Convention<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">fiberflat-{CAMERA}-{EXPID}.fits</span></code>, where <code class="docutils literal notranslate"><span class="pre">{camera}</span></code> is the camera
 name (<em>e.g.</em> b0, r1, z9) and <code class="docutils literal notranslate"><span class="pre">{EXPID}</span></code> is the zero padded 8-digit exposure ID.</p>
 </dd>
-<dt class="field-odd">Regex</dt>
+<dt class="field-odd">Regex<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">fiberflat-[brz][0-9]-[0-9]{8}\.fits</span></code></p>
 </dd>
-<dt class="field-even">File Type</dt>
+<dt class="field-even">File Type<span class="colon">:</span></dt>
 <dd class="field-even"><p>FITS, 16 MB</p>
 </dd>
 </dl>
 <section id="contents">
-<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
+<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this heading">¶</a></h2>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 9%" />
-<col style="width: 25%" />
-<col style="width: 12%" />
-<col style="width: 54%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Number</p></th>
 <th class="head"><p>EXTNAME</p></th>
@@ -173,22 +169,16 @@ name (<em>e.g.</em> b0, r1, z9) and <code class="docutils literal notranslate"><
 <p>Note: the FIBERMAP HDU may be dropped from future versions</p>
 </section>
 <section id="fits-header-units">
-<h2>FITS Header Units<a class="headerlink" href="#fits-header-units" title="Permalink to this headline">¶</a></h2>
+<h2>FITS Header Units<a class="headerlink" href="#fits-header-units" title="Permalink to this heading">¶</a></h2>
 <section id="hdu0">
-<h3>HDU0<a class="headerlink" href="#hdu0" title="Permalink to this headline">¶</a></h3>
+<h3>HDU0<a class="headerlink" href="#hdu0" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = FIBERFLAT</p>
 <p>Fiber flat field correction to homogeneize the response among fibers of the same camera, for each wavelength. 2D array of dimension [nspec, nwave]. nspec is the number of fibers per camera. nwave in the length of the wavelength array. The fiber flat field of all fibers share the same wavelength grid (given in HDU WAVELENGTH). This file is the fiber flat derived for the flat exposure EXPID. It is an intermediate file used as input for the nightly fiber flat.</p>
 <section id="required-header-keywords">
-<h4>Required Header Keywords<a class="headerlink" href="#required-header-keywords" title="Permalink to this headline">¶</a></h4>
+<h4>Required Header Keywords<a class="headerlink" href="#required-header-keywords" title="Permalink to this heading">¶</a></h4>
 <p>Header keywords are inherited from the input Frame file.</p>
 <details class="summary-required-header-keywords-table">
 <summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 45%" />
-<col style="width: 5%" />
-<col style="width: 39%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Example Value</p></th>
@@ -617,7 +607,7 @@ name (<em>e.g.</em> b0, r1, z9) and <code class="docutils literal notranslate"><
 <td><p>str</p></td>
 <td><p>Data section for quadrant A</p></td>
 </tr>
-<tr class="row-even"><td><p>CRYOTEMP <a class="footnote-reference brackets" href="#id374" id="id1">1</a></p></td>
+<tr class="row-even"><td><p>CRYOTEMP <a class="footnote-reference brackets" href="#id374" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>162.97</p></td>
 <td><p>float</p></td>
 <td><p>[deg K] Cryostat CCD temperature</p></td>
@@ -757,7 +747,7 @@ name (<em>e.g.</em> b0, r1, z9) and <code class="docutils literal notranslate"><
 <td><p>str</p></td>
 <td><p>Row overscan section for quadrant C</p></td>
 </tr>
-<tr class="row-even"><td><p>CRYOPRES <a class="footnote-reference brackets" href="#id374" id="id2">1</a></p></td>
+<tr class="row-even"><td><p>CRYOPRES <a class="footnote-reference brackets" href="#id374" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>9.084e-08</p></td>
 <td><p>str</p></td>
 <td><p>[mb] Cryostat pressure (IP)</p></td>
@@ -1117,7 +1107,7 @@ name (<em>e.g.</em> b0, r1, z9) and <code class="docutils literal notranslate"><
 <td><p>int</p></td>
 <td><p>Number of allowed exposure splits</p></td>
 </tr>
-<tr class="row-even"><td><p>SPLITIDS <a class="footnote-reference brackets" href="#id374" id="id3">1</a></p></td>
+<tr class="row-even"><td><p>SPLITIDS <a class="footnote-reference brackets" href="#id374" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>68979</p></td>
 <td><p>str</p></td>
 <td><p>List of expids for split exposures</p></td>
@@ -1162,212 +1152,212 @@ name (<em>e.g.</em> b0, r1, z9) and <code class="docutils literal notranslate"><
 <td><p>str</p></td>
 <td><p>Shutter status during observation</p></td>
 </tr>
-<tr class="row-odd"><td><p>WHITESPT <a class="footnote-reference brackets" href="#id374" id="id4">1</a></p></td>
+<tr class="row-odd"><td><p>WHITESPT <a class="footnote-reference brackets" href="#id374" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>T</p></td>
 <td><p>bool</p></td>
 <td><p>Telescope is at whitespot</p></td>
 </tr>
-<tr class="row-even"><td><p>ZENITH <a class="footnote-reference brackets" href="#id374" id="id5">1</a></p></td>
+<tr class="row-even"><td><p>ZENITH <a class="footnote-reference brackets" href="#id374" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>F</p></td>
 <td><p>bool</p></td>
 <td><p>Telescope is at zenith</p></td>
 </tr>
-<tr class="row-odd"><td><p>SEANNEX <a class="footnote-reference brackets" href="#id374" id="id6">1</a></p></td>
+<tr class="row-odd"><td><p>SEANNEX <a class="footnote-reference brackets" href="#id374" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>F</p></td>
 <td><p>bool</p></td>
 <td><p>Telescope is at SE annex</p></td>
 </tr>
-<tr class="row-even"><td><p>BEYONDP <a class="footnote-reference brackets" href="#id374" id="id7">1</a></p></td>
+<tr class="row-even"><td><p>BEYONDP <a class="footnote-reference brackets" href="#id374" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>F</p></td>
 <td><p>bool</p></td>
 <td><p>Telescope is beyond pole</p></td>
 </tr>
-<tr class="row-odd"><td><p>FIDUCIAL <a class="footnote-reference brackets" href="#id374" id="id8">1</a></p></td>
+<tr class="row-odd"><td><p>FIDUCIAL <a class="footnote-reference brackets" href="#id374" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>off</p></td>
 <td><p>str</p></td>
 <td><p>Fiducials status during observation</p></td>
 </tr>
-<tr class="row-even"><td><p>AIRMASS <a class="footnote-reference brackets" href="#id374" id="id9">1</a></p></td>
+<tr class="row-even"><td><p>AIRMASS <a class="footnote-reference brackets" href="#id374" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>1.521306</p></td>
 <td><p>float</p></td>
 <td><p>Airmass</p></td>
 </tr>
-<tr class="row-odd"><td><p>FOCUS <a class="footnote-reference brackets" href="#id374" id="id10">1</a></p></td>
+<tr class="row-odd"><td><p>FOCUS <a class="footnote-reference brackets" href="#id374" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>1163.9,-689.8,370.4,13.8,24.2,-0.0</p></td>
 <td><p>str</p></td>
 <td><p>Telescope focus settings</p></td>
 </tr>
-<tr class="row-even"><td><p>TRUSTEMP <a class="footnote-reference brackets" href="#id374" id="id11">1</a></p></td>
+<tr class="row-even"><td><p>TRUSTEMP <a class="footnote-reference brackets" href="#id374" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>13.267</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Average Telescope truss temperature (only</p></td>
 </tr>
-<tr class="row-odd"><td><p>PMIRTEMP <a class="footnote-reference brackets" href="#id374" id="id12">1</a></p></td>
+<tr class="row-odd"><td><p>PMIRTEMP <a class="footnote-reference brackets" href="#id374" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.35</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Average primary mirror temperature (nit,e</p></td>
 </tr>
-<tr class="row-even"><td><p>PMREADY <a class="footnote-reference brackets" href="#id374" id="id13">1</a></p></td>
+<tr class="row-even"><td><p>PMREADY <a class="footnote-reference brackets" href="#id374" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>F</p></td>
 <td><p>bool</p></td>
 <td><p>Primary mirror ready</p></td>
 </tr>
-<tr class="row-odd"><td><p>PMCOVER <a class="footnote-reference brackets" href="#id374" id="id14">1</a></p></td>
+<tr class="row-odd"><td><p>PMCOVER <a class="footnote-reference brackets" href="#id374" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>open</p></td>
 <td><p>str</p></td>
 <td><p>Primary mirror cover</p></td>
 </tr>
-<tr class="row-even"><td><p>PMCOOL <a class="footnote-reference brackets" href="#id374" id="id15">1</a></p></td>
+<tr class="row-even"><td><p>PMCOOL <a class="footnote-reference brackets" href="#id374" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>on</p></td>
 <td><p>str</p></td>
 <td><p>Primary mirror cooling</p></td>
 </tr>
-<tr class="row-odd"><td><p>DOMSHUTU <a class="footnote-reference brackets" href="#id374" id="id16">1</a></p></td>
+<tr class="row-odd"><td><p>DOMSHUTU <a class="footnote-reference brackets" href="#id374" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>not open</p></td>
 <td><p>str</p></td>
 <td><p>Upper dome shutter</p></td>
 </tr>
-<tr class="row-even"><td><p>DOMSHUTL <a class="footnote-reference brackets" href="#id374" id="id17">1</a></p></td>
+<tr class="row-even"><td><p>DOMSHUTL <a class="footnote-reference brackets" href="#id374" id="id17" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>not open</p></td>
 <td><p>str</p></td>
 <td><p>Lower dome shutter</p></td>
 </tr>
-<tr class="row-odd"><td><p>DOMLIGHH <a class="footnote-reference brackets" href="#id374" id="id18">1</a></p></td>
+<tr class="row-odd"><td><p>DOMLIGHH <a class="footnote-reference brackets" href="#id374" id="id18" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>off</p></td>
 <td><p>str</p></td>
 <td><p>High dome lights</p></td>
 </tr>
-<tr class="row-even"><td><p>DOMLIGHL <a class="footnote-reference brackets" href="#id374" id="id19">1</a></p></td>
+<tr class="row-even"><td><p>DOMLIGHL <a class="footnote-reference brackets" href="#id374" id="id19" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>off</p></td>
 <td><p>str</p></td>
 <td><p>Low dome lights</p></td>
 </tr>
-<tr class="row-odd"><td><p>DOMEAZ <a class="footnote-reference brackets" href="#id374" id="id20">1</a></p></td>
+<tr class="row-odd"><td><p>DOMEAZ <a class="footnote-reference brackets" href="#id374" id="id20" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>253.289</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Dome azimuth angle</p></td>
 </tr>
-<tr class="row-even"><td><p>DOMINPOS <a class="footnote-reference brackets" href="#id374" id="id21">1</a></p></td>
+<tr class="row-even"><td><p>DOMINPOS <a class="footnote-reference brackets" href="#id374" id="id21" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>F</p></td>
 <td><p>bool</p></td>
 <td><p>Dome is in position</p></td>
 </tr>
-<tr class="row-odd"><td><p>GUIDOFFR <a class="footnote-reference brackets" href="#id374" id="id22">1</a></p></td>
+<tr class="row-odd"><td><p>GUIDOFFR <a class="footnote-reference brackets" href="#id374" id="id22" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td><p>[arcsec] Cummulative guider offset (RA)</p></td>
 </tr>
-<tr class="row-even"><td><p>GUIDOFFD <a class="footnote-reference brackets" href="#id374" id="id23">1</a></p></td>
+<tr class="row-even"><td><p>GUIDOFFD <a class="footnote-reference brackets" href="#id374" id="id23" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>-0.0</p></td>
 <td><p>float</p></td>
 <td><p>[arcsec] Cummulative guider offset (dec)</p></td>
 </tr>
-<tr class="row-odd"><td><p>MOONDEC <a class="footnote-reference brackets" href="#id374" id="id24">1</a></p></td>
+<tr class="row-odd"><td><p>MOONDEC <a class="footnote-reference brackets" href="#id374" id="id24" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>-9.830944</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Moon declination at start of exposure</p></td>
 </tr>
-<tr class="row-even"><td><p>MOONRA <a class="footnote-reference brackets" href="#id374" id="id25">1</a></p></td>
+<tr class="row-even"><td><p>MOONRA <a class="footnote-reference brackets" href="#id374" id="id25" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>350.511461</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Moon RA at start of exposure</p></td>
 </tr>
-<tr class="row-odd"><td><p>MOUNTAZ <a class="footnote-reference brackets" href="#id374" id="id26">1</a></p></td>
+<tr class="row-odd"><td><p>MOUNTAZ <a class="footnote-reference brackets" href="#id374" id="id26" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>73.49407</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Mount azimuth angle</p></td>
 </tr>
-<tr class="row-even"><td><p>MOUNTDEC <a class="footnote-reference brackets" href="#id374" id="id27">1</a></p></td>
+<tr class="row-even"><td><p>MOUNTDEC <a class="footnote-reference brackets" href="#id374" id="id27" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>31.962703</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Mount declination</p></td>
 </tr>
-<tr class="row-odd"><td><p>MOUNTEL <a class="footnote-reference brackets" href="#id374" id="id28">1</a></p></td>
+<tr class="row-odd"><td><p>MOUNTEL <a class="footnote-reference brackets" href="#id374" id="id28" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>41.035778</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Mount elevation angle</p></td>
 </tr>
-<tr class="row-even"><td><p>MOUNTHA <a class="footnote-reference brackets" href="#id374" id="id29">1</a></p></td>
+<tr class="row-even"><td><p>MOUNTHA <a class="footnote-reference brackets" href="#id374" id="id29" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>-58.479517</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Mount hour angle</p></td>
 </tr>
-<tr class="row-odd"><td><p>INCTRL <a class="footnote-reference brackets" href="#id374" id="id30">1</a></p></td>
+<tr class="row-odd"><td><p>INCTRL <a class="footnote-reference brackets" href="#id374" id="id30" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>F</p></td>
 <td><p>bool</p></td>
 <td><p>DESI in control</p></td>
 </tr>
-<tr class="row-even"><td><p>INPOS <a class="footnote-reference brackets" href="#id374" id="id31">1</a></p></td>
+<tr class="row-even"><td><p>INPOS <a class="footnote-reference brackets" href="#id374" id="id31" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>T</p></td>
 <td><p>bool</p></td>
 <td><p>Mount in position</p></td>
 </tr>
-<tr class="row-odd"><td><p>MNTOFFD <a class="footnote-reference brackets" href="#id374" id="id32">1</a></p></td>
+<tr class="row-odd"><td><p>MNTOFFD <a class="footnote-reference brackets" href="#id374" id="id32" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>-0.0</p></td>
 <td><p>float</p></td>
 <td><p>[arcsec] Mount offset (dec)</p></td>
 </tr>
-<tr class="row-even"><td><p>MNTOFFR <a class="footnote-reference brackets" href="#id374" id="id33">1</a></p></td>
+<tr class="row-even"><td><p>MNTOFFR <a class="footnote-reference brackets" href="#id374" id="id33" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>-0.0</p></td>
 <td><p>float</p></td>
 <td><p>[arcsec] Mount offset (RA)</p></td>
 </tr>
-<tr class="row-odd"><td><p>PARALLAC <a class="footnote-reference brackets" href="#id374" id="id34">1</a></p></td>
+<tr class="row-odd"><td><p>PARALLAC <a class="footnote-reference brackets" href="#id374" id="id34" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>-73.492813</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Parallactic angle</p></td>
 </tr>
-<tr class="row-even"><td><p>SKYDEC <a class="footnote-reference brackets" href="#id374" id="id35">1</a></p></td>
+<tr class="row-even"><td><p>SKYDEC <a class="footnote-reference brackets" href="#id374" id="id35" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>31.962703</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope declination (pointing on sky)</p></td>
 </tr>
-<tr class="row-odd"><td><p>SKYRA <a class="footnote-reference brackets" href="#id374" id="id36">1</a></p></td>
+<tr class="row-odd"><td><p>SKYRA <a class="footnote-reference brackets" href="#id374" id="id36" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>12.901561</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope right ascension (pointing on sk</p></td>
 </tr>
-<tr class="row-even"><td><p>TARGTDEC <a class="footnote-reference brackets" href="#id374" id="id37">1</a></p></td>
+<tr class="row-even"><td><p>TARGTDEC <a class="footnote-reference brackets" href="#id374" id="id37" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>31.963299</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Target declination (to TCS)</p></td>
 </tr>
-<tr class="row-odd"><td><p>TARGTRA <a class="footnote-reference brackets" href="#id374" id="id38">1</a></p></td>
+<tr class="row-odd"><td><p>TARGTRA <a class="footnote-reference brackets" href="#id374" id="id38" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>6.305086</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Target right ascension (to TCS)</p></td>
 </tr>
-<tr class="row-even"><td><p>TARGTAZ <a class="footnote-reference brackets" href="#id374" id="id39">1</a></p></td>
+<tr class="row-even"><td><p>TARGTAZ <a class="footnote-reference brackets" href="#id374" id="id39" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>75.558672</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Target azimuth</p></td>
 </tr>
-<tr class="row-odd"><td><p>TARGTEL <a class="footnote-reference brackets" href="#id374" id="id40">1</a></p></td>
+<tr class="row-odd"><td><p>TARGTEL <a class="footnote-reference brackets" href="#id374" id="id40" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>46.429343</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Target elevation</p></td>
 </tr>
-<tr class="row-even"><td><p>TRGTOFFD <a class="footnote-reference brackets" href="#id374" id="id41">1</a></p></td>
+<tr class="row-even"><td><p>TRGTOFFD <a class="footnote-reference brackets" href="#id374" id="id41" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td><p>[arcsec] Telescope target offset (dec)</p></td>
 </tr>
-<tr class="row-odd"><td><p>TRGTOFFR <a class="footnote-reference brackets" href="#id374" id="id42">1</a></p></td>
+<tr class="row-odd"><td><p>TRGTOFFR <a class="footnote-reference brackets" href="#id374" id="id42" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td><p>[arcsec] Telescope target offset (RA)</p></td>
 </tr>
-<tr class="row-even"><td><p>ZD <a class="footnote-reference brackets" href="#id374" id="id43">1</a></p></td>
+<tr class="row-even"><td><p>ZD <a class="footnote-reference brackets" href="#id374" id="id43" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>48.964222</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope zenith distance</p></td>
 </tr>
-<tr class="row-odd"><td><p>TCSST <a class="footnote-reference brackets" href="#id374" id="id44">1</a></p></td>
+<tr class="row-odd"><td><p>TCSST <a class="footnote-reference brackets" href="#id374" id="id44" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>20:57:41.291</p></td>
 <td><p>str</p></td>
 <td><p>Local Sidereal time reported by TCS (HH:MM:SS)</p></td>
 </tr>
-<tr class="row-even"><td><p>TCSMJD <a class="footnote-reference brackets" href="#id374" id="id45">1</a></p></td>
+<tr class="row-even"><td><p>TCSMJD <a class="footnote-reference brackets" href="#id374" id="id45" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>59203.933945</p></td>
 <td><p>float</p></td>
 <td><p>MJD reported by TCS</p></td>
@@ -1377,67 +1367,67 @@ name (<em>e.g.</em> b0, r1, z9) and <code class="docutils literal notranslate"><
 <td><p>bool</p></td>
 <td><p>Correct pointing for ADC setting if True</p></td>
 </tr>
-<tr class="row-even"><td><p>ADC1PHI <a class="footnote-reference brackets" href="#id374" id="id46">1</a></p></td>
+<tr class="row-even"><td><p>ADC1PHI <a class="footnote-reference brackets" href="#id374" id="id46" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>114.980003</p></td>
 <td><p>float</p></td>
 <td><p>[deg] ADC 1 angle</p></td>
 </tr>
-<tr class="row-odd"><td><p>ADC2PHI <a class="footnote-reference brackets" href="#id374" id="id47">1</a></p></td>
+<tr class="row-odd"><td><p>ADC2PHI <a class="footnote-reference brackets" href="#id374" id="id47" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>162.869907</p></td>
 <td><p>float</p></td>
 <td><p>[deg] ADC 2 angle</p></td>
 </tr>
-<tr class="row-even"><td><p>ADC1HOME <a class="footnote-reference brackets" href="#id374" id="id48">1</a></p></td>
+<tr class="row-even"><td><p>ADC1HOME <a class="footnote-reference brackets" href="#id374" id="id48" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>F</p></td>
 <td><p>bool</p></td>
 <td><p>ADC 1 at home position if True</p></td>
 </tr>
-<tr class="row-odd"><td><p>ADC2HOME <a class="footnote-reference brackets" href="#id374" id="id49">1</a></p></td>
+<tr class="row-odd"><td><p>ADC2HOME <a class="footnote-reference brackets" href="#id374" id="id49" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>F</p></td>
 <td><p>bool</p></td>
 <td><p>ADC 2 at home position if True</p></td>
 </tr>
-<tr class="row-even"><td><p>ADC1NREV <a class="footnote-reference brackets" href="#id374" id="id50">1</a></p></td>
+<tr class="row-even"><td><p>ADC1NREV <a class="footnote-reference brackets" href="#id374" id="id50" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td><p>ADC 1 number of revs</p></td>
 </tr>
-<tr class="row-odd"><td><p>ADC2NREV <a class="footnote-reference brackets" href="#id374" id="id51">1</a></p></td>
+<tr class="row-odd"><td><p>ADC2NREV <a class="footnote-reference brackets" href="#id374" id="id51" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>-1.0</p></td>
 <td><p>float</p></td>
 <td><p>ADC 2 number of revs</p></td>
 </tr>
-<tr class="row-even"><td><p>ADC1STAT <a class="footnote-reference brackets" href="#id374" id="id52">1</a></p></td>
+<tr class="row-even"><td><p>ADC1STAT <a class="footnote-reference brackets" href="#id374" id="id52" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>STOPPED</p></td>
 <td><p>str</p></td>
 <td><p>ADC 1 status</p></td>
 </tr>
-<tr class="row-odd"><td><p>ADC2STAT <a class="footnote-reference brackets" href="#id374" id="id53">1</a></p></td>
+<tr class="row-odd"><td><p>ADC2STAT <a class="footnote-reference brackets" href="#id374" id="id53" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>STOPPED</p></td>
 <td><p>str</p></td>
 <td><p>ADC 2 status</p></td>
 </tr>
-<tr class="row-even"><td><p>HEXPOS <a class="footnote-reference brackets" href="#id374" id="id54">1</a></p></td>
+<tr class="row-even"><td><p>HEXPOS <a class="footnote-reference brackets" href="#id374" id="id54" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>1163.9,-689.8,370.4,13.8,24.2,-0.0</p></td>
 <td><p>str</p></td>
 <td><p>Hexapod position</p></td>
 </tr>
-<tr class="row-odd"><td><p>HEXTRIM <a class="footnote-reference brackets" href="#id374" id="id55">1</a></p></td>
+<tr class="row-odd"><td><p>HEXTRIM <a class="footnote-reference brackets" href="#id374" id="id55" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0,0.0,0.0,0.0,0.0,0.0</p></td>
 <td><p>str</p></td>
 <td><p>Hexapod trim values</p></td>
 </tr>
-<tr class="row-even"><td><p>ROTOFFST <a class="footnote-reference brackets" href="#id374" id="id56">1</a></p></td>
+<tr class="row-even"><td><p>ROTOFFST <a class="footnote-reference brackets" href="#id374" id="id56" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td><p>[arcsec] Rotator offset</p></td>
 </tr>
-<tr class="row-odd"><td><p>ROTENBLD <a class="footnote-reference brackets" href="#id374" id="id57">1</a></p></td>
+<tr class="row-odd"><td><p>ROTENBLD <a class="footnote-reference brackets" href="#id374" id="id57" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>T</p></td>
 <td><p>bool</p></td>
 <td><p>Rotator enabled</p></td>
 </tr>
-<tr class="row-even"><td><p>ROTRATE <a class="footnote-reference brackets" href="#id374" id="id58">1</a></p></td>
+<tr class="row-even"><td><p>ROTRATE <a class="footnote-reference brackets" href="#id374" id="id58" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td><p>[arcsec/min] Rotator rate</p></td>
@@ -1452,7 +1442,7 @@ name (<em>e.g.</em> b0, r1, z9) and <code class="docutils literal notranslate"><
 <td><p>str</p></td>
 <td><p>Guider mode</p></td>
 </tr>
-<tr class="row-odd"><td><p>USEAOS <a class="footnote-reference brackets" href="#id374" id="id59">1</a></p></td>
+<tr class="row-odd"><td><p>USEAOS <a class="footnote-reference brackets" href="#id374" id="id59" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>F</p></td>
 <td><p>bool</p></td>
 <td><p>DOS Control: AOS data available if true</p></td>
@@ -1462,547 +1452,547 @@ name (<em>e.g.</em> b0, r1, z9) and <code class="docutils literal notranslate"><
 <td><p>str</p></td>
 <td><p>Participating spectrograph</p></td>
 </tr>
-<tr class="row-odd"><td><p>ILLSPECS <a class="footnote-reference brackets" href="#id374" id="id60">1</a></p></td>
+<tr class="row-odd"><td><p>ILLSPECS <a class="footnote-reference brackets" href="#id374" id="id60" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>SP0,SP1,SP2,SP3,SP4,SP5,SP6,SP7,SP8,SP9</p></td>
 <td><p>str</p></td>
 <td><p>Participating illuminate s</p></td>
 </tr>
-<tr class="row-even"><td><p>CCDSPECS <a class="footnote-reference brackets" href="#id374" id="id61">1</a></p></td>
+<tr class="row-even"><td><p>CCDSPECS <a class="footnote-reference brackets" href="#id374" id="id61" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>SP0,SP1,SP2,SP3,SP4,SP5,SP6,SP7,SP8,SP9</p></td>
 <td><p>str</p></td>
 <td><p>Participating ccd spectrog</p></td>
 </tr>
-<tr class="row-odd"><td><p>TDEWPNT <a class="footnote-reference brackets" href="#id374" id="id62">1</a></p></td>
+<tr class="row-odd"><td><p>TDEWPNT <a class="footnote-reference brackets" href="#id374" id="id62" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>-18.2</p></td>
 <td><p>float</p></td>
 <td><p>Telescope air dew point</p></td>
 </tr>
-<tr class="row-even"><td><p>TAIRFLOW <a class="footnote-reference brackets" href="#id374" id="id63">1</a></p></td>
+<tr class="row-even"><td><p>TAIRFLOW <a class="footnote-reference brackets" href="#id374" id="id63" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>1.121</p></td>
 <td><p>float</p></td>
 <td><p>Telescope air flow</p></td>
 </tr>
-<tr class="row-odd"><td><p>TAIRITMP <a class="footnote-reference brackets" href="#id374" id="id64">1</a></p></td>
+<tr class="row-odd"><td><p>TAIRITMP <a class="footnote-reference brackets" href="#id374" id="id64" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>10.5</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope air in temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>TAIROTMP <a class="footnote-reference brackets" href="#id374" id="id65">1</a></p></td>
+<tr class="row-even"><td><p>TAIROTMP <a class="footnote-reference brackets" href="#id374" id="id65" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>5.5</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope air out temperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>TAIRTEMP <a class="footnote-reference brackets" href="#id374" id="id66">1</a></p></td>
+<tr class="row-odd"><td><p>TAIRTEMP <a class="footnote-reference brackets" href="#id374" id="id66" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>11.86</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope air temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>TCASITMP <a class="footnote-reference brackets" href="#id374" id="id67">1</a></p></td>
+<tr class="row-even"><td><p>TCASITMP <a class="footnote-reference brackets" href="#id374" id="id67" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope Cass Cage in temperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>TCASOTMP <a class="footnote-reference brackets" href="#id374" id="id68">1</a></p></td>
+<tr class="row-odd"><td><p>TCASOTMP <a class="footnote-reference brackets" href="#id374" id="id68" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>9.6</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope Cass Cage out temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>TCSITEMP <a class="footnote-reference brackets" href="#id374" id="id69">1</a></p></td>
+<tr class="row-even"><td><p>TCSITEMP <a class="footnote-reference brackets" href="#id374" id="id69" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.4</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope center section in temperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>TCSOTEMP <a class="footnote-reference brackets" href="#id374" id="id70">1</a></p></td>
+<tr class="row-odd"><td><p>TCSOTEMP <a class="footnote-reference brackets" href="#id374" id="id70" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>10.2</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope center section out temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>TCIBTEMP <a class="footnote-reference brackets" href="#id374" id="id71">1</a></p></td>
+<tr class="row-even"><td><p>TCIBTEMP <a class="footnote-reference brackets" href="#id374" id="id71" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope chimney IB temperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>TCIMTEMP <a class="footnote-reference brackets" href="#id374" id="id72">1</a></p></td>
+<tr class="row-odd"><td><p>TCIMTEMP <a class="footnote-reference brackets" href="#id374" id="id72" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope chimney IM temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>TCITTEMP <a class="footnote-reference brackets" href="#id374" id="id73">1</a></p></td>
+<tr class="row-even"><td><p>TCITTEMP <a class="footnote-reference brackets" href="#id374" id="id73" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope chimney IT temperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>TCOSTEMP <a class="footnote-reference brackets" href="#id374" id="id74">1</a></p></td>
+<tr class="row-odd"><td><p>TCOSTEMP <a class="footnote-reference brackets" href="#id374" id="id74" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope chimney OS temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>TCOWTEMP <a class="footnote-reference brackets" href="#id374" id="id75">1</a></p></td>
+<tr class="row-even"><td><p>TCOWTEMP <a class="footnote-reference brackets" href="#id374" id="id75" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope chimney OW temperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>TDBTEMP <a class="footnote-reference brackets" href="#id374" id="id76">1</a></p></td>
+<tr class="row-odd"><td><p>TDBTEMP <a class="footnote-reference brackets" href="#id374" id="id76" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.4</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope dec bore temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>TFLOWIN <a class="footnote-reference brackets" href="#id374" id="id77">1</a></p></td>
+<tr class="row-even"><td><p>TFLOWIN <a class="footnote-reference brackets" href="#id374" id="id77" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.7</p></td>
 <td><p>float</p></td>
 <td><p>Telescope flow rate in</p></td>
 </tr>
-<tr class="row-odd"><td><p>TFLOWOUT <a class="footnote-reference brackets" href="#id374" id="id78">1</a></p></td>
+<tr class="row-odd"><td><p>TFLOWOUT <a class="footnote-reference brackets" href="#id374" id="id78" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>8.3</p></td>
 <td><p>float</p></td>
 <td><p>Telescope flow rate out</p></td>
 </tr>
-<tr class="row-even"><td><p>TGLYCOLI <a class="footnote-reference brackets" href="#id374" id="id79">1</a></p></td>
+<tr class="row-even"><td><p>TGLYCOLI <a class="footnote-reference brackets" href="#id374" id="id79" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>-1.8</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope glycol in temperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>TGLYCOLO <a class="footnote-reference brackets" href="#id374" id="id80">1</a></p></td>
+<tr class="row-odd"><td><p>TGLYCOLO <a class="footnote-reference brackets" href="#id374" id="id80" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope glycol out temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>THINGES <a class="footnote-reference brackets" href="#id374" id="id81">1</a></p></td>
+<tr class="row-even"><td><p>THINGES <a class="footnote-reference brackets" href="#id374" id="id81" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>12.9</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope hinge S temperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>THINGEW <a class="footnote-reference brackets" href="#id374" id="id82">1</a></p></td>
+<tr class="row-odd"><td><p>THINGEW <a class="footnote-reference brackets" href="#id374" id="id82" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>11.7</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope hinge W temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>TPMAVERT <a class="footnote-reference brackets" href="#id374" id="id83">1</a></p></td>
+<tr class="row-even"><td><p>TPMAVERT <a class="footnote-reference brackets" href="#id374" id="id83" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.304</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope mirror averagetemperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>TPMDESIT <a class="footnote-reference brackets" href="#id374" id="id84">1</a></p></td>
+<tr class="row-odd"><td><p>TPMDESIT <a class="footnote-reference brackets" href="#id374" id="id84" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.0</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope mirror desired temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>TPMEIBT <a class="footnote-reference brackets" href="#id374" id="id85">1</a></p></td>
+<tr class="row-even"><td><p>TPMEIBT <a class="footnote-reference brackets" href="#id374" id="id85" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.3</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope mirror EIB temperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>TPMEITT <a class="footnote-reference brackets" href="#id374" id="id86">1</a></p></td>
+<tr class="row-odd"><td><p>TPMEITT <a class="footnote-reference brackets" href="#id374" id="id86" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.3</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope mirror EIT temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>TPMEOBT <a class="footnote-reference brackets" href="#id374" id="id87">1</a></p></td>
+<tr class="row-even"><td><p>TPMEOBT <a class="footnote-reference brackets" href="#id374" id="id87" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.4</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope mirror EOB temperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>TPMEOTT <a class="footnote-reference brackets" href="#id374" id="id88">1</a></p></td>
+<tr class="row-odd"><td><p>TPMEOTT <a class="footnote-reference brackets" href="#id374" id="id88" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.2</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope mirror EOT temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>TPMNIBT <a class="footnote-reference brackets" href="#id374" id="id89">1</a></p></td>
+<tr class="row-even"><td><p>TPMNIBT <a class="footnote-reference brackets" href="#id374" id="id89" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.4</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope mirror NIB temperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>TPMNITT <a class="footnote-reference brackets" href="#id374" id="id90">1</a></p></td>
+<tr class="row-odd"><td><p>TPMNITT <a class="footnote-reference brackets" href="#id374" id="id90" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.3</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope mirror NIT temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>TPMNOBT <a class="footnote-reference brackets" href="#id374" id="id91">1</a></p></td>
+<tr class="row-even"><td><p>TPMNOBT <a class="footnote-reference brackets" href="#id374" id="id91" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.7</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope mirror NOB temperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>TPMNOTT <a class="footnote-reference brackets" href="#id374" id="id92">1</a></p></td>
+<tr class="row-odd"><td><p>TPMNOTT <a class="footnote-reference brackets" href="#id374" id="id92" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.6</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope mirror NOT temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>TPMRTDT <a class="footnote-reference brackets" href="#id374" id="id93">1</a></p></td>
+<tr class="row-even"><td><p>TPMRTDT <a class="footnote-reference brackets" href="#id374" id="id93" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>6.96</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope mirror RTD temperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>TPMSIBT <a class="footnote-reference brackets" href="#id374" id="id94">1</a></p></td>
+<tr class="row-odd"><td><p>TPMSIBT <a class="footnote-reference brackets" href="#id374" id="id94" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.4</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope mirror SIB temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>TPMSITT <a class="footnote-reference brackets" href="#id374" id="id95">1</a></p></td>
+<tr class="row-even"><td><p>TPMSITT <a class="footnote-reference brackets" href="#id374" id="id95" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.0</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope mirror SIT temperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>TPMSOBT <a class="footnote-reference brackets" href="#id374" id="id96">1</a></p></td>
+<tr class="row-odd"><td><p>TPMSOBT <a class="footnote-reference brackets" href="#id374" id="id96" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.4</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope mirror SOB temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>TPMSOTT <a class="footnote-reference brackets" href="#id374" id="id97">1</a></p></td>
+<tr class="row-even"><td><p>TPMSOTT <a class="footnote-reference brackets" href="#id374" id="id97" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.2</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope mirror SOT temperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>TPMSTAT <a class="footnote-reference brackets" href="#id374" id="id98">1</a></p></td>
+<tr class="row-odd"><td><p>TPMSTAT <a class="footnote-reference brackets" href="#id374" id="id98" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>soft air</p></td>
 <td><p>str</p></td>
 <td><p>Telescope mirror status</p></td>
 </tr>
-<tr class="row-even"><td><p>TPMWIBT <a class="footnote-reference brackets" href="#id374" id="id99">1</a></p></td>
+<tr class="row-even"><td><p>TPMWIBT <a class="footnote-reference brackets" href="#id374" id="id99" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.2</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope mirror WIB temperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>TPMWITT <a class="footnote-reference brackets" href="#id374" id="id100">1</a></p></td>
+<tr class="row-odd"><td><p>TPMWITT <a class="footnote-reference brackets" href="#id374" id="id100" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.1</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope mirror WIT temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>TPMWOBT <a class="footnote-reference brackets" href="#id374" id="id101">1</a></p></td>
+<tr class="row-even"><td><p>TPMWOBT <a class="footnote-reference brackets" href="#id374" id="id101" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.6</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope mirror WOB temperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>TPMWOTT <a class="footnote-reference brackets" href="#id374" id="id102">1</a></p></td>
+<tr class="row-odd"><td><p>TPMWOTT <a class="footnote-reference brackets" href="#id374" id="id102" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>8.1</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope mirror WOT temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>TPCITEMP <a class="footnote-reference brackets" href="#id374" id="id103">1</a></p></td>
+<tr class="row-even"><td><p>TPCITEMP <a class="footnote-reference brackets" href="#id374" id="id103" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.7</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope primary cell in temperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>TPCOTEMP <a class="footnote-reference brackets" href="#id374" id="id104">1</a></p></td>
+<tr class="row-odd"><td><p>TPCOTEMP <a class="footnote-reference brackets" href="#id374" id="id104" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.7</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope primary cell out temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>TPR1HUM <a class="footnote-reference brackets" href="#id374" id="id105">1</a></p></td>
+<tr class="row-even"><td><p>TPR1HUM <a class="footnote-reference brackets" href="#id374" id="id105" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td><p>Telescope probe 1 humidity</p></td>
 </tr>
-<tr class="row-odd"><td><p>TPR1TEMP <a class="footnote-reference brackets" href="#id374" id="id106">1</a></p></td>
+<tr class="row-odd"><td><p>TPR1TEMP <a class="footnote-reference brackets" href="#id374" id="id106" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope probe1 temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>TPR2HUM <a class="footnote-reference brackets" href="#id374" id="id107">1</a></p></td>
+<tr class="row-even"><td><p>TPR2HUM <a class="footnote-reference brackets" href="#id374" id="id107" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td><p>Telescope probe 2 humidity</p></td>
 </tr>
-<tr class="row-odd"><td><p>TPR2TEMP <a class="footnote-reference brackets" href="#id374" id="id108">1</a></p></td>
+<tr class="row-odd"><td><p>TPR2TEMP <a class="footnote-reference brackets" href="#id374" id="id108" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope probe2 temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>TSERVO <a class="footnote-reference brackets" href="#id374" id="id109">1</a></p></td>
+<tr class="row-even"><td><p>TSERVO <a class="footnote-reference brackets" href="#id374" id="id109" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.0</p></td>
 <td><p>float</p></td>
 <td><p>Telescope servo setpoint</p></td>
 </tr>
-<tr class="row-odd"><td><p>TTRSTEMP <a class="footnote-reference brackets" href="#id374" id="id110">1</a></p></td>
+<tr class="row-odd"><td><p>TTRSTEMP <a class="footnote-reference brackets" href="#id374" id="id110" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>13.2</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope top ring S temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>TTRWTEMP <a class="footnote-reference brackets" href="#id374" id="id111">1</a></p></td>
+<tr class="row-even"><td><p>TTRWTEMP <a class="footnote-reference brackets" href="#id374" id="id111" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>13.4</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope top ring W temperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>TTRUETBT <a class="footnote-reference brackets" href="#id374" id="id112">1</a></p></td>
+<tr class="row-odd"><td><p>TTRUETBT <a class="footnote-reference brackets" href="#id374" id="id112" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>-4.8</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope truss ETB temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>TTRUETTT <a class="footnote-reference brackets" href="#id374" id="id113">1</a></p></td>
+<tr class="row-even"><td><p>TTRUETTT <a class="footnote-reference brackets" href="#id374" id="id113" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>11.5</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope truss ETT temperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>TTRUNTBT <a class="footnote-reference brackets" href="#id374" id="id114">1</a></p></td>
+<tr class="row-odd"><td><p>TTRUNTBT <a class="footnote-reference brackets" href="#id374" id="id114" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>10.9</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope truss NTB temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>TTRUNTTT <a class="footnote-reference brackets" href="#id374" id="id115">1</a></p></td>
+<tr class="row-even"><td><p>TTRUNTTT <a class="footnote-reference brackets" href="#id374" id="id115" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>11.8</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope truss NTT temperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>TTRUSTBT <a class="footnote-reference brackets" href="#id374" id="id116">1</a></p></td>
+<tr class="row-odd"><td><p>TTRUSTBT <a class="footnote-reference brackets" href="#id374" id="id116" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>11.1</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope truss STB temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>TTRUSTST <a class="footnote-reference brackets" href="#id374" id="id117">1</a></p></td>
+<tr class="row-even"><td><p>TTRUSTST <a class="footnote-reference brackets" href="#id374" id="id117" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>10.8</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope truss STS temperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>TTRUSTTT <a class="footnote-reference brackets" href="#id374" id="id118">1</a></p></td>
+<tr class="row-odd"><td><p>TTRUSTTT <a class="footnote-reference brackets" href="#id374" id="id118" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>12.4</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope truss STT temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>TTRUTSBT <a class="footnote-reference brackets" href="#id374" id="id119">1</a></p></td>
+<tr class="row-even"><td><p>TTRUTSBT <a class="footnote-reference brackets" href="#id374" id="id119" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>13.6</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope truss TSB temperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>TTRUTSMT <a class="footnote-reference brackets" href="#id374" id="id120">1</a></p></td>
+<tr class="row-odd"><td><p>TTRUTSMT <a class="footnote-reference brackets" href="#id374" id="id120" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>13.7</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope truss TSM temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>TTRUTSTT <a class="footnote-reference brackets" href="#id374" id="id121">1</a></p></td>
+<tr class="row-even"><td><p>TTRUTSTT <a class="footnote-reference brackets" href="#id374" id="id121" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>12.5</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope truss TST temperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>TTRUWTBT <a class="footnote-reference brackets" href="#id374" id="id122">1</a></p></td>
+<tr class="row-odd"><td><p>TTRUWTBT <a class="footnote-reference brackets" href="#id374" id="id122" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>10.9</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope truss WTB temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>TTRUWTTT <a class="footnote-reference brackets" href="#id374" id="id123">1</a></p></td>
+<tr class="row-even"><td><p>TTRUWTTT <a class="footnote-reference brackets" href="#id374" id="id123" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>11.6</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Telescope truss WTT temperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>ALARM <a class="footnote-reference brackets" href="#id374" id="id124">1</a></p></td>
+<tr class="row-odd"><td><p>ALARM <a class="footnote-reference brackets" href="#id374" id="id124" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>F</p></td>
 <td><p>bool</p></td>
 <td><p>UPS major alarm or check battery</p></td>
 </tr>
-<tr class="row-even"><td><p>ALARM-ON <a class="footnote-reference brackets" href="#id374" id="id125">1</a></p></td>
+<tr class="row-even"><td><p>ALARM-ON <a class="footnote-reference brackets" href="#id374" id="id125" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>F</p></td>
 <td><p>bool</p></td>
 <td><p>UPS active alarm condition</p></td>
 </tr>
-<tr class="row-odd"><td><p>BATTERY <a class="footnote-reference brackets" href="#id374" id="id126">1</a></p></td>
+<tr class="row-odd"><td><p>BATTERY <a class="footnote-reference brackets" href="#id374" id="id126" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>100.0</p></td>
 <td><p>float</p></td>
 <td><p>[%] UPS Battery left</p></td>
 </tr>
-<tr class="row-even"><td><p>SECLEFT <a class="footnote-reference brackets" href="#id374" id="id127">1</a></p></td>
+<tr class="row-even"><td><p>SECLEFT <a class="footnote-reference brackets" href="#id374" id="id127" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>5772.0</p></td>
 <td><p>float</p></td>
 <td><p>[s] UPS Seconds left</p></td>
 </tr>
-<tr class="row-odd"><td><p>UPSSTAT <a class="footnote-reference brackets" href="#id374" id="id128">1</a></p></td>
+<tr class="row-odd"><td><p>UPSSTAT <a class="footnote-reference brackets" href="#id374" id="id128" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>System Normal - On Line(7)</p></td>
 <td><p>str</p></td>
 <td><p>UPS Status</p></td>
 </tr>
-<tr class="row-even"><td><p>INAMPS <a class="footnote-reference brackets" href="#id374" id="id129">1</a></p></td>
+<tr class="row-even"><td><p>INAMPS <a class="footnote-reference brackets" href="#id374" id="id129" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>64.3</p></td>
 <td><p>float</p></td>
 <td><p>[A] UPS total input current</p></td>
 </tr>
-<tr class="row-odd"><td><p>OUTWATTS <a class="footnote-reference brackets" href="#id374" id="id130">1</a></p></td>
+<tr class="row-odd"><td><p>OUTWATTS <a class="footnote-reference brackets" href="#id374" id="id130" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>4500.0,6800.0,4100.0</p></td>
 <td><p>str</p></td>
 <td><p>[W] UPS Phase A, B, C output watts</p></td>
 </tr>
-<tr class="row-even"><td><p>COMPDEW <a class="footnote-reference brackets" href="#id374" id="id131">1</a></p></td>
+<tr class="row-even"><td><p>COMPDEW <a class="footnote-reference brackets" href="#id374" id="id131" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>-12.0</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] Computer room dewpoint</p></td>
 </tr>
-<tr class="row-odd"><td><p>COMPHUM <a class="footnote-reference brackets" href="#id374" id="id132">1</a></p></td>
+<tr class="row-odd"><td><p>COMPHUM <a class="footnote-reference brackets" href="#id374" id="id132" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.8</p></td>
 <td><p>float</p></td>
 <td><p>[%] Computer room humidity</p></td>
 </tr>
-<tr class="row-even"><td><p>COMPAMB <a class="footnote-reference brackets" href="#id374" id="id133">1</a></p></td>
+<tr class="row-even"><td><p>COMPAMB <a class="footnote-reference brackets" href="#id374" id="id133" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>19.4</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] Computer room ambient temperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>COMPTEMP <a class="footnote-reference brackets" href="#id374" id="id134">1</a></p></td>
+<tr class="row-odd"><td><p>COMPTEMP <a class="footnote-reference brackets" href="#id374" id="id134" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>24.9</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] Computer room hygrometer temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>DEWPOINT <a class="footnote-reference brackets" href="#id374" id="id135">1</a></p></td>
+<tr class="row-even"><td><p>DEWPOINT <a class="footnote-reference brackets" href="#id374" id="id135" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>5.7</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] (outside) dewpoint</p></td>
 </tr>
-<tr class="row-odd"><td><p>HUMIDITY <a class="footnote-reference brackets" href="#id374" id="id136">1</a></p></td>
+<tr class="row-odd"><td><p>HUMIDITY <a class="footnote-reference brackets" href="#id374" id="id136" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.0</p></td>
 <td><p>float</p></td>
 <td><p>[%] (outside) humidity</p></td>
 </tr>
-<tr class="row-even"><td><p>PRESSURE <a class="footnote-reference brackets" href="#id374" id="id137">1</a></p></td>
+<tr class="row-even"><td><p>PRESSURE <a class="footnote-reference brackets" href="#id374" id="id137" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>794.7</p></td>
 <td><p>float</p></td>
 <td><p>[torr] (outside) air pressure</p></td>
 </tr>
-<tr class="row-odd"><td><p>OUTTEMP <a class="footnote-reference brackets" href="#id374" id="id138">1</a></p></td>
+<tr class="row-odd"><td><p>OUTTEMP <a class="footnote-reference brackets" href="#id374" id="id138" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] outside temperature</p></td>
 </tr>
-<tr class="row-even"><td><p>WINDDIR <a class="footnote-reference brackets" href="#id374" id="id139">1</a></p></td>
+<tr class="row-even"><td><p>WINDDIR <a class="footnote-reference brackets" href="#id374" id="id139" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>82.0</p></td>
 <td><p>float</p></td>
 <td><p>[deg] wind direction</p></td>
 </tr>
-<tr class="row-odd"><td><p>WINDSPD <a class="footnote-reference brackets" href="#id374" id="id140">1</a></p></td>
+<tr class="row-odd"><td><p>WINDSPD <a class="footnote-reference brackets" href="#id374" id="id140" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>23.3</p></td>
 <td><p>float</p></td>
 <td><p>[m/s] wind speed</p></td>
 </tr>
-<tr class="row-even"><td><p>GUST <a class="footnote-reference brackets" href="#id374" id="id141">1</a></p></td>
+<tr class="row-even"><td><p>GUST <a class="footnote-reference brackets" href="#id374" id="id141" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>18.1</p></td>
 <td><p>float</p></td>
 <td><p>[m/s] Wind gusts speed</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMNIENTN <a class="footnote-reference brackets" href="#id374" id="id142">1</a></p></td>
+<tr class="row-odd"><td><p>AMNIENTN <a class="footnote-reference brackets" href="#id374" id="id142" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>13.3</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] ambient temperature north</p></td>
 </tr>
-<tr class="row-even"><td><p>CFLOOR <a class="footnote-reference brackets" href="#id374" id="id143">1</a></p></td>
+<tr class="row-even"><td><p>CFLOOR <a class="footnote-reference brackets" href="#id374" id="id143" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>8.1</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] temperature on C floor</p></td>
 </tr>
-<tr class="row-odd"><td><p>NWALLIN <a class="footnote-reference brackets" href="#id374" id="id144">1</a></p></td>
+<tr class="row-odd"><td><p>NWALLIN <a class="footnote-reference brackets" href="#id374" id="id144" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>13.6</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] temperature at north wall inside</p></td>
 </tr>
-<tr class="row-even"><td><p>NWALLOUT <a class="footnote-reference brackets" href="#id374" id="id145">1</a></p></td>
+<tr class="row-even"><td><p>NWALLOUT <a class="footnote-reference brackets" href="#id374" id="id145" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>8.8</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] temperature at north wall outside</p></td>
 </tr>
-<tr class="row-odd"><td><p>WWALLIN <a class="footnote-reference brackets" href="#id374" id="id146">1</a></p></td>
+<tr class="row-odd"><td><p>WWALLIN <a class="footnote-reference brackets" href="#id374" id="id146" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>12.8</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] temperature at west wall inside</p></td>
 </tr>
-<tr class="row-even"><td><p>WWALLOUT <a class="footnote-reference brackets" href="#id374" id="id147">1</a></p></td>
+<tr class="row-even"><td><p>WWALLOUT <a class="footnote-reference brackets" href="#id374" id="id147" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>9.4</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] temperature at west wall outside</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMBIENTS <a class="footnote-reference brackets" href="#id374" id="id148">1</a></p></td>
+<tr class="row-odd"><td><p>AMBIENTS <a class="footnote-reference brackets" href="#id374" id="id148" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>14.6</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] ambient temperature south</p></td>
 </tr>
-<tr class="row-even"><td><p>FLOOR <a class="footnote-reference brackets" href="#id374" id="id149">1</a></p></td>
+<tr class="row-even"><td><p>FLOOR <a class="footnote-reference brackets" href="#id374" id="id149" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>12.3</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] temperature at floor (LCR)</p></td>
 </tr>
-<tr class="row-odd"><td><p>EWALLCMP <a class="footnote-reference brackets" href="#id374" id="id150">1</a></p></td>
+<tr class="row-odd"><td><p>EWALLCMP <a class="footnote-reference brackets" href="#id374" id="id150" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>10.2</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] temperature at east wall, computer room</p></td>
 </tr>
-<tr class="row-even"><td><p>EWALLCOU <a class="footnote-reference brackets" href="#id374" id="id151">1</a></p></td>
+<tr class="row-even"><td><p>EWALLCOU <a class="footnote-reference brackets" href="#id374" id="id151" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>9.5</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] temperature at east wall, Coude room</p></td>
 </tr>
-<tr class="row-odd"><td><p>ROOF <a class="footnote-reference brackets" href="#id374" id="id152">1</a></p></td>
+<tr class="row-odd"><td><p>ROOF <a class="footnote-reference brackets" href="#id374" id="id152" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>10.0</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] temperature on roof</p></td>
 </tr>
-<tr class="row-even"><td><p>ROOFAMB <a class="footnote-reference brackets" href="#id374" id="id153">1</a></p></td>
+<tr class="row-even"><td><p>ROOFAMB <a class="footnote-reference brackets" href="#id374" id="id153" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>9.9</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] ambient temperature on roof</p></td>
 </tr>
-<tr class="row-odd"><td><p>DOMEBLOW <a class="footnote-reference brackets" href="#id374" id="id154">1</a></p></td>
+<tr class="row-odd"><td><p>DOMEBLOW <a class="footnote-reference brackets" href="#id374" id="id154" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>12.1</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] temperature at dome back, lower</p></td>
 </tr>
-<tr class="row-even"><td><p>DOMEBUP <a class="footnote-reference brackets" href="#id374" id="id155">1</a></p></td>
+<tr class="row-even"><td><p>DOMEBUP <a class="footnote-reference brackets" href="#id374" id="id155" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>12.5</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] temperature at dome back, upper</p></td>
 </tr>
-<tr class="row-odd"><td><p>DOMELLOW <a class="footnote-reference brackets" href="#id374" id="id156">1</a></p></td>
+<tr class="row-odd"><td><p>DOMELLOW <a class="footnote-reference brackets" href="#id374" id="id156" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>14.4</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] temperature at dome left, lower</p></td>
 </tr>
-<tr class="row-even"><td><p>DOMELUP <a class="footnote-reference brackets" href="#id374" id="id157">1</a></p></td>
+<tr class="row-even"><td><p>DOMELUP <a class="footnote-reference brackets" href="#id374" id="id157" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>19.3</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] temperature at dome left, upper</p></td>
 </tr>
-<tr class="row-odd"><td><p>DOMERLOW <a class="footnote-reference brackets" href="#id374" id="id158">1</a></p></td>
+<tr class="row-odd"><td><p>DOMERLOW <a class="footnote-reference brackets" href="#id374" id="id158" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>12.3</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] temperature at dome right, lower</p></td>
 </tr>
-<tr class="row-even"><td><p>DOMERUP <a class="footnote-reference brackets" href="#id374" id="id159">1</a></p></td>
+<tr class="row-even"><td><p>DOMERUP <a class="footnote-reference brackets" href="#id374" id="id159" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>12.8</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] temperature at dome right, upper</p></td>
 </tr>
-<tr class="row-odd"><td><p>PLATFORM <a class="footnote-reference brackets" href="#id374" id="id160">1</a></p></td>
+<tr class="row-odd"><td><p>PLATFORM <a class="footnote-reference brackets" href="#id374" id="id160" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>15.3</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] temperature at platform</p></td>
 </tr>
-<tr class="row-even"><td><p>SHACKC <a class="footnote-reference brackets" href="#id374" id="id161">1</a></p></td>
+<tr class="row-even"><td><p>SHACKC <a class="footnote-reference brackets" href="#id374" id="id161" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>15.2</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] temperature at shack ceiling</p></td>
 </tr>
-<tr class="row-odd"><td><p>SHACKW <a class="footnote-reference brackets" href="#id374" id="id162">1</a></p></td>
+<tr class="row-odd"><td><p>SHACKW <a class="footnote-reference brackets" href="#id374" id="id162" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>13.2</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] temperature at shack wall</p></td>
 </tr>
-<tr class="row-even"><td><p>STAIRSL <a class="footnote-reference brackets" href="#id374" id="id163">1</a></p></td>
+<tr class="row-even"><td><p>STAIRSL <a class="footnote-reference brackets" href="#id374" id="id163" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>12.6</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] temperature at stairs, lower</p></td>
 </tr>
-<tr class="row-odd"><td><p>STAIRSM <a class="footnote-reference brackets" href="#id374" id="id164">1</a></p></td>
+<tr class="row-odd"><td><p>STAIRSM <a class="footnote-reference brackets" href="#id374" id="id164" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>13.3</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] temperature at stairs, mid</p></td>
 </tr>
-<tr class="row-even"><td><p>STAIRSU <a class="footnote-reference brackets" href="#id374" id="id165">1</a></p></td>
+<tr class="row-even"><td><p>STAIRSU <a class="footnote-reference brackets" href="#id374" id="id165" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>13.6</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] temperature at stairs, upper</p></td>
 </tr>
-<tr class="row-odd"><td><p>TELBASE <a class="footnote-reference brackets" href="#id374" id="id166">1</a></p></td>
+<tr class="row-odd"><td><p>TELBASE <a class="footnote-reference brackets" href="#id374" id="id166" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>8.5</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] temperature at telescope base</p></td>
 </tr>
-<tr class="row-even"><td><p>UTILWALL <a class="footnote-reference brackets" href="#id374" id="id167">1</a></p></td>
+<tr class="row-even"><td><p>UTILWALL <a class="footnote-reference brackets" href="#id374" id="id167" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>11.6</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] temperature at utility room wall</p></td>
 </tr>
-<tr class="row-odd"><td><p>UTILROOM <a class="footnote-reference brackets" href="#id374" id="id168">1</a></p></td>
+<tr class="row-odd"><td><p>UTILROOM <a class="footnote-reference brackets" href="#id374" id="id168" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>12.4</p></td>
 <td><p>float</p></td>
 <td><p>[deg C] temperature in utilitiy room</p></td>
@@ -2062,82 +2052,82 @@ name (<em>e.g.</em> b0, r1, z9) and <code class="docutils literal notranslate"><
 <td><p>str</p></td>
 <td><p>adimensional quantity to divide to flatfield a frame</p></td>
 </tr>
-<tr class="row-odd"><td><p>SUNDEC <a class="footnote-reference brackets" href="#id374" id="id169">1</a></p></td>
+<tr class="row-odd"><td><p>SUNDEC <a class="footnote-reference brackets" href="#id374" id="id169" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>18.640139</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Sun declination at start of exposure</p></td>
 </tr>
-<tr class="row-even"><td><p>TCSKRA <a class="footnote-reference brackets" href="#id374" id="id170">1</a></p></td>
+<tr class="row-even"><td><p>TCSKRA <a class="footnote-reference brackets" href="#id374" id="id170" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.3 0.003 0.00003</p></td>
 <td><p>str</p></td>
 <td><p>TCS Kalman (RA)</p></td>
 </tr>
-<tr class="row-odd"><td><p>SEQSTART <a class="footnote-reference brackets" href="#id374" id="id171">1</a></p></td>
+<tr class="row-odd"><td><p>SEQSTART <a class="footnote-reference brackets" href="#id374" id="id171" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>2021-05-14T01:11:54.263801</p></td>
 <td><p>str</p></td>
 <td><p>Start time of sequence processing</p></td>
 </tr>
-<tr class="row-even"><td><p>TCSGDEC <a class="footnote-reference brackets" href="#id374" id="id172">1</a></p></td>
+<tr class="row-even"><td><p>TCSGDEC <a class="footnote-reference brackets" href="#id374" id="id172" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.3</p></td>
 <td><p>float</p></td>
 <td><p>TCS simple gain (dec)</p></td>
 </tr>
-<tr class="row-odd"><td><p>MOONSEP <a class="footnote-reference brackets" href="#id374" id="id173">1</a></p></td>
+<tr class="row-odd"><td><p>MOONSEP <a class="footnote-reference brackets" href="#id374" id="id173" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>9.334</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Moon Separation</p></td>
 </tr>
-<tr class="row-even"><td><p>TCSMFDEC <a class="footnote-reference brackets" href="#id374" id="id174">1</a></p></td>
+<tr class="row-even"><td><p>TCSMFDEC <a class="footnote-reference brackets" href="#id374" id="id174" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>1</p></td>
 <td><p>int</p></td>
 <td><p>TCS moving filter length (dec)</p></td>
 </tr>
-<tr class="row-odd"><td><p>TCSMFRA <a class="footnote-reference brackets" href="#id374" id="id175">1</a></p></td>
+<tr class="row-odd"><td><p>TCSMFRA <a class="footnote-reference brackets" href="#id374" id="id175" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>1</p></td>
 <td><p>int</p></td>
 <td><p>TCS moving filter length (RA)</p></td>
 </tr>
-<tr class="row-even"><td><p>TCSGRA <a class="footnote-reference brackets" href="#id374" id="id176">1</a></p></td>
+<tr class="row-even"><td><p>TCSGRA <a class="footnote-reference brackets" href="#id374" id="id176" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.3</p></td>
 <td><p>float</p></td>
 <td><p>TCS simple gain (RA)</p></td>
 </tr>
-<tr class="row-odd"><td><p>SUNRA <a class="footnote-reference brackets" href="#id374" id="id177">1</a></p></td>
+<tr class="row-odd"><td><p>SUNRA <a class="footnote-reference brackets" href="#id374" id="id177" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>51.089577</p></td>
 <td><p>float</p></td>
 <td><p>[deg] Sun RA at start of exposure</p></td>
 </tr>
-<tr class="row-even"><td><p>NTSSURVY <a class="footnote-reference brackets" href="#id374" id="id178">1</a></p></td>
+<tr class="row-even"><td><p>NTSSURVY <a class="footnote-reference brackets" href="#id374" id="id178" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>na</p></td>
 <td><p>str</p></td>
 <td><p>NTS survey name</p></td>
 </tr>
-<tr class="row-odd"><td><p>TCSKDEC <a class="footnote-reference brackets" href="#id374" id="id179">1</a></p></td>
+<tr class="row-odd"><td><p>TCSKDEC <a class="footnote-reference brackets" href="#id374" id="id179" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.3 0.003 0.00003</p></td>
 <td><p>str</p></td>
 <td><p>TCS Kalman (dec)</p></td>
 </tr>
-<tr class="row-even"><td><p>TCSPIDEC <a class="footnote-reference brackets" href="#id374" id="id180">1</a></p></td>
+<tr class="row-even"><td><p>TCSPIDEC <a class="footnote-reference brackets" href="#id374" id="id180" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>1.0,0.0,0.0,0.0</p></td>
 <td><p>str</p></td>
 <td><p>TCS PI settings (P, I (gain, error window, satu</p></td>
 </tr>
-<tr class="row-odd"><td><p>TCSPIRA <a class="footnote-reference brackets" href="#id374" id="id181">1</a></p></td>
+<tr class="row-odd"><td><p>TCSPIRA <a class="footnote-reference brackets" href="#id374" id="id181" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>1.0,0.0,0.0,0.0</p></td>
 <td><p>str</p></td>
 <td><p>TCS PI settings (P, I (gain, error window, satu</p></td>
 </tr>
-<tr class="row-even"><td><p>TRANSPAR <a class="footnote-reference brackets" href="#id374" id="id182">1</a></p></td>
+<tr class="row-even"><td><p>TRANSPAR <a class="footnote-reference brackets" href="#id374" id="id182" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>None</p></td>
 <td><p>Unknown</p></td>
 <td><p>ETC/PM transparency</p></td>
 </tr>
-<tr class="row-odd"><td><p>SEEING <a class="footnote-reference brackets" href="#id374" id="id183">1</a></p></td>
+<tr class="row-odd"><td><p>SEEING <a class="footnote-reference brackets" href="#id374" id="id183" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>None</p></td>
 <td><p>Unknown</p></td>
 <td><p>[arcsec] ETC/PM seeing</p></td>
 </tr>
-<tr class="row-even"><td><p>SKYLEVEL <a class="footnote-reference brackets" href="#id374" id="id184">1</a></p></td>
+<tr class="row-even"><td><p>SKYLEVEL <a class="footnote-reference brackets" href="#id374" id="id184" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>8.153</p></td>
 <td><p>float</p></td>
 <td><p>counts?] ETC sky level</p></td>
@@ -2148,19 +2138,13 @@ name (<em>e.g.</em> b0, r1, z9) and <code class="docutils literal notranslate"><
 </section>
 </section>
 <section id="hdu1">
-<h3>HDU1<a class="headerlink" href="#hdu1" title="Permalink to this headline">¶</a></h3>
+<h3>HDU1<a class="headerlink" href="#hdu1" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = IVAR</p>
 <p>Inverse variance (1/sigma^2) of the fiber flat field in HDU0.</p>
 <section id="id185">
-<h4>Required Header Keywords<a class="headerlink" href="#id185" title="Permalink to this headline">¶</a></h4>
+<h4>Required Header Keywords<a class="headerlink" href="#id185" title="Permalink to this heading">¶</a></h4>
 <details class="summary-required-header-keywords-table">
 <summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 22%" />
-<col style="width: 5%" />
-<col style="width: 62%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Example Value</p></th>
@@ -2200,20 +2184,14 @@ name (<em>e.g.</em> b0, r1, z9) and <code class="docutils literal notranslate"><
 </section>
 </section>
 <section id="hdu2">
-<h3>HDU2<a class="headerlink" href="#hdu2" title="Permalink to this headline">¶</a></h3>
+<h3>HDU2<a class="headerlink" href="#hdu2" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = MASK</p>
 <p>Mask of the fiberflat; 0=good. See the <a class="reference internal" href="../../../../../bitmasks.html"><span class="doc">bitmask documentation</span></a> page for the definition of the bits.
 Prior to desispec/0.24.0 and software release 18.9, the MASK HDU was compressed.</p>
 <section id="id186">
-<h4>Required Header Keywords<a class="headerlink" href="#id186" title="Permalink to this headline">¶</a></h4>
+<h4>Required Header Keywords<a class="headerlink" href="#id186" title="Permalink to this heading">¶</a></h4>
 <details class="summary-required-header-keywords-table">
 <summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 22%" />
-<col style="width: 5%" />
-<col style="width: 62%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Example Value</p></th>
@@ -2258,19 +2236,13 @@ Prior to desispec/0.24.0 and software release 18.9, the MASK HDU was compressed.
 </section>
 </section>
 <section id="hdu3">
-<h3>HDU3<a class="headerlink" href="#hdu3" title="Permalink to this headline">¶</a></h3>
+<h3>HDU3<a class="headerlink" href="#hdu3" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = MEANSPEC</p>
 <p>Average flat lamp spectrum of fibers in this camera frame. The fiber flat field is in first approximation the ratio of the measured spectra to this mean spectrum (in practice we use a deconvolved mean spectrum and reconvolve it with the resolution of each fiber). The units are electrons per Angstrom.</p>
 <section id="id187">
-<h4>Required Header Keywords<a class="headerlink" href="#id187" title="Permalink to this headline">¶</a></h4>
+<h4>Required Header Keywords<a class="headerlink" href="#id187" title="Permalink to this heading">¶</a></h4>
 <details class="summary-required-header-keywords-table">
 <summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 23%" />
-<col style="width: 5%" />
-<col style="width: 61%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Example Value</p></th>
@@ -2305,19 +2277,13 @@ Prior to desispec/0.24.0 and software release 18.9, the MASK HDU was compressed.
 </section>
 </section>
 <section id="hdu4">
-<h3>HDU4<a class="headerlink" href="#hdu4" title="Permalink to this headline">¶</a></h3>
+<h3>HDU4<a class="headerlink" href="#hdu4" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = WAVELENGTH</p>
 <p>Wavelength grid in Angstrom used by this fiber flat field. Note that contrary to the science frame, this wavelength array is in the observer frame. In consequence, one has to first convert its wavelength to the solar barycenter frame before using this data to flat field a science exposure. See the frame <a class="reference internal" href="frame-CAMERA-EXPID.html#frame-hdu3-wavelength"><span class="std std-ref">WAVELENGTH documentation</span></a> for more details.</p>
 <section id="id188">
-<h4>Required Header Keywords<a class="headerlink" href="#id188" title="Permalink to this headline">¶</a></h4>
+<h4>Required Header Keywords<a class="headerlink" href="#id188" title="Permalink to this heading">¶</a></h4>
 <details class="summary-required-header-keywords-table">
 <summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 22%" />
-<col style="width: 5%" />
-<col style="width: 62%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Example Value</p></th>
@@ -2352,19 +2318,13 @@ Prior to desispec/0.24.0 and software release 18.9, the MASK HDU was compressed.
 </section>
 </section>
 <section id="hdu5">
-<h3>HDU5<a class="headerlink" href="#hdu5" title="Permalink to this headline">¶</a></h3>
+<h3>HDU5<a class="headerlink" href="#hdu5" title="Permalink to this heading">¶</a></h3>
 <p>EXTNAME = FIBERMAP</p>
 <p>Fibermap with information about the fiber status.</p>
 <section id="id189">
-<h4>Required Header Keywords<a class="headerlink" href="#id189" title="Permalink to this headline">¶</a></h4>
+<h4>Required Header Keywords<a class="headerlink" href="#id189" title="Permalink to this heading">¶</a></h4>
 <details class="summary-required-header-keywords-table">
 <summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 48%" />
-<col style="width: 6%" />
-<col style="width: 37%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Example Value</p></th>
@@ -2793,7 +2753,7 @@ Prior to desispec/0.24.0 and software release 18.9, the MASK HDU was compressed.
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>CRYOTEMP <a class="footnote-reference brackets" href="#id374" id="id190">1</a></p></td>
+<tr class="row-even"><td><p>CRYOTEMP <a class="footnote-reference brackets" href="#id374" id="id190" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>162.97</p></td>
 <td><p>float</p></td>
 <td></td>
@@ -2933,7 +2893,7 @@ Prior to desispec/0.24.0 and software release 18.9, the MASK HDU was compressed.
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>CRYOPRES <a class="footnote-reference brackets" href="#id374" id="id191">1</a></p></td>
+<tr class="row-even"><td><p>CRYOPRES <a class="footnote-reference brackets" href="#id374" id="id191" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>9.084e-08</p></td>
 <td><p>str</p></td>
 <td></td>
@@ -3283,7 +3243,7 @@ Prior to desispec/0.24.0 and software release 18.9, the MASK HDU was compressed.
 <td><p>int</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>SPLITIDS <a class="footnote-reference brackets" href="#id374" id="id192">1</a></p></td>
+<tr class="row-even"><td><p>SPLITIDS <a class="footnote-reference brackets" href="#id374" id="id192" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>68979</p></td>
 <td><p>str</p></td>
 <td></td>
@@ -3328,212 +3288,212 @@ Prior to desispec/0.24.0 and software release 18.9, the MASK HDU was compressed.
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>WHITESPT <a class="footnote-reference brackets" href="#id374" id="id193">1</a></p></td>
+<tr class="row-odd"><td><p>WHITESPT <a class="footnote-reference brackets" href="#id374" id="id193" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>T</p></td>
 <td><p>bool</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>ZENITH <a class="footnote-reference brackets" href="#id374" id="id194">1</a></p></td>
+<tr class="row-even"><td><p>ZENITH <a class="footnote-reference brackets" href="#id374" id="id194" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>F</p></td>
 <td><p>bool</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>SEANNEX <a class="footnote-reference brackets" href="#id374" id="id195">1</a></p></td>
+<tr class="row-odd"><td><p>SEANNEX <a class="footnote-reference brackets" href="#id374" id="id195" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>F</p></td>
 <td><p>bool</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>BEYONDP <a class="footnote-reference brackets" href="#id374" id="id196">1</a></p></td>
+<tr class="row-even"><td><p>BEYONDP <a class="footnote-reference brackets" href="#id374" id="id196" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>F</p></td>
 <td><p>bool</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>FIDUCIAL <a class="footnote-reference brackets" href="#id374" id="id197">1</a></p></td>
+<tr class="row-odd"><td><p>FIDUCIAL <a class="footnote-reference brackets" href="#id374" id="id197" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>off</p></td>
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>AIRMASS <a class="footnote-reference brackets" href="#id374" id="id198">1</a></p></td>
+<tr class="row-even"><td><p>AIRMASS <a class="footnote-reference brackets" href="#id374" id="id198" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>1.521306</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>FOCUS <a class="footnote-reference brackets" href="#id374" id="id199">1</a></p></td>
+<tr class="row-odd"><td><p>FOCUS <a class="footnote-reference brackets" href="#id374" id="id199" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>1163.9,-689.8,370.4,13.8,24.2,-0.0</p></td>
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TRUSTEMP <a class="footnote-reference brackets" href="#id374" id="id200">1</a></p></td>
+<tr class="row-even"><td><p>TRUSTEMP <a class="footnote-reference brackets" href="#id374" id="id200" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>13.267</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>PMIRTEMP <a class="footnote-reference brackets" href="#id374" id="id201">1</a></p></td>
+<tr class="row-odd"><td><p>PMIRTEMP <a class="footnote-reference brackets" href="#id374" id="id201" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.35</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>PMREADY <a class="footnote-reference brackets" href="#id374" id="id202">1</a></p></td>
+<tr class="row-even"><td><p>PMREADY <a class="footnote-reference brackets" href="#id374" id="id202" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>F</p></td>
 <td><p>bool</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>PMCOVER <a class="footnote-reference brackets" href="#id374" id="id203">1</a></p></td>
+<tr class="row-odd"><td><p>PMCOVER <a class="footnote-reference brackets" href="#id374" id="id203" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>open</p></td>
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>PMCOOL <a class="footnote-reference brackets" href="#id374" id="id204">1</a></p></td>
+<tr class="row-even"><td><p>PMCOOL <a class="footnote-reference brackets" href="#id374" id="id204" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>on</p></td>
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>DOMSHUTU <a class="footnote-reference brackets" href="#id374" id="id205">1</a></p></td>
+<tr class="row-odd"><td><p>DOMSHUTU <a class="footnote-reference brackets" href="#id374" id="id205" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>not open</p></td>
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>DOMSHUTL <a class="footnote-reference brackets" href="#id374" id="id206">1</a></p></td>
+<tr class="row-even"><td><p>DOMSHUTL <a class="footnote-reference brackets" href="#id374" id="id206" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>not open</p></td>
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>DOMLIGHH <a class="footnote-reference brackets" href="#id374" id="id207">1</a></p></td>
+<tr class="row-odd"><td><p>DOMLIGHH <a class="footnote-reference brackets" href="#id374" id="id207" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>off</p></td>
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>DOMLIGHL <a class="footnote-reference brackets" href="#id374" id="id208">1</a></p></td>
+<tr class="row-even"><td><p>DOMLIGHL <a class="footnote-reference brackets" href="#id374" id="id208" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>off</p></td>
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>DOMEAZ <a class="footnote-reference brackets" href="#id374" id="id209">1</a></p></td>
+<tr class="row-odd"><td><p>DOMEAZ <a class="footnote-reference brackets" href="#id374" id="id209" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>253.289</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>DOMINPOS <a class="footnote-reference brackets" href="#id374" id="id210">1</a></p></td>
+<tr class="row-even"><td><p>DOMINPOS <a class="footnote-reference brackets" href="#id374" id="id210" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>F</p></td>
 <td><p>bool</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>GUIDOFFR <a class="footnote-reference brackets" href="#id374" id="id211">1</a></p></td>
+<tr class="row-odd"><td><p>GUIDOFFR <a class="footnote-reference brackets" href="#id374" id="id211" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>GUIDOFFD <a class="footnote-reference brackets" href="#id374" id="id212">1</a></p></td>
+<tr class="row-even"><td><p>GUIDOFFD <a class="footnote-reference brackets" href="#id374" id="id212" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>-0.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>MOONDEC <a class="footnote-reference brackets" href="#id374" id="id213">1</a></p></td>
+<tr class="row-odd"><td><p>MOONDEC <a class="footnote-reference brackets" href="#id374" id="id213" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>-9.830944</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>MOONRA <a class="footnote-reference brackets" href="#id374" id="id214">1</a></p></td>
+<tr class="row-even"><td><p>MOONRA <a class="footnote-reference brackets" href="#id374" id="id214" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>350.511461</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>MOUNTAZ <a class="footnote-reference brackets" href="#id374" id="id215">1</a></p></td>
+<tr class="row-odd"><td><p>MOUNTAZ <a class="footnote-reference brackets" href="#id374" id="id215" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>73.49407</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>MOUNTDEC <a class="footnote-reference brackets" href="#id374" id="id216">1</a></p></td>
+<tr class="row-even"><td><p>MOUNTDEC <a class="footnote-reference brackets" href="#id374" id="id216" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>31.962703</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>MOUNTEL <a class="footnote-reference brackets" href="#id374" id="id217">1</a></p></td>
+<tr class="row-odd"><td><p>MOUNTEL <a class="footnote-reference brackets" href="#id374" id="id217" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>41.035778</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>MOUNTHA <a class="footnote-reference brackets" href="#id374" id="id218">1</a></p></td>
+<tr class="row-even"><td><p>MOUNTHA <a class="footnote-reference brackets" href="#id374" id="id218" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>-58.479517</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>INCTRL <a class="footnote-reference brackets" href="#id374" id="id219">1</a></p></td>
+<tr class="row-odd"><td><p>INCTRL <a class="footnote-reference brackets" href="#id374" id="id219" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>F</p></td>
 <td><p>bool</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>INPOS <a class="footnote-reference brackets" href="#id374" id="id220">1</a></p></td>
+<tr class="row-even"><td><p>INPOS <a class="footnote-reference brackets" href="#id374" id="id220" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>T</p></td>
 <td><p>bool</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>MNTOFFD <a class="footnote-reference brackets" href="#id374" id="id221">1</a></p></td>
+<tr class="row-odd"><td><p>MNTOFFD <a class="footnote-reference brackets" href="#id374" id="id221" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>-0.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>MNTOFFR <a class="footnote-reference brackets" href="#id374" id="id222">1</a></p></td>
+<tr class="row-even"><td><p>MNTOFFR <a class="footnote-reference brackets" href="#id374" id="id222" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>-0.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>PARALLAC <a class="footnote-reference brackets" href="#id374" id="id223">1</a></p></td>
+<tr class="row-odd"><td><p>PARALLAC <a class="footnote-reference brackets" href="#id374" id="id223" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>-73.492813</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>SKYDEC <a class="footnote-reference brackets" href="#id374" id="id224">1</a></p></td>
+<tr class="row-even"><td><p>SKYDEC <a class="footnote-reference brackets" href="#id374" id="id224" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>31.962703</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>SKYRA <a class="footnote-reference brackets" href="#id374" id="id225">1</a></p></td>
+<tr class="row-odd"><td><p>SKYRA <a class="footnote-reference brackets" href="#id374" id="id225" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>12.901561</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TARGTDEC <a class="footnote-reference brackets" href="#id374" id="id226">1</a></p></td>
+<tr class="row-even"><td><p>TARGTDEC <a class="footnote-reference brackets" href="#id374" id="id226" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>31.963299</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TARGTRA <a class="footnote-reference brackets" href="#id374" id="id227">1</a></p></td>
+<tr class="row-odd"><td><p>TARGTRA <a class="footnote-reference brackets" href="#id374" id="id227" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>6.305086</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TARGTAZ <a class="footnote-reference brackets" href="#id374" id="id228">1</a></p></td>
+<tr class="row-even"><td><p>TARGTAZ <a class="footnote-reference brackets" href="#id374" id="id228" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>75.558672</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TARGTEL <a class="footnote-reference brackets" href="#id374" id="id229">1</a></p></td>
+<tr class="row-odd"><td><p>TARGTEL <a class="footnote-reference brackets" href="#id374" id="id229" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>46.429343</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TRGTOFFD <a class="footnote-reference brackets" href="#id374" id="id230">1</a></p></td>
+<tr class="row-even"><td><p>TRGTOFFD <a class="footnote-reference brackets" href="#id374" id="id230" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TRGTOFFR <a class="footnote-reference brackets" href="#id374" id="id231">1</a></p></td>
+<tr class="row-odd"><td><p>TRGTOFFR <a class="footnote-reference brackets" href="#id374" id="id231" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>ZD <a class="footnote-reference brackets" href="#id374" id="id232">1</a></p></td>
+<tr class="row-even"><td><p>ZD <a class="footnote-reference brackets" href="#id374" id="id232" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>48.964222</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TCSST <a class="footnote-reference brackets" href="#id374" id="id233">1</a></p></td>
+<tr class="row-odd"><td><p>TCSST <a class="footnote-reference brackets" href="#id374" id="id233" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>20:57:41.291</p></td>
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TCSMJD <a class="footnote-reference brackets" href="#id374" id="id234">1</a></p></td>
+<tr class="row-even"><td><p>TCSMJD <a class="footnote-reference brackets" href="#id374" id="id234" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>59203.933945</p></td>
 <td><p>float</p></td>
 <td></td>
@@ -3543,67 +3503,67 @@ Prior to desispec/0.24.0 and software release 18.9, the MASK HDU was compressed.
 <td><p>bool</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>ADC1PHI <a class="footnote-reference brackets" href="#id374" id="id235">1</a></p></td>
+<tr class="row-even"><td><p>ADC1PHI <a class="footnote-reference brackets" href="#id374" id="id235" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>114.980003</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>ADC2PHI <a class="footnote-reference brackets" href="#id374" id="id236">1</a></p></td>
+<tr class="row-odd"><td><p>ADC2PHI <a class="footnote-reference brackets" href="#id374" id="id236" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>162.869907</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>ADC1HOME <a class="footnote-reference brackets" href="#id374" id="id237">1</a></p></td>
+<tr class="row-even"><td><p>ADC1HOME <a class="footnote-reference brackets" href="#id374" id="id237" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>F</p></td>
 <td><p>bool</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>ADC2HOME <a class="footnote-reference brackets" href="#id374" id="id238">1</a></p></td>
+<tr class="row-odd"><td><p>ADC2HOME <a class="footnote-reference brackets" href="#id374" id="id238" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>F</p></td>
 <td><p>bool</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>ADC1NREV <a class="footnote-reference brackets" href="#id374" id="id239">1</a></p></td>
+<tr class="row-even"><td><p>ADC1NREV <a class="footnote-reference brackets" href="#id374" id="id239" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>ADC2NREV <a class="footnote-reference brackets" href="#id374" id="id240">1</a></p></td>
+<tr class="row-odd"><td><p>ADC2NREV <a class="footnote-reference brackets" href="#id374" id="id240" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>-1.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>ADC1STAT <a class="footnote-reference brackets" href="#id374" id="id241">1</a></p></td>
+<tr class="row-even"><td><p>ADC1STAT <a class="footnote-reference brackets" href="#id374" id="id241" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>STOPPED</p></td>
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>ADC2STAT <a class="footnote-reference brackets" href="#id374" id="id242">1</a></p></td>
+<tr class="row-odd"><td><p>ADC2STAT <a class="footnote-reference brackets" href="#id374" id="id242" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>STOPPED</p></td>
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>HEXPOS <a class="footnote-reference brackets" href="#id374" id="id243">1</a></p></td>
+<tr class="row-even"><td><p>HEXPOS <a class="footnote-reference brackets" href="#id374" id="id243" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>1163.9,-689.8,370.4,13.8,24.2,-0.0</p></td>
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>HEXTRIM <a class="footnote-reference brackets" href="#id374" id="id244">1</a></p></td>
+<tr class="row-odd"><td><p>HEXTRIM <a class="footnote-reference brackets" href="#id374" id="id244" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0,0.0,0.0,0.0,0.0,0.0</p></td>
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>ROTOFFST <a class="footnote-reference brackets" href="#id374" id="id245">1</a></p></td>
+<tr class="row-even"><td><p>ROTOFFST <a class="footnote-reference brackets" href="#id374" id="id245" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>ROTENBLD <a class="footnote-reference brackets" href="#id374" id="id246">1</a></p></td>
+<tr class="row-odd"><td><p>ROTENBLD <a class="footnote-reference brackets" href="#id374" id="id246" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>T</p></td>
 <td><p>bool</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>ROTRATE <a class="footnote-reference brackets" href="#id374" id="id247">1</a></p></td>
+<tr class="row-even"><td><p>ROTRATE <a class="footnote-reference brackets" href="#id374" id="id247" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td></td>
@@ -3618,7 +3578,7 @@ Prior to desispec/0.24.0 and software release 18.9, the MASK HDU was compressed.
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>USEAOS <a class="footnote-reference brackets" href="#id374" id="id248">1</a></p></td>
+<tr class="row-odd"><td><p>USEAOS <a class="footnote-reference brackets" href="#id374" id="id248" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>F</p></td>
 <td><p>bool</p></td>
 <td></td>
@@ -3628,547 +3588,547 @@ Prior to desispec/0.24.0 and software release 18.9, the MASK HDU was compressed.
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>ILLSPECS <a class="footnote-reference brackets" href="#id374" id="id249">1</a></p></td>
+<tr class="row-odd"><td><p>ILLSPECS <a class="footnote-reference brackets" href="#id374" id="id249" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>SP0,SP1,SP2,SP3,SP4,SP5,SP6,SP7,SP8,SP9</p></td>
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>CCDSPECS <a class="footnote-reference brackets" href="#id374" id="id250">1</a></p></td>
+<tr class="row-even"><td><p>CCDSPECS <a class="footnote-reference brackets" href="#id374" id="id250" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>SP0,SP1,SP2,SP3,SP4,SP5,SP6,SP7,SP8,SP9</p></td>
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TDEWPNT <a class="footnote-reference brackets" href="#id374" id="id251">1</a></p></td>
+<tr class="row-odd"><td><p>TDEWPNT <a class="footnote-reference brackets" href="#id374" id="id251" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>-18.2</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TAIRFLOW <a class="footnote-reference brackets" href="#id374" id="id252">1</a></p></td>
+<tr class="row-even"><td><p>TAIRFLOW <a class="footnote-reference brackets" href="#id374" id="id252" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>1.121</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TAIRITMP <a class="footnote-reference brackets" href="#id374" id="id253">1</a></p></td>
+<tr class="row-odd"><td><p>TAIRITMP <a class="footnote-reference brackets" href="#id374" id="id253" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>10.5</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TAIROTMP <a class="footnote-reference brackets" href="#id374" id="id254">1</a></p></td>
+<tr class="row-even"><td><p>TAIROTMP <a class="footnote-reference brackets" href="#id374" id="id254" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>5.5</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TAIRTEMP <a class="footnote-reference brackets" href="#id374" id="id255">1</a></p></td>
+<tr class="row-odd"><td><p>TAIRTEMP <a class="footnote-reference brackets" href="#id374" id="id255" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>11.86</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TCASITMP <a class="footnote-reference brackets" href="#id374" id="id256">1</a></p></td>
+<tr class="row-even"><td><p>TCASITMP <a class="footnote-reference brackets" href="#id374" id="id256" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TCASOTMP <a class="footnote-reference brackets" href="#id374" id="id257">1</a></p></td>
+<tr class="row-odd"><td><p>TCASOTMP <a class="footnote-reference brackets" href="#id374" id="id257" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>9.6</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TCSITEMP <a class="footnote-reference brackets" href="#id374" id="id258">1</a></p></td>
+<tr class="row-even"><td><p>TCSITEMP <a class="footnote-reference brackets" href="#id374" id="id258" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.4</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TCSOTEMP <a class="footnote-reference brackets" href="#id374" id="id259">1</a></p></td>
+<tr class="row-odd"><td><p>TCSOTEMP <a class="footnote-reference brackets" href="#id374" id="id259" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>10.2</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TCIBTEMP <a class="footnote-reference brackets" href="#id374" id="id260">1</a></p></td>
+<tr class="row-even"><td><p>TCIBTEMP <a class="footnote-reference brackets" href="#id374" id="id260" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TCIMTEMP <a class="footnote-reference brackets" href="#id374" id="id261">1</a></p></td>
+<tr class="row-odd"><td><p>TCIMTEMP <a class="footnote-reference brackets" href="#id374" id="id261" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TCITTEMP <a class="footnote-reference brackets" href="#id374" id="id262">1</a></p></td>
+<tr class="row-even"><td><p>TCITTEMP <a class="footnote-reference brackets" href="#id374" id="id262" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TCOSTEMP <a class="footnote-reference brackets" href="#id374" id="id263">1</a></p></td>
+<tr class="row-odd"><td><p>TCOSTEMP <a class="footnote-reference brackets" href="#id374" id="id263" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TCOWTEMP <a class="footnote-reference brackets" href="#id374" id="id264">1</a></p></td>
+<tr class="row-even"><td><p>TCOWTEMP <a class="footnote-reference brackets" href="#id374" id="id264" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TDBTEMP <a class="footnote-reference brackets" href="#id374" id="id265">1</a></p></td>
+<tr class="row-odd"><td><p>TDBTEMP <a class="footnote-reference brackets" href="#id374" id="id265" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.4</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TFLOWIN <a class="footnote-reference brackets" href="#id374" id="id266">1</a></p></td>
+<tr class="row-even"><td><p>TFLOWIN <a class="footnote-reference brackets" href="#id374" id="id266" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.7</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TFLOWOUT <a class="footnote-reference brackets" href="#id374" id="id267">1</a></p></td>
+<tr class="row-odd"><td><p>TFLOWOUT <a class="footnote-reference brackets" href="#id374" id="id267" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>8.3</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TGLYCOLI <a class="footnote-reference brackets" href="#id374" id="id268">1</a></p></td>
+<tr class="row-even"><td><p>TGLYCOLI <a class="footnote-reference brackets" href="#id374" id="id268" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>-1.8</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TGLYCOLO <a class="footnote-reference brackets" href="#id374" id="id269">1</a></p></td>
+<tr class="row-odd"><td><p>TGLYCOLO <a class="footnote-reference brackets" href="#id374" id="id269" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>THINGES <a class="footnote-reference brackets" href="#id374" id="id270">1</a></p></td>
+<tr class="row-even"><td><p>THINGES <a class="footnote-reference brackets" href="#id374" id="id270" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>12.9</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>THINGEW <a class="footnote-reference brackets" href="#id374" id="id271">1</a></p></td>
+<tr class="row-odd"><td><p>THINGEW <a class="footnote-reference brackets" href="#id374" id="id271" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>11.7</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TPMAVERT <a class="footnote-reference brackets" href="#id374" id="id272">1</a></p></td>
+<tr class="row-even"><td><p>TPMAVERT <a class="footnote-reference brackets" href="#id374" id="id272" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.304</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TPMDESIT <a class="footnote-reference brackets" href="#id374" id="id273">1</a></p></td>
+<tr class="row-odd"><td><p>TPMDESIT <a class="footnote-reference brackets" href="#id374" id="id273" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TPMEIBT <a class="footnote-reference brackets" href="#id374" id="id274">1</a></p></td>
+<tr class="row-even"><td><p>TPMEIBT <a class="footnote-reference brackets" href="#id374" id="id274" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.3</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TPMEITT <a class="footnote-reference brackets" href="#id374" id="id275">1</a></p></td>
+<tr class="row-odd"><td><p>TPMEITT <a class="footnote-reference brackets" href="#id374" id="id275" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.3</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TPMEOBT <a class="footnote-reference brackets" href="#id374" id="id276">1</a></p></td>
+<tr class="row-even"><td><p>TPMEOBT <a class="footnote-reference brackets" href="#id374" id="id276" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.4</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TPMEOTT <a class="footnote-reference brackets" href="#id374" id="id277">1</a></p></td>
+<tr class="row-odd"><td><p>TPMEOTT <a class="footnote-reference brackets" href="#id374" id="id277" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.2</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TPMNIBT <a class="footnote-reference brackets" href="#id374" id="id278">1</a></p></td>
+<tr class="row-even"><td><p>TPMNIBT <a class="footnote-reference brackets" href="#id374" id="id278" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.4</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TPMNITT <a class="footnote-reference brackets" href="#id374" id="id279">1</a></p></td>
+<tr class="row-odd"><td><p>TPMNITT <a class="footnote-reference brackets" href="#id374" id="id279" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.3</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TPMNOBT <a class="footnote-reference brackets" href="#id374" id="id280">1</a></p></td>
+<tr class="row-even"><td><p>TPMNOBT <a class="footnote-reference brackets" href="#id374" id="id280" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.7</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TPMNOTT <a class="footnote-reference brackets" href="#id374" id="id281">1</a></p></td>
+<tr class="row-odd"><td><p>TPMNOTT <a class="footnote-reference brackets" href="#id374" id="id281" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.6</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TPMRTDT <a class="footnote-reference brackets" href="#id374" id="id282">1</a></p></td>
+<tr class="row-even"><td><p>TPMRTDT <a class="footnote-reference brackets" href="#id374" id="id282" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>6.96</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TPMSIBT <a class="footnote-reference brackets" href="#id374" id="id283">1</a></p></td>
+<tr class="row-odd"><td><p>TPMSIBT <a class="footnote-reference brackets" href="#id374" id="id283" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.4</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TPMSITT <a class="footnote-reference brackets" href="#id374" id="id284">1</a></p></td>
+<tr class="row-even"><td><p>TPMSITT <a class="footnote-reference brackets" href="#id374" id="id284" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TPMSOBT <a class="footnote-reference brackets" href="#id374" id="id285">1</a></p></td>
+<tr class="row-odd"><td><p>TPMSOBT <a class="footnote-reference brackets" href="#id374" id="id285" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.4</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TPMSOTT <a class="footnote-reference brackets" href="#id374" id="id286">1</a></p></td>
+<tr class="row-even"><td><p>TPMSOTT <a class="footnote-reference brackets" href="#id374" id="id286" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.2</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TPMSTAT <a class="footnote-reference brackets" href="#id374" id="id287">1</a></p></td>
+<tr class="row-odd"><td><p>TPMSTAT <a class="footnote-reference brackets" href="#id374" id="id287" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>soft air</p></td>
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TPMWIBT <a class="footnote-reference brackets" href="#id374" id="id288">1</a></p></td>
+<tr class="row-even"><td><p>TPMWIBT <a class="footnote-reference brackets" href="#id374" id="id288" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.2</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TPMWITT <a class="footnote-reference brackets" href="#id374" id="id289">1</a></p></td>
+<tr class="row-odd"><td><p>TPMWITT <a class="footnote-reference brackets" href="#id374" id="id289" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.1</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TPMWOBT <a class="footnote-reference brackets" href="#id374" id="id290">1</a></p></td>
+<tr class="row-even"><td><p>TPMWOBT <a class="footnote-reference brackets" href="#id374" id="id290" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.6</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TPMWOTT <a class="footnote-reference brackets" href="#id374" id="id291">1</a></p></td>
+<tr class="row-odd"><td><p>TPMWOTT <a class="footnote-reference brackets" href="#id374" id="id291" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>8.1</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TPCITEMP <a class="footnote-reference brackets" href="#id374" id="id292">1</a></p></td>
+<tr class="row-even"><td><p>TPCITEMP <a class="footnote-reference brackets" href="#id374" id="id292" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.7</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TPCOTEMP <a class="footnote-reference brackets" href="#id374" id="id293">1</a></p></td>
+<tr class="row-odd"><td><p>TPCOTEMP <a class="footnote-reference brackets" href="#id374" id="id293" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.7</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TPR1HUM <a class="footnote-reference brackets" href="#id374" id="id294">1</a></p></td>
+<tr class="row-even"><td><p>TPR1HUM <a class="footnote-reference brackets" href="#id374" id="id294" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TPR1TEMP <a class="footnote-reference brackets" href="#id374" id="id295">1</a></p></td>
+<tr class="row-odd"><td><p>TPR1TEMP <a class="footnote-reference brackets" href="#id374" id="id295" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TPR2HUM <a class="footnote-reference brackets" href="#id374" id="id296">1</a></p></td>
+<tr class="row-even"><td><p>TPR2HUM <a class="footnote-reference brackets" href="#id374" id="id296" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TPR2TEMP <a class="footnote-reference brackets" href="#id374" id="id297">1</a></p></td>
+<tr class="row-odd"><td><p>TPR2TEMP <a class="footnote-reference brackets" href="#id374" id="id297" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TSERVO <a class="footnote-reference brackets" href="#id374" id="id298">1</a></p></td>
+<tr class="row-even"><td><p>TSERVO <a class="footnote-reference brackets" href="#id374" id="id298" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TTRSTEMP <a class="footnote-reference brackets" href="#id374" id="id299">1</a></p></td>
+<tr class="row-odd"><td><p>TTRSTEMP <a class="footnote-reference brackets" href="#id374" id="id299" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>13.2</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TTRWTEMP <a class="footnote-reference brackets" href="#id374" id="id300">1</a></p></td>
+<tr class="row-even"><td><p>TTRWTEMP <a class="footnote-reference brackets" href="#id374" id="id300" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>13.4</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TTRUETBT <a class="footnote-reference brackets" href="#id374" id="id301">1</a></p></td>
+<tr class="row-odd"><td><p>TTRUETBT <a class="footnote-reference brackets" href="#id374" id="id301" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>-4.8</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TTRUETTT <a class="footnote-reference brackets" href="#id374" id="id302">1</a></p></td>
+<tr class="row-even"><td><p>TTRUETTT <a class="footnote-reference brackets" href="#id374" id="id302" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>11.5</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TTRUNTBT <a class="footnote-reference brackets" href="#id374" id="id303">1</a></p></td>
+<tr class="row-odd"><td><p>TTRUNTBT <a class="footnote-reference brackets" href="#id374" id="id303" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>10.9</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TTRUNTTT <a class="footnote-reference brackets" href="#id374" id="id304">1</a></p></td>
+<tr class="row-even"><td><p>TTRUNTTT <a class="footnote-reference brackets" href="#id374" id="id304" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>11.8</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TTRUSTBT <a class="footnote-reference brackets" href="#id374" id="id305">1</a></p></td>
+<tr class="row-odd"><td><p>TTRUSTBT <a class="footnote-reference brackets" href="#id374" id="id305" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>11.1</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TTRUSTST <a class="footnote-reference brackets" href="#id374" id="id306">1</a></p></td>
+<tr class="row-even"><td><p>TTRUSTST <a class="footnote-reference brackets" href="#id374" id="id306" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>10.8</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TTRUSTTT <a class="footnote-reference brackets" href="#id374" id="id307">1</a></p></td>
+<tr class="row-odd"><td><p>TTRUSTTT <a class="footnote-reference brackets" href="#id374" id="id307" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>12.4</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TTRUTSBT <a class="footnote-reference brackets" href="#id374" id="id308">1</a></p></td>
+<tr class="row-even"><td><p>TTRUTSBT <a class="footnote-reference brackets" href="#id374" id="id308" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>13.6</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TTRUTSMT <a class="footnote-reference brackets" href="#id374" id="id309">1</a></p></td>
+<tr class="row-odd"><td><p>TTRUTSMT <a class="footnote-reference brackets" href="#id374" id="id309" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>13.7</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TTRUTSTT <a class="footnote-reference brackets" href="#id374" id="id310">1</a></p></td>
+<tr class="row-even"><td><p>TTRUTSTT <a class="footnote-reference brackets" href="#id374" id="id310" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>12.5</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TTRUWTBT <a class="footnote-reference brackets" href="#id374" id="id311">1</a></p></td>
+<tr class="row-odd"><td><p>TTRUWTBT <a class="footnote-reference brackets" href="#id374" id="id311" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>10.9</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TTRUWTTT <a class="footnote-reference brackets" href="#id374" id="id312">1</a></p></td>
+<tr class="row-even"><td><p>TTRUWTTT <a class="footnote-reference brackets" href="#id374" id="id312" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>11.6</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>ALARM <a class="footnote-reference brackets" href="#id374" id="id313">1</a></p></td>
+<tr class="row-odd"><td><p>ALARM <a class="footnote-reference brackets" href="#id374" id="id313" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>F</p></td>
 <td><p>bool</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>ALARM-ON <a class="footnote-reference brackets" href="#id374" id="id314">1</a></p></td>
+<tr class="row-even"><td><p>ALARM-ON <a class="footnote-reference brackets" href="#id374" id="id314" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>F</p></td>
 <td><p>bool</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>BATTERY <a class="footnote-reference brackets" href="#id374" id="id315">1</a></p></td>
+<tr class="row-odd"><td><p>BATTERY <a class="footnote-reference brackets" href="#id374" id="id315" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>100.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>SECLEFT <a class="footnote-reference brackets" href="#id374" id="id316">1</a></p></td>
+<tr class="row-even"><td><p>SECLEFT <a class="footnote-reference brackets" href="#id374" id="id316" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>5772.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>UPSSTAT <a class="footnote-reference brackets" href="#id374" id="id317">1</a></p></td>
+<tr class="row-odd"><td><p>UPSSTAT <a class="footnote-reference brackets" href="#id374" id="id317" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>System Normal - On Line(7)</p></td>
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>INAMPS <a class="footnote-reference brackets" href="#id374" id="id318">1</a></p></td>
+<tr class="row-even"><td><p>INAMPS <a class="footnote-reference brackets" href="#id374" id="id318" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>64.3</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>OUTWATTS <a class="footnote-reference brackets" href="#id374" id="id319">1</a></p></td>
+<tr class="row-odd"><td><p>OUTWATTS <a class="footnote-reference brackets" href="#id374" id="id319" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>4500.0,6800.0,4100.0</p></td>
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>COMPDEW <a class="footnote-reference brackets" href="#id374" id="id320">1</a></p></td>
+<tr class="row-even"><td><p>COMPDEW <a class="footnote-reference brackets" href="#id374" id="id320" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>-12.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>COMPHUM <a class="footnote-reference brackets" href="#id374" id="id321">1</a></p></td>
+<tr class="row-odd"><td><p>COMPHUM <a class="footnote-reference brackets" href="#id374" id="id321" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.8</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>COMPAMB <a class="footnote-reference brackets" href="#id374" id="id322">1</a></p></td>
+<tr class="row-even"><td><p>COMPAMB <a class="footnote-reference brackets" href="#id374" id="id322" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>19.4</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>COMPTEMP <a class="footnote-reference brackets" href="#id374" id="id323">1</a></p></td>
+<tr class="row-odd"><td><p>COMPTEMP <a class="footnote-reference brackets" href="#id374" id="id323" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>24.9</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>DEWPOINT <a class="footnote-reference brackets" href="#id374" id="id324">1</a></p></td>
+<tr class="row-even"><td><p>DEWPOINT <a class="footnote-reference brackets" href="#id374" id="id324" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>5.7</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>HUMIDITY <a class="footnote-reference brackets" href="#id374" id="id325">1</a></p></td>
+<tr class="row-odd"><td><p>HUMIDITY <a class="footnote-reference brackets" href="#id374" id="id325" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>7.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>PRESSURE <a class="footnote-reference brackets" href="#id374" id="id326">1</a></p></td>
+<tr class="row-even"><td><p>PRESSURE <a class="footnote-reference brackets" href="#id374" id="id326" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>794.7</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>OUTTEMP <a class="footnote-reference brackets" href="#id374" id="id327">1</a></p></td>
+<tr class="row-odd"><td><p>OUTTEMP <a class="footnote-reference brackets" href="#id374" id="id327" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>WINDDIR <a class="footnote-reference brackets" href="#id374" id="id328">1</a></p></td>
+<tr class="row-even"><td><p>WINDDIR <a class="footnote-reference brackets" href="#id374" id="id328" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>82.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>WINDSPD <a class="footnote-reference brackets" href="#id374" id="id329">1</a></p></td>
+<tr class="row-odd"><td><p>WINDSPD <a class="footnote-reference brackets" href="#id374" id="id329" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>23.3</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>GUST <a class="footnote-reference brackets" href="#id374" id="id330">1</a></p></td>
+<tr class="row-even"><td><p>GUST <a class="footnote-reference brackets" href="#id374" id="id330" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>18.1</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>AMNIENTN <a class="footnote-reference brackets" href="#id374" id="id331">1</a></p></td>
+<tr class="row-odd"><td><p>AMNIENTN <a class="footnote-reference brackets" href="#id374" id="id331" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>13.3</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>CFLOOR <a class="footnote-reference brackets" href="#id374" id="id332">1</a></p></td>
+<tr class="row-even"><td><p>CFLOOR <a class="footnote-reference brackets" href="#id374" id="id332" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>8.1</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>NWALLIN <a class="footnote-reference brackets" href="#id374" id="id333">1</a></p></td>
+<tr class="row-odd"><td><p>NWALLIN <a class="footnote-reference brackets" href="#id374" id="id333" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>13.6</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>NWALLOUT <a class="footnote-reference brackets" href="#id374" id="id334">1</a></p></td>
+<tr class="row-even"><td><p>NWALLOUT <a class="footnote-reference brackets" href="#id374" id="id334" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>8.8</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>WWALLIN <a class="footnote-reference brackets" href="#id374" id="id335">1</a></p></td>
+<tr class="row-odd"><td><p>WWALLIN <a class="footnote-reference brackets" href="#id374" id="id335" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>12.8</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>WWALLOUT <a class="footnote-reference brackets" href="#id374" id="id336">1</a></p></td>
+<tr class="row-even"><td><p>WWALLOUT <a class="footnote-reference brackets" href="#id374" id="id336" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>9.4</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>AMBIENTS <a class="footnote-reference brackets" href="#id374" id="id337">1</a></p></td>
+<tr class="row-odd"><td><p>AMBIENTS <a class="footnote-reference brackets" href="#id374" id="id337" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>14.6</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>FLOOR <a class="footnote-reference brackets" href="#id374" id="id338">1</a></p></td>
+<tr class="row-even"><td><p>FLOOR <a class="footnote-reference brackets" href="#id374" id="id338" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>12.3</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>EWALLCMP <a class="footnote-reference brackets" href="#id374" id="id339">1</a></p></td>
+<tr class="row-odd"><td><p>EWALLCMP <a class="footnote-reference brackets" href="#id374" id="id339" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>10.2</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>EWALLCOU <a class="footnote-reference brackets" href="#id374" id="id340">1</a></p></td>
+<tr class="row-even"><td><p>EWALLCOU <a class="footnote-reference brackets" href="#id374" id="id340" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>9.5</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>ROOF <a class="footnote-reference brackets" href="#id374" id="id341">1</a></p></td>
+<tr class="row-odd"><td><p>ROOF <a class="footnote-reference brackets" href="#id374" id="id341" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>10.0</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>ROOFAMB <a class="footnote-reference brackets" href="#id374" id="id342">1</a></p></td>
+<tr class="row-even"><td><p>ROOFAMB <a class="footnote-reference brackets" href="#id374" id="id342" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>9.9</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>DOMEBLOW <a class="footnote-reference brackets" href="#id374" id="id343">1</a></p></td>
+<tr class="row-odd"><td><p>DOMEBLOW <a class="footnote-reference brackets" href="#id374" id="id343" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>12.1</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>DOMEBUP <a class="footnote-reference brackets" href="#id374" id="id344">1</a></p></td>
+<tr class="row-even"><td><p>DOMEBUP <a class="footnote-reference brackets" href="#id374" id="id344" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>12.5</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>DOMELLOW <a class="footnote-reference brackets" href="#id374" id="id345">1</a></p></td>
+<tr class="row-odd"><td><p>DOMELLOW <a class="footnote-reference brackets" href="#id374" id="id345" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>14.4</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>DOMELUP <a class="footnote-reference brackets" href="#id374" id="id346">1</a></p></td>
+<tr class="row-even"><td><p>DOMELUP <a class="footnote-reference brackets" href="#id374" id="id346" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>19.3</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>DOMERLOW <a class="footnote-reference brackets" href="#id374" id="id347">1</a></p></td>
+<tr class="row-odd"><td><p>DOMERLOW <a class="footnote-reference brackets" href="#id374" id="id347" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>12.3</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>DOMERUP <a class="footnote-reference brackets" href="#id374" id="id348">1</a></p></td>
+<tr class="row-even"><td><p>DOMERUP <a class="footnote-reference brackets" href="#id374" id="id348" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>12.8</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>PLATFORM <a class="footnote-reference brackets" href="#id374" id="id349">1</a></p></td>
+<tr class="row-odd"><td><p>PLATFORM <a class="footnote-reference brackets" href="#id374" id="id349" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>15.3</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>SHACKC <a class="footnote-reference brackets" href="#id374" id="id350">1</a></p></td>
+<tr class="row-even"><td><p>SHACKC <a class="footnote-reference brackets" href="#id374" id="id350" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>15.2</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>SHACKW <a class="footnote-reference brackets" href="#id374" id="id351">1</a></p></td>
+<tr class="row-odd"><td><p>SHACKW <a class="footnote-reference brackets" href="#id374" id="id351" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>13.2</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>STAIRSL <a class="footnote-reference brackets" href="#id374" id="id352">1</a></p></td>
+<tr class="row-even"><td><p>STAIRSL <a class="footnote-reference brackets" href="#id374" id="id352" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>12.6</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>STAIRSM <a class="footnote-reference brackets" href="#id374" id="id353">1</a></p></td>
+<tr class="row-odd"><td><p>STAIRSM <a class="footnote-reference brackets" href="#id374" id="id353" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>13.3</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>STAIRSU <a class="footnote-reference brackets" href="#id374" id="id354">1</a></p></td>
+<tr class="row-even"><td><p>STAIRSU <a class="footnote-reference brackets" href="#id374" id="id354" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>13.6</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TELBASE <a class="footnote-reference brackets" href="#id374" id="id355">1</a></p></td>
+<tr class="row-odd"><td><p>TELBASE <a class="footnote-reference brackets" href="#id374" id="id355" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>8.5</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>UTILWALL <a class="footnote-reference brackets" href="#id374" id="id356">1</a></p></td>
+<tr class="row-even"><td><p>UTILWALL <a class="footnote-reference brackets" href="#id374" id="id356" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>11.6</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>UTILROOM <a class="footnote-reference brackets" href="#id374" id="id357">1</a></p></td>
+<tr class="row-odd"><td><p>UTILROOM <a class="footnote-reference brackets" href="#id374" id="id357" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>12.4</p></td>
 <td><p>float</p></td>
 <td></td>
@@ -4193,82 +4153,82 @@ Prior to desispec/0.24.0 and software release 18.9, the MASK HDU was compressed.
 <td><p>str</p></td>
 <td><p>data unit checksum updated 2022-01-29T01:14:37</p></td>
 </tr>
-<tr class="row-even"><td><p>SUNDEC <a class="footnote-reference brackets" href="#id374" id="id358">1</a></p></td>
+<tr class="row-even"><td><p>SUNDEC <a class="footnote-reference brackets" href="#id374" id="id358" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>18.640139</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TCSKRA <a class="footnote-reference brackets" href="#id374" id="id359">1</a></p></td>
+<tr class="row-odd"><td><p>TCSKRA <a class="footnote-reference brackets" href="#id374" id="id359" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.3 0.003 0.00003</p></td>
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>SEQSTART <a class="footnote-reference brackets" href="#id374" id="id360">1</a></p></td>
+<tr class="row-even"><td><p>SEQSTART <a class="footnote-reference brackets" href="#id374" id="id360" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>2021-05-14T01:11:54.263801</p></td>
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TCSGDEC <a class="footnote-reference brackets" href="#id374" id="id361">1</a></p></td>
+<tr class="row-odd"><td><p>TCSGDEC <a class="footnote-reference brackets" href="#id374" id="id361" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.3</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>MOONSEP <a class="footnote-reference brackets" href="#id374" id="id362">1</a></p></td>
+<tr class="row-even"><td><p>MOONSEP <a class="footnote-reference brackets" href="#id374" id="id362" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>9.334</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TCSMFDEC <a class="footnote-reference brackets" href="#id374" id="id363">1</a></p></td>
+<tr class="row-odd"><td><p>TCSMFDEC <a class="footnote-reference brackets" href="#id374" id="id363" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>1</p></td>
 <td><p>int</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TCSMFRA <a class="footnote-reference brackets" href="#id374" id="id364">1</a></p></td>
+<tr class="row-even"><td><p>TCSMFRA <a class="footnote-reference brackets" href="#id374" id="id364" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>1</p></td>
 <td><p>int</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TCSGRA <a class="footnote-reference brackets" href="#id374" id="id365">1</a></p></td>
+<tr class="row-odd"><td><p>TCSGRA <a class="footnote-reference brackets" href="#id374" id="id365" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.3</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>SUNRA <a class="footnote-reference brackets" href="#id374" id="id366">1</a></p></td>
+<tr class="row-even"><td><p>SUNRA <a class="footnote-reference brackets" href="#id374" id="id366" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>51.089577</p></td>
 <td><p>float</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>NTSSURVY <a class="footnote-reference brackets" href="#id374" id="id367">1</a></p></td>
+<tr class="row-odd"><td><p>NTSSURVY <a class="footnote-reference brackets" href="#id374" id="id367" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>na</p></td>
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TCSKDEC <a class="footnote-reference brackets" href="#id374" id="id368">1</a></p></td>
+<tr class="row-even"><td><p>TCSKDEC <a class="footnote-reference brackets" href="#id374" id="id368" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>0.3 0.003 0.00003</p></td>
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TCSPIDEC <a class="footnote-reference brackets" href="#id374" id="id369">1</a></p></td>
+<tr class="row-odd"><td><p>TCSPIDEC <a class="footnote-reference brackets" href="#id374" id="id369" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>1.0,0.0,0.0,0.0</p></td>
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>TCSPIRA <a class="footnote-reference brackets" href="#id374" id="id370">1</a></p></td>
+<tr class="row-even"><td><p>TCSPIRA <a class="footnote-reference brackets" href="#id374" id="id370" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>1.0,0.0,0.0,0.0</p></td>
 <td><p>str</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>TRANSPAR <a class="footnote-reference brackets" href="#id374" id="id371">1</a></p></td>
+<tr class="row-odd"><td><p>TRANSPAR <a class="footnote-reference brackets" href="#id374" id="id371" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>None</p></td>
 <td><p>Unknown</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>SEEING <a class="footnote-reference brackets" href="#id374" id="id372">1</a></p></td>
+<tr class="row-even"><td><p>SEEING <a class="footnote-reference brackets" href="#id374" id="id372" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>None</p></td>
 <td><p>Unknown</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>SKYLEVEL <a class="footnote-reference brackets" href="#id374" id="id373">1</a></p></td>
+<tr class="row-odd"><td><p>SKYLEVEL <a class="footnote-reference brackets" href="#id374" id="id373" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>8.153</p></td>
 <td><p>float</p></td>
 <td></td>
@@ -4277,14 +4237,8 @@ Prior to desispec/0.24.0 and software release 18.9, the MASK HDU was compressed.
 </table>
 </details></section>
 <section id="required-data-table-columns">
-<h4>Required Data Table Columns<a class="headerlink" href="#required-data-table-columns" title="Permalink to this headline">¶</a></h4>
+<h4>Required Data Table Columns<a class="headerlink" href="#required-data-table-columns" title="Permalink to this heading">¶</a></h4>
 <table class="columns docutils align-default">
-<colgroup>
-<col style="width: 48%" />
-<col style="width: 16%" />
-<col style="width: 11%" />
-<col style="width: 25%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Type</p></th>
@@ -4645,16 +4599,18 @@ Prior to desispec/0.24.0 and software release 18.9, the MASK HDU was compressed.
 </tr>
 </tbody>
 </table>
-<dl class="footnote brackets">
-<dt class="label" id="id374"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>,<a href="#id3">3</a>,<a href="#id4">4</a>,<a href="#id5">5</a>,<a href="#id6">6</a>,<a href="#id7">7</a>,<a href="#id8">8</a>,<a href="#id9">9</a>,<a href="#id10">10</a>,<a href="#id11">11</a>,<a href="#id12">12</a>,<a href="#id13">13</a>,<a href="#id14">14</a>,<a href="#id15">15</a>,<a href="#id16">16</a>,<a href="#id17">17</a>,<a href="#id18">18</a>,<a href="#id19">19</a>,<a href="#id20">20</a>,<a href="#id21">21</a>,<a href="#id22">22</a>,<a href="#id23">23</a>,<a href="#id24">24</a>,<a href="#id25">25</a>,<a href="#id26">26</a>,<a href="#id27">27</a>,<a href="#id28">28</a>,<a href="#id29">29</a>,<a href="#id30">30</a>,<a href="#id31">31</a>,<a href="#id32">32</a>,<a href="#id33">33</a>,<a href="#id34">34</a>,<a href="#id35">35</a>,<a href="#id36">36</a>,<a href="#id37">37</a>,<a href="#id38">38</a>,<a href="#id39">39</a>,<a href="#id40">40</a>,<a href="#id41">41</a>,<a href="#id42">42</a>,<a href="#id43">43</a>,<a href="#id44">44</a>,<a href="#id45">45</a>,<a href="#id46">46</a>,<a href="#id47">47</a>,<a href="#id48">48</a>,<a href="#id49">49</a>,<a href="#id50">50</a>,<a href="#id51">51</a>,<a href="#id52">52</a>,<a href="#id53">53</a>,<a href="#id54">54</a>,<a href="#id55">55</a>,<a href="#id56">56</a>,<a href="#id57">57</a>,<a href="#id58">58</a>,<a href="#id59">59</a>,<a href="#id60">60</a>,<a href="#id61">61</a>,<a href="#id62">62</a>,<a href="#id63">63</a>,<a href="#id64">64</a>,<a href="#id65">65</a>,<a href="#id66">66</a>,<a href="#id67">67</a>,<a href="#id68">68</a>,<a href="#id69">69</a>,<a href="#id70">70</a>,<a href="#id71">71</a>,<a href="#id72">72</a>,<a href="#id73">73</a>,<a href="#id74">74</a>,<a href="#id75">75</a>,<a href="#id76">76</a>,<a href="#id77">77</a>,<a href="#id78">78</a>,<a href="#id79">79</a>,<a href="#id80">80</a>,<a href="#id81">81</a>,<a href="#id82">82</a>,<a href="#id83">83</a>,<a href="#id84">84</a>,<a href="#id85">85</a>,<a href="#id86">86</a>,<a href="#id87">87</a>,<a href="#id88">88</a>,<a href="#id89">89</a>,<a href="#id90">90</a>,<a href="#id91">91</a>,<a href="#id92">92</a>,<a href="#id93">93</a>,<a href="#id94">94</a>,<a href="#id95">95</a>,<a href="#id96">96</a>,<a href="#id97">97</a>,<a href="#id98">98</a>,<a href="#id99">99</a>,<a href="#id100">100</a>,<a href="#id101">101</a>,<a href="#id102">102</a>,<a href="#id103">103</a>,<a href="#id104">104</a>,<a href="#id105">105</a>,<a href="#id106">106</a>,<a href="#id107">107</a>,<a href="#id108">108</a>,<a href="#id109">109</a>,<a href="#id110">110</a>,<a href="#id111">111</a>,<a href="#id112">112</a>,<a href="#id113">113</a>,<a href="#id114">114</a>,<a href="#id115">115</a>,<a href="#id116">116</a>,<a href="#id117">117</a>,<a href="#id118">118</a>,<a href="#id119">119</a>,<a href="#id120">120</a>,<a href="#id121">121</a>,<a href="#id122">122</a>,<a href="#id123">123</a>,<a href="#id124">124</a>,<a href="#id125">125</a>,<a href="#id126">126</a>,<a href="#id127">127</a>,<a href="#id128">128</a>,<a href="#id129">129</a>,<a href="#id130">130</a>,<a href="#id131">131</a>,<a href="#id132">132</a>,<a href="#id133">133</a>,<a href="#id134">134</a>,<a href="#id135">135</a>,<a href="#id136">136</a>,<a href="#id137">137</a>,<a href="#id138">138</a>,<a href="#id139">139</a>,<a href="#id140">140</a>,<a href="#id141">141</a>,<a href="#id142">142</a>,<a href="#id143">143</a>,<a href="#id144">144</a>,<a href="#id145">145</a>,<a href="#id146">146</a>,<a href="#id147">147</a>,<a href="#id148">148</a>,<a href="#id149">149</a>,<a href="#id150">150</a>,<a href="#id151">151</a>,<a href="#id152">152</a>,<a href="#id153">153</a>,<a href="#id154">154</a>,<a href="#id155">155</a>,<a href="#id156">156</a>,<a href="#id157">157</a>,<a href="#id158">158</a>,<a href="#id159">159</a>,<a href="#id160">160</a>,<a href="#id161">161</a>,<a href="#id162">162</a>,<a href="#id163">163</a>,<a href="#id164">164</a>,<a href="#id165">165</a>,<a href="#id166">166</a>,<a href="#id167">167</a>,<a href="#id168">168</a>,<a href="#id169">169</a>,<a href="#id170">170</a>,<a href="#id171">171</a>,<a href="#id172">172</a>,<a href="#id173">173</a>,<a href="#id174">174</a>,<a href="#id175">175</a>,<a href="#id176">176</a>,<a href="#id177">177</a>,<a href="#id178">178</a>,<a href="#id179">179</a>,<a href="#id180">180</a>,<a href="#id181">181</a>,<a href="#id182">182</a>,<a href="#id183">183</a>,<a href="#id184">184</a>,<a href="#id190">185</a>,<a href="#id191">186</a>,<a href="#id192">187</a>,<a href="#id193">188</a>,<a href="#id194">189</a>,<a href="#id195">190</a>,<a href="#id196">191</a>,<a href="#id197">192</a>,<a href="#id198">193</a>,<a href="#id199">194</a>,<a href="#id200">195</a>,<a href="#id201">196</a>,<a href="#id202">197</a>,<a href="#id203">198</a>,<a href="#id204">199</a>,<a href="#id205">200</a>,<a href="#id206">201</a>,<a href="#id207">202</a>,<a href="#id208">203</a>,<a href="#id209">204</a>,<a href="#id210">205</a>,<a href="#id211">206</a>,<a href="#id212">207</a>,<a href="#id213">208</a>,<a href="#id214">209</a>,<a href="#id215">210</a>,<a href="#id216">211</a>,<a href="#id217">212</a>,<a href="#id218">213</a>,<a href="#id219">214</a>,<a href="#id220">215</a>,<a href="#id221">216</a>,<a href="#id222">217</a>,<a href="#id223">218</a>,<a href="#id224">219</a>,<a href="#id225">220</a>,<a href="#id226">221</a>,<a href="#id227">222</a>,<a href="#id228">223</a>,<a href="#id229">224</a>,<a href="#id230">225</a>,<a href="#id231">226</a>,<a href="#id232">227</a>,<a href="#id233">228</a>,<a href="#id234">229</a>,<a href="#id235">230</a>,<a href="#id236">231</a>,<a href="#id237">232</a>,<a href="#id238">233</a>,<a href="#id239">234</a>,<a href="#id240">235</a>,<a href="#id241">236</a>,<a href="#id242">237</a>,<a href="#id243">238</a>,<a href="#id244">239</a>,<a href="#id245">240</a>,<a href="#id246">241</a>,<a href="#id247">242</a>,<a href="#id248">243</a>,<a href="#id249">244</a>,<a href="#id250">245</a>,<a href="#id251">246</a>,<a href="#id252">247</a>,<a href="#id253">248</a>,<a href="#id254">249</a>,<a href="#id255">250</a>,<a href="#id256">251</a>,<a href="#id257">252</a>,<a href="#id258">253</a>,<a href="#id259">254</a>,<a href="#id260">255</a>,<a href="#id261">256</a>,<a href="#id262">257</a>,<a href="#id263">258</a>,<a href="#id264">259</a>,<a href="#id265">260</a>,<a href="#id266">261</a>,<a href="#id267">262</a>,<a href="#id268">263</a>,<a href="#id269">264</a>,<a href="#id270">265</a>,<a href="#id271">266</a>,<a href="#id272">267</a>,<a href="#id273">268</a>,<a href="#id274">269</a>,<a href="#id275">270</a>,<a href="#id276">271</a>,<a href="#id277">272</a>,<a href="#id278">273</a>,<a href="#id279">274</a>,<a href="#id280">275</a>,<a href="#id281">276</a>,<a href="#id282">277</a>,<a href="#id283">278</a>,<a href="#id284">279</a>,<a href="#id285">280</a>,<a href="#id286">281</a>,<a href="#id287">282</a>,<a href="#id288">283</a>,<a href="#id289">284</a>,<a href="#id290">285</a>,<a href="#id291">286</a>,<a href="#id292">287</a>,<a href="#id293">288</a>,<a href="#id294">289</a>,<a href="#id295">290</a>,<a href="#id296">291</a>,<a href="#id297">292</a>,<a href="#id298">293</a>,<a href="#id299">294</a>,<a href="#id300">295</a>,<a href="#id301">296</a>,<a href="#id302">297</a>,<a href="#id303">298</a>,<a href="#id304">299</a>,<a href="#id305">300</a>,<a href="#id306">301</a>,<a href="#id307">302</a>,<a href="#id308">303</a>,<a href="#id309">304</a>,<a href="#id310">305</a>,<a href="#id311">306</a>,<a href="#id312">307</a>,<a href="#id313">308</a>,<a href="#id314">309</a>,<a href="#id315">310</a>,<a href="#id316">311</a>,<a href="#id317">312</a>,<a href="#id318">313</a>,<a href="#id319">314</a>,<a href="#id320">315</a>,<a href="#id321">316</a>,<a href="#id322">317</a>,<a href="#id323">318</a>,<a href="#id324">319</a>,<a href="#id325">320</a>,<a href="#id326">321</a>,<a href="#id327">322</a>,<a href="#id328">323</a>,<a href="#id329">324</a>,<a href="#id330">325</a>,<a href="#id331">326</a>,<a href="#id332">327</a>,<a href="#id333">328</a>,<a href="#id334">329</a>,<a href="#id335">330</a>,<a href="#id336">331</a>,<a href="#id337">332</a>,<a href="#id338">333</a>,<a href="#id339">334</a>,<a href="#id340">335</a>,<a href="#id341">336</a>,<a href="#id342">337</a>,<a href="#id343">338</a>,<a href="#id344">339</a>,<a href="#id345">340</a>,<a href="#id346">341</a>,<a href="#id347">342</a>,<a href="#id348">343</a>,<a href="#id349">344</a>,<a href="#id350">345</a>,<a href="#id351">346</a>,<a href="#id352">347</a>,<a href="#id353">348</a>,<a href="#id354">349</a>,<a href="#id355">350</a>,<a href="#id356">351</a>,<a href="#id357">352</a>,<a href="#id358">353</a>,<a href="#id359">354</a>,<a href="#id360">355</a>,<a href="#id361">356</a>,<a href="#id362">357</a>,<a href="#id363">358</a>,<a href="#id364">359</a>,<a href="#id365">360</a>,<a href="#id366">361</a>,<a href="#id367">362</a>,<a href="#id368">363</a>,<a href="#id369">364</a>,<a href="#id370">365</a>,<a href="#id371">366</a>,<a href="#id372">367</a>,<a href="#id373">368</a>)</span></dt>
-<dd><p>Optional</p>
-</dd>
-</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id374" role="note">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>,<a role="doc-backlink" href="#id3">3</a>,<a role="doc-backlink" href="#id4">4</a>,<a role="doc-backlink" href="#id5">5</a>,<a role="doc-backlink" href="#id6">6</a>,<a role="doc-backlink" href="#id7">7</a>,<a role="doc-backlink" href="#id8">8</a>,<a role="doc-backlink" href="#id9">9</a>,<a role="doc-backlink" href="#id10">10</a>,<a role="doc-backlink" href="#id11">11</a>,<a role="doc-backlink" href="#id12">12</a>,<a role="doc-backlink" href="#id13">13</a>,<a role="doc-backlink" href="#id14">14</a>,<a role="doc-backlink" href="#id15">15</a>,<a role="doc-backlink" href="#id16">16</a>,<a role="doc-backlink" href="#id17">17</a>,<a role="doc-backlink" href="#id18">18</a>,<a role="doc-backlink" href="#id19">19</a>,<a role="doc-backlink" href="#id20">20</a>,<a role="doc-backlink" href="#id21">21</a>,<a role="doc-backlink" href="#id22">22</a>,<a role="doc-backlink" href="#id23">23</a>,<a role="doc-backlink" href="#id24">24</a>,<a role="doc-backlink" href="#id25">25</a>,<a role="doc-backlink" href="#id26">26</a>,<a role="doc-backlink" href="#id27">27</a>,<a role="doc-backlink" href="#id28">28</a>,<a role="doc-backlink" href="#id29">29</a>,<a role="doc-backlink" href="#id30">30</a>,<a role="doc-backlink" href="#id31">31</a>,<a role="doc-backlink" href="#id32">32</a>,<a role="doc-backlink" href="#id33">33</a>,<a role="doc-backlink" href="#id34">34</a>,<a role="doc-backlink" href="#id35">35</a>,<a role="doc-backlink" href="#id36">36</a>,<a role="doc-backlink" href="#id37">37</a>,<a role="doc-backlink" href="#id38">38</a>,<a role="doc-backlink" href="#id39">39</a>,<a role="doc-backlink" href="#id40">40</a>,<a role="doc-backlink" href="#id41">41</a>,<a role="doc-backlink" href="#id42">42</a>,<a role="doc-backlink" href="#id43">43</a>,<a role="doc-backlink" href="#id44">44</a>,<a role="doc-backlink" href="#id45">45</a>,<a role="doc-backlink" href="#id46">46</a>,<a role="doc-backlink" href="#id47">47</a>,<a role="doc-backlink" href="#id48">48</a>,<a role="doc-backlink" href="#id49">49</a>,<a role="doc-backlink" href="#id50">50</a>,<a role="doc-backlink" href="#id51">51</a>,<a role="doc-backlink" href="#id52">52</a>,<a role="doc-backlink" href="#id53">53</a>,<a role="doc-backlink" href="#id54">54</a>,<a role="doc-backlink" href="#id55">55</a>,<a role="doc-backlink" href="#id56">56</a>,<a role="doc-backlink" href="#id57">57</a>,<a role="doc-backlink" href="#id58">58</a>,<a role="doc-backlink" href="#id59">59</a>,<a role="doc-backlink" href="#id60">60</a>,<a role="doc-backlink" href="#id61">61</a>,<a role="doc-backlink" href="#id62">62</a>,<a role="doc-backlink" href="#id63">63</a>,<a role="doc-backlink" href="#id64">64</a>,<a role="doc-backlink" href="#id65">65</a>,<a role="doc-backlink" href="#id66">66</a>,<a role="doc-backlink" href="#id67">67</a>,<a role="doc-backlink" href="#id68">68</a>,<a role="doc-backlink" href="#id69">69</a>,<a role="doc-backlink" href="#id70">70</a>,<a role="doc-backlink" href="#id71">71</a>,<a role="doc-backlink" href="#id72">72</a>,<a role="doc-backlink" href="#id73">73</a>,<a role="doc-backlink" href="#id74">74</a>,<a role="doc-backlink" href="#id75">75</a>,<a role="doc-backlink" href="#id76">76</a>,<a role="doc-backlink" href="#id77">77</a>,<a role="doc-backlink" href="#id78">78</a>,<a role="doc-backlink" href="#id79">79</a>,<a role="doc-backlink" href="#id80">80</a>,<a role="doc-backlink" href="#id81">81</a>,<a role="doc-backlink" href="#id82">82</a>,<a role="doc-backlink" href="#id83">83</a>,<a role="doc-backlink" href="#id84">84</a>,<a role="doc-backlink" href="#id85">85</a>,<a role="doc-backlink" href="#id86">86</a>,<a role="doc-backlink" href="#id87">87</a>,<a role="doc-backlink" href="#id88">88</a>,<a role="doc-backlink" href="#id89">89</a>,<a role="doc-backlink" href="#id90">90</a>,<a role="doc-backlink" href="#id91">91</a>,<a role="doc-backlink" href="#id92">92</a>,<a role="doc-backlink" href="#id93">93</a>,<a role="doc-backlink" href="#id94">94</a>,<a role="doc-backlink" href="#id95">95</a>,<a role="doc-backlink" href="#id96">96</a>,<a role="doc-backlink" href="#id97">97</a>,<a role="doc-backlink" href="#id98">98</a>,<a role="doc-backlink" href="#id99">99</a>,<a role="doc-backlink" href="#id100">100</a>,<a role="doc-backlink" href="#id101">101</a>,<a role="doc-backlink" href="#id102">102</a>,<a role="doc-backlink" href="#id103">103</a>,<a role="doc-backlink" href="#id104">104</a>,<a role="doc-backlink" href="#id105">105</a>,<a role="doc-backlink" href="#id106">106</a>,<a role="doc-backlink" href="#id107">107</a>,<a role="doc-backlink" href="#id108">108</a>,<a role="doc-backlink" href="#id109">109</a>,<a role="doc-backlink" href="#id110">110</a>,<a role="doc-backlink" href="#id111">111</a>,<a role="doc-backlink" href="#id112">112</a>,<a role="doc-backlink" href="#id113">113</a>,<a role="doc-backlink" href="#id114">114</a>,<a role="doc-backlink" href="#id115">115</a>,<a role="doc-backlink" href="#id116">116</a>,<a role="doc-backlink" href="#id117">117</a>,<a role="doc-backlink" href="#id118">118</a>,<a role="doc-backlink" href="#id119">119</a>,<a role="doc-backlink" href="#id120">120</a>,<a role="doc-backlink" href="#id121">121</a>,<a role="doc-backlink" href="#id122">122</a>,<a role="doc-backlink" href="#id123">123</a>,<a role="doc-backlink" href="#id124">124</a>,<a role="doc-backlink" href="#id125">125</a>,<a role="doc-backlink" href="#id126">126</a>,<a role="doc-backlink" href="#id127">127</a>,<a role="doc-backlink" href="#id128">128</a>,<a role="doc-backlink" href="#id129">129</a>,<a role="doc-backlink" href="#id130">130</a>,<a role="doc-backlink" href="#id131">131</a>,<a role="doc-backlink" href="#id132">132</a>,<a role="doc-backlink" href="#id133">133</a>,<a role="doc-backlink" href="#id134">134</a>,<a role="doc-backlink" href="#id135">135</a>,<a role="doc-backlink" href="#id136">136</a>,<a role="doc-backlink" href="#id137">137</a>,<a role="doc-backlink" href="#id138">138</a>,<a role="doc-backlink" href="#id139">139</a>,<a role="doc-backlink" href="#id140">140</a>,<a role="doc-backlink" href="#id141">141</a>,<a role="doc-backlink" href="#id142">142</a>,<a role="doc-backlink" href="#id143">143</a>,<a role="doc-backlink" href="#id144">144</a>,<a role="doc-backlink" href="#id145">145</a>,<a role="doc-backlink" href="#id146">146</a>,<a role="doc-backlink" href="#id147">147</a>,<a role="doc-backlink" href="#id148">148</a>,<a role="doc-backlink" href="#id149">149</a>,<a role="doc-backlink" href="#id150">150</a>,<a role="doc-backlink" href="#id151">151</a>,<a role="doc-backlink" href="#id152">152</a>,<a role="doc-backlink" href="#id153">153</a>,<a role="doc-backlink" href="#id154">154</a>,<a role="doc-backlink" href="#id155">155</a>,<a role="doc-backlink" href="#id156">156</a>,<a role="doc-backlink" href="#id157">157</a>,<a role="doc-backlink" href="#id158">158</a>,<a role="doc-backlink" href="#id159">159</a>,<a role="doc-backlink" href="#id160">160</a>,<a role="doc-backlink" href="#id161">161</a>,<a role="doc-backlink" href="#id162">162</a>,<a role="doc-backlink" href="#id163">163</a>,<a role="doc-backlink" href="#id164">164</a>,<a role="doc-backlink" href="#id165">165</a>,<a role="doc-backlink" href="#id166">166</a>,<a role="doc-backlink" href="#id167">167</a>,<a role="doc-backlink" href="#id168">168</a>,<a role="doc-backlink" href="#id169">169</a>,<a role="doc-backlink" href="#id170">170</a>,<a role="doc-backlink" href="#id171">171</a>,<a role="doc-backlink" href="#id172">172</a>,<a role="doc-backlink" href="#id173">173</a>,<a role="doc-backlink" href="#id174">174</a>,<a role="doc-backlink" href="#id175">175</a>,<a role="doc-backlink" href="#id176">176</a>,<a role="doc-backlink" href="#id177">177</a>,<a role="doc-backlink" href="#id178">178</a>,<a role="doc-backlink" href="#id179">179</a>,<a role="doc-backlink" href="#id180">180</a>,<a role="doc-backlink" href="#id181">181</a>,<a role="doc-backlink" href="#id182">182</a>,<a role="doc-backlink" href="#id183">183</a>,<a role="doc-backlink" href="#id184">184</a>,<a role="doc-backlink" href="#id190">185</a>,<a role="doc-backlink" href="#id191">186</a>,<a role="doc-backlink" href="#id192">187</a>,<a role="doc-backlink" href="#id193">188</a>,<a role="doc-backlink" href="#id194">189</a>,<a role="doc-backlink" href="#id195">190</a>,<a role="doc-backlink" href="#id196">191</a>,<a role="doc-backlink" href="#id197">192</a>,<a role="doc-backlink" href="#id198">193</a>,<a role="doc-backlink" href="#id199">194</a>,<a role="doc-backlink" href="#id200">195</a>,<a role="doc-backlink" href="#id201">196</a>,<a role="doc-backlink" href="#id202">197</a>,<a role="doc-backlink" href="#id203">198</a>,<a role="doc-backlink" href="#id204">199</a>,<a role="doc-backlink" href="#id205">200</a>,<a role="doc-backlink" href="#id206">201</a>,<a role="doc-backlink" href="#id207">202</a>,<a role="doc-backlink" href="#id208">203</a>,<a role="doc-backlink" href="#id209">204</a>,<a role="doc-backlink" href="#id210">205</a>,<a role="doc-backlink" href="#id211">206</a>,<a role="doc-backlink" href="#id212">207</a>,<a role="doc-backlink" href="#id213">208</a>,<a role="doc-backlink" href="#id214">209</a>,<a role="doc-backlink" href="#id215">210</a>,<a role="doc-backlink" href="#id216">211</a>,<a role="doc-backlink" href="#id217">212</a>,<a role="doc-backlink" href="#id218">213</a>,<a role="doc-backlink" href="#id219">214</a>,<a role="doc-backlink" href="#id220">215</a>,<a role="doc-backlink" href="#id221">216</a>,<a role="doc-backlink" href="#id222">217</a>,<a role="doc-backlink" href="#id223">218</a>,<a role="doc-backlink" href="#id224">219</a>,<a role="doc-backlink" href="#id225">220</a>,<a role="doc-backlink" href="#id226">221</a>,<a role="doc-backlink" href="#id227">222</a>,<a role="doc-backlink" href="#id228">223</a>,<a role="doc-backlink" href="#id229">224</a>,<a role="doc-backlink" href="#id230">225</a>,<a role="doc-backlink" href="#id231">226</a>,<a role="doc-backlink" href="#id232">227</a>,<a role="doc-backlink" href="#id233">228</a>,<a role="doc-backlink" href="#id234">229</a>,<a role="doc-backlink" href="#id235">230</a>,<a role="doc-backlink" href="#id236">231</a>,<a role="doc-backlink" href="#id237">232</a>,<a role="doc-backlink" href="#id238">233</a>,<a role="doc-backlink" href="#id239">234</a>,<a role="doc-backlink" href="#id240">235</a>,<a role="doc-backlink" href="#id241">236</a>,<a role="doc-backlink" href="#id242">237</a>,<a role="doc-backlink" href="#id243">238</a>,<a role="doc-backlink" href="#id244">239</a>,<a role="doc-backlink" href="#id245">240</a>,<a role="doc-backlink" href="#id246">241</a>,<a role="doc-backlink" href="#id247">242</a>,<a role="doc-backlink" href="#id248">243</a>,<a role="doc-backlink" href="#id249">244</a>,<a role="doc-backlink" href="#id250">245</a>,<a role="doc-backlink" href="#id251">246</a>,<a role="doc-backlink" href="#id252">247</a>,<a role="doc-backlink" href="#id253">248</a>,<a role="doc-backlink" href="#id254">249</a>,<a role="doc-backlink" href="#id255">250</a>,<a role="doc-backlink" href="#id256">251</a>,<a role="doc-backlink" href="#id257">252</a>,<a role="doc-backlink" href="#id258">253</a>,<a role="doc-backlink" href="#id259">254</a>,<a role="doc-backlink" href="#id260">255</a>,<a role="doc-backlink" href="#id261">256</a>,<a role="doc-backlink" href="#id262">257</a>,<a role="doc-backlink" href="#id263">258</a>,<a role="doc-backlink" href="#id264">259</a>,<a role="doc-backlink" href="#id265">260</a>,<a role="doc-backlink" href="#id266">261</a>,<a role="doc-backlink" href="#id267">262</a>,<a role="doc-backlink" href="#id268">263</a>,<a role="doc-backlink" href="#id269">264</a>,<a role="doc-backlink" href="#id270">265</a>,<a role="doc-backlink" href="#id271">266</a>,<a role="doc-backlink" href="#id272">267</a>,<a role="doc-backlink" href="#id273">268</a>,<a role="doc-backlink" href="#id274">269</a>,<a role="doc-backlink" href="#id275">270</a>,<a role="doc-backlink" href="#id276">271</a>,<a role="doc-backlink" href="#id277">272</a>,<a role="doc-backlink" href="#id278">273</a>,<a role="doc-backlink" href="#id279">274</a>,<a role="doc-backlink" href="#id280">275</a>,<a role="doc-backlink" href="#id281">276</a>,<a role="doc-backlink" href="#id282">277</a>,<a role="doc-backlink" href="#id283">278</a>,<a role="doc-backlink" href="#id284">279</a>,<a role="doc-backlink" href="#id285">280</a>,<a role="doc-backlink" href="#id286">281</a>,<a role="doc-backlink" href="#id287">282</a>,<a role="doc-backlink" href="#id288">283</a>,<a role="doc-backlink" href="#id289">284</a>,<a role="doc-backlink" href="#id290">285</a>,<a role="doc-backlink" href="#id291">286</a>,<a role="doc-backlink" href="#id292">287</a>,<a role="doc-backlink" href="#id293">288</a>,<a role="doc-backlink" href="#id294">289</a>,<a role="doc-backlink" href="#id295">290</a>,<a role="doc-backlink" href="#id296">291</a>,<a role="doc-backlink" href="#id297">292</a>,<a role="doc-backlink" href="#id298">293</a>,<a role="doc-backlink" href="#id299">294</a>,<a role="doc-backlink" href="#id300">295</a>,<a role="doc-backlink" href="#id301">296</a>,<a role="doc-backlink" href="#id302">297</a>,<a role="doc-backlink" href="#id303">298</a>,<a role="doc-backlink" href="#id304">299</a>,<a role="doc-backlink" href="#id305">300</a>,<a role="doc-backlink" href="#id306">301</a>,<a role="doc-backlink" href="#id307">302</a>,<a role="doc-backlink" href="#id308">303</a>,<a role="doc-backlink" href="#id309">304</a>,<a role="doc-backlink" href="#id310">305</a>,<a role="doc-backlink" href="#id311">306</a>,<a role="doc-backlink" href="#id312">307</a>,<a role="doc-backlink" href="#id313">308</a>,<a role="doc-backlink" href="#id314">309</a>,<a role="doc-backlink" href="#id315">310</a>,<a role="doc-backlink" href="#id316">311</a>,<a role="doc-backlink" href="#id317">312</a>,<a role="doc-backlink" href="#id318">313</a>,<a role="doc-backlink" href="#id319">314</a>,<a role="doc-backlink" href="#id320">315</a>,<a role="doc-backlink" href="#id321">316</a>,<a role="doc-backlink" href="#id322">317</a>,<a role="doc-backlink" href="#id323">318</a>,<a role="doc-backlink" href="#id324">319</a>,<a role="doc-backlink" href="#id325">320</a>,<a role="doc-backlink" href="#id326">321</a>,<a role="doc-backlink" href="#id327">322</a>,<a role="doc-backlink" href="#id328">323</a>,<a role="doc-backlink" href="#id329">324</a>,<a role="doc-backlink" href="#id330">325</a>,<a role="doc-backlink" href="#id331">326</a>,<a role="doc-backlink" href="#id332">327</a>,<a role="doc-backlink" href="#id333">328</a>,<a role="doc-backlink" href="#id334">329</a>,<a role="doc-backlink" href="#id335">330</a>,<a role="doc-backlink" href="#id336">331</a>,<a role="doc-backlink" href="#id337">332</a>,<a role="doc-backlink" href="#id338">333</a>,<a role="doc-backlink" href="#id339">334</a>,<a role="doc-backlink" href="#id340">335</a>,<a role="doc-backlink" href="#id341">336</a>,<a role="doc-backlink" href="#id342">337</a>,<a role="doc-backlink" href="#id343">338</a>,<a role="doc-backlink" href="#id344">339</a>,<a role="doc-backlink" href="#id345">340</a>,<a role="doc-backlink" href="#id346">341</a>,<a role="doc-backlink" href="#id347">342</a>,<a role="doc-backlink" href="#id348">343</a>,<a role="doc-backlink" href="#id349">344</a>,<a role="doc-backlink" href="#id350">345</a>,<a role="doc-backlink" href="#id351">346</a>,<a role="doc-backlink" href="#id352">347</a>,<a role="doc-backlink" href="#id353">348</a>,<a role="doc-backlink" href="#id354">349</a>,<a role="doc-backlink" href="#id355">350</a>,<a role="doc-backlink" href="#id356">351</a>,<a role="doc-backlink" href="#id357">352</a>,<a role="doc-backlink" href="#id358">353</a>,<a role="doc-backlink" href="#id359">354</a>,<a role="doc-backlink" href="#id360">355</a>,<a role="doc-backlink" href="#id361">356</a>,<a role="doc-backlink" href="#id362">357</a>,<a role="doc-backlink" href="#id363">358</a>,<a role="doc-backlink" href="#id364">359</a>,<a role="doc-backlink" href="#id365">360</a>,<a role="doc-backlink" href="#id366">361</a>,<a role="doc-backlink" href="#id367">362</a>,<a role="doc-backlink" href="#id368">363</a>,<a role="doc-backlink" href="#id369">364</a>,<a role="doc-backlink" href="#id370">365</a>,<a role="doc-backlink" href="#id371">366</a>,<a role="doc-backlink" href="#id372">367</a>,<a role="doc-backlink" href="#id373">368</a>)</span>
+<p>Optional</p>
+</aside>
+</aside>
 </section>
 </section>
 </section>
 <section id="notes-and-examples">
-<h2>Notes and Examples<a class="headerlink" href="#notes-and-examples" title="Permalink to this headline">¶</a></h2>
+<h2>Notes and Examples<a class="headerlink" href="#notes-and-examples" title="Permalink to this heading">¶</a></h2>
 <p><em>Add notes and examples here.  You can also create links to example files.</em></p>
 </section>
 </section>

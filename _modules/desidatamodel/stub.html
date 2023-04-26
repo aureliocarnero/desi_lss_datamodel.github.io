@@ -14,7 +14,9 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
@@ -49,7 +51,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../DESIMODEL/index.html">$DESIMODEL : data used for simulating DESI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../DESISURVEY_OUTPUT/index.html">$DESISURVEY_OUTPUT : outputs from desisurvey and surveysim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../PROTODESI/index.html">$PROTODESI : data and logs from the ProtoDESI campaign</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../DESI_LSS_EDA/index.html">$DESI_LSS_EDA: LSS archival data files for public releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../DESI_LSS_EDR/index.html">$DESI_LSS_EDR: LSS archival data files for public releases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bitmasks.html">Bit Masks in DESI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../datamodel.html">Contributing to desidatamodel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">desidatamodel API</a></li>
@@ -106,9 +108,9 @@
 <span class="c1">#</span>
 <span class="c1"># This is a template.</span>
 <span class="c1">#</span>
-<span class="n">rst</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="si">{titlehighlight}</span><span class="s2"></span>
-<span class="si">{title}</span><span class="s2"></span>
-<span class="si">{titlehighlight}</span><span class="s2"></span>
+<span class="n">rst</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="si">{titlehighlight}</span>
+<span class="si">{title}</span>
+<span class="si">{titlehighlight}</span>
 
 <span class="s2">:Summary: *This section should be filled in with a high-level description of</span>
 <span class="s2">    this file. In general, you should remove or replace the emphasized text</span>
@@ -124,12 +126,12 @@
 <span class="s2">Contents</span>
 <span class="s2">========</span>
 
-<span class="si">{contents_table}</span><span class="s2"></span>
+<span class="si">{contents_table}</span>
 
 <span class="s2">FITS Header Units</span>
 <span class="s2">=================</span>
 
-<span class="si">{hdu_sections}</span><span class="s2"></span>
+<span class="si">{hdu_sections}</span>
 
 <span class="s2">Notes and Examples</span>
 <span class="s2">==================</span>
@@ -139,7 +141,7 @@
 
 
 <div class="viewcode-block" id="Stub"><a class="viewcode-back" href="../../api.html#desidatamodel.stub.Stub">[docs]</a><span class="k">class</span> <span class="nc">Stub</span><span class="p">(</span><span class="n">DataModelUnit</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;This object contains metadata about a file and methods to print that</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This object contains metadata about a file and methods to print that</span>
 <span class="sd">    metadata.</span>
 
 <span class="sd">    Parameters</span>
@@ -197,7 +199,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">basef</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Base name of the file.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Base name of the file.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_basef</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_basef</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
@@ -205,7 +207,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">modelname</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Name to use for the data model file.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Name to use for the data model file.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_modelname</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">try</span><span class="p">:</span>
@@ -216,7 +218,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">filetype</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Type of file. Assumes FITS (for now) unless overridden in a subclass.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Type of file. Assumes FITS (for now) unless overridden in a subclass.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filetype</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_filetype</span> <span class="o">=</span> <span class="s1">&#39;FITS&#39;</span>
@@ -224,7 +226,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">filesize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Size of the file in human-readable format.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Size of the file in human-readable format.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filesize</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_filesize</span> <span class="o">=</span> <span class="n">file_size</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
@@ -232,7 +234,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">hdumeta</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Metadata associated with each HDU.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Metadata associated with each HDU.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hdumeta</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_hdumeta</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
@@ -273,7 +275,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">hduname</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Format of HDU names.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Format of HDU names.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hduname</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">nhdr</span> <span class="o">&gt;</span> <span class="mi">99</span><span class="p">:</span>
@@ -286,7 +288,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">contents</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;A table summarizing the HDUs.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;A table summarizing the HDUs.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_contents</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_contents</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
@@ -315,7 +317,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_contents</span>
 
 <div class="viewcode-block" id="Stub.columns"><a class="viewcode-back" href="../../api.html#desidatamodel.stub.Stub.columns">[docs]</a>    <span class="k">def</span> <span class="nf">columns</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdu</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Describe the columns of a BINTABLE HDU.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Describe the columns of a BINTABLE HDU.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -403,7 +405,7 @@
         <span class="k">return</span> <span class="n">c</span></div>
 
 <div class="viewcode-block" id="Stub.keywords"><a class="viewcode-back" href="../../api.html#desidatamodel.stub.Stub.keywords">[docs]</a>    <span class="k">def</span> <span class="nf">keywords</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdu</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;A table summarizing the interesting keywords in a particular HDU.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;A table summarizing the interesting keywords in a particular HDU.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -418,7 +420,7 @@
         <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">keywords_header</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">hdumeta</span><span class="p">[</span><span class="n">hdu</span><span class="p">][</span><span class="s1">&#39;keywords&#39;</span><span class="p">]</span></div>
 
 <div class="viewcode-block" id="Stub.colsizes"><a class="viewcode-back" href="../../api.html#desidatamodel.stub.Stub.colsizes">[docs]</a>    <span class="k">def</span> <span class="nf">colsizes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Compute the size (number of characters) of each column in a table.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute the size (number of characters) of each column in a table.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -433,7 +435,7 @@
         <span class="k">return</span> <span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">col</span><span class="p">))</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">table</span><span class="p">)]</span></div>
 
 <div class="viewcode-block" id="Stub.highlight"><a class="viewcode-back" href="../../api.html#desidatamodel.stub.Stub.highlight">[docs]</a>    <span class="k">def</span> <span class="nf">highlight</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sizes</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return reStructuredText-compatible table highlights.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return reStructuredText-compatible table highlights.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -448,7 +450,7 @@
         <span class="k">return</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;=&#39;</span><span class="o">*</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">sizes</span><span class="p">])</span></div>
 
 <div class="viewcode-block" id="Stub.colformat"><a class="viewcode-back" href="../../api.html#desidatamodel.stub.Stub.colformat">[docs]</a>    <span class="k">def</span> <span class="nf">colformat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sizes</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return a string ready to be formatted.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a string ready to be formatted.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -464,7 +466,7 @@
                          <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sizes</span><span class="p">)])</span></div>
 
 <div class="viewcode-block" id="Stub.format_table"><a class="viewcode-back" href="../../api.html#desidatamodel.stub.Stub.format_table">[docs]</a>    <span class="k">def</span> <span class="nf">format_table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Convert tabular data into reStructuredText-compatible string.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert tabular data into reStructuredText-compatible string.</span>
 
 <span class="sd">        This function assumes that `table` already has a header as the</span>
 <span class="sd">        first row.</span>
@@ -497,7 +499,7 @@
         <span class="k">return</span> <span class="n">t</span></div>
 
 <div class="viewcode-block" id="Stub.section"><a class="viewcode-back" href="../../api.html#desidatamodel.stub.Stub.section">[docs]</a>    <span class="k">def</span> <span class="nf">section</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdu</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;A string describing an HDU.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;A string describing an HDU.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -567,7 +569,7 @@
         <span class="k">return</span> <span class="n">rst</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">kw</span><span class="p">)</span>
 
 <div class="viewcode-block" id="Stub.image_format"><a class="viewcode-back" href="../../api.html#desidatamodel.stub.Stub.image_format">[docs]</a>    <span class="k">def</span> <span class="nf">image_format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdr</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Obtain format of an image HDU.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Obtain format of an image HDU.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -613,7 +615,7 @@
 
 
 <div class="viewcode-block" id="extrakey"><a class="viewcode-back" href="../../api.html#desidatamodel.stub.extrakey">[docs]</a><span class="k">def</span> <span class="nf">extrakey</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return True if key is not a boring standard FITS keyword.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return True if key is not a boring standard FITS keyword.</span>
 
 <span class="sd">    To make the data model more human readable, we don&#39;t overwhelm the output</span>
 <span class="sd">    with required keywords which are required by the FITS standard anyway, or</span>
@@ -658,7 +660,7 @@
 
 
 <div class="viewcode-block" id="file_size"><a class="viewcode-back" href="../../api.html#desidatamodel.stub.file_size">[docs]</a><span class="k">def</span> <span class="nf">file_size</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Determine file size and return string with human readable size format.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Determine file size and return string with human readable size format.</span>
 
 <span class="sd">    Adapted from stackoverflow answers for human readable size formatting.</span>
 
@@ -687,7 +689,7 @@
 
 
 <div class="viewcode-block" id="fits_column_format"><a class="viewcode-back" href="../../api.html#desidatamodel.stub.fits_column_format">[docs]</a><span class="k">def</span> <span class="nf">fits_column_format</span><span class="p">(</span><span class="nb">format</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Convert a FITS column format to a human-readable form.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert a FITS column format to a human-readable form.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -729,7 +731,7 @@
 
 
 <div class="viewcode-block" id="extract_keywords"><a class="viewcode-back" href="../../api.html#desidatamodel.stub.extract_keywords">[docs]</a><span class="k">def</span> <span class="nf">extract_keywords</span><span class="p">(</span><span class="n">hdr</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Extract interesting keywords from a FITS header.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract interesting keywords from a FITS header.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -778,7 +780,7 @@
 
 
 <div class="viewcode-block" id="read_column_descriptions"><a class="viewcode-back" href="../../api.html#desidatamodel.stub.read_column_descriptions">[docs]</a><span class="k">def</span> <span class="nf">read_column_descriptions</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Read column descriptions csv file and return dictionary</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Read column descriptions csv file and return dictionary</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        filename (str): csv filename with columns NAME,TYPE,UNITS,DESCRIPTION</span>
@@ -807,7 +809,7 @@
 
 
 <div class="viewcode-block" id="main"><a class="viewcode-back" href="../../api.html#desidatamodel.stub.main">[docs]</a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Entry point for the generate_model script.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Entry point for the generate_model script.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
