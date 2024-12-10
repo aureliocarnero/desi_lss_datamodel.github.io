@@ -2,13 +2,54 @@
 desidatamodel Change Log
 ========================
 
-23.1 (unreleased)
+24.10 (unreleased)
+------------------
+
+* Update package infrastructure, fix search function, add missing columns (PR `#199`_).
+* Update the units for ``SKY_MAG_*`` quantities in the ``SPECPROD/exposures-SPECPROD.rst``
+  description (PR `#200`_).
+
+.. _`#199`: https://github.com/desihub/desidatamodel/pull/199
+.. _`#200`: https://github.com/desihub/desidatamodel/pull/200
+
+24.9 (2024-09-12)
 -----------------
 
+* Fix column name in ``fluxcalib`` description (PR `#193`_).
+* Add 5 coadd-related columns to the fibermap of the Redrock files (PR `#192`_).
+* Add ``DESINAME`` description (PR `#189`_).
+* Update definition of ``ZCAT_NSPEC`` (PR `#187`_).
+* Add note about equivalent width values in ``fuji`` and ``guadalupe`` (PR `#181`_).
+* Add note about units in FITS files (PR `#178`_).
+* Update ``column_descriptions.csv`` for short Description (for FITS headers)
+  and FullDescription (longer, for data model) (PR `#196`_).
+
+.. _`#178`: https://github.com/desihub/desidatamodel/pull/178
+.. _`#181`: https://github.com/desihub/desidatamodel/pull/181
+.. _`#187`: https://github.com/desihub/desidatamodel/pull/187
+.. _`#189`: https://github.com/desihub/desidatamodel/pull/189
+.. _`#192`: https://github.com/desihub/desidatamodel/pull/192
+.. _`#193`: https://github.com/desihub/desidatamodel/pull/193
+.. _`#196`: https://github.com/desihub/desidatamodel/pull/196
+
+23.1 (2023-06-12)
+-----------------
+
+* Warnings about ``TARGET_RA``, etc. (PR `#177`_).
+* Automate generation of ``bitmasks.rst`` (PR `#176`_).
+* Reorganize front pages for DESI non-experts (PR `#172`_).
+* Clean up ``DESI_SPECTRO_REDUX`` and ``DESI_TARGET`` after verification of EDR (PR `#171`_).
+* Add Lyman-alpha VAC data model (PR `#169`_).
+* Final clean up for DESI EDR (PR `#167`_).
+* Add LSS catalog to data model (PR `#166`_).
+* Updates to redshift catalog files and other spectroscopic reduction files
+  (PRs `#164`_, `#162`_, `#161`_).
+* Clarify definition of RA, Dec (PR `#160`_).
+* Add ``$DESI_ROOT/vac`` directory (PR `#157`_).
 * Updates to raw data files; validation now selects multiple candidate
   files for testing (PR `#151`_).
-* Update description of guide files in raw data (PR `#154`_)
-* Update description of sky files in raw data (PR `#153`_)
+* Update description of guide files in raw data (PR `#154`_).
+* Update description of sky files in raw data (PR `#153`_).
 * Update column descriptions for galaxy clustering files meeting EDR datamodel (PR `#152`_).
 * Update column descriptions for tile-based spectra/redshift/afterburner files
   (PR `#145`_).
@@ -18,7 +59,7 @@ desidatamodel Change Log
 * Add links to maskbit definitions (PR `#139`_).
 * Update :doc:`the contributing page <datamodel>` (PR `#138`_).
 * Update documentation for QSO afterburner files (PR `#134`_).
-* Resolve maggy/maggies discrepancies in DESI_TARGET/DESI_SURVEY (PR `#133`_).
+* Resolve maggy/maggies discrepancies in ``DESI_TARGET`` / ``DESI_SURVEY`` (PR `#133`_).
 * Update documentation of QA files (PR `#132`_).
 * Document top level exposure and tile summary files (PR `#131`_).
 * Populate the data model for the zmtl files (PR `#130`_).
@@ -48,6 +89,18 @@ desidatamodel Change Log
 .. _`#152`: https://github.com/desihub/desidatamodel/pull/152
 .. _`#153`: https://github.com/desihub/desidatamodel/pull/153
 .. _`#154`: https://github.com/desihub/desidatamodel/pull/154
+.. _`#157`: https://github.com/desihub/desidatamodel/pull/157
+.. _`#160`: https://github.com/desihub/desidatamodel/pull/160
+.. _`#161`: https://github.com/desihub/desidatamodel/pull/161
+.. _`#162`: https://github.com/desihub/desidatamodel/pull/162
+.. _`#164`: https://github.com/desihub/desidatamodel/pull/164
+.. _`#166`: https://github.com/desihub/desidatamodel/pull/166
+.. _`#167`: https://github.com/desihub/desidatamodel/pull/167
+.. _`#169`: https://github.com/desihub/desidatamodel/pull/169
+.. _`#171`: https://github.com/desihub/desidatamodel/pull/171
+.. _`#172`: https://github.com/desihub/desidatamodel/pull/172
+.. _`#176`: https://github.com/desihub/desidatamodel/pull/176
+.. _`#177`: https://github.com/desihub/desidatamodel/pull/177
 
 22.2 (2022-05-31)
 -----------------
