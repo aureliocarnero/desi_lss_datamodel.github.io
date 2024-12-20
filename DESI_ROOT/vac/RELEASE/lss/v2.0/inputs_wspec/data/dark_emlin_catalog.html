@@ -1,0 +1,641 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>emline_darkallhealpix &mdash; desidatamodel 24.9.dev1374 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../../_static/desidatamodel.css?v=f6dbf8d8" />
+
+  
+      <script src="../../../../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../../../../_static/documentation_options.js?v=8cbd207e"></script>
+      <script src="../../../../../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../../search.html" />
+    <link rel="next" title="datcomb_tarspecwdup_Alltiles" href="datcomb_tarspecwdup.html" />
+    <link rel="prev" title="Alltiles_tilelocs" href="Alltiles_tilelocs_dat.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../../../../index.html" class="icon icon-home">
+            desidatamodel
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../index.html">vac/ : Value Added Catalogs</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../index.html">RELEASE</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../../index.html">lss</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../../index.html">v2.0</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../lya/index.html">lya</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../index.html">$DESI_ROOT : represents the top level of the DESI directory tree.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../DESI_SPECTRO_DATA/index.html">$DESI_SPECTRO_DATA : raw data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../DESI_SPECTRO_REDUX/index.html">$DESI_SPECTRO_REDUX : processed spectro data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../DESI_SPECTRO_SIM/index.html">$DESI_SPECTRO_SIM : simulated spectro data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../DESI_SPECTRO_CALIB/index.html">$DESI_SPECTRO_CALIB : spectro calibration data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../DESI_SURVEYOPS/index.html">$DESI_SURVEYOPS : data files used for day-to-day survey operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../DESI_TARGET/index.html">$DESI_TARGET : target selection and fiber assignment (see also Myers et al. 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../DESIMODEL/index.html">$DESIMODEL : data used for simulating DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../DESISURVEY_OUTPUT/index.html">$DESISURVEY_OUTPUT : outputs from desisurvey and surveysim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../PROTODESI/index.html">$PROTODESI : data and logs from the ProtoDESI campaign</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../bitmasks.html">Bit Masks in DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../column_descriptions.html">Standard Column Descriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../envvar.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../units.html">Units in data files</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../datamodel.html">Contributing to desidatamodel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../api.html">desidatamodel API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../changes.html">desidatamodel Change Log</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../../index.html">desidatamodel</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../../index.html">vac</a></li>
+          <li class="breadcrumb-item"><a href="../../../../index.html">RELEASE</a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">lss</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">v2.0</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">inputs_wspec</a></li>
+          <li class="breadcrumb-item"><a href="index.html">data</a></li>
+      <li class="breadcrumb-item active">emline_darkallhealpix</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../../../../_sources/DESI_ROOT/vac/RELEASE/lss/v2.0/inputs_wspec/data/dark_emlin_catalog.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="emline-darkallhealpix">
+<h1>emline_darkallhealpix<a class="headerlink" href="#emline-darkallhealpix" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Summary<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Concatenation of all of the dark time emission line healpix file outputs</p>
+</dd>
+<dt class="field-even">Naming Convention<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">emline_darkallhealpix.fits</span></code></p>
+</dd>
+<dt class="field-odd">Regex<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">emline_darkallhealpix.fits</span></code></p>
+</dd>
+<dt class="field-even">File Type<span class="colon">:</span></dt>
+<dd class="field-even"><p>FITS, 372 MB</p>
+</dd>
+</dl>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Number</p></th>
+<th class="head"><p>EXTNAME</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Contents</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#hdu0">HDU0</a></p></td>
+<td></td>
+<td><p>IMAGE</p></td>
+<td><p>Empty</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hdu1">HDU1</a></p></td>
+<td><p>LSS</p></td>
+<td><p>BINTABLE</p></td>
+<td><p>Catalog data</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="fits-header-units">
+<h2>FITS Header Units<a class="headerlink" href="#fits-header-units" title="Link to this heading"></a></h2>
+<section id="hdu0">
+<h3>HDU0<a class="headerlink" href="#hdu0" title="Link to this heading"></a></h3>
+<p>This HDU has no non-standard required keywords.</p>
+<p>Empty HDU.</p>
+</section>
+<section id="hdu1">
+<h3>HDU1<a class="headerlink" href="#hdu1" title="Link to this heading"></a></h3>
+<p>EXTNAME = LSS</p>
+<p>Concatenation of all of the dark time emission line healpix file outputs</p>
+<section id="required-header-keywords">
+<h4>Required Header Keywords<a class="headerlink" href="#required-header-keywords" title="Link to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>312</p></td>
+<td><p>int</p></td>
+<td><p>width of table in bytes</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>1252151</p></td>
+<td><p>int</p></td>
+<td><p>number of rows in table</p></td>
+</tr>
+<tr class="row-even"><td><p>DESIDR</p></td>
+<td><p>edr</p></td>
+<td><p>str</p></td>
+<td><p>DESI Data Release</p></td>
+</tr>
+</tbody>
+</table>
+</details></section>
+<section id="required-data-table-columns">
+<h4>Required Data Table Columns<a class="headerlink" href="#required-data-table-columns" title="Link to this heading"></a></h4>
+<table class="columns docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Units</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>TARGETID</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Unique DESI target ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>Z</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Redshift measured by Redrock</p></td>
+</tr>
+<tr class="row-even"><td><p>ZWARN</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Redshift warning bitmask from Redrock</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPECTYPE</p></td>
+<td><p>char[6]</p></td>
+<td></td>
+<td><p>Spectral type of Redrock best fit template (e.g. GALAXY, QSO, STAR)</p></td>
+</tr>
+<tr class="row-even"><td><p>DELTACHI2</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>chi2 difference between first- and second-best redrock template fits</p></td>
+</tr>
+<tr class="row-odd"><td><p>TARGET_RA</p></td>
+<td><p>float64</p></td>
+<td><p>deg</p></td>
+<td><p>Target right ascension</p></td>
+</tr>
+<tr class="row-even"><td><p>TARGET_DEC</p></td>
+<td><p>float64</p></td>
+<td><p>deg</p></td>
+<td><p>Target declination</p></td>
+</tr>
+<tr class="row-odd"><td><p>OBJTYPE</p></td>
+<td><p>char[3]</p></td>
+<td></td>
+<td><p>Object type: TGT, SKY, NON, BAD</p></td>
+</tr>
+<tr class="row-even"><td><p>OII_FLUX</p></td>
+<td><p>float32</p></td>
+<td><p>10**-17 erg/(s cm2)</p></td>
+<td><p>Fitted flux for the [OII] doublet</p></td>
+</tr>
+<tr class="row-odd"><td><p>OII_FLUX_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>10**+34 (s2 cm4) / erg2</p></td>
+<td><p>Inverse variance of the fitted flux for the [OII] doublet</p></td>
+</tr>
+<tr class="row-even"><td><p>OII_SIGMA</p></td>
+<td><p>float32</p></td>
+<td><p>Angstrom</p></td>
+<td><p>Fitted line width (in the observed frame) for the [OII] doublet</p></td>
+</tr>
+<tr class="row-odd"><td><p>OII_SIGMA_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>Angstrom^-2</p></td>
+<td><p>Inverse variance of the fitted line width (in the observed frame) for the [OII] doublet</p></td>
+</tr>
+<tr class="row-even"><td><p>OII_CONT</p></td>
+<td><p>float32</p></td>
+<td><p>10**-17 erg/(s cm2 Angstrom)</p></td>
+<td><p>Continuum used for the fitting (fixed value) for the [OII] doublet</p></td>
+</tr>
+<tr class="row-odd"><td><p>OII_CONT_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>10**+34 (s2 cm4 Angstrom2) / erg2</p></td>
+<td><p>Inverse variance of the continuum for the [OII] doublet</p></td>
+</tr>
+<tr class="row-even"><td><p>OII_SHARE</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Fitted F1/(F0+F1) for the [OII] doublet, where F0 and F1 are the individual line fluxes</p></td>
+</tr>
+<tr class="row-odd"><td><p>OII_SHARE_IVAR</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Inverse variance of the fitted F1/(F0+F1) for the [OII] doublet</p></td>
+</tr>
+<tr class="row-even"><td><p>OII_EW</p></td>
+<td><p>float32</p></td>
+<td><p>Angstrom</p></td>
+<td><p>Fitted rest-frame equivalent width for the [OII] doublet</p></td>
+</tr>
+<tr class="row-odd"><td><p>OII_EW_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>Angstrom^-2</p></td>
+<td><p>Inverse variance of the fitted rest-frame equivalent width for the [OII] doublet</p></td>
+</tr>
+<tr class="row-even"><td><p>OII_CHI2</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Reduced chi2 of the fit for the [OII] doublet</p></td>
+</tr>
+<tr class="row-odd"><td><p>OII_NDOF</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Number of degrees of freedom of the fit for the [OII] doublet</p></td>
+</tr>
+<tr class="row-even"><td><p>HDELTA_FLUX</p></td>
+<td><p>float32</p></td>
+<td><p>10**-17 erg/(s cm2)</p></td>
+<td><p>Fitted flux for the HDELTA line</p></td>
+</tr>
+<tr class="row-odd"><td><p>HDELTA_FLUX_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>10**+34 (s2 cm4) / erg2</p></td>
+<td><p>Inverse variance of the fitted flux for the HDELTA line</p></td>
+</tr>
+<tr class="row-even"><td><p>HDELTA_SIGMA</p></td>
+<td><p>float32</p></td>
+<td><p>Angstrom</p></td>
+<td><p>Fitted line width (in the observed frame) for the HDELTA line</p></td>
+</tr>
+<tr class="row-odd"><td><p>HDELTA_SIGMA_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>Angstrom^-2</p></td>
+<td><p>Inverse variance of the fitted line width (in the observed frame) for the HDELTA line</p></td>
+</tr>
+<tr class="row-even"><td><p>HDELTA_CONT</p></td>
+<td><p>float32</p></td>
+<td><p>10**-17 erg/(s cm2 Angstrom)</p></td>
+<td><p>Continuum used for the fitting (fixed value) for the HDELTA line</p></td>
+</tr>
+<tr class="row-odd"><td><p>HDELTA_CONT_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>10**+34 (s2 cm4 Angstrom2) / erg2</p></td>
+<td><p>Inverse variance of the continuum for the HDELTA line</p></td>
+</tr>
+<tr class="row-even"><td><p>HDELTA_SHARE</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>NaN (SHARE not relevant for HDELTA line)</p></td>
+</tr>
+<tr class="row-odd"><td><p>HDELTA_SHARE_IVAR</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>NaN (SHARE not relevant for HDELTA line)</p></td>
+</tr>
+<tr class="row-even"><td><p>HDELTA_EW</p></td>
+<td><p>float32</p></td>
+<td><p>Angstrom</p></td>
+<td><p>Fitted rest-frame equivalent width for the HDELTA line</p></td>
+</tr>
+<tr class="row-odd"><td><p>HDELTA_EW_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>Angstrom^-2</p></td>
+<td><p>Inverse variance of the fitted rest-frame equivalent width for the HDELTA line</p></td>
+</tr>
+<tr class="row-even"><td><p>HDELTA_CHI2</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Reduced chi2 of the fit for the HDELTA line</p></td>
+</tr>
+<tr class="row-odd"><td><p>HDELTA_NDOF</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Number of degrees of freedom of the fit for the HDELTA line</p></td>
+</tr>
+<tr class="row-even"><td><p>HGAMMA_FLUX</p></td>
+<td><p>float32</p></td>
+<td><p>10**-17 erg/(s cm2)</p></td>
+<td><p>Fitted flux for the HGAMMA line</p></td>
+</tr>
+<tr class="row-odd"><td><p>HGAMMA_FLUX_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>10**+34 (s2 cm4) / erg2</p></td>
+<td><p>Inverse variance of the fitted flux for the HGAMMA line</p></td>
+</tr>
+<tr class="row-even"><td><p>HGAMMA_SIGMA</p></td>
+<td><p>float32</p></td>
+<td><p>Angstrom</p></td>
+<td><p>Fitted line width (in the observed frame) for the HGAMMA line</p></td>
+</tr>
+<tr class="row-odd"><td><p>HGAMMA_SIGMA_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>Angstrom^-2</p></td>
+<td><p>Inverse variance of the fitted line width (in the observed frame) for the HGAMMA line</p></td>
+</tr>
+<tr class="row-even"><td><p>HGAMMA_CONT</p></td>
+<td><p>float32</p></td>
+<td><p>10**-17 erg/(s cm2 Angstrom)</p></td>
+<td><p>Continuum used for the fitting (fixed value) for the HGAMMA line</p></td>
+</tr>
+<tr class="row-odd"><td><p>HGAMMA_CONT_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>10**+34 (s2 cm4 Angstrom2) / erg2</p></td>
+<td><p>Inverse variance of the continuum for the HGAMMA line</p></td>
+</tr>
+<tr class="row-even"><td><p>HGAMMA_SHARE</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>NaN (SHARE not relevant for HGAMMA line)</p></td>
+</tr>
+<tr class="row-odd"><td><p>HGAMMA_SHARE_IVAR</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>NaN (SHARE not relevant for HGAMMA line)</p></td>
+</tr>
+<tr class="row-even"><td><p>HGAMMA_EW</p></td>
+<td><p>float32</p></td>
+<td><p>Angstrom</p></td>
+<td><p>Fitted rest-frame equivalent width for the HGAMMA line</p></td>
+</tr>
+<tr class="row-odd"><td><p>HGAMMA_EW_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>Angstrom^-2</p></td>
+<td><p>Inverse variance of the fitted rest-frame equivalent width for the HGAMMA line</p></td>
+</tr>
+<tr class="row-even"><td><p>HGAMMA_CHI2</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Reduced chi2 of the fit for the HGAMMA line</p></td>
+</tr>
+<tr class="row-odd"><td><p>HGAMMA_NDOF</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Number of degrees of freedom of the fit for the HGAMMA line</p></td>
+</tr>
+<tr class="row-even"><td><p>HBETA_FLUX</p></td>
+<td><p>float32</p></td>
+<td><p>10**-17 erg/(s cm2)</p></td>
+<td><p>Fitted flux for the HBETA line</p></td>
+</tr>
+<tr class="row-odd"><td><p>HBETA_FLUX_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>10**+34 (s2 cm4) / erg2</p></td>
+<td><p>Inverse variance of the fitted flux for the HBETA line</p></td>
+</tr>
+<tr class="row-even"><td><p>HBETA_SIGMA</p></td>
+<td><p>float32</p></td>
+<td><p>Angstrom</p></td>
+<td><p>Fitted line width (in the observed frame) for the HBETA line</p></td>
+</tr>
+<tr class="row-odd"><td><p>HBETA_SIGMA_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>Angstrom^-2</p></td>
+<td><p>Inverse variance of the fitted line width (in the observed frame) for the HBETA line</p></td>
+</tr>
+<tr class="row-even"><td><p>HBETA_CONT</p></td>
+<td><p>float32</p></td>
+<td><p>10**-17 erg/(s cm2 Angstrom)</p></td>
+<td><p>Continuum used for the fitting (fixed value) for the HBETA line</p></td>
+</tr>
+<tr class="row-odd"><td><p>HBETA_CONT_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>10**+34 (s2 cm4 Angstrom2) / erg2</p></td>
+<td><p>Inverse variance of the continuum for the HBETA line</p></td>
+</tr>
+<tr class="row-even"><td><p>HBETA_SHARE</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>NaN (SHARE not relevant for HBETA line)</p></td>
+</tr>
+<tr class="row-odd"><td><p>HBETA_SHARE_IVAR</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>NaN (SHARE not relevant for HBETA line)</p></td>
+</tr>
+<tr class="row-even"><td><p>HBETA_EW</p></td>
+<td><p>float32</p></td>
+<td><p>Angstrom</p></td>
+<td><p>Fitted rest-frame equivalent width for the HBETA line</p></td>
+</tr>
+<tr class="row-odd"><td><p>HBETA_EW_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>Angstrom^-2</p></td>
+<td><p>Inverse variance of the fitted rest-frame equivalent width for the HBETA line</p></td>
+</tr>
+<tr class="row-even"><td><p>HBETA_CHI2</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Reduced chi2 of the fit for the HBETA line</p></td>
+</tr>
+<tr class="row-odd"><td><p>HBETA_NDOF</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Number of degrees of freedom of the fit for the HBETA line</p></td>
+</tr>
+<tr class="row-even"><td><p>OIII_FLUX</p></td>
+<td><p>float32</p></td>
+<td><p>10**-17 erg/(s cm2)</p></td>
+<td><p>Fitted flux for the [OIII] doublet</p></td>
+</tr>
+<tr class="row-odd"><td><p>OIII_FLUX_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>10**+34 (s2 cm4) / erg2</p></td>
+<td><p>Inverse variance of the fitted flux for the [OIII] doublet</p></td>
+</tr>
+<tr class="row-even"><td><p>OIII_SIGMA</p></td>
+<td><p>float32</p></td>
+<td><p>Angstrom</p></td>
+<td><p>Fitted line width (in the observed frame) for the [OIII] doublet</p></td>
+</tr>
+<tr class="row-odd"><td><p>OIII_SIGMA_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>Angstrom^-2</p></td>
+<td><p>Inverse variance of the fitted line width (in the observed frame) for the [OIII] doublet</p></td>
+</tr>
+<tr class="row-even"><td><p>OIII_CONT</p></td>
+<td><p>float32</p></td>
+<td><p>10**-17 erg/(s cm2 Angstrom)</p></td>
+<td><p>Continuum used for the fitting (fixed value) for the [OIII] doublet</p></td>
+</tr>
+<tr class="row-odd"><td><p>OIII_CONT_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>10**+34 (s2 cm4 Angstrom2) / erg2</p></td>
+<td><p>Inverse variance of the continuum for the [OIII] doublet</p></td>
+</tr>
+<tr class="row-even"><td><p>OIII_SHARE</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>F1/(F0+F1) for the [OIII] doublet, where F0 and F1 are the individual line fluxes (SHARE value fixed during the fit)</p></td>
+</tr>
+<tr class="row-odd"><td><p>OIII_SHARE_IVAR</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Infinite value, as SHARE is fixed during the fit</p></td>
+</tr>
+<tr class="row-even"><td><p>OIII_EW</p></td>
+<td><p>float32</p></td>
+<td><p>Angstrom</p></td>
+<td><p>Fitted rest-frame equivalent width for the [OIII] doublet</p></td>
+</tr>
+<tr class="row-odd"><td><p>OIII_EW_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>Angstrom^-2</p></td>
+<td><p>Inverse variance of the fitted rest-frame equivalent width for the [OIII] doublet</p></td>
+</tr>
+<tr class="row-even"><td><p>OIII_CHI2</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Reduced chi2 of the fit for the [OIII] doublet</p></td>
+</tr>
+<tr class="row-odd"><td><p>OIII_NDOF</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Number of degrees of freedom of the fit for the [OIII] doublet</p></td>
+</tr>
+<tr class="row-even"><td><p>HALPHA_FLUX</p></td>
+<td><p>float32</p></td>
+<td><p>10**-17 erg/(s cm2)</p></td>
+<td><p>Fitted flux for the HALPHA line</p></td>
+</tr>
+<tr class="row-odd"><td><p>HALPHA_FLUX_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>10**+34 (s2 cm4) / erg2</p></td>
+<td><p>Inverse variance of the fitted flux for the HALPHA line</p></td>
+</tr>
+<tr class="row-even"><td><p>HALPHA_SIGMA</p></td>
+<td><p>float32</p></td>
+<td><p>Angstrom</p></td>
+<td><p>Fitted line width (in the observed frame) for the HALPHA line</p></td>
+</tr>
+<tr class="row-odd"><td><p>HALPHA_SIGMA_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>Angstrom^-2</p></td>
+<td><p>Inverse variance of the fitted line width (in the observed frame) for the HALPHA line</p></td>
+</tr>
+<tr class="row-even"><td><p>HALPHA_CONT</p></td>
+<td><p>float32</p></td>
+<td><p>10**-17 erg/(s cm2 Angstrom)</p></td>
+<td><p>Continuum used for the fitting (fixed value) for the HALPHA line</p></td>
+</tr>
+<tr class="row-odd"><td><p>HALPHA_CONT_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>10**+34 (s2 cm4 Angstrom2) / erg2</p></td>
+<td><p>Inverse variance of the continuum for the HALPHA line</p></td>
+</tr>
+<tr class="row-even"><td><p>HALPHA_SHARE</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>NaN (SHARE not relevant for HALPHA line)</p></td>
+</tr>
+<tr class="row-odd"><td><p>HALPHA_SHARE_IVAR</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>NaN (SHARE not relevant for HALPHA line)</p></td>
+</tr>
+<tr class="row-even"><td><p>HALPHA_EW</p></td>
+<td><p>float32</p></td>
+<td><p>Angstrom</p></td>
+<td><p>Fitted rest-frame equivalent width for the HALPHA line</p></td>
+</tr>
+<tr class="row-odd"><td><p>HALPHA_EW_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>Angstrom^-2</p></td>
+<td><p>Inverse variance of the fitted rest-frame equivalent width for the HALPHA line</p></td>
+</tr>
+<tr class="row-even"><td><p>HALPHA_CHI2</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Reduced chi2 of the fit for the HALPHA line</p></td>
+</tr>
+<tr class="row-odd"><td><p>HALPHA_NDOF</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Number of degrees of freedom of the fit for the HALPHA line</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Alltiles_tilelocs_dat.html" class="btn btn-neutral float-left" title="Alltiles_tilelocs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="datcomb_tarspecwdup.html" class="btn btn-neutral float-right" title="datcomb_tarspecwdup_Alltiles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014-2022, DESI Collaboration.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

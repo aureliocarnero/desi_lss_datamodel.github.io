@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>sv3mtl-dark-hp-HPX &mdash; desidatamodel 24.9.dev1374 documentation</title>
+  <title>rancomb_Alltilelocinfo &mdash; desidatamodel 24.9.dev1374 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/desidatamodel.css?v=f6dbf8d8" />
@@ -20,8 +20,8 @@
     <script src="../../../../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../../../../search.html" />
-    <link rel="next" title="bright" href="../bright/index.html" />
-    <link rel="prev" title="dark" href="index.html" /> 
+    <link rel="next" title="fba" href="fba/index.html" />
+    <link rel="prev" title="rancomb_wdup_Alltiles" href="rancomb_wdup_Alltiles.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,7 +47,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../../../../../index.html">vac/ : Value Added Catalogs</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../../../../../index.html">RELEASE</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="../../../../index.html">lss</a><ul class="current">
-<li class="toctree-l4 current"><a class="reference internal" href="../../../index.html">VERSION</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../../../index.html">v2.0</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../lya/index.html">lya</a></li>
@@ -95,13 +95,13 @@
           <li class="breadcrumb-item"><a href="../../../../../../index.html">vac</a></li>
           <li class="breadcrumb-item"><a href="../../../../../index.html">RELEASE</a></li>
           <li class="breadcrumb-item"><a href="../../../../index.html">lss</a></li>
-          <li class="breadcrumb-item"><a href="../../../index.html">VERSION</a></li>
-          <li class="breadcrumb-item"><a href="../../index.html">altmtl</a></li>
-          <li class="breadcrumb-item"><a href="../index.html">UnivUNUM</a></li>
-          <li class="breadcrumb-item"><a href="index.html">dark</a></li>
-      <li class="breadcrumb-item active">sv3mtl-dark-hp-HPX</li>
+          <li class="breadcrumb-item"><a href="../../../index.html">v2.0</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">potential_assignments</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">random</a></li>
+          <li class="breadcrumb-item"><a href="index.html">RANN</a></li>
+      <li class="breadcrumb-item active">rancomb_Alltilelocinfo</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../../../../../../../_sources/DESI_ROOT/vac/RELEASE/lss/VERSION/altmtl/UnivUNUM/dark/sv3mtl-dark-hp-HPX.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../../../../../../_sources/DESI_ROOT/vac/RELEASE/lss/v2.0/potential_assignments/random/RANN/rancomb_Alltilelocinfo.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -109,42 +109,61 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="sv3mtl-dark-hp-hpx">
-<h1>sv3mtl-dark-hp-HPX<a class="headerlink" href="#sv3mtl-dark-hp-hpx" title="Link to this heading"></a></h1>
+  <section id="rancomb-alltilelocinfo">
+<h1>rancomb_Alltilelocinfo<a class="headerlink" href="#rancomb-alltilelocinfo" title="Link to this heading"></a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">Summary<span class="colon">:</span></dt>
-<dd class="field-odd"><p>MTL ledgers for the DESI dark-time program.</p>
+<dd class="field-odd"><p>For random associated with <code class="docutils literal notranslate"><span class="pre">RANN</span></code> given in the directory, the list of unique TARGETIDs with number of appearances as reachable according to fiber assigment and details on those appearances.</p>
 </dd>
 <dt class="field-even">Naming Convention<span class="colon">:</span></dt>
-<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">sv3mtl-dark-hp-HPX.ecsv</span></code>, where
-HPX is the nside=32 (NESTED) HEALPixel integer.</p>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">rancomb_{PROGRAM}_Alltilelocinfo.fits</span></code>, where <code class="docutils literal notranslate"><span class="pre">{PROGRAM}</span></code> denotes the observing program, either <code class="docutils literal notranslate"><span class="pre">dark</span></code> or <code class="docutils literal notranslate"><span class="pre">bright</span></code>.</p>
 </dd>
 <dt class="field-odd">Regex<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">sv3mtl-dark-hp-[0-9]+.ecsv</span></code></p>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">rancomb_[a-z]{4,6}_Alltilelocinfo.fits</span></code></p>
 </dd>
 <dt class="field-even">File Type<span class="colon">:</span></dt>
-<dd class="field-even"><p>ecsv, 0-10 MB</p>
+<dd class="field-even"><p>FITS, 100 MB</p>
 </dd>
 </dl>
 <section id="contents">
 <h2>Contents<a class="headerlink" href="#contents" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="head"><p>EXTNAME</p></th>
+<tr class="row-odd"><th class="head"><p>Number</p></th>
+<th class="head"><p>EXTNAME</p></th>
 <th class="head"><p>Type</p></th>
 <th class="head"><p>Contents</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>MTL</p></td>
-<td><p>TABLE</p></td>
-<td><p>MTL Ledger</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#hdu0">HDU0</a></p></td>
+<td></td>
+<td><p>IMAGE</p></td>
+<td><p>Empty</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hdu1">HDU1</a></p></td>
+<td><p>TILELOC</p></td>
+<td><p>BINTABLE</p></td>
+<td><p>Catalog data</p></td>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="fits-header-units">
+<h2>FITS Header Units<a class="headerlink" href="#fits-header-units" title="Link to this heading"></a></h2>
+<section id="hdu0">
+<h3>HDU0<a class="headerlink" href="#hdu0" title="Link to this heading"></a></h3>
+<p>This HDU has no non-standard required keywords.</p>
+<p>Empty HDU.</p>
+</section>
+<section id="hdu1">
+<h3>HDU1<a class="headerlink" href="#hdu1" title="Link to this heading"></a></h3>
+<p>EXTNAME = TILELOC</p>
+<p><em>Table for randoms with RANN, given by the directory with unique TARGETIDS (randoms) associated with tiles where it has potentially being observed after fiber assigment</em></p>
 <section id="required-header-keywords">
-<h3>Required Header Keywords<a class="headerlink" href="#required-header-keywords" title="Link to this heading"></a></h3>
-<table class="docutils align-default">
+<h4>Required Header Keywords<a class="headerlink" href="#required-header-keywords" title="Link to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>KEY</p></th>
 <th class="head"><p>Example Value</p></th>
@@ -153,57 +172,27 @@ HPX is the nside=32 (NESTED) HEALPixel integer.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>DR</p></td>
-<td><p>9</p></td>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>226</p></td>
 <td><p>int</p></td>
-<td><p>Legacy Surveys Data Release used to produce the targets (should always be 9)</p></td>
+<td><p>width of table in bytes</p></td>
 </tr>
-<tr class="row-odd"><td><p>FILEHPX</p></td>
-<td><p>4447</p></td>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>465355</p></td>
 <td><p>int</p></td>
-<td><p>HEALPixel integer for the file</p></td>
+<td><p>number of rows in table</p></td>
 </tr>
-<tr class="row-even"><td><p>FILENEST</p></td>
-<td><p>True</p></td>
-<td><p>bool</p></td>
-<td><p>If the HEALPixel NESTED scheme was used for the file (should always be True)</p></td>
-</tr>
-<tr class="row-odd"><td><p>FILENSID</p></td>
-<td><p>32</p></td>
-<td><p>int</p></td>
-<td><p>HEALPixel nside used for the file (should always be 32)</p></td>
-</tr>
-<tr class="row-even"><td><p>INDIR</p></td>
-<td><p>dr9/1.1.1/targets/main/resolve/dark</p></td>
+<tr class="row-even"><td><p>DESIDR</p></td>
+<td><p>edr</p></td>
 <td><p>str</p></td>
-<td><p>Location of the directory of targets used to produce the file</p></td>
-</tr>
-<tr class="row-odd"><td><p>OBSCON</p></td>
-<td><p>DARK</p></td>
-<td><p>str</p></td>
-<td><p>DESI program (DARK, BRIGHT or BACKUP)</p></td>
-</tr>
-<tr class="row-even"><td><p>SCND</p></td>
-<td><p>False</p></td>
-<td><p>bool</p></td>
-<td><p>Whether the file is a ledger of primary or secondary targets</p></td>
-</tr>
-<tr class="row-odd"><td><p>SURVEY</p></td>
-<td><p>main</p></td>
-<td><p>str</p></td>
-<td><p>DESI survey phase (main, sv2 or sv3)</p></td>
-</tr>
-<tr class="row-even"><td><p>TSFORCED</p></td>
-<td><p>2021-05-13T08:15:37+00:00</p></td>
-<td><p>str</p></td>
-<td><p>UTC/ISO TIMESTAMP that was specified to produce initial ledgers</p></td>
+<td><p>DESI Data Release</p></td>
 </tr>
 </tbody>
 </table>
-</section>
+</details></section>
 <section id="required-data-table-columns">
-<h3>Required Data Table Columns<a class="headerlink" href="#required-data-table-columns" title="Link to this heading"></a></h3>
-<table class="docutils align-default">
+<h4>Required Data Table Columns<a class="headerlink" href="#required-data-table-columns" title="Link to this heading"></a></h4>
+<table class="columns docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Type</p></th>
@@ -212,143 +201,29 @@ HPX is the nside=32 (NESTED) HEALPixel integer.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>RA</p></td>
-<td><p>float64</p></td>
-<td><p>deg</p></td>
-<td><p>Right ascension</p></td>
-</tr>
-<tr class="row-odd"><td><p>DEC</p></td>
-<td><p>float64</p></td>
-<td><p>deg</p></td>
-<td><p>Declination</p></td>
-</tr>
-<tr class="row-even"><td><p>REF_EPOCH</p></td>
-<td><p>float32</p></td>
-<td><p>yr</p></td>
-<td><p>Reference epoch for Gaia/Tycho astrometry</p></td>
-</tr>
-<tr class="row-odd"><td><p>PARALLAX</p></td>
-<td><p>float32</p></td>
-<td><p>mas</p></td>
-<td><p>Parallax</p></td>
-</tr>
-<tr class="row-even"><td><p>PMRA</p></td>
-<td><p>float32</p></td>
-<td><p>mas/yr</p></td>
-<td><p>Proper motion in the RA direction</p></td>
-</tr>
-<tr class="row-odd"><td><p>PMDEC</p></td>
-<td><p>float32</p></td>
-<td><p>mas/yr</p></td>
-<td><p>Proper motion in the Dec direction</p></td>
-</tr>
 <tr class="row-even"><td><p>TARGETID</p></td>
 <td><p>int64</p></td>
 <td></td>
-<td><p>Unique DESI targeting ID</p></td>
+<td><p>Unique DESI target ID</p></td>
 </tr>
-<tr class="row-odd"><td><p>DESI_TARGET</p></td>
+<tr class="row-odd"><td><p>NTILE</p></td>
 <td><p>int64</p></td>
 <td></td>
-<td><p>DESI (dark time program) target selection bitmask</p></td>
+<td><p>Number of tiles target was available on</p></td>
 </tr>
-<tr class="row-even"><td><p>BGS_TARGET</p></td>
-<td><p>int64</p></td>
+<tr class="row-even"><td><p>TILES</p></td>
+<td><p>char[51]</p></td>
 <td></td>
-<td><p>BGS (bright time program) target selection bitmask</p></td>
+<td><p>TILEIDs of those tile, in string form separated by ‘-’</p></td>
 </tr>
-<tr class="row-odd"><td><p>MWS_TARGET</p></td>
-<td><p>int64</p></td>
+<tr class="row-odd"><td><p>TILELOCIDS</p></td>
+<td><p>char[159]</p></td>
 <td></td>
-<td><p>MWS (bright time program) target selection bitmask</p></td>
-</tr>
-<tr class="row-even"><td><p>SUBPRIORITY</p></td>
-<td><p>float64</p></td>
-<td></td>
-<td><p>Random subpriority [0-1] to break assignment ties</p></td>
-</tr>
-<tr class="row-odd"><td><p>OBSCONDITIONS</p></td>
-<td><p>int32</p></td>
-<td></td>
-<td><p>Observing conditions/program bitmask (bright/dark/backup/etc.)</p></td>
-</tr>
-<tr class="row-even"><td><p>PRIORITY_INIT</p></td>
-<td><p>int64</p></td>
-<td></td>
-<td><p>Target’s initial priority from target selection bitmasks and OBSCONDITIONS</p></td>
-</tr>
-<tr class="row-odd"><td><p>NUMOBS_INIT</p></td>
-<td><p>int64</p></td>
-<td></td>
-<td><p>Target’s initial desired number of observations</p></td>
-</tr>
-<tr class="row-even"><td><p>SCND_TARGET</p></td>
-<td><p>int64</p></td>
-<td></td>
-<td><p>Target selection bitmask for secondary programs</p></td>
-</tr>
-<tr class="row-odd"><td><p>NUMOBS_MORE</p></td>
-<td><p>int64</p></td>
-<td></td>
-<td><p>Desired number of observations given target’s current state</p></td>
-</tr>
-<tr class="row-even"><td><p>NUMOBS</p></td>
-<td><p>int64</p></td>
-<td></td>
-<td><p>Number of (good) observations of target acquired so far</p></td>
-</tr>
-<tr class="row-odd"><td><p>Z</p></td>
-<td><p>float64</p></td>
-<td></td>
-<td><p>Redshift measured by Redrock</p></td>
-</tr>
-<tr class="row-even"><td><p>ZWARN</p></td>
-<td><p>int64</p></td>
-<td></td>
-<td><p>Redshift warning bitmask measured by Redrock</p></td>
-</tr>
-<tr class="row-odd"><td><p>ZTILEID</p></td>
-<td><p>int32</p></td>
-<td></td>
-<td><p>ID of tile that most recently updated target’s state</p></td>
-</tr>
-<tr class="row-even"><td><p>Z_QN</p></td>
-<td><p>float64</p></td>
-<td></td>
-<td><p>Redshift measured by QuasarNET</p></td>
-</tr>
-<tr class="row-odd"><td><p>IS_QSO_QN</p></td>
-<td><p>int16</p></td>
-<td></td>
-<td><p>Classification determined by QuasarNET (1=QSO)</p></td>
-</tr>
-<tr class="row-even"><td><p>DELTACHI2</p></td>
-<td><p>float64</p></td>
-<td></td>
-<td><p>Delta-chi-squared for template fit from Redrock</p></td>
-</tr>
-<tr class="row-odd"><td><p>TARGET_STATE</p></td>
-<td><p>char[18]</p></td>
-<td></td>
-<td><p>Combination of target’s class and its current observational state</p></td>
-</tr>
-<tr class="row-even"><td><p>TIMESTAMP</p></td>
-<td><p>char[25]</p></td>
-<td><p>s</p></td>
-<td><p>UTC/ISO time at which the target’s state was updated</p></td>
-</tr>
-<tr class="row-odd"><td><p>VERSION</p></td>
-<td><p>char[5]</p></td>
-<td></td>
-<td><p>Version of desitarget code used to update target’s state</p></td>
-</tr>
-<tr class="row-even"><td><p>PRIORITY</p></td>
-<td><p>int64</p></td>
-<td></td>
-<td><p>Target’s current priority</p></td>
+<td><p>TILELOCIDs that the target was available for, separated by ‘-’</p></td>
 </tr>
 </tbody>
 </table>
+</section>
 </section>
 </section>
 </section>
@@ -357,8 +232,8 @@ HPX is the nside=32 (NESTED) HEALPixel integer.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="dark" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../bright/index.html" class="btn btn-neutral float-right" title="bright" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="rancomb_wdup_Alltiles.html" class="btn btn-neutral float-left" title="rancomb_wdup_Alltiles" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="fba/index.html" class="btn btn-neutral float-right" title="fba" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
