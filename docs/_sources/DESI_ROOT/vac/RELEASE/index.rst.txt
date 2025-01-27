@@ -3,9 +3,7 @@ RELEASE
 =======
 
 ``${DESI_ROOT}/vac/RELEASE`` contains the Value Added Catalogs (VAC) associated with a
-particular data release. The value of ``RELEASE`` will typically be ``edr``, ``dr1``, and so on. 
-
-In the case of the LSS catalogs, only the EDR release is host under the vac directory. For Data Releases (DR), the LSS catalos sits under ``${DESI_ROOT}/survey/catalogs`` 
+particular data release. The value of ``RELEASE`` will typically be ``edr``, ``dr1``, and so on.
 
 Within this directory, each VAC will have a unique name.
 
