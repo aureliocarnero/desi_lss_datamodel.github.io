@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>QSO_cat_cumulative &mdash; desidatamodel 24.9.dev1374 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../../../../../_static/desidatamodel.css?v=f6dbf8d8" />
 
@@ -15,13 +15,13 @@
       <script src="../../../../../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../../../../../../_static/documentation_options.js?v=8cbd207e"></script>
-      <script src="../../../../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../../../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../../search.html" />
     <link rel="next" title="DESI_TARGET" href="../../../../../../DESI_TARGET/index.html" />
-    <link rel="prev" title="SPECPROD" href="index.html" /> 
+    <link rel="prev" title="LSS QSO" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -99,8 +99,7 @@
           <li class="breadcrumb-item"><a href="../../../../index.html">survey</a></li>
           <li class="breadcrumb-item"><a href="../../../index.html">catalogs</a></li>
           <li class="breadcrumb-item"><a href="../../index.html">RELEASE</a></li>
-          <li class="breadcrumb-item"><a href="../index.html">QSO</a></li>
-          <li class="breadcrumb-item"><a href="index.html">SPECPROD</a></li>
+          <li class="breadcrumb-item"><a href="index.html">LSS QSO</a></li>
       <li class="breadcrumb-item active">QSO_cat_cumulative</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../../../_sources/DESI_ROOT/survey/catalogs/RELEASE/QSO/SPECPROD/QSO_cat_cumulative.rst.txt" rel="nofollow"> View page source</a>
@@ -115,22 +114,16 @@
 <h1>QSO_cat_cumulative<a class="headerlink" href="#qso-cat-cumulative" title="Link to this heading"></a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">Summary<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>This section should be filled in with a high-level description of
-this file. In general, you should remove or replace the emphasized text
-(*this text is emphasized*) in this document.</em></p>
+<dd class="field-odd"><p>This contains the information on quasar automatically identified from DESI spectra coadded for all observations of the relevant tiles. Data appearing here is considered a successful quasar redshift by the LSS pipeline.</p>
 </dd>
 <dt class="field-even">Naming Convention<span class="colon">:</span></dt>
-<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">QSO_cat_iron_cumulative_v0.fits</span></code>, where … <em>Give a human readable
-description of the filename, e.g. ``blat-{EXPID}`` where ``{EXPID}``
-is the 8-digit exposure ID.</em></p>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">QSO_cat_{SPECPROD}_cumulative_{VERSION}.fits</span></code>.</p>
 </dd>
 <dt class="field-odd">Regex<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">QSO_cat_iron_cumulative_v0.fits</span></code> <em>Give a regular expression for this filename.
-For example, a six-digit number would correspond to ``[0-9]{6}``.</em></p>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">QSO_cat_iron_cumulative_v[0-9]{1}.fits</span></code></p>
 </dd>
 <dt class="field-even">File Type<span class="colon">:</span></dt>
-<dd class="field-even"><p>FITS, 828 MB  <em>This section gives the type of the file
-and its approximate size.</em></p>
+<dd class="field-even"><p>FITS, 828 MB</p>
 </dd>
 </dl>
 <section id="contents">
@@ -147,12 +140,12 @@ and its approximate size.</em></p>
 <tr class="row-even"><td><p><a class="reference internal" href="#hdu0">HDU0</a></p></td>
 <td></td>
 <td><p>IMAGE</p></td>
-<td><p><em>Brief Description</em></p></td>
+<td><p>Empty</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#hdu1">HDU1</a></p></td>
 <td><p>QSO_CAT</p></td>
 <td><p>BINTABLE</p></td>
-<td><p><em>Brief Description</em></p></td>
+<td><p>Quasar Catalog</p></td>
 </tr>
 </tbody>
 </table>
@@ -161,14 +154,13 @@ and its approximate size.</em></p>
 <h2>FITS Header Units<a class="headerlink" href="#fits-header-units" title="Link to this heading"></a></h2>
 <section id="hdu0">
 <h3>HDU0<a class="headerlink" href="#hdu0" title="Link to this heading"></a></h3>
-<p><em>Summarize the contents of this HDU.</em></p>
 <p>This HDU has no non-standard required keywords.</p>
 <p>Empty HDU.</p>
 </section>
 <section id="hdu1">
 <h3>HDU1<a class="headerlink" href="#hdu1" title="Link to this heading"></a></h3>
 <p>EXTNAME = QSO_CAT</p>
-<p><em>Summarize the contents of this HDU.</em></p>
+<p>This HDU contains all of the information on the identified quasars. Further information could be obtained via a match to other files that contain the columns TARGETID and TILEID.</p>
 <section id="required-header-keywords">
 <h4>Required Header Keywords<a class="headerlink" href="#required-header-keywords" title="Link to this heading"></a></h4>
 <details class="summary-required-header-keywords-table">
@@ -557,7 +549,7 @@ and its approximate size.</em></p>
 </section>
 <section id="notes-and-examples">
 <h2>Notes and Examples<a class="headerlink" href="#notes-and-examples" title="Link to this heading"></a></h2>
-<p><em>Add notes and examples here.  You can also create links to example files.</em></p>
+<p>As of DR1, the selection criteria are the same as described in Chaussidon et al. (2023)</p>
 </section>
 </section>
 
@@ -565,7 +557,7 @@ and its approximate size.</em></p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="SPECPROD" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="LSS QSO" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="../../../../../../DESI_TARGET/index.html" class="btn btn-neutral float-right" title="DESI_TARGET" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

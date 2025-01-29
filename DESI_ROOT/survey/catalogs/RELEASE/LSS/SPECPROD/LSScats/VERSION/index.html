@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VERSION &mdash; desidatamodel 24.9.dev1374 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/desidatamodel.css?v=f6dbf8d8" />
 
@@ -15,7 +15,7 @@
       <script src="../../../../../../../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../../../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../../../../../../../../_static/documentation_options.js?v=8cbd207e"></script>
-      <script src="../../../../../../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../../../../../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../../../../genindex.html" />
@@ -113,14 +113,22 @@
            <div itemprop="articleBody">
              
   <section id="version">
-<span id="clustering"></span><h1>VERSION<a class="headerlink" href="#version" title="Link to this heading"></a></h1>
-<p>VERSION contains the final LSS catalogs, separated by target types (<a class="reference internal" href="../../../../../../../vac/RELEASE/lss/VERSION/LSScats/index.html#lsscats"><span class="std std-ref">see here for references</span></a>), that have been prepared to be used directly to obtain clustering statistics. It includes both data for randoms (separated into 18 files given <code class="docutils literal notranslate"><span class="pre">{RANN}</span></code>).</p>
+<span id="clustering-dr"></span><h1>VERSION<a class="headerlink" href="#version" title="Link to this heading"></a></h1>
+<p>VERSION contains the final LSS catalogs, separated by target types (<a class="reference internal" href="../../../../../../../vac/RELEASE/lss/VERSION/LSScats/index.html#lsscats"><span class="std std-ref">see here for references</span></a>)??? To check lsscats., that have been prepared to be used directly to obtain clustering statistics. It includes both data for randoms (separated into 18 files given <code class="docutils literal notranslate"><span class="pre">{RANN}</span></code>).</p>
 <p>We can also found healpix maps representing several quantities under hpmaps directory for each target separately.</p>
 <p>Descriptions on how to use these to obtain clustering measurements are fully given in <a class="reference external" href="https://arxiv.org/abs/2405.16593">Ross et al. (2024)</a>. Any cuts applied to the data catalogs should be equally applied to the random catalogs.</p>
-<p>Any number of the random catalogs, <code class="docutils literal notranslate"><span class="pre">{RANN}</span></code> can be used (with the impact only on statistical precision). Large-scale clustering measurements can be accurately obtained via the columns <code class="xref py py-attr docutils literal notranslate"><span class="pre">RA</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">DEC</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">Z</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">WEIGHT</span></code>.</p>
+<p>Any number of the random catalogs, <code class="docutils literal notranslate"><span class="pre">{RANN}</span></code> can be used (with the impact only on statistical precision).</p>
+<p><code class="docutils literal notranslate"><span class="pre">full</span></code> contains information on all targets identified as reachable by DESI fiberassign, split by target types (LRG, ELG, QSO and BGS), including many columns of photometrically and spectroscopically derived information. These files are available before (<code class="docutils literal notranslate"><span class="pre">{VETO}</span></code> = <code class="docutils literal notranslate"><span class="pre">_noveto</span></code> in the file name), after vetos related to angular coordinates are applied (blank) and after an extra healpix map cut is applied (<code class="docutils literal notranslate"><span class="pre">{VETO}</span></code> = <code class="docutils literal notranslate"><span class="pre">_HPmapcut</span></code> in the file name).</p>
+<p>Large-scale clustering measurements can be accurately obtained via the columns <code class="xref py py-attr docutils literal notranslate"><span class="pre">RA</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">DEC</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">Z</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">WEIGHT</span></code>.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="hpmaps/index.html">hpmaps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frac_tlobs.html">TARGET_frac_tlobs.fits : For list of tileids, FRAC_TLOBS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_full.html">TARGET_fullVETO.dat.fits : Information on all observed targets identified as reachable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random_full.html">TARGET_RANN_fullVETO.ran.fits : Information on all random targets identified as reachable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nz_lss.html">TARGET_PHOTSYS_nz.txt : Target densities as a function of redshift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random_clustering.html">TARGET_PHOTSYS_RANN_clustering.ran.fits : Use for clustering measurements (randoms)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_clustering.html">TARGET_PHOTSYS_clustering.dat.fits : Use for clustering measurements (data)</a></li>
 </ul>
 </div>
 </section>
