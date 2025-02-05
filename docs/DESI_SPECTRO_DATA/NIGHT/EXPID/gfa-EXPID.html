@@ -1,0 +1,5066 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gfa-EXPID &mdash; desidatamodel 24.9.dev1374 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/desidatamodel.css?v=f6dbf8d8" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=8cbd207e"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="guide-EXPID" href="guide-EXPID.html" />
+    <link rel="prev" title="FVC-measure-EXPID" href="FVC-measure-EXPID.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            desidatamodel
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../DESI_ROOT/vac/index.html">vac/ : Value Added Catalogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DESI_ROOT/index.html">$DESI_ROOT : represents the top level of the DESI directory tree.</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">$DESI_SPECTRO_DATA : raw data</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">NIGHT</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">EXPID</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="centroids-EXPID.html">centroids-{expid}.json : Guide camera centroids</a></li>
+<li class="toctree-l4"><a class="reference internal" href="coordinates-EXPID.html">coordinates-{expid}.fits : Coordinates file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="desi-EXPID.html">desi-{expid}.fits.fz : Raw data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="etc-EXPID.html">etc-{expid}.json : Exposure Time Calculator (ETC) analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fiberassign-TILEID.html">fiberassign-{tileid}.fits.gz : Table of which fibers were assigned to which targets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fibermap-EXPID.html">fibermap-{expid}.fits : Table of which fibers were assigned to which targets (*obsolete*)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="focus-EXPID.html">focus-{expid}.fits.fz : Placeholder for focus GFA raw data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fvc-EXPID.html">fvc-{expid}.fits.fz : Fiber View Camera data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fvc-primary-EXPID.html">fvc-primary-{expid}.fits : Fiber View Camera data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FVC-measure-EXPID.html">FVC-measure-{expid}.fits : Fiber View Camera data</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">gfa-{expid}.fits : GFA file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="guide-EXPID.html">guide-{expid}.fits.fz : Placeholder for guide GFA raw data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="guide-rois-EXPID.html">guide-rois-{expid}.fits.fz : Placeholder for guide GFA raw data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="manifest_EXPID.html">manifest_{expid}.json : Manifest file used in early commissioning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pm-EXPID.html">pm-{expid}.fits : Platemaker data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="request-EXPID.html">request-{expid}.json : Commands used to initiate an exposure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sky-EXPID.html">sky-{expid}.fits.fz : Placeholder for guide GFA raw data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DESI_SPECTRO_REDUX/index.html">$DESI_SPECTRO_REDUX : processed spectro data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DESI_SPECTRO_SIM/index.html">$DESI_SPECTRO_SIM : simulated spectro data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DESI_SPECTRO_CALIB/index.html">$DESI_SPECTRO_CALIB : spectro calibration data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DESI_SURVEYOPS/index.html">$DESI_SURVEYOPS : data files used for day-to-day survey operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DESI_TARGET/index.html">$DESI_TARGET : target selection and fiber assignment (see also Myers et al. 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DESIMODEL/index.html">$DESIMODEL : data used for simulating DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DESISURVEY_OUTPUT/index.html">$DESISURVEY_OUTPUT : outputs from desisurvey and surveysim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../PROTODESI/index.html">$PROTODESI : data and logs from the ProtoDESI campaign</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../bitmasks.html">Bit Masks in DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../column_descriptions.html">Standard Column Descriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../envvar.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../units.html">Units in data files</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../datamodel.html">Contributing to desidatamodel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">desidatamodel API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changes.html">desidatamodel Change Log</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">desidatamodel</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">DESI_SPECTRO_DATA</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">NIGHT</a></li>
+          <li class="breadcrumb-item"><a href="index.html">EXPID</a></li>
+      <li class="breadcrumb-item active">gfa-EXPID</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/DESI_SPECTRO_DATA/NIGHT/EXPID/gfa-EXPID.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="gfa-expid">
+<h1>gfa-EXPID<a class="headerlink" href="#gfa-expid" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Summary<span class="colon">:</span></dt>
+<dd class="field-odd"><p>TODO: description needed</p>
+</dd>
+<dt class="field-even">Naming Convention<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">gfa-EXPID.fits.fz</span></code>, where EXPID is the zero-padded
+8-digit exposure ID.</p>
+</dd>
+<dt class="field-odd">Regex<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">gfa-[0-9]{8}\.fits\.fz</span></code></p>
+</dd>
+<dt class="field-even">File Type<span class="colon">:</span></dt>
+<dd class="field-even"><p>FITS, 26 MB</p>
+</dd>
+</dl>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Number</p></th>
+<th class="head"><p>EXTNAME</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Contents</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#hdu00">HDU00</a></p></td>
+<td></td>
+<td><p>IMAGE</p></td>
+<td><p>TODO: description needed</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hdu01">HDU01</a></p></td>
+<td><p>GFA</p></td>
+<td><p>BINTABLE</p></td>
+<td><p>TODO: description needed</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#hdu02">HDU02</a></p></td>
+<td><p>GUIDE0</p></td>
+<td><p>BINTABLE</p></td>
+<td><p>TODO: description needed</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hdu03">HDU03</a></p></td>
+<td><p>FOCUS9</p></td>
+<td><p>BINTABLE</p></td>
+<td><p>TODO: description needed</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#hdu04">HDU04</a></p></td>
+<td><p>FOCUS1</p></td>
+<td><p>BINTABLE</p></td>
+<td><p>TODO: description needed</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hdu05">HDU05</a></p></td>
+<td><p>FOCUS4</p></td>
+<td><p>BINTABLE</p></td>
+<td><p>TODO: description needed</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#hdu06">HDU06</a></p></td>
+<td><p>GUIDE3</p></td>
+<td><p>BINTABLE</p></td>
+<td><p>TODO: description needed</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hdu07">HDU07</a></p></td>
+<td><p>GUIDE7</p></td>
+<td><p>BINTABLE</p></td>
+<td><p>TODO: description needed</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#hdu08">HDU08</a></p></td>
+<td><p>GUIDE5</p></td>
+<td><p>BINTABLE</p></td>
+<td><p>TODO: description needed</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hdu09">HDU09</a></p></td>
+<td><p>GUIDE2</p></td>
+<td><p>BINTABLE</p></td>
+<td><p>TODO: description needed</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#hdu10">HDU10</a></p></td>
+<td><p>FOCUS6</p></td>
+<td><p>BINTABLE</p></td>
+<td><p>TODO: description needed</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hdu11">HDU11</a></p></td>
+<td><p>GUIDE8</p></td>
+<td><p>BINTABLE</p></td>
+<td><p>TODO: description needed</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="fits-header-units">
+<h2>FITS Header Units<a class="headerlink" href="#fits-header-units" title="Link to this heading"></a></h2>
+<section id="hdu00">
+<h3>HDU00<a class="headerlink" href="#hdu00" title="Link to this heading"></a></h3>
+<p>This HDU has no non-standard required keywords.</p>
+<p>Empty HDU.</p>
+</section>
+<section id="hdu01">
+<h3>HDU01<a class="headerlink" href="#hdu01" title="Link to this heading"></a></h3>
+<p>EXTNAME = GFA</p>
+<p>TODO: description needed</p>
+<section id="required-header-keywords">
+<h4>Required Header Keywords<a class="headerlink" href="#required-header-keywords" title="Link to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>8</p></td>
+<td><p>int</p></td>
+<td><p>width of table in bytes</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>number of rows in table</p></td>
+</tr>
+<tr class="row-even"><td><p>BZERO</p></td>
+<td><p>32768</p></td>
+<td><p>int</p></td>
+<td><p>offset data range to that of unsigned short</p></td>
+</tr>
+<tr class="row-odd"><td><p>BSCALE</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>default scaling factor</p></td>
+</tr>
+<tr class="row-even"><td><p>MODULE</p></td>
+<td><p>GFA</p></td>
+<td><p>str</p></td>
+<td><p>Image Sources/Component</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXPID</p></td>
+<td><p>168807</p></td>
+<td><p>int</p></td>
+<td><p>Exposure number</p></td>
+</tr>
+<tr class="row-even"><td><p>EXPFRAME</p></td>
+<td><p>0</p></td>
+<td><p>int</p></td>
+<td><p>Frame number</p></td>
+</tr>
+<tr class="row-odd"><td><p>FRAMES</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>Number of Frames in Archive</p></td>
+</tr>
+<tr class="row-even"><td><p>COSMSPLT</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>Cosmics split exposure if true</p></td>
+</tr>
+<tr class="row-odd"><td><p>MAXSPLIT</p></td>
+<td><p>0</p></td>
+<td><p>int</p></td>
+<td><p>Number of allowed exposure splits</p></td>
+</tr>
+<tr class="row-even"><td><p>FLAVOR</p></td>
+<td><p>science</p></td>
+<td><p>str</p></td>
+<td><p>Observation type</p></td>
+</tr>
+<tr class="row-odd"><td><p>SEQUENCE</p></td>
+<td><p>GFA</p></td>
+<td><p>str</p></td>
+<td><p>OCS Sequence name</p></td>
+</tr>
+<tr class="row-even"><td><p>MANIFEST</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>DOS exposure manifest</p></td>
+</tr>
+<tr class="row-odd"><td><p>OBJECT</p></td>
+<td></td>
+<td><p>str</p></td>
+<td><p>Object name</p></td>
+</tr>
+<tr class="row-even"><td><p>PURPOSE</p></td>
+<td><p>Main Survey</p></td>
+<td><p>str</p></td>
+<td><p>Purpose of observing night</p></td>
+</tr>
+<tr class="row-odd"><td><p>PROGRAM</p></td>
+<td><p>Kickstart Focus Procedure</p></td>
+<td><p>str</p></td>
+<td><p>Program name</p></td>
+</tr>
+<tr class="row-even"><td><p>NTSSURVY</p></td>
+<td><p>na</p></td>
+<td><p>str</p></td>
+<td><p>NTS survey name</p></td>
+</tr>
+<tr class="row-odd"><td><p>PROPID</p></td>
+<td><p>2020B-5000</p></td>
+<td><p>str</p></td>
+<td><p>Proposal ID</p></td>
+</tr>
+<tr class="row-even"><td><p>OBSERVER</p></td>
+<td><p>Jesse Han, Christopher Manser</p></td>
+<td><p>str</p></td>
+<td><p>Names of observers</p></td>
+</tr>
+<tr class="row-odd"><td><p>LEAD</p></td>
+<td><p>Martin Landriau</p></td>
+<td><p>str</p></td>
+<td><p>Lead observer</p></td>
+</tr>
+<tr class="row-even"><td><p>INSTRUME</p></td>
+<td><p>DESI</p></td>
+<td><p>str</p></td>
+<td><p>Instrument name</p></td>
+</tr>
+<tr class="row-odd"><td><p>OBSERVAT</p></td>
+<td><p>KPNO</p></td>
+<td><p>str</p></td>
+<td><p>Observatory name</p></td>
+</tr>
+<tr class="row-even"><td><p>OBS-LAT</p></td>
+<td><p>31.96403</p></td>
+<td><p>str</p></td>
+<td><p>[deg] Observatory latitude</p></td>
+</tr>
+<tr class="row-odd"><td><p>OBS-LONG</p></td>
+<td><p>-111.59989</p></td>
+<td><p>str</p></td>
+<td><p>[deg] Observatory east longitude</p></td>
+</tr>
+<tr class="row-even"><td><p>OBS-ELEV</p></td>
+<td><p>2097.0</p></td>
+<td><p>float</p></td>
+<td><p>[m] Observatory elevation</p></td>
+</tr>
+<tr class="row-odd"><td><p>TELESCOP</p></td>
+<td><p>KPNO 4.0-m telescope</p></td>
+<td><p>str</p></td>
+<td><p>Telescope name</p></td>
+</tr>
+<tr class="row-even"><td><p>CORRCTOR</p></td>
+<td><p>DESI Corrector</p></td>
+<td><p>str</p></td>
+<td><p>Corrector Identification</p></td>
+</tr>
+<tr class="row-odd"><td><p>SEQNUM</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>Number of exposure in sequence</p></td>
+</tr>
+<tr class="row-even"><td><p>NIGHT</p></td>
+<td><p>20230224</p></td>
+<td><p>int</p></td>
+<td><p>Observing night</p></td>
+</tr>
+<tr class="row-odd"><td><p>SEQSTART</p></td>
+<td><p>2023-02-25T01:58:04.748405</p></td>
+<td><p>str</p></td>
+<td><p>Start time of sequence processing</p></td>
+</tr>
+<tr class="row-even"><td><p>TIMESYS</p></td>
+<td><p>UTC</p></td>
+<td><p>str</p></td>
+<td><p>Time system used for date-obs</p></td>
+</tr>
+<tr class="row-odd"><td><p>DATE-OBS</p></td>
+<td><p>2023-02-25T01:58:27.541024</p></td>
+<td><p>str</p></td>
+<td><p>[UTC] Observation data and start time</p></td>
+</tr>
+<tr class="row-even"><td><p>MJD-OBS</p></td>
+<td><p>60000.08226321</p></td>
+<td><p>float</p></td>
+<td><p>Modified Julian Date of observation</p></td>
+</tr>
+<tr class="row-odd"><td><p>OPENSHUT</p></td>
+<td><p>2023-02-25T01:58:27.541024</p></td>
+<td><p>str</p></td>
+<td><p>[s] Time shutter opened</p></td>
+</tr>
+<tr class="row-even"><td><p>CLOSSHUT</p></td>
+<td><p>None</p></td>
+<td><p>Unknown</p></td>
+<td><p>[s] Time it takes exposure shutter to close</p></td>
+</tr>
+<tr class="row-odd"><td><p>CAMSHUT</p></td>
+<td><p>open</p></td>
+<td><p>str</p></td>
+<td><p>Shutter status during observation</p></td>
+</tr>
+<tr class="row-even"><td><p>ST</p></td>
+<td><p>4:51:50.015</p></td>
+<td><p>str</p></td>
+<td><p>Local Sidereal time at observation start (HH:MM</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXPTIME</p></td>
+<td><p>60.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] Actual exposure time</p></td>
+</tr>
+<tr class="row-even"><td><p>GFATIME</p></td>
+<td><p>60.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] GFA camera exposure time</p></td>
+</tr>
+<tr class="row-odd"><td><p>DELTARA</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Offset], right ascension, observer inp</p></td>
+</tr>
+<tr class="row-even"><td><p>DELTADEC</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Offset], declination, observer input</p></td>
+</tr>
+<tr class="row-odd"><td><p>WHITESPT</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>Telescope is at whitespot</p></td>
+</tr>
+<tr class="row-even"><td><p>ZENITH</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>Telescope is at zenith</p></td>
+</tr>
+<tr class="row-odd"><td><p>SEANNEX</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>Telescope is at SE annex</p></td>
+</tr>
+<tr class="row-even"><td><p>BEYONDP</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>Telescope is beyond pole</p></td>
+</tr>
+<tr class="row-odd"><td><p>FIDUCIAL</p></td>
+<td><p>off</p></td>
+<td><p>str</p></td>
+<td><p>Fiducials status during observation</p></td>
+</tr>
+<tr class="row-even"><td><p>BACKLIT</p></td>
+<td><p>off</p></td>
+<td><p>str</p></td>
+<td><p>Fibers are backlit if True</p></td>
+</tr>
+<tr class="row-odd"><td><p>AIRMASS</p></td>
+<td><p>1.000057</p></td>
+<td><p>float</p></td>
+<td><p>Airmass</p></td>
+</tr>
+<tr class="row-even"><td><p>FOCUS</p></td>
+<td><p>1140.0,-480.0,690.3,-3.0,25.0,0.0</p></td>
+<td><p>str</p></td>
+<td><p>Telescope focus settings</p></td>
+</tr>
+<tr class="row-odd"><td><p>TRUSTEMP</p></td>
+<td><p>6.967</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Average Telescope truss temperature (only</p></td>
+</tr>
+<tr class="row-even"><td><p>PMIRTEMP</p></td>
+<td><p>5.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Average primary mirror temperature (nit,e</p></td>
+</tr>
+<tr class="row-odd"><td><p>PMREADY</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>Primary mirror ready</p></td>
+</tr>
+<tr class="row-even"><td><p>PMCOVER</p></td>
+<td><p>open</p></td>
+<td><p>str</p></td>
+<td><p>Primary mirror cover</p></td>
+</tr>
+<tr class="row-odd"><td><p>PMCOOL</p></td>
+<td><p>off</p></td>
+<td><p>str</p></td>
+<td><p>Primary mirror cooling</p></td>
+</tr>
+<tr class="row-even"><td><p>DOMSHUTU</p></td>
+<td><p>open</p></td>
+<td><p>str</p></td>
+<td><p>Upper dome shutter</p></td>
+</tr>
+<tr class="row-odd"><td><p>DOMSHUTL</p></td>
+<td><p>open</p></td>
+<td><p>str</p></td>
+<td><p>Lower dome shutter</p></td>
+</tr>
+<tr class="row-even"><td><p>DOMLIGHH</p></td>
+<td><p>off</p></td>
+<td><p>str</p></td>
+<td><p>High dome lights</p></td>
+</tr>
+<tr class="row-odd"><td><p>DOMLIGHL</p></td>
+<td><p>off</p></td>
+<td><p>str</p></td>
+<td><p>Low dome lights</p></td>
+</tr>
+<tr class="row-even"><td><p>DOMEAZ</p></td>
+<td><p>106.495</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Dome azimuth angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>DOMINPOS</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>Dome is in position</p></td>
+</tr>
+<tr class="row-even"><td><p>EPOCH</p></td>
+<td><p>2000.0</p></td>
+<td><p>float</p></td>
+<td><p>Epoch of observation</p></td>
+</tr>
+<tr class="row-odd"><td><p>GUIDOFFR</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] RA guider offset (cummulative, from TC</p></td>
+</tr>
+<tr class="row-even"><td><p>GUIDOFFD</p></td>
+<td><p>-0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] DEC guider offset (cummulative, from T</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUNRA</p></td>
+<td><p>337.957105</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Sun RA at start of exposure</p></td>
+</tr>
+<tr class="row-even"><td><p>SUNDEC</p></td>
+<td><p>-9.241851</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Sun declination at start of exposure</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOONDEC</p></td>
+<td><p>14.950187</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Moon declination at start of exposure</p></td>
+</tr>
+<tr class="row-even"><td><p>MOONRA</p></td>
+<td><p>36.900458</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Moon RA at start of exposure</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOONSEP</p></td>
+<td><p>36.415</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Moon Separation</p></td>
+</tr>
+<tr class="row-even"><td><p>SLEWTIME</p></td>
+<td><p>0.543</p></td>
+<td><p>float</p></td>
+<td><p>[s] Slew Time</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOUNTAZ</p></td>
+<td><p>269.404239</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount azimuth angle</p></td>
+</tr>
+<tr class="row-even"><td><p>MOUNTDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount declination</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOUNTEL</p></td>
+<td><p>89.388961</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount elevation angle</p></td>
+</tr>
+<tr class="row-even"><td><p>MOUNTHA</p></td>
+<td><p>0.720137</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount hour angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>INCTRL</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>DESI in control</p></td>
+</tr>
+<tr class="row-even"><td><p>INPOS</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>Mount in position</p></td>
+</tr>
+<tr class="row-odd"><td><p>MNTOFFD</p></td>
+<td><p>-0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] DEC mMount offset (GFAPROC pointing co</p></td>
+</tr>
+<tr class="row-even"><td><p>MNTOFFR</p></td>
+<td><p>-0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] RA mount offset (GFAPROC pointing corr</p></td>
+</tr>
+<tr class="row-odd"><td><p>PARALLAC</p></td>
+<td><p>89.023058</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Parallactic angle</p></td>
+</tr>
+<tr class="row-even"><td><p>SKYDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope declination (pointing on sky)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SKYRA</p></td>
+<td><p>71.974937</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope right ascension (pointing on sk</p></td>
+</tr>
+<tr class="row-even"><td><p>TARGTDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Target declination (to TCS)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TARGTRA</p></td>
+<td><p>71.974937</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Target right ascension (to TCS)</p></td>
+</tr>
+<tr class="row-even"><td><p>TARGTAZ</p></td>
+<td><p>269.404239</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Target azimuth</p></td>
+</tr>
+<tr class="row-odd"><td><p>TARGTEL</p></td>
+<td><p>89.388961</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Target elevation</p></td>
+</tr>
+<tr class="row-even"><td><p>TRGTOFFD</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Telescope target offset (dec)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TRGTOFFR</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Telescope target offset (RA)</p></td>
+</tr>
+<tr class="row-even"><td><p>ZD</p></td>
+<td><p>0.611039</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope zenith distance</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCSST</p></td>
+<td><p>04:50:46.818</p></td>
+<td><p>str</p></td>
+<td><p>Local Sidereal time reported by TCS (HH:MM:SS)</p></td>
+</tr>
+<tr class="row-even"><td><p>TCSMJD</p></td>
+<td><p>60000.082691</p></td>
+<td><p>float</p></td>
+<td><p>MJD reported by TCS</p></td>
+</tr>
+<tr class="row-odd"><td><p>SEEING</p></td>
+<td><p>None</p></td>
+<td><p>Unknown</p></td>
+<td><p>[arcsec] ETC/PM seeing</p></td>
+</tr>
+<tr class="row-even"><td><p>TRANSPAR</p></td>
+<td><p>None</p></td>
+<td><p>Unknown</p></td>
+<td><p>ETC/PM transparency</p></td>
+</tr>
+<tr class="row-odd"><td><p>PMSEEING</p></td>
+<td><p>None</p></td>
+<td><p>Unknown</p></td>
+<td><p>[arcsec] PlateMaker GFAPROC seeing</p></td>
+</tr>
+<tr class="row-even"><td><p>PMTRANSP</p></td>
+<td><p>None</p></td>
+<td><p>Unknown</p></td>
+<td><p>[%] PlateMaker GFAPROC transparency</p></td>
+</tr>
+<tr class="row-odd"><td><p>IMAGECAM</p></td>
+<td><p>G0,G2,G3,G5,G7,G8,F1,F4,F6,F9</p></td>
+<td><p>str</p></td>
+<td><p>Image cameras used for this exposure</p></td>
+</tr>
+<tr class="row-even"><td><p>REQADC</p></td>
+<td><p>96.74,99.01</p></td>
+<td><p>str</p></td>
+<td><p>[deg] requested ADC angles</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADCCORR</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>Correct pointing for ADC setting if True</p></td>
+</tr>
+<tr class="row-even"><td><p>ADC1PHI</p></td>
+<td><p>96.739876</p></td>
+<td><p>float</p></td>
+<td><p>[deg] ADC 1 angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADC2PHI</p></td>
+<td><p>99.009244</p></td>
+<td><p>float</p></td>
+<td><p>[deg] ADC 2 angle</p></td>
+</tr>
+<tr class="row-even"><td><p>ADC1HOME</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>ADC 1 at home position if True</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADC2HOME</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>ADC 2 at home position if True</p></td>
+</tr>
+<tr class="row-even"><td><p>ADC1NREV</p></td>
+<td><p>-1.0</p></td>
+<td><p>float</p></td>
+<td><p>ADC 1 number of revs</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADC2NREV</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>ADC 2 number of revs</p></td>
+</tr>
+<tr class="row-even"><td><p>ADC1STAT</p></td>
+<td><p>STOPPED</p></td>
+<td><p>str</p></td>
+<td><p>ADC 1 status</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADC2STAT</p></td>
+<td><p>STOPPED</p></td>
+<td><p>str</p></td>
+<td><p>ADC 2 status</p></td>
+</tr>
+<tr class="row-even"><td><p>HEXPOS</p></td>
+<td><p>1140.0,-480.0,690.3,-3.0,25.0,0.0</p></td>
+<td><p>str</p></td>
+<td><p>Hexapod position</p></td>
+</tr>
+<tr class="row-odd"><td><p>HEXTRIM</p></td>
+<td><p>0.0,0.0,0.0,0.0,0.0,0.0</p></td>
+<td><p>str</p></td>
+<td><p>Hexapod trim values</p></td>
+</tr>
+<tr class="row-even"><td><p>ROTOFFST</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Rotator offset</p></td>
+</tr>
+<tr class="row-odd"><td><p>ROTENBLD</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>Rotator enabled</p></td>
+</tr>
+<tr class="row-even"><td><p>ROTRATE</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec/min] Rotator rate</p></td>
+</tr>
+<tr class="row-odd"><td><p>RESETROT</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>DOS Control: reset hex rotator</p></td>
+</tr>
+<tr class="row-even"><td><p>GUIDMODE</p></td>
+<td><p>catalog</p></td>
+<td><p>str</p></td>
+<td><p>Guider mode</p></td>
+</tr>
+<tr class="row-odd"><td><p>TDEWPNT</p></td>
+<td><p>-8.03</p></td>
+<td><p>float</p></td>
+<td><p>Telescope air dew point</p></td>
+</tr>
+<tr class="row-even"><td><p>TAIRFLOW</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>Telescope air flow</p></td>
+</tr>
+<tr class="row-odd"><td><p>TAIRITMP</p></td>
+<td><p>6.6</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope air in temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TAIROTMP</p></td>
+<td><p>5.7</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope air out temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TAIRTEMP</p></td>
+<td><p>5.695</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope air temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TCASITMP</p></td>
+<td><p>6.6</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope Cass Cage in temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCASOTMP</p></td>
+<td><p>5.7</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope Cass Cage out temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TCSITEMP</p></td>
+<td><p>4.6</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope center section in temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCSOTEMP</p></td>
+<td><p>6.1</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope center section out temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TCIBTEMP</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope chimney IB temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCIMTEMP</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope chimney IM temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TCITTEMP</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope chimney IT temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCOSTEMP</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope chimney OS temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TCOWTEMP</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope chimney OW temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TDBTEMP</p></td>
+<td><p>4.9</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope dec bore temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TFLOWIN</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>Telescope flow rate in</p></td>
+</tr>
+<tr class="row-odd"><td><p>TFLOWOUT</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>Telescope flow rate out</p></td>
+</tr>
+<tr class="row-even"><td><p>TGLYCOLI</p></td>
+<td><p>0.5</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope glycol in temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TGLYCOLO</p></td>
+<td><p>0.9</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope glycol out temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>THINGES</p></td>
+<td><p>6.7</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope hinge S temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>THINGEW</p></td>
+<td><p>22.3</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope hinge W temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TPMAVERT</p></td>
+<td><p>4.995</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror averagetemperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TPMDESIT</p></td>
+<td><p>1.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror desired temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TPMEIBT</p></td>
+<td><p>5.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror EIB temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TPMEITT</p></td>
+<td><p>5.1</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror EIT temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TPMEOBT</p></td>
+<td><p>4.7</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror EOB temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TPMEOTT</p></td>
+<td><p>5.2</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror EOT temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TPMNIBT</p></td>
+<td><p>4.7</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror NIB temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TPMNITT</p></td>
+<td><p>5.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror NIT temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TPMNOBT</p></td>
+<td><p>4.6</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror NOB temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TPMNOTT</p></td>
+<td><p>5.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror NOT temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TPMRTDT</p></td>
+<td><p>5.01</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror RTD temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TPMSIBT</p></td>
+<td><p>5.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror SIB temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TPMSITT</p></td>
+<td><p>5.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror SIT temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TPMSOBT</p></td>
+<td><p>4.5</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror SOB temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TPMSOTT</p></td>
+<td><p>5.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror SOT temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TPMSTAT</p></td>
+<td><p>ready</p></td>
+<td><p>str</p></td>
+<td><p>Telescope mirror status</p></td>
+</tr>
+<tr class="row-even"><td><p>TPMWIBT</p></td>
+<td><p>4.7</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror WIB temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TPMWITT</p></td>
+<td><p>4.9</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror WIT temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TPMWOBT</p></td>
+<td><p>4.2</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror WOB temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TPMWOTT</p></td>
+<td><p>4.8</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror WOT temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TPCITEMP</p></td>
+<td><p>4.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope primary cell in temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TPCOTEMP</p></td>
+<td><p>4.1</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope primary cell out temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TPR1HUM</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>Telescope probe 1 humidity</p></td>
+</tr>
+<tr class="row-odd"><td><p>TPR1TEMP</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope probe1 temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TPR2HUM</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>Telescope probe 2 humidity</p></td>
+</tr>
+<tr class="row-odd"><td><p>TPR2TEMP</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope probe2 temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TSERVO</p></td>
+<td><p>40.0</p></td>
+<td><p>float</p></td>
+<td><p>Telescope servo setpoint</p></td>
+</tr>
+<tr class="row-odd"><td><p>TTRSTEMP</p></td>
+<td><p>6.4</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope top ring S temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TTRWTEMP</p></td>
+<td><p>6.4</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope top ring W temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TTRUETBT</p></td>
+<td><p>-9.6</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope truss ETB temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TTRUETTT</p></td>
+<td><p>6.4</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope truss ETT temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TTRUNTBT</p></td>
+<td><p>6.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope truss NTB temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TTRUNTTT</p></td>
+<td><p>6.6</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope truss NTT temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TTRUSTBT</p></td>
+<td><p>6.1</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope truss STB temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TTRUSTST</p></td>
+<td><p>10.8</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope truss STS temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TTRUSTTT</p></td>
+<td><p>6.2</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope truss STT temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TTRUTSBT</p></td>
+<td><p>7.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope truss TSB temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TTRUTSMT</p></td>
+<td><p>6.9</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope truss TSM temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TTRUTSTT</p></td>
+<td><p>7.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope truss TST temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TTRUWTBT</p></td>
+<td><p>5.8</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope truss WTB temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TTRUWTTT</p></td>
+<td><p>6.6</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope truss WTT temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>ALARM</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>UPS major alarm or check battery</p></td>
+</tr>
+<tr class="row-even"><td><p>ALARM-ON</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>UPS active alarm condition</p></td>
+</tr>
+<tr class="row-odd"><td><p>BATTERY</p></td>
+<td><p>100.0</p></td>
+<td><p>float</p></td>
+<td><p>[%] UPS Battery left</p></td>
+</tr>
+<tr class="row-even"><td><p>SECLEFT</p></td>
+<td><p>6138.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] UPS Seconds left</p></td>
+</tr>
+<tr class="row-odd"><td><p>UPSSTAT</p></td>
+<td><p>System Normal - On Line(7)</p></td>
+<td><p>str</p></td>
+<td><p>UPS Status</p></td>
+</tr>
+<tr class="row-even"><td><p>INAMPS</p></td>
+<td><p>67.8</p></td>
+<td><p>float</p></td>
+<td><p>[A] UPS total input current</p></td>
+</tr>
+<tr class="row-odd"><td><p>OUTWATTS</p></td>
+<td><p>5000.0,7000.0,4500.0</p></td>
+<td><p>str</p></td>
+<td><p>[W] UPS Phase A, B, C output watts</p></td>
+</tr>
+<tr class="row-even"><td><p>COMPDEW</p></td>
+<td><p>-0.5</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] Computer room dewpoint</p></td>
+</tr>
+<tr class="row-odd"><td><p>COMPHUM</p></td>
+<td><p>18.5</p></td>
+<td><p>float</p></td>
+<td><p>[%] Computer room humidity</p></td>
+</tr>
+<tr class="row-even"><td><p>COMPAMB</p></td>
+<td><p>18.4</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] Computer room ambient temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>COMPTEMP</p></td>
+<td><p>25.1</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] Computer room hygrometer temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>DEWPOINT</p></td>
+<td><p>-9.7</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] (outside) dewpoint</p></td>
+</tr>
+<tr class="row-odd"><td><p>HUMIDITY</p></td>
+<td><p>32.0</p></td>
+<td><p>float</p></td>
+<td><p>[%] (outside) humidity</p></td>
+</tr>
+<tr class="row-even"><td><p>PRESSURE</p></td>
+<td><p>795.0</p></td>
+<td><p>float</p></td>
+<td><p>[torr] (outside) air pressure</p></td>
+</tr>
+<tr class="row-odd"><td><p>OUTTEMP</p></td>
+<td><p>5.8</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] outside temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>WINDDIR</p></td>
+<td><p>133.4</p></td>
+<td><p>float</p></td>
+<td><p>[deg] wind direction</p></td>
+</tr>
+<tr class="row-odd"><td><p>WINDSPD</p></td>
+<td><p>21.3</p></td>
+<td><p>float</p></td>
+<td><p>[m/s] wind speed</p></td>
+</tr>
+<tr class="row-even"><td><p>GUST</p></td>
+<td><p>19.0</p></td>
+<td><p>float</p></td>
+<td><p>[m/s] Wind gusts speed</p></td>
+</tr>
+<tr class="row-odd"><td><p>AMNIENTN</p></td>
+<td><p>13.6</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] ambient temperature north</p></td>
+</tr>
+<tr class="row-even"><td><p>CFLOOR</p></td>
+<td><p>4.9</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature on C floor</p></td>
+</tr>
+<tr class="row-odd"><td><p>NWALLIN</p></td>
+<td><p>13.8</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at north wall inside</p></td>
+</tr>
+<tr class="row-even"><td><p>NWALLOUT</p></td>
+<td><p>5.1</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at north wall outside</p></td>
+</tr>
+<tr class="row-odd"><td><p>WWALLIN</p></td>
+<td><p>13.4</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at west wall inside</p></td>
+</tr>
+<tr class="row-even"><td><p>WWALLOUT</p></td>
+<td><p>5.7</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at west wall outside</p></td>
+</tr>
+<tr class="row-odd"><td><p>AMBIENTS</p></td>
+<td><p>14.5</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] ambient temperature south</p></td>
+</tr>
+<tr class="row-even"><td><p>FLOOR</p></td>
+<td><p>11.9</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at floor (LCR)</p></td>
+</tr>
+<tr class="row-odd"><td><p>EWALLCMP</p></td>
+<td><p>6.1</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at east wall, computer room</p></td>
+</tr>
+<tr class="row-even"><td><p>EWALLCOU</p></td>
+<td><p>5.7</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at east wall, Coude room</p></td>
+</tr>
+<tr class="row-odd"><td><p>ROOF</p></td>
+<td><p>5.5</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature on roof</p></td>
+</tr>
+<tr class="row-even"><td><p>ROOFAMB</p></td>
+<td><p>5.9</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] ambient temperature on roof</p></td>
+</tr>
+<tr class="row-odd"><td><p>DOMEBLOW</p></td>
+<td><p>6.3</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at dome back, lower</p></td>
+</tr>
+<tr class="row-even"><td><p>DOMEBUP</p></td>
+<td><p>6.9</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at dome back, upper</p></td>
+</tr>
+<tr class="row-odd"><td><p>DOMELLOW</p></td>
+<td><p>5.8</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at dome left, lower</p></td>
+</tr>
+<tr class="row-even"><td><p>DOMELUP</p></td>
+<td><p>5.8</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at dome left, upper</p></td>
+</tr>
+<tr class="row-odd"><td><p>DOMERLOW</p></td>
+<td><p>6.2</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at dome right, lower</p></td>
+</tr>
+<tr class="row-even"><td><p>DOMERUP</p></td>
+<td><p>5.9</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at dome right, upper</p></td>
+</tr>
+<tr class="row-odd"><td><p>PLATFORM</p></td>
+<td><p>5.7</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at platform</p></td>
+</tr>
+<tr class="row-even"><td><p>SHACKC</p></td>
+<td><p>15.2</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at shack ceiling</p></td>
+</tr>
+<tr class="row-odd"><td><p>SHACKW</p></td>
+<td><p>14.2</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at shack wall</p></td>
+</tr>
+<tr class="row-even"><td><p>STAIRSL</p></td>
+<td><p>5.8</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at stairs, lower</p></td>
+</tr>
+<tr class="row-odd"><td><p>STAIRSM</p></td>
+<td><p>5.6</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at stairs, mid</p></td>
+</tr>
+<tr class="row-even"><td><p>STAIRSU</p></td>
+<td><p>5.8</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at stairs, upper</p></td>
+</tr>
+<tr class="row-odd"><td><p>TELBASE</p></td>
+<td><p>4.5</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at telescope base</p></td>
+</tr>
+<tr class="row-even"><td><p>UTILWALL</p></td>
+<td><p>6.4</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at utility room wall</p></td>
+</tr>
+<tr class="row-odd"><td><p>UTILROOM</p></td>
+<td><p>6.3</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature in utilitiy room</p></td>
+</tr>
+<tr class="row-even"><td><p>RADESYS</p></td>
+<td><p>FK5</p></td>
+<td><p>str</p></td>
+<td><p>Coordinate reference frame of major/minor axes</p></td>
+</tr>
+<tr class="row-odd"><td><p>FILENAME</p></td>
+<td><p>/exposures/desi/20230224/00168807/gfa-00168807.fits.fz</p></td>
+<td><p>str</p></td>
+<td><p>Name of (FI</p></td>
+</tr>
+<tr class="row-even"><td><p>EXCLUDED</p></td>
+<td></td>
+<td><p>str</p></td>
+<td><p>Components excluded from this exposure</p></td>
+</tr>
+<tr class="row-odd"><td><p>DOSVER</p></td>
+<td><p>trunk</p></td>
+<td><p>str</p></td>
+<td><p>DOS software version</p></td>
+</tr>
+<tr class="row-even"><td><p>OCSVER</p></td>
+<td><p>1.2</p></td>
+<td><p>float</p></td>
+<td><p>OCS software version</p></td>
+</tr>
+<tr class="row-odd"><td><p>CONSTVER</p></td>
+<td><p>DESI:CURRENT</p></td>
+<td><p>str</p></td>
+<td><p>Constants version</p></td>
+</tr>
+<tr class="row-even"><td><p>INIFILE</p></td>
+<td><p>/data/msdos/dos_home/architectures/kpno/desi.ini</p></td>
+<td><p>str</p></td>
+<td><p>DOS Configuration</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCSKRA</p></td>
+<td><p>0 0 0</p></td>
+<td><p>str</p></td>
+<td><p>TCS Kalman (RA)</p></td>
+</tr>
+<tr class="row-even"><td><p>TCSKDEC</p></td>
+<td><p>0 0 0</p></td>
+<td><p>str</p></td>
+<td><p>TCS Kalman (dec)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCSGRA</p></td>
+<td><p>0.15</p></td>
+<td><p>float</p></td>
+<td><p>TCS simple gain (RA)</p></td>
+</tr>
+<tr class="row-even"><td><p>TCSGDEC</p></td>
+<td><p>0.15</p></td>
+<td><p>float</p></td>
+<td><p>TCS simple gain (dec)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCSMFRA</p></td>
+<td><p>2</p></td>
+<td><p>int</p></td>
+<td><p>TCS moving filter length (RA)</p></td>
+</tr>
+<tr class="row-even"><td><p>TCSMFDEC</p></td>
+<td><p>2</p></td>
+<td><p>int</p></td>
+<td><p>TCS moving filter length (dec)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCSPIRA</p></td>
+<td><p>1.0,0.0,0.0,0.0</p></td>
+<td><p>str</p></td>
+<td><p>TCS PI settings (P, I (gain, error window, satu</p></td>
+</tr>
+<tr class="row-even"><td><p>TCSPIDEC</p></td>
+<td><p>1.0,0.0,0.0,0.0</p></td>
+<td><p>str</p></td>
+<td><p>TCS PI settings (P, I (gain, error window, satu</p></td>
+</tr>
+<tr class="row-odd"><td><p>ROLE</p></td>
+<td><p>GFAMAN</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CHECKSUM</p></td>
+<td><p>TAHAV895TAEAT593</p></td>
+<td><p>str</p></td>
+<td><p>HDU checksum updated 2023-02-25T01:59:31</p></td>
+</tr>
+<tr class="row-odd"><td><p>DATASUM</p></td>
+<td><p>306780459</p></td>
+<td><p>str</p></td>
+<td><p>data unit checksum updated 2023-02-25T01:59:31</p></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [int16 (compressed), 10]</p>
+</section>
+</section>
+<section id="hdu02">
+<h3>HDU02<a class="headerlink" href="#hdu02" title="Link to this heading"></a></h3>
+<p>EXTNAME = GUIDE0</p>
+<p>TODO: description needed</p>
+<section id="id1">
+<h4>Required Header Keywords<a class="headerlink" href="#id1" title="Link to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>8</p></td>
+<td><p>int</p></td>
+<td><p>width of table in bytes</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>1032</p></td>
+<td><p>int</p></td>
+<td><p>number of rows in table</p></td>
+</tr>
+<tr class="row-even"><td><p>BZERO</p></td>
+<td><p>32768</p></td>
+<td><p>int</p></td>
+<td><p>offset data range to that of unsigned short</p></td>
+</tr>
+<tr class="row-odd"><td><p>BSCALE</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>default scaling factor</p></td>
+</tr>
+<tr class="row-even"><td><p>DEVICE</p></td>
+<td><p>GUIDE0</p></td>
+<td><p>str</p></td>
+<td><p>Device/controller name</p></td>
+</tr>
+<tr class="row-odd"><td><p>UNIT</p></td>
+<td><p>0</p></td>
+<td><p>int</p></td>
+<td><p>Unit number/letter</p></td>
+</tr>
+<tr class="row-even"><td><p>UNITTYPE</p></td>
+<td><p>GUIDE</p></td>
+<td><p>str</p></td>
+<td><p>Image Sources/Component</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXPID</p></td>
+<td><p>168807</p></td>
+<td><p>int</p></td>
+<td><p>Exposure number</p></td>
+</tr>
+<tr class="row-even"><td><p>EXPFRAME</p></td>
+<td><p>0</p></td>
+<td><p>int</p></td>
+<td><p>Frame number</p></td>
+</tr>
+<tr class="row-odd"><td><p>FRAMES</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>Number of Frames in Archive</p></td>
+</tr>
+<tr class="row-even"><td><p>FLAVOR</p></td>
+<td><p>SCIENCE</p></td>
+<td><p>str</p></td>
+<td><p>Observation type</p></td>
+</tr>
+<tr class="row-odd"><td><p>SEQUENCE</p></td>
+<td><p>GFA</p></td>
+<td><p>str</p></td>
+<td><p>OCS Sequence name</p></td>
+</tr>
+<tr class="row-even"><td><p>OBJECT</p></td>
+<td></td>
+<td><p>str</p></td>
+<td><p>Object name</p></td>
+</tr>
+<tr class="row-odd"><td><p>PROGRAM</p></td>
+<td><p>Kickstart Focus Procedure</p></td>
+<td><p>str</p></td>
+<td><p>Program name</p></td>
+</tr>
+<tr class="row-even"><td><p>NIGHT</p></td>
+<td><p>20230224</p></td>
+<td><p>int</p></td>
+<td><p>Observing night</p></td>
+</tr>
+<tr class="row-odd"><td><p>TIMESYS</p></td>
+<td><p>UTC</p></td>
+<td><p>str</p></td>
+<td><p>Time system used for date-obs</p></td>
+</tr>
+<tr class="row-even"><td><p>DATE-OBS</p></td>
+<td><p>2023-02-25T01:58:27.541024</p></td>
+<td><p>str</p></td>
+<td><p>[UTC] Observation data and start time</p></td>
+</tr>
+<tr class="row-odd"><td><p>TIME-OBS</p></td>
+<td><p>01:58:27.541024</p></td>
+<td><p>str</p></td>
+<td><p>[UTC] Observation start time</p></td>
+</tr>
+<tr class="row-even"><td><p>MJD-OBS</p></td>
+<td><p>60000.08226321</p></td>
+<td><p>float</p></td>
+<td><p>Modified Julian Date of observation</p></td>
+</tr>
+<tr class="row-odd"><td><p>OPENSHUT</p></td>
+<td><p>2023-02-25T01:58:27.541024</p></td>
+<td><p>str</p></td>
+<td><p>[s] Time shutter opened</p></td>
+</tr>
+<tr class="row-even"><td><p>ST</p></td>
+<td><p>4:51:50.015</p></td>
+<td><p>str</p></td>
+<td><p>Local Sidereal time at observation start (HH:MM</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXPTIME</p></td>
+<td><p>60.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] Actual exposure time</p></td>
+</tr>
+<tr class="row-even"><td><p>GFATIME</p></td>
+<td><p>60.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] GFA camera exposure time</p></td>
+</tr>
+<tr class="row-odd"><td><p>DELTARA</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Offset], right ascension, observer inp</p></td>
+</tr>
+<tr class="row-even"><td><p>DELTADEC</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Offset], declination, observer input</p></td>
+</tr>
+<tr class="row-odd"><td><p>TRUSTEMP</p></td>
+<td><p>6.967</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Average Telescope truss temperature (only</p></td>
+</tr>
+<tr class="row-even"><td><p>PMIRTEMP</p></td>
+<td><p>5.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Average primary mirror temperature (nit,e</p></td>
+</tr>
+<tr class="row-odd"><td><p>EQUINOX</p></td>
+<td><p>2000.0</p></td>
+<td><p>float</p></td>
+<td><p>Equinox of selected coordinate reference frame</p></td>
+</tr>
+<tr class="row-even"><td><p>MOUNTAZ</p></td>
+<td><p>269.404239</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount azimuth angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOUNTDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount declination</p></td>
+</tr>
+<tr class="row-even"><td><p>MOUNTEL</p></td>
+<td><p>89.388961</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount elevation angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOUNTHA</p></td>
+<td><p>0.720137</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount hour angle</p></td>
+</tr>
+<tr class="row-even"><td><p>SKYDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope declination (pointing on sky)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SKYRA</p></td>
+<td><p>71.974937</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope right ascension (pointing on sk</p></td>
+</tr>
+<tr class="row-even"><td><p>TARGTDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Target declination (to TCS)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TARGTRA</p></td>
+<td><p>71.974937</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Target right ascension (to TCS)</p></td>
+</tr>
+<tr class="row-even"><td><p>HEXPOS</p></td>
+<td><p>1140.0,-480.0,690.3,-3.0,25.0,0.0</p></td>
+<td><p>str</p></td>
+<td><p>Hexapod position</p></td>
+</tr>
+<tr class="row-odd"><td><p>WCSAXES</p></td>
+<td><p>2</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>RADESYS</p></td>
+<td><p>FK5</p></td>
+<td><p>str</p></td>
+<td><p>Coordinate reference frame of major/minor axes</p></td>
+</tr>
+<tr class="row-odd"><td><p>CTYPE1</p></td>
+<td><p>RA—TAN</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CTYPE2</p></td>
+<td><p>DEC–TAN</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CD1_1</p></td>
+<td><p>-5.6435e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CD1_2</p></td>
+<td><p>1.65e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CD2_1</p></td>
+<td><p>1.7957e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CD2_2</p></td>
+<td><p>5.1854e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CRPIX1</p></td>
+<td><p>1024.1</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CRPIX2</p></td>
+<td><p>513.5</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CRVAL1</p></td>
+<td><p>71.5016</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CRVAL2</p></td>
+<td><p>30.4332</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>SHAPE</p></td>
+<td><p>1032,2248</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DTYPE</p></td>
+<td><p>uint16</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DOSVER</p></td>
+<td><p>trunk</p></td>
+<td><p>str</p></td>
+<td><p>DOS software version</p></td>
+</tr>
+<tr class="row-even"><td><p>OVERSCAN</p></td>
+<td><p>50</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DEVICEID</p></td>
+<td><p>dev10</p></td>
+<td><p>str</p></td>
+<td><p>GFA device id (serial number)</p></td>
+</tr>
+<tr class="row-even"><td><p>GAMBNTT</p></td>
+<td><p>11.71</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA ambient temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GFPGAT</p></td>
+<td><p>33.241</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA fpga temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GFILTERT</p></td>
+<td><p>11.675</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA filter temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCOLDTEC</p></td>
+<td><p>11.838</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA cold Peltier temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GHOTTEC</p></td>
+<td><p>11.635</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA hot Peltier temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCCDTEMP</p></td>
+<td><p>11.838</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA CCD temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GCAMTEMP</p></td>
+<td><p>11.675</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA camera temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCAMHUM</p></td>
+<td><p>0.467</p></td>
+<td><p>float</p></td>
+<td><p>[%/100] GFA camera humidity</p></td>
+</tr>
+<tr class="row-even"><td><p>GHUMID2</p></td>
+<td><p>0.467</p></td>
+<td><p>float</p></td>
+<td><p>[%/100] GFA humidity sensor 2</p></td>
+</tr>
+<tr class="row-odd"><td><p>GHUMID3</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[%/100]GFA humidity sensor 3</p></td>
+</tr>
+<tr class="row-even"><td><p>GEXPMODE</p></td>
+<td><p>normal</p></td>
+<td><p>str</p></td>
+<td><p>GFA readout mode (loop/normal)</p></td>
+</tr>
+<tr class="row-odd"><td><p>READOUT</p></td>
+<td><p>OK</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CHECKSUM</p></td>
+<td><p>gXJAiUJ8gUJAgUJ5</p></td>
+<td><p>str</p></td>
+<td><p>HDU checksum updated 2023-02-25T01:59:31</p></td>
+</tr>
+<tr class="row-odd"><td><p>DATASUM</p></td>
+<td><p>3489471984</p></td>
+<td><p>str</p></td>
+<td><p>data unit checksum updated 2023-02-25T01:59:31</p></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [int16 (compressed), 2248x1032]</p>
+</section>
+</section>
+<section id="hdu03">
+<h3>HDU03<a class="headerlink" href="#hdu03" title="Link to this heading"></a></h3>
+<p>EXTNAME = FOCUS9</p>
+<p>TODO: description needed</p>
+<section id="id2">
+<h4>Required Header Keywords<a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>8</p></td>
+<td><p>int</p></td>
+<td><p>width of table in bytes</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>1032</p></td>
+<td><p>int</p></td>
+<td><p>number of rows in table</p></td>
+</tr>
+<tr class="row-even"><td><p>BZERO</p></td>
+<td><p>32768</p></td>
+<td><p>int</p></td>
+<td><p>offset data range to that of unsigned short</p></td>
+</tr>
+<tr class="row-odd"><td><p>BSCALE</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>default scaling factor</p></td>
+</tr>
+<tr class="row-even"><td><p>DEVICE</p></td>
+<td><p>FOCUS9</p></td>
+<td><p>str</p></td>
+<td><p>Device/controller name</p></td>
+</tr>
+<tr class="row-odd"><td><p>UNIT</p></td>
+<td><p>9</p></td>
+<td><p>int</p></td>
+<td><p>Unit number/letter</p></td>
+</tr>
+<tr class="row-even"><td><p>UNITTYPE</p></td>
+<td><p>FOCUS</p></td>
+<td><p>str</p></td>
+<td><p>Image Sources/Component</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXPID</p></td>
+<td><p>168807</p></td>
+<td><p>int</p></td>
+<td><p>Exposure number</p></td>
+</tr>
+<tr class="row-even"><td><p>EXPFRAME</p></td>
+<td><p>0</p></td>
+<td><p>int</p></td>
+<td><p>Frame number</p></td>
+</tr>
+<tr class="row-odd"><td><p>FRAMES</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>Number of Frames in Archive</p></td>
+</tr>
+<tr class="row-even"><td><p>FLAVOR</p></td>
+<td><p>SCIENCE</p></td>
+<td><p>str</p></td>
+<td><p>Observation type</p></td>
+</tr>
+<tr class="row-odd"><td><p>SEQUENCE</p></td>
+<td><p>GFA</p></td>
+<td><p>str</p></td>
+<td><p>OCS Sequence name</p></td>
+</tr>
+<tr class="row-even"><td><p>OBJECT</p></td>
+<td></td>
+<td><p>str</p></td>
+<td><p>Object name</p></td>
+</tr>
+<tr class="row-odd"><td><p>PROGRAM</p></td>
+<td><p>Kickstart Focus Procedure</p></td>
+<td><p>str</p></td>
+<td><p>Program name</p></td>
+</tr>
+<tr class="row-even"><td><p>NIGHT</p></td>
+<td><p>20230224</p></td>
+<td><p>int</p></td>
+<td><p>Observing night</p></td>
+</tr>
+<tr class="row-odd"><td><p>TIMESYS</p></td>
+<td><p>UTC</p></td>
+<td><p>str</p></td>
+<td><p>Time system used for date-obs</p></td>
+</tr>
+<tr class="row-even"><td><p>DATE-OBS</p></td>
+<td><p>2023-02-25T01:58:27.546749</p></td>
+<td><p>str</p></td>
+<td><p>[UTC] Observation data and start time</p></td>
+</tr>
+<tr class="row-odd"><td><p>TIME-OBS</p></td>
+<td><p>01:58:27.546749</p></td>
+<td><p>str</p></td>
+<td><p>[UTC] Observation start time</p></td>
+</tr>
+<tr class="row-even"><td><p>MJD-OBS</p></td>
+<td><p>60000.08226327</p></td>
+<td><p>float</p></td>
+<td><p>Modified Julian Date of observation</p></td>
+</tr>
+<tr class="row-odd"><td><p>OPENSHUT</p></td>
+<td><p>2023-02-25T01:58:27.546749</p></td>
+<td><p>str</p></td>
+<td><p>[s] Time shutter opened</p></td>
+</tr>
+<tr class="row-even"><td><p>ST</p></td>
+<td><p>4:51:50.0253</p></td>
+<td><p>str</p></td>
+<td><p>Local Sidereal time at observation start (HH:MM</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXPTIME</p></td>
+<td><p>60.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] Actual exposure time</p></td>
+</tr>
+<tr class="row-even"><td><p>GFATIME</p></td>
+<td><p>60.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] GFA camera exposure time</p></td>
+</tr>
+<tr class="row-odd"><td><p>DELTARA</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Offset], right ascension, observer inp</p></td>
+</tr>
+<tr class="row-even"><td><p>DELTADEC</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Offset], declination, observer input</p></td>
+</tr>
+<tr class="row-odd"><td><p>TRUSTEMP</p></td>
+<td><p>6.967</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Average Telescope truss temperature (only</p></td>
+</tr>
+<tr class="row-even"><td><p>PMIRTEMP</p></td>
+<td><p>5.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Average primary mirror temperature (nit,e</p></td>
+</tr>
+<tr class="row-odd"><td><p>EQUINOX</p></td>
+<td><p>2000.0</p></td>
+<td><p>float</p></td>
+<td><p>Equinox of selected coordinate reference frame</p></td>
+</tr>
+<tr class="row-even"><td><p>MOUNTAZ</p></td>
+<td><p>269.404239</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount azimuth angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOUNTDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount declination</p></td>
+</tr>
+<tr class="row-even"><td><p>MOUNTEL</p></td>
+<td><p>89.388961</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount elevation angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOUNTHA</p></td>
+<td><p>0.720137</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount hour angle</p></td>
+</tr>
+<tr class="row-even"><td><p>SKYDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope declination (pointing on sky)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SKYRA</p></td>
+<td><p>71.974937</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope right ascension (pointing on sk</p></td>
+</tr>
+<tr class="row-even"><td><p>TARGTDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Target declination (to TCS)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TARGTRA</p></td>
+<td><p>71.974937</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Target right ascension (to TCS)</p></td>
+</tr>
+<tr class="row-even"><td><p>HEXPOS</p></td>
+<td><p>1140.0,-480.0,690.3,-3.0,25.0,0.0</p></td>
+<td><p>str</p></td>
+<td><p>Hexapod position</p></td>
+</tr>
+<tr class="row-odd"><td><p>WCSAXES</p></td>
+<td><p>2</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>RADESYS</p></td>
+<td><p>FK5</p></td>
+<td><p>str</p></td>
+<td><p>Coordinate reference frame of major/minor axes</p></td>
+</tr>
+<tr class="row-odd"><td><p>CTYPE1</p></td>
+<td><p>RA—TAN</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CTYPE2</p></td>
+<td><p>DEC–TAN</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CD1_1</p></td>
+<td><p>-5.6403e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CD1_2</p></td>
+<td><p>-1.6591e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CD2_1</p></td>
+<td><p>-1.8057e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CD2_2</p></td>
+<td><p>5.1824e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CRPIX1</p></td>
+<td><p>1024.5</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CRPIX2</p></td>
+<td><p>516.5</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CRVAL1</p></td>
+<td><p>72.6287</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CRVAL2</p></td>
+<td><p>30.4828</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>SHAPE</p></td>
+<td><p>1032,2248</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DTYPE</p></td>
+<td><p>uint16</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DOSVER</p></td>
+<td><p>trunk</p></td>
+<td><p>str</p></td>
+<td><p>DOS software version</p></td>
+</tr>
+<tr class="row-even"><td><p>OVERSCAN</p></td>
+<td><p>50</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DEVICEID</p></td>
+<td><p>dev03</p></td>
+<td><p>str</p></td>
+<td><p>GFA device id (serial number)</p></td>
+</tr>
+<tr class="row-even"><td><p>GAMBNTT</p></td>
+<td><p>11.6</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA ambient temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GFPGAT</p></td>
+<td><p>35.332</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA fpga temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GFILTERT</p></td>
+<td><p>11.67</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA filter temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCOLDTEC</p></td>
+<td><p>11.849</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA cold Peltier temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GHOTTEC</p></td>
+<td><p>11.678</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA hot Peltier temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCCDTEMP</p></td>
+<td><p>11.849</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA CCD temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GCAMTEMP</p></td>
+<td><p>11.67</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA camera temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCAMHUM</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[%/100] GFA camera humidity</p></td>
+</tr>
+<tr class="row-even"><td><p>GHUMID2</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[%/100] GFA humidity sensor 2</p></td>
+</tr>
+<tr class="row-odd"><td><p>GHUMID3</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[%/100]GFA humidity sensor 3</p></td>
+</tr>
+<tr class="row-even"><td><p>GEXPMODE</p></td>
+<td><p>normal</p></td>
+<td><p>str</p></td>
+<td><p>GFA readout mode (loop/normal)</p></td>
+</tr>
+<tr class="row-odd"><td><p>READOUT</p></td>
+<td><p>OK</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CHECKSUM</p></td>
+<td><p>dR8EfQ6DdQ6DdQ6D</p></td>
+<td><p>str</p></td>
+<td><p>HDU checksum updated 2023-02-25T01:59:31</p></td>
+</tr>
+<tr class="row-odd"><td><p>DATASUM</p></td>
+<td><p>56345574</p></td>
+<td><p>str</p></td>
+<td><p>data unit checksum updated 2023-02-25T01:59:31</p></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [int16 (compressed), 2248x1032]</p>
+</section>
+</section>
+<section id="hdu04">
+<h3>HDU04<a class="headerlink" href="#hdu04" title="Link to this heading"></a></h3>
+<p>EXTNAME = FOCUS1</p>
+<p>TODO: description needed</p>
+<section id="id3">
+<h4>Required Header Keywords<a class="headerlink" href="#id3" title="Link to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>8</p></td>
+<td><p>int</p></td>
+<td><p>width of table in bytes</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>1032</p></td>
+<td><p>int</p></td>
+<td><p>number of rows in table</p></td>
+</tr>
+<tr class="row-even"><td><p>BZERO</p></td>
+<td><p>32768</p></td>
+<td><p>int</p></td>
+<td><p>offset data range to that of unsigned short</p></td>
+</tr>
+<tr class="row-odd"><td><p>BSCALE</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>default scaling factor</p></td>
+</tr>
+<tr class="row-even"><td><p>DEVICE</p></td>
+<td><p>FOCUS1</p></td>
+<td><p>str</p></td>
+<td><p>Device/controller name</p></td>
+</tr>
+<tr class="row-odd"><td><p>UNIT</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>Unit number/letter</p></td>
+</tr>
+<tr class="row-even"><td><p>UNITTYPE</p></td>
+<td><p>FOCUS</p></td>
+<td><p>str</p></td>
+<td><p>Image Sources/Component</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXPID</p></td>
+<td><p>168807</p></td>
+<td><p>int</p></td>
+<td><p>Exposure number</p></td>
+</tr>
+<tr class="row-even"><td><p>EXPFRAME</p></td>
+<td><p>0</p></td>
+<td><p>int</p></td>
+<td><p>Frame number</p></td>
+</tr>
+<tr class="row-odd"><td><p>FRAMES</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>Number of Frames in Archive</p></td>
+</tr>
+<tr class="row-even"><td><p>FLAVOR</p></td>
+<td><p>SCIENCE</p></td>
+<td><p>str</p></td>
+<td><p>Observation type</p></td>
+</tr>
+<tr class="row-odd"><td><p>SEQUENCE</p></td>
+<td><p>GFA</p></td>
+<td><p>str</p></td>
+<td><p>OCS Sequence name</p></td>
+</tr>
+<tr class="row-even"><td><p>OBJECT</p></td>
+<td></td>
+<td><p>str</p></td>
+<td><p>Object name</p></td>
+</tr>
+<tr class="row-odd"><td><p>PROGRAM</p></td>
+<td><p>Kickstart Focus Procedure</p></td>
+<td><p>str</p></td>
+<td><p>Program name</p></td>
+</tr>
+<tr class="row-even"><td><p>NIGHT</p></td>
+<td><p>20230224</p></td>
+<td><p>int</p></td>
+<td><p>Observing night</p></td>
+</tr>
+<tr class="row-odd"><td><p>TIMESYS</p></td>
+<td><p>UTC</p></td>
+<td><p>str</p></td>
+<td><p>Time system used for date-obs</p></td>
+</tr>
+<tr class="row-even"><td><p>DATE-OBS</p></td>
+<td><p>2023-02-25T01:58:27.543959</p></td>
+<td><p>str</p></td>
+<td><p>[UTC] Observation data and start time</p></td>
+</tr>
+<tr class="row-odd"><td><p>TIME-OBS</p></td>
+<td><p>01:58:27.543959</p></td>
+<td><p>str</p></td>
+<td><p>[UTC] Observation start time</p></td>
+</tr>
+<tr class="row-even"><td><p>MJD-OBS</p></td>
+<td><p>60000.08226324</p></td>
+<td><p>float</p></td>
+<td><p>Modified Julian Date of observation</p></td>
+</tr>
+<tr class="row-odd"><td><p>OPENSHUT</p></td>
+<td><p>2023-02-25T01:58:27.543959</p></td>
+<td><p>str</p></td>
+<td><p>[s] Time shutter opened</p></td>
+</tr>
+<tr class="row-even"><td><p>ST</p></td>
+<td><p>4:51:50.8273</p></td>
+<td><p>str</p></td>
+<td><p>Local Sidereal time at observation start (HH:MM</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXPTIME</p></td>
+<td><p>60.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] Actual exposure time</p></td>
+</tr>
+<tr class="row-even"><td><p>GFATIME</p></td>
+<td><p>60.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] GFA camera exposure time</p></td>
+</tr>
+<tr class="row-odd"><td><p>DELTARA</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Offset], right ascension, observer inp</p></td>
+</tr>
+<tr class="row-even"><td><p>DELTADEC</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Offset], declination, observer input</p></td>
+</tr>
+<tr class="row-odd"><td><p>TRUSTEMP</p></td>
+<td><p>6.967</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Average Telescope truss temperature (only</p></td>
+</tr>
+<tr class="row-even"><td><p>PMIRTEMP</p></td>
+<td><p>5.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Average primary mirror temperature (nit,e</p></td>
+</tr>
+<tr class="row-odd"><td><p>EQUINOX</p></td>
+<td><p>2000.0</p></td>
+<td><p>float</p></td>
+<td><p>Equinox of selected coordinate reference frame</p></td>
+</tr>
+<tr class="row-even"><td><p>MOUNTAZ</p></td>
+<td><p>269.404239</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount azimuth angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOUNTDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount declination</p></td>
+</tr>
+<tr class="row-even"><td><p>MOUNTEL</p></td>
+<td><p>89.388961</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount elevation angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOUNTHA</p></td>
+<td><p>0.720137</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount hour angle</p></td>
+</tr>
+<tr class="row-even"><td><p>SKYDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope declination (pointing on sky)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SKYRA</p></td>
+<td><p>71.974937</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope right ascension (pointing on sk</p></td>
+</tr>
+<tr class="row-even"><td><p>TARGTDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Target declination (to TCS)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TARGTRA</p></td>
+<td><p>71.974937</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Target right ascension (to TCS)</p></td>
+</tr>
+<tr class="row-even"><td><p>HEXPOS</p></td>
+<td><p>1140.0,-480.0,690.3,-3.0,25.0,0.0</p></td>
+<td><p>str</p></td>
+<td><p>Hexapod position</p></td>
+</tr>
+<tr class="row-odd"><td><p>WCSAXES</p></td>
+<td><p>2</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>RADESYS</p></td>
+<td><p>FK5</p></td>
+<td><p>str</p></td>
+<td><p>Coordinate reference frame of major/minor axes</p></td>
+</tr>
+<tr class="row-odd"><td><p>CTYPE1</p></td>
+<td><p>RA—TAN</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CTYPE2</p></td>
+<td><p>DEC–TAN</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CD1_1</p></td>
+<td><p>-3.5521e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CD1_2</p></td>
+<td><p>4.3542e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CD2_1</p></td>
+<td><p>4.7389e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CD2_2</p></td>
+<td><p>3.2637e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CRPIX1</p></td>
+<td><p>1024.5</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CRPIX2</p></td>
+<td><p>516.5</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CRVAL1</p></td>
+<td><p>70.5475</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CRVAL2</p></td>
+<td><p>30.9564</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>SHAPE</p></td>
+<td><p>1032,2248</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DTYPE</p></td>
+<td><p>uint16</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DOSVER</p></td>
+<td><p>trunk</p></td>
+<td><p>str</p></td>
+<td><p>DOS software version</p></td>
+</tr>
+<tr class="row-even"><td><p>OVERSCAN</p></td>
+<td><p>50</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DEVICEID</p></td>
+<td><p>dev05</p></td>
+<td><p>str</p></td>
+<td><p>GFA device id (serial number)</p></td>
+</tr>
+<tr class="row-even"><td><p>GAMBNTT</p></td>
+<td><p>11.707</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA ambient temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GFPGAT</p></td>
+<td><p>32.625</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA fpga temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GFILTERT</p></td>
+<td><p>11.712</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA filter temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCOLDTEC</p></td>
+<td><p>12.07</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA cold Peltier temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GHOTTEC</p></td>
+<td><p>11.787</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA hot Peltier temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCCDTEMP</p></td>
+<td><p>12.07</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA CCD temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GCAMTEMP</p></td>
+<td><p>11.712</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA camera temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCAMHUM</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[%/100] GFA camera humidity</p></td>
+</tr>
+<tr class="row-even"><td><p>GHUMID2</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[%/100] GFA humidity sensor 2</p></td>
+</tr>
+<tr class="row-odd"><td><p>GHUMID3</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[%/100]GFA humidity sensor 3</p></td>
+</tr>
+<tr class="row-even"><td><p>GEXPMODE</p></td>
+<td><p>normal</p></td>
+<td><p>str</p></td>
+<td><p>GFA readout mode (loop/normal)</p></td>
+</tr>
+<tr class="row-odd"><td><p>READOUT</p></td>
+<td><p>OK</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CHECKSUM</p></td>
+<td><p>JJAaLH1XJH8aJH8U</p></td>
+<td><p>str</p></td>
+<td><p>HDU checksum updated 2023-02-25T01:59:32</p></td>
+</tr>
+<tr class="row-odd"><td><p>DATASUM</p></td>
+<td><p>745303104</p></td>
+<td><p>str</p></td>
+<td><p>data unit checksum updated 2023-02-25T01:59:32</p></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [int16 (compressed), 2248x1032]</p>
+</section>
+</section>
+<section id="hdu05">
+<h3>HDU05<a class="headerlink" href="#hdu05" title="Link to this heading"></a></h3>
+<p>EXTNAME = FOCUS4</p>
+<p>TODO: description needed</p>
+<section id="id4">
+<h4>Required Header Keywords<a class="headerlink" href="#id4" title="Link to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>8</p></td>
+<td><p>int</p></td>
+<td><p>width of table in bytes</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>1032</p></td>
+<td><p>int</p></td>
+<td><p>number of rows in table</p></td>
+</tr>
+<tr class="row-even"><td><p>BZERO</p></td>
+<td><p>32768</p></td>
+<td><p>int</p></td>
+<td><p>offset data range to that of unsigned short</p></td>
+</tr>
+<tr class="row-odd"><td><p>BSCALE</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>default scaling factor</p></td>
+</tr>
+<tr class="row-even"><td><p>DEVICE</p></td>
+<td><p>FOCUS4</p></td>
+<td><p>str</p></td>
+<td><p>Device/controller name</p></td>
+</tr>
+<tr class="row-odd"><td><p>UNIT</p></td>
+<td><p>4</p></td>
+<td><p>int</p></td>
+<td><p>Unit number/letter</p></td>
+</tr>
+<tr class="row-even"><td><p>UNITTYPE</p></td>
+<td><p>FOCUS</p></td>
+<td><p>str</p></td>
+<td><p>Image Sources/Component</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXPID</p></td>
+<td><p>168807</p></td>
+<td><p>int</p></td>
+<td><p>Exposure number</p></td>
+</tr>
+<tr class="row-even"><td><p>EXPFRAME</p></td>
+<td><p>0</p></td>
+<td><p>int</p></td>
+<td><p>Frame number</p></td>
+</tr>
+<tr class="row-odd"><td><p>FRAMES</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>Number of Frames in Archive</p></td>
+</tr>
+<tr class="row-even"><td><p>FLAVOR</p></td>
+<td><p>SCIENCE</p></td>
+<td><p>str</p></td>
+<td><p>Observation type</p></td>
+</tr>
+<tr class="row-odd"><td><p>SEQUENCE</p></td>
+<td><p>GFA</p></td>
+<td><p>str</p></td>
+<td><p>OCS Sequence name</p></td>
+</tr>
+<tr class="row-even"><td><p>OBJECT</p></td>
+<td></td>
+<td><p>str</p></td>
+<td><p>Object name</p></td>
+</tr>
+<tr class="row-odd"><td><p>PROGRAM</p></td>
+<td><p>Kickstart Focus Procedure</p></td>
+<td><p>str</p></td>
+<td><p>Program name</p></td>
+</tr>
+<tr class="row-even"><td><p>NIGHT</p></td>
+<td><p>20230224</p></td>
+<td><p>int</p></td>
+<td><p>Observing night</p></td>
+</tr>
+<tr class="row-odd"><td><p>TIMESYS</p></td>
+<td><p>UTC</p></td>
+<td><p>str</p></td>
+<td><p>Time system used for date-obs</p></td>
+</tr>
+<tr class="row-even"><td><p>DATE-OBS</p></td>
+<td><p>2023-02-25T01:58:27.546248</p></td>
+<td><p>str</p></td>
+<td><p>[UTC] Observation data and start time</p></td>
+</tr>
+<tr class="row-odd"><td><p>TIME-OBS</p></td>
+<td><p>01:58:27.546248</p></td>
+<td><p>str</p></td>
+<td><p>[UTC] Observation start time</p></td>
+</tr>
+<tr class="row-even"><td><p>MJD-OBS</p></td>
+<td><p>60000.08226327</p></td>
+<td><p>float</p></td>
+<td><p>Modified Julian Date of observation</p></td>
+</tr>
+<tr class="row-odd"><td><p>OPENSHUT</p></td>
+<td><p>2023-02-25T01:58:27.546248</p></td>
+<td><p>str</p></td>
+<td><p>[s] Time shutter opened</p></td>
+</tr>
+<tr class="row-even"><td><p>ST</p></td>
+<td><p>4:51:50.1021</p></td>
+<td><p>str</p></td>
+<td><p>Local Sidereal time at observation start (HH:MM</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXPTIME</p></td>
+<td><p>60.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] Actual exposure time</p></td>
+</tr>
+<tr class="row-even"><td><p>GFATIME</p></td>
+<td><p>60.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] GFA camera exposure time</p></td>
+</tr>
+<tr class="row-odd"><td><p>DELTARA</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Offset], right ascension, observer inp</p></td>
+</tr>
+<tr class="row-even"><td><p>DELTADEC</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Offset], declination, observer input</p></td>
+</tr>
+<tr class="row-odd"><td><p>TRUSTEMP</p></td>
+<td><p>6.967</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Average Telescope truss temperature (only</p></td>
+</tr>
+<tr class="row-even"><td><p>PMIRTEMP</p></td>
+<td><p>5.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Average primary mirror temperature (nit,e</p></td>
+</tr>
+<tr class="row-odd"><td><p>EQUINOX</p></td>
+<td><p>2000.0</p></td>
+<td><p>float</p></td>
+<td><p>Equinox of selected coordinate reference frame</p></td>
+</tr>
+<tr class="row-even"><td><p>MOUNTAZ</p></td>
+<td><p>269.404239</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount azimuth angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOUNTDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount declination</p></td>
+</tr>
+<tr class="row-even"><td><p>MOUNTEL</p></td>
+<td><p>89.388961</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount elevation angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOUNTHA</p></td>
+<td><p>0.720137</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount hour angle</p></td>
+</tr>
+<tr class="row-even"><td><p>SKYDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope declination (pointing on sky)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SKYRA</p></td>
+<td><p>71.974937</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope right ascension (pointing on sk</p></td>
+</tr>
+<tr class="row-even"><td><p>TARGTDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Target declination (to TCS)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TARGTRA</p></td>
+<td><p>71.974937</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Target right ascension (to TCS)</p></td>
+</tr>
+<tr class="row-even"><td><p>HEXPOS</p></td>
+<td><p>1140.0,-480.0,690.3,-3.0,25.0,0.0</p></td>
+<td><p>str</p></td>
+<td><p>Hexapod position</p></td>
+</tr>
+<tr class="row-odd"><td><p>WCSAXES</p></td>
+<td><p>2</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>RADESYS</p></td>
+<td><p>FK5</p></td>
+<td><p>str</p></td>
+<td><p>Coordinate reference frame of major/minor axes</p></td>
+</tr>
+<tr class="row-odd"><td><p>CTYPE1</p></td>
+<td><p>RA—TAN</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CTYPE2</p></td>
+<td><p>DEC–TAN</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CD1_1</p></td>
+<td><p>5.6177e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CD1_2</p></td>
+<td><p>1.7223e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CD2_1</p></td>
+<td><p>1.8745e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CD2_2</p></td>
+<td><p>-5.1616e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CRPIX1</p></td>
+<td><p>1024.5</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CRPIX2</p></td>
+<td><p>516.5</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CRVAL1</p></td>
+<td><p>71.2999</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CRVAL2</p></td>
+<td><p>33.4235</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>SHAPE</p></td>
+<td><p>1032,2248</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DTYPE</p></td>
+<td><p>uint16</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DOSVER</p></td>
+<td><p>trunk</p></td>
+<td><p>str</p></td>
+<td><p>DOS software version</p></td>
+</tr>
+<tr class="row-even"><td><p>OVERSCAN</p></td>
+<td><p>50</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DEVICEID</p></td>
+<td><p>dev07</p></td>
+<td><p>str</p></td>
+<td><p>GFA device id (serial number)</p></td>
+</tr>
+<tr class="row-even"><td><p>GAMBNTT</p></td>
+<td><p>11.798</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA ambient temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GFPGAT</p></td>
+<td><p>33.364</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA fpga temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GFILTERT</p></td>
+<td><p>11.763</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA filter temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCOLDTEC</p></td>
+<td><p>12.097</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA cold Peltier temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GHOTTEC</p></td>
+<td><p>11.827</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA hot Peltier temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCCDTEMP</p></td>
+<td><p>12.097</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA CCD temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GCAMTEMP</p></td>
+<td><p>11.763</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA camera temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCAMHUM</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[%/100] GFA camera humidity</p></td>
+</tr>
+<tr class="row-even"><td><p>GHUMID2</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[%/100] GFA humidity sensor 2</p></td>
+</tr>
+<tr class="row-odd"><td><p>GHUMID3</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[%/100]GFA humidity sensor 3</p></td>
+</tr>
+<tr class="row-even"><td><p>GEXPMODE</p></td>
+<td><p>normal</p></td>
+<td><p>str</p></td>
+<td><p>GFA readout mode (loop/normal)</p></td>
+</tr>
+<tr class="row-odd"><td><p>READOUT</p></td>
+<td><p>OK</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CHECKSUM</p></td>
+<td><p>78F898E578E578E5</p></td>
+<td><p>str</p></td>
+<td><p>HDU checksum updated 2023-02-25T01:59:32</p></td>
+</tr>
+<tr class="row-odd"><td><p>DATASUM</p></td>
+<td><p>874713498</p></td>
+<td><p>str</p></td>
+<td><p>data unit checksum updated 2023-02-25T01:59:32</p></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [int16 (compressed), 2248x1032]</p>
+</section>
+</section>
+<section id="hdu06">
+<h3>HDU06<a class="headerlink" href="#hdu06" title="Link to this heading"></a></h3>
+<p>EXTNAME = GUIDE3</p>
+<p>TODO: description needed</p>
+<section id="id5">
+<h4>Required Header Keywords<a class="headerlink" href="#id5" title="Link to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>8</p></td>
+<td><p>int</p></td>
+<td><p>width of table in bytes</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>1032</p></td>
+<td><p>int</p></td>
+<td><p>number of rows in table</p></td>
+</tr>
+<tr class="row-even"><td><p>BZERO</p></td>
+<td><p>32768</p></td>
+<td><p>int</p></td>
+<td><p>offset data range to that of unsigned short</p></td>
+</tr>
+<tr class="row-odd"><td><p>BSCALE</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>default scaling factor</p></td>
+</tr>
+<tr class="row-even"><td><p>DEVICE</p></td>
+<td><p>GUIDE3</p></td>
+<td><p>str</p></td>
+<td><p>Device/controller name</p></td>
+</tr>
+<tr class="row-odd"><td><p>UNIT</p></td>
+<td><p>3</p></td>
+<td><p>int</p></td>
+<td><p>Unit number/letter</p></td>
+</tr>
+<tr class="row-even"><td><p>UNITTYPE</p></td>
+<td><p>GUIDE</p></td>
+<td><p>str</p></td>
+<td><p>Image Sources/Component</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXPID</p></td>
+<td><p>168807</p></td>
+<td><p>int</p></td>
+<td><p>Exposure number</p></td>
+</tr>
+<tr class="row-even"><td><p>EXPFRAME</p></td>
+<td><p>0</p></td>
+<td><p>int</p></td>
+<td><p>Frame number</p></td>
+</tr>
+<tr class="row-odd"><td><p>FRAMES</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>Number of Frames in Archive</p></td>
+</tr>
+<tr class="row-even"><td><p>FLAVOR</p></td>
+<td><p>SCIENCE</p></td>
+<td><p>str</p></td>
+<td><p>Observation type</p></td>
+</tr>
+<tr class="row-odd"><td><p>SEQUENCE</p></td>
+<td><p>GFA</p></td>
+<td><p>str</p></td>
+<td><p>OCS Sequence name</p></td>
+</tr>
+<tr class="row-even"><td><p>OBJECT</p></td>
+<td></td>
+<td><p>str</p></td>
+<td><p>Object name</p></td>
+</tr>
+<tr class="row-odd"><td><p>PROGRAM</p></td>
+<td><p>Kickstart Focus Procedure</p></td>
+<td><p>str</p></td>
+<td><p>Program name</p></td>
+</tr>
+<tr class="row-even"><td><p>NIGHT</p></td>
+<td><p>20230224</p></td>
+<td><p>int</p></td>
+<td><p>Observing night</p></td>
+</tr>
+<tr class="row-odd"><td><p>TIMESYS</p></td>
+<td><p>UTC</p></td>
+<td><p>str</p></td>
+<td><p>Time system used for date-obs</p></td>
+</tr>
+<tr class="row-even"><td><p>DATE-OBS</p></td>
+<td><p>2023-02-25T01:58:27.542072</p></td>
+<td><p>str</p></td>
+<td><p>[UTC] Observation data and start time</p></td>
+</tr>
+<tr class="row-odd"><td><p>TIME-OBS</p></td>
+<td><p>01:58:27.542072</p></td>
+<td><p>str</p></td>
+<td><p>[UTC] Observation start time</p></td>
+</tr>
+<tr class="row-even"><td><p>MJD-OBS</p></td>
+<td><p>60000.08226322</p></td>
+<td><p>float</p></td>
+<td><p>Modified Julian Date of observation</p></td>
+</tr>
+<tr class="row-odd"><td><p>OPENSHUT</p></td>
+<td><p>2023-02-25T01:58:27.542072</p></td>
+<td><p>str</p></td>
+<td><p>[s] Time shutter opened</p></td>
+</tr>
+<tr class="row-even"><td><p>ST</p></td>
+<td><p>4:51:50.3575</p></td>
+<td><p>str</p></td>
+<td><p>Local Sidereal time at observation start (HH:MM</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXPTIME</p></td>
+<td><p>60.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] Actual exposure time</p></td>
+</tr>
+<tr class="row-even"><td><p>GFATIME</p></td>
+<td><p>60.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] GFA camera exposure time</p></td>
+</tr>
+<tr class="row-odd"><td><p>DELTARA</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Offset], right ascension, observer inp</p></td>
+</tr>
+<tr class="row-even"><td><p>DELTADEC</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Offset], declination, observer input</p></td>
+</tr>
+<tr class="row-odd"><td><p>TRUSTEMP</p></td>
+<td><p>6.967</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Average Telescope truss temperature (only</p></td>
+</tr>
+<tr class="row-even"><td><p>PMIRTEMP</p></td>
+<td><p>5.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Average primary mirror temperature (nit,e</p></td>
+</tr>
+<tr class="row-odd"><td><p>EQUINOX</p></td>
+<td><p>2000.0</p></td>
+<td><p>float</p></td>
+<td><p>Equinox of selected coordinate reference frame</p></td>
+</tr>
+<tr class="row-even"><td><p>MOUNTAZ</p></td>
+<td><p>269.404239</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount azimuth angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOUNTDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount declination</p></td>
+</tr>
+<tr class="row-even"><td><p>MOUNTEL</p></td>
+<td><p>89.388961</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount elevation angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOUNTHA</p></td>
+<td><p>0.720137</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount hour angle</p></td>
+</tr>
+<tr class="row-even"><td><p>SKYDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope declination (pointing on sky)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SKYRA</p></td>
+<td><p>71.974937</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope right ascension (pointing on sk</p></td>
+</tr>
+<tr class="row-even"><td><p>TARGTDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Target declination (to TCS)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TARGTRA</p></td>
+<td><p>71.974937</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Target right ascension (to TCS)</p></td>
+</tr>
+<tr class="row-even"><td><p>HEXPOS</p></td>
+<td><p>1140.0,-480.0,690.3,-3.0,25.0,0.0</p></td>
+<td><p>str</p></td>
+<td><p>Hexapod position</p></td>
+</tr>
+<tr class="row-odd"><td><p>WCSAXES</p></td>
+<td><p>2</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>RADESYS</p></td>
+<td><p>FK5</p></td>
+<td><p>str</p></td>
+<td><p>Coordinate reference frame of major/minor axes</p></td>
+</tr>
+<tr class="row-odd"><td><p>CTYPE1</p></td>
+<td><p>RA—TAN</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CTYPE2</p></td>
+<td><p>DEC–TAN</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CD1_1</p></td>
+<td><p>3.403e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CD1_2</p></td>
+<td><p>4.4534e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CD2_1</p></td>
+<td><p>4.8469e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CD2_2</p></td>
+<td><p>-3.1267e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CRPIX1</p></td>
+<td><p>1004.23</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CRPIX2</p></td>
+<td><p>503.43</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CRVAL1</p></td>
+<td><p>70.4043</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CRVAL2</p></td>
+<td><p>32.8036</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>SHAPE</p></td>
+<td><p>1032,2248</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DTYPE</p></td>
+<td><p>uint16</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DOSVER</p></td>
+<td><p>trunk</p></td>
+<td><p>str</p></td>
+<td><p>DOS software version</p></td>
+</tr>
+<tr class="row-even"><td><p>OVERSCAN</p></td>
+<td><p>50</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DEVICEID</p></td>
+<td><p>dev02</p></td>
+<td><p>str</p></td>
+<td><p>GFA device id (serial number)</p></td>
+</tr>
+<tr class="row-even"><td><p>GAMBNTT</p></td>
+<td><p>11.838</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA ambient temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GFPGAT</p></td>
+<td><p>34.84</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA fpga temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GFILTERT</p></td>
+<td><p>11.793</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA filter temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCOLDTEC</p></td>
+<td><p>11.99</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA cold Peltier temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GHOTTEC</p></td>
+<td><p>11.907</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA hot Peltier temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCCDTEMP</p></td>
+<td><p>11.99</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA CCD temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GCAMTEMP</p></td>
+<td><p>11.793</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA camera temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCAMHUM</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[%/100] GFA camera humidity</p></td>
+</tr>
+<tr class="row-even"><td><p>GHUMID2</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[%/100] GFA humidity sensor 2</p></td>
+</tr>
+<tr class="row-odd"><td><p>GHUMID3</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[%/100]GFA humidity sensor 3</p></td>
+</tr>
+<tr class="row-even"><td><p>GEXPMODE</p></td>
+<td><p>normal</p></td>
+<td><p>str</p></td>
+<td><p>GFA readout mode (loop/normal)</p></td>
+</tr>
+<tr class="row-odd"><td><p>READOUT</p></td>
+<td><p>OK</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CHECKSUM</p></td>
+<td><p>3NGeAMEc5MEcAMEc</p></td>
+<td><p>str</p></td>
+<td><p>HDU checksum updated 2023-02-25T01:59:32</p></td>
+</tr>
+<tr class="row-odd"><td><p>DATASUM</p></td>
+<td><p>4112356301</p></td>
+<td><p>str</p></td>
+<td><p>data unit checksum updated 2023-02-25T01:59:32</p></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [int16 (compressed), 2248x1032]</p>
+</section>
+</section>
+<section id="hdu07">
+<h3>HDU07<a class="headerlink" href="#hdu07" title="Link to this heading"></a></h3>
+<p>EXTNAME = GUIDE7</p>
+<p>TODO: description needed</p>
+<section id="id6">
+<h4>Required Header Keywords<a class="headerlink" href="#id6" title="Link to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>8</p></td>
+<td><p>int</p></td>
+<td><p>width of table in bytes</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>1032</p></td>
+<td><p>int</p></td>
+<td><p>number of rows in table</p></td>
+</tr>
+<tr class="row-even"><td><p>BZERO</p></td>
+<td><p>32768</p></td>
+<td><p>int</p></td>
+<td><p>offset data range to that of unsigned short</p></td>
+</tr>
+<tr class="row-odd"><td><p>BSCALE</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>default scaling factor</p></td>
+</tr>
+<tr class="row-even"><td><p>DEVICE</p></td>
+<td><p>GUIDE7</p></td>
+<td><p>str</p></td>
+<td><p>Device/controller name</p></td>
+</tr>
+<tr class="row-odd"><td><p>UNIT</p></td>
+<td><p>7</p></td>
+<td><p>int</p></td>
+<td><p>Unit number/letter</p></td>
+</tr>
+<tr class="row-even"><td><p>UNITTYPE</p></td>
+<td><p>GUIDE</p></td>
+<td><p>str</p></td>
+<td><p>Image Sources/Component</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXPID</p></td>
+<td><p>168807</p></td>
+<td><p>int</p></td>
+<td><p>Exposure number</p></td>
+</tr>
+<tr class="row-even"><td><p>EXPFRAME</p></td>
+<td><p>0</p></td>
+<td><p>int</p></td>
+<td><p>Frame number</p></td>
+</tr>
+<tr class="row-odd"><td><p>FRAMES</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>Number of Frames in Archive</p></td>
+</tr>
+<tr class="row-even"><td><p>FLAVOR</p></td>
+<td><p>SCIENCE</p></td>
+<td><p>str</p></td>
+<td><p>Observation type</p></td>
+</tr>
+<tr class="row-odd"><td><p>SEQUENCE</p></td>
+<td><p>GFA</p></td>
+<td><p>str</p></td>
+<td><p>OCS Sequence name</p></td>
+</tr>
+<tr class="row-even"><td><p>OBJECT</p></td>
+<td></td>
+<td><p>str</p></td>
+<td><p>Object name</p></td>
+</tr>
+<tr class="row-odd"><td><p>PROGRAM</p></td>
+<td><p>Kickstart Focus Procedure</p></td>
+<td><p>str</p></td>
+<td><p>Program name</p></td>
+</tr>
+<tr class="row-even"><td><p>NIGHT</p></td>
+<td><p>20230224</p></td>
+<td><p>int</p></td>
+<td><p>Observing night</p></td>
+</tr>
+<tr class="row-odd"><td><p>TIMESYS</p></td>
+<td><p>UTC</p></td>
+<td><p>str</p></td>
+<td><p>Time system used for date-obs</p></td>
+</tr>
+<tr class="row-even"><td><p>DATE-OBS</p></td>
+<td><p>2023-02-25T01:58:27.546379</p></td>
+<td><p>str</p></td>
+<td><p>[UTC] Observation data and start time</p></td>
+</tr>
+<tr class="row-odd"><td><p>TIME-OBS</p></td>
+<td><p>01:58:27.546379</p></td>
+<td><p>str</p></td>
+<td><p>[UTC] Observation start time</p></td>
+</tr>
+<tr class="row-even"><td><p>MJD-OBS</p></td>
+<td><p>60000.08226327</p></td>
+<td><p>float</p></td>
+<td><p>Modified Julian Date of observation</p></td>
+</tr>
+<tr class="row-odd"><td><p>OPENSHUT</p></td>
+<td><p>2023-02-25T01:58:27.546379</p></td>
+<td><p>str</p></td>
+<td><p>[s] Time shutter opened</p></td>
+</tr>
+<tr class="row-even"><td><p>ST</p></td>
+<td><p>4:51:50.0216</p></td>
+<td><p>str</p></td>
+<td><p>Local Sidereal time at observation start (HH:MM</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXPTIME</p></td>
+<td><p>60.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] Actual exposure time</p></td>
+</tr>
+<tr class="row-even"><td><p>GFATIME</p></td>
+<td><p>60.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] GFA camera exposure time</p></td>
+</tr>
+<tr class="row-odd"><td><p>DELTARA</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Offset], right ascension, observer inp</p></td>
+</tr>
+<tr class="row-even"><td><p>DELTADEC</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Offset], declination, observer input</p></td>
+</tr>
+<tr class="row-odd"><td><p>TRUSTEMP</p></td>
+<td><p>6.967</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Average Telescope truss temperature (only</p></td>
+</tr>
+<tr class="row-even"><td><p>PMIRTEMP</p></td>
+<td><p>5.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Average primary mirror temperature (nit,e</p></td>
+</tr>
+<tr class="row-odd"><td><p>EQUINOX</p></td>
+<td><p>2000.0</p></td>
+<td><p>float</p></td>
+<td><p>Equinox of selected coordinate reference frame</p></td>
+</tr>
+<tr class="row-even"><td><p>MOUNTAZ</p></td>
+<td><p>269.404239</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount azimuth angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOUNTDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount declination</p></td>
+</tr>
+<tr class="row-even"><td><p>MOUNTEL</p></td>
+<td><p>89.388961</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount elevation angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOUNTHA</p></td>
+<td><p>0.720137</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount hour angle</p></td>
+</tr>
+<tr class="row-even"><td><p>SKYDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope declination (pointing on sky)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SKYRA</p></td>
+<td><p>71.974937</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope right ascension (pointing on sk</p></td>
+</tr>
+<tr class="row-even"><td><p>TARGTDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Target declination (to TCS)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TARGTRA</p></td>
+<td><p>71.974937</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Target right ascension (to TCS)</p></td>
+</tr>
+<tr class="row-even"><td><p>HEXPOS</p></td>
+<td><p>1140.0,-480.0,690.3,-3.0,25.0,0.0</p></td>
+<td><p>str</p></td>
+<td><p>Hexapod position</p></td>
+</tr>
+<tr class="row-odd"><td><p>WCSAXES</p></td>
+<td><p>2</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>RADESYS</p></td>
+<td><p>FK5</p></td>
+<td><p>str</p></td>
+<td><p>Coordinate reference frame of major/minor axes</p></td>
+</tr>
+<tr class="row-odd"><td><p>CTYPE1</p></td>
+<td><p>RA—TAN</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CTYPE2</p></td>
+<td><p>DEC–TAN</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CD1_1</p></td>
+<td><p>-9.1428e-07</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CD1_2</p></td>
+<td><p>-5.4407e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CD2_1</p></td>
+<td><p>-5.9215e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CD2_2</p></td>
+<td><p>8.4006e-07</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CRPIX1</p></td>
+<td><p>1031.43</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CRPIX2</p></td>
+<td><p>503.9</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CRVAL1</p></td>
+<td><p>73.8298</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CRVAL2</p></td>
+<td><p>32.0231</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>SHAPE</p></td>
+<td><p>1032,2248</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DTYPE</p></td>
+<td><p>uint16</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DOSVER</p></td>
+<td><p>trunk</p></td>
+<td><p>str</p></td>
+<td><p>DOS software version</p></td>
+</tr>
+<tr class="row-even"><td><p>OVERSCAN</p></td>
+<td><p>50</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DEVICEID</p></td>
+<td><p>dev01</p></td>
+<td><p>str</p></td>
+<td><p>GFA device id (serial number)</p></td>
+</tr>
+<tr class="row-even"><td><p>GAMBNTT</p></td>
+<td><p>11.493</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA ambient temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GFPGAT</p></td>
+<td><p>32.133</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA fpga temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GFILTERT</p></td>
+<td><p>-45.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA filter temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCOLDTEC</p></td>
+<td><p>11.803</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA cold Peltier temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GHOTTEC</p></td>
+<td><p>11.638</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA hot Peltier temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCCDTEMP</p></td>
+<td><p>11.803</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA CCD temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GCAMTEMP</p></td>
+<td><p>-45.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA camera temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCAMHUM</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[%/100] GFA camera humidity</p></td>
+</tr>
+<tr class="row-even"><td><p>GHUMID2</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[%/100] GFA humidity sensor 2</p></td>
+</tr>
+<tr class="row-odd"><td><p>GHUMID3</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[%/100]GFA humidity sensor 3</p></td>
+</tr>
+<tr class="row-even"><td><p>GEXPMODE</p></td>
+<td><p>normal</p></td>
+<td><p>str</p></td>
+<td><p>GFA readout mode (loop/normal)</p></td>
+</tr>
+<tr class="row-odd"><td><p>READOUT</p></td>
+<td><p>OK</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CHECKSUM</p></td>
+<td><p>NhPkNhNjNhNjNhNj</p></td>
+<td><p>str</p></td>
+<td><p>HDU checksum updated 2023-02-25T01:59:32</p></td>
+</tr>
+<tr class="row-odd"><td><p>DATASUM</p></td>
+<td><p>1863549263</p></td>
+<td><p>str</p></td>
+<td><p>data unit checksum updated 2023-02-25T01:59:32</p></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [int16 (compressed), 2248x1032]</p>
+</section>
+</section>
+<section id="hdu08">
+<h3>HDU08<a class="headerlink" href="#hdu08" title="Link to this heading"></a></h3>
+<p>EXTNAME = GUIDE5</p>
+<p>TODO: description needed</p>
+<section id="id7">
+<h4>Required Header Keywords<a class="headerlink" href="#id7" title="Link to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>8</p></td>
+<td><p>int</p></td>
+<td><p>width of table in bytes</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>1032</p></td>
+<td><p>int</p></td>
+<td><p>number of rows in table</p></td>
+</tr>
+<tr class="row-even"><td><p>BZERO</p></td>
+<td><p>32768</p></td>
+<td><p>int</p></td>
+<td><p>offset data range to that of unsigned short</p></td>
+</tr>
+<tr class="row-odd"><td><p>BSCALE</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>default scaling factor</p></td>
+</tr>
+<tr class="row-even"><td><p>DEVICE</p></td>
+<td><p>GUIDE5</p></td>
+<td><p>str</p></td>
+<td><p>Device/controller name</p></td>
+</tr>
+<tr class="row-odd"><td><p>UNIT</p></td>
+<td><p>5</p></td>
+<td><p>int</p></td>
+<td><p>Unit number/letter</p></td>
+</tr>
+<tr class="row-even"><td><p>UNITTYPE</p></td>
+<td><p>GUIDE</p></td>
+<td><p>str</p></td>
+<td><p>Image Sources/Component</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXPID</p></td>
+<td><p>168807</p></td>
+<td><p>int</p></td>
+<td><p>Exposure number</p></td>
+</tr>
+<tr class="row-even"><td><p>EXPFRAME</p></td>
+<td><p>0</p></td>
+<td><p>int</p></td>
+<td><p>Frame number</p></td>
+</tr>
+<tr class="row-odd"><td><p>FRAMES</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>Number of Frames in Archive</p></td>
+</tr>
+<tr class="row-even"><td><p>FLAVOR</p></td>
+<td><p>SCIENCE</p></td>
+<td><p>str</p></td>
+<td><p>Observation type</p></td>
+</tr>
+<tr class="row-odd"><td><p>SEQUENCE</p></td>
+<td><p>GFA</p></td>
+<td><p>str</p></td>
+<td><p>OCS Sequence name</p></td>
+</tr>
+<tr class="row-even"><td><p>OBJECT</p></td>
+<td></td>
+<td><p>str</p></td>
+<td><p>Object name</p></td>
+</tr>
+<tr class="row-odd"><td><p>PROGRAM</p></td>
+<td><p>Kickstart Focus Procedure</p></td>
+<td><p>str</p></td>
+<td><p>Program name</p></td>
+</tr>
+<tr class="row-even"><td><p>NIGHT</p></td>
+<td><p>20230224</p></td>
+<td><p>int</p></td>
+<td><p>Observing night</p></td>
+</tr>
+<tr class="row-odd"><td><p>TIMESYS</p></td>
+<td><p>UTC</p></td>
+<td><p>str</p></td>
+<td><p>Time system used for date-obs</p></td>
+</tr>
+<tr class="row-even"><td><p>DATE-OBS</p></td>
+<td><p>2023-02-25T01:58:27.542201</p></td>
+<td><p>str</p></td>
+<td><p>[UTC] Observation data and start time</p></td>
+</tr>
+<tr class="row-odd"><td><p>TIME-OBS</p></td>
+<td><p>01:58:27.542201</p></td>
+<td><p>str</p></td>
+<td><p>[UTC] Observation start time</p></td>
+</tr>
+<tr class="row-even"><td><p>MJD-OBS</p></td>
+<td><p>60000.08226322</p></td>
+<td><p>float</p></td>
+<td><p>Modified Julian Date of observation</p></td>
+</tr>
+<tr class="row-odd"><td><p>OPENSHUT</p></td>
+<td><p>2023-02-25T01:58:27.542201</p></td>
+<td><p>str</p></td>
+<td><p>[s] Time shutter opened</p></td>
+</tr>
+<tr class="row-even"><td><p>ST</p></td>
+<td><p>4:51:50.0184</p></td>
+<td><p>str</p></td>
+<td><p>Local Sidereal time at observation start (HH:MM</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXPTIME</p></td>
+<td><p>60.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] Actual exposure time</p></td>
+</tr>
+<tr class="row-even"><td><p>GFATIME</p></td>
+<td><p>60.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] GFA camera exposure time</p></td>
+</tr>
+<tr class="row-odd"><td><p>DELTARA</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Offset], right ascension, observer inp</p></td>
+</tr>
+<tr class="row-even"><td><p>DELTADEC</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Offset], declination, observer input</p></td>
+</tr>
+<tr class="row-odd"><td><p>TRUSTEMP</p></td>
+<td><p>6.967</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Average Telescope truss temperature (only</p></td>
+</tr>
+<tr class="row-even"><td><p>PMIRTEMP</p></td>
+<td><p>5.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Average primary mirror temperature (nit,e</p></td>
+</tr>
+<tr class="row-odd"><td><p>EQUINOX</p></td>
+<td><p>2000.0</p></td>
+<td><p>float</p></td>
+<td><p>Equinox of selected coordinate reference frame</p></td>
+</tr>
+<tr class="row-even"><td><p>MOUNTAZ</p></td>
+<td><p>269.404239</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount azimuth angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOUNTDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount declination</p></td>
+</tr>
+<tr class="row-even"><td><p>MOUNTEL</p></td>
+<td><p>89.388961</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount elevation angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOUNTHA</p></td>
+<td><p>0.720137</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount hour angle</p></td>
+</tr>
+<tr class="row-even"><td><p>SKYDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope declination (pointing on sky)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SKYRA</p></td>
+<td><p>71.974937</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope right ascension (pointing on sk</p></td>
+</tr>
+<tr class="row-even"><td><p>TARGTDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Target declination (to TCS)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TARGTRA</p></td>
+<td><p>71.974937</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Target right ascension (to TCS)</p></td>
+</tr>
+<tr class="row-even"><td><p>HEXPOS</p></td>
+<td><p>1140.0,-480.0,690.3,-3.0,25.0,0.0</p></td>
+<td><p>str</p></td>
+<td><p>Hexapod position</p></td>
+</tr>
+<tr class="row-odd"><td><p>WCSAXES</p></td>
+<td><p>2</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>RADESYS</p></td>
+<td><p>FK5</p></td>
+<td><p>str</p></td>
+<td><p>Coordinate reference frame of major/minor axes</p></td>
+</tr>
+<tr class="row-odd"><td><p>CTYPE1</p></td>
+<td><p>RA—TAN</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CTYPE2</p></td>
+<td><p>DEC–TAN</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CD1_1</p></td>
+<td><p>5.6271e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CD1_2</p></td>
+<td><p>-1.6963e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CD2_1</p></td>
+<td><p>-1.8461e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CD2_2</p></td>
+<td><p>-5.1702e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CRPIX1</p></td>
+<td><p>1019.63</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CRPIX2</p></td>
+<td><p>507.57</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CRVAL1</p></td>
+<td><p>72.4643</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CRVAL2</p></td>
+<td><p>33.4748</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>SHAPE</p></td>
+<td><p>1032,2248</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DTYPE</p></td>
+<td><p>uint16</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DOSVER</p></td>
+<td><p>trunk</p></td>
+<td><p>str</p></td>
+<td><p>DOS software version</p></td>
+</tr>
+<tr class="row-even"><td><p>OVERSCAN</p></td>
+<td><p>50</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DEVICEID</p></td>
+<td><p>dev08</p></td>
+<td><p>str</p></td>
+<td><p>GFA device id (serial number)</p></td>
+</tr>
+<tr class="row-even"><td><p>GAMBNTT</p></td>
+<td><p>11.771</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA ambient temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GFPGAT</p></td>
+<td><p>33.61</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA fpga temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GFILTERT</p></td>
+<td><p>11.763</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA filter temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCOLDTEC</p></td>
+<td><p>12.02</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA cold Peltier temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GHOTTEC</p></td>
+<td><p>11.803</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA hot Peltier temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCCDTEMP</p></td>
+<td><p>12.02</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA CCD temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GCAMTEMP</p></td>
+<td><p>11.763</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA camera temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCAMHUM</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[%/100] GFA camera humidity</p></td>
+</tr>
+<tr class="row-even"><td><p>GHUMID2</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[%/100] GFA humidity sensor 2</p></td>
+</tr>
+<tr class="row-odd"><td><p>GHUMID3</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[%/100]GFA humidity sensor 3</p></td>
+</tr>
+<tr class="row-even"><td><p>GEXPMODE</p></td>
+<td><p>normal</p></td>
+<td><p>str</p></td>
+<td><p>GFA readout mode (loop/normal)</p></td>
+</tr>
+<tr class="row-odd"><td><p>READOUT</p></td>
+<td><p>OK</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CHECKSUM</p></td>
+<td><p>oeaCqdYCodaCodWC</p></td>
+<td><p>str</p></td>
+<td><p>HDU checksum updated 2023-02-25T01:59:32</p></td>
+</tr>
+<tr class="row-odd"><td><p>DATASUM</p></td>
+<td><p>2464151765</p></td>
+<td><p>str</p></td>
+<td><p>data unit checksum updated 2023-02-25T01:59:32</p></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [int16 (compressed), 2248x1032]</p>
+</section>
+</section>
+<section id="hdu09">
+<h3>HDU09<a class="headerlink" href="#hdu09" title="Link to this heading"></a></h3>
+<p>EXTNAME = GUIDE2</p>
+<p>TODO: description needed</p>
+<section id="id8">
+<h4>Required Header Keywords<a class="headerlink" href="#id8" title="Link to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>8</p></td>
+<td><p>int</p></td>
+<td><p>width of table in bytes</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>1032</p></td>
+<td><p>int</p></td>
+<td><p>number of rows in table</p></td>
+</tr>
+<tr class="row-even"><td><p>BZERO</p></td>
+<td><p>32768</p></td>
+<td><p>int</p></td>
+<td><p>offset data range to that of unsigned short</p></td>
+</tr>
+<tr class="row-odd"><td><p>BSCALE</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>default scaling factor</p></td>
+</tr>
+<tr class="row-even"><td><p>DEVICE</p></td>
+<td><p>GUIDE2</p></td>
+<td><p>str</p></td>
+<td><p>Device/controller name</p></td>
+</tr>
+<tr class="row-odd"><td><p>UNIT</p></td>
+<td><p>2</p></td>
+<td><p>int</p></td>
+<td><p>Unit number/letter</p></td>
+</tr>
+<tr class="row-even"><td><p>UNITTYPE</p></td>
+<td><p>GUIDE</p></td>
+<td><p>str</p></td>
+<td><p>Image Sources/Component</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXPID</p></td>
+<td><p>168807</p></td>
+<td><p>int</p></td>
+<td><p>Exposure number</p></td>
+</tr>
+<tr class="row-even"><td><p>EXPFRAME</p></td>
+<td><p>0</p></td>
+<td><p>int</p></td>
+<td><p>Frame number</p></td>
+</tr>
+<tr class="row-odd"><td><p>FRAMES</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>Number of Frames in Archive</p></td>
+</tr>
+<tr class="row-even"><td><p>FLAVOR</p></td>
+<td><p>SCIENCE</p></td>
+<td><p>str</p></td>
+<td><p>Observation type</p></td>
+</tr>
+<tr class="row-odd"><td><p>SEQUENCE</p></td>
+<td><p>GFA</p></td>
+<td><p>str</p></td>
+<td><p>OCS Sequence name</p></td>
+</tr>
+<tr class="row-even"><td><p>OBJECT</p></td>
+<td></td>
+<td><p>str</p></td>
+<td><p>Object name</p></td>
+</tr>
+<tr class="row-odd"><td><p>PROGRAM</p></td>
+<td><p>Kickstart Focus Procedure</p></td>
+<td><p>str</p></td>
+<td><p>Program name</p></td>
+</tr>
+<tr class="row-even"><td><p>NIGHT</p></td>
+<td><p>20230224</p></td>
+<td><p>int</p></td>
+<td><p>Observing night</p></td>
+</tr>
+<tr class="row-odd"><td><p>TIMESYS</p></td>
+<td><p>UTC</p></td>
+<td><p>str</p></td>
+<td><p>Time system used for date-obs</p></td>
+</tr>
+<tr class="row-even"><td><p>DATE-OBS</p></td>
+<td><p>2023-02-25T01:58:27.543003</p></td>
+<td><p>str</p></td>
+<td><p>[UTC] Observation data and start time</p></td>
+</tr>
+<tr class="row-odd"><td><p>TIME-OBS</p></td>
+<td><p>01:58:27.543003</p></td>
+<td><p>str</p></td>
+<td><p>[UTC] Observation start time</p></td>
+</tr>
+<tr class="row-even"><td><p>MJD-OBS</p></td>
+<td><p>60000.08226323</p></td>
+<td><p>float</p></td>
+<td><p>Modified Julian Date of observation</p></td>
+</tr>
+<tr class="row-odd"><td><p>OPENSHUT</p></td>
+<td><p>2023-02-25T01:58:27.543003</p></td>
+<td><p>str</p></td>
+<td><p>[s] Time shutter opened</p></td>
+</tr>
+<tr class="row-even"><td><p>ST</p></td>
+<td><p>4:51:50.1039</p></td>
+<td><p>str</p></td>
+<td><p>Local Sidereal time at observation start (HH:MM</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXPTIME</p></td>
+<td><p>60.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] Actual exposure time</p></td>
+</tr>
+<tr class="row-even"><td><p>GFATIME</p></td>
+<td><p>60.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] GFA camera exposure time</p></td>
+</tr>
+<tr class="row-odd"><td><p>DELTARA</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Offset], right ascension, observer inp</p></td>
+</tr>
+<tr class="row-even"><td><p>DELTADEC</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Offset], declination, observer input</p></td>
+</tr>
+<tr class="row-odd"><td><p>TRUSTEMP</p></td>
+<td><p>6.967</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Average Telescope truss temperature (only</p></td>
+</tr>
+<tr class="row-even"><td><p>PMIRTEMP</p></td>
+<td><p>5.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Average primary mirror temperature (nit,e</p></td>
+</tr>
+<tr class="row-odd"><td><p>EQUINOX</p></td>
+<td><p>2000.0</p></td>
+<td><p>float</p></td>
+<td><p>Equinox of selected coordinate reference frame</p></td>
+</tr>
+<tr class="row-even"><td><p>MOUNTAZ</p></td>
+<td><p>269.404239</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount azimuth angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOUNTDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount declination</p></td>
+</tr>
+<tr class="row-even"><td><p>MOUNTEL</p></td>
+<td><p>89.388961</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount elevation angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOUNTHA</p></td>
+<td><p>0.720137</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount hour angle</p></td>
+</tr>
+<tr class="row-even"><td><p>SKYDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope declination (pointing on sky)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SKYRA</p></td>
+<td><p>71.974937</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope right ascension (pointing on sk</p></td>
+</tr>
+<tr class="row-even"><td><p>TARGTDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Target declination (to TCS)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TARGTRA</p></td>
+<td><p>71.974937</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Target right ascension (to TCS)</p></td>
+</tr>
+<tr class="row-even"><td><p>HEXPOS</p></td>
+<td><p>1140.0,-480.0,690.3,-3.0,25.0,0.0</p></td>
+<td><p>str</p></td>
+<td><p>Hexapod position</p></td>
+</tr>
+<tr class="row-odd"><td><p>WCSAXES</p></td>
+<td><p>2</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>RADESYS</p></td>
+<td><p>FK5</p></td>
+<td><p>str</p></td>
+<td><p>Coordinate reference frame of major/minor axes</p></td>
+</tr>
+<tr class="row-odd"><td><p>CTYPE1</p></td>
+<td><p>RA—TAN</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CTYPE2</p></td>
+<td><p>DEC–TAN</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CD1_1</p></td>
+<td><p>-1.1129e-06</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CD1_2</p></td>
+<td><p>5.4405e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CD2_1</p></td>
+<td><p>5.9213e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CD2_2</p></td>
+<td><p>1.0225e-06</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CRPIX1</p></td>
+<td><p>1020.17</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CRPIX2</p></td>
+<td><p>504.83</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CRVAL1</p></td>
+<td><p>70.1233</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CRVAL2</p></td>
+<td><p>31.8598</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>SHAPE</p></td>
+<td><p>1032,2248</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DTYPE</p></td>
+<td><p>uint16</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DOSVER</p></td>
+<td><p>trunk</p></td>
+<td><p>str</p></td>
+<td><p>DOS software version</p></td>
+</tr>
+<tr class="row-even"><td><p>OVERSCAN</p></td>
+<td><p>50</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DEVICEID</p></td>
+<td><p>dev06</p></td>
+<td><p>str</p></td>
+<td><p>GFA device id (serial number)</p></td>
+</tr>
+<tr class="row-even"><td><p>GAMBNTT</p></td>
+<td><p>11.771</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA ambient temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GFPGAT</p></td>
+<td><p>33.979</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA fpga temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GFILTERT</p></td>
+<td><p>11.83</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA filter temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCOLDTEC</p></td>
+<td><p>11.979</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA cold Peltier temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GHOTTEC</p></td>
+<td><p>11.915</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA hot Peltier temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCCDTEMP</p></td>
+<td><p>11.979</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA CCD temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GCAMTEMP</p></td>
+<td><p>11.83</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA camera temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCAMHUM</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[%/100] GFA camera humidity</p></td>
+</tr>
+<tr class="row-even"><td><p>GHUMID2</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[%/100] GFA humidity sensor 2</p></td>
+</tr>
+<tr class="row-odd"><td><p>GHUMID3</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[%/100]GFA humidity sensor 3</p></td>
+</tr>
+<tr class="row-even"><td><p>GEXPMODE</p></td>
+<td><p>normal</p></td>
+<td><p>str</p></td>
+<td><p>GFA readout mode (loop/normal)</p></td>
+</tr>
+<tr class="row-odd"><td><p>READOUT</p></td>
+<td><p>OK</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CHECKSUM</p></td>
+<td><p>7O3i7M0Z7M0f7M0Z</p></td>
+<td><p>str</p></td>
+<td><p>HDU checksum updated 2023-02-25T01:59:32</p></td>
+</tr>
+<tr class="row-odd"><td><p>DATASUM</p></td>
+<td><p>3563886804</p></td>
+<td><p>str</p></td>
+<td><p>data unit checksum updated 2023-02-25T01:59:32</p></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [int16 (compressed), 2248x1032]</p>
+</section>
+</section>
+<section id="hdu10">
+<h3>HDU10<a class="headerlink" href="#hdu10" title="Link to this heading"></a></h3>
+<p>EXTNAME = FOCUS6</p>
+<p>TODO: description needed</p>
+<section id="id9">
+<h4>Required Header Keywords<a class="headerlink" href="#id9" title="Link to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>8</p></td>
+<td><p>int</p></td>
+<td><p>width of table in bytes</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>1032</p></td>
+<td><p>int</p></td>
+<td><p>number of rows in table</p></td>
+</tr>
+<tr class="row-even"><td><p>BZERO</p></td>
+<td><p>32768</p></td>
+<td><p>int</p></td>
+<td><p>offset data range to that of unsigned short</p></td>
+</tr>
+<tr class="row-odd"><td><p>BSCALE</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>default scaling factor</p></td>
+</tr>
+<tr class="row-even"><td><p>DEVICE</p></td>
+<td><p>FOCUS6</p></td>
+<td><p>str</p></td>
+<td><p>Device/controller name</p></td>
+</tr>
+<tr class="row-odd"><td><p>UNIT</p></td>
+<td><p>6</p></td>
+<td><p>int</p></td>
+<td><p>Unit number/letter</p></td>
+</tr>
+<tr class="row-even"><td><p>UNITTYPE</p></td>
+<td><p>FOCUS</p></td>
+<td><p>str</p></td>
+<td><p>Image Sources/Component</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXPID</p></td>
+<td><p>168807</p></td>
+<td><p>int</p></td>
+<td><p>Exposure number</p></td>
+</tr>
+<tr class="row-even"><td><p>EXPFRAME</p></td>
+<td><p>0</p></td>
+<td><p>int</p></td>
+<td><p>Frame number</p></td>
+</tr>
+<tr class="row-odd"><td><p>FRAMES</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>Number of Frames in Archive</p></td>
+</tr>
+<tr class="row-even"><td><p>FLAVOR</p></td>
+<td><p>SCIENCE</p></td>
+<td><p>str</p></td>
+<td><p>Observation type</p></td>
+</tr>
+<tr class="row-odd"><td><p>SEQUENCE</p></td>
+<td><p>GFA</p></td>
+<td><p>str</p></td>
+<td><p>OCS Sequence name</p></td>
+</tr>
+<tr class="row-even"><td><p>OBJECT</p></td>
+<td></td>
+<td><p>str</p></td>
+<td><p>Object name</p></td>
+</tr>
+<tr class="row-odd"><td><p>PROGRAM</p></td>
+<td><p>Kickstart Focus Procedure</p></td>
+<td><p>str</p></td>
+<td><p>Program name</p></td>
+</tr>
+<tr class="row-even"><td><p>NIGHT</p></td>
+<td><p>20230224</p></td>
+<td><p>int</p></td>
+<td><p>Observing night</p></td>
+</tr>
+<tr class="row-odd"><td><p>TIMESYS</p></td>
+<td><p>UTC</p></td>
+<td><p>str</p></td>
+<td><p>Time system used for date-obs</p></td>
+</tr>
+<tr class="row-even"><td><p>DATE-OBS</p></td>
+<td><p>2023-02-25T01:58:27.544487</p></td>
+<td><p>str</p></td>
+<td><p>[UTC] Observation data and start time</p></td>
+</tr>
+<tr class="row-odd"><td><p>TIME-OBS</p></td>
+<td><p>01:58:27.544487</p></td>
+<td><p>str</p></td>
+<td><p>[UTC] Observation start time</p></td>
+</tr>
+<tr class="row-even"><td><p>MJD-OBS</p></td>
+<td><p>60000.08226325</p></td>
+<td><p>float</p></td>
+<td><p>Modified Julian Date of observation</p></td>
+</tr>
+<tr class="row-odd"><td><p>OPENSHUT</p></td>
+<td><p>2023-02-25T01:58:27.544487</p></td>
+<td><p>str</p></td>
+<td><p>[s] Time shutter opened</p></td>
+</tr>
+<tr class="row-even"><td><p>ST</p></td>
+<td><p>4:51:50.1179</p></td>
+<td><p>str</p></td>
+<td><p>Local Sidereal time at observation start (HH:MM</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXPTIME</p></td>
+<td><p>60.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] Actual exposure time</p></td>
+</tr>
+<tr class="row-even"><td><p>GFATIME</p></td>
+<td><p>60.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] GFA camera exposure time</p></td>
+</tr>
+<tr class="row-odd"><td><p>DELTARA</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Offset], right ascension, observer inp</p></td>
+</tr>
+<tr class="row-even"><td><p>DELTADEC</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Offset], declination, observer input</p></td>
+</tr>
+<tr class="row-odd"><td><p>TRUSTEMP</p></td>
+<td><p>6.967</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Average Telescope truss temperature (only</p></td>
+</tr>
+<tr class="row-even"><td><p>PMIRTEMP</p></td>
+<td><p>5.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Average primary mirror temperature (nit,e</p></td>
+</tr>
+<tr class="row-odd"><td><p>EQUINOX</p></td>
+<td><p>2000.0</p></td>
+<td><p>float</p></td>
+<td><p>Equinox of selected coordinate reference frame</p></td>
+</tr>
+<tr class="row-even"><td><p>MOUNTAZ</p></td>
+<td><p>269.404239</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount azimuth angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOUNTDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount declination</p></td>
+</tr>
+<tr class="row-even"><td><p>MOUNTEL</p></td>
+<td><p>89.388961</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount elevation angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOUNTHA</p></td>
+<td><p>0.720137</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount hour angle</p></td>
+</tr>
+<tr class="row-even"><td><p>SKYDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope declination (pointing on sky)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SKYRA</p></td>
+<td><p>71.974937</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope right ascension (pointing on sk</p></td>
+</tr>
+<tr class="row-even"><td><p>TARGTDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Target declination (to TCS)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TARGTRA</p></td>
+<td><p>71.974937</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Target right ascension (to TCS)</p></td>
+</tr>
+<tr class="row-even"><td><p>HEXPOS</p></td>
+<td><p>1140.0,-480.0,690.3,-3.0,25.0,0.0</p></td>
+<td><p>str</p></td>
+<td><p>Hexapod position</p></td>
+</tr>
+<tr class="row-odd"><td><p>WCSAXES</p></td>
+<td><p>2</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>RADESYS</p></td>
+<td><p>FK5</p></td>
+<td><p>str</p></td>
+<td><p>Coordinate reference frame of major/minor axes</p></td>
+</tr>
+<tr class="row-odd"><td><p>CTYPE1</p></td>
+<td><p>RA—TAN</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CTYPE2</p></td>
+<td><p>DEC–TAN</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CD1_1</p></td>
+<td><p>3.4242e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CD1_2</p></td>
+<td><p>-4.4396e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CD2_1</p></td>
+<td><p>-4.8319e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CD2_2</p></td>
+<td><p>-3.1462e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CRPIX1</p></td>
+<td><p>1024.5</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CRPIX2</p></td>
+<td><p>516.5</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CRVAL1</p></td>
+<td><p>73.4335</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CRVAL2</p></td>
+<td><p>32.937</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>SHAPE</p></td>
+<td><p>1032,2248</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DTYPE</p></td>
+<td><p>uint16</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DOSVER</p></td>
+<td><p>trunk</p></td>
+<td><p>str</p></td>
+<td><p>DOS software version</p></td>
+</tr>
+<tr class="row-even"><td><p>OVERSCAN</p></td>
+<td><p>50</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DEVICEID</p></td>
+<td><p>dev13</p></td>
+<td><p>str</p></td>
+<td><p>GFA device id (serial number)</p></td>
+</tr>
+<tr class="row-even"><td><p>GAMBNTT</p></td>
+<td><p>11.707</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA ambient temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GFPGAT</p></td>
+<td><p>33.733</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA fpga temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GFILTERT</p></td>
+<td><p>11.664</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA filter temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCOLDTEC</p></td>
+<td><p>11.942</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA cold Peltier temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GHOTTEC</p></td>
+<td><p>11.744</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA hot Peltier temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCCDTEMP</p></td>
+<td><p>11.942</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA CCD temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GCAMTEMP</p></td>
+<td><p>11.664</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA camera temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCAMHUM</p></td>
+<td><p>2.87</p></td>
+<td><p>float</p></td>
+<td><p>[%/100] GFA camera humidity</p></td>
+</tr>
+<tr class="row-even"><td><p>GHUMID2</p></td>
+<td><p>2.87</p></td>
+<td><p>float</p></td>
+<td><p>[%/100] GFA humidity sensor 2</p></td>
+</tr>
+<tr class="row-odd"><td><p>GHUMID3</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[%/100]GFA humidity sensor 3</p></td>
+</tr>
+<tr class="row-even"><td><p>GEXPMODE</p></td>
+<td><p>normal</p></td>
+<td><p>str</p></td>
+<td><p>GFA readout mode (loop/normal)</p></td>
+</tr>
+<tr class="row-odd"><td><p>READOUT</p></td>
+<td><p>OK</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CHECKSUM</p></td>
+<td><p>9oYA9mY59mYA9mY5</p></td>
+<td><p>str</p></td>
+<td><p>HDU checksum updated 2023-02-25T01:59:32</p></td>
+</tr>
+<tr class="row-odd"><td><p>DATASUM</p></td>
+<td><p>1254217566</p></td>
+<td><p>str</p></td>
+<td><p>data unit checksum updated 2023-02-25T01:59:32</p></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [int16 (compressed), 2248x1032]</p>
+</section>
+</section>
+<section id="hdu11">
+<h3>HDU11<a class="headerlink" href="#hdu11" title="Link to this heading"></a></h3>
+<p>EXTNAME = GUIDE8</p>
+<p>TODO: description needed</p>
+<section id="id10">
+<h4>Required Header Keywords<a class="headerlink" href="#id10" title="Link to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>8</p></td>
+<td><p>int</p></td>
+<td><p>width of table in bytes</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>1032</p></td>
+<td><p>int</p></td>
+<td><p>number of rows in table</p></td>
+</tr>
+<tr class="row-even"><td><p>BZERO</p></td>
+<td><p>32768</p></td>
+<td><p>int</p></td>
+<td><p>offset data range to that of unsigned short</p></td>
+</tr>
+<tr class="row-odd"><td><p>BSCALE</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>default scaling factor</p></td>
+</tr>
+<tr class="row-even"><td><p>DEVICE</p></td>
+<td><p>GUIDE8</p></td>
+<td><p>str</p></td>
+<td><p>Device/controller name</p></td>
+</tr>
+<tr class="row-odd"><td><p>UNIT</p></td>
+<td><p>8</p></td>
+<td><p>int</p></td>
+<td><p>Unit number/letter</p></td>
+</tr>
+<tr class="row-even"><td><p>UNITTYPE</p></td>
+<td><p>GUIDE</p></td>
+<td><p>str</p></td>
+<td><p>Image Sources/Component</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXPID</p></td>
+<td><p>168807</p></td>
+<td><p>int</p></td>
+<td><p>Exposure number</p></td>
+</tr>
+<tr class="row-even"><td><p>EXPFRAME</p></td>
+<td><p>0</p></td>
+<td><p>int</p></td>
+<td><p>Frame number</p></td>
+</tr>
+<tr class="row-odd"><td><p>FRAMES</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>Number of Frames in Archive</p></td>
+</tr>
+<tr class="row-even"><td><p>FLAVOR</p></td>
+<td><p>SCIENCE</p></td>
+<td><p>str</p></td>
+<td><p>Observation type</p></td>
+</tr>
+<tr class="row-odd"><td><p>SEQUENCE</p></td>
+<td><p>GFA</p></td>
+<td><p>str</p></td>
+<td><p>OCS Sequence name</p></td>
+</tr>
+<tr class="row-even"><td><p>OBJECT</p></td>
+<td></td>
+<td><p>str</p></td>
+<td><p>Object name</p></td>
+</tr>
+<tr class="row-odd"><td><p>PROGRAM</p></td>
+<td><p>Kickstart Focus Procedure</p></td>
+<td><p>str</p></td>
+<td><p>Program name</p></td>
+</tr>
+<tr class="row-even"><td><p>NIGHT</p></td>
+<td><p>20230224</p></td>
+<td><p>int</p></td>
+<td><p>Observing night</p></td>
+</tr>
+<tr class="row-odd"><td><p>TIMESYS</p></td>
+<td><p>UTC</p></td>
+<td><p>str</p></td>
+<td><p>Time system used for date-obs</p></td>
+</tr>
+<tr class="row-even"><td><p>DATE-OBS</p></td>
+<td><p>2023-02-25T01:58:27.544653</p></td>
+<td><p>str</p></td>
+<td><p>[UTC] Observation data and start time</p></td>
+</tr>
+<tr class="row-odd"><td><p>TIME-OBS</p></td>
+<td><p>01:58:27.544653</p></td>
+<td><p>str</p></td>
+<td><p>[UTC] Observation start time</p></td>
+</tr>
+<tr class="row-even"><td><p>MJD-OBS</p></td>
+<td><p>60000.08226325</p></td>
+<td><p>float</p></td>
+<td><p>Modified Julian Date of observation</p></td>
+</tr>
+<tr class="row-odd"><td><p>OPENSHUT</p></td>
+<td><p>2023-02-25T01:58:27.544653</p></td>
+<td><p>str</p></td>
+<td><p>[s] Time shutter opened</p></td>
+</tr>
+<tr class="row-even"><td><p>ST</p></td>
+<td><p>4:51:50.1118</p></td>
+<td><p>str</p></td>
+<td><p>Local Sidereal time at observation start (HH:MM</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXPTIME</p></td>
+<td><p>60.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] Actual exposure time</p></td>
+</tr>
+<tr class="row-even"><td><p>GFATIME</p></td>
+<td><p>60.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] GFA camera exposure time</p></td>
+</tr>
+<tr class="row-odd"><td><p>DELTARA</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Offset], right ascension, observer inp</p></td>
+</tr>
+<tr class="row-even"><td><p>DELTADEC</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Offset], declination, observer input</p></td>
+</tr>
+<tr class="row-odd"><td><p>TRUSTEMP</p></td>
+<td><p>6.967</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Average Telescope truss temperature (only</p></td>
+</tr>
+<tr class="row-even"><td><p>PMIRTEMP</p></td>
+<td><p>5.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Average primary mirror temperature (nit,e</p></td>
+</tr>
+<tr class="row-odd"><td><p>EQUINOX</p></td>
+<td><p>2000.0</p></td>
+<td><p>float</p></td>
+<td><p>Equinox of selected coordinate reference frame</p></td>
+</tr>
+<tr class="row-even"><td><p>MOUNTAZ</p></td>
+<td><p>269.404239</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount azimuth angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOUNTDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount declination</p></td>
+</tr>
+<tr class="row-even"><td><p>MOUNTEL</p></td>
+<td><p>89.388961</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount elevation angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOUNTHA</p></td>
+<td><p>0.720137</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount hour angle</p></td>
+</tr>
+<tr class="row-even"><td><p>SKYDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope declination (pointing on sky)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SKYRA</p></td>
+<td><p>71.974937</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope right ascension (pointing on sk</p></td>
+</tr>
+<tr class="row-even"><td><p>TARGTDEC</p></td>
+<td><p>31.954914</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Target declination (to TCS)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TARGTRA</p></td>
+<td><p>71.974937</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Target right ascension (to TCS)</p></td>
+</tr>
+<tr class="row-even"><td><p>HEXPOS</p></td>
+<td><p>1140.0,-480.0,690.3,-3.0,25.0,0.0</p></td>
+<td><p>str</p></td>
+<td><p>Hexapod position</p></td>
+</tr>
+<tr class="row-odd"><td><p>WCSAXES</p></td>
+<td><p>2</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>RADESYS</p></td>
+<td><p>FK5</p></td>
+<td><p>str</p></td>
+<td><p>Coordinate reference frame of major/minor axes</p></td>
+</tr>
+<tr class="row-odd"><td><p>CTYPE1</p></td>
+<td><p>RA—TAN</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CTYPE2</p></td>
+<td><p>DEC–TAN</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CD1_1</p></td>
+<td><p>-3.5408e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CD1_2</p></td>
+<td><p>-4.3618e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CD2_1</p></td>
+<td><p>-4.7472e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CD2_2</p></td>
+<td><p>3.2533e-05</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CRPIX1</p></td>
+<td><p>1036.7</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CRPIX2</p></td>
+<td><p>522.17</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CRVAL1</p></td>
+<td><p>73.5165</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CRVAL2</p></td>
+<td><p>31.0872</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>SHAPE</p></td>
+<td><p>1032,2248</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DTYPE</p></td>
+<td><p>uint16</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DOSVER</p></td>
+<td><p>trunk</p></td>
+<td><p>str</p></td>
+<td><p>DOS software version</p></td>
+</tr>
+<tr class="row-even"><td><p>OVERSCAN</p></td>
+<td><p>50</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DEVICEID</p></td>
+<td><p>dev04</p></td>
+<td><p>str</p></td>
+<td><p>GFA device id (serial number)</p></td>
+</tr>
+<tr class="row-even"><td><p>GAMBNTT</p></td>
+<td><p>11.531</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA ambient temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GFPGAT</p></td>
+<td><p>33.856</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA fpga temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GFILTERT</p></td>
+<td><p>11.464</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA filter temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCOLDTEC</p></td>
+<td><p>11.79</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA cold Peltier temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GHOTTEC</p></td>
+<td><p>11.52</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA hot Peltier temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCCDTEMP</p></td>
+<td><p>11.79</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA CCD temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>GCAMTEMP</p></td>
+<td><p>11.464</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] GFA camera temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCAMHUM</p></td>
+<td><p>2.313</p></td>
+<td><p>float</p></td>
+<td><p>[%/100] GFA camera humidity</p></td>
+</tr>
+<tr class="row-even"><td><p>GHUMID2</p></td>
+<td><p>2.313</p></td>
+<td><p>float</p></td>
+<td><p>[%/100] GFA humidity sensor 2</p></td>
+</tr>
+<tr class="row-odd"><td><p>GHUMID3</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[%/100]GFA humidity sensor 3</p></td>
+</tr>
+<tr class="row-even"><td><p>GEXPMODE</p></td>
+<td><p>normal</p></td>
+<td><p>str</p></td>
+<td><p>GFA readout mode (loop/normal)</p></td>
+</tr>
+<tr class="row-odd"><td><p>READOUT</p></td>
+<td><p>OK</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CHECKSUM</p></td>
+<td><p>fgachdUbfdabfdUb</p></td>
+<td><p>str</p></td>
+<td><p>HDU checksum updated 2023-02-25T01:59:32</p></td>
+</tr>
+<tr class="row-odd"><td><p>DATASUM</p></td>
+<td><p>2242340315</p></td>
+<td><p>str</p></td>
+<td><p>data unit checksum updated 2023-02-25T01:59:32</p></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [int16 (compressed), 2248x1032]</p>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="FVC-measure-EXPID.html" class="btn btn-neutral float-left" title="FVC-measure-EXPID" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="guide-EXPID.html" class="btn btn-neutral float-right" title="guide-EXPID" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014-2022, DESI Collaboration.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

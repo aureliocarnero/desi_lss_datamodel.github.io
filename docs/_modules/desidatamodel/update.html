@@ -1,0 +1,387 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>desidatamodel.update &mdash; desidatamodel 24.9.dev1374 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/desidatamodel.css?v=f6dbf8d8" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=8cbd207e"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            desidatamodel
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../DESI_ROOT/vac/index.html">vac/ : Value Added Catalogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../DESI_ROOT/index.html">$DESI_ROOT : represents the top level of the DESI directory tree.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../DESI_SPECTRO_DATA/index.html">$DESI_SPECTRO_DATA : raw data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../DESI_SPECTRO_REDUX/index.html">$DESI_SPECTRO_REDUX : processed spectro data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../DESI_SPECTRO_SIM/index.html">$DESI_SPECTRO_SIM : simulated spectro data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../DESI_SPECTRO_CALIB/index.html">$DESI_SPECTRO_CALIB : spectro calibration data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../DESI_SURVEYOPS/index.html">$DESI_SURVEYOPS : data files used for day-to-day survey operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../DESI_TARGET/index.html">$DESI_TARGET : target selection and fiber assignment (see also Myers et al. 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../DESIMODEL/index.html">$DESIMODEL : data used for simulating DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../DESISURVEY_OUTPUT/index.html">$DESISURVEY_OUTPUT : outputs from desisurvey and surveysim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PROTODESI/index.html">$PROTODESI : data and logs from the ProtoDESI campaign</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../bitmasks.html">Bit Masks in DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../column_descriptions.html">Standard Column Descriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../envvar.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../units.html">Units in data files</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../datamodel.html">Contributing to desidatamodel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">desidatamodel API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changes.html">desidatamodel Change Log</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">desidatamodel</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+          <li class="breadcrumb-item"><a href="../desidatamodel.html">desidatamodel</a></li>
+      <li class="breadcrumb-item active">desidatamodel.update</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for desidatamodel.update</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Licensed under a 3-clause BSD style license - see LICENSE.rst</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">====================</span>
+<span class="sd">desidatamodel.update</span>
+<span class="sd">====================</span>
+
+<span class="sd">Tools to update column units and descriptions in a pre-existing datamodel file.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">importlib.resources</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ir</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">html</span><span class="w"> </span><span class="kn">import</span> <span class="n">escape</span>
+<span class="c1"># from pkg_resources import resource_filename</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">argparse</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.table</span><span class="w"> </span><span class="kn">import</span> <span class="n">Table</span>
+<span class="c1"># from astropy.io.ascii import RST</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">desiutil.log</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_logger</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">.stub</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_column_descriptions</span>
+
+
+<div class="viewcode-block" id="read_table_rows">
+<a class="viewcode-back" href="../../api.html#desidatamodel.update.read_table_rows">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">read_table_rows</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Read an RST-format table from a set of lines</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        lines (list of str): lines from data model file</span>
+<span class="sd">        i (int): start at line number i</span>
+
+<span class="sd">    Return: None or list of dict(Name, Type, Units, Description)</span>
+
+<span class="sd">    Looks for data table description of the form::</span>
+
+<span class="sd">       ==== ==== ===== ===========</span>
+<span class="sd">       Name Type Units Description</span>
+<span class="sd">       ==== ==== ===== ===========</span>
+<span class="sd">       blat int  s     biz bat bar</span>
+<span class="sd">       foo  int        bing bang boom</span>
+<span class="sd">       ==== ==== ===== ===========</span>
+
+<span class="sd">    while allowing the columns to have arbitrary widths or possibly be blank.</span>
+
+<span class="sd">    Returns None if table starting at line `i` doesn&#39;t match that form.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">h1</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>    <span class="c1"># expected header separator with 4 sets of &quot;===&quot;</span>
+    <span class="n">h2</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># expected column names</span>
+    <span class="n">h3</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># expected repeat of header separator</span>
+
+    <span class="c1"># check this is the right kind of table, or not at start of table</span>
+    <span class="k">if</span> <span class="n">h1</span> <span class="o">!=</span> <span class="n">h3</span> <span class="ow">or</span> <span class="n">h2</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="o">!=</span> <span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">,</span> <span class="s1">&#39;Units&#39;</span><span class="p">,</span> <span class="s1">&#39;Description&#39;</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="c1"># column indices where each column starts</span>
+    <span class="n">itype</span> <span class="o">=</span> <span class="n">h2</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;Type&#39;</span><span class="p">)</span>
+    <span class="n">iunit</span> <span class="o">=</span> <span class="n">h2</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;Units&#39;</span><span class="p">)</span>
+    <span class="n">idesc</span> <span class="o">=</span> <span class="n">h2</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;Description&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Assemble the rows as a list of dict objects</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">lines</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">h3</span><span class="p">:</span>   <span class="c1"># table footer === === === ===</span>
+            <span class="k">break</span>
+
+        <span class="n">line</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+
+        <span class="n">colname</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">itype</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">coltype</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="n">itype</span><span class="p">:</span><span class="n">iunit</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">colunit</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="n">iunit</span><span class="p">:</span><span class="n">idesc</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">coldesc</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="n">idesc</span><span class="p">:]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">Name</span><span class="o">=</span><span class="n">colname</span><span class="p">,</span> <span class="n">Type</span><span class="o">=</span><span class="n">coltype</span><span class="p">,</span> <span class="n">Units</span><span class="o">=</span><span class="n">colunit</span><span class="p">,</span> <span class="n">Description</span><span class="o">=</span><span class="n">coldesc</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">rows</span></div>
+
+
+
+<div class="viewcode-block" id="format_rst_table">
+<a class="viewcode-back" href="../../api.html#desidatamodel.update.format_rst_table">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">format_rst_table</span><span class="p">(</span><span class="n">table</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Format an astropy Table in left-aligned RST format</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        table (astropy.table.Table)</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list of strings to print/write for the RST-format table</span>
+
+<span class="sd">    Note: this doesn&#39;t use astropy.io.ascii.rst because that generates</span>
+<span class="sd">    right-aligned columns.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># determin columns widths as max of column name or column values</span>
+    <span class="n">colwidths</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">colnames</span><span class="p">:</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">table</span><span class="p">[</span><span class="n">name</span><span class="p">]))))</span>
+        <span class="n">colwidths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">width</span><span class="p">)</span>
+
+    <span class="c1"># separator line for table header and footer</span>
+    <span class="n">separator_line</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;=&#39;</span><span class="o">*</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">colwidths</span><span class="p">])</span>
+
+    <span class="c1"># format code for 4 columns of the appropriate width</span>
+    <span class="n">rowformat</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;{{:</span><span class="si">{:d}</span><span class="s1">}}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">colwidths</span><span class="p">])</span>
+
+    <span class="n">rows</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">separator_line</span><span class="p">)</span>
+    <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rowformat</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">table</span><span class="o">.</span><span class="n">colnames</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+    <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">separator_line</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="p">:</span>
+        <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rowformat</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">row</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+    <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">separator_line</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">rows</span></div>
+
+
+
+<div class="viewcode-block" id="update">
+<a class="viewcode-back" href="../../api.html#desidatamodel.update.update">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Update units and descriptions for data tables in datamodel lines</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        lines (list of str): lines read from an input datamodel file</span>
+
+<span class="sd">    Options:</span>
+<span class="sd">        force (bool): if True, update non-blank input entries too</span>
+
+<span class="sd">    Returns: list of str lines with updates units and descriptions</span>
+
+<span class="sd">    This function is separated from `main` primarily to facilitate testing</span>
+<span class="sd">    of updating input lines into output lines without having to actually</span>
+<span class="sd">    read and write files every time.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">log</span> <span class="o">=</span> <span class="n">get_logger</span><span class="p">()</span>
+
+    <span class="c1"># coldef_file = resource_filename(&#39;desidatamodel&#39;, &#39;data/column_descriptions.csv&#39;)</span>
+    <span class="n">coldef_file</span> <span class="o">=</span> <span class="n">ir</span><span class="o">.</span><span class="n">files</span><span class="p">(</span><span class="s1">&#39;desidatamodel&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="s1">&#39;data&#39;</span> <span class="o">/</span> <span class="s1">&#39;column_descriptions.csv&#39;</span>
+    <span class="n">coldefs</span> <span class="o">=</span> <span class="n">read_column_descriptions</span><span class="p">(</span><span class="n">coldef_file</span><span class="p">)</span>
+
+    <span class="n">output_lines</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+    <span class="c1"># Strip trailing whitespace (including newline)</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">]</span>
+
+    <span class="c1"># Iterate over input lines looking for data tables</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;(=+) (=+) (=+) (=+)&#39;</span><span class="p">,</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]):</span>
+            <span class="n">rows</span> <span class="o">=</span> <span class="n">read_table_rows</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+
+            <span class="c1"># if it wasn&#39;t a Name Type Units Description table, continue</span>
+            <span class="k">if</span> <span class="n">rows</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">output_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">continue</span>
+
+            <span class="c1"># We have a table, update units and descriptions</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rows</span><span class="p">)):</span>
+                <span class="c1"># get just the first word of the Name column to avoid</span>
+                <span class="c1"># possible footnotes marking them as optional</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">rows</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">coldefs</span><span class="p">:</span>
+                    <span class="c1"># standard Units and Descriptions for this Name</span>
+                    <span class="n">units</span> <span class="o">=</span> <span class="n">escape</span><span class="p">(</span><span class="n">coldefs</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s1">&#39;Units&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                    <span class="n">description</span> <span class="o">=</span> <span class="n">escape</span><span class="p">(</span><span class="n">coldefs</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s1">&#39;Description&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+                    <span class="c1"># updating a blank entry = info</span>
+                    <span class="c1"># changing a pre-existing entry = warning</span>
+                    <span class="n">current_units</span> <span class="o">=</span> <span class="n">rows</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="s1">&#39;Units&#39;</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="n">current_units</span> <span class="o">!=</span> <span class="n">units</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">current_units</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span> <span class="ow">or</span> <span class="n">force</span><span class="p">:</span>
+                            <span class="n">rows</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="s1">&#39;Units&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">units</span>
+
+                        <span class="k">if</span> <span class="n">current_units</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                            <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Adding </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> Units &quot;</span><span class="si">{</span><span class="n">units</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">)</span>
+                        <span class="k">elif</span> <span class="n">force</span><span class="p">:</span>
+                            <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Updating </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> Units from &quot;</span><span class="si">{</span><span class="n">current_units</span><span class="si">}</span><span class="s1">&quot; to &quot;</span><span class="si">{</span><span class="n">units</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">)</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> Units differ but not updating; &quot;</span><span class="si">{</span><span class="n">current_units</span><span class="si">}</span><span class="s1">&quot; vs. &quot;</span><span class="si">{</span><span class="n">units</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">)</span>
+
+                    <span class="n">current_desc</span> <span class="o">=</span> <span class="n">rows</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="s1">&#39;Description&#39;</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="n">current_desc</span> <span class="o">!=</span> <span class="n">description</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">current_desc</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span> <span class="ow">or</span> <span class="n">force</span> <span class="ow">or</span> <span class="n">current_desc</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;label for field &#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">current_desc</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;TODO: description needed&#39;</span><span class="p">)):</span>
+                            <span class="n">rows</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="s1">&#39;Description&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">description</span>
+
+                        <span class="k">if</span> <span class="n">current_desc</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span> <span class="ow">or</span> <span class="n">current_desc</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;label for field &#39;</span><span class="p">):</span>
+                            <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Adding </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> Description &quot;</span><span class="si">{</span><span class="n">description</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">)</span>
+                        <span class="k">elif</span> <span class="n">force</span><span class="p">:</span>
+                            <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Updating </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> Description from &quot;</span><span class="si">{</span><span class="n">current_desc</span><span class="si">}</span><span class="s1">&quot; to &quot;</span><span class="si">{</span><span class="n">description</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">)</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> Descriptions differ but not updating; &quot;</span><span class="si">{</span><span class="n">current_desc</span><span class="si">}</span><span class="s1">&quot; vs. &quot;</span><span class="si">{</span><span class="n">description</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">)</span>
+
+            <span class="c1"># convert to table, then undo masking of blank strings</span>
+            <span class="n">table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">,</span> <span class="s1">&#39;Units&#39;</span><span class="p">,</span> <span class="s1">&#39;Description&#39;</span><span class="p">])</span>
+            <span class="k">for</span> <span class="n">colname</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">colnames</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">table</span><span class="p">[</span><span class="n">colname</span><span class="p">]</span><span class="o">.</span><span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">table</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+                    <span class="k">pass</span>  <span class="c1"># column not masked</span>
+
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">format_rst_table</span><span class="p">(</span><span class="n">table</span><span class="p">):</span>
+                <span class="n">output_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+            <span class="c1"># skip forward by length of table</span>
+            <span class="c1"># 3 header lines, 1 footer line, plus actual table length</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">4</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+
+        <span class="c1"># end of processing a table block; just output whatever line this was</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">output_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">output_lines</span></div>
+
+
+
+<div class="viewcode-block" id="main">
+<a class="viewcode-back" href="../../api.html#desidatamodel.update.main">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Updates a datamodel file with standard units and descriptions</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    :class:`int`</span>
+<span class="sd">        An integer suitable for passing to :func:`sys.exit`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-i&#39;</span><span class="p">,</span> <span class="s1">&#39;--infile&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Input model filename&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-o&#39;</span><span class="p">,</span> <span class="s1">&#39;--outfile&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Output model filename&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--inplace&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Update input file inplace, equivalent to specifying &quot;</span>
+                             <span class="s2">&quot;--outfile with same name as --infile&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--force&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Update non-blank pre-existing entries that differ from &quot;</span>
+                             <span class="s2">&quot;reference units and descriptions&quot;</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+    <span class="n">log</span> <span class="o">=</span> <span class="n">get_logger</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">inplace</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">outfile</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;When using --inplace, don&#39;t specify --outfile&quot;</span><span class="p">)</span>
+        <span class="n">args</span><span class="o">.</span><span class="n">outfile</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">infile</span>
+    <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">outfile</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Neither --inplace nor --outfile specified; will print changes but not write output&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Read input data model file</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">infile</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+        <span class="n">input_lines</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+    <span class="n">output_lines</span> <span class="o">=</span> <span class="n">update</span><span class="p">(</span><span class="n">input_lines</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">force</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">outfile</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">outfile</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">output_lines</span><span class="p">:</span>
+                <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">0</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014-2022, DESI Collaboration.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
