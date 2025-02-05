@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>desidatamodel.check &mdash; desidatamodel 24.9.dev1374 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/desidatamodel.css?v=f6dbf8d8" />
 
@@ -14,7 +14,7 @@
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../../_static/documentation_options.js?v=8cbd207e"></script>
-      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -100,23 +100,23 @@
 
 <span class="sd">Check actual files against the data model for validity.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">itertools</span>
-<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-<span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">argv</span>
-<span class="kn">from</span> <span class="nn">argparse</span> <span class="kn">import</span> <span class="n">ArgumentParser</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">itertools</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sys</span><span class="w"> </span><span class="kn">import</span> <span class="n">argv</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">argparse</span><span class="w"> </span><span class="kn">import</span> <span class="n">ArgumentParser</span>
 
-<span class="kn">from</span> <span class="nn">desiutil.log</span> <span class="kn">import</span> <span class="n">log</span><span class="p">,</span> <span class="n">DEBUG</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">desiutil.log</span><span class="w"> </span><span class="kn">import</span> <span class="n">log</span><span class="p">,</span> <span class="n">DEBUG</span>
 
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">DataModelError</span>
-<span class="kn">from</span> <span class="nn">.stub</span> <span class="kn">import</span> <span class="n">Stub</span>
-<span class="kn">from</span> <span class="nn">.unit</span> <span class="kn">import</span> <span class="n">validate_unit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataModelError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.stub</span><span class="w"> </span><span class="kn">import</span> <span class="n">Stub</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.unit</span><span class="w"> </span><span class="kn">import</span> <span class="n">validate_unit</span>
 
 
 <div class="viewcode-block" id="DataModel">
 <a class="viewcode-back" href="../../api.html#desidatamodel.check.DataModel">[docs]</a>
-<span class="k">class</span> <span class="nc">DataModel</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">DataModel</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Simple object to store data model data and metadata.</span>
 
 <span class="sd">    Parameters</span>
@@ -182,7 +182,7 @@
     <span class="c1"># The list of file types allowed by the data model.</span>
     <span class="n">_expectedtypes</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">,</span> <span class="s1">&#39;csv&#39;</span><span class="p">,</span> <span class="s1">&#39;ecsv&#39;</span><span class="p">,</span> <span class="s1">&#39;fits&#39;</span><span class="p">,</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span> <span class="s1">&#39;yaml&#39;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">section</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">section</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">section</span> <span class="o">=</span> <span class="n">section</span>
@@ -215,7 +215,7 @@
 
 <div class="viewcode-block" id="DataModel.get_regexp">
 <a class="viewcode-back" href="../../api.html#desidatamodel.check.DataModel.get_regexp">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_regexp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_regexp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Obtain the regular expression used to match files on disk.</span>
 
 <span class="sd">        Also internally updates the file type, if detected.</span>
@@ -298,7 +298,7 @@
 
 <div class="viewcode-block" id="DataModel._type_size">
 <a class="viewcode-back" href="../../api.html#desidatamodel.check.DataModel._type_size">[docs]</a>
-    <span class="k">def</span> <span class="nf">_type_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_type_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Obtain file type and size from a matching `line`.</span>
 
 <span class="sd">        Parameters</span>
@@ -324,7 +324,7 @@
 
 <div class="viewcode-block" id="DataModel._cross_reference">
 <a class="viewcode-back" href="../../api.html#desidatamodel.check.DataModel._cross_reference">[docs]</a>
-    <span class="k">def</span> <span class="nf">_cross_reference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_cross_reference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Obtain the path to a file referred to in another file.</span>
 
 <span class="sd">        Parameters</span>
@@ -359,7 +359,7 @@
 
 <div class="viewcode-block" id="DataModel._extract_columns">
 <a class="viewcode-back" href="../../api.html#desidatamodel.check.DataModel._extract_columns">[docs]</a>
-    <span class="k">def</span> <span class="nf">_extract_columns</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">columns</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_extract_columns</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">columns</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Given column sizes, extract the data in each column.</span>
 
 <span class="sd">        Assumes a reStructuredText-compatible table.</span>
@@ -385,7 +385,7 @@
 
 <div class="viewcode-block" id="DataModel.extract_metadata">
 <a class="viewcode-back" href="../../api.html#desidatamodel.check.DataModel.extract_metadata">[docs]</a>
-    <span class="k">def</span> <span class="nf">extract_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Extract metadata from a data model file.</span>
 
 <span class="sd">        Parameters</span>
@@ -583,7 +583,7 @@
 
 <div class="viewcode-block" id="DataModel.validate_prototype">
 <a class="viewcode-back" href="../../api.html#desidatamodel.check.DataModel.validate_prototype">[docs]</a>
-    <span class="k">def</span> <span class="nf">validate_prototype</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">skip_keywords</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">validate_prototype</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">skip_keywords</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Compares a model&#39;s prototype data file to the data models.</span>
 
 <span class="sd">        Parameters</span>
@@ -772,7 +772,7 @@
 
 <div class="viewcode-block" id="scan_model">
 <a class="viewcode-back" href="../../api.html#desidatamodel.check.scan_model">[docs]</a>
-<span class="k">def</span> <span class="nf">scan_model</span><span class="p">(</span><span class="n">section</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">scan_model</span><span class="p">(</span><span class="n">section</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Find all data model files in a top-level directory.</span>
 
 <span class="sd">    Parameters</span>
@@ -796,7 +796,7 @@
 
 <div class="viewcode-block" id="files_to_regexp">
 <a class="viewcode-back" href="../../api.html#desidatamodel.check.files_to_regexp">[docs]</a>
-<span class="k">def</span> <span class="nf">files_to_regexp</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">files</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">files_to_regexp</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">files</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert a list of data model files into a list of regular expressions.</span>
 
 <span class="sd">    Parameters</span>
@@ -823,7 +823,7 @@
 
 <div class="viewcode-block" id="collect_files">
 <a class="viewcode-back" href="../../api.html#desidatamodel.check.collect_files">[docs]</a>
-<span class="k">def</span> <span class="nf">collect_files</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">files</span><span class="p">,</span> <span class="n">n_prototypes</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">collect_files</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">files</span><span class="p">,</span> <span class="n">n_prototypes</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Scan a directory tree for files that correspond to data model files.</span>
 
 <span class="sd">    Parameters</span>
@@ -892,7 +892,7 @@
 
 <div class="viewcode-block" id="validate_prototypes">
 <a class="viewcode-back" href="../../api.html#desidatamodel.check.validate_prototypes">[docs]</a>
-<span class="k">def</span> <span class="nf">validate_prototypes</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">skip_keywords</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">validate_prototypes</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">skip_keywords</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Compares a set of prototype data files to their data models.</span>
 
 <span class="sd">    Parameters</span>
@@ -918,7 +918,7 @@
 
 <div class="viewcode-block" id="_options">
 <a class="viewcode-back" href="../../api.html#desidatamodel.check._options">[docs]</a>
-<span class="k">def</span> <span class="nf">_options</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_options</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Parse command-line options.</span>
 
 <span class="sd">    Returns</span>
@@ -953,7 +953,7 @@
 
 <div class="viewcode-block" id="main">
 <a class="viewcode-back" href="../../api.html#desidatamodel.check.main">[docs]</a>
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Entry point for the check_model script.</span>
 
 <span class="sd">    Returns</span>

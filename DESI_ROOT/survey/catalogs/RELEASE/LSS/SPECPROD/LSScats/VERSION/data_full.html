@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DATA full catalogs &mdash; desidatamodel 24.9.dev1374 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/desidatamodel.css?v=f6dbf8d8" />
 
@@ -15,7 +15,7 @@
       <script src="../../../../../../../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../../../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../../../../../../../../_static/documentation_options.js?v=8cbd207e"></script>
-      <script src="../../../../../../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../../../../../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../../../../genindex.html" />
@@ -498,7 +498,7 @@
 <tr class="row-even"><td><p>GOODPRI</p></td>
 <td><p>logical</p></td>
 <td></td>
-<td><p>True/False whether the priority of what was assigned to the location was &amp;lt;= the base priority of the given target class</p></td>
+<td><p>True/False whether the priority of what was assigned to the location was less or equals to the base priority of the given target class</p></td>
 </tr>
 <tr class="row-odd"><td><p>GOODHARDLOC</p></td>
 <td><p>logical</p></td>
@@ -523,12 +523,12 @@
 <tr class="row-odd"><td><p>TILES</p></td>
 <td><p>char[36]</p></td>
 <td></td>
-<td><p>TILEIDs of those tile, in string form separated by &amp;#x27;-&amp;#x27;</p></td>
+<td><p>TILEIDs of those tile, in string form separated by -</p></td>
 </tr>
 <tr class="row-even"><td><p>TILELOCIDS</p></td>
 <td><p>char[111]</p></td>
 <td></td>
-<td><p>TILELOCIDs that the target was available for, separated by &amp;#x27;-&amp;#x27;</p></td>
+<td><p>TILELOCIDs that the target was available for, separated by -</p></td>
 </tr>
 <tr class="row-odd"><td><p>BRICKID</p></td>
 <td><p>int32</p></td>
@@ -733,12 +733,12 @@
 <tr class="row-odd"><td><p>SHAPE_R</p></td>
 <td><p>float32</p></td>
 <td><p>arcsec</p></td>
-<td><p>Half-light radius of galaxy model (&amp;gt;0)</p></td>
+<td><p>Half-light radius of galaxy model (greater than 0)</p></td>
 </tr>
 <tr class="row-even"><td><p>PHOTSYS</p></td>
 <td><p>char[1]</p></td>
 <td></td>
-<td><p>&amp;#x27;N&amp;#x27; for the MzLS/BASS photometric system, &amp;#x27;S&amp;#x27; for DECaLS</p></td>
+<td><p>N for the MzLS/BASS photometric system, S for DECaLS</p></td>
 </tr>
 <tr class="row-odd"><td><p>DESI_TARGET</p></td>
 <td><p>int64</p></td>
@@ -763,7 +763,7 @@
 <tr class="row-odd"><td><p>lrg_mask <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>binary</p></td>
 <td></td>
-<td><p>Imaging mask bits relevant to LRG targets</p></td>
+<td><p>(lower or uppercase) Imaging mask bits relevant to LRG targets</p></td>
 </tr>
 <tr class="row-even"><td><p>WEIGHT_ZFAIL</p></td>
 <td><p>float64</p></td>

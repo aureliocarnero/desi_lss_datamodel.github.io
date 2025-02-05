@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>spectra-SPECTROGRAPH-TILEID-GROUPID.fits &mdash; desidatamodel 24.9.dev1374 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../../../../../_static/desidatamodel.css?v=f6dbf8d8" />
 
@@ -15,7 +15,7 @@
       <script src="../../../../../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../../../../../../_static/documentation_options.js?v=8cbd207e"></script>
-      <script src="../../../../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../../../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../../genindex.html" />
@@ -1366,13 +1366,13 @@ documentation for details about using this HDU.</p>
 </table>
 </details><p>Data: FITS image [float32, 2751x11x500]</p>
 <p>A sparse resolution matrix may be created for spectrum <code class="docutils literal notranslate"><span class="pre">i</span></code> with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">desispec.resolution</span> <span class="kn">import</span> <span class="n">Resolution</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">desispec.resolution</span><span class="w"> </span><span class="kn">import</span> <span class="n">Resolution</span>
 <span class="n">R</span> <span class="o">=</span> <span class="n">Resolution</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>Or using lower-level scipy.sparse matrices:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.sparse</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">scipy.sparse</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="n">nspec</span><span class="p">,</span> <span class="n">ndiag</span><span class="p">,</span> <span class="n">nwave</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span>
 <span class="n">offsets</span> <span class="o">=</span> <span class="n">ndiag</span><span class="o">//</span><span class="mi">2</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">ndiag</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
 <span class="n">R</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">dia_matrix</span><span class="p">((</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">offsets</span><span class="p">),</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">nwave</span><span class="p">,</span> <span class="n">nwave</span><span class="p">))</span>
@@ -1770,7 +1770,7 @@ documentation for details about using this HDU.</p>
 <section id="notes-and-examples">
 <h2>Notes and Examples<a class="headerlink" href="#notes-and-examples" title="Link to this heading"></a></h2>
 <p>Spectra can be read and plotted with Python code like:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">astropy.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">fits</span>
 
 <span class="n">wave</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 <span class="n">flux</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
@@ -1779,7 +1779,7 @@ documentation for details about using this HDU.</p>
         <span class="n">wave</span><span class="p">[</span><span class="n">camera</span><span class="p">]</span> <span class="o">=</span> <span class="n">hdus</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">camera</span><span class="si">}</span><span class="s1">_WAVELENGTH&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
         <span class="n">flux</span><span class="p">[</span><span class="n">camera</span><span class="p">]</span> <span class="o">=</span> <span class="n">hdus</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">camera</span><span class="si">}</span><span class="s1">_FLUX&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
 <span class="n">ispec</span> <span class="o">=</span> <span class="mi">217</span>
 <span class="k">for</span> <span class="n">camera</span> <span class="ow">in</span> <span class="n">wave</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
@@ -1795,10 +1795,10 @@ documentation for details about using this HDU.</p>
 <p>The <a class="reference external" href="https://github.com/desihub/desispec">desispec</a> package provides
 utility functions and classes for reading, slicing, combining, and writing
 spectra.  e.g. the same plot can be made with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">desispec.io</span> <span class="kn">import</span> <span class="n">read_spectra</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">desispec.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_spectra</span>
 <span class="n">sp</span> <span class="o">=</span> <span class="n">read_spectra</span><span class="p">(</span><span class="s1">&#39;spectra-0-100-thru20210505.fits.gz&#39;</span><span class="p">)</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
 <span class="n">ispec</span> <span class="o">=</span> <span class="mi">217</span>
 <span class="k">for</span> <span class="n">camera</span> <span class="ow">in</span> <span class="n">sp</span><span class="o">.</span><span class="n">bands</span><span class="p">:</span>
@@ -1811,8 +1811,8 @@ spectra.  e.g. the same plot can be made with:</p>
 </pre></div>
 </div>
 <p>or multiple spectra files can be read, sub-selected, combined, and re-written with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">desispec.io</span> <span class="kn">import</span> <span class="n">read_spectra</span><span class="p">,</span> <span class="n">write_spectra</span>
-<span class="kn">from</span> <span class="nn">desispec.spectra</span> <span class="kn">import</span> <span class="n">stack</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">desispec.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_spectra</span><span class="p">,</span> <span class="n">write_spectra</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">desispec.spectra</span><span class="w"> </span><span class="kn">import</span> <span class="n">stack</span>
 <span class="n">spectra</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">petal</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">sp</span> <span class="o">=</span> <span class="n">read_spectra</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;spectra-</span><span class="si">{</span><span class="n">petal</span><span class="si">}</span><span class="s1">-100-thru20210505.fits&#39;</span><span class="p">)</span>

@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>desidatamodel.scan &mdash; desidatamodel 24.9.dev1374 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/desidatamodel.css?v=f6dbf8d8" />
 
@@ -14,7 +14,7 @@
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../../_static/documentation_options.js?v=8cbd207e"></script>
-      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -100,23 +100,23 @@
 
 <span class="sd">Deep scan available files to obtain a comprehensive set of metadata.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">argv</span>
-<span class="kn">from</span> <span class="nn">argparse</span> <span class="kn">import</span> <span class="n">ArgumentParser</span>
-<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">choices</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sys</span><span class="w"> </span><span class="kn">import</span> <span class="n">argv</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">argparse</span><span class="w"> </span><span class="kn">import</span> <span class="n">ArgumentParser</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">choices</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>
 
-<span class="kn">from</span> <span class="nn">desiutil.log</span> <span class="kn">import</span> <span class="n">log</span><span class="p">,</span> <span class="n">DEBUG</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">desiutil.log</span><span class="w"> </span><span class="kn">import</span> <span class="n">log</span><span class="p">,</span> <span class="n">DEBUG</span>
 
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">DataModelError</span>
-<span class="kn">from</span> <span class="nn">.stub</span> <span class="kn">import</span> <span class="n">Stub</span>
-<span class="kn">from</span> <span class="nn">.check</span> <span class="kn">import</span> <span class="n">DataModel</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataModelError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.stub</span><span class="w"> </span><span class="kn">import</span> <span class="n">Stub</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.check</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataModel</span>
 
 
 <div class="viewcode-block" id="UnionStub">
 <a class="viewcode-back" href="../../api.html#desidatamodel.scan.UnionStub">[docs]</a>
-<span class="k">class</span> <span class="nc">UnionStub</span><span class="p">(</span><span class="n">Stub</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">UnionStub</span><span class="p">(</span><span class="n">Stub</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Container for unified metadata for both existing models and data files.</span>
 
 <span class="sd">    Initialize the metadata with a :class:`~desidatamodel.check.DataModel`</span>
@@ -135,7 +135,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">_o</span> <span class="o">=</span> <span class="s1">&#39;[1]_&#39;</span>  <span class="c1"># Marker for optional keywords and columns.</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="n">count</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">error</span>
@@ -182,7 +182,7 @@
 
 <div class="viewcode-block" id="UnionStub.update">
 <a class="viewcode-back" href="../../api.html#desidatamodel.scan.UnionStub.update">[docs]</a>
-    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdu</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdu</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Search for missing keywords or columns in `hdu` and add them if necessary.</span>
 
 <span class="sd">        Parameters</span>
@@ -282,7 +282,7 @@
 
 <div class="viewcode-block" id="UnionStub.mark_optional">
 <a class="viewcode-back" href="../../api.html#desidatamodel.scan.UnionStub.mark_optional">[docs]</a>
-    <span class="k">def</span> <span class="nf">mark_optional</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">mark_optional</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Mark the keywords and columns that do not appear in every file as optional.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">hdu</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hdumeta</span><span class="p">):</span>
@@ -318,7 +318,7 @@
 
 <div class="viewcode-block" id="collect_files">
 <a class="viewcode-back" href="../../api.html#desidatamodel.scan.collect_files">[docs]</a>
-<span class="k">def</span> <span class="nf">collect_files</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">collect_files</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Scan a directory tree for all files that correspond to a data model files.</span>
 
 <span class="sd">    Parameters</span>
@@ -356,7 +356,7 @@
 
 <div class="viewcode-block" id="union_metadata">
 <a class="viewcode-back" href="../../api.html#desidatamodel.scan.union_metadata">[docs]</a>
-<span class="k">def</span> <span class="nf">union_metadata</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">stubs</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">union_metadata</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">stubs</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Combine all HDU metadata from `model` and `stubs`.</span>
 
 <span class="sd">    Parameters</span>
@@ -431,7 +431,7 @@
 
 <div class="viewcode-block" id="_options">
 <a class="viewcode-back" href="../../api.html#desidatamodel.scan._options">[docs]</a>
-<span class="k">def</span> <span class="nf">_options</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_options</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Parse command-line options.</span>
 
 <span class="sd">    Returns</span>
@@ -472,7 +472,7 @@
 
 <div class="viewcode-block" id="main">
 <a class="viewcode-back" href="../../api.html#desidatamodel.scan.main">[docs]</a>
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Entry point for the deep_scan_metadata script.</span>
 
 <span class="sd">    Returns</span>
