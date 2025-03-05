@@ -20,7 +20,7 @@
     <script src="../../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../../search.html" />
-    <link rel="next" title="DESI_TARGET" href="../../../../../../DESI_TARGET/index.html" />
+    <link rel="next" title="GFA" href="../../../../GFA/index.html" />
     <link rel="prev" title="QSO" href="index.html" /> 
 </head>
 
@@ -53,6 +53,7 @@
 <li class="toctree-l4 current"><a class="reference internal" href="../../index.html">RELEASE</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../GFA/index.html">GFA</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../../DESI_TARGET/index.html">target</a></li>
@@ -120,10 +121,10 @@
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">QSO_cat_{SPECPROD}_cumulative_{VERSION}.fits</span></code>.</p>
 </dd>
 <dt class="field-odd">Regex<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">QSO_cat_iron_cumulative_v[0-9]{1}.fits</span></code></p>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">QSO_cat_[a-z]_cumulative_v[0-9]{1}.fits</span></code></p>
 </dd>
 <dt class="field-even">File Type<span class="colon">:</span></dt>
-<dd class="field-even"><p>FITS, 828 MB</p>
+<dd class="field-even"><p>FITS, 778 MB</p>
 </dd>
 </dl>
 <section id="contents">
@@ -222,35 +223,25 @@
 <td></td>
 <td><p>Redshift warning bitmask from Redrock</p></td>
 </tr>
-<tr class="row-even"><td><p>SPECTYPE</p></td>
-<td><p>char stream</p></td>
-<td></td>
-<td><p>Spectral type of Redrock best fit template (e.g. GALAXY, QSO, STAR)</p></td>
-</tr>
-<tr class="row-odd"><td><p>LOCATION</p></td>
+<tr class="row-even"><td><p>LOCATION</p></td>
 <td><p>int64</p></td>
 <td></td>
 <td><p>Location on the focal plane PETAL_LOC*1000 + DEVICE_LOC</p></td>
 </tr>
-<tr class="row-even"><td><p>COADD_FIBERSTATUS</p></td>
+<tr class="row-odd"><td><p>COADD_FIBERSTATUS</p></td>
 <td><p>int32</p></td>
 <td></td>
 <td><p>bitwise-AND of input FIBERSTATUS</p></td>
 </tr>
-<tr class="row-odd"><td><p>TARGET_RA</p></td>
+<tr class="row-even"><td><p>TARGET_RA</p></td>
 <td><p>float64</p></td>
 <td><p>deg</p></td>
 <td><p>Barycentric right ascension in ICRS</p></td>
 </tr>
-<tr class="row-even"><td><p>TARGET_DEC</p></td>
+<tr class="row-odd"><td><p>TARGET_DEC</p></td>
 <td><p>float64</p></td>
 <td><p>deg</p></td>
 <td><p>Barycentric declination in ICRS</p></td>
-</tr>
-<tr class="row-odd"><td><p>MORPHTYPE</p></td>
-<td><p>char stream</p></td>
-<td></td>
-<td><p>Imaging Surveys morphological type from Tractor</p></td>
 </tr>
 <tr class="row-even"><td><p>EBV</p></td>
 <td><p>float32</p></td>
@@ -533,14 +524,24 @@
 <td><p>Petal location [0-9]</p></td>
 </tr>
 <tr class="row-even"><td><p>SURVEY</p></td>
-<td><p>char stream</p></td>
+<td><p>char[7]</p></td>
 <td></td>
 <td><p>Survey name: cmx, sv1, sv2, sv3, main</p></td>
 </tr>
 <tr class="row-odd"><td><p>PROGRAM</p></td>
-<td><p>char stream</p></td>
+<td><p>char[6]</p></td>
 <td></td>
 <td><p>DESI program type - BRIGHT, DARK, BACKUP, OTHER</p></td>
+</tr>
+<tr class="row-even"><td><p>MORPHTYPE</p></td>
+<td><p>char[3]</p></td>
+<td></td>
+<td><p>Imaging Surveys morphological type from Tractor</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPECTYPE</p></td>
+<td><p>char[6]</p></td>
+<td></td>
+<td><p>Spectral type of Redrock best fit template (e.g. GALAXY, QSO, STAR)</p></td>
 </tr>
 </tbody>
 </table>
@@ -558,7 +559,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="QSO" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../../../../../../DESI_TARGET/index.html" class="btn btn-neutral float-right" title="DESI_TARGET" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../../../../GFA/index.html" class="btn btn-neutral float-right" title="GFA" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
