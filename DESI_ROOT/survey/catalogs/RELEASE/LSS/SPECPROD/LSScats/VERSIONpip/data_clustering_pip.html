@@ -53,6 +53,7 @@
 <li class="toctree-l4 current"><a class="reference internal" href="../../../../index.html">RELEASE</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../GFA/index.html">GFA</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../../../../DESI_TARGET/index.html">target</a></li>
@@ -120,8 +121,8 @@
 <dd class="field-odd"><p>For each target type, LSS catalogs for the data, ready to be used for clustering measurements, are provided with PIP weights.</p>
 </dd>
 <dt class="field-even">Naming Convention<span class="colon">:</span></dt>
-<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">{TARGET}_{PHOTSYS}_clustering.dat.fits</span></code>, where <code class="docutils literal notranslate"><span class="pre">{TARGET}</span></code> is the target: <code class="docutils literal notranslate"><span class="pre">QSO</span></code>, <code class="docutils literal notranslate"><span class="pre">ELG</span></code>, <code class="docutils literal notranslate"><span class="pre">ELG_LOPnotqso</span></code>, <code class="docutils literal notranslate"><span class="pre">LRG</span></code>, <code class="docutils literal notranslate"><span class="pre">LRG+ELG_LOPnotqso</span></code>,
-for dark or <code class="docutils literal notranslate"><span class="pre">BGS_ANY</span></code>, <code class="docutils literal notranslate"><span class="pre">BGS_BRIGHT</span></code>, <code class="docutils literal notranslate"><span class="pre">BGS_BRIGHT-21.5</span></code> for bright. <code class="docutils literal notranslate"><span class="pre">{PHOTSYS}</span></code> is the photometric region <code class="docutils literal notranslate"><span class="pre">NGC</span></code> or <code class="docutils literal notranslate"><span class="pre">SGC</span></code> or the combination of both if not explicitly shown.</p>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">{TARGET}_{GALCAP}_clustering.dat.fits</span></code>, where <code class="docutils literal notranslate"><span class="pre">{TARGET}</span></code> is the target: <code class="docutils literal notranslate"><span class="pre">QSO</span></code>, <code class="docutils literal notranslate"><span class="pre">ELG</span></code>, <code class="docutils literal notranslate"><span class="pre">ELG_LOPnotqso</span></code>, <code class="docutils literal notranslate"><span class="pre">LRG</span></code>, <code class="docutils literal notranslate"><span class="pre">LRG+ELG_LOPnotqso</span></code>,
+for dark or <code class="docutils literal notranslate"><span class="pre">BGS_ANY</span></code>, <code class="docutils literal notranslate"><span class="pre">BGS_BRIGHT</span></code>, <code class="docutils literal notranslate"><span class="pre">BGS_BRIGHT-21.5</span></code> for bright. <code class="docutils literal notranslate"><span class="pre">{GALCAP}</span></code> is the Galactic hemisphere region <code class="docutils literal notranslate"><span class="pre">NGC</span></code> or <code class="docutils literal notranslate"><span class="pre">SGC</span></code> or the combination of both if not explicitly shown.</p>
 </dd>
 <dt class="field-odd">Regex<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">[a-zA-Z_+]+[A-Z_]{0,4}_clustering.dat.fits</span></code></p>
