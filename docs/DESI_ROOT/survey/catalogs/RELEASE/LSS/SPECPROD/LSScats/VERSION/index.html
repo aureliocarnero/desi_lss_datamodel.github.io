@@ -53,6 +53,7 @@
 <li class="toctree-l4 current"><a class="reference internal" href="../../../../index.html">RELEASE</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../GFA/index.html">GFA</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../../../../DESI_TARGET/index.html">target</a></li>
@@ -119,16 +120,16 @@
 <p>Descriptions on how to use these to obtain clustering measurements are fully given in <a class="reference external" href="https://iopscience.iop.org/article/10.1088/1475-7516/2025/01/125">Ross et al. (2025)</a>. Any cuts applied to the data catalogs should be equally applied to the random catalogs.</p>
 <p>Any number of the random catalogs, RANN can be used (with the impact only on statistical precision).</p>
 <p><code class="docutils literal notranslate"><span class="pre">full</span></code> contains information on all targets identified as reachable by DESI fiberassign, split by target types (LRG, ELG, QSO and BGS), including many columns of photometrically and spectroscopically derived information. These files are available before (<code class="docutils literal notranslate"><span class="pre">{VETO}</span></code> = <code class="docutils literal notranslate"><span class="pre">_noveto</span></code> in the file name), after vetos related to angular coordinates are applied (blank) and after an extra healpix map cut is applied (<code class="docutils literal notranslate"><span class="pre">{VETO}</span></code> = <code class="docutils literal notranslate"><span class="pre">_HPmapcut</span></code> in the file name).</p>
-<p>Large-scale clustering measurements can be accurately obtained via the columns <code class="xref py py-attr docutils literal notranslate"><span class="pre">RA</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">DEC</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">Z</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">WEIGHT</span></code>. Samples are split by Galactic hemisphere, defined by PHOTSYS <code class="docutils literal notranslate"><span class="pre">NGC</span></code> and <code class="docutils literal notranslate"><span class="pre">SGC</span></code>.</p>
+<p>Large-scale clustering measurements can be accurately obtained via the columns <code class="xref py py-attr docutils literal notranslate"><span class="pre">RA</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">DEC</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">Z</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">WEIGHT</span></code>. Samples are split by Galactic hemisphere, defined by GALCAP <code class="docutils literal notranslate"><span class="pre">NGC</span></code> and <code class="docutils literal notranslate"><span class="pre">SGC</span></code>.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="hpmaps/index.html">hpmaps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="frac_tlobs.html">{TARGET}_frac_tlobs.fits : For list of tileids, FRAC_TLOBS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_full.html">{TARGET}_full{VETO}.dat.fits : Information on all observed targets identified as reachable</a></li>
 <li class="toctree-l1"><a class="reference internal" href="random_full.html">{TARGET}_{RANN}_full{VETO}.ran.fits : Information on all random targets identified as reachable</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nz_lss.html">{TARGET}_{PHOTSYS}_nz.txt : Target densities as a function of redshift</a></li>
-<li class="toctree-l1"><a class="reference internal" href="random_clustering.html">{TARGET}_{PHOTSYS}_{RANN}_clustering.ran.fits : Use for clustering measurements (randoms)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data_clustering.html">{TARGET}_{PHOTSYS}_clustering.dat.fits : Use for clustering measurements (data)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nz_lss.html">{TARGET}_{GALCAP}_nz.txt : Target densities as a function of redshift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random_clustering.html">{TARGET}_{GALCAP}_{RANN}_clustering.ran.fits : Use for clustering measurements (randoms)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_clustering.html">{TARGET}_{GALCAP}_clustering.dat.fits : Use for clustering measurements (data)</a></li>
 </ul>
 </div>
 </section>
