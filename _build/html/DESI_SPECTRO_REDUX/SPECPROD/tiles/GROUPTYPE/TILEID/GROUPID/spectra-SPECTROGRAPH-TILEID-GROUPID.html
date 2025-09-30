@@ -1,0 +1,1877 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>spectra-SPECTROGRAPH-TILEID-GROUPID.fits &mdash; desidatamodel 25.4.dev1530 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../_static/desidatamodel.css" />
+
+  
+      <script src="../../../../../../_static/jquery.js"></script>
+      <script src="../../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+      <script src="../../../../../../_static/doctools.js"></script>
+      <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+    <link rel="next" title="tile-qa-TILEID-GROUPID.fits" href="tile-qa-TILEID-GROUPID.html" />
+    <link rel="prev" title="redrock-SPECTROGRAPH-TILEID-GROUPID.fits" href="redrock-SPECTROGRAPH-TILEID-GROUPID.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../../../index.html" class="icon icon-home">
+            desidatamodel
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../DESI_ROOT/vac/index.html">vac/ : Value Added Catalogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../DESI_ROOT/index.html">$DESI_ROOT : represents the top level of the DESI directory tree.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../DESI_SPECTRO_DATA/index.html">$DESI_SPECTRO_DATA : raw data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../index.html">$DESI_SPECTRO_REDUX : processed spectro data</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../index.html">$DESI_SPECTRO_REDUX/$SPECPROD</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../../calibnight/index.html">calibnight</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../exposures/index.html">exposures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../healpix/index.html">healpix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../preproc/index.html">preproc</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../index.html">tiles</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../../index.html">GROUPTYPE</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../zcatalog/index.html">zcatalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../exposures-SPECPROD.html">exposures-SPECPROD.fits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tiles-SPECPROD.html">tiles-SPECPROD.fits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../DESI_SPECTRO_SIM/index.html">$DESI_SPECTRO_SIM : simulated spectro data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../DESI_SPECTRO_CALIB/index.html">$DESI_SPECTRO_CALIB : spectro calibration data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../DESI_SURVEYOPS/index.html">$DESI_SURVEYOPS : data files used for day-to-day survey operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../DESI_TARGET/index.html">$DESI_TARGET : target selection and fiber assignment (see also Myers et al. 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../DESIMODEL/index.html">$DESIMODEL : data used for simulating DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../DESISURVEY_OUTPUT/index.html">$DESISURVEY_OUTPUT : outputs from desisurvey and surveysim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../PROTODESI/index.html">$PROTODESI : data and logs from the ProtoDESI campaign</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../bitmasks.html">Bit Masks in DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../column_descriptions.html">Standard Column Descriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../envvar.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../units.html">Units in data files</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../datamodel.html">Contributing to desidatamodel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../api.html">desidatamodel API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../changes.html">desidatamodel Change Log</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../index.html">desidatamodel</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../../../DESI_ROOT/index.html">DESI_ROOT</a></li>
+          <li class="breadcrumb-item"><a href="../../../../../index.html">DESI_SPECTRO_REDUX</a></li>
+          <li class="breadcrumb-item"><a href="../../../../index.html">SPECPROD</a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">tiles</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">GROUPTYPE</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">TILEID</a></li>
+          <li class="breadcrumb-item"><a href="index.html">GROUPID</a></li>
+      <li class="breadcrumb-item active">spectra-SPECTROGRAPH-TILEID-GROUPID.fits</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../../../_sources/DESI_SPECTRO_REDUX/SPECPROD/tiles/GROUPTYPE/TILEID/GROUPID/spectra-SPECTROGRAPH-TILEID-GROUPID.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="spectra-spectrograph-tileid-groupid-fits">
+<h1>spectra-SPECTROGRAPH-TILEID-GROUPID.fits<a class="headerlink" href="#spectra-spectrograph-tileid-groupid-fits" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Summary<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Collection of non-coadded spectra across exposures and cameras
+for a given TILEID on a given SPECTROGRAPH [0-9].</p>
+</dd>
+<dt class="field-even">Naming Convention<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">spectra-SPECTROGRAPH-TILEID-GROUPID.fits</span></code>, where
+<code class="docutils literal notranslate"><span class="pre">SPECTROGRAPH</span></code> is the spectrograph ID (0-9),
+<code class="docutils literal notranslate"><span class="pre">TILEID</span></code> is the tile number and
+<code class="docutils literal notranslate"><span class="pre">GROUPID</span></code> depends on the <code class="docutils literal notranslate"><span class="pre">GROUPTYPE</span></code> of the tile coadd.</p>
+</dd>
+<dt class="field-odd">Regex<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">spectra-[0-9]-[0-9]+-([14]xsubset[1-6]|lowspeedsubset[1-6]|exp[0-9]{8}|thru[0-9]{8}|[0-9]{8})\.fits</span></code></p>
+</dd>
+<dt class="field-even">File Type<span class="colon">:</span></dt>
+<dd class="field-even"><p>FITS, 198 MB</p>
+</dd>
+</dl>
+<p>Spectra files contain non-coadded spectra for multiple targets observed on
+multiple individual exposures and cameras.  The format can contain any
+arbitrary set of targets, though the standard DESI spectroscopic pipeline
+outputs are grouped either by a single petal of a given tile,
+or all targets on a single healpix.</p>
+<p>Tile-based spectra can be grouped in multiple ways across
+exposures and nights;  see the top-level <a class="reference internal" href="../../../index.html"><span class="doc">SPECPROD/tiles/</span></a>
+description for an overview of the per-tile GROUPTYPE and GROUPID options.
+Healpix-based spectra are grouped by SURVEY and PROGRAM.
+Science analyses may release spectra in other groups, e.g. all the spectra
+selected for a particular analysis.</p>
+<p>Please see <a class="reference internal" href="coadd-SPECTROGRAPH-TILEID-GROUPID.html"><span class="doc">coadd files</span></a> for a coadded
+version of the same spectra in a very similar format.</p>
+<p>The FIBERMAP table contains metadata about each target, with one row per
+target per exposure.  The corresponding SCORES table contains quantities
+measured from the spectra, also with one row per target per exposure.</p>
+<p>The spectra themselves are in a set of image HDUs for the FLUX,
+IVAR (inverse variance), MASK, and spectral RESOLUTION, each prefixed
+with a spectrograph camera name, e.g. B, R, or Z for DESI, though the format
+in general could support other numbers and names of cameras for other
+instruments.  A row of each image HDU correponds to the target from the
+same row index of the FIBERMAP and SCORES HDUs.</p>
+<p>Details are given below, with examples for reading and interpreting the
+spectra files at the end.</p>
+<p>Note: the table below is the order in which these HDUs appear in DESI spectroscopic
+pipeline output, but the order is arbitrary and they should be read by
+name not by number.</p>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Number</p></th>
+<th class="head"><p>EXTNAME</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Contents</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#hdu00">HDU00</a></p></td>
+<td></td>
+<td><p>IMAGE</p></td>
+<td><p>Keywords only</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hdu01">HDU01</a></p></td>
+<td><p>FIBERMAP</p></td>
+<td><p>BINTABLE</p></td>
+<td><p>Target photometry, metadata, and what fibers they are assigned to</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#hdu02">HDU02</a></p></td>
+<td><p>SCORES</p></td>
+<td><p>BINTABLE</p></td>
+<td><p>QA metrics calculated from the data</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hdu03">HDU03</a></p></td>
+<td><p>B_WAVELENGTH</p></td>
+<td><p>IMAGE</p></td>
+<td><p>Wavelength grid from the B-cameras</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#hdu04">HDU04</a></p></td>
+<td><p>B_FLUX</p></td>
+<td><p>IMAGE</p></td>
+<td><p>Spectral Flux, 10^{-17} erg/s/cm2/Angstrom</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hdu05">HDU05</a></p></td>
+<td><p>B_IVAR</p></td>
+<td><p>IMAGE</p></td>
+<td><p>Inverse variance of B_FLUX</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#hdu06">HDU06</a></p></td>
+<td><p>B_MASK</p></td>
+<td><p>BINTABLE</p></td>
+<td><p>Mask, 0=good</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hdu07">HDU07</a></p></td>
+<td><p>B_RESOLUTION</p></td>
+<td><p>IMAGE</p></td>
+<td><p>Resolution Matrix diagonals</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#hdu08">HDU08</a></p></td>
+<td><p>R_WAVELENGTH</p></td>
+<td><p>IMAGE</p></td>
+<td><p>Wavelength grid from the R-cameras</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hdu09">HDU09</a></p></td>
+<td><p>R_FLUX</p></td>
+<td><p>IMAGE</p></td>
+<td><p>Spectral Flux, 10^{-17} erg/s/cm2/Angstrom</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#hdu10">HDU10</a></p></td>
+<td><p>R_IVAR</p></td>
+<td><p>IMAGE</p></td>
+<td><p>Inverse variance of R_FLUX</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hdu11">HDU11</a></p></td>
+<td><p>R_MASK</p></td>
+<td><p>BINTABLE</p></td>
+<td><p>Mask, 0=good</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#hdu12">HDU12</a></p></td>
+<td><p>R_RESOLUTION</p></td>
+<td><p>IMAGE</p></td>
+<td><p>Resolution Matrix diagonals</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hdu13">HDU13</a></p></td>
+<td><p>Z_WAVELENGTH</p></td>
+<td><p>IMAGE</p></td>
+<td><p>Wavelength grid from the Z-cameras</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#hdu14">HDU14</a></p></td>
+<td><p>Z_FLUX</p></td>
+<td><p>IMAGE</p></td>
+<td><p>Spectral Flux, 10^{-17} erg/s/cm2/Angstrom</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hdu15">HDU15</a></p></td>
+<td><p>Z_IVAR</p></td>
+<td><p>IMAGE</p></td>
+<td><p>Inverse variance of Z_FLUX</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#hdu16">HDU16</a></p></td>
+<td><p>Z_MASK</p></td>
+<td><p>BINTABLE</p></td>
+<td><p>Mask, 0=good</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hdu17">HDU17</a></p></td>
+<td><p>Z_RESOLUTION</p></td>
+<td><p>IMAGE</p></td>
+<td><p>Resolution Matrix diagonals</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="fits-header-units">
+<h2>FITS Header Units<a class="headerlink" href="#fits-header-units" title="Permalink to this heading"></a></h2>
+<section id="hdu00">
+<h3>HDU00<a class="headerlink" href="#hdu00" title="Permalink to this heading"></a></h3>
+<p>Keywords only</p>
+<section id="required-header-keywords">
+<h4>Required Header Keywords<a class="headerlink" href="#required-header-keywords" title="Permalink to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SPGRP</p></td>
+<td><p>pernight</p></td>
+<td><p>str</p></td>
+<td><p><a class="reference internal" href="../../../index.html"><span class="doc">GROUPTYPE</span></a> how these spectra are grouped</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPGRPVAL</p></td>
+<td><p>20201215</p></td>
+<td><p>int</p></td>
+<td><p><a class="reference internal" href="../../../index.html"><span class="doc">GROUPID</span></a> value</p></td>
+</tr>
+<tr class="row-even"><td><p>TILEID</p></td>
+<td><p>80605</p></td>
+<td><p>int</p></td>
+<td><p>Integer tile ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPECTRO</p></td>
+<td><p>6</p></td>
+<td><p>int</p></td>
+<td><p>Spectrograph number (same as PETAL)</p></td>
+</tr>
+<tr class="row-even"><td><p>PETAL</p></td>
+<td><p>6</p></td>
+<td><p>int</p></td>
+<td><p>Focal plane petal number (same as SPECTRO)</p></td>
+</tr>
+<tr class="row-odd"><td><p>CHECKSUM</p></td>
+<td><p>cXXRdWUQcWUQcWUQ</p></td>
+<td><p>str</p></td>
+<td><p>HDU checksum updated 2021-07-15T00:33:13</p></td>
+</tr>
+<tr class="row-even"><td><p>DATASUM</p></td>
+<td><p>0</p></td>
+<td><p>str</p></td>
+<td><p>data unit checksum updated 2021-07-15T00:33:13</p></td>
+</tr>
+</tbody>
+</table>
+<p>Depending upon the SPGRP=GROUPTYPE, there may be additional keywords with more
+human-friendly names for the SPGRPVAL, e.g.</p>
+<table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>SPGRP=GROUPTYPE</p></th>
+<th class="head"><p>Extra keywords</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cumulative</p></td>
+<td><p>NIGHT: all data through this YEARMMDD</p></td>
+</tr>
+<tr class="row-odd"><td><p>pernight</p></td>
+<td><p>NIGHT: only data on this YEARMMDD</p></td>
+</tr>
+<tr class="row-even"><td><p>perexp</p></td>
+<td><p>NIGHT, EXPID: only data from this YEARMMDD and exposure ID</p></td>
+</tr>
+</tbody>
+</table>
+</details><p>Empty HDU.</p>
+</section>
+</section>
+<section id="hdu01">
+<h3>HDU01<a class="headerlink" href="#hdu01" title="Permalink to this heading"></a></h3>
+<p>EXTNAME = FIBERMAP</p>
+<p>Fibermap information combining the targeting photometry and metadata,
+fiberassign requested positions, and actual as-observed fiber locations.</p>
+<section id="id1">
+<h4>Required Header Keywords<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>413</p></td>
+<td><p>int</p></td>
+<td><p>Width of table in bytes</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>500</p></td>
+<td><p>int</p></td>
+<td><p>Number of unique targets (table rows)</p></td>
+</tr>
+<tr class="row-even"><td><p>CHECKSUM</p></td>
+<td><p>TcPqUbPoTbPoTbPo</p></td>
+<td><p>str</p></td>
+<td><p>HDU checksum</p></td>
+</tr>
+<tr class="row-odd"><td><p>DATASUM</p></td>
+<td><p>1051947488</p></td>
+<td><p>str</p></td>
+<td><p>data unit checksum</p></td>
+</tr>
+</tbody>
+</table>
+</details></section>
+<section id="required-data-table-columns">
+<h4>Required Data Table Columns<a class="headerlink" href="#required-data-table-columns" title="Permalink to this heading"></a></h4>
+<p>Propagated from the FIBERMAP HDU of the input <a class="reference internal" href="../../../../exposures/NIGHT/EXPID/cframe-CAMERA-EXPID.html"><span class="doc">cframe files</span></a>.</p>
+<table class="columns docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Units</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>TARGETID</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Unique DESI target ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>PETAL_LOC</p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>Petal location [0-9]</p></td>
+</tr>
+<tr class="row-even"><td><p>DEVICE_LOC</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Device location on focal plane [0-523]</p></td>
+</tr>
+<tr class="row-odd"><td><p>LOCATION</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Location on the focal plane PETAL_LOC*1000 + DEVICE_LOC</p></td>
+</tr>
+<tr class="row-even"><td><p>FIBER</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Fiber ID on the CCDs [0-4999]</p></td>
+</tr>
+<tr class="row-odd"><td><p>FIBERSTATUS</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Fiber status mask. 0=good</p></td>
+</tr>
+<tr class="row-even"><td><p>TARGET_RA</p></td>
+<td><p>float64</p></td>
+<td><p>deg</p></td>
+<td><p>Barycentric right ascension in ICRS</p></td>
+</tr>
+<tr class="row-odd"><td><p>TARGET_DEC</p></td>
+<td><p>float64</p></td>
+<td><p>deg</p></td>
+<td><p>Barycentric declination in ICRS</p></td>
+</tr>
+<tr class="row-even"><td><p>PMRA</p></td>
+<td><p>float32</p></td>
+<td><p>mas yr^-1</p></td>
+<td><p>proper motion in the +RA direction (already including cos(dec))</p></td>
+</tr>
+<tr class="row-odd"><td><p>PMDEC</p></td>
+<td><p>float32</p></td>
+<td><p>mas yr^-1</p></td>
+<td><p>Proper motion in the +Dec direction</p></td>
+</tr>
+<tr class="row-even"><td><p>REF_EPOCH</p></td>
+<td><p>float32</p></td>
+<td><p>yr</p></td>
+<td><p>Reference epoch for Gaia/Tycho astrometry. Typically 2015.5 for Gaia</p></td>
+</tr>
+<tr class="row-odd"><td><p>LAMBDA_REF</p></td>
+<td><p>float32</p></td>
+<td><p>Angstrom</p></td>
+<td><p>Requested wavelength at which targets should be centered on fibers</p></td>
+</tr>
+<tr class="row-even"><td><p>FA_TARGET</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Targeting bit internally used by fiberassign (linked with FA_TYPE)</p></td>
+</tr>
+<tr class="row-odd"><td><p>FA_TYPE</p></td>
+<td><p>binary</p></td>
+<td></td>
+<td><p>Fiberassign internal target type (science, standard, sky, safe, suppsky)</p></td>
+</tr>
+<tr class="row-even"><td><p>OBJTYPE</p></td>
+<td><p>char[3]</p></td>
+<td></td>
+<td><p>Object type: TGT, SKY, NON, BAD</p></td>
+</tr>
+<tr class="row-odd"><td><p>FIBERASSIGN_X</p></td>
+<td><p>float32</p></td>
+<td><p>mm</p></td>
+<td><p>Fiberassign expected CS5 X location on focal plane</p></td>
+</tr>
+<tr class="row-even"><td><p>FIBERASSIGN_Y</p></td>
+<td><p>float32</p></td>
+<td><p>mm</p></td>
+<td><p>Fiberassign expected CS5 Y location on focal plane</p></td>
+</tr>
+<tr class="row-odd"><td><p>PRIORITY</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Target current priority</p></td>
+</tr>
+<tr class="row-even"><td><p>SUBPRIORITY</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Random subpriority [0-1) to break assignment ties</p></td>
+</tr>
+<tr class="row-odd"><td><p>OBSCONDITIONS</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Bitmask of allowed observing conditions</p></td>
+</tr>
+<tr class="row-even"><td><p>RELEASE</p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>Imaging surveys release ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>BRICKID</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Brick ID from tractor input</p></td>
+</tr>
+<tr class="row-even"><td><p>BRICK_OBJID</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Imaging Surveys OBJID on that brick</p></td>
+</tr>
+<tr class="row-odd"><td><p>MORPHTYPE</p></td>
+<td><p>char[4]</p></td>
+<td></td>
+<td><p>Imaging Surveys morphological type from Tractor</p></td>
+</tr>
+<tr class="row-even"><td><p>FLUX_G</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>Flux in the Legacy Survey g-band (AB)</p></td>
+</tr>
+<tr class="row-odd"><td><p>FLUX_R</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>Flux in the Legacy Survey r-band (AB)</p></td>
+</tr>
+<tr class="row-even"><td><p>FLUX_Z</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>Flux in the Legacy Survey z-band (AB)</p></td>
+</tr>
+<tr class="row-odd"><td><p>FLUX_IVAR_G</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy^-2</p></td>
+<td><p>Inverse variance of FLUX_G (AB)</p></td>
+</tr>
+<tr class="row-even"><td><p>FLUX_IVAR_R</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy^-2</p></td>
+<td><p>Inverse variance of FLUX_R (AB)</p></td>
+</tr>
+<tr class="row-odd"><td><p>FLUX_IVAR_Z</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy^-2</p></td>
+<td><p>Inverse variance of FLUX_Z (AB)</p></td>
+</tr>
+<tr class="row-even"><td><p>MASKBITS</p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>Bitwise mask from the imaging indicating potential issue or blending</p></td>
+</tr>
+<tr class="row-odd"><td><p>REF_ID</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Tyc1*1,000,000+Tyc2*10+Tyc3 for Tycho-2; “sourceid” for Gaia DR2</p></td>
+</tr>
+<tr class="row-even"><td><p>REF_CAT</p></td>
+<td><p>char[2]</p></td>
+<td></td>
+<td><p>Reference catalog source for star: “T2” for Tycho-2, “G2” for Gaia DR2, “L2” for the SGA, empty otherwise</p></td>
+</tr>
+<tr class="row-odd"><td><p>GAIA_PHOT_G_MEAN_MAG</p></td>
+<td><p>float32</p></td>
+<td><p>mag</p></td>
+<td><p>Gaia G band magnitude</p></td>
+</tr>
+<tr class="row-even"><td><p>GAIA_PHOT_BP_MEAN_MAG</p></td>
+<td><p>float32</p></td>
+<td><p>mag</p></td>
+<td><p>Gaia BP band magnitude</p></td>
+</tr>
+<tr class="row-odd"><td><p>GAIA_PHOT_RP_MEAN_MAG</p></td>
+<td><p>float32</p></td>
+<td><p>mag</p></td>
+<td><p>Gaia RP band magnitude</p></td>
+</tr>
+<tr class="row-even"><td><p>PARALLAX</p></td>
+<td><p>float32</p></td>
+<td><p>mas</p></td>
+<td><p>Reference catalog parallax</p></td>
+</tr>
+<tr class="row-odd"><td><p>BRICKNAME</p></td>
+<td><p>char[8]</p></td>
+<td></td>
+<td><p>Brick name from tractor input</p></td>
+</tr>
+<tr class="row-even"><td><p>EBV</p></td>
+<td><p>float32</p></td>
+<td><p>mag</p></td>
+<td><p>Galactic extinction E(B-V) reddening from SFD98</p></td>
+</tr>
+<tr class="row-odd"><td><p>FLUX_W1</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>WISE flux in W1 (AB)</p></td>
+</tr>
+<tr class="row-even"><td><p>FLUX_W2</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>WISE flux in W2 (AB)</p></td>
+</tr>
+<tr class="row-odd"><td><p>FLUX_IVAR_W1</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy^-2</p></td>
+<td><p>Inverse variance of FLUX_W1 (AB)</p></td>
+</tr>
+<tr class="row-even"><td><p>FLUX_IVAR_W2</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy^-2</p></td>
+<td><p>Inverse variance of FLUX_W2 (AB)</p></td>
+</tr>
+<tr class="row-odd"><td><p>FIBERFLUX_G</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>Predicted g-band flux within a fiber of diameter 1.5 arcsec from this object in 1 arcsec Gaussian seeing</p></td>
+</tr>
+<tr class="row-even"><td><p>FIBERFLUX_R</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>Predicted r-band flux within a fiber of diameter 1.5 arcsec from this object in 1 arcsec Gaussian seeing</p></td>
+</tr>
+<tr class="row-odd"><td><p>FIBERFLUX_Z</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>Predicted z-band flux within a fiber of diameter 1.5 arcsec from this object in 1 arcsec Gaussian seeing</p></td>
+</tr>
+<tr class="row-even"><td><p>FIBERTOTFLUX_G</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>Predicted g-band flux within a fiber of diameter 1.5 arcsec from all sources at this location in 1 arcsec Gaussian seeing</p></td>
+</tr>
+<tr class="row-odd"><td><p>FIBERTOTFLUX_R</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>Predicted r-band flux within a fiber of diameter 1.5 arcsec from all sources at this location in 1 arcsec Gaussian seeing</p></td>
+</tr>
+<tr class="row-even"><td><p>FIBERTOTFLUX_Z</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>Predicted z-band flux within a fiber of diameter 1.5 arcsec from all sources at this location in 1 arcsec Gaussian seeing</p></td>
+</tr>
+<tr class="row-odd"><td><p>SERSIC</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Power-law index for the Sersic profile model (MORPHTYPE=”SER”)</p></td>
+</tr>
+<tr class="row-even"><td><p>SHAPE_R</p></td>
+<td><p>float32</p></td>
+<td><p>arcsec</p></td>
+<td><p>Half-light radius of galaxy model (&amp;gt;0)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SHAPE_E1</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Ellipticity component 1 of galaxy model for galaxy type MORPHTYPE</p></td>
+</tr>
+<tr class="row-even"><td><p>SHAPE_E2</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Ellipticity component 2 of galaxy model for galaxy type MORPHTYPE</p></td>
+</tr>
+<tr class="row-odd"><td><p>PHOTSYS</p></td>
+<td><p>char[1]</p></td>
+<td></td>
+<td><p>‘N’ for the MzLS/BASS photometric system, ‘S’ for DECaLS</p></td>
+</tr>
+<tr class="row-even"><td><p>PRIORITY_INIT</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Target initial priority from target selection bitmasks and OBSCONDITIONS</p></td>
+</tr>
+<tr class="row-odd"><td><p>NUMOBS_INIT</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Initial number of observations for target calculated across target selection bitmasks and OBSCONDITIONS</p></td>
+</tr>
+<tr class="row-even"><td><p>SV1_DESI_TARGET <a class="footnote-reference brackets" href="#id11" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>DESI (dark time program) target selection bitmask for SV1</p></td>
+</tr>
+<tr class="row-odd"><td><p>SV1_BGS_TARGET <a class="footnote-reference brackets" href="#id11" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>BGS (bright time program) target selection bitmask for SV1</p></td>
+</tr>
+<tr class="row-even"><td><p>SV1_MWS_TARGET <a class="footnote-reference brackets" href="#id11" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>MWS (bright time program) target selection bitmask for SV1</p></td>
+</tr>
+<tr class="row-odd"><td><p>SV1_SCND_TARGET <a class="footnote-reference brackets" href="#id11" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Secondary target selection bitmask for SV1</p></td>
+</tr>
+<tr class="row-even"><td><p>SV3_DESI_TARGET <a class="footnote-reference brackets" href="#id11" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>DESI (dark time program) target selection bitmask for SV3</p></td>
+</tr>
+<tr class="row-odd"><td><p>SV3_BGS_TARGET <a class="footnote-reference brackets" href="#id11" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>BGS (bright time program) target selection bitmask for SV3</p></td>
+</tr>
+<tr class="row-even"><td><p>SV3_MWS_TARGET <a class="footnote-reference brackets" href="#id11" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>MWS (bright time program) target selection bitmask for SV3</p></td>
+</tr>
+<tr class="row-odd"><td><p>SV3_SCND_TARGET <a class="footnote-reference brackets" href="#id11" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Secondary target selection bitmask for SV3</p></td>
+</tr>
+<tr class="row-even"><td><p>DESI_TARGET</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>DESI (dark time program) target selection bitmask</p></td>
+</tr>
+<tr class="row-odd"><td><p>BGS_TARGET</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>BGS (Bright Galaxy Survey) target selection bitmask</p></td>
+</tr>
+<tr class="row-even"><td><p>MWS_TARGET</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Milky Way Survey targeting bits</p></td>
+</tr>
+<tr class="row-odd"><td><p>SCND_TARGET <a class="footnote-reference brackets" href="#id11" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Target selection bitmask for secondary programs</p></td>
+</tr>
+<tr class="row-even"><td><p>PLATE_RA</p></td>
+<td><p>float64</p></td>
+<td><p>deg</p></td>
+<td><p>Barycentric Right Ascension in ICRS to be used by PlateMaker</p></td>
+</tr>
+<tr class="row-odd"><td><p>PLATE_DEC</p></td>
+<td><p>float64</p></td>
+<td><p>deg</p></td>
+<td><p>Barycentric Declination in ICRS to be used by PlateMaker</p></td>
+</tr>
+<tr class="row-even"><td><p>NUM_ITER</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Number of positioner iterations</p></td>
+</tr>
+<tr class="row-odd"><td><p>FIBER_X</p></td>
+<td><p>float64</p></td>
+<td><p>mm</p></td>
+<td><p>CS5 X location requested by PlateMaker</p></td>
+</tr>
+<tr class="row-even"><td><p>FIBER_Y</p></td>
+<td><p>float64</p></td>
+<td><p>mm</p></td>
+<td><p>CS5 Y location requested by PlateMaker</p></td>
+</tr>
+<tr class="row-odd"><td><p>DELTA_X</p></td>
+<td><p>float64</p></td>
+<td><p>mm</p></td>
+<td><p>CS5 X requested minus actual position</p></td>
+</tr>
+<tr class="row-even"><td><p>DELTA_Y</p></td>
+<td><p>float64</p></td>
+<td><p>mm</p></td>
+<td><p>CS5 Y requested minus actual position</p></td>
+</tr>
+<tr class="row-odd"><td><p>FIBER_RA</p></td>
+<td><p>float64</p></td>
+<td><p>deg</p></td>
+<td><p>RA of actual fiber position</p></td>
+</tr>
+<tr class="row-even"><td><p>FIBER_DEC</p></td>
+<td><p>float64</p></td>
+<td><p>deg</p></td>
+<td><p>DEC of actual fiber position</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXPTIME</p></td>
+<td><p>float64</p></td>
+<td><p>s</p></td>
+<td><p>Length of time shutter was open</p></td>
+</tr>
+<tr class="row-even"><td><p>PSF_TO_FIBER_SPECFLUX</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>fraction of light from point-like source captured by 1.5 arcsec diameter fiber given atmospheric seeing</p></td>
+</tr>
+<tr class="row-odd"><td><p>NIGHT</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>EXPID</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>DESI Exposure ID number</p></td>
+</tr>
+<tr class="row-odd"><td><p>MJD</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Modified Julian Date when shutter was opened for this exposure</p></td>
+</tr>
+<tr class="row-even"><td><p>TILEID</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Unique DESI tile ID</p></td>
+</tr>
+</tbody>
+</table>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id11" role="note">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id2">1</a>,<a role="doc-backlink" href="#id3">2</a>,<a role="doc-backlink" href="#id4">3</a>,<a role="doc-backlink" href="#id5">4</a>,<a role="doc-backlink" href="#id6">5</a>,<a role="doc-backlink" href="#id7">6</a>,<a role="doc-backlink" href="#id8">7</a>,<a role="doc-backlink" href="#id9">8</a>,<a role="doc-backlink" href="#id10">9</a>)</span>
+<p>Optional</p>
+</aside>
+</aside>
+</section>
+</section>
+<section id="hdu02">
+<h3>HDU02<a class="headerlink" href="#hdu02" title="Permalink to this heading"></a></h3>
+<p>EXTNAME = SCORES</p>
+<p>Scores / metrics measured from the spectra for use in QA and systematics studies.
+These are propagated from the input
+<a class="reference internal" href="../../../../exposures/NIGHT/EXPID/cframe-CAMERA-EXPID.html"><span class="doc">cframe SCORES HDU</span></a>.</p>
+<section id="id12">
+<h4>Required Header Keywords<a class="headerlink" href="#id12" title="Permalink to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>488</p></td>
+<td><p>int</p></td>
+<td><p>width of table in bytes</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>500</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nspec</span></code> number of rows in table</p></td>
+</tr>
+</tbody>
+</table>
+</details></section>
+<section id="id13">
+<h4>Required Data Table Columns<a class="headerlink" href="#id13" title="Permalink to this heading"></a></h4>
+<p>See the <a class="reference internal" href="../../../../exposures/NIGHT/EXPID/cframe-CAMERA-EXPID.html"><span class="doc">cframe SCORES HDU</span></a>
+documentation for details about the columns.</p>
+<table class="columns docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Units</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>TARGETID</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Unique DESI target ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUM_RAW_COUNT_B</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Sum of raw counts in B camera</p></td>
+</tr>
+<tr class="row-even"><td><p>MEDIAN_RAW_COUNT_B</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Median of raw counts in B camera</p></td>
+</tr>
+<tr class="row-odd"><td><p>MEDIAN_RAW_SNR_B</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Median(raw signal/noise) in B camera</p></td>
+</tr>
+<tr class="row-even"><td><p>SUM_FFLAT_COUNT_B</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Sum of fiber-flatfielded counts B camera</p></td>
+</tr>
+<tr class="row-odd"><td><p>MEDIAN_FFLAT_COUNT_B</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Median of fiber-flatfielded counts in B camera</p></td>
+</tr>
+<tr class="row-even"><td><p>MEDIAN_FFLAT_SNR_B</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Median(S/N) of fiberflatfielded counts in B camera</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUM_SKYSUB_COUNT_B</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Sum of sky-subtracted counts in B camera</p></td>
+</tr>
+<tr class="row-even"><td><p>MEDIAN_SKYSUB_COUNT_B</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Median of sky-subtracted counts in B camera</p></td>
+</tr>
+<tr class="row-odd"><td><p>MEDIAN_SKYSUB_SNR_B</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Median(S/N) of sky-subtracted counts in B camera</p></td>
+</tr>
+<tr class="row-even"><td><p>SUM_CALIB_COUNT_B</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Sum of calibrated flux in B camera</p></td>
+</tr>
+<tr class="row-odd"><td><p>MEDIAN_CALIB_COUNT_B</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Median of calibrated flux in B camera</p></td>
+</tr>
+<tr class="row-even"><td><p>MEDIAN_CALIB_SNR_B</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Median(S/N) of calibrated flux in B camera</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_GPBDARK_B</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>template (S/N)^2 for dark targets in guider pass band on B</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_ELG_B</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>ELG B template (S/N)^2</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_GPBBRIGHT_B</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>template (S/N)^2 for bright targets in guider pass band on B</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_LYA_B</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>LYA B template (S/N)^2</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_BGS_B</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>BGS B template (S/N)^2</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_GPBBACKUP_B</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_QSO_B</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>QSO B template (S/N)^2</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_LRG_B</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>LRG B template (S/N)^2</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUM_RAW_COUNT_R</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Sum of raw counts in R camera</p></td>
+</tr>
+<tr class="row-even"><td><p>MEDIAN_RAW_COUNT_R</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Median of raw counts in R camera</p></td>
+</tr>
+<tr class="row-odd"><td><p>MEDIAN_RAW_SNR_R</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Median(raw signal/noise) in R camera</p></td>
+</tr>
+<tr class="row-even"><td><p>SUM_FFLAT_COUNT_R</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Sum of fiber-flatfielded counts R camera</p></td>
+</tr>
+<tr class="row-odd"><td><p>MEDIAN_FFLAT_COUNT_R</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Median of fiber-flatfielded counts in R camera</p></td>
+</tr>
+<tr class="row-even"><td><p>MEDIAN_FFLAT_SNR_R</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Median(S/N) of fiberflatfielded counts in R camera</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUM_SKYSUB_COUNT_R</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Sum of sky-subtracted counts in R camera</p></td>
+</tr>
+<tr class="row-even"><td><p>MEDIAN_SKYSUB_COUNT_R</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Median of sky-subtracted counts in R camera</p></td>
+</tr>
+<tr class="row-odd"><td><p>MEDIAN_SKYSUB_SNR_R</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Median(S/N) of sky-subtracted counts in R camera</p></td>
+</tr>
+<tr class="row-even"><td><p>SUM_CALIB_COUNT_R</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Sum of calibrated flux in R camera</p></td>
+</tr>
+<tr class="row-odd"><td><p>MEDIAN_CALIB_COUNT_R</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Median of calibrated flux in R camera</p></td>
+</tr>
+<tr class="row-even"><td><p>MEDIAN_CALIB_SNR_R</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Median(S/N) of calibrated flux in R camera</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_GPBDARK_R</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>template (S/N)^2 for dark targets in guider pass band on R</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_ELG_R</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>ELG R template (S/N)^2</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_GPBBRIGHT_R</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>template (S/N)^2 for bright targets in guider pass band on R</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_LYA_R</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>LYA R template (S/N)^2</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_BGS_R</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>BGS R template (S/N)^2</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_GPBBACKUP_R</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_QSO_R</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>QSO R template (S/N)^2</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_LRG_R</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>LRG R template (S/N)^2</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUM_RAW_COUNT_Z</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Sum of raw counts in Z camera</p></td>
+</tr>
+<tr class="row-even"><td><p>MEDIAN_RAW_COUNT_Z</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Median of raw counts in Z camera</p></td>
+</tr>
+<tr class="row-odd"><td><p>MEDIAN_RAW_SNR_Z</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Median(raw signal/noise) in Z camera</p></td>
+</tr>
+<tr class="row-even"><td><p>SUM_FFLAT_COUNT_Z</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Sum of fiber-flatfielded counts Z camera</p></td>
+</tr>
+<tr class="row-odd"><td><p>MEDIAN_FFLAT_COUNT_Z</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Median of fiber-flatfielded counts in Z camera</p></td>
+</tr>
+<tr class="row-even"><td><p>MEDIAN_FFLAT_SNR_Z</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Median(S/N) of fiberflatfielded counts in Z camera</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUM_SKYSUB_COUNT_Z</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Sum of sky-subtracted counts in Z camera</p></td>
+</tr>
+<tr class="row-even"><td><p>MEDIAN_SKYSUB_COUNT_Z</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Median of sky-subtracted counts in Z camera</p></td>
+</tr>
+<tr class="row-odd"><td><p>MEDIAN_SKYSUB_SNR_Z</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Median(S/N) of sky-subtracted counts in Z camera</p></td>
+</tr>
+<tr class="row-even"><td><p>SUM_CALIB_COUNT_Z</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Sum of calibrated flux in Z camera</p></td>
+</tr>
+<tr class="row-odd"><td><p>MEDIAN_CALIB_COUNT_Z</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Median of calibrated flux in Z camera</p></td>
+</tr>
+<tr class="row-even"><td><p>MEDIAN_CALIB_SNR_Z</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Median(S/N) of calibrated flux in Z camera</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_GPBDARK_Z</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>template (S/N)^2 for dark targets in guider pass band on Z</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_ELG_Z</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>ELG Z template (S/N)^2</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_GPBBRIGHT_Z</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>template (S/N)^2 for bright targets in guider pass band on Z</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_LYA_Z</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>LYA Z template (S/N)^2</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_BGS_Z</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>BGS Z template (S/N)^2</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_GPBBACKUP_Z</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_QSO_Z</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>QSO Z template (S/N)^2</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_LRG_Z</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>LRG Z template (S/N)^2</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="hdu03">
+<h3>HDU03<a class="headerlink" href="#hdu03" title="Permalink to this heading"></a></h3>
+<p>EXTNAME = B_WAVELENGTH</p>
+<p>1D array of B-camera wavelengths in Angstrom, in vacuum (not in air),
+in the rest frame of the solar system barycenter.</p>
+<section id="id14">
+<h4>Required Header Keywords<a class="headerlink" href="#id14" title="Permalink to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>2751</p></td>
+<td><p>int</p></td>
+<td><p>number of wavelengths</p></td>
+</tr>
+<tr class="row-odd"><td><p>BUNIT</p></td>
+<td><p>Angstrom</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [float64, 2751]</p>
+</section>
+</section>
+<section id="hdu04">
+<h3>HDU04<a class="headerlink" href="#hdu04" title="Permalink to this heading"></a></h3>
+<p>EXTNAME = B_FLUX</p>
+<p>2D array of calibrated spectral flux of dimension <code class="docutils literal notranslate"><span class="pre">[nspec,</span> <span class="pre">nwave]</span></code>
+in units of 1e-17 erg / (s cm2 Angstrom).
+<code class="docutils literal notranslate"><span class="pre">nspec</span></code> is the number of fibers per camera.
+<code class="docutils literal notranslate"><span class="pre">nwave</span></code> in the length of the wavelength array.
+The spectra of all fibers share the same wavelength grid, given in HDU B_WAVELENGTH.</p>
+<section id="id15">
+<h4>Required Header Keywords<a class="headerlink" href="#id15" title="Permalink to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>2751</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nwave</span></code> number of wavelengths</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>500</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nspec</span></code> number of spectra</p></td>
+</tr>
+<tr class="row-even"><td><p>BUNIT</p></td>
+<td><p>10**-17 erg/(s cm2 Angstrom)</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [float32, 2751x500]</p>
+</section>
+</section>
+<section id="hdu05">
+<h3>HDU05<a class="headerlink" href="#hdu05" title="Permalink to this heading"></a></h3>
+<p>EXTNAME = B_IVAR</p>
+<p>Inverse variance of flux (1/sigma^2) in units of (10^{-17} erg/s/cm2/A)^-2.
+Uncertainties comprise statistical uncertainties from the error propagation
+of the initial CCD pixel variance, the calibration uncertainties,
+plus an additional term on bright sky lines to account for the
+imperfect sky subtraction.</p>
+<section id="id16">
+<h4>Required Header Keywords<a class="headerlink" href="#id16" title="Permalink to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>2751</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nwave</span></code> number of wavelengths</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>500</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nspec</span></code> number of spectra</p></td>
+</tr>
+<tr class="row-even"><td><p>BUNIT</p></td>
+<td><p>10**+34 (s2 cm4 Angstrom2) / erg2</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [float32, 2751x500]</p>
+</section>
+</section>
+<section id="hdu06">
+<h3>HDU06<a class="headerlink" href="#hdu06" title="Permalink to this heading"></a></h3>
+<p>EXTNAME = B_MASK</p>
+<p>Mask of spectral data; 0=good.
+See SPECMASK section of the <a class="reference internal" href="../../../../../../bitmasks.html"><span class="doc">bitmask documentation</span></a> page for the definition of the bits.</p>
+<section id="id17">
+<h4>Required Header Keywords<a class="headerlink" href="#id17" title="Permalink to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>2751</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nwave</span></code> number of wavelengths</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>500</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nspec</span></code> number of spectra</p></td>
+</tr>
+<tr class="row-even"><td><p>BZERO</p></td>
+<td><p>2147483648</p></td>
+<td><p>int</p></td>
+<td><p>offset data range to that of unsigned long</p></td>
+</tr>
+<tr class="row-odd"><td><p>BSCALE</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>default scaling factor</p></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [int32 (compressed), 2751x500]</p>
+</section>
+</section>
+<section id="hdu07">
+<h3>HDU07<a class="headerlink" href="#hdu07" title="Permalink to this heading"></a></h3>
+<p>EXTNAME = B_RESOLUTION</p>
+<p>Resolution matrix stored as a 3D sparse matrix, modeling the
+per-fiber non-Gaussian effective line-spread-function resolution.
+See the <a class="reference internal" href="../../../../exposures/NIGHT/EXPID/frame-CAMERA-EXPID.html"><span class="doc">frame RESOLUTION HDU</span></a>
+documentation for details about using this HDU.</p>
+<section id="id18">
+<h4>Required Header Keywords<a class="headerlink" href="#id18" title="Permalink to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>2751</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nwave</span></code> number of wavelengths</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>11</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ndiag</span></code> number of diagonals</p></td>
+</tr>
+<tr class="row-even"><td><p>NAXIS3</p></td>
+<td><p>500</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nspec</span></code> number of spectra</p></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [float32, 2751x11x500]</p>
+<p>A sparse resolution matrix may be created for spectrum <code class="docutils literal notranslate"><span class="pre">i</span></code> with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">desispec.resolution</span> <span class="kn">import</span> <span class="n">Resolution</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">Resolution</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Or using lower-level scipy.sparse matrices:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.sparse</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">nspec</span><span class="p">,</span> <span class="n">ndiag</span><span class="p">,</span> <span class="n">nwave</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">offsets</span> <span class="o">=</span> <span class="n">ndiag</span><span class="o">//</span><span class="mi">2</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">ndiag</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">dia_matrix</span><span class="p">((</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">offsets</span><span class="p">),</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">nwave</span><span class="p">,</span> <span class="n">nwave</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="hdu08">
+<h3>HDU08<a class="headerlink" href="#hdu08" title="Permalink to this heading"></a></h3>
+<p>EXTNAME = R_WAVELENGTH</p>
+<p>1D array of R-camera wavelengths in Angstrom, in vacuum (not in air),
+in the rest frame of the solar system barycenter.</p>
+<section id="id19">
+<h4>Required Header Keywords<a class="headerlink" href="#id19" title="Permalink to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>2326</p></td>
+<td><p>int</p></td>
+<td><p>number of wavelengths</p></td>
+</tr>
+<tr class="row-odd"><td><p>BUNIT</p></td>
+<td><p>Angstrom</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [float64, 2326]</p>
+</section>
+</section>
+<section id="hdu09">
+<h3>HDU09<a class="headerlink" href="#hdu09" title="Permalink to this heading"></a></h3>
+<p>EXTNAME = R_FLUX</p>
+<p>2D array of calibrated spectral flux of dimension <code class="docutils literal notranslate"><span class="pre">[nspec,</span> <span class="pre">nwave]</span></code>
+in units of 1e-17 erg / (s cm2 Angstrom).
+<code class="docutils literal notranslate"><span class="pre">nspec</span></code> is the number of fibers per camera.
+<code class="docutils literal notranslate"><span class="pre">nwave</span></code> in the length of the wavelength array.
+The spectra of all fibers share the same wavelength grid, given in HDU R_WAVELENGTH.</p>
+<section id="id20">
+<h4>Required Header Keywords<a class="headerlink" href="#id20" title="Permalink to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>2326</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nwave</span></code> number of wavelengths</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>500</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nspec</span></code> number of spectra</p></td>
+</tr>
+<tr class="row-even"><td><p>BUNIT</p></td>
+<td><p>10**-17 erg/(s cm2 Angstrom)</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [float32, 2326x500]</p>
+</section>
+</section>
+<section id="hdu10">
+<h3>HDU10<a class="headerlink" href="#hdu10" title="Permalink to this heading"></a></h3>
+<p>EXTNAME = R_IVAR</p>
+<p>Inverse variance of flux (1/sigma^2) in units of (10^{-17} erg/s/cm2/A)^-2.
+Uncertainties comprise statistical uncertainties from the error propagation
+of the initial CCD pixel variance, the calibration uncertainties,
+plus an additional term on bright sky lines to account for the
+imperfect sky subtraction.</p>
+<section id="id21">
+<h4>Required Header Keywords<a class="headerlink" href="#id21" title="Permalink to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>2326</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nwave</span></code> number of wavelengths</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>500</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nspec</span></code> number of spectra</p></td>
+</tr>
+<tr class="row-even"><td><p>BUNIT</p></td>
+<td><p>10**+34 (s2 cm4 Angstrom2) / erg2</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [float32, 2326x500]</p>
+</section>
+</section>
+<section id="hdu11">
+<h3>HDU11<a class="headerlink" href="#hdu11" title="Permalink to this heading"></a></h3>
+<p>EXTNAME = R_MASK</p>
+<p>Mask of spectral data; 0=good.
+See SPECMASK section of the <a class="reference internal" href="../../../../../../bitmasks.html"><span class="doc">bitmask documentation</span></a> page for the definition of the bits.</p>
+<section id="id22">
+<h4>Required Header Keywords<a class="headerlink" href="#id22" title="Permalink to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>2326</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nwave</span></code> number of wavelengths</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>500</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nspec</span></code> number of spectra</p></td>
+</tr>
+<tr class="row-even"><td><p>BZERO</p></td>
+<td><p>2147483648</p></td>
+<td><p>int</p></td>
+<td><p>offset data range to that of unsigned long</p></td>
+</tr>
+<tr class="row-odd"><td><p>BSCALE</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>default scaling factor</p></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [int32 (compressed), 2326x500]</p>
+</section>
+</section>
+<section id="hdu12">
+<h3>HDU12<a class="headerlink" href="#hdu12" title="Permalink to this heading"></a></h3>
+<p>EXTNAME = R_RESOLUTION</p>
+<p>Resolution matrix stored as a 3D sparse matrix, modeling the
+per-fiber non-Gaussian effective line-spread-function resolution.
+See the <a class="reference internal" href="../../../../exposures/NIGHT/EXPID/frame-CAMERA-EXPID.html"><span class="doc">frame RESOLUTION HDU</span></a>
+documentation for details about using this HDU.</p>
+<section id="id23">
+<h4>Required Header Keywords<a class="headerlink" href="#id23" title="Permalink to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>2326</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nwave</span></code> number of wavelengths</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>11</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ndiag</span></code> number of diagonals</p></td>
+</tr>
+<tr class="row-even"><td><p>NAXIS3</p></td>
+<td><p>500</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nspec</span></code> number of spectra</p></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [float32, 2326x11x500]</p>
+</section>
+</section>
+<section id="hdu13">
+<h3>HDU13<a class="headerlink" href="#hdu13" title="Permalink to this heading"></a></h3>
+<p>EXTNAME = Z_WAVELENGTH</p>
+<p>1D array of Z-camera wavelengths in Angstrom, in vacuum (not in air),
+in the rest frame of the solar system barycenter.</p>
+<section id="id24">
+<h4>Required Header Keywords<a class="headerlink" href="#id24" title="Permalink to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>2881</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nwave</span></code> number of wavelengths</p></td>
+</tr>
+<tr class="row-odd"><td><p>BUNIT</p></td>
+<td><p>Angstrom</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [float64, 2881]</p>
+</section>
+</section>
+<section id="hdu14">
+<h3>HDU14<a class="headerlink" href="#hdu14" title="Permalink to this heading"></a></h3>
+<p>EXTNAME = Z_FLUX</p>
+<p>2D array of calibrated spectral flux of dimension <code class="docutils literal notranslate"><span class="pre">[nspec,</span> <span class="pre">nwave]</span></code>
+in units of 1e-17 erg / (s cm2 Angstrom).
+<code class="docutils literal notranslate"><span class="pre">nspec</span></code> is the number of fibers per camera.
+<code class="docutils literal notranslate"><span class="pre">nwave</span></code> in the length of the wavelength array.
+The spectra of all fibers share the same wavelength grid, given in HDU Z_WAVELENGTH.</p>
+<section id="id25">
+<h4>Required Header Keywords<a class="headerlink" href="#id25" title="Permalink to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>2881</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nwave</span></code> number of wavelengths</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>500</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nspec</span></code> number of spectra</p></td>
+</tr>
+<tr class="row-even"><td><p>BUNIT</p></td>
+<td><p>10**-17 erg/(s cm2 Angstrom)</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [float32, 2881x500]</p>
+</section>
+</section>
+<section id="hdu15">
+<h3>HDU15<a class="headerlink" href="#hdu15" title="Permalink to this heading"></a></h3>
+<p>EXTNAME = Z_IVAR</p>
+<p>Inverse variance of flux (1/sigma^2) in units of (10^{-17} erg/s/cm2/A)^-2.
+Uncertainties comprise statistical uncertainties from the error propagation
+of the initial CCD pixel variance, the calibration uncertainties,
+plus an additional term on bright sky lines to account for the
+imperfect sky subtraction.</p>
+<section id="id26">
+<h4>Required Header Keywords<a class="headerlink" href="#id26" title="Permalink to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>2881</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nwave</span></code> number of wavelengths</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>500</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nspec</span></code> number of spectra</p></td>
+</tr>
+<tr class="row-even"><td><p>BUNIT</p></td>
+<td><p>10**+34 (s2 cm4 Angstrom2) / erg2</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [float32, 2881x500]</p>
+</section>
+</section>
+<section id="hdu16">
+<h3>HDU16<a class="headerlink" href="#hdu16" title="Permalink to this heading"></a></h3>
+<p>EXTNAME = Z_MASK</p>
+<p>Mask of spectral data; 0=good.
+See SPECMASK section of the <a class="reference internal" href="../../../../../../bitmasks.html"><span class="doc">bitmask documentation</span></a> page for the definition of the bits.</p>
+<section id="id27">
+<h4>Required Header Keywords<a class="headerlink" href="#id27" title="Permalink to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>2881</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nwave</span></code> number of wavelengths</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>500</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nspec</span></code> number of spectra</p></td>
+</tr>
+<tr class="row-even"><td><p>BZERO</p></td>
+<td><p>2147483648</p></td>
+<td><p>int</p></td>
+<td><p>offset data range to that of unsigned long</p></td>
+</tr>
+<tr class="row-odd"><td><p>BSCALE</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>default scaling factor</p></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [int32 (compressed), 2881x500]</p>
+</section>
+</section>
+<section id="hdu17">
+<h3>HDU17<a class="headerlink" href="#hdu17" title="Permalink to this heading"></a></h3>
+<p>EXTNAME = Z_RESOLUTION</p>
+<p>Resolution matrix stored as a 3D sparse matrix, modeling the
+per-fiber non-Gaussian effective line-spread-function resolution.
+See the <a class="reference internal" href="../../../../exposures/NIGHT/EXPID/frame-CAMERA-EXPID.html"><span class="doc">frame RESOLUTION HDU</span></a>
+documentation for details about using this HDU.</p>
+<section id="id28">
+<h4>Required Header Keywords<a class="headerlink" href="#id28" title="Permalink to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>2881</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nwave</span></code> number of wavelengths</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>11</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ndiag</span></code> number of diagonals</p></td>
+</tr>
+<tr class="row-even"><td><p>NAXIS3</p></td>
+<td><p>500</p></td>
+<td><p>int</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nspec</span></code> number of spectra</p></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [float32, 2881x11x500]</p>
+</section>
+</section>
+</section>
+<section id="notes-and-examples">
+<h2>Notes and Examples<a class="headerlink" href="#notes-and-examples" title="Permalink to this heading"></a></h2>
+<p>Spectra can be read and plotted with Python code like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
+
+<span class="n">wave</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">flux</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;spectra-0-100-thru20210505.fits.gz&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdus</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">camera</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;Z&#39;</span><span class="p">]:</span>
+        <span class="n">wave</span><span class="p">[</span><span class="n">camera</span><span class="p">]</span> <span class="o">=</span> <span class="n">hdus</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">camera</span><span class="si">}</span><span class="s1">_WAVELENGTH&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+        <span class="n">flux</span><span class="p">[</span><span class="n">camera</span><span class="p">]</span> <span class="o">=</span> <span class="n">hdus</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">camera</span><span class="si">}</span><span class="s1">_FLUX&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">ispec</span> <span class="o">=</span> <span class="mi">217</span>
+<span class="k">for</span> <span class="n">camera</span> <span class="ow">in</span> <span class="n">wave</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wave</span><span class="p">[</span><span class="n">camera</span><span class="p">],</span> <span class="n">flux</span><span class="p">[</span><span class="n">camera</span><span class="p">][</span><span class="n">ispec</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Wavelength [Angstrom]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Flux [1e-17 erg/s/cm2/Angstrom]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../../../../../../_images/example_spectrum.png" src="../../../../../../_images/example_spectrum.png" />
+<p>The <a class="reference external" href="https://github.com/desihub/desispec">desispec</a> package provides
+utility functions and classes for reading, slicing, combining, and writing
+spectra.  e.g. the same plot can be made with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">desispec.io</span> <span class="kn">import</span> <span class="n">read_spectra</span>
+<span class="n">sp</span> <span class="o">=</span> <span class="n">read_spectra</span><span class="p">(</span><span class="s1">&#39;spectra-0-100-thru20210505.fits.gz&#39;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">ispec</span> <span class="o">=</span> <span class="mi">217</span>
+<span class="k">for</span> <span class="n">camera</span> <span class="ow">in</span> <span class="n">sp</span><span class="o">.</span><span class="n">bands</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">wave</span><span class="p">[</span><span class="n">camera</span><span class="p">],</span> <span class="n">sp</span><span class="o">.</span><span class="n">flux</span><span class="p">[</span><span class="n">camera</span><span class="p">][</span><span class="n">ispec</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Wavelength [Angstrom]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Flux [1e-17 erg/s/cm2/Angstrom]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>or multiple spectra files can be read, sub-selected, combined, and re-written with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">desispec.io</span> <span class="kn">import</span> <span class="n">read_spectra</span><span class="p">,</span> <span class="n">write_spectra</span>
+<span class="kn">from</span> <span class="nn">desispec.spectra</span> <span class="kn">import</span> <span class="n">stack</span>
+<span class="n">spectra</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">petal</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">sp</span> <span class="o">=</span> <span class="n">read_spectra</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;spectra-</span><span class="si">{</span><span class="n">petal</span><span class="si">}</span><span class="s1">-100-thru20210505.fits&#39;</span><span class="p">)</span>
+    <span class="n">keep</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">fibermap</span><span class="p">[</span><span class="s1">&#39;FLUX_R&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="o">**</span><span class="p">((</span><span class="mf">22.5</span><span class="o">-</span><span class="mi">17</span><span class="p">)</span><span class="o">/</span><span class="mf">2.5</span><span class="p">)</span>   <span class="c1"># mag_r &gt; 17</span>
+    <span class="n">spectra</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sp</span><span class="p">[</span><span class="n">keep</span><span class="p">])</span>
+
+<span class="n">combined_spectra</span> <span class="o">=</span> <span class="n">stack</span><span class="p">(</span><span class="n">spectra</span><span class="p">)</span>
+<span class="n">write_spectra</span><span class="p">(</span><span class="s1">&#39;bright_spectra.fits&#39;</span><span class="p">,</span> <span class="n">combined_spectra</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The format supports arbitrary channel (camera) names as long as for each channel {X}
+there is a set of HDUs named {X}_WAVELENGTH, {X}_FLUX, {X}_IVAR, {X}_MASK,
+{X}_RESOLUTION.</p>
+<p>The contents of the spectra files are a reformatting of the data in multiple
+input <a class="reference internal" href="../../../../exposures/NIGHT/EXPID/cframe-CAMERA-EXPID.html"><span class="doc">cframe files</span></a> files.
+Spectra files do not contain any additional information or calculations beyond
+what is already in the cframe files, but they provide an analysis convenience
+to get all the data for a given tile petal or healpix in a single file without
+having to find and read multiple cframe files across multiple nights,
+exposures, and cameras.</p>
+<p>The FIBERMAP and SCORES tables are concatenated from the input cframe files,
+with one row per target per exposure.  The WAVELENGTH, FLUX, IVAR, MASK,
+and RESOLUTION HDUs of the input cframes are combined and stored here
+with a [BRZ]_ prefix, e.g. B_FLUX for the stack of all FLUX HDUs from
+the input B-camera cframes.</p>
+<p>For the SURVEY=cmx m33 tile (TILEID=80615) tile and all the SURVEY=sv1 tiles (except TILEID=80971-80976, the dc3r2 ones), proper-motion correction was applied at the <a class="reference internal" href="../../../../../../DESI_TARGET/fiberassign/tiles/TILES_VERSION/TILEXX/fiberassign-TILEID.html"><span class="doc">fiberassign</span></a> design step; thus the following columns can have different values than in the <a class="reference internal" href="../../../../../../DESI_TARGET/TARG_DIR/DR/VERSION/targets/PHASE/RESOLVE/OBSCON/PHASEtargets-OBSCON-RESOLVE-hp-HP.html"><span class="doc">desitarget products</span></a>: <code class="docutils literal notranslate"><span class="pre">TARGET_RA</span></code>, <code class="docutils literal notranslate"><span class="pre">TARGET_DEC</span></code>, <code class="docutils literal notranslate"><span class="pre">REF_EPOCH</span></code>, <code class="docutils literal notranslate"><span class="pre">PLATE_RA</span></code>, <code class="docutils literal notranslate"><span class="pre">PLATE_DEC</span></code>, and <code class="docutils literal notranslate"><span class="pre">PLATE_REF_EPOCH</span></code>.</p>
+<p>For targets with a non-zero proper motion, <code class="docutils literal notranslate"><span class="pre">FIBER_RA</span></code> and <code class="docutils literal notranslate"><span class="pre">FIBER_DEC</span></code> refer to the position at the reference epoch (but note that the proper-motion correction has been applied at the time of the observation, it is just not recorded in <code class="docutils literal notranslate"><span class="pre">FIBER_RA</span></code> and <code class="docutils literal notranslate"><span class="pre">FIBER_DEC</span></code>).</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="redrock-SPECTROGRAPH-TILEID-GROUPID.html" class="btn btn-neutral float-left" title="redrock-SPECTROGRAPH-TILEID-GROUPID.fits" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tile-qa-TILEID-GROUPID.html" class="btn btn-neutral float-right" title="tile-qa-TILEID-GROUPID.fits" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014-2025, DESI Collaboration.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

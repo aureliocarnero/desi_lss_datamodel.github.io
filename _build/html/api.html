@@ -1,0 +1,1152 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>desidatamodel API &mdash; desidatamodel 25.4.dev1530 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/desidatamodel.css" />
+
+  
+      <script src="_static/jquery.js"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+      <script src="_static/doctools.js"></script>
+      <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="desidatamodel Change Log" href="changes.html" />
+    <link rel="prev" title="badModel" href="examples/badModel.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            desidatamodel
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="DESI_ROOT/vac/index.html">vac/ : Value Added Catalogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESI_ROOT/index.html">$DESI_ROOT : represents the top level of the DESI directory tree.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESI_SPECTRO_DATA/index.html">$DESI_SPECTRO_DATA : raw data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESI_SPECTRO_REDUX/index.html">$DESI_SPECTRO_REDUX : processed spectro data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESI_SPECTRO_SIM/index.html">$DESI_SPECTRO_SIM : simulated spectro data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESI_SPECTRO_CALIB/index.html">$DESI_SPECTRO_CALIB : spectro calibration data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESI_SURVEYOPS/index.html">$DESI_SURVEYOPS : data files used for day-to-day survey operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESI_TARGET/index.html">$DESI_TARGET : target selection and fiber assignment (see also Myers et al. 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESIMODEL/index.html">$DESIMODEL : data used for simulating DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESISURVEY_OUTPUT/index.html">$DESISURVEY_OUTPUT : outputs from desisurvey and surveysim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PROTODESI/index.html">$PROTODESI : data and logs from the ProtoDESI campaign</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="bitmasks.html">Bit Masks in DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="column_descriptions.html">Standard Column Descriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="envvar.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="units.html">Units in data files</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="datamodel.html">Contributing to desidatamodel</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">desidatamodel API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel">desidatamodel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.DataModelError"><code class="docutils literal notranslate"><span class="pre">DataModelError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.DataModelWarning"><code class="docutils literal notranslate"><span class="pre">DataModelWarning</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel-check">desidatamodel.check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.check.DataModel"><code class="docutils literal notranslate"><span class="pre">DataModel</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.check.DataModel._cross_reference"><code class="docutils literal notranslate"><span class="pre">DataModel._cross_reference()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.check.DataModel._extract_columns"><code class="docutils literal notranslate"><span class="pre">DataModel._extract_columns()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.check.DataModel._type_size"><code class="docutils literal notranslate"><span class="pre">DataModel._type_size()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.check.DataModel.extract_metadata"><code class="docutils literal notranslate"><span class="pre">DataModel.extract_metadata()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.check.DataModel.get_regexp"><code class="docutils literal notranslate"><span class="pre">DataModel.get_regexp()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.check.DataModel.validate_prototype"><code class="docutils literal notranslate"><span class="pre">DataModel.validate_prototype()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.check._options"><code class="docutils literal notranslate"><span class="pre">_options()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.check.collect_files"><code class="docutils literal notranslate"><span class="pre">collect_files()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.check.files_to_regexp"><code class="docutils literal notranslate"><span class="pre">files_to_regexp()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.check.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.check.scan_model"><code class="docutils literal notranslate"><span class="pre">scan_model()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.check.validate_prototypes"><code class="docutils literal notranslate"><span class="pre">validate_prototypes()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel-columns">desidatamodel.columns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.columns.format_columns"><code class="docutils literal notranslate"><span class="pre">format_columns()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.columns.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel-scan">desidatamodel.scan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.scan.UnionStub"><code class="docutils literal notranslate"><span class="pre">UnionStub</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.scan.UnionStub.mark_optional"><code class="docutils literal notranslate"><span class="pre">UnionStub.mark_optional()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.scan.UnionStub.update"><code class="docutils literal notranslate"><span class="pre">UnionStub.update()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.scan._options"><code class="docutils literal notranslate"><span class="pre">_options()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.scan.collect_files"><code class="docutils literal notranslate"><span class="pre">collect_files()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.scan.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.scan.union_metadata"><code class="docutils literal notranslate"><span class="pre">union_metadata()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel-stub">desidatamodel.stub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.stub.Stub"><code class="docutils literal notranslate"><span class="pre">Stub</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.stub.Stub.columns_header"><code class="docutils literal notranslate"><span class="pre">Stub.columns_header</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.stub.Stub.contents_header"><code class="docutils literal notranslate"><span class="pre">Stub.contents_header</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.stub.Stub.filename"><code class="docutils literal notranslate"><span class="pre">Stub.filename</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.stub.Stub.headers"><code class="docutils literal notranslate"><span class="pre">Stub.headers</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.stub.Stub.keywords_header"><code class="docutils literal notranslate"><span class="pre">Stub.keywords_header</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.stub.Stub.nhdr"><code class="docutils literal notranslate"><span class="pre">Stub.nhdr</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.stub.Stub.basef"><code class="docutils literal notranslate"><span class="pre">Stub.basef</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.stub.Stub.colformat"><code class="docutils literal notranslate"><span class="pre">Stub.colformat()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.stub.Stub.colsizes"><code class="docutils literal notranslate"><span class="pre">Stub.colsizes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.stub.Stub.columns"><code class="docutils literal notranslate"><span class="pre">Stub.columns()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.stub.Stub.contents"><code class="docutils literal notranslate"><span class="pre">Stub.contents</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.stub.Stub.filesize"><code class="docutils literal notranslate"><span class="pre">Stub.filesize</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.stub.Stub.filetype"><code class="docutils literal notranslate"><span class="pre">Stub.filetype</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.stub.Stub.format_table"><code class="docutils literal notranslate"><span class="pre">Stub.format_table()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.stub.Stub.hdumeta"><code class="docutils literal notranslate"><span class="pre">Stub.hdumeta</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.stub.Stub.hduname"><code class="docutils literal notranslate"><span class="pre">Stub.hduname</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.stub.Stub.highlight"><code class="docutils literal notranslate"><span class="pre">Stub.highlight()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.stub.Stub.image_format"><code class="docutils literal notranslate"><span class="pre">Stub.image_format()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.stub.Stub.keywords"><code class="docutils literal notranslate"><span class="pre">Stub.keywords()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.stub.Stub.modelname"><code class="docutils literal notranslate"><span class="pre">Stub.modelname</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desidatamodel.stub.Stub.section"><code class="docutils literal notranslate"><span class="pre">Stub.section()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.stub.extract_keywords"><code class="docutils literal notranslate"><span class="pre">extract_keywords()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.stub.extrakey"><code class="docutils literal notranslate"><span class="pre">extrakey()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.stub.file_size"><code class="docutils literal notranslate"><span class="pre">file_size()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.stub.fits_column_format"><code class="docutils literal notranslate"><span class="pre">fits_column_format()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.stub.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.stub.read_column_descriptions"><code class="docutils literal notranslate"><span class="pre">read_column_descriptions()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel-unit">desidatamodel.unit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.unit._FITSUnitWarning"><code class="docutils literal notranslate"><span class="pre">_FITSUnitWarning</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.unit._validate_unit"><code class="docutils literal notranslate"><span class="pre">_validate_unit()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel-update">desidatamodel.update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.update.format_rst_table"><code class="docutils literal notranslate"><span class="pre">format_rst_table()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.update.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.update.read_table_rows"><code class="docutils literal notranslate"><span class="pre">read_table_rows()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desidatamodel.update.update"><code class="docutils literal notranslate"><span class="pre">update()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changes.html">desidatamodel Change Log</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">desidatamodel</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">desidatamodel API</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/api.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-desidatamodel">
+<span id="desidatamodel-api"></span><h1>desidatamodel API<a class="headerlink" href="#module-desidatamodel" title="Permalink to this heading"></a></h1>
+<section id="desidatamodel">
+<h2>desidatamodel<a class="headerlink" href="#desidatamodel" title="Permalink to this heading"></a></h2>
+<p>This package provides support for the <a class="reference external" href="https://www.desi.lbl.gov">DESI</a> Data Model.</p>
+</section>
+<dl class="py exception">
+<dt class="sig sig-object py" id="desidatamodel.DataModelError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">desidatamodel.</span></span><span class="sig-name descname"><span class="pre">DataModelError</span></span><a class="reference internal" href="_modules/desidatamodel.html#DataModelError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.DataModelError" title="Permalink to this definition"></a></dt>
+<dd><p>Errors related to missing or malformed data model files, etc.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="desidatamodel.DataModelWarning">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">desidatamodel.</span></span><span class="sig-name descname"><span class="pre">DataModelWarning</span></span><a class="reference internal" href="_modules/desidatamodel.html#DataModelWarning"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.DataModelWarning" title="Permalink to this definition"></a></dt>
+<dd><p>Warnings related to missing or malformed data model files, etc.</p>
+</dd></dl>
+
+<span class="target" id="module-desidatamodel.check"></span><section id="desidatamodel-check">
+<h2>desidatamodel.check<a class="headerlink" href="#desidatamodel-check" title="Permalink to this heading"></a></h2>
+<p>Check actual files against the data model for validity.</p>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="desidatamodel.check.DataModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">desidatamodel.check.</span></span><span class="sig-name descname"><span class="pre">DataModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">section</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/check.html#DataModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.check.DataModel" title="Permalink to this definition"></a></dt>
+<dd><p>Simple object to store data model data and metadata.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pathlib.Path</span></code></a>) – The full path of the data model file.</p></li>
+<li><p><strong>section</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pathlib.Path</span></code></a>) – The full path to the section of the data model containing the file.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.13)"><strong>TypeError</strong></a> – If <cite>filename</cite> or <cite>section</cite> have an unexpected type.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="desidatamodel.check.DataModel._cross_reference">
+<span class="sig-name descname"><span class="pre">_cross_reference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/check.html#DataModel._cross_reference"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.check.DataModel._cross_reference" title="Permalink to this definition"></a></dt>
+<dd><p>Obtain the path to a file referred to in another file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>line</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Line from original file that <em>is</em> the cross-reference.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The path to the referenced file.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="desidatamodel.check.DataModel._extract_columns">
+<span class="sig-name descname"><span class="pre">_extract_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/check.html#DataModel._extract_columns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.check.DataModel._extract_columns" title="Permalink to this definition"></a></dt>
+<dd><p>Given column sizes, extract the data in each column.</p>
+<p>Assumes a reStructuredText-compatible table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – A table row.</p></li>
+<li><p><strong>columns</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – The sizes of the columns.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing the extracted data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-func docutils literal notranslate"><span class="pre">tuple()</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="desidatamodel.check.DataModel._type_size">
+<span class="sig-name descname"><span class="pre">_type_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/check.html#DataModel._type_size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.check.DataModel._type_size" title="Permalink to this definition"></a></dt>
+<dd><p>Obtain file type and size from a matching <cite>line</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>line</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Line from file that contains the type and size.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing the type and size.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="desidatamodel.check.DataModel.extract_metadata">
+<span class="sig-name descname"><span class="pre">extract_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/check.html#DataModel.extract_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.check.DataModel.extract_metadata" title="Permalink to this definition"></a></dt>
+<dd><p>Extract metadata from a data model file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>error</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>, optional) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, failure to extract certain required metadata raises an
+exception.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Metadata in a form similar to <a class="reference internal" href="#desidatamodel.stub.Stub" title="desidatamodel.stub.Stub"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stub</span></code></a>
+metadata. The keys are the <code class="docutils literal notranslate"><span class="pre">EXTNAME</span></code> header values.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#desidatamodel.DataModelError" title="desidatamodel.DataModelError"><strong>DataModelError</strong></a> – If <cite>error</cite> is set and the HDU has no <code class="docutils literal notranslate"><span class="pre">EXTNAME</span></code> keyword.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="desidatamodel.check.DataModel.get_regexp">
+<span class="sig-name descname"><span class="pre">get_regexp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/check.html#DataModel.get_regexp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.check.DataModel.get_regexp" title="Permalink to this definition"></a></dt>
+<dd><p>Obtain the regular expression used to match files on disk.</p>
+<p>Also internally updates the file type, if detected.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>root</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Path to real files on disk.</p></li>
+<li><p><strong>error</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>, optional) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, failure to find a regular expression raises an
+exception instead of just a warning.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The regular expression found, or <code class="docutils literal notranslate"><span class="pre">None</span></code> if not found.
+The regular expression is also stored internally.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>regular expression</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>DataModelError</strong> – If <cite>error</cite> is set and problems with the data model file are
+    detected.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="desidatamodel.check.DataModel.validate_prototype">
+<span class="sig-name descname"><span class="pre">validate_prototype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_keywords</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/check.html#DataModel.validate_prototype"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.check.DataModel.validate_prototype" title="Permalink to this definition"></a></dt>
+<dd><p>Compares a model’s prototype data file to the data models.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>error</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>, optional) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, failure to extract certain required metadata raises an
+exception.</p></li>
+<li><p><strong>skip_keywords</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>, optional) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, don’t check FITS header keywords</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Use set theory to compare the data headers to model headers.  This should
+automatically find missing headers, extraneous headers, etc.</p></li>
+</ul>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="desidatamodel.check._options">
+<span class="sig-prename descclassname"><span class="pre">desidatamodel.check.</span></span><span class="sig-name descname"><span class="pre">_options</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/check.html#_options"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.check._options" title="Permalink to this definition"></a></dt>
+<dd><p>Parse command-line options.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The parsed options.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/argparse.html#argparse.Namespace" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Namespace</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="desidatamodel.check.collect_files">
+<span class="sig-prename descclassname"><span class="pre">desidatamodel.check.</span></span><span class="sig-name descname"><span class="pre">collect_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_prototypes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/check.html#collect_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.check.collect_files" title="Permalink to this definition"></a></dt>
+<dd><p>Scan a directory tree for files that correspond to data model files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>root</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Path to real files on disk.</p></li>
+<li><p><strong>files</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – A list of data model files.</p></li>
+<li><p><strong>n_prototypes</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, optional) – Save up to <cite>n_prototypes</cite> possible prototype files, in case the
+first one is bad. Defaults to 5.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Files are analyzed using this algorithm:</p>
+<ul class="simple">
+<li><p>The first <cite>n_prototypes</cite> files that matches a regexp become the
+‘prototype candidates’ for that data model file. The first candidate
+that can be opened cleanly is the ‘prototype’.</p></li>
+<li><p>If no files match a data model file, then files of that type are
+‘missing’.</p></li>
+<li><p>If a file does not match any regular expression, it is ‘extraneous’.</p></li>
+<li><p>If a file matches a regular expression that already has a prototype,
+it is ‘ignored’.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="desidatamodel.check.files_to_regexp">
+<span class="sig-prename descclassname"><span class="pre">desidatamodel.check.</span></span><span class="sig-name descname"><span class="pre">files_to_regexp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/check.html#files_to_regexp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.check.files_to_regexp" title="Permalink to this definition"></a></dt>
+<dd><p>Convert a list of data model files into a list of regular expressions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>root</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Path to real files on disk.</p></li>
+<li><p><strong>files</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – List of files obtained from the data model.</p></li>
+<li><p><strong>error</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>, optional) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, failure to find a regular expression raises an
+exception instead of just a warning.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#desidatamodel.DataModelError" title="desidatamodel.DataModelError"><strong>DataModelError</strong></a> – If <cite>error</cite> is set and data model files with malformed regular
+    expressions are detected.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="desidatamodel.check.main">
+<span class="sig-prename descclassname"><span class="pre">desidatamodel.check.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/check.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.check.main" title="Permalink to this definition"></a></dt>
+<dd><p>Entry point for the check_model script.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An integer suitable for passing to <a class="reference external" href="https://docs.python.org/3/library/sys.html#sys.exit" title="(in Python v3.13)"><code class="xref py py-func docutils literal notranslate"><span class="pre">sys.exit()</span></code></a>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="desidatamodel.check.scan_model">
+<span class="sig-prename descclassname"><span class="pre">desidatamodel.check.</span></span><span class="sig-name descname"><span class="pre">scan_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">section</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/check.html#scan_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.check.scan_model" title="Permalink to this definition"></a></dt>
+<dd><p>Find all data model files in a top-level directory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>section</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Full path to a section of the data model.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The data model files found.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="desidatamodel.check.validate_prototypes">
+<span class="sig-prename descclassname"><span class="pre">desidatamodel.check.</span></span><span class="sig-name descname"><span class="pre">validate_prototypes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">files</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_keywords</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/check.html#validate_prototypes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.check.validate_prototypes" title="Permalink to this definition"></a></dt>
+<dd><p>Compares a set of prototype data files to their data models.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>files</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – A list of data model files.</p></li>
+<li><p><strong>error</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>, optional) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, failure to extract certain required metadata raises an
+exception.</p></li>
+<li><p><strong>skip_keywords</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>, optional) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, don’t check FITS header keywords</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Use set theory to compare the data headers to model headers.  This should
+automatically find missing headers, extraneous headers, etc.</p></li>
+</ul>
+</dd></dl>
+
+<span class="target" id="module-desidatamodel.columns"></span><section id="desidatamodel-columns">
+<h2>desidatamodel.columns<a class="headerlink" href="#desidatamodel-columns" title="Permalink to this heading"></a></h2>
+<p>Render the standard column descriptions file.</p>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="desidatamodel.columns.format_columns">
+<span class="sig-prename descclassname"><span class="pre">desidatamodel.columns.</span></span><span class="sig-name descname"><span class="pre">format_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rows</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/columns.html#format_columns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.columns.format_columns" title="Permalink to this definition"></a></dt>
+<dd><p>Does something.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rows</strong> (<em>iterable</em>) – An iterable containing rows with any number of columns.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing a format string, and an RST-style table separator.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="desidatamodel.columns.main">
+<span class="sig-prename descclassname"><span class="pre">desidatamodel.columns.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/columns.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.columns.main" title="Permalink to this definition"></a></dt>
+<dd><p>Entry point for command-line scripts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An integer suitable for passing to <a class="reference external" href="https://docs.python.org/3/library/sys.html#sys.exit" title="(in Python v3.13)"><code class="xref py py-func docutils literal notranslate"><span class="pre">sys.exit()</span></code></a>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-desidatamodel.scan"></span><section id="desidatamodel-scan">
+<h2>desidatamodel.scan<a class="headerlink" href="#desidatamodel-scan" title="Permalink to this heading"></a></h2>
+<p>Deep scan available files to obtain a comprehensive set of metadata.</p>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="desidatamodel.scan.UnionStub">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">desidatamodel.scan.</span></span><span class="sig-name descname"><span class="pre">UnionStub</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/scan.html#UnionStub"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.scan.UnionStub" title="Permalink to this definition"></a></dt>
+<dd><p>Container for unified metadata for both existing models and data files.</p>
+<p>Initialize the metadata with a <a class="reference internal" href="#desidatamodel.check.DataModel" title="desidatamodel.check.DataModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataModel</span></code></a>
+object, then add additional <a class="reference internal" href="#desidatamodel.stub.Stub" title="desidatamodel.stub.Stub"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stub</span></code></a> metadata.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<a class="reference internal" href="#desidatamodel.check.DataModel" title="desidatamodel.check.DataModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataModel</span></code></a>) – A data model file object.</p></li>
+<li><p><strong>count</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – Number of files that will be examined. This is used to determine
+whether a keyword or column is mandatory, optional or unused.</p></li>
+<li><p><strong>error</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>, optional) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, failure to extract certain required metadata raises an
+exception.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="desidatamodel.scan.UnionStub.mark_optional">
+<span class="sig-name descname"><span class="pre">mark_optional</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/scan.html#UnionStub.mark_optional"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.scan.UnionStub.mark_optional" title="Permalink to this definition"></a></dt>
+<dd><p>Mark the keywords and columns that do not appear in every file as optional.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="desidatamodel.scan.UnionStub.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/scan.html#UnionStub.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.scan.UnionStub.update" title="Permalink to this definition"></a></dt>
+<dd><p>Search for missing keywords or columns in <cite>hdu</cite> and add them if necessary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hdu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – The HDU number.</p></li>
+<li><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – List of keywords or columns to compare to the internal set.</p></li>
+<li><p><strong>columns</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>, optional) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, <cite>data</cite> represents BINTABLE columns, rather than keywords.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="desidatamodel.scan._options">
+<span class="sig-prename descclassname"><span class="pre">desidatamodel.scan.</span></span><span class="sig-name descname"><span class="pre">_options</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/scan.html#_options"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.scan._options" title="Permalink to this definition"></a></dt>
+<dd><p>Parse command-line options.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The parsed options.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/argparse.html#argparse.Namespace" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Namespace</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="desidatamodel.scan.collect_files">
+<span class="sig-prename descclassname"><span class="pre">desidatamodel.scan.</span></span><span class="sig-name descname"><span class="pre">collect_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/scan.html#collect_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.scan.collect_files" title="Permalink to this definition"></a></dt>
+<dd><p>Scan a directory tree for all files that correspond to a data model files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>root</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Path to real files on disk.</p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="#desidatamodel.check.DataModel" title="desidatamodel.check.DataModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataModel</span></code></a>) – A data model file object.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>All files in <cite>root</cite> that match <cite>model</cite>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="desidatamodel.scan.main">
+<span class="sig-prename descclassname"><span class="pre">desidatamodel.scan.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/scan.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.scan.main" title="Permalink to this definition"></a></dt>
+<dd><p>Entry point for the deep_scan_metadata script.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An integer suitable for passing to <a class="reference external" href="https://docs.python.org/3/library/sys.html#sys.exit" title="(in Python v3.13)"><code class="xref py py-func docutils literal notranslate"><span class="pre">sys.exit()</span></code></a>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="desidatamodel.scan.union_metadata">
+<span class="sig-prename descclassname"><span class="pre">desidatamodel.scan.</span></span><span class="sig-name descname"><span class="pre">union_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stubs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/scan.html#union_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.scan.union_metadata" title="Permalink to this definition"></a></dt>
+<dd><p>Combine all HDU metadata from <cite>model</cite> and <cite>stubs</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<a class="reference internal" href="#desidatamodel.check.DataModel" title="desidatamodel.check.DataModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataModel</span></code></a>) – The initial data model.</p></li>
+<li><p><strong>stubs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – A list of <a class="reference internal" href="#desidatamodel.stub.Stub" title="desidatamodel.stub.Stub"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stub</span></code></a> objects.</p></li>
+<li><p><strong>error</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>, optional) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, failure to extract certain required metadata raises an
+exception.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new <a class="reference internal" href="#desidatamodel.stub.Stub" title="desidatamodel.stub.Stub"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stub</span></code></a> object containing the
+unified metadata of all the inputs.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#desidatamodel.stub.Stub" title="desidatamodel.stub.Stub"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stub</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-desidatamodel.stub"></span><section id="desidatamodel-stub">
+<h2>desidatamodel.stub<a class="headerlink" href="#desidatamodel-stub" title="Permalink to this heading"></a></h2>
+<p>Generate data model files from FITS files.</p>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="desidatamodel.stub.Stub">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">desidatamodel.stub.</span></span><span class="sig-name descname"><span class="pre">Stub</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/stub.html#Stub"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.stub.Stub" title="Permalink to this definition"></a></dt>
+<dd><p>This object contains metadata about a file and methods to print that
+metadata.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (file path, file-like object or <a class="reference external" href="https://docs.astropy.org/en/stable/io/fits/api/hdulists.html#astropy.io.fits.HDUList" title="(in Astropy v7.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">HDUList</span></code></a>) – Data file to convert to a data model file.</p></li>
+<li><p><strong>error</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>, optional) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, failure to extract certain required metadata raises an
+exception.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="desidatamodel.stub.Stub.columns_header">
+<span class="sig-name descname"><span class="pre">columns_header</span></span><a class="headerlink" href="#desidatamodel.stub.Stub.columns_header" title="Permalink to this definition"></a></dt>
+<dd><p>The header of a table summarizing the columns of a BINTABLE HDU.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-func docutils literal notranslate"><span class="pre">tuple()</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="desidatamodel.stub.Stub.contents_header">
+<span class="sig-name descname"><span class="pre">contents_header</span></span><a class="headerlink" href="#desidatamodel.stub.Stub.contents_header" title="Permalink to this definition"></a></dt>
+<dd><p>The header of a table summarizing the HDUs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-func docutils literal notranslate"><span class="pre">tuple()</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="desidatamodel.stub.Stub.filename">
+<span class="sig-name descname"><span class="pre">filename</span></span><a class="headerlink" href="#desidatamodel.stub.Stub.filename" title="Permalink to this definition"></a></dt>
+<dd><p>Name of the file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="desidatamodel.stub.Stub.headers">
+<span class="sig-name descname"><span class="pre">headers</span></span><a class="headerlink" href="#desidatamodel.stub.Stub.headers" title="Permalink to this definition"></a></dt>
+<dd><p>The HDUs read from the file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="desidatamodel.stub.Stub.keywords_header">
+<span class="sig-name descname"><span class="pre">keywords_header</span></span><a class="headerlink" href="#desidatamodel.stub.Stub.keywords_header" title="Permalink to this definition"></a></dt>
+<dd><p>The header of a table listing interesting FITS keywords.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-func docutils literal notranslate"><span class="pre">tuple()</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="desidatamodel.stub.Stub.nhdr">
+<span class="sig-name descname"><span class="pre">nhdr</span></span><a class="headerlink" href="#desidatamodel.stub.Stub.nhdr" title="Permalink to this definition"></a></dt>
+<dd><p>Number of HDUs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="desidatamodel.stub.Stub.basef">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">basef</span></span><a class="headerlink" href="#desidatamodel.stub.Stub.basef" title="Permalink to this definition"></a></dt>
+<dd><p>Base name of the file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="desidatamodel.stub.Stub.colformat">
+<span class="sig-name descname"><span class="pre">colformat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sizes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/stub.html#Stub.colformat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.stub.Stub.colformat" title="Permalink to this definition"></a></dt>
+<dd><p>Return a string ready to be formatted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sizes</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – The width of each column.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A string with format characters.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="desidatamodel.stub.Stub.colsizes">
+<span class="sig-name descname"><span class="pre">colsizes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/stub.html#Stub.colsizes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.stub.Stub.colsizes" title="Permalink to this definition"></a></dt>
+<dd><p>Compute the size (number of characters) of each column in a table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>table</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – A list representing a table.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The size of each column in the table.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="desidatamodel.stub.Stub.columns">
+<span class="sig-name descname"><span class="pre">columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/stub.html#Stub.columns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.stub.Stub.columns" title="Permalink to this definition"></a></dt>
+<dd><p>Describe the columns of a BINTABLE HDU.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hdu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – The HDU number (zero-indexed).</p></li>
+<li><p><strong>error</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>, optional) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, failure to extract certain required metadata raises an
+exception.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The rows of the table.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="#desidatamodel.DataModelError" title="desidatamodel.DataModelError"><strong>DataModelError</strong></a> – If the BINTABLE is actually a compressed image.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.13)"><strong>ValueError</strong></a> – If <cite>error</cite> and a <code class="docutils literal notranslate"><span class="pre">TUNIT</span></code> value does not have FITS-standard
+    units.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="desidatamodel.stub.Stub.contents">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">contents</span></span><a class="headerlink" href="#desidatamodel.stub.Stub.contents" title="Permalink to this definition"></a></dt>
+<dd><p>A table summarizing the HDUs.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="desidatamodel.stub.Stub.filesize">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">filesize</span></span><a class="headerlink" href="#desidatamodel.stub.Stub.filesize" title="Permalink to this definition"></a></dt>
+<dd><p>Size of the file in human-readable format.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="desidatamodel.stub.Stub.filetype">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">filetype</span></span><a class="headerlink" href="#desidatamodel.stub.Stub.filetype" title="Permalink to this definition"></a></dt>
+<dd><p>Type of file. Assumes FITS (for now) unless overridden in a subclass.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="desidatamodel.stub.Stub.format_table">
+<span class="sig-name descname"><span class="pre">format_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/stub.html#Stub.format_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.stub.Stub.format_table" title="Permalink to this definition"></a></dt>
+<dd><p>Convert tabular data into reStructuredText-compatible string.</p>
+<p>This function assumes that <cite>table</cite> already has a header as the
+first row.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>table</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – A data table.</p></li>
+<li><p><strong>indent</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, indent the table for compatibility with
+collapsible tables.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of strings that can be joined.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="desidatamodel.stub.Stub.hdumeta">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hdumeta</span></span><a class="headerlink" href="#desidatamodel.stub.Stub.hdumeta" title="Permalink to this definition"></a></dt>
+<dd><p>Metadata associated with each HDU.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="desidatamodel.stub.Stub.hduname">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hduname</span></span><a class="headerlink" href="#desidatamodel.stub.Stub.hduname" title="Permalink to this definition"></a></dt>
+<dd><p>Format of HDU names.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="desidatamodel.stub.Stub.highlight">
+<span class="sig-name descname"><span class="pre">highlight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sizes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/stub.html#Stub.highlight"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.stub.Stub.highlight" title="Permalink to this definition"></a></dt>
+<dd><p>Return reStructuredText-compatible table highlights.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sizes</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – The width of each column.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A highlight string.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="desidatamodel.stub.Stub.image_format">
+<span class="sig-name descname"><span class="pre">image_format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/stub.html#Stub.image_format"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.stub.Stub.image_format" title="Permalink to this definition"></a></dt>
+<dd><p>Obtain format of an image HDU.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>hdr</strong> (<a class="reference external" href="https://docs.astropy.org/en/stable/io/fits/api/headers.html#astropy.io.fits.Header" title="(in Astropy v7.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Header</span></code></a>) – The header to parse.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A string describing the image format.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#desidatamodel.DataModelError" title="desidatamodel.DataModelError"><strong>DataModelError</strong></a> – If <code class="docutils literal notranslate"><span class="pre">self.error</span></code> is set a <cite>BUNIT</cite> header with units that do not
+    follow the FITS standard is detected.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="desidatamodel.stub.Stub.keywords">
+<span class="sig-name descname"><span class="pre">keywords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdu</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/stub.html#Stub.keywords"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.stub.Stub.keywords" title="Permalink to this definition"></a></dt>
+<dd><p>A table summarizing the interesting keywords in a particular HDU.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>hdu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – The HDU number (zero-indexed).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The rows of the table.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="desidatamodel.stub.Stub.modelname">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">modelname</span></span><a class="headerlink" href="#desidatamodel.stub.Stub.modelname" title="Permalink to this definition"></a></dt>
+<dd><p>Name to use for the data model file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="desidatamodel.stub.Stub.section">
+<span class="sig-name descname"><span class="pre">section</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdu</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/stub.html#Stub.section"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.stub.Stub.section" title="Permalink to this definition"></a></dt>
+<dd><p>A string describing an HDU.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>hdu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – The HDU number (zero-indexed).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of strings that can be joined.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="desidatamodel.stub.extract_keywords">
+<span class="sig-prename descclassname"><span class="pre">desidatamodel.stub.</span></span><span class="sig-name descname"><span class="pre">extract_keywords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/stub.html#extract_keywords"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.stub.extract_keywords" title="Permalink to this definition"></a></dt>
+<dd><p>Extract interesting keywords from a FITS header.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>hdr</strong> (<a class="reference external" href="https://docs.astropy.org/en/stable/io/fits/api/headers.html#astropy.io.fits.Header" title="(in Astropy v7.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Header</span></code></a>) – The header to parse.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of tuples containing the metadata of interesting keywords.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="desidatamodel.stub.extrakey">
+<span class="sig-prename descclassname"><span class="pre">desidatamodel.stub.</span></span><span class="sig-name descname"><span class="pre">extrakey</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/stub.html#extrakey"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.stub.extrakey" title="Permalink to this definition"></a></dt>
+<dd><p>Return True if key is not a boring standard FITS keyword.</p>
+<p>To make the data model more human readable, we don’t overwhelm the output
+with required keywords which are required by the FITS standard anyway, or
+cases where the number of headers might change over time.</p>
+<p>This list isn’t exhaustive.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – A FITS keyword.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the keyword is not boring.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">extrakey</span><span class="p">(</span><span class="s1">&#39;SIMPLE&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">extrakey</span><span class="p">(</span><span class="s1">&#39;DEPNAM01&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">extrakey</span><span class="p">(</span><span class="s1">&#39;BZERO&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="desidatamodel.stub.file_size">
+<span class="sig-prename descclassname"><span class="pre">desidatamodel.stub.</span></span><span class="sig-name descname"><span class="pre">file_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/stub.html#file_size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.stub.file_size" title="Permalink to this definition"></a></dt>
+<dd><p>Determine file size and return string with human readable size format.</p>
+<p>Adapted from stackoverflow answers for human readable size formatting.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – A string containing a filename.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A human-readable file size.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">file_size</span><span class="p">(</span><span class="s1">&#39;one-gb-file.dat&#39;</span><span class="p">)</span>
+<span class="go">&#39;1 GB&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="desidatamodel.stub.fits_column_format">
+<span class="sig-prename descclassname"><span class="pre">desidatamodel.stub.</span></span><span class="sig-name descname"><span class="pre">fits_column_format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/stub.html#fits_column_format"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.stub.fits_column_format" title="Permalink to this definition"></a></dt>
+<dd><p>Convert a FITS column format to a human-readable form.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>format</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – A FITS-style format string.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A human-readable version of the format string.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fits_column_format</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="go">&#39;char[1]&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fits_column_format</span><span class="p">(</span><span class="s1">&#39;J&#39;</span><span class="p">)</span>
+<span class="go">&#39;int32&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fits_column_format</span><span class="p">(</span><span class="s1">&#39;12E&#39;</span><span class="p">)</span>
+<span class="go">&#39;float32[12]&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="desidatamodel.stub.main">
+<span class="sig-prename descclassname"><span class="pre">desidatamodel.stub.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/stub.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.stub.main" title="Permalink to this definition"></a></dt>
+<dd><p>Entry point for the generate_model script.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An integer suitable for passing to <a class="reference external" href="https://docs.python.org/3/library/sys.html#sys.exit" title="(in Python v3.13)"><code class="xref py py-func docutils literal notranslate"><span class="pre">sys.exit()</span></code></a>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="desidatamodel.stub.read_column_descriptions">
+<span class="sig-prename descclassname"><span class="pre">desidatamodel.stub.</span></span><span class="sig-name descname"><span class="pre">read_column_descriptions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/stub.html#read_column_descriptions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.stub.read_column_descriptions" title="Permalink to this definition"></a></dt>
+<dd><p>Read column descriptions csv file and return dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – csv filename with columns NAME,TYPE,UNITS,DESCRIPTION,FULLDESCRIPTION</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>coldesc_dict[NAME] = dict with keys TYPE, UNITS, DESCRIPTION</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-desidatamodel.unit"></span><section id="desidatamodel-unit">
+<h2>desidatamodel.unit<a class="headerlink" href="#desidatamodel-unit" title="Permalink to this heading"></a></h2>
+<p>Shared code for dealing with units in files and data models.</p>
+</section>
+<dl class="py exception">
+<dt class="sig sig-object py" id="desidatamodel.unit._FITSUnitWarning">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">desidatamodel.unit.</span></span><span class="sig-name descname"><span class="pre">_FITSUnitWarning</span></span><a class="reference internal" href="_modules/desidatamodel/unit.html#_FITSUnitWarning"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.unit._FITSUnitWarning" title="Permalink to this definition"></a></dt>
+<dd><p>Warnings related to invalid FITS units.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="desidatamodel.unit._validate_unit">
+<span class="sig-prename descclassname"><span class="pre">desidatamodel.unit.</span></span><span class="sig-name descname"><span class="pre">_validate_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/unit.html#_validate_unit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.unit._validate_unit" title="Permalink to this definition"></a></dt>
+<dd><p>Check units for consistency with FITS standard, while allowing
+some special exceptions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unit</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The unit to parse.</p></li>
+<li><p><strong>error</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>, optional) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, failure to interpret the unit raises an
+exception.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>If a special exception is detected, the name of the unit
+is returned.  Otherwise, <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.13)"><strong>ValueError</strong></a> – If <cite>error</cite> is set and the unit can’t be parsed.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-desidatamodel.update"></span><section id="desidatamodel-update">
+<h2>desidatamodel.update<a class="headerlink" href="#desidatamodel-update" title="Permalink to this heading"></a></h2>
+<p>Tools to update column units and descriptions in a pre-existing datamodel file.</p>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="desidatamodel.update.format_rst_table">
+<span class="sig-prename descclassname"><span class="pre">desidatamodel.update.</span></span><span class="sig-name descname"><span class="pre">format_rst_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/update.html#format_rst_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.update.format_rst_table" title="Permalink to this definition"></a></dt>
+<dd><p>Format an astropy Table in left-aligned RST format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>table</strong> (<a class="reference external" href="https://docs.astropy.org/en/stable/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v7.1)"><em>astropy.table.Table</em></a>) – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of strings to print/write for the RST-format table</p>
+</dd>
+</dl>
+<p>Note: this doesn’t use astropy.io.ascii.rst because that generates
+right-aligned columns.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="desidatamodel.update.main">
+<span class="sig-prename descclassname"><span class="pre">desidatamodel.update.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/update.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.update.main" title="Permalink to this definition"></a></dt>
+<dd><p>Updates a datamodel file with standard units and descriptions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An integer suitable for passing to <a class="reference external" href="https://docs.python.org/3/library/sys.html#sys.exit" title="(in Python v3.13)"><code class="xref py py-func docutils literal notranslate"><span class="pre">sys.exit()</span></code></a>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="desidatamodel.update.read_table_rows">
+<span class="sig-prename descclassname"><span class="pre">desidatamodel.update.</span></span><span class="sig-name descname"><span class="pre">read_table_rows</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/update.html#read_table_rows"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.update.read_table_rows" title="Permalink to this definition"></a></dt>
+<dd><p>Read an RST-format table from a set of lines</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lines</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – lines from data model file</p></li>
+<li><p><strong>i</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – start at line number i</p></li>
+</ul>
+</dd>
+</dl>
+<p>Return: None or list of dict(Name, Type, Units, Description)</p>
+<p>Looks for data table description of the form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">====</span> <span class="o">====</span> <span class="o">=====</span> <span class="o">===========</span>
+<span class="n">Name</span> <span class="n">Type</span> <span class="n">Units</span> <span class="n">Description</span>
+<span class="o">====</span> <span class="o">====</span> <span class="o">=====</span> <span class="o">===========</span>
+<span class="n">blat</span> <span class="nb">int</span>  <span class="n">s</span>     <span class="n">biz</span> <span class="n">bat</span> <span class="n">bar</span>
+<span class="n">foo</span>  <span class="nb">int</span>        <span class="n">bing</span> <span class="n">bang</span> <span class="n">boom</span>
+<span class="o">====</span> <span class="o">====</span> <span class="o">=====</span> <span class="o">===========</span>
+</pre></div>
+</div>
+<p>while allowing the columns to have arbitrary widths or possibly be blank.</p>
+<p>Returns None if table starting at line <cite>i</cite> doesn’t match that form.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="desidatamodel.update.update">
+<span class="sig-prename descclassname"><span class="pre">desidatamodel.update.</span></span><span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/desidatamodel/update.html#update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#desidatamodel.update.update" title="Permalink to this definition"></a></dt>
+<dd><p>Update units and descriptions for data tables in datamodel lines</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>lines</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – lines read from an input datamodel file</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Options:</dt><dd><p>force (bool): if True, update non-blank input entries too</p>
+</dd>
+</dl>
+<p>Returns: list of str lines with updates units and descriptions</p>
+<p>This function is separated from <cite>main</cite> primarily to facilitate testing
+of updating input lines into output lines without having to actually
+read and write files every time.</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="examples/badModel.html" class="btn btn-neutral float-left" title="badModel" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="changes.html" class="btn btn-neutral float-right" title="desidatamodel Change Log" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014-2025, DESI Collaboration.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

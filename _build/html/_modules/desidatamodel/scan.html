@@ -1,0 +1,544 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>desidatamodel.scan &mdash; desidatamodel 25.4.dev1530 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/desidatamodel.css" />
+
+  
+      <script src="../../_static/jquery.js"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+      <script src="../../_static/doctools.js"></script>
+      <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            desidatamodel
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../DESI_ROOT/vac/index.html">vac/ : Value Added Catalogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../DESI_ROOT/index.html">$DESI_ROOT : represents the top level of the DESI directory tree.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../DESI_SPECTRO_DATA/index.html">$DESI_SPECTRO_DATA : raw data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../DESI_SPECTRO_REDUX/index.html">$DESI_SPECTRO_REDUX : processed spectro data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../DESI_SPECTRO_SIM/index.html">$DESI_SPECTRO_SIM : simulated spectro data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../DESI_SPECTRO_CALIB/index.html">$DESI_SPECTRO_CALIB : spectro calibration data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../DESI_SURVEYOPS/index.html">$DESI_SURVEYOPS : data files used for day-to-day survey operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../DESI_TARGET/index.html">$DESI_TARGET : target selection and fiber assignment (see also Myers et al. 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../DESIMODEL/index.html">$DESIMODEL : data used for simulating DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../DESISURVEY_OUTPUT/index.html">$DESISURVEY_OUTPUT : outputs from desisurvey and surveysim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PROTODESI/index.html">$PROTODESI : data and logs from the ProtoDESI campaign</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../bitmasks.html">Bit Masks in DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../column_descriptions.html">Standard Column Descriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../envvar.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../units.html">Units in data files</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../datamodel.html">Contributing to desidatamodel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">desidatamodel API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changes.html">desidatamodel Change Log</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">desidatamodel</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+          <li class="breadcrumb-item"><a href="../desidatamodel.html">desidatamodel</a></li>
+      <li class="breadcrumb-item active">desidatamodel.scan</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for desidatamodel.scan</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Licensed under a 3-clause BSD style license - see LICENSE.rst</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">==================</span>
+<span class="sd">desidatamodel.scan</span>
+<span class="sd">==================</span>
+
+<span class="sd">Deep scan available files to obtain a comprehensive set of metadata.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">argv</span>
+<span class="kn">from</span> <span class="nn">argparse</span> <span class="kn">import</span> <span class="n">ArgumentParser</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">choices</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="kn">from</span> <span class="nn">desiutil.log</span> <span class="kn">import</span> <span class="n">log</span><span class="p">,</span> <span class="n">DEBUG</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">DataModelError</span>
+<span class="kn">from</span> <span class="nn">.stub</span> <span class="kn">import</span> <span class="n">Stub</span>
+<span class="kn">from</span> <span class="nn">.check</span> <span class="kn">import</span> <span class="n">DataModel</span>
+
+
+<div class="viewcode-block" id="UnionStub"><a class="viewcode-back" href="../../api.html#desidatamodel.scan.UnionStub">[docs]</a><span class="k">class</span> <span class="nc">UnionStub</span><span class="p">(</span><span class="n">Stub</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Container for unified metadata for both existing models and data files.</span>
+
+<span class="sd">    Initialize the metadata with a :class:`~desidatamodel.check.DataModel`</span>
+<span class="sd">    object, then add additional :class:`~desidatamodel.stub.Stub` metadata.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    model : :class:`~desidatamodel.check.DataModel`</span>
+<span class="sd">        A data model file object.</span>
+<span class="sd">    count : :class:`int`</span>
+<span class="sd">        Number of files that will be examined. This is used to determine</span>
+<span class="sd">        whether a keyword or column is mandatory, optional or unused.</span>
+<span class="sd">    error : :class:`bool`, optional</span>
+<span class="sd">        If ``True``, failure to extract certain required metadata raises an</span>
+<span class="sd">        exception.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_o</span> <span class="o">=</span> <span class="s1">&#39;[1]_&#39;</span>  <span class="c1"># Marker for optional keywords and columns.</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="n">count</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">error</span>
+        <span class="k">if</span> <span class="n">model</span><span class="o">.</span><span class="n">hdumeta</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">modelmeta</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">extract_metadata</span><span class="p">(</span><span class="n">error</span><span class="o">=</span><span class="n">error</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nhdr</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">hdumeta</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_hdumeta</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">model</span><span class="o">.</span><span class="n">hdumeta</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">hdumeta</span><span class="p">],</span>
+                               <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;number&#39;</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hdumeta</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;EXTNAME&#39;</span><span class="p">:</span> <span class="n">m</span><span class="p">[</span><span class="s1">&#39;extname&#39;</span><span class="p">],</span> <span class="s1">&#39;XTENSION&#39;</span><span class="p">:</span> <span class="n">m</span><span class="p">[</span><span class="s1">&#39;extension&#39;</span><span class="p">]})</span>
+        <span class="c1">#</span>
+        <span class="c1"># Initial optional and required keywords.</span>
+        <span class="c1">#</span>
+        <span class="c1"># self.optional = [set([k[0].split()[0] for k in h[&#39;keywords&#39;] if self._o in k[0]]) for h in self._hdumeta]</span>
+        <span class="c1"># self.required = [set([k[0].split()[0] for k in h[&#39;keywords&#39;] if self._o not in k[0]]) for h in self._hdumeta]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">counter</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;keywords&#39;</span><span class="p">:</span> <span class="n">Counter</span><span class="p">(),</span> <span class="s1">&#39;format&#39;</span><span class="p">:</span> <span class="n">Counter</span><span class="p">()}</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hdumeta</span><span class="p">]</span>
+        <span class="c1">#</span>
+        <span class="c1"># Remove all optional markers from union set.</span>
+        <span class="c1">#</span>
+        <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hdumeta</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="s1">&#39;keywords&#39;</span><span class="p">])):</span>
+                <span class="n">key</span> <span class="o">=</span> <span class="n">h</span><span class="p">[</span><span class="s1">&#39;keywords&#39;</span><span class="p">][</span><span class="n">k</span><span class="p">]</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_o</span> <span class="ow">in</span> <span class="n">key</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                    <span class="n">h</span><span class="p">[</span><span class="s1">&#39;keywords&#39;</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">key</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">key</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">key</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">h</span><span class="p">[</span><span class="s1">&#39;extension&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;BINTABLE&#39;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">h</span><span class="p">[</span><span class="s1">&#39;format&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">Stub</span><span class="o">.</span><span class="n">columns_header</span><span class="p">:</span>
+                    <span class="n">h</span><span class="p">[</span><span class="s1">&#39;format&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">Stub</span><span class="o">.</span><span class="n">columns_header</span><span class="p">]</span> <span class="o">+</span> <span class="n">h</span><span class="p">[</span><span class="s1">&#39;format&#39;</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="s1">&#39;format&#39;</span><span class="p">])):</span>
+                    <span class="n">col</span> <span class="o">=</span> <span class="n">h</span><span class="p">[</span><span class="s1">&#39;format&#39;</span><span class="p">][</span><span class="n">k</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_o</span> <span class="ow">in</span> <span class="n">col</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                        <span class="n">h</span><span class="p">[</span><span class="s1">&#39;format&#39;</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">col</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">col</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">col</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">col</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+        <span class="c1">#</span>
+        <span class="c1"># Placeholders</span>
+        <span class="c1">#</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">filename</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_basef</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">regexp</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;&#39;)&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_modelname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">title</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_filetype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">filetype</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_filesize</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">filesize</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_hduname</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_contents</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">return</span>
+
+<div class="viewcode-block" id="UnionStub.update"><a class="viewcode-back" href="../../api.html#desidatamodel.scan.UnionStub.update">[docs]</a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdu</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Search for missing keywords or columns in `hdu` and add them if necessary.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        hdu : :class:`int`</span>
+<span class="sd">            The HDU number.</span>
+<span class="sd">        data : :class:`list`</span>
+<span class="sd">            List of keywords or columns to compare to the internal set.</span>
+<span class="sd">        columns : :class:`bool`, optional</span>
+<span class="sd">            If ``True``, `data` represents BINTABLE columns, rather than keywords.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">metadata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hdumeta</span><span class="p">[</span><span class="n">hdu</span><span class="p">]</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="s1">&#39;keywords&#39;</span>
+        <span class="n">it</span> <span class="o">=</span> <span class="s1">&#39;keywords&#39;</span>
+        <span class="n">data_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">k</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">data</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">columns</span><span class="p">:</span>
+            <span class="n">m</span> <span class="o">=</span> <span class="s1">&#39;format&#39;</span>
+            <span class="n">it</span> <span class="o">=</span> <span class="s1">&#39;columns&#39;</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">data_set</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;Name&#39;</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                <span class="k">pass</span>
+        <span class="n">model_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">k</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">metadata</span><span class="p">[</span><span class="n">m</span><span class="p">]])</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">model_set</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;Name&#39;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="c1">#</span>
+        <span class="c1"># Compare the items that are in both sets.</span>
+        <span class="c1">#</span>
+        <span class="n">common_set</span> <span class="o">=</span> <span class="n">data_set</span> <span class="o">&amp;</span> <span class="n">model_set</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">common_set</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">counter</span><span class="p">[</span><span class="n">hdu</span><span class="p">][</span><span class="n">m</span><span class="p">]:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">counter</span><span class="p">[</span><span class="n">hdu</span><span class="p">][</span><span class="n">m</span><span class="p">][</span><span class="n">item</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">counter</span><span class="p">[</span><span class="n">hdu</span><span class="p">][</span><span class="n">m</span><span class="p">][</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">meta_index</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">metadata</span><span class="p">[</span><span class="n">m</span><span class="p">])</span> <span class="k">if</span> <span class="n">k</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">item</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">data_index</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="k">if</span> <span class="n">k</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">item</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">original_item</span> <span class="o">=</span> <span class="n">metadata</span><span class="p">[</span><span class="n">m</span><span class="p">][</span><span class="n">meta_index</span><span class="p">]</span>
+            <span class="n">new_item</span> <span class="o">=</span> <span class="n">original_item</span>
+            <span class="k">if</span> <span class="n">columns</span><span class="p">:</span>
+                <span class="n">foo</span><span class="p">,</span> <span class="n">meta_type</span><span class="p">,</span> <span class="n">meta_units</span><span class="p">,</span> <span class="n">meta_comment</span> <span class="o">=</span> <span class="n">original_item</span>
+                <span class="n">foo</span><span class="p">,</span> <span class="n">data_type</span><span class="p">,</span> <span class="n">data_units</span><span class="p">,</span> <span class="n">data_comment</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data_index</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">meta_type</span> <span class="o">!=</span> <span class="n">data_type</span><span class="p">:</span>
+                    <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;HDU</span><span class="si">%d</span><span class="s2"> column </span><span class="si">%s</span><span class="s2"> has different type (</span><span class="si">%s</span><span class="s2"> != </span><span class="si">%s</span><span class="s2">).&quot;</span><span class="p">,</span>
+                                <span class="n">hdu</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">data_type</span><span class="p">,</span> <span class="n">meta_type</span><span class="p">)</span>
+                    <span class="n">new_item</span> <span class="o">=</span> <span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">data_type</span><span class="p">,</span> <span class="n">new_item</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">new_item</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">data_units</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">meta_units</span><span class="p">:</span>
+                    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Adding unit &#39;</span><span class="si">%s</span><span class="s2">&#39; to HDU</span><span class="si">%d</span><span class="s2"> column </span><span class="si">%s</span><span class="s2">.&quot;</span><span class="p">,</span> <span class="n">data_units</span><span class="p">,</span> <span class="n">hdu</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+                    <span class="n">new_item</span> <span class="o">=</span> <span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">new_item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">data_units</span><span class="p">,</span> <span class="n">new_item</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+                <span class="c1"># if data_comment and not meta_comment:</span>
+                <span class="c1">#     log.info(&quot;Adding comment &#39;%s&#39; to HDU%d column %s&quot;, data_comment, hdu, item)</span>
+                <span class="c1">#     new_item = (item, new_item[1], new_item[2], data_comment)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">foo</span><span class="p">,</span> <span class="n">meta_example</span><span class="p">,</span> <span class="n">meta_type</span><span class="p">,</span> <span class="n">meta_comment</span> <span class="o">=</span> <span class="n">original_item</span>
+                <span class="n">foo</span><span class="p">,</span> <span class="n">data_example</span><span class="p">,</span> <span class="n">data_type</span><span class="p">,</span> <span class="n">data_comment</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data_index</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">data_example</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">meta_example</span><span class="p">:</span>
+                    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Adding example &#39;</span><span class="si">%s</span><span class="s2">&#39; to HDU</span><span class="si">%d</span><span class="s2"> keyword </span><span class="si">%s</span><span class="s2">.&quot;</span><span class="p">,</span> <span class="n">data_example</span><span class="p">,</span> <span class="n">hdu</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+                    <span class="n">new_item</span> <span class="o">=</span> <span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">data_example</span><span class="p">,</span> <span class="n">new_item</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">new_item</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">meta_type</span> <span class="o">!=</span> <span class="n">data_type</span><span class="p">:</span>
+                    <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;HDU</span><span class="si">%d</span><span class="s2"> keyword </span><span class="si">%s</span><span class="s2"> has different type (</span><span class="si">%s</span><span class="s2"> != </span><span class="si">%s</span><span class="s2">).&quot;</span><span class="p">,</span>
+                                <span class="n">hdu</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">data_type</span><span class="p">,</span> <span class="n">meta_type</span><span class="p">)</span>
+                    <span class="n">new_item</span> <span class="o">=</span> <span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">new_item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">data_type</span><span class="p">,</span> <span class="n">new_item</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">data_comment</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">meta_comment</span><span class="p">:</span>
+                    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Adding comment &#39;</span><span class="si">%s</span><span class="s2">&#39; to HDU</span><span class="si">%d</span><span class="s2"> keyword </span><span class="si">%s</span><span class="s2">.&quot;</span><span class="p">,</span> <span class="n">data_comment</span><span class="p">,</span> <span class="n">hdu</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+                    <span class="n">new_item</span> <span class="o">=</span> <span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">new_item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">new_item</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">data_comment</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">new_item</span> <span class="o">!=</span> <span class="n">original_item</span><span class="p">:</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;metadata[&#39;</span><span class="si">%s</span><span class="s2">&#39;][</span><span class="si">%d</span><span class="s2">] = (&#39;</span><span class="si">%s</span><span class="s2">&#39;, &#39;</span><span class="si">%s</span><span class="s2">&#39;, &#39;</span><span class="si">%s</span><span class="s2">&#39;, &#39;</span><span class="si">%s</span><span class="s2">&#39;)&quot;</span><span class="p">,</span>
+                          <span class="n">m</span><span class="p">,</span> <span class="n">meta_index</span><span class="p">,</span> <span class="n">new_item</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">new_item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">new_item</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">new_item</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+                <span class="n">metadata</span><span class="p">[</span><span class="n">m</span><span class="p">][</span><span class="n">meta_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_item</span>
+        <span class="c1">#</span>
+        <span class="c1"># Add missing items to the union model.</span>
+        <span class="c1">#</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_set</span> <span class="o">-</span> <span class="n">model_set</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Adding </span><span class="si">%s</span><span class="s1"> to HDU</span><span class="si">%d</span><span class="s1"> missing from model: </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">it</span><span class="p">,</span> <span class="n">hdu</span><span class="p">,</span>
+                      <span class="nb">str</span><span class="p">(</span><span class="n">data_set</span> <span class="o">-</span> <span class="n">model_set</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">(</span><span class="n">data_set</span> <span class="o">-</span> <span class="n">model_set</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">item</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">counter</span><span class="p">[</span><span class="n">hdu</span><span class="p">][</span><span class="n">m</span><span class="p">]:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">counter</span><span class="p">[</span><span class="n">hdu</span><span class="p">][</span><span class="n">m</span><span class="p">][</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="n">data_index</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="k">if</span> <span class="n">k</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">item</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">data_index</span><span class="p">]</span>
+                <span class="n">foo</span><span class="p">,</span> <span class="n">data_type</span><span class="p">,</span> <span class="n">data_units</span><span class="p">,</span> <span class="n">data_comment</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data_index</span><span class="p">]</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;metadata[&#39;</span><span class="si">%s</span><span class="s2">&#39;].append((&#39;</span><span class="si">%s</span><span class="s2">&#39;, &#39;</span><span class="si">%s</span><span class="s2">&#39;, &#39;</span><span class="si">%s</span><span class="s2">&#39;, &#39;</span><span class="si">%s</span><span class="s2">&#39;))&quot;</span><span class="p">,</span>
+                          <span class="n">it</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">data_index</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="n">data_index</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="n">data_index</span><span class="p">][</span><span class="mi">3</span><span class="p">])</span>
+                <span class="n">metadata</span><span class="p">[</span><span class="n">m</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">item</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">data_index</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="n">data_index</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="n">data_index</span><span class="p">][</span><span class="mi">3</span><span class="p">]))</span>
+        <span class="c1">#</span>
+        <span class="c1"># Subtract keywords not in the data for marking as optional.</span>
+        <span class="c1">#</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">model_set</span> <span class="o">-</span> <span class="n">data_set</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;These </span><span class="si">%s</span><span class="s1"> in HDU</span><span class="si">%d</span><span class="s1"> missing from data: </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">it</span><span class="p">,</span> <span class="n">hdu</span><span class="p">,</span>
+                      <span class="nb">str</span><span class="p">(</span><span class="n">model_set</span> <span class="o">-</span> <span class="n">data_set</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">(</span><span class="n">model_set</span> <span class="o">-</span> <span class="n">data_set</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">item</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">counter</span><span class="p">[</span><span class="n">hdu</span><span class="p">][</span><span class="n">m</span><span class="p">]:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">counter</span><span class="p">[</span><span class="n">hdu</span><span class="p">][</span><span class="n">m</span><span class="p">][</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">return</span></div>
+
+<div class="viewcode-block" id="UnionStub.mark_optional"><a class="viewcode-back" href="../../api.html#desidatamodel.scan.UnionStub.mark_optional">[docs]</a>    <span class="k">def</span> <span class="nf">mark_optional</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Mark the keywords and columns that do not appear in every file as optional.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">hdu</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hdumeta</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">keyword</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">hdu</span><span class="p">[</span><span class="s1">&#39;keywords&#39;</span><span class="p">]):</span>
+                <span class="n">k</span> <span class="o">=</span> <span class="n">keyword</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">counter</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;keywords&#39;</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">:</span>
+                    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> is a required keyword in HDU</span><span class="si">%d</span><span class="s2">.&quot;</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">counter</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;keywords&#39;</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> is an optional keyword in HDU</span><span class="si">%d</span><span class="s2"> (</span><span class="si">%d</span><span class="s2">).&quot;</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">counter</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;keywords&#39;</span><span class="p">][</span><span class="n">k</span><span class="p">])</span>
+                    <span class="n">ko</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_o</span>
+                    <span class="n">hdu</span><span class="p">[</span><span class="s1">&#39;keywords&#39;</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">ko</span><span class="p">,</span> <span class="n">keyword</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">keyword</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">keyword</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> is an unused keyword in HDU</span><span class="si">%d</span><span class="s2">.&quot;</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+                    <span class="n">hdu</span><span class="p">[</span><span class="s1">&#39;keywords&#39;</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s1">&#39;**UNUSED**&#39;</span><span class="p">,</span> <span class="n">keyword</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">keyword</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">hdu</span><span class="p">[</span><span class="s1">&#39;extension&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;BINTABLE&#39;</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">column</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">hdu</span><span class="p">[</span><span class="s1">&#39;format&#39;</span><span class="p">]):</span>
+                    <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="k">continue</span>
+                    <span class="n">c</span> <span class="o">=</span> <span class="n">column</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">counter</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;format&#39;</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">:</span>
+                        <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> is a required column in HDU</span><span class="si">%d</span><span class="s2">.&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+                    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">counter</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;format&#39;</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> is an optional column in HDU</span><span class="si">%d</span><span class="s2"> (</span><span class="si">%d</span><span class="s2">).&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">counter</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;format&#39;</span><span class="p">][</span><span class="n">c</span><span class="p">])</span>
+                        <span class="n">co</span> <span class="o">=</span> <span class="n">c</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_o</span>
+                        <span class="n">hdu</span><span class="p">[</span><span class="s1">&#39;format&#39;</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">co</span><span class="p">,</span> <span class="n">column</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">column</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">column</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> is an unused column in HDU</span><span class="si">%d</span><span class="s2">.&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+                        <span class="n">hdu</span><span class="p">[</span><span class="s1">&#39;format&#39;</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">column</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">column</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s1">&#39;**UNUSED**&#39;</span><span class="p">)</span>
+        <span class="k">return</span></div></div>
+
+
+<div class="viewcode-block" id="collect_files"><a class="viewcode-back" href="../../api.html#desidatamodel.scan.collect_files">[docs]</a><span class="k">def</span> <span class="nf">collect_files</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Scan a directory tree for all files that correspond to a data model files.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    root : :class:`str`</span>
+<span class="sd">        Path to real files on disk.</span>
+<span class="sd">    model : :class:`~desidatamodel.check.DataModel`</span>
+<span class="sd">        A data model file object.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    :class:`list`</span>
+<span class="sd">        All files in `root` that match `model`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ignore_directories</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;logs&#39;</span><span class="p">,</span> <span class="s1">&#39;scripts&#39;</span><span class="p">)</span>
+    <span class="n">include_extensions</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;.fits&#39;</span><span class="p">,</span> <span class="s1">&#39;.fits.fz&#39;</span><span class="p">,</span> <span class="s1">&#39;.fits.gz&#39;</span><span class="p">)</span>
+    <span class="n">files</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">dirpath</span><span class="p">,</span> <span class="n">dirnames</span><span class="p">,</span> <span class="n">filenames</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">ignore_directories</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">dirnames</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="k">pass</span>
+        <span class="n">include_filenames</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">include_extensions</span><span class="p">:</span>
+            <span class="n">include_filenames</span> <span class="o">+=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">filenames</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">e</span><span class="p">)]</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">include_filenames</span><span class="p">:</span>
+            <span class="n">fullname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirpath</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+            <span class="n">m</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">regexp</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">fullname</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">m</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fullname</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">files</span></div>
+
+
+<div class="viewcode-block" id="union_metadata"><a class="viewcode-back" href="../../api.html#desidatamodel.scan.union_metadata">[docs]</a><span class="k">def</span> <span class="nf">union_metadata</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">stubs</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Combine all HDU metadata from `model` and `stubs`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    model : :class:`~desidatamodel.check.DataModel`</span>
+<span class="sd">        The initial data model.</span>
+<span class="sd">    stubs : :class:`list`</span>
+<span class="sd">        A list of :class:`~desidatamodel.stub.Stub` objects.</span>
+<span class="sd">    error : :class:`bool`, optional</span>
+<span class="sd">        If ``True``, failure to extract certain required metadata raises an</span>
+<span class="sd">        exception.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    :class:`~desidatamodel.stub.Stub`</span>
+<span class="sd">        A new :class:`~desidatamodel.stub.Stub` object containing the</span>
+<span class="sd">        unified metadata of all the inputs.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;union = model.extract_metadata(error=</span><span class="si">%s</span><span class="s2">)&quot;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+    <span class="n">modelmeta</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">extract_metadata</span><span class="p">(</span><span class="n">error</span><span class="o">=</span><span class="n">error</span><span class="p">)</span>
+    <span class="n">union</span> <span class="o">=</span> <span class="n">UnionStub</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">stubs</span><span class="p">),</span> <span class="n">error</span><span class="o">=</span><span class="n">error</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">stubs</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">nhdr</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">modelmeta</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Data file </span><span class="si">%s</span><span class="s2"> has the wrong number of &quot;</span> <span class="o">+</span>
+                        <span class="s2">&quot;sections (HDUs) according to </span><span class="si">%s</span><span class="s2">.&quot;</span><span class="p">,</span>
+                        <span class="n">s</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
+        <span class="n">stub_meta</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">hdumeta</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">nhdr</span><span class="p">):</span>
+            <span class="n">dexex</span> <span class="o">=</span> <span class="n">stub_meta</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;extname&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">dexex</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Data file </span><span class="si">%s</span><span class="s2"> has no EXTNAME in HDU</span><span class="si">%d</span><span class="s2">.&quot;</span><span class="p">,</span>
+                            <span class="n">s</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">modelhdumeta</span> <span class="o">=</span> <span class="n">modelmeta</span><span class="p">[</span><span class="n">dexex</span><span class="p">]</span>
+            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">modelhdumeta</span> <span class="o">=</span> <span class="n">modelmeta</span><span class="p">[</span><span class="s1">&#39;HDU</span><span class="si">{0:02d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span>
+                <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                    <span class="c1">#</span>
+                    <span class="c1"># Fall back on trying to find HDU by number.</span>
+                    <span class="c1">#</span>
+                    <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Could not find EXTNAME = &#39;</span><span class="si">%s</span><span class="s2">&#39; in </span><span class="si">%s</span><span class="s2">; trying by HDU number.&quot;</span><span class="p">,</span>
+                                <span class="n">dexex</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">modelmeta</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">modelmeta</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;number&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">:</span>
+                            <span class="n">modelhdumeta</span> <span class="o">=</span> <span class="n">modelmeta</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="c1">#</span>
+            <span class="c1"># Check for EXTNAME</span>
+            <span class="c1">#</span>
+            <span class="n">mexex</span> <span class="o">=</span> <span class="n">modelhdumeta</span><span class="p">[</span><span class="s1">&#39;extname&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">dexex</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span> <span class="ow">and</span> <span class="n">mexex</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span> <span class="ow">and</span> <span class="n">dexex</span> <span class="o">!=</span> <span class="n">mexex</span><span class="p">):</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Data file </span><span class="si">%s</span><span class="s2"> has an EXTNAME mismatch &quot;</span> <span class="o">+</span>
+                            <span class="s2">&quot;in HDU</span><span class="si">%d</span><span class="s2"> (</span><span class="si">%s</span><span class="s2"> != </span><span class="si">%s</span><span class="s2">) &quot;</span> <span class="o">+</span>
+                            <span class="s2">&quot;according to </span><span class="si">%s</span><span class="s2">.&quot;</span><span class="p">,</span>
+                            <span class="n">s</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">dexex</span><span class="p">,</span> <span class="n">mexex</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
+            <span class="c1">#</span>
+            <span class="c1"># Collect keywords</span>
+            <span class="c1">#</span>
+            <span class="n">union</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">stub_meta</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;keywords&#39;</span><span class="p">])</span>
+            <span class="c1">#</span>
+            <span class="c1"># Collect columns</span>
+            <span class="c1">#</span>
+            <span class="k">if</span> <span class="n">modelhdumeta</span><span class="p">[</span><span class="s1">&#39;extension&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;BINTABLE&#39;</span><span class="p">:</span>
+                <span class="n">union</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">stub_meta</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;format&#39;</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1">#</span>
+    <span class="c1"># Mark keywords and columns that don&#39;t appear in every file as optional.</span>
+    <span class="c1">#</span>
+    <span class="n">union</span><span class="o">.</span><span class="n">mark_optional</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">union</span></div>
+
+
+<div class="viewcode-block" id="_options"><a class="viewcode-back" href="../../api.html#desidatamodel.scan._options">[docs]</a><span class="k">def</span> <span class="nf">_options</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Parse command-line options.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    :class:`~argparse.Namespace`</span>
+<span class="sd">        The parsed options.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">desc</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Deep scan available files to obtain a comprehensive set of metadata.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="n">desc</span><span class="p">,</span> <span class="n">prog</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-d&#39;</span><span class="p">,</span> <span class="s1">&#39;--datamodel-dir&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;desidatamodel&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;DIR&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Override the value of DESIDATAMODEL.&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-l&#39;</span><span class="p">,</span> <span class="s1">&#39;--path-level&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;level&#39;</span><span class="p">,</span> <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Map data directory to data model at N levels down (default </span><span class="si">%(default)s</span><span class="s1">).&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-n&#39;</span><span class="p">,</span> <span class="s1">&#39;--number&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;number&#39;</span><span class="p">,</span> <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Scan at most N files (default </span><span class="si">%(default)s</span><span class="s1">).&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-o&#39;</span><span class="p">,</span> <span class="s1">&#39;--output&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;output&#39;</span><span class="p">,</span> <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;FILE&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Specify output file or directory. Defaults to the name of the input file in the current directory.&#39;</span><span class="p">)</span>
+    <span class="c1"># parser.add_argument(&#39;-F&#39;, &#39;--compare-files&#39;, dest=&#39;files&#39;,</span>
+    <span class="c1">#                     action=&#39;store_true&#39;,</span>
+    <span class="c1">#                     help=&#39;Compare an individual data model to an individual file.&#39;)</span>
+    <span class="c1"># parser.add_argument(&#39;-K&#39;, &#39;--skip-keywords&#39;, dest=&#39;skip_keywords&#39;, action=&#39;store_true&#39;,</span>
+    <span class="c1">#                     help=&quot;Don&#39;t check FITS header keywords&quot;)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-v&#39;</span><span class="p">,</span> <span class="s1">&#39;--verbose&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;verbose&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Set log level to DEBUG.&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-W&#39;</span><span class="p">,</span> <span class="s1">&#39;--warning-is-error&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;error&#39;</span><span class="p">,</span>
+                        <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Data model warnings raise exceptions.&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;MODEL_FILE&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Individual data model file.&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;directory&#39;</span><span class="p">,</span> <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;DATA_DIR&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Check files in this top-level directory that match MODEL_FILE.&#39;</span><span class="p">)</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">options</span></div>
+
+
+<div class="viewcode-block" id="main"><a class="viewcode-back" href="../../api.html#desidatamodel.scan.main">[docs]</a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Entry point for the deep_scan_metadata script.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    :class:`int`</span>
+<span class="sd">        An integer suitable for passing to :func:`sys.exit`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="n">_options</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">verbose</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">DEBUG</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s1">&#39;DESIDATAMODEL&#39;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+        <span class="n">data_model_root</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;DESIDATAMODEL&#39;</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">desidatamodel</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">data_model_root</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">desidatamodel</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">critical</span><span class="p">((</span><span class="s2">&quot;DESIDATAMODEL is not defined. &quot;</span> <span class="o">+</span>
+                          <span class="s2">&quot;Cannot find data model files!&quot;</span><span class="p">))</span>
+            <span class="k">return</span> <span class="mi">1</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;DESIDATAMODEL=</span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">data_model_root</span><span class="p">)</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_model_root</span><span class="p">,</span> <span class="s1">&#39;doc&#39;</span><span class="p">,</span> <span class="n">options</span><span class="o">.</span><span class="n">model</span><span class="p">)</span>
+    <span class="n">section</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_model_root</span><span class="p">,</span> <span class="s1">&#39;doc&#39;</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[:(</span><span class="n">options</span><span class="o">.</span><span class="n">level</span><span class="o">+</span><span class="mi">1</span><span class="p">)]))</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Loading data model: </span><span class="si">%s</span><span class="s2">.&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;model = DataModel(&#39;</span><span class="si">%s</span><span class="s2">&#39;, &#39;</span><span class="si">%s</span><span class="s2">&#39;)&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">section</span><span class="p">)</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">DataModel</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">section</span><span class="p">)</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Processing regular expression.&quot;</span><span class="p">)</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;model.get_regexp(&#39;</span><span class="si">%s</span><span class="s2">&#39;, error=</span><span class="si">%s</span><span class="s2">)&quot;</span><span class="p">,</span> <span class="n">options</span><span class="o">.</span><span class="n">directory</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">options</span><span class="o">.</span><span class="n">error</span><span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">get_regexp</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">directory</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">error</span><span class="o">=</span><span class="n">options</span><span class="o">.</span><span class="n">error</span><span class="p">)</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;model.regexp = </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">regexp</span><span class="p">)</span>
+    <span class="n">all_files</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">root</span> <span class="ow">in</span> <span class="n">options</span><span class="o">.</span><span class="n">directory</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Finding scannable files matching </span><span class="si">%s</span><span class="s2"> in </span><span class="si">%s</span><span class="s2">.&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">root</span><span class="p">)</span>
+        <span class="n">all_files</span> <span class="o">+=</span> <span class="n">collect_files</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+    <span class="n">n_files</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_files</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n_files</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s2">&quot;No files found matching </span><span class="si">%s</span><span class="s2">!&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Found </span><span class="si">%d</span><span class="s2"> files matching </span><span class="si">%s</span><span class="s2">.&quot;</span><span class="p">,</span> <span class="n">n_files</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n_files</span> <span class="o">&gt;</span> <span class="n">options</span><span class="o">.</span><span class="n">number</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Randomly down-sampling files to </span><span class="si">%d</span><span class="s2">.&quot;</span><span class="p">,</span> <span class="n">options</span><span class="o">.</span><span class="n">number</span><span class="p">)</span>
+        <span class="n">all_files</span> <span class="o">=</span> <span class="n">choices</span><span class="p">(</span><span class="n">all_files</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">options</span><span class="o">.</span><span class="n">number</span><span class="p">)</span>
+        <span class="n">n_files</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_files</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">stubs</span> <span class="o">=</span> <span class="p">[</span><span class="n">Stub</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="n">options</span><span class="o">.</span><span class="n">error</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">all_files</span><span class="p">]</span>
+    <span class="k">except</span> <span class="n">DataModelError</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s2">&quot;Error detected while loading files!&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Running union_metadata on model and stubs.&quot;</span><span class="p">)</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">union_metadata</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">stubs</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="n">options</span><span class="o">.</span><span class="n">error</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">output</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">outfile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">model</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">output</span><span class="p">):</span>
+        <span class="n">outfile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">output</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">model</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">outfile</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">output</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Writing output to </span><span class="si">%s</span><span class="s2">.&quot;</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">u</span><span class="p">))</span>
+    <span class="k">return</span> <span class="mi">0</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014-2025, DESI Collaboration.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

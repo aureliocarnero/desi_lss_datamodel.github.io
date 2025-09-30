@@ -1,0 +1,971 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>backup targets &mdash; desidatamodel 25.4.dev1530 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/desidatamodel.css" />
+
+  
+      <script src="../../../../../../../../_static/jquery.js"></script>
+      <script src="../../../../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script data-url_root="../../../../../../../../" id="documentation_options" src="../../../../../../../../_static/documentation_options.js"></script>
+      <script src="../../../../../../../../_static/doctools.js"></script>
+      <script src="../../../../../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../../../search.html" />
+    <link rel="next" title="skies-supp" href="../../../../skies-supp/index.html" />
+    <link rel="prev" title="BACKUP" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../../../../../index.html" class="icon icon-home">
+            desidatamodel
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../DESI_ROOT/vac/index.html">vac/ : Value Added Catalogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../DESI_ROOT/index.html">$DESI_ROOT : represents the top level of the DESI directory tree.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../DESI_SPECTRO_DATA/index.html">$DESI_SPECTRO_DATA : raw data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../DESI_SPECTRO_REDUX/index.html">$DESI_SPECTRO_REDUX : processed spectro data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../DESI_SPECTRO_SIM/index.html">$DESI_SPECTRO_SIM : simulated spectro data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../DESI_SPECTRO_CALIB/index.html">$DESI_SPECTRO_CALIB : spectro calibration data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../DESI_SURVEYOPS/index.html">$DESI_SURVEYOPS : data files used for day-to-day survey operations</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../../../index.html">$DESI_TARGET : target selection and fiber assignment (see also Myers et al. 2023)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../fiberassign/index.html">fiberassign</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../../../index.html">TARG_DIR</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../DR/index.html">DR</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../../../index.html">gaiadr2</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../../../../index.html">VERSION</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../subpriority/index.html">subpriority</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../SCND_DIR/index.html">SCND_DIR</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../DESIMODEL/index.html">$DESIMODEL : data used for simulating DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../DESISURVEY_OUTPUT/index.html">$DESISURVEY_OUTPUT : outputs from desisurvey and surveysim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../PROTODESI/index.html">$PROTODESI : data and logs from the ProtoDESI campaign</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../bitmasks.html">Bit Masks in DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../column_descriptions.html">Standard Column Descriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../envvar.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../units.html">Units in data files</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../datamodel.html">Contributing to desidatamodel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../api.html">desidatamodel API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../changes.html">desidatamodel Change Log</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../../../index.html">desidatamodel</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../../../../../DESI_ROOT/index.html">DESI_ROOT</a></li>
+          <li class="breadcrumb-item"><a href="../../../../../../../index.html">DESI_TARGET</a></li>
+          <li class="breadcrumb-item"><a href="../../../../../../index.html">TARG_DIR</a></li>
+          <li class="breadcrumb-item"><a href="../../../../../index.html">gaiadr2</a></li>
+          <li class="breadcrumb-item"><a href="../../../../index.html">VERSION</a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">targets</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">PHASE</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">RESOLVE</a></li>
+          <li class="breadcrumb-item"><a href="index.html">BACKUP</a></li>
+      <li class="breadcrumb-item active">backup targets</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../../../../../_sources/DESI_TARGET/TARG_DIR/gaiadr2/VERSION/targets/PHASE/RESOLVE/BACKUP/PHASEtargets-BACKUP-hp-HP.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="backup-targets">
+<h1>backup targets<a class="headerlink" href="#backup-targets" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Summary<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DESI backup target selection files include a binary table containing
+the backup targets in a (nested) HEALPixel. They store the variables used by
+target selection (<em>e.g.</em> fluxes), variables needed by fiber assignment (<em>e.g.</em>
+RA, DEC), and variables needed for traceability (<em>e.g.</em> DESITARGET, TARGETID).
+They are compiled from Gaia to provide a source of targets that does not rely on
+<a class="reference external" href="https://www.legacysurvey.org/">Legacy Surveys</a> imaging.</p>
+</dd>
+<dt class="field-even">Naming Convention<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">PHASEtargets-BACKUP-hp-HP.fits</span></code>,
+where <code class="docutils literal notranslate"><span class="pre">PHASE</span></code> is a specific DESI observational phase (<em>e.g.</em> svX with X=1,2,3
+for iterations of Survey Validation) <code class="docutils literal notranslate"><span class="pre">BACKUP</span></code> is <code class="docutils literal notranslate"><span class="pre">supp</span></code> prior to version
+<code class="docutils literal notranslate"><span class="pre">0.50.0</span></code> of the <code class="docutils literal notranslate"><span class="pre">desitarget</span></code> code or <code class="docutils literal notranslate"><span class="pre">backup</span></code> for later versions, and <code class="docutils literal notranslate"><span class="pre">HP</span></code>
+is the HEALPixel covered by the targets at the (nested) HEALPixel nside included
+in the file header as <code class="docutils literal notranslate"><span class="pre">FILENSID</span></code> (<em>e.g.</em> 11). For targets that are part of the
+DESI Main Science Survey <code class="docutils literal notranslate"><span class="pre">PHASE</span></code> is omitted from the filename.</p>
+</dd>
+<dt class="field-odd">Regex<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">(cmx|sv1|sv2|sv3|main2|)targets-(backup|supp)-hp-[0-9]+\.fits</span></code></p>
+</dd>
+<dt class="field-even">File Type<span class="colon">:</span></dt>
+<dd class="field-even"><p>FITS, 26 MB - 1.2 GB</p>
+</dd>
+</dl>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
+<p>DESI target selection files based on Gaia are available at:</p>
+<p><a class="reference external" href="https://data.desi.lbl.gov/public/ets/target/catalogs/gaiadr2">https://data.desi.lbl.gov/public/ets/target/catalogs/gaiadr2</a> .</p>
+</section>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Number</p></th>
+<th class="head"><p>EXTNAME</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Contents</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#hdu0">HDU0</a></p></td>
+<td></td>
+<td><p>IMAGE</p></td>
+<td><p>Empty</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hdu1">HDU1</a></p></td>
+<td><p>TARGETS</p></td>
+<td><p>BINTABLE</p></td>
+<td><p>Target table</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#hdu2">HDU2</a></p></td>
+<td><p>INFILES</p></td>
+<td><p>BINTABLE</p></td>
+<td><p>Files used to produce target table</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="fits-header-units">
+<h2>FITS Header Units<a class="headerlink" href="#fits-header-units" title="Permalink to this heading"></a></h2>
+<section id="hdu0">
+<h3>HDU0<a class="headerlink" href="#hdu0" title="Permalink to this heading"></a></h3>
+<p>This HDU has no non-standard required keywords.</p>
+<p>Empty HDU.</p>
+</section>
+<section id="hdu1">
+<h3>HDU1<a class="headerlink" href="#hdu1" title="Permalink to this heading"></a></h3>
+<p>EXTNAME = TARGETS</p>
+<p>Target selection table</p>
+<section id="required-header-keywords">
+<h4>Required Header Keywords<a class="headerlink" href="#required-header-keywords" title="Permalink to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>983</p></td>
+<td><p>int</p></td>
+<td><p>width of table in bytes</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>205901</p></td>
+<td><p>int</p></td>
+<td><p>number of rows in table</p></td>
+</tr>
+<tr class="row-even"><td><p>OBSCON</p></td>
+<td><p>“BACKUP”</p></td>
+<td><p>str</p></td>
+<td><p>observing layer for file</p></td>
+</tr>
+<tr class="row-odd"><td><p>HPXNSIDE</p></td>
+<td><p>64</p></td>
+<td><p>int</p></td>
+<td><p>HEALPix nside for column <cite>HPXPIXEL</cite></p></td>
+</tr>
+<tr class="row-even"><td><p>HPXNEST</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>HEALPix nested (not ring) ordering</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUBPSEED</p></td>
+<td><p>1015</p></td>
+<td><p>int</p></td>
+<td><p>random seed used to generate <cite>SUBPRIORITY</cite> values</p></td>
+</tr>
+<tr class="row-even"><td><p>SURVEY</p></td>
+<td><p>“main”</p></td>
+<td><p>str</p></td>
+<td><p>svX for SV, main for Main Survey</p></td>
+</tr>
+<tr class="row-odd"><td><p>RESOLVE</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if from unique imaging</p></td>
+</tr>
+<tr class="row-even"><td><p>MASKBITS</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if masking cuts applied</p></td>
+</tr>
+<tr class="row-odd"><td><p>BACKUP</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code> for backup/supplemental targets from Gaia</p></td>
+</tr>
+<tr class="row-even"><td><p>GAIADR</p></td>
+<td><p>2</p></td>
+<td><p>int</p></td>
+<td><p>Gaia Data Release used to produce targets</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCNAMES</p></td>
+<td><p>“QSO,LRG”</p></td>
+<td><p>str</p></td>
+<td><p>run for this target-class subset</p></td>
+</tr>
+<tr class="row-even"><td><p>GAIASUB</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if Gaia EDR3 astrometric values were substituted for Gaia DR2 quantities.</p></td>
+</tr>
+<tr class="row-odd"><td><p>CMDLINE</p></td>
+<td><p>“/global/”</p></td>
+<td><p>str</p></td>
+<td><p>command-line call used to generate target file</p></td>
+</tr>
+<tr class="row-even"><td><p>SCNDOUT</p></td>
+<td><p>“/global/”</p></td>
+<td><p>str</p></td>
+<td><p>directory from which secondary targets were read</p></td>
+</tr>
+<tr class="row-odd"><td><p>FILENSID</p></td>
+<td><p>2</p></td>
+<td><p>int</p></td>
+<td><p>HEALPix nside covered by file</p></td>
+</tr>
+<tr class="row-even"><td><p>FILENEST</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>HEALPix nested (not ring) ordering</p></td>
+</tr>
+<tr class="row-odd"><td><p>FILEHPX</p></td>
+<td><p>11</p></td>
+<td><p>int</p></td>
+<td><p>HEALPix pixel(s) covered by file</p></td>
+</tr>
+</tbody>
+</table>
+</details></section>
+<section id="required-data-table-columns">
+<h4>Required Data Table Columns<a class="headerlink" href="#required-data-table-columns" title="Permalink to this heading"></a></h4>
+<table class="columns docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Units</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>RELEASE</p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>Legacy Surveys (<a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a>) <a class="reference external" href="https://www.legacysurvey.org/release/">Release</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>BRICKID</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Brick ID from tractor input</p></td>
+</tr>
+<tr class="row-even"><td><p>BRICKNAME</p></td>
+<td><p>char[8]</p></td>
+<td></td>
+<td><p>Brick name from tractor input</p></td>
+</tr>
+<tr class="row-odd"><td><p>BRICK_OBJID</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>OBJID (unique to brick, but not to file)</p></td>
+</tr>
+<tr class="row-even"><td><p>MORPHTYPE</p></td>
+<td><p>char[4]</p></td>
+<td></td>
+<td><p><a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">Morphological Model</a> type</p></td>
+</tr>
+<tr class="row-odd"><td><p>RA</p></td>
+<td><p>float64</p></td>
+<td><p>deg</p></td>
+<td><p>Right ascension [degrees]</p></td>
+</tr>
+<tr class="row-even"><td><p>RA_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>deg^-2</p></td>
+<td><p>Right ascension inverse variance</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEC</p></td>
+<td><p>float64</p></td>
+<td><p>deg</p></td>
+<td><p>Declination [degrees]</p></td>
+</tr>
+<tr class="row-even"><td><p>DEC_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>deg^-2</p></td>
+<td><p>Declination inverse variance</p></td>
+</tr>
+<tr class="row-odd"><td><p>DCHISQ</p></td>
+<td><p>float32[5]</p></td>
+<td></td>
+<td><p>Difference in chi-squared between model fits</p></td>
+</tr>
+<tr class="row-even"><td><p>EBV</p></td>
+<td><p>float32</p></td>
+<td><p>mag</p></td>
+<td><p>Galactic extinction E(B-V) reddening from <a class="reference external" href="http://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S">SFD98</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>FLUX_G</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p><a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> flux from tractor input (g)</p></td>
+</tr>
+<tr class="row-even"><td><p>FLUX_R</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p><a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> flux from tractor input (r)</p></td>
+</tr>
+<tr class="row-odd"><td><p>FLUX_Z</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p><a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> flux from tractor input (z)</p></td>
+</tr>
+<tr class="row-even"><td><p>FLUX_IVAR_G</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy^-2</p></td>
+<td><p>Inverse Variance of FLUX_G</p></td>
+</tr>
+<tr class="row-odd"><td><p>FLUX_IVAR_R</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy^-2</p></td>
+<td><p>Inverse Variance of FLUX_R</p></td>
+</tr>
+<tr class="row-even"><td><p>FLUX_IVAR_Z</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy^-2</p></td>
+<td><p>Inverse Variance of FLUX_Z</p></td>
+</tr>
+<tr class="row-odd"><td><p>MW_TRANSMISSION_G</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Milky Way dust transmission in <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> g</p></td>
+</tr>
+<tr class="row-even"><td><p>MW_TRANSMISSION_R</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Milky Way dust transmission in <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> r</p></td>
+</tr>
+<tr class="row-odd"><td><p>MW_TRANSMISSION_Z</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Milky Way dust transmission in <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> z</p></td>
+</tr>
+<tr class="row-even"><td><p>FRACFLUX_G</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Fraction of flux from other sources compared to this source in <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> g</p></td>
+</tr>
+<tr class="row-odd"><td><p>FRACFLUX_R</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Fraction of flux from other sources compared to this source in <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> r</p></td>
+</tr>
+<tr class="row-even"><td><p>FRACFLUX_Z</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Fraction of flux from other sources compared to this source in <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> z</p></td>
+</tr>
+<tr class="row-odd"><td><p>FRACMASKED_G</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Fraction of pixels masked for this source in <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> g</p></td>
+</tr>
+<tr class="row-even"><td><p>FRACMASKED_R</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Fraction of pixels masked for this source in <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> r</p></td>
+</tr>
+<tr class="row-odd"><td><p>FRACMASKED_Z</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Fraction of pixels masked for this source in <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> z</p></td>
+</tr>
+<tr class="row-even"><td><p>FRACIN_G</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Fraction of a source’s flux within a <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> blob in g</p></td>
+</tr>
+<tr class="row-odd"><td><p>FRACIN_R</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Fraction of a source’s flux within a <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> blob in r</p></td>
+</tr>
+<tr class="row-even"><td><p>FRACIN_Z</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Fraction of a source’s flux within a <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> blob in z</p></td>
+</tr>
+<tr class="row-odd"><td><p>NOBS_G</p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>Number of images for central pixel in <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> g</p></td>
+</tr>
+<tr class="row-even"><td><p>NOBS_R</p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>Number of images for central pixel in <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> r</p></td>
+</tr>
+<tr class="row-odd"><td><p>NOBS_Z</p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>Number of images for central pixel in <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> z</p></td>
+</tr>
+<tr class="row-even"><td><p>PSFDEPTH_G</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy^-2</p></td>
+<td><p>PSF-based depth in <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> g</p></td>
+</tr>
+<tr class="row-odd"><td><p>PSFDEPTH_R</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy^-2</p></td>
+<td><p>PSF-based depth in <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> r</p></td>
+</tr>
+<tr class="row-even"><td><p>PSFDEPTH_Z</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy^-2</p></td>
+<td><p>PSF-based depth in <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> z</p></td>
+</tr>
+<tr class="row-odd"><td><p>GALDEPTH_G</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy^-2</p></td>
+<td><p>Galaxy model-based depth in <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> g</p></td>
+</tr>
+<tr class="row-even"><td><p>GALDEPTH_R</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy^-2</p></td>
+<td><p>Galaxy model-based depth in <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> r</p></td>
+</tr>
+<tr class="row-odd"><td><p>GALDEPTH_Z</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy^-2</p></td>
+<td><p>Galaxy model-based depth in <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> z</p></td>
+</tr>
+<tr class="row-even"><td><p>FLUX_W1</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>WISE flux in W1 (AB system)</p></td>
+</tr>
+<tr class="row-odd"><td><p>FLUX_W2</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>WISE flux in W2 (AB)</p></td>
+</tr>
+<tr class="row-even"><td><p>FLUX_W3</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>WISE flux in W3 (AB)</p></td>
+</tr>
+<tr class="row-odd"><td><p>FLUX_W4</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>WISE flux in W4 (AB)</p></td>
+</tr>
+<tr class="row-even"><td><p>FLUX_IVAR_W1</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy^-2</p></td>
+<td><p>Inverse Variance of FLUX_W1 (AB system)</p></td>
+</tr>
+<tr class="row-odd"><td><p>FLUX_IVAR_W2</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy^-2</p></td>
+<td><p>Inverse Variance of FLUX_W2 (AB)</p></td>
+</tr>
+<tr class="row-even"><td><p>FLUX_IVAR_W3</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy^-2</p></td>
+<td><p>Inverse Variance of FLUX_W3 (AB)</p></td>
+</tr>
+<tr class="row-odd"><td><p>FLUX_IVAR_W4</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy^-2</p></td>
+<td><p>Inverse Variance of FLUX_W4 (AB)</p></td>
+</tr>
+<tr class="row-even"><td><p>MW_TRANSMISSION_W1</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Milky Way dust transmission in WISE W1</p></td>
+</tr>
+<tr class="row-odd"><td><p>MW_TRANSMISSION_W2</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Milky Way dust transmission in WISE W2</p></td>
+</tr>
+<tr class="row-even"><td><p>MW_TRANSMISSION_W3</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Milky Way dust transmission in WISE W3</p></td>
+</tr>
+<tr class="row-odd"><td><p>MW_TRANSMISSION_W4</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Milky Way dust transmission in WISE W4</p></td>
+</tr>
+<tr class="row-even"><td><p>ALLMASK_G</p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>Bitwise mask for central pixel in <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> g</p></td>
+</tr>
+<tr class="row-odd"><td><p>ALLMASK_R</p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>Bitwise mask for central pixel in <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> r</p></td>
+</tr>
+<tr class="row-even"><td><p>ALLMASK_Z</p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>Bitwise mask for central pixel in <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> z</p></td>
+</tr>
+<tr class="row-odd"><td><p>FIBERFLUX_G</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>g-band object model flux for 1 arcsec seeing and 1.5 arcsec diameter fiber</p></td>
+</tr>
+<tr class="row-even"><td><p>FIBERFLUX_R</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>r-band object model flux for 1 arcsec seeing and 1.5 arcsec diameter fiber</p></td>
+</tr>
+<tr class="row-odd"><td><p>FIBERFLUX_Z</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>z-band object model flux for 1 arcsec seeing and 1.5 arcsec diameter fiber</p></td>
+</tr>
+<tr class="row-even"><td><p>FIBERTOTFLUX_G</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>like FIBERFLUX_G but including all objects overlapping this location</p></td>
+</tr>
+<tr class="row-odd"><td><p>FIBERTOTFLUX_R</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>like FIBERFLUX_R but including all objects overlapping this location</p></td>
+</tr>
+<tr class="row-even"><td><p>FIBERTOTFLUX_Z</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>like FIBERFLUX_Z but including all objects overlapping this location</p></td>
+</tr>
+<tr class="row-odd"><td><p>REF_EPOCH</p></td>
+<td><p>float32</p></td>
+<td><p>yr</p></td>
+<td><p>reference epoch for Gaia/Tycho astrometry. Typically 2015.5 for Gaia.</p></td>
+</tr>
+<tr class="row-even"><td><p>WISEMASK_W1</p></td>
+<td><p>binary</p></td>
+<td></td>
+<td><p>W1 bitmask as cataloged on the <a class="reference external" href="https://www.legacysurvey.org/dr9/bitmasks/">LS DR9 bitmasks page</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>WISEMASK_W2</p></td>
+<td><p>binary</p></td>
+<td></td>
+<td><p>W2 bitmask as cataloged on the <a class="reference external" href="https://www.legacysurvey.org/dr9/bitmasks/">LS DR9 bitmasks page</a></p></td>
+</tr>
+<tr class="row-even"><td><p>MASKBITS</p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>bitmask for <code class="docutils literal notranslate"><span class="pre">coadd/*/*/*maskbits*</span></code> maps, as on the <a class="reference external" href="https://www.legacysurvey.org/dr9/bitmasks/">LS DR9 bitmasks page</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>LC_FLUX_W1</p></td>
+<td><p>float32[15]</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>FLUX_W1 in each of up to fifteen unWISE coadd epochs (AB system; defaults to zero for unused entries)</p></td>
+</tr>
+<tr class="row-even"><td><p>LC_FLUX_W2</p></td>
+<td><p>float32[15]</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>FLUX_W2 in each of up to fifteen unWISE coadd epochs (AB system; defaults to zero for unused entries)</p></td>
+</tr>
+<tr class="row-odd"><td><p>LC_FLUX_IVAR_W1</p></td>
+<td><p>float32[15]</p></td>
+<td><p>nanomaggy^-2</p></td>
+<td><p>Inverse variance of LC_FLUX_W1 (AB system; defaults to zero for unused entries)</p></td>
+</tr>
+<tr class="row-even"><td><p>LC_FLUX_IVAR_W2</p></td>
+<td><p>float32[15]</p></td>
+<td><p>nanomaggy^-2</p></td>
+<td><p>Inverse variance of LC_FLUX_W2 (AB system; defaults to zero for unused entries)</p></td>
+</tr>
+<tr class="row-odd"><td><p>LC_NOBS_W1</p></td>
+<td><p>int16[15]</p></td>
+<td></td>
+<td><p>NOBS_W1 in each of up to fifteen unWISE coadd epochs</p></td>
+</tr>
+<tr class="row-even"><td><p>LC_NOBS_W2</p></td>
+<td><p>int16[15]</p></td>
+<td></td>
+<td><p>NOBS_W2 in each of up to fifteen unWISE coadd epochs</p></td>
+</tr>
+<tr class="row-odd"><td><p>LC_MJD_W1</p></td>
+<td><p>float64[15]</p></td>
+<td></td>
+<td><p>MJD_W1 in each of up to fifteen unWISE coadd epochs (defaults to zero for unused entries)</p></td>
+</tr>
+<tr class="row-even"><td><p>LC_MJD_W2</p></td>
+<td><p>float64[15]</p></td>
+<td></td>
+<td><p>MJD_W2 in each of up to fifteen unWISE coadd epochs (defaults to zero for unused entries)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SHAPE_R</p></td>
+<td><p>float32</p></td>
+<td><p>arcsec</p></td>
+<td><p>Half-light radius of galaxy model for galaxy type MORPHTYPE (&gt;0)</p></td>
+</tr>
+<tr class="row-even"><td><p>SHAPE_E1</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p><a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">Ellipticity component</a> 1 of galaxy model for galaxy type MORPHTYPE</p></td>
+</tr>
+<tr class="row-odd"><td><p>SHAPE_E2</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p><a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">Ellipticity component</a> 2 of galaxy model for galaxy type MORPHTYPE</p></td>
+</tr>
+<tr class="row-even"><td><p>SHAPE_R_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>arcsec^-2</p></td>
+<td><p>Inverse variance of SHAPE_R</p></td>
+</tr>
+<tr class="row-odd"><td><p>SHAPE_E1_IVAR</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Inverse variance of SHAPE_E1</p></td>
+</tr>
+<tr class="row-even"><td><p>SHAPE_E2_IVAR</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Inverse variance of SHAPE_E2</p></td>
+</tr>
+<tr class="row-odd"><td><p>SERSIC</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Power-law index for the Sersic profile model (MORPHTYPE=”SER”)</p></td>
+</tr>
+<tr class="row-even"><td><p>SERSIC_IVAR</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Inverse variance of SERSIC</p></td>
+</tr>
+<tr class="row-odd"><td><p>REF_ID</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Tyc1*1,000,000+Tyc2*10+Tyc3 for <a class="reference external" href="https://heasarc.nasa.gov/W3Browse/all/tycho2.html">Tycho-2</a>; “sourceid” for <a class="reference external" href="https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html">Gaia</a> DR2</p></td>
+</tr>
+<tr class="row-even"><td><p>REF_CAT</p></td>
+<td><p>char[2]</p></td>
+<td></td>
+<td><p>Reference catalog source for star: “T2” for <a class="reference external" href="https://heasarc.nasa.gov/W3Browse/all/tycho2.html">Tycho-2</a>, “G2” for <a class="reference external" href="https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html">Gaia</a> DR2, “L2” for the <a class="reference external" href="https://github.com/moustakas/SGA">SGA</a>, empty otherwise</p></td>
+</tr>
+<tr class="row-odd"><td><p>GAIA_PHOT_G_MEAN_MAG</p></td>
+<td><p>float32</p></td>
+<td><p>mag</p></td>
+<td><p><a class="reference external" href="https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html">Gaia</a> G band magnitude</p></td>
+</tr>
+<tr class="row-even"><td><p>GAIA_PHOT_G_MEAN_FLUX_OVER_ERROR</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p><a class="reference external" href="https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html">Gaia</a> G band signal-to-noise</p></td>
+</tr>
+<tr class="row-odd"><td><p>GAIA_PHOT_BP_MEAN_MAG</p></td>
+<td><p>float32</p></td>
+<td><p>mag</p></td>
+<td><p><a class="reference external" href="https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html">Gaia</a> BP band magnitude</p></td>
+</tr>
+<tr class="row-even"><td><p>GAIA_PHOT_BP_MEAN_FLUX_OVER_ERROR</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p><a class="reference external" href="https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html">Gaia</a> BP band signal-to-noise</p></td>
+</tr>
+<tr class="row-odd"><td><p>GAIA_PHOT_RP_MEAN_MAG</p></td>
+<td><p>float32</p></td>
+<td><p>mag</p></td>
+<td><p><a class="reference external" href="https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html">Gaia</a> RP band magnitude</p></td>
+</tr>
+<tr class="row-even"><td><p>GAIA_PHOT_RP_MEAN_FLUX_OVER_ERROR</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p><a class="reference external" href="https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html">Gaia</a> RP band signal-to-noise</p></td>
+</tr>
+<tr class="row-odd"><td><p>GAIA_PHOT_BP_RP_EXCESS_FACTOR</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p><a class="reference external" href="https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html">Gaia</a> BP/RP excess factor</p></td>
+</tr>
+<tr class="row-even"><td><p>GAIA_ASTROMETRIC_EXCESS_NOISE</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p><a class="reference external" href="https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html">Gaia</a> astrometric excess noise</p></td>
+</tr>
+<tr class="row-odd"><td><p>GAIA_DUPLICATED_SOURCE</p></td>
+<td><p>logical</p></td>
+<td></td>
+<td><p><a class="reference external" href="https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html">Gaia</a> duplicated source flag</p></td>
+</tr>
+<tr class="row-even"><td><p>GAIA_ASTROMETRIC_SIGMA5D_MAX</p></td>
+<td><p>float32</p></td>
+<td><p>mas</p></td>
+<td><p><a class="reference external" href="https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html">Gaia</a> longest semi-major axis of the 5-d error ellipsoid</p></td>
+</tr>
+<tr class="row-odd"><td><p>GAIA_ASTROMETRIC_PARAMS_SOLVED</p></td>
+<td><p>binary</p></td>
+<td></td>
+<td><p>which astrometric parameters were estimated for a <a class="reference external" href="https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html">Gaia</a> source</p></td>
+</tr>
+<tr class="row-even"><td><p>PARALLAX</p></td>
+<td><p>float32</p></td>
+<td><p>mas</p></td>
+<td><p>Reference catalog parallax</p></td>
+</tr>
+<tr class="row-odd"><td><p>PARALLAX_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>mas^-2</p></td>
+<td><p>Inverse variance of parallax</p></td>
+</tr>
+<tr class="row-even"><td><p>PMRA</p></td>
+<td><p>float32</p></td>
+<td><p>mas / yr</p></td>
+<td><p>Reference catalog proper motion in the RA direction</p></td>
+</tr>
+<tr class="row-odd"><td><p>PMRA_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>yr^2 / mas^2</p></td>
+<td><p>Inverse variance of PMRA</p></td>
+</tr>
+<tr class="row-even"><td><p>PMDEC</p></td>
+<td><p>float32</p></td>
+<td><p>mas / yr</p></td>
+<td><p>Reference catalog proper motion in the Dec direction</p></td>
+</tr>
+<tr class="row-odd"><td><p>PMDEC_IVAR</p></td>
+<td><p>float32</p></td>
+<td><p>yr^2 / mas^2</p></td>
+<td><p>Inverse variance of PMDEC</p></td>
+</tr>
+<tr class="row-even"><td><p>PHOTSYS</p></td>
+<td><p>char[1]</p></td>
+<td></td>
+<td><p>‘N’ for the MzLS/BASS photometric system, ‘S’ for DECaLS</p></td>
+</tr>
+<tr class="row-odd"><td><p>TARGETID</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Unique targeting ID</p></td>
+</tr>
+<tr class="row-even"><td><p>DESI_TARGET</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>DESI (dark time program) target selection bitmask</p></td>
+</tr>
+<tr class="row-odd"><td><p>BGS_TARGET</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>BGS (bright time program) target selection bitmask</p></td>
+</tr>
+<tr class="row-even"><td><p>MWS_TARGET</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>MWS (bright time program) target selection bitmask</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUBPRIORITY</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Random subpriority [0-1] to break assignment ties</p></td>
+</tr>
+<tr class="row-even"><td><p>OBSCONDITIONS</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Flag target to be observed in combinations of dark/bright observing layer</p></td>
+</tr>
+<tr class="row-odd"><td><p>PRIORITY_INIT</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Initial priority for target calculated across target selection bitmasks and OBSCONDITIONS</p></td>
+</tr>
+<tr class="row-even"><td><p>NUMOBS_INIT</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Initial number of observations for target calculated across target selection bitmasks and OBSCONDITIONS</p></td>
+</tr>
+<tr class="row-odd"><td><p>SCND_TARGET</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>SCND (secondary program) target selection bitmask</p></td>
+</tr>
+<tr class="row-even"><td><p>HPXPIXEL</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>HEALPixel containing target at HPXNSIDE</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="hdu2">
+<h3>HDU2<a class="headerlink" href="#hdu2" title="Permalink to this heading"></a></h3>
+<p>EXTNAME = INFILES</p>
+<p>Files used to produce target table</p>
+<section id="id1">
+<h4>Required Header Keywords<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>152</p></td>
+<td><p>int</p></td>
+<td><p>width of table in bytes</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>6</p></td>
+<td><p>int</p></td>
+<td><p>number of rows in table</p></td>
+</tr>
+</tbody>
+</table>
+</details></section>
+<section id="id2">
+<h4>Required Data Table Columns<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h4>
+<table class="columns docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Units</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>FILENAME</p></td>
+<td><p>char[88]</p></td>
+<td></td>
+<td><p><a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> sweep files associated with this HEALPixel</p></td>
+</tr>
+<tr class="row-odd"><td><p>SHA256</p></td>
+<td><p>char[64]</p></td>
+<td></td>
+<td><p>Checksum for each <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">LS</a> sweep file</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
+<p>Some units in this file do not conform to the FITS standard:</p>
+<ul class="simple">
+<li><p>deg^-2 is incorrectly recorded as 1/deg^2</p></li>
+<li><p>nanomaggy^-2 is incorrectly recorded as 1/nanomaggy^2</p></li>
+<li><p>arcsec^-2 is incorrectly recorded as 1/arcsec^2</p></li>
+<li><p>mas^-2 is incorrectly recorded as 1/mas^2</p></li>
+</ul>
+<p>Such issues can typically be fixed by parsing the unit through astropy after reading in a Table, e.g.:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span>
+<span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">Table</span>
+<span class="n">objs</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">objs</span><span class="p">[</span><span class="s2">&quot;RA_IVAR&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unit</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>In general, the above format contains:</p>
+<ul class="simple">
+<li><p>Columns that were used by target selection (e.g. FLUX_G/R/Z).</p></li>
+<li><p>Columns needed by fiber assignment (e.g. RA, DEC).</p></li>
+<li><p>Columns needed for traceability (e.g. BRICKNAME, TARGETID, DESI_TARGET, BGS_TARGET, MWS_TARGET).</p></li>
+</ul>
+<p>FRACFLUX and FRACMASKED are profile-weighted quantities.</p>
+<p>SUBPRIORITY, OBSCONDITIONS, PRIORITY_INIT, NUMOBS_INIT, PHOTSYS, TARGETID,
+DESI_TARGET, BGS_TARGET, MWS_TARGET, SCND_TARGET and HPXPIXEL are created by target selection;
+the rest are passed through from the original Gaia files.</p>
+<p>As the BACKUP files are derived solely using Gaia, quantities from the <a class="reference external" href="https://www.legacysurvey.org/">Legacy Surveys</a> that aren’t also
+in Gaia are populated with meaningless values.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="BACKUP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../../../skies-supp/index.html" class="btn btn-neutral float-right" title="skies-supp" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014-2025, DESI Collaboration.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
