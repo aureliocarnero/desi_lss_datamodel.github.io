@@ -1,0 +1,1267 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fvc-primary-EXPID &mdash; desidatamodel 25.4.dev1530 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/desidatamodel.css" />
+
+  
+      <script src="../../../_static/jquery.js"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+      <script src="../../../_static/doctools.js"></script>
+      <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="FVC-measure-EXPID" href="FVC-measure-EXPID.html" />
+    <link rel="prev" title="fvc-EXPID" href="fvc-EXPID.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            desidatamodel
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../DESI_ROOT/vac/index.html">vac/ : Value Added Catalogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DESI_ROOT/index.html">$DESI_ROOT : represents the top level of the DESI directory tree.</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">$DESI_SPECTRO_DATA : raw data</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">NIGHT</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">EXPID</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="centroids-EXPID.html">centroids-{expid}.json : Guide camera centroids</a></li>
+<li class="toctree-l4"><a class="reference internal" href="coordinates-EXPID.html">coordinates-{expid}.fits : Coordinates file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="desi-EXPID.html">desi-{expid}.fits.fz : Raw data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="etc-EXPID.html">etc-{expid}.json : Exposure Time Calculator (ETC) analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fiberassign-TILEID.html">fiberassign-{tileid}.fits.gz : Table of which fibers were assigned to which targets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fibermap-EXPID.html">fibermap-{expid}.fits : Table of which fibers were assigned to which targets (*obsolete*)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="focus-EXPID.html">focus-{expid}.fits.fz : Placeholder for focus GFA raw data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fvc-EXPID.html">fvc-{expid}.fits.fz : Fiber View Camera data</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">fvc-primary-{expid}.fits : Fiber View Camera data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FVC-measure-EXPID.html">FVC-measure-{expid}.fits : Fiber View Camera data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gfa-EXPID.html">gfa-{expid}.fits : GFA file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="guide-EXPID.html">guide-{expid}.fits.fz : Placeholder for guide GFA raw data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="guide-rois-EXPID.html">guide-rois-{expid}.fits.fz : Placeholder for guide GFA raw data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="manifest_EXPID.html">manifest_{expid}.json : Manifest file used in early commissioning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pm-EXPID.html">pm-{expid}.fits : Platemaker data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="request-EXPID.html">request-{expid}.json : Commands used to initiate an exposure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sky-EXPID.html">sky-{expid}.fits.fz : Placeholder for guide GFA raw data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DESI_SPECTRO_REDUX/index.html">$DESI_SPECTRO_REDUX : processed spectro data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DESI_SPECTRO_SIM/index.html">$DESI_SPECTRO_SIM : simulated spectro data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DESI_SPECTRO_CALIB/index.html">$DESI_SPECTRO_CALIB : spectro calibration data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DESI_SURVEYOPS/index.html">$DESI_SURVEYOPS : data files used for day-to-day survey operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DESI_TARGET/index.html">$DESI_TARGET : target selection and fiber assignment (see also Myers et al. 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DESIMODEL/index.html">$DESIMODEL : data used for simulating DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DESISURVEY_OUTPUT/index.html">$DESISURVEY_OUTPUT : outputs from desisurvey and surveysim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../PROTODESI/index.html">$PROTODESI : data and logs from the ProtoDESI campaign</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../bitmasks.html">Bit Masks in DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../column_descriptions.html">Standard Column Descriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../envvar.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../units.html">Units in data files</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../datamodel.html">Contributing to desidatamodel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">desidatamodel API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changes.html">desidatamodel Change Log</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">desidatamodel</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">DESI_SPECTRO_DATA</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">NIGHT</a></li>
+          <li class="breadcrumb-item"><a href="index.html">EXPID</a></li>
+      <li class="breadcrumb-item active">fvc-primary-EXPID</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/DESI_SPECTRO_DATA/NIGHT/EXPID/fvc-primary-EXPID.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="fvc-primary-expid">
+<h1>fvc-primary-EXPID<a class="headerlink" href="#fvc-primary-expid" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Summary<span class="colon">:</span></dt>
+<dd class="field-odd"><p>This file type is found in early commissioning data, but should
+be considered obsolete.</p>
+</dd>
+<dt class="field-even">Naming Convention<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">fvc-primary-EXPID.fits</span></code>, where EXPID is the zero-padded
+8-digit exposure ID.</p>
+</dd>
+<dt class="field-odd">Regex<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">fvc-primary-[0-9]{8}\.fits</span></code></p>
+</dd>
+<dt class="field-even">File Type<span class="colon">:</span></dt>
+<dd class="field-even"><p>FITS, 19 KB</p>
+</dd>
+</dl>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Number</p></th>
+<th class="head"><p>EXTNAME</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Contents</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#hdu0">HDU0</a></p></td>
+<td><p>fvc</p></td>
+<td><p>IMAGE</p></td>
+<td><p>TODO: description needed</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="fits-header-units">
+<h2>FITS Header Units<a class="headerlink" href="#fits-header-units" title="Permalink to this heading"></a></h2>
+<section id="hdu0">
+<h3>HDU0<a class="headerlink" href="#hdu0" title="Permalink to this heading"></a></h3>
+<p>EXTNAME = fvc</p>
+<p>TODO: description needed</p>
+<section id="required-header-keywords">
+<h4>Required Header Keywords<a class="headerlink" href="#required-header-keywords" title="Permalink to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>FVCTIME</p></td>
+<td><p>2.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>EXPTIME</p></td>
+<td><p>None</p></td>
+<td><p>Unknown</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>REQTIME</p></td>
+<td><p>2.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>IMAGECAM</p></td>
+<td><p>FVC</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>EXPID</p></td>
+<td><p>51406</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>OBSERVER</p></td>
+<td><p>DESIObserver</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>PROPID</p></td>
+<td><p>2019B-5000</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>PROGRAM</p></td>
+<td><p>FVC alt-az dome closed</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>LEAD</p></td>
+<td><p>RunManager</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>RADESYS</p></td>
+<td><p>FK5</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TIMESYS</p></td>
+<td><p>UTC</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>EPOCH</p></td>
+<td><p>2000.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DOSVER</p></td>
+<td><p>trunk</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>OCSVER</p></td>
+<td><p>1.2</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>INIFILE</p></td>
+<td><p>/data/msdos/dos_home/architectures/kpno/desi.ini</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>INSTRUME</p></td>
+<td><p>DESI</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CONSTVER</p></td>
+<td><p>DESI:CURRENT</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CORRCTOR</p></td>
+<td><p>DESI Corrector</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TELESCOP</p></td>
+<td><p>KPNO 4.0-m telescope</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>OBSERVAT</p></td>
+<td><p>KPNO</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>OBS-ELEV</p></td>
+<td><p>2097.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>OBS-LAT</p></td>
+<td><p>31.96403</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>OBS-LONG</p></td>
+<td><p>-111.59989</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>NIGHT</p></td>
+<td><p>20200220</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DATE-OBS</p></td>
+<td><p>2020-02-21T11:04:11.878701</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>MJD-OBS</p></td>
+<td><p>58900.4612486</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>OPENSHUT</p></td>
+<td><p>2020-02-21T11:04:11.878701</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>ST</p></td>
+<td><p>13:41:09.750</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>SEQUENCE</p></td>
+<td><p>FVC</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>FLAVOR</p></td>
+<td><p>science</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DELTARA</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DELTADEC</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>EXCLUDED</p></td>
+<td></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>GUIDMODE</p></td>
+<td><p>catalog</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>MANIFEST</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>OBJECT</p></td>
+<td></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>SEQID</p></td>
+<td><p>20 requests</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>SEQTOT</p></td>
+<td><p>20</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>SEQNUM</p></td>
+<td><p>5</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CAMSHUT</p></td>
+<td><p>open</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>INPOS</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>INCTRL</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DOMINPOS</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>WHITESPT</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ZENITH</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>SEANNEX</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>BEYONDP</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>SKYRA</p></td>
+<td><p>205.295743</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>SKYDEC</p></td>
+<td><p>-28.030359</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TARGTRA</p></td>
+<td><p>204.369079</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TARGTDEC</p></td>
+<td><p>-28.0367</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TARGTAZ</p></td>
+<td><p>180.937824</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TARGTEL</p></td>
+<td><p>29.993611</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TRGTOFFR</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TRGTOFFD</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>GUIDOFFR</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>GUIDOFFD</p></td>
+<td><p>-0.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>MNTOFFR</p></td>
+<td><p>-0.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>MNTOFFD</p></td>
+<td><p>-0.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>AIRMASS</p></td>
+<td><p>1.994121</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>MOUNTHA</p></td>
+<td><p>-0.006443</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>MOUNTAZ</p></td>
+<td><p>179.993433</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>MOUNTEL</p></td>
+<td><p>30.006341</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>MOUNTDEC</p></td>
+<td><p>-28.030359</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>PARALLAC</p></td>
+<td><p>-0.006312</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>ZD</p></td>
+<td><p>59.993659</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TCSST</p></td>
+<td><p>13:41:09.432</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TCSMJD</p></td>
+<td><p>58900.461678</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DOMEAZ</p></td>
+<td><p>184.424</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>PMREADY</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>MOONRA</p></td>
+<td><p>310.75149</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>MOONDEC</p></td>
+<td><p>-20.881956</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TCSKRA</p></td>
+<td><p>0.15 0.003 0.00003</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TCSKDEC</p></td>
+<td><p>0.15 0.003 0.00003</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TCSGRA</p></td>
+<td><p>0.3</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TCSGDEC</p></td>
+<td><p>0.3</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TCSMFRA</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TCSMFDEC</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TCSPIRA</p></td>
+<td><p>1.0,0.0,0.0,0.0</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TCSPIDEC</p></td>
+<td><p>1.0,1.0,0.0,0.0</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ADC1PHI</p></td>
+<td><p>359.999931</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>ADC2PHI</p></td>
+<td><p>0.000101</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ADC1HOME</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>ADC2HOME</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ADC1NREV</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>ADC2NREV</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ADC1STAT</p></td>
+<td><p>STOPPED</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>ADC2STAT</p></td>
+<td><p>STOPPED</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>HEXPOS</p></td>
+<td><p>1139.5,-480.5,61.0,-3.1,25.0,-0.0</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>HEXTRIM</p></td>
+<td><p>0.0,0.0,-46.0,0.0,0.0,0.0</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ROTENBLD</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>ROTOFFST</p></td>
+<td><p>153.1</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ROTRATE</p></td>
+<td><p>0.496</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>UPSSTAT</p></td>
+<td><p>System Normal - On Line(7)</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>FIDUCIAL</p></td>
+<td><p>off</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>FOCUS</p></td>
+<td><p>1139.5,-480.5,61.0,-3.1,25.0,-0.0</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>COMPAMB</p></td>
+<td><p>19.6</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>COMPTEMP</p></td>
+<td><p>20.4</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>COMPDEW</p></td>
+<td><p>-2.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>COMPHUM</p></td>
+<td><p>22.1</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ALARM</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>ALARM-ON</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>SECLEFT</p></td>
+<td><p>5922.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>BATTERY</p></td>
+<td><p>100.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>INAMPS</p></td>
+<td><p>65.6</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>OUTWATTS</p></td>
+<td><p>4500.0,6600.0,4400.0</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TPMAVERT</p></td>
+<td><p>10.927</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TPMDESIT</p></td>
+<td><p>8.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TSERVO</p></td>
+<td><p>40.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TAIRTEMP</p></td>
+<td><p>11.068</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TDEWPNT</p></td>
+<td><p>-3.42</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TAIRFLOW</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TPR1HUM</p></td>
+<td><p>-100.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TPR1TEMP</p></td>
+<td><p>-100.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TPR2HUM</p></td>
+<td><p>-99.99</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TPR2TEMP</p></td>
+<td><p>-99.99</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TFLOWIN</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TFLOWOUT</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TPMRTDT</p></td>
+<td><p>-99.9</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TPMNIBT</p></td>
+<td><p>10.6</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TPMEIBT</p></td>
+<td><p>10.7</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TPMSIBT</p></td>
+<td><p>10.7</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TPMWIBT</p></td>
+<td><p>10.5</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TPMNOBT</p></td>
+<td><p>11.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TPMEOBT</p></td>
+<td><p>10.6</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TPMSOBT</p></td>
+<td><p>10.7</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TPMWOBT</p></td>
+<td><p>10.6</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TPMNITT</p></td>
+<td><p>10.7</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TPMEITT</p></td>
+<td><p>10.7</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TPMSITT</p></td>
+<td><p>10.8</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TPMWITT</p></td>
+<td><p>10.7</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TPMNOTT</p></td>
+<td><p>11.2</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TPMEOTT</p></td>
+<td><p>11.1</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TPMSOTT</p></td>
+<td><p>11.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TPMWOTT</p></td>
+<td><p>11.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TGLYCOLI</p></td>
+<td><p>12.3</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TGLYCOLO</p></td>
+<td><p>12.1</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TAIRITMP</p></td>
+<td><p>12.2</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TAIROTMP</p></td>
+<td><p>12.2</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TTRUNTTT</p></td>
+<td><p>11.7</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TTRUETTT</p></td>
+<td><p>11.7</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TTRUSTTT</p></td>
+<td><p>11.7</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TTRUWTTT</p></td>
+<td><p>11.7</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TTRUNTBT</p></td>
+<td><p>11.6</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TTRUETBT</p></td>
+<td><p>11.5</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TTRUSTBT</p></td>
+<td><p>11.7</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TTRUWTBT</p></td>
+<td><p>11.4</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TTRUSTST</p></td>
+<td><p>12.3</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TTRUTSBT</p></td>
+<td><p>12.4</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TTRUTSMT</p></td>
+<td><p>12.5</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TTRUTSTT</p></td>
+<td><p>12.3</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TTRSTEMP</p></td>
+<td><p>12.1</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TTRWTEMP</p></td>
+<td><p>11.9</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>THINGES</p></td>
+<td><p>12.3</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>THINGEW</p></td>
+<td><p>11.8</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TCOSTEMP</p></td>
+<td><p>21.7</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TCOWTEMP</p></td>
+<td><p>21.6</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TCIBTEMP</p></td>
+<td><p>21.6</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TCIMTEMP</p></td>
+<td><p>21.6</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TCITTEMP</p></td>
+<td><p>21.7</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TCSITEMP</p></td>
+<td><p>11.5</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TCSOTEMP</p></td>
+<td><p>11.9</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TPCITEMP</p></td>
+<td><p>11.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TPCOTEMP</p></td>
+<td><p>11.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TCASITMP</p></td>
+<td><p>10.6</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TCASOTMP</p></td>
+<td><p>11.9</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TDBTEMP</p></td>
+<td><p>11.3</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TPMSTAT</p></td>
+<td><p>ready</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TRUSTEMP</p></td>
+<td><p>12.4</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>PMIRTEMP</p></td>
+<td><p>10.9</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>PLATFORM</p></td>
+<td><p>11.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>STAIRSU</p></td>
+<td><p>11.1</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>STAIRSM</p></td>
+<td><p>11.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>STAIRSL</p></td>
+<td><p>11.1</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DOMELUP</p></td>
+<td><p>10.9</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DOMELLOW</p></td>
+<td><p>11.3</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DOMEBUP</p></td>
+<td><p>11.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DOMEBLOW</p></td>
+<td><p>11.1</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DOMERUP</p></td>
+<td><p>10.8</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DOMERLOW</p></td>
+<td><p>11.2</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>NWALLIN</p></td>
+<td><p>15.1</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>WWALLIN</p></td>
+<td><p>14.1</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>FLOOR</p></td>
+<td><p>13.7</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>SHACKC</p></td>
+<td><p>16.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>SHACKW</p></td>
+<td><p>14.3</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>AMNIENTN</p></td>
+<td><p>14.3</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>AMBIENTS</p></td>
+<td><p>15.7</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>NWALLOUT</p></td>
+<td><p>10.2</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>WWALLOUT</p></td>
+<td><p>11.1</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CFLOOR</p></td>
+<td><p>10.2</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TELBASE</p></td>
+<td><p>10.9</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>UTILROOM</p></td>
+<td><p>11.3</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>UTILWALL</p></td>
+<td><p>11.4</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>EWALLCOU</p></td>
+<td><p>11.1</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>EWALLCMP</p></td>
+<td><p>11.7</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>ROOF</p></td>
+<td><p>11.1</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ROOFAMB</p></td>
+<td><p>10.9</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DOMSHUTU</p></td>
+<td><p>not open</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DOMSHUTL</p></td>
+<td><p>not open</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DOMLIGHH</p></td>
+<td><p>off</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DOMLIGHL</p></td>
+<td><p>off</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>PMCOVER</p></td>
+<td><p>open</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>WINDSPD</p></td>
+<td><p>11.2</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>WINDDIR</p></td>
+<td><p>209.6</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>HUMIDITY</p></td>
+<td><p>31.0</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>PRESSURE</p></td>
+<td><p>793.5</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>OUTTEMP</p></td>
+<td><p>11.7</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DEWPOINT</p></td>
+<td><p>-4.9</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>GUST</p></td>
+<td><p>117.6</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>AOS</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</details><p>Empty HDU.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="fvc-EXPID.html" class="btn btn-neutral float-left" title="fvc-EXPID" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="FVC-measure-EXPID.html" class="btn btn-neutral float-right" title="FVC-measure-EXPID" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014-2025, DESI Collaboration.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
