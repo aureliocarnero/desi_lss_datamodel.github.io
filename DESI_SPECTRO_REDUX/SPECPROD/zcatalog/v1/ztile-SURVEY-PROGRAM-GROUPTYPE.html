@@ -1,0 +1,1400 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ztile-SURVEY-PROGRAM-GROUPTYPE.fits &mdash; desidatamodel 25.4.dev1530 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/desidatamodel.css?v=f6dbf8d8" />
+
+  
+      <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../_static/documentation_options.js?v=e580c04a"></script>
+      <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="exposures-SPECPROD.fits" href="../../exposures-SPECPROD.html" />
+    <link rel="prev" title="zpix-SURVEY-PROGRAM.fits" href="zpix-SURVEY-PROGRAM.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            desidatamodel
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../DESI_ROOT/vac/index.html">vac/ : Value Added Catalogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../DESI_ROOT/index.html">$DESI_ROOT : represents the top level of the DESI directory tree.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../DESI_SPECTRO_DATA/index.html">$DESI_SPECTRO_DATA : raw data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">$DESI_SPECTRO_REDUX : processed spectro data</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">$DESI_SPECTRO_REDUX/$SPECPROD</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../calibnight/index.html">calibnight</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../exposures/index.html">exposures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../healpix/index.html">healpix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../preproc/index.html">preproc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tiles/index.html">tiles</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">zcatalog</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../v0/index.html">v0</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">v1</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../exposures-SPECPROD.html">exposures-SPECPROD.fits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tiles-SPECPROD.html">tiles-SPECPROD.fits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../DESI_SPECTRO_SIM/index.html">$DESI_SPECTRO_SIM : simulated spectro data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../DESI_SPECTRO_CALIB/index.html">$DESI_SPECTRO_CALIB : spectro calibration data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../DESI_SURVEYOPS/index.html">$DESI_SURVEYOPS : data files used for day-to-day survey operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../DESI_TARGET/index.html">$DESI_TARGET : target selection and fiber assignment (see also Myers et al. 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../DESIMODEL/index.html">$DESIMODEL : data used for simulating DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../DESISURVEY_OUTPUT/index.html">$DESISURVEY_OUTPUT : outputs from desisurvey and surveysim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../PROTODESI/index.html">$PROTODESI : data and logs from the ProtoDESI campaign</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../bitmasks.html">Bit Masks in DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../column_descriptions.html">Standard Column Descriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../envvar.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../units.html">Units in data files</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../datamodel.html">Contributing to desidatamodel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api.html">desidatamodel API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../changes.html">desidatamodel Change Log</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">desidatamodel</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../DESI_ROOT/index.html">DESI_ROOT</a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">DESI_SPECTRO_REDUX</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">SPECPROD</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">zcatalog</a></li>
+          <li class="breadcrumb-item"><a href="index.html">v1</a></li>
+      <li class="breadcrumb-item active">ztile-SURVEY-PROGRAM-GROUPTYPE.fits</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/DESI_SPECTRO_REDUX/SPECPROD/zcatalog/v1/ztile-SURVEY-PROGRAM-GROUPTYPE.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ztile-survey-program-grouptype-fits">
+<h1>ztile-SURVEY-PROGRAM-GROUPTYPE.fits<a class="headerlink" href="#ztile-survey-program-grouptype-fits" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Summary<span class="colon">:</span></dt>
+<dd class="field-odd"><p>This file contatenates the individual
+<a class="reference internal" href="../../tiles/GROUPTYPE/TILEID/GROUPID/redrock-SPECTROGRAPH-TILEID-GROUPID.html"><span class="doc">tile-based Redrock redshift catalogs</span></a>
+into a single file per SURVEY, PROGRAM, and spectral GROUPTYPE.</p>
+</dd>
+<dt class="field-even">Naming Convention<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ztile-SURVEY-PROGRAM-GROUPTYPE.fits</span></code>, where <code class="docutils literal notranslate"><span class="pre">SURVEY</span></code> is
+<em>e.g.</em> <code class="docutils literal notranslate"><span class="pre">main</span></code> or <code class="docutils literal notranslate"><span class="pre">sv1</span></code>, <code class="docutils literal notranslate"><span class="pre">PROGRAM</span></code> is <em>e.g.</em> <code class="docutils literal notranslate"><span class="pre">bright</span> <span class="pre">or</span> <span class="pre">``dark</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">GROUPTYPE</span></code> is <code class="docutils literal notranslate"><span class="pre">cumulative</span></code> or <code class="docutils literal notranslate"><span class="pre">pernight</span></code>.</p>
+</dd>
+<dt class="field-odd">Regex<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">ztile-(cmx|main|sv1|sv2|sv3|special)-(backup|bright|dark|other)-(cumulative|perexp|pernight|1x_depth|4x_depth|lowspeed)\.fits</span></code></p>
+</dd>
+<dt class="field-even">File Type<span class="colon">:</span></dt>
+<dd class="field-even"><p>FITS, 4 MB</p>
+</dd>
+</dl>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Number</p></th>
+<th class="head"><p>EXTNAME</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Contents</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#hdu0">HDU0</a></p></td>
+<td><p>PRIMARY</p></td>
+<td><p>IMAGE</p></td>
+<td><p>Empty</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hdu1">HDU1</a></p></td>
+<td><p>ZCATALOG</p></td>
+<td><p>BINTABLE</p></td>
+<td><p>Redshift catalog joined with target catalog</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#hdu2">HDU2</a></p></td>
+<td><p>EXP_FIBERMAP</p></td>
+<td><p>BINTABLE</p></td>
+<td><p>Per-exposure entries from input fibermaps</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="fits-header-units">
+<h2>FITS Header Units<a class="headerlink" href="#fits-header-units" title="Link to this heading"></a></h2>
+<section id="hdu0">
+<h3>HDU0<a class="headerlink" href="#hdu0" title="Link to this heading"></a></h3>
+<p>EXTNAME = PRIMARY</p>
+<section id="required-header-keywords">
+<h4>Required Header Keywords<a class="headerlink" href="#required-header-keywords" title="Link to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CHECKSUM</p></td>
+<td><p>9aaGCVYE9aaECUYE</p></td>
+<td><p>str</p></td>
+<td><p>HDU checksum</p></td>
+</tr>
+<tr class="row-odd"><td><p>DATASUM</p></td>
+<td><p>0</p></td>
+<td><p>str</p></td>
+<td><p>data unit checksum</p></td>
+</tr>
+<tr class="row-even"><td><p>ZCATVER</p></td>
+<td><p>v1</p></td>
+<td><p>str</p></td>
+<td><p>Version of zcatalog files</p></td>
+</tr>
+</tbody>
+</table>
+</details><p>Empty HDU.</p>
+</section>
+</section>
+<section id="hdu1">
+<span id="zcatalog-ztile-hdu1"></span><h3>HDU1<a class="headerlink" href="#hdu1" title="Link to this heading"></a></h3>
+<p>EXTNAME = ZCATALOG</p>
+<p>Redshift catalog joined with the targeting metadata from the REDSHIFTS
+and FIBERMAP HDUs of the
+<a class="reference internal" href="../../tiles/GROUPTYPE/TILEID/GROUPID/redrock-SPECTROGRAPH-TILEID-GROUPID.html"><span class="doc">input redrock files</span></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">TEMNAMnn</span></code> and <code class="docutils literal notranslate"><span class="pre">TEMVERnn</span></code> record the redrock template names and versions
+used for the redshift fits.</p>
+<section id="id1">
+<h4>Required Header Keywords<a class="headerlink" href="#id1" title="Link to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>677</p></td>
+<td><p>int</p></td>
+<td><p>width of table in bytes</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>5000</p></td>
+<td><p>int</p></td>
+<td><p>number of rows in table</p></td>
+</tr>
+<tr class="row-even"><td><p>LONGSTRN</p></td>
+<td><p>OGIP 1.0</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>RRVER</p></td>
+<td><p>0.15.0</p></td>
+<td><p>str</p></td>
+<td><p>Redrock version</p></td>
+</tr>
+<tr class="row-even"><td><p>TEMNAM00</p></td>
+<td><p>GALAXY</p></td>
+<td><p>str</p></td>
+<td><p>Redrock template 00 name</p></td>
+</tr>
+<tr class="row-odd"><td><p>TEMVER00</p></td>
+<td><p>2.6</p></td>
+<td><p>str</p></td>
+<td><p>Redrock template 00 version</p></td>
+</tr>
+<tr class="row-even"><td><p>TEMNAM01</p></td>
+<td><p>QSO:::HIZ</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TEMVER01</p></td>
+<td><p>0.1</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TEMNAM02</p></td>
+<td><p>QSO:::LOZ</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TEMVER02</p></td>
+<td><p>1.0</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TEMNAM03</p></td>
+<td><p>STAR:::A</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TEMVER03</p></td>
+<td><p>0.1</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TEMNAM04</p></td>
+<td><p>STAR:::B</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TEMVER04</p></td>
+<td><p>0.1</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TEMNAM05</p></td>
+<td><p>STAR:::CV</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TEMVER05</p></td>
+<td><p>0.1</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TEMNAM06</p></td>
+<td><p>STAR:::F</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TEMVER06</p></td>
+<td><p>0.1</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TEMNAM07</p></td>
+<td><p>STAR:::G</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TEMVER07</p></td>
+<td><p>0.1</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TEMNAM08</p></td>
+<td><p>STAR:::K</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TEMVER08</p></td>
+<td><p>0.1</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TEMNAM09</p></td>
+<td><p>STAR:::M</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TEMVER09</p></td>
+<td><p>0.1</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TEMNAM10</p></td>
+<td><p>STAR:::WD</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TEMVER10</p></td>
+<td><p>0.1</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>SPGRP</p></td>
+<td><p>cumulative</p></td>
+<td><p>str</p></td>
+<td><p>Spectral grouping method</p></td>
+</tr>
+<tr class="row-odd"><td><p>SURVEY <a class="footnote-reference brackets" href="#id23" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>sv3</p></td>
+<td><p>str</p></td>
+<td><p>DESI sub-survey (e.g. sv1, sv3, main)</p></td>
+</tr>
+<tr class="row-even"><td><p>PROGRAM <a class="footnote-reference brackets" href="#id23" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>dark</p></td>
+<td><p>str</p></td>
+<td><p>DESI program (e.g. dark, bright)</p></td>
+</tr>
+<tr class="row-odd"><td><p>CHECKSUM</p></td>
+<td><p>QA6lQ26iQ96iQ96i</p></td>
+<td><p>str</p></td>
+<td><p>HDU checksum</p></td>
+</tr>
+<tr class="row-even"><td><p>DATASUM</p></td>
+<td><p>4284326946</p></td>
+<td><p>str</p></td>
+<td><p>data unit checksum</p></td>
+</tr>
+<tr class="row-odd"><td><p>ZCATVER</p></td>
+<td><p>v1</p></td>
+<td><p>str</p></td>
+<td><p>Version of zcatalog files</p></td>
+</tr>
+</tbody>
+</table>
+</details></section>
+<section id="required-data-table-columns">
+<h4>Required Data Table Columns<a class="headerlink" href="#required-data-table-columns" title="Link to this heading"></a></h4>
+<table class="columns docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Units</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>TARGETID</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Unique DESI target ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>SURVEY <a class="footnote-reference brackets" href="#id23" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>char[7]</p></td>
+<td></td>
+<td><p>Survey name</p></td>
+</tr>
+<tr class="row-even"><td><p>PROGRAM <a class="footnote-reference brackets" href="#id23" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>char[6]</p></td>
+<td></td>
+<td><p>DESI program type - BRIGHT, DARK, BACKUP, OTHER</p></td>
+</tr>
+<tr class="row-odd"><td><p>FIRSTNIGHT</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>KPNO Calendar Date when the first exposure was obtained (regardless of data quality)</p></td>
+</tr>
+<tr class="row-even"><td><p>LASTNIGHT</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Final night of observation included in a series of coadds</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPGRPVAL</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Value by which spectra are grouped for a coadd (e.g. a YEARMMDD night)</p></td>
+</tr>
+<tr class="row-even"><td><p>Z</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Redshift measured by Redrock</p></td>
+</tr>
+<tr class="row-odd"><td><p>ZERR</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Redshift error from redrock</p></td>
+</tr>
+<tr class="row-even"><td><p>ZWARN</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Redshift warning bitmask from Redrock</p></td>
+</tr>
+<tr class="row-odd"><td><p>CHI2</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Best fit chi squared</p></td>
+</tr>
+<tr class="row-even"><td><p>COEFF</p></td>
+<td><p>float64[10]</p></td>
+<td></td>
+<td><p>Redrock template coefficients</p></td>
+</tr>
+<tr class="row-odd"><td><p>NPIXELS</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Number of unmasked pixels contributing to the Redrock fit</p></td>
+</tr>
+<tr class="row-even"><td><p>SPECTYPE</p></td>
+<td><p>char[6]</p></td>
+<td></td>
+<td><p>Spectral type of Redrock best fit template (e.g. GALAXY, QSO, STAR)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUBTYPE</p></td>
+<td><p>char[20]</p></td>
+<td></td>
+<td><p>Spectral subtype</p></td>
+</tr>
+<tr class="row-even"><td><p>NCOEFF</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Number of Redrock template coefficients</p></td>
+</tr>
+<tr class="row-odd"><td><p>DELTACHI2</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>chi2 difference between first- and second-best redrock template fits</p></td>
+</tr>
+<tr class="row-even"><td><p>PETAL_LOC</p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>Petal location [0-9]</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEVICE_LOC</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Device location on focal plane [0-523]</p></td>
+</tr>
+<tr class="row-even"><td><p>LOCATION</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Location on the focal plane PETAL_LOC*1000 + DEVICE_LOC</p></td>
+</tr>
+<tr class="row-odd"><td><p>FIBER</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Fiber ID on the CCDs [0-4999]</p></td>
+</tr>
+<tr class="row-even"><td><p>COADD_FIBERSTATUS</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>bitwise-AND of input FIBERSTATUS</p></td>
+</tr>
+<tr class="row-odd"><td><p>TARGET_RA</p></td>
+<td><p>float64</p></td>
+<td><p>deg</p></td>
+<td><p>Barycentric Right Ascension in ICRS</p></td>
+</tr>
+<tr class="row-even"><td><p>TARGET_DEC</p></td>
+<td><p>float64</p></td>
+<td><p>deg</p></td>
+<td><p>Barycentric Declination in ICRS</p></td>
+</tr>
+<tr class="row-odd"><td><p>PMRA</p></td>
+<td><p>float32</p></td>
+<td><p>mas yr^-1</p></td>
+<td><p>Reference catalog proper motion in the RA direction</p></td>
+</tr>
+<tr class="row-even"><td><p>PMDEC</p></td>
+<td><p>float32</p></td>
+<td><p>mas yr^-1</p></td>
+<td><p>Reference catalog proper motion in the Dec direction</p></td>
+</tr>
+<tr class="row-odd"><td><p>REF_EPOCH</p></td>
+<td><p>float32</p></td>
+<td><p>yr</p></td>
+<td><p>Reference catalog reference epoch (<em>e.g.</em>, 2015.5 for <a class="reference external" href="https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html">Gaia</a> DR2)</p></td>
+</tr>
+<tr class="row-even"><td><p>LAMBDA_REF</p></td>
+<td><p>float32</p></td>
+<td><p>Angstrom</p></td>
+<td><p>Requested wavelength at which targets should be centered on fibers</p></td>
+</tr>
+<tr class="row-odd"><td><p>FA_TARGET</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Targeting bit internally used by fiberassign (linked with FA_TYPE)</p></td>
+</tr>
+<tr class="row-even"><td><p>FA_TYPE</p></td>
+<td><p>binary</p></td>
+<td></td>
+<td><p>Fiberassign internal target type (science, standard, sky, safe, suppsky)</p></td>
+</tr>
+<tr class="row-odd"><td><p>OBJTYPE</p></td>
+<td><p>char[3]</p></td>
+<td></td>
+<td><p>Object type: TGT, SKY, NON, BAD</p></td>
+</tr>
+<tr class="row-even"><td><p>FIBERASSIGN_X</p></td>
+<td><p>float32</p></td>
+<td><p>mm</p></td>
+<td><p>Fiberassign expected CS5 X location on focal plane</p></td>
+</tr>
+<tr class="row-odd"><td><p>FIBERASSIGN_Y</p></td>
+<td><p>float32</p></td>
+<td><p>mm</p></td>
+<td><p>Fiberassign expected CS5 Y location on focal plane</p></td>
+</tr>
+<tr class="row-even"><td><p>PRIORITY</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Target current priority</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUBPRIORITY</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Random subpriority [0-1] to break assignment ties</p></td>
+</tr>
+<tr class="row-even"><td><p>OBSCONDITIONS</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Flag the target to be observed in graytime.</p></td>
+</tr>
+<tr class="row-odd"><td><p>RELEASE</p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>Legacy Surveys (<a class="reference external" href="https://www.legacysurvey.org/">LS</a>) <a class="reference external" href="https://www.legacysurvey.org/release/">Release</a></p></td>
+</tr>
+<tr class="row-even"><td><p>BRICKNAME</p></td>
+<td><p>char[8]</p></td>
+<td></td>
+<td><p>Brick name from tractor input</p></td>
+</tr>
+<tr class="row-odd"><td><p>BRICKID</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Brick ID from tractor input</p></td>
+</tr>
+<tr class="row-even"><td><p>BRICK_OBJID</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>OBJID (unique to brick, but not to file)</p></td>
+</tr>
+<tr class="row-odd"><td><p>MORPHTYPE</p></td>
+<td><p>char[4]</p></td>
+<td></td>
+<td><p><a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/#goodness-of-fits-and-morphological-type">Morphological Model</a> type</p></td>
+</tr>
+<tr class="row-even"><td><p>EBV</p></td>
+<td><p>float32</p></td>
+<td><p>mag</p></td>
+<td><p>Galactic extinction E(B-V) reddening from <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S/abstract">SFD98</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>FLUX_G</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p><a class="reference external" href="https://www.legacysurvey.org/">LS</a> flux from tractor input (g)</p></td>
+</tr>
+<tr class="row-even"><td><p>FLUX_R</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p><a class="reference external" href="https://www.legacysurvey.org/">LS</a> flux from tractor input (r)</p></td>
+</tr>
+<tr class="row-odd"><td><p>FLUX_Z</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p><a class="reference external" href="https://www.legacysurvey.org/">LS</a> flux from tractor input (z)</p></td>
+</tr>
+<tr class="row-even"><td><p>FLUX_W1</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>WISE flux in W1</p></td>
+</tr>
+<tr class="row-odd"><td><p>FLUX_W2</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>WISE flux in W2</p></td>
+</tr>
+<tr class="row-even"><td><p>FLUX_IVAR_G</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy^-2</p></td>
+<td><p>Inverse Variance of FLUX_G</p></td>
+</tr>
+<tr class="row-odd"><td><p>FLUX_IVAR_R</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy^-2</p></td>
+<td><p>Inverse Variance of FLUX_R</p></td>
+</tr>
+<tr class="row-even"><td><p>FLUX_IVAR_Z</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy^-2</p></td>
+<td><p>Inverse Variance of FLUX_Z</p></td>
+</tr>
+<tr class="row-odd"><td><p>FLUX_IVAR_W1</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy^-2</p></td>
+<td><p>Inverse Variance of FLUX_W1</p></td>
+</tr>
+<tr class="row-even"><td><p>FLUX_IVAR_W2</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy^-2</p></td>
+<td><p>Inverse Variance of FLUX_W2</p></td>
+</tr>
+<tr class="row-odd"><td><p>FIBERFLUX_G</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>Predicted g-band flux within a fiber of diameter 1.5 arcsec from this object in 1 arcsec Gaussian seeing</p></td>
+</tr>
+<tr class="row-even"><td><p>FIBERFLUX_R</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>Predicted r-band flux within a fiber of diameter 1.5 arcsec from this object in 1 arcsec Gaussian seeing</p></td>
+</tr>
+<tr class="row-odd"><td><p>FIBERFLUX_Z</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>Predicted z-band flux within a fiber of diameter 1.5 arcsec from this object in 1 arcsec Gaussian seeing</p></td>
+</tr>
+<tr class="row-even"><td><p>FIBERTOTFLUX_G</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>Predicted g-band flux within a fiber of diameter 1.5 arcsec from all sources at this location in 1 arcsec Gaussian seeing</p></td>
+</tr>
+<tr class="row-odd"><td><p>FIBERTOTFLUX_R</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>Predicted r-band flux within a fiber of diameter 1.5 arcsec from all sources at this location in 1 arcsec Gaussian seeing</p></td>
+</tr>
+<tr class="row-even"><td><p>FIBERTOTFLUX_Z</p></td>
+<td><p>float32</p></td>
+<td><p>nanomaggy</p></td>
+<td><p>Predicted z-band flux within a fiber of diameter 1.5 arcsec from all sources at this location in 1 arcsec Gaussian seeing</p></td>
+</tr>
+<tr class="row-odd"><td><p>MASKBITS</p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>Bitwise mask indicating that an object touches a pixel in the <code class="docutils literal notranslate"><span class="pre">coadd/*/*/*maskbits*</span></code> maps, as cataloged on the <a class="reference external" href="https://www.legacysurvey.org/dr9/bitmasks">DR9 bitmasks page</a></p></td>
+</tr>
+<tr class="row-even"><td><p>SERSIC</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Power-law index for the Sersic profile model (<code class="docutils literal notranslate"><span class="pre">type=&quot;SER&quot;</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SHAPE_R</p></td>
+<td><p>float32</p></td>
+<td><p>arcsec</p></td>
+<td><p>Half-light radius of galaxy model for galaxy type <code class="docutils literal notranslate"><span class="pre">type</span></code> (&gt;0)</p></td>
+</tr>
+<tr class="row-even"><td><p>SHAPE_E1</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p><a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/#ellipticities">Ellipticity component</a> 1 of galaxy model for galaxy type <code class="docutils literal notranslate"><span class="pre">type</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>SHAPE_E2</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p><a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/#ellipticities">Ellipticity component</a> 2 of galaxy model for galaxy type <code class="docutils literal notranslate"><span class="pre">type</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>REF_ID</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Tyc1*1,000,000+Tyc2*10+Tyc3 for <a class="reference external" href="https://heasarc.gsfc.nasa.gov/W3Browse/all/tycho2.html">Tycho-2</a>; “sourceid” for <a class="reference external" href="https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html">Gaia</a> DR2</p></td>
+</tr>
+<tr class="row-odd"><td><p>REF_CAT</p></td>
+<td><p>char[2]</p></td>
+<td></td>
+<td><p>Reference catalog source for this star: “T2” for <a class="reference external" href="https://heasarc.gsfc.nasa.gov/W3Browse/all/tycho2.html">Tycho-2</a>, “G2” for <a class="reference external" href="https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html">Gaia</a> DR2, “L3” for the <a class="reference external" href="https://www.legacysurvey.org/sga/sga2020">SGA</a>, empty otherwise</p></td>
+</tr>
+<tr class="row-even"><td><p>GAIA_PHOT_G_MEAN_MAG</p></td>
+<td><p>float32</p></td>
+<td><p>mag</p></td>
+<td><p><a class="reference external" href="https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html">Gaia</a> G band magnitude</p></td>
+</tr>
+<tr class="row-odd"><td><p>GAIA_PHOT_BP_MEAN_MAG</p></td>
+<td><p>float32</p></td>
+<td><p>mag</p></td>
+<td><p><a class="reference external" href="https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html">Gaia</a> BP band magnitude</p></td>
+</tr>
+<tr class="row-even"><td><p>GAIA_PHOT_RP_MEAN_MAG</p></td>
+<td><p>float32</p></td>
+<td><p>mag</p></td>
+<td><p><a class="reference external" href="https://gea.esac.esa.int/archive/documentation//GDR2/Gaia_archive/chap_datamodel/sec_dm_main_tables/ssec_dm_gaia_source.html">Gaia</a> RP band magnitude</p></td>
+</tr>
+<tr class="row-odd"><td><p>PARALLAX</p></td>
+<td><p>float32</p></td>
+<td><p>mas</p></td>
+<td><p>Reference catalog parallax</p></td>
+</tr>
+<tr class="row-even"><td><p>PHOTSYS</p></td>
+<td><p>char[1]</p></td>
+<td></td>
+<td><p>‘N’ for the MzLS/BASS photometric system, ‘S’ for DECaLS</p></td>
+</tr>
+<tr class="row-odd"><td><p>PRIORITY_INIT</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Target initial priority from target selection bitmasks and OBSCONDITIONS</p></td>
+</tr>
+<tr class="row-even"><td><p>NUMOBS_INIT</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Initial number of observations for target calculated across target selection bitmasks and OBSCONDITIONS</p></td>
+</tr>
+<tr class="row-odd"><td><p>CMX_TARGET <a class="footnote-reference brackets" href="#id23" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Target selection bitmask for commissioning</p></td>
+</tr>
+<tr class="row-even"><td><p>SV1_DESI_TARGET <a class="footnote-reference brackets" href="#id23" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>DESI (dark time program) target selection bitmask for SV1</p></td>
+</tr>
+<tr class="row-odd"><td><p>SV1_BGS_TARGET <a class="footnote-reference brackets" href="#id23" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>BGS (bright time program) target selection bitmask for SV1</p></td>
+</tr>
+<tr class="row-even"><td><p>SV1_MWS_TARGET <a class="footnote-reference brackets" href="#id23" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>MWS (bright time program) target selection bitmask for SV1</p></td>
+</tr>
+<tr class="row-odd"><td><p>SV1_SCND_TARGET <a class="footnote-reference brackets" href="#id23" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Secondary target selection bitmask for SV1</p></td>
+</tr>
+<tr class="row-even"><td><p>SV2_DESI_TARGET <a class="footnote-reference brackets" href="#id23" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>DESI (dark time program) target selection bitmask for SV2</p></td>
+</tr>
+<tr class="row-odd"><td><p>SV2_BGS_TARGET <a class="footnote-reference brackets" href="#id23" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>BGS (bright time program) target selection bitmask for SV2</p></td>
+</tr>
+<tr class="row-even"><td><p>SV2_MWS_TARGET <a class="footnote-reference brackets" href="#id23" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>MWS (bright time program) target selection bitmask for SV2</p></td>
+</tr>
+<tr class="row-odd"><td><p>SV2_SCND_TARGET <a class="footnote-reference brackets" href="#id23" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Secondary target selection bitmask for SV2</p></td>
+</tr>
+<tr class="row-even"><td><p>SV3_DESI_TARGET <a class="footnote-reference brackets" href="#id23" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>DESI (dark time program) target selection bitmask for SV3</p></td>
+</tr>
+<tr class="row-odd"><td><p>SV3_BGS_TARGET <a class="footnote-reference brackets" href="#id23" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>BGS (bright time program) target selection bitmask for SV3</p></td>
+</tr>
+<tr class="row-even"><td><p>SV3_MWS_TARGET <a class="footnote-reference brackets" href="#id23" id="id17" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>MWS (bright time program) target selection bitmask for SV3</p></td>
+</tr>
+<tr class="row-odd"><td><p>SV3_SCND_TARGET <a class="footnote-reference brackets" href="#id23" id="id18" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Secondary target selection bitmask for SV3</p></td>
+</tr>
+<tr class="row-even"><td><p>DESI_TARGET</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>DESI (dark time program) target selection bitmask</p></td>
+</tr>
+<tr class="row-odd"><td><p>BGS_TARGET</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>BGS (bright time program) target selection bitmask</p></td>
+</tr>
+<tr class="row-even"><td><p>MWS_TARGET</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>MWS (bright time program) target selection bitmask</p></td>
+</tr>
+<tr class="row-odd"><td><p>SCND_TARGET</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Secondary target selection bitmask</p></td>
+</tr>
+<tr class="row-even"><td><p>PLATE_RA</p></td>
+<td><p>float64</p></td>
+<td><p>deg</p></td>
+<td><p>Barycentric Right Ascension in ICRS to be used by PlateMaker</p></td>
+</tr>
+<tr class="row-odd"><td><p>PLATE_DEC</p></td>
+<td><p>float64</p></td>
+<td><p>deg</p></td>
+<td><p>Barycentric Declination in ICRS to be used by PlateMaker</p></td>
+</tr>
+<tr class="row-even"><td><p>TILEID</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Unique DESI tile ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>COADD_NUMEXP</p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>Number of exposures in coadd</p></td>
+</tr>
+<tr class="row-even"><td><p>COADD_EXPTIME</p></td>
+<td><p>float32</p></td>
+<td><p>s</p></td>
+<td><p>Summed exposure time for coadd</p></td>
+</tr>
+<tr class="row-odd"><td><p>COADD_NUMNIGHT</p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>Number of nights in coadd</p></td>
+</tr>
+<tr class="row-even"><td><p>COADD_NUMTILE</p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>Number of tiles in coadd</p></td>
+</tr>
+<tr class="row-odd"><td><p>MEAN_DELTA_X</p></td>
+<td><p>float32</p></td>
+<td><p>mm</p></td>
+<td><p>Mean (over exposures) fiber difference requested - actual CS5 X location on focal plane</p></td>
+</tr>
+<tr class="row-even"><td><p>RMS_DELTA_X</p></td>
+<td><p>float32</p></td>
+<td><p>mm</p></td>
+<td><p>RMS (over exposures) of the fiber difference between measured and requested CS5 X location on focal plane</p></td>
+</tr>
+<tr class="row-odd"><td><p>MEAN_DELTA_Y</p></td>
+<td><p>float32</p></td>
+<td><p>mm</p></td>
+<td><p>Mean (over exposures) fiber difference requested - actual CS5 Y location on focal plane</p></td>
+</tr>
+<tr class="row-even"><td><p>RMS_DELTA_Y</p></td>
+<td><p>float32</p></td>
+<td><p>mm</p></td>
+<td><p>RMS (over exposures) of the fiber difference between measured and requested CS5 Y location on focal plane</p></td>
+</tr>
+<tr class="row-odd"><td><p>MEAN_PSF_TO_FIBER_SPECFLUX</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Mean of input exposures fraction of light from point-like source captured by 1.5 arcsec diameter fiber given atmospheric seeing</p></td>
+</tr>
+<tr class="row-even"><td><p>MEAN_FIBER_RA</p></td>
+<td><p>float64</p></td>
+<td><p>deg</p></td>
+<td><p>Mean (over exposures) RA of actual fiber position</p></td>
+</tr>
+<tr class="row-odd"><td><p>STD_FIBER_RA</p></td>
+<td><p>float32</p></td>
+<td><p>arcsec</p></td>
+<td><p>Standard deviation (over exposures) of RA of actual fiber position</p></td>
+</tr>
+<tr class="row-even"><td><p>MEAN_FIBER_DEC</p></td>
+<td><p>float64</p></td>
+<td><p>deg</p></td>
+<td><p>Mean (over exposures) DEC of actual fiber position</p></td>
+</tr>
+<tr class="row-odd"><td><p>STD_FIBER_DEC</p></td>
+<td><p>float32</p></td>
+<td><p>arcsec</p></td>
+<td><p>Standard deviation (over exposures) of DEC of actual fiber position</p></td>
+</tr>
+<tr class="row-even"><td><p>MIN_MJD</p></td>
+<td><p>float64</p></td>
+<td><p>d</p></td>
+<td><p>Minimum value of the Modified Julian Date (when the shutter was open for the first exposure used in the coadded spectrum)</p></td>
+</tr>
+<tr class="row-odd"><td><p>MAX_MJD</p></td>
+<td><p>float64</p></td>
+<td><p>d</p></td>
+<td><p>Maximum value of the Modified Julian Date (when the shutter was open for the last exposure used in the coadded spectrum)</p></td>
+</tr>
+<tr class="row-even"><td><p>MEAN_MJD</p></td>
+<td><p>float64</p></td>
+<td><p>d</p></td>
+<td><p>Mean value of the Modified Julian Date (when the shutter was open for exposures used in the coadded spectrum)</p></td>
+</tr>
+<tr class="row-odd"><td><p>MEAN_FIBER_X</p></td>
+<td><p>float32</p></td>
+<td><p>mm</p></td>
+<td><p>Mean (over exposures) fiber CS5 X location on focal plane</p></td>
+</tr>
+<tr class="row-even"><td><p>MEAN_FIBER_Y</p></td>
+<td><p>float32</p></td>
+<td><p>mm</p></td>
+<td><p>Mean (over exposures) fiber CS5 X location on focal plane</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_GPBDARK_B</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>template (S/N)^2 for dark targets in guider pass band on B</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_ELG_B</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>ELG B template (S/N)^2</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_GPBBRIGHT_B</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>template (S/N)^2 for bright targets in guider pass band on B</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_LYA_B</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>LYA B template (S/N)^2</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_BGS_B</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>BGS B template (S/N)^2</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_GPBBACKUP_B</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>template (S/N)^2 for backup targets in guider pass band on B</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_QSO_B</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>QSO B template (S/N)^2</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_LRG_B</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>LRG B template (S/N)^2</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_GPBDARK_R</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>template (S/N)^2 for dark targets in guider pass band on R</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_ELG_R</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>ELG R template (S/N)^2</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_GPBBRIGHT_R</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>template (S/N)^2 for bright targets in guider pass band on R</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_LYA_R</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>LYA R template (S/N)^2</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_BGS_R</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>BGS R template (S/N)^2</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_GPBBACKUP_R</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>template (S/N)^2 for backup targets in guider pass band on R</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_QSO_R</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>QSO R template (S/N)^2</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_LRG_R</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>LRG R template (S/N)^2</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_GPBDARK_Z</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>template (S/N)^2 for dark targets in guider pass band on Z</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_ELG_Z</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>ELG Z template (S/N)^2</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_GPBBRIGHT_Z</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>template (S/N)^2 for bright targets in guider pass band on Z</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_LYA_Z</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>LYA Z template (S/N)^2</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_BGS_Z</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>BGS Z template (S/N)^2</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_GPBBACKUP_Z</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>template (S/N)^2 for backup targets in guider pass band on Z</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_QSO_Z</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>QSO Z template (S/N)^2</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_LRG_Z</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>LRG Z template (S/N)^2</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_GPBDARK</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>template (S/N)^2 for dark targets in guider pass band</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_ELG</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>ELG template (S/N)^2 summed over B,R,Z</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_GPBBRIGHT</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>template (S/N)^2 for bright targets in guider pass band</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_LYA</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>LYA template (S/N)^2 summed over B,R,Z</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_BGS</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>BGS template (S/N)^2 summed over B,R,Z</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_GPBBACKUP</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>template (S/N)^2 for backup targets in guider pass band</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_QSO</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>QSO template (S/N)^2 summed over B,R,Z</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_LRG</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>LRG template (S/N)^2 summed over B,R,Z</p></td>
+</tr>
+<tr class="row-odd"><td><p>SV_NSPEC <a class="footnote-reference brackets" href="#id23" id="id19" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>Number of coadded spectra for this TARGETID in SV (SV1+2+3)</p></td>
+</tr>
+<tr class="row-even"><td><p>SV_PRIMARY <a class="footnote-reference brackets" href="#id23" id="id20" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>logical</p></td>
+<td></td>
+<td><p>Boolean flag (True/False) for the primary coadded spectrum in SV (SV1+2+3)</p></td>
+</tr>
+<tr class="row-odd"><td><p>MAIN_NSPEC <a class="footnote-reference brackets" href="#id23" id="id21" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>Number of coadded spectra for this TARGETID in Main survey</p></td>
+</tr>
+<tr class="row-even"><td><p>MAIN_PRIMARY <a class="footnote-reference brackets" href="#id23" id="id22" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>logical</p></td>
+<td></td>
+<td><p>Boolean flag (True/False) for the primary coadded spectrum in Main survey</p></td>
+</tr>
+<tr class="row-odd"><td><p>ZCAT_NSPEC</p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>Number of times this TARGETID appears in this catalog</p></td>
+</tr>
+<tr class="row-even"><td><p>ZCAT_PRIMARY</p></td>
+<td><p>logical</p></td>
+<td></td>
+<td><p>Boolean flag (True/False) for the primary coadded spectrum in this zcatalog</p></td>
+</tr>
+<tr class="row-odd"><td><p>DESINAME</p></td>
+<td><p>char[22]</p></td>
+<td></td>
+<td><p>Human readable identifier of a sky location DESI JXXX.XXXX[+/-]YY.YYYY, where X,Y=truncated decimal TARGET_RA, TARGET_DEC, precise to 0.36 arcsec. Multiple objects can map to a single DESINAME if very close on the sky.</p></td>
+</tr>
+</tbody>
+</table>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id23" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id2">1</a>,<a role="doc-backlink" href="#id3">2</a>,<a role="doc-backlink" href="#id4">3</a>,<a role="doc-backlink" href="#id5">4</a>,<a role="doc-backlink" href="#id6">5</a>,<a role="doc-backlink" href="#id7">6</a>,<a role="doc-backlink" href="#id8">7</a>,<a role="doc-backlink" href="#id9">8</a>,<a role="doc-backlink" href="#id10">9</a>,<a role="doc-backlink" href="#id11">10</a>,<a role="doc-backlink" href="#id12">11</a>,<a role="doc-backlink" href="#id13">12</a>,<a role="doc-backlink" href="#id14">13</a>,<a role="doc-backlink" href="#id15">14</a>,<a role="doc-backlink" href="#id16">15</a>,<a role="doc-backlink" href="#id17">16</a>,<a role="doc-backlink" href="#id18">17</a>,<a role="doc-backlink" href="#id19">18</a>,<a role="doc-backlink" href="#id20">19</a>,<a role="doc-backlink" href="#id21">20</a>,<a role="doc-backlink" href="#id22">21</a>)</span>
+<p>Optional</p>
+</aside>
+</aside>
+<p>Notes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>ztile files do not have <code class="docutils literal notranslate"><span class="pre">SV_NSPEC</span></code> or <code class="docutils literal notranslate"><span class="pre">SV_PRIMARY</span></code> columns;
+these are added when the ztile files are combined into
+<a class="reference internal" href="zall-tilecumulative-SPECPROD.html"><span class="doc">zall-tilecumulative</span></a> files.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MAIN_NSPEC</span></code> and <code class="docutils literal notranslate"><span class="pre">MAIN_PRIMARY</span></code> were introduced with DR1 for the DESI Main Survey.</p></li>
+<li><p>The targeting bitmasks <code class="docutils literal notranslate"><span class="pre">DESI_TARGET</span></code>, <code class="docutils literal notranslate"><span class="pre">BGS_TARGET</span></code>, <code class="docutils literal notranslate"><span class="pre">MWS_TARGET</span></code>, and <code class="docutils literal notranslate"><span class="pre">SCND_TARGET</span></code>
+only apply to <code class="docutils literal notranslate"><span class="pre">SURVEY=&quot;main&quot;</span></code> targets; they are <cite>not</cite> set for targets in other surveys.</p></li>
+<li><p>Similarly, the <code class="docutils literal notranslate"><span class="pre">SV1_DESI_TARGET</span></code> etc target masks are only set for the corresponding
+survey; there is no propagation of targeting bits across surveys.</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<section id="hdu2">
+<h3>HDU2<a class="headerlink" href="#hdu2" title="Link to this heading"></a></h3>
+<p>EXTNAME = EXP_FIBERMAP</p>
+<p>Input fibermap entries for columns that apply per-exposure and can’t be coadded,
+e.g. the individual TILEIDs and FIBERs on which each target was observed.</p>
+<section id="id24">
+<h4>Required Header Keywords<a class="headerlink" href="#id24" title="Link to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>162</p></td>
+<td><p>int</p></td>
+<td><p>width of table in bytes</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>5000</p></td>
+<td><p>int</p></td>
+<td><p>number of rows in table</p></td>
+</tr>
+<tr class="row-even"><td><p>CHECKSUM</p></td>
+<td><p>diandZUmdfamdZUm</p></td>
+<td><p>str</p></td>
+<td><p>HDU checksum</p></td>
+</tr>
+<tr class="row-odd"><td><p>DATASUM</p></td>
+<td><p>2531100066</p></td>
+<td><p>str</p></td>
+<td><p>data unit checksum</p></td>
+</tr>
+</tbody>
+</table>
+</details></section>
+<section id="id25">
+<h4>Required Data Table Columns<a class="headerlink" href="#id25" title="Link to this heading"></a></h4>
+<table class="columns docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Units</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>TARGETID</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Unique DESI target ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>PRIORITY</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Target current priority</p></td>
+</tr>
+<tr class="row-even"><td><p>SUBPRIORITY</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Random subpriority [0-1) to break assignment ties</p></td>
+</tr>
+<tr class="row-odd"><td><p>NIGHT</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Night of observation (YYYYMMDD) starting at local noon before observations start</p></td>
+</tr>
+<tr class="row-even"><td><p>EXPID</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>DESI Exposure ID number</p></td>
+</tr>
+<tr class="row-odd"><td><p>MJD</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Modified Julian Date when shutter was opened for this exposure</p></td>
+</tr>
+<tr class="row-even"><td><p>TILEID</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Unique DESI tile ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXPTIME</p></td>
+<td><p>float64</p></td>
+<td><p>s</p></td>
+<td><p>Length of time shutter was open</p></td>
+</tr>
+<tr class="row-even"><td><p>PETAL_LOC</p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>Petal location [0-9]</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEVICE_LOC</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Device location on focal plane [0-523]</p></td>
+</tr>
+<tr class="row-even"><td><p>LOCATION</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Location on the focal plane PETAL_LOC*1000 + DEVICE_LOC</p></td>
+</tr>
+<tr class="row-odd"><td><p>FIBER</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Fiber ID on the CCDs [0-4999]</p></td>
+</tr>
+<tr class="row-even"><td><p>FIBERSTATUS</p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Fiber status mask. 0=good</p></td>
+</tr>
+<tr class="row-odd"><td><p>FIBERASSIGN_X</p></td>
+<td><p>float32</p></td>
+<td><p>mm</p></td>
+<td><p>Fiberassign expected CS5 X location on focal plane</p></td>
+</tr>
+<tr class="row-even"><td><p>FIBERASSIGN_Y</p></td>
+<td><p>float32</p></td>
+<td><p>mm</p></td>
+<td><p>Fiberassign expected CS5 Y location on focal plane</p></td>
+</tr>
+<tr class="row-odd"><td><p>LAMBDA_REF</p></td>
+<td><p>float32</p></td>
+<td><p>Angstrom</p></td>
+<td><p>Requested wavelength at which targets should be centered on fibers</p></td>
+</tr>
+<tr class="row-even"><td><p>PLATE_RA</p></td>
+<td><p>float64</p></td>
+<td><p>deg</p></td>
+<td><p>Barycentric Right Ascension in ICRS to be used by PlateMaker</p></td>
+</tr>
+<tr class="row-odd"><td><p>PLATE_DEC</p></td>
+<td><p>float64</p></td>
+<td><p>deg</p></td>
+<td><p>Barycentric Declination in ICRS to be used by PlateMaker</p></td>
+</tr>
+<tr class="row-even"><td><p>NUM_ITER</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Number of positioner iterations</p></td>
+</tr>
+<tr class="row-odd"><td><p>FIBER_X</p></td>
+<td><p>float64</p></td>
+<td><p>mm</p></td>
+<td><p>CS5 X location requested by PlateMaker</p></td>
+</tr>
+<tr class="row-even"><td><p>FIBER_Y</p></td>
+<td><p>float64</p></td>
+<td><p>mm</p></td>
+<td><p>CS5 Y location requested by PlateMaker</p></td>
+</tr>
+<tr class="row-odd"><td><p>DELTA_X</p></td>
+<td><p>float64</p></td>
+<td><p>mm</p></td>
+<td><p>CS5 X requested minus actual position</p></td>
+</tr>
+<tr class="row-even"><td><p>DELTA_Y</p></td>
+<td><p>float64</p></td>
+<td><p>mm</p></td>
+<td><p>CS5 Y requested minus actual position</p></td>
+</tr>
+<tr class="row-odd"><td><p>FIBER_RA</p></td>
+<td><p>float64</p></td>
+<td><p>deg</p></td>
+<td><p>RA of actual fiber position</p></td>
+</tr>
+<tr class="row-even"><td><p>FIBER_DEC</p></td>
+<td><p>float64</p></td>
+<td><p>deg</p></td>
+<td><p>DEC of actual fiber position</p></td>
+</tr>
+<tr class="row-odd"><td><p>PSF_TO_FIBER_SPECFLUX</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>fraction of light from point-like source captured by 1.5 arcsec diameter fiber given atmospheric seeing</p></td>
+</tr>
+<tr class="row-even"><td><p>IN_COADD_B</p></td>
+<td><p>logical</p></td>
+<td></td>
+<td><p>If True this fiber in this exposure was used in the coadd of camera B</p></td>
+</tr>
+<tr class="row-odd"><td><p>IN_COADD_R</p></td>
+<td><p>logical</p></td>
+<td></td>
+<td><p>If True this fiber in this exposure was used in the coadd of camera R</p></td>
+</tr>
+<tr class="row-even"><td><p>IN_COADD_Z</p></td>
+<td><p>logical</p></td>
+<td></td>
+<td><p>If True this fiber in this exposure was used in the coadd of camera Z</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="notes-and-examples">
+<h2>Notes and Examples<a class="headerlink" href="#notes-and-examples" title="Link to this heading"></a></h2>
+<p>For the SURVEY=cmx m33 tile (TILEID=80615) tile and all the SURVEY=sv1 tiles (except TILEID=80971-80976, the dc3r2 ones), proper-motion correction was applied at the <a class="reference internal" href="../../../../DESI_TARGET/fiberassign/tiles/TILES_VERSION/TILEXX/fiberassign-TILEID.html"><span class="doc">fiberassign</span></a> design step; thus the following columns can have different values than in the <a class="reference internal" href="../../../../DESI_TARGET/TARG_DIR/DR/VERSION/targets/PHASE/RESOLVE/OBSCON/PHASEtargets-OBSCON-RESOLVE-hp-HP.html"><span class="doc">desitarget products</span></a>: <code class="docutils literal notranslate"><span class="pre">TARGET_RA</span></code>, <code class="docutils literal notranslate"><span class="pre">TARGET_DEC</span></code>, <code class="docutils literal notranslate"><span class="pre">REF_EPOCH</span></code>, <code class="docutils literal notranslate"><span class="pre">PLATE_RA</span></code>, <code class="docutils literal notranslate"><span class="pre">PLATE_DEC</span></code>, and <code class="docutils literal notranslate"><span class="pre">PLATE_REF_EPOCH</span></code>.</p>
+<p>For targets with a non-zero proper motion, <code class="docutils literal notranslate"><span class="pre">FIBER_RA</span></code> and <code class="docutils literal notranslate"><span class="pre">FIBER_DEC</span></code> refer to the position at the reference epoch (but note that the proper-motion correction has been applied at the time of the observation, it is just not recorded in <code class="docutils literal notranslate"><span class="pre">FIBER_RA</span></code> and <code class="docutils literal notranslate"><span class="pre">FIBER_DEC</span></code>).</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="zpix-SURVEY-PROGRAM.html" class="btn btn-neutral float-left" title="zpix-SURVEY-PROGRAM.fits" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../exposures-SPECPROD.html" class="btn btn-neutral float-right" title="exposures-SPECPROD.fits" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014-2025, DESI Collaboration.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,221 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tiles &mdash; desidatamodel 25.4.dev1530 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/desidatamodel.css?v=f6dbf8d8" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=e580c04a"></script>
+      <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="GROUPTYPE" href="GROUPTYPE/index.html" />
+    <link rel="prev" title="tilepix-TILEID.json" href="../preproc/NIGHT/EXPID/tilepix-TILEID.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            desidatamodel
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../DESI_ROOT/vac/index.html">vac/ : Value Added Catalogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DESI_ROOT/index.html">$DESI_ROOT : represents the top level of the DESI directory tree.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DESI_SPECTRO_DATA/index.html">$DESI_SPECTRO_DATA : raw data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">$DESI_SPECTRO_REDUX : processed spectro data</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">$DESI_SPECTRO_REDUX/$SPECPROD</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../calibnight/index.html">calibnight</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exposures/index.html">exposures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../healpix/index.html">healpix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../preproc/index.html">preproc</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">tiles</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="GROUPTYPE/index.html">GROUPTYPE</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../zcatalog/index.html">zcatalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exposures-SPECPROD.html">exposures-SPECPROD.fits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tiles-SPECPROD.html">tiles-SPECPROD.fits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DESI_SPECTRO_SIM/index.html">$DESI_SPECTRO_SIM : simulated spectro data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DESI_SPECTRO_CALIB/index.html">$DESI_SPECTRO_CALIB : spectro calibration data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DESI_SURVEYOPS/index.html">$DESI_SURVEYOPS : data files used for day-to-day survey operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DESI_TARGET/index.html">$DESI_TARGET : target selection and fiber assignment (see also Myers et al. 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DESIMODEL/index.html">$DESIMODEL : data used for simulating DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DESISURVEY_OUTPUT/index.html">$DESISURVEY_OUTPUT : outputs from desisurvey and surveysim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../PROTODESI/index.html">$PROTODESI : data and logs from the ProtoDESI campaign</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../bitmasks.html">Bit Masks in DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../column_descriptions.html">Standard Column Descriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../envvar.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../units.html">Units in data files</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../datamodel.html">Contributing to desidatamodel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">desidatamodel API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changes.html">desidatamodel Change Log</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">desidatamodel</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../DESI_ROOT/index.html">DESI_ROOT</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">DESI_SPECTRO_REDUX</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">SPECPROD</a></li>
+      <li class="breadcrumb-item active">tiles</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/DESI_SPECTRO_REDUX/SPECPROD/tiles/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tiles">
+<h1>tiles<a class="headerlink" href="#tiles" title="Link to this heading"></a></h1>
+<p>Spectra, coadds, and redshifts organized <strong>per tile</strong> are under
+<code class="docutils literal notranslate"><span class="pre">tiles/GROUPTYPE/TILEID/GROUPID</span></code>.  These come in various groups (GROUPTYPE),
+e.g. whether they are data from a single exposure, a single night,
+all data for a given tile across all nights, or a custom combination.</p>
+<p>Related: all data for a given patch of sky, including data grouped across
+overlapping tiles and coadds of targets observed on multiple tiles, are
+organized under the <a class="reference internal" href="../healpix/index.html"><span class="doc">healpix</span></a> directories.</p>
+<p><code class="docutils literal notranslate"><span class="pre">GROUPTYPE</span></code> can be one of:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">cumulative</span></code></dt><dd><p>Coadds of all spectra on a given tile across all nights.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pernight</span></code></dt><dd><p>Coadds of all spectra on a given tile in a given night.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">perexp</span></code></dt><dd><p>Spectra grouped by tile and then exposure.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">1x_depth</span></code></dt><dd><p>Selected custom subsets of exposures of deep (<span class="math notranslate nohighlight">\(N&gt;&gt;1\)</span> exposures) tiles
+to achieve a combined depth for each subset matching the main survey depth.
+That is, they are subsets of the total exposures taken for that tile,
+selected to achieve a specific depth, for systematics comparisons with the full depth
+coadds+redshifts in the cumulative group that has all exposures for each tile.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">4x_depth</span></code></dt><dd><p>Similar to <code class="docutils literal notranslate"><span class="pre">1x_depth</span></code>, but selected to achieve a combined depth of 4x
+the main survey depth.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">lowspeed</span></code></dt><dd><p>Coadds of deep tiles using only exposures taken under poor observing
+conditions, for systematics checks vs. coadds using data taken under
+normal/good conditions.
+“lowspeed” refers to the rate at which S/N is accumulated.</p>
+</dd>
+</dl>
+<p>Other custom <code class="docutils literal notranslate"><span class="pre">GROUPTYPE</span></code> may appear in future produtions, and not every
+production will include every <code class="docutils literal notranslate"><span class="pre">GROUPTYPE</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">GROUPID</span></code> depends on the <code class="docutils literal notranslate"><span class="pre">GROUPTYPE</span></code>:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>GROUPTYPE</p></th>
+<th class="head"><p>GROUPID</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cumulative</p></td>
+<td><p>YEARMMDD NIGHT - all data through that night</p></td>
+</tr>
+<tr class="row-odd"><td><p>pernight</p></td>
+<td><p>YEARMMDD NIGHT - only data from that night</p></td>
+</tr>
+<tr class="row-even"><td><p>perexp</p></td>
+<td><p>EXPID - only data from that single exposure</p></td>
+</tr>
+<tr class="row-odd"><td><p>1x_depth</p></td>
+<td><p>subset number</p></td>
+</tr>
+<tr class="row-even"><td><p>4x_depth</p></td>
+<td><p>subset number</p></td>
+</tr>
+<tr class="row-odd"><td><p>lowspeed</p></td>
+<td><p>subset number</p></td>
+</tr>
+</tbody>
+</table>
+<p>e.g. spectra, coadds, and
+redshifts for all exposures of tile 80605 observed on 20210109 are
+under <code class="docutils literal notranslate"><span class="pre">tiles/pernight/80605/20210109</span></code>, while all data for tile 80605
+for all nights through 20210205 (including previous nights like 20210109)
+are under <code class="docutils literal notranslate"><span class="pre">tiles/cumulative/80605/20210205</span></code>.</p>
+<p>Subdirectories of <code class="docutils literal notranslate"><span class="pre">tiles/</span></code> :</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="GROUPTYPE/index.html">GROUPTYPE</a></li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../preproc/NIGHT/EXPID/tilepix-TILEID.html" class="btn btn-neutral float-left" title="tilepix-TILEID.json" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="GROUPTYPE/index.html" class="btn btn-neutral float-right" title="GROUPTYPE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014-2025, DESI Collaboration.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

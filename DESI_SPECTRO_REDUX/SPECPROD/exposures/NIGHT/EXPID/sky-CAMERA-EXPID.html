@@ -1,0 +1,3452 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sky-CAMERA-EXPID.fits &mdash; desidatamodel 25.4.dev1530 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/desidatamodel.css?v=f6dbf8d8" />
+
+  
+      <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../../_static/documentation_options.js?v=e580c04a"></script>
+      <script src="../../../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="stdstars-SPECTROGRAPH-EXPID.fits" href="stdstars-SPECTROGRAPH-EXPID.html" />
+    <link rel="prev" title="shifted-input-psf-CAMERA-EXPID.fits" href="shifted-input-psf-CAMERA-EXPID.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../../index.html" class="icon icon-home">
+            desidatamodel
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../DESI_ROOT/vac/index.html">vac/ : Value Added Catalogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../DESI_ROOT/index.html">$DESI_ROOT : represents the top level of the DESI directory tree.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../DESI_SPECTRO_DATA/index.html">$DESI_SPECTRO_DATA : raw data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">$DESI_SPECTRO_REDUX : processed spectro data</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">$DESI_SPECTRO_REDUX/$SPECPROD</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../calibnight/index.html">calibnight</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../index.html">exposures</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html">NIGHT</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../healpix/index.html">healpix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../preproc/index.html">preproc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tiles/index.html">tiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../zcatalog/index.html">zcatalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../exposures-SPECPROD.html">exposures-SPECPROD.fits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tiles-SPECPROD.html">tiles-SPECPROD.fits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../DESI_SPECTRO_SIM/index.html">$DESI_SPECTRO_SIM : simulated spectro data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../DESI_SPECTRO_CALIB/index.html">$DESI_SPECTRO_CALIB : spectro calibration data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../DESI_SURVEYOPS/index.html">$DESI_SURVEYOPS : data files used for day-to-day survey operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../DESI_TARGET/index.html">$DESI_TARGET : target selection and fiber assignment (see also Myers et al. 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../DESIMODEL/index.html">$DESIMODEL : data used for simulating DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../DESISURVEY_OUTPUT/index.html">$DESISURVEY_OUTPUT : outputs from desisurvey and surveysim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../PROTODESI/index.html">$PROTODESI : data and logs from the ProtoDESI campaign</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../bitmasks.html">Bit Masks in DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../column_descriptions.html">Standard Column Descriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../envvar.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../units.html">Units in data files</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../datamodel.html">Contributing to desidatamodel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api.html">desidatamodel API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../changes.html">desidatamodel Change Log</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">desidatamodel</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../../DESI_ROOT/index.html">DESI_ROOT</a></li>
+          <li class="breadcrumb-item"><a href="../../../../index.html">DESI_SPECTRO_REDUX</a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">SPECPROD</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">exposures</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">NIGHT</a></li>
+          <li class="breadcrumb-item"><a href="index.html">EXPID</a></li>
+      <li class="breadcrumb-item active">sky-CAMERA-EXPID.fits</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../../_sources/DESI_SPECTRO_REDUX/SPECPROD/exposures/NIGHT/EXPID/sky-CAMERA-EXPID.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sky-camera-expid-fits">
+<h1>sky-CAMERA-EXPID.fits<a class="headerlink" href="#sky-camera-expid-fits" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Summary<span class="colon">:</span></dt>
+<dd class="field-odd"><p>This holds the sky model for a given camera and exposure.</p>
+</dd>
+<dt class="field-even">Naming Convention<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">sky-{CAMERA}-{EXPID}.fits</span></code>, where <code class="docutils literal notranslate"><span class="pre">{CAMERA}</span></code> is
+one of the spectrograph cameras (<em>e.g.</em> <code class="docutils literal notranslate"><span class="pre">z1</span></code>) and <code class="docutils literal notranslate"><span class="pre">{EXPID}</span></code>
+is the 8-digit exposure ID.</p>
+</dd>
+<dt class="field-odd">Regex<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">sky-[brz][0-9]-[0-9]{8}\.fits</span></code></p>
+</dd>
+<dt class="field-even">File Type<span class="colon">:</span></dt>
+<dd class="field-even"><p>FITS, 17 MB</p>
+</dd>
+</dl>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Number</p></th>
+<th class="head"><p>EXTNAME</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Contents</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#hdu0">HDU0</a></p></td>
+<td><p>SKY</p></td>
+<td><p>IMAGE</p></td>
+<td><p>Sky model in electrons per Angstrom</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hdu1">HDU1</a></p></td>
+<td><p>IVAR</p></td>
+<td><p>IMAGE</p></td>
+<td><p>Inverse variance of sky model</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#hdu2">HDU2</a></p></td>
+<td><p>MASK</p></td>
+<td><p>IMAGE</p></td>
+<td><p>Sky mask (0 = good)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hdu3">HDU3</a></p></td>
+<td><p>WAVELENGTH</p></td>
+<td><p>IMAGE</p></td>
+<td><p>Wavelength in Angstrom</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#hdu4">HDU4</a></p></td>
+<td><p>STATIVAR</p></td>
+<td><p>IMAGE</p></td>
+<td><p>Statistical-only inverse variance of sky model</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hdu5">HDU5</a></p></td>
+<td><p>THRPUTCORR</p></td>
+<td><p>IMAGE</p></td>
+<td><p>Achromatic throughput correction per fiber</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#hdu6">HDU6</a></p></td>
+<td><p>THRPUTCORR_MOD</p></td>
+<td><p>IMAGE</p></td>
+<td><p>Model multiplicative throughput corrections for each fiber</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hdu6">HDU6</a></p></td>
+<td><p>DWAVECOEFF</p></td>
+<td><p>IMAGE</p></td>
+<td><p>Vector of PCA coefficients for wavelength offsets</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#hdu7">HDU7</a></p></td>
+<td><p>DLSFCOEFF</p></td>
+<td><p>IMAGE</p></td>
+<td><p>Vector of PCA coefficients for LSF size changes</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hdu8">HDU8</a></p></td>
+<td><p>SKYGRADPCACOEFF</p></td>
+<td><p>IMAGE</p></td>
+<td><p>Vector of gradient amplitudes for sky gradient spectra</p></td>
+</tr>
+</tbody>
+</table>
+<p>The SKY HDU is the sky model per-fiber accounting for different fiber
+resolutions, but it does <em>not</em> include the empirical per-fiber throughput
+correction in the THRPUTCORR HDU.  The final sky model per fiber is
+<code class="docutils literal notranslate"><span class="pre">SKY</span> <span class="pre">*</span> <span class="pre">THRPUTCORR</span></code>.</p>
+</section>
+<section id="fits-header-units">
+<h2>FITS Header Units<a class="headerlink" href="#fits-header-units" title="Link to this heading"></a></h2>
+<section id="hdu0">
+<h3>HDU0<a class="headerlink" href="#hdu0" title="Link to this heading"></a></h3>
+<p>EXTNAME = SKY</p>
+<p>2D array of sky flux model of dimension [nspec, nwave] in units of electrons per Ansgtrom (fiber flat fielded). nspec is the number of fibers per camera. nwave in the length of the wavelength array. The spectra of all fibers share the same
+wavelength grid (given in HDU WAVELENGTH). The sky model is different for each fiber because it is adapted to the resolution of each fiber, it contains corrections on bright sky line, and in some cases an anisotropic component.</p>
+<section id="required-header-keywords">
+<h4>Required Header Keywords<a class="headerlink" href="#required-header-keywords" title="Link to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>2751</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>500</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>EXPID</p></td>
+<td><p>69022</p></td>
+<td><p>int</p></td>
+<td><p>Exposure number</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXPFRAME</p></td>
+<td><p>0</p></td>
+<td><p>int</p></td>
+<td><p>Frame number</p></td>
+</tr>
+<tr class="row-even"><td><p>TILEID</p></td>
+<td><p>80616</p></td>
+<td><p>int</p></td>
+<td><p>DESI Tile ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>FIBASSGN</p></td>
+<td><p>/data/tiles/SVN_tiles/080/fiberassign-080616.fits</p></td>
+<td><p>str</p></td>
+<td><p>Fiber assign fil</p></td>
+</tr>
+<tr class="row-even"><td><p>FLAVOR</p></td>
+<td><p>science</p></td>
+<td><p>str</p></td>
+<td><p>Observation type</p></td>
+</tr>
+<tr class="row-odd"><td><p>SEQUENCE</p></td>
+<td><p>DESI</p></td>
+<td><p>str</p></td>
+<td><p>OCS Sequence name</p></td>
+</tr>
+<tr class="row-even"><td><p>PURPOSE</p></td>
+<td><p>Commissioning</p></td>
+<td><p>str</p></td>
+<td><p>Purpose of observing night</p></td>
+</tr>
+<tr class="row-odd"><td><p>PROGRAM</p></td>
+<td><p>SV1 BGS+MWS tile 80616</p></td>
+<td><p>str</p></td>
+<td><p>Program name</p></td>
+</tr>
+<tr class="row-even"><td><p>PROPID</p></td>
+<td><p>2019B-5000</p></td>
+<td><p>str</p></td>
+<td><p>Proposal ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>OBSERVER</p></td>
+<td><p>DESIObserver</p></td>
+<td><p>str</p></td>
+<td><p>Names of observers</p></td>
+</tr>
+<tr class="row-even"><td><p>LEAD</p></td>
+<td><p>RunManager</p></td>
+<td><p>str</p></td>
+<td><p>Lead observer</p></td>
+</tr>
+<tr class="row-odd"><td><p>INSTRUME</p></td>
+<td><p>DESI</p></td>
+<td><p>str</p></td>
+<td><p>Instrument name</p></td>
+</tr>
+<tr class="row-even"><td><p>OBSERVAT</p></td>
+<td><p>KPNO</p></td>
+<td><p>str</p></td>
+<td><p>Observatory name</p></td>
+</tr>
+<tr class="row-odd"><td><p>OBS-LAT</p></td>
+<td><p>31.96403</p></td>
+<td><p>str</p></td>
+<td><p>[deg] Observatory latitude</p></td>
+</tr>
+<tr class="row-even"><td><p>OBS-LONG</p></td>
+<td><p>-111.59989</p></td>
+<td><p>str</p></td>
+<td><p>[deg] Observatory east longitude</p></td>
+</tr>
+<tr class="row-odd"><td><p>OBS-ELEV</p></td>
+<td><p>2097.0</p></td>
+<td><p>float</p></td>
+<td><p>[m] Observatory elevation</p></td>
+</tr>
+<tr class="row-even"><td><p>TELESCOP</p></td>
+<td><p>KPNO 4.0-m telescope</p></td>
+<td><p>str</p></td>
+<td><p>Telescope name</p></td>
+</tr>
+<tr class="row-odd"><td><p>CORRCTOR</p></td>
+<td><p>DESI Corrector</p></td>
+<td><p>str</p></td>
+<td><p>Corrector Identification</p></td>
+</tr>
+<tr class="row-even"><td><p>NIGHT</p></td>
+<td><p>20201220</p></td>
+<td><p>int</p></td>
+<td><p>Observing night</p></td>
+</tr>
+<tr class="row-odd"><td><p>TIMESYS</p></td>
+<td><p>UTC</p></td>
+<td><p>str</p></td>
+<td><p>Time system used for date-obs</p></td>
+</tr>
+<tr class="row-even"><td><p>DATE-OBS</p></td>
+<td><p>2020-12-21T02:36:32.099838</p></td>
+<td><p>str</p></td>
+<td><p>[UTC] Observation data and start time</p></td>
+</tr>
+<tr class="row-odd"><td><p>TIME-OBS</p></td>
+<td><p>02:39:11.845920</p></td>
+<td><p>str</p></td>
+<td><p>[UTC] Observation start time</p></td>
+</tr>
+<tr class="row-even"><td><p>MJD-OBS</p></td>
+<td><p>59204.10870486</p></td>
+<td><p>float</p></td>
+<td><p>Modified Julian Date of observation</p></td>
+</tr>
+<tr class="row-odd"><td><p>OPENSHUT</p></td>
+<td><p>2020-12-21T02:36:32.099838</p></td>
+<td><p>str</p></td>
+<td><p>Time shutter opened</p></td>
+</tr>
+<tr class="row-even"><td><p>ST</p></td>
+<td><p>01:10:39.210</p></td>
+<td><p>str</p></td>
+<td><p>Local Sidereal time at observation start (HH:MM</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXPTIME</p></td>
+<td><p>300.007</p></td>
+<td><p>float</p></td>
+<td><p>[s] Actual exposure time</p></td>
+</tr>
+<tr class="row-even"><td><p>REQRA</p></td>
+<td><p>356.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Requested right ascension (observer input</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQDEC</p></td>
+<td><p>29.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Requested declination (observer input)</p></td>
+</tr>
+<tr class="row-even"><td><p>FOCUS</p></td>
+<td><p>1426.5,-501.4,81.0,-2.6,42.3,169.2</p></td>
+<td><p>str</p></td>
+<td><p>Telescope focus settings</p></td>
+</tr>
+<tr class="row-odd"><td><p>VCCD</p></td>
+<td><p>ON</p></td>
+<td><p>str</p></td>
+<td><p>True (ON) if CCD voltage is on</p></td>
+</tr>
+<tr class="row-even"><td><p>VCCDON</p></td>
+<td><p>2020-12-09T21:23:21.278481</p></td>
+<td><p>str</p></td>
+<td><p>Time when CCD voltage was turned on</p></td>
+</tr>
+<tr class="row-odd"><td><p>VCCDSEC</p></td>
+<td><p>969694.4</p></td>
+<td><p>float</p></td>
+<td><p>[s] CCD on time in seconds</p></td>
+</tr>
+<tr class="row-even"><td><p>TRUSTEMP</p></td>
+<td><p>11.767</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Average Telescope truss temperature (only</p></td>
+</tr>
+<tr class="row-odd"><td><p>PMIRTEMP</p></td>
+<td><p>8.925</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Average primary mirror temperature (nit,e</p></td>
+</tr>
+<tr class="row-even"><td><p>EQUINOX</p></td>
+<td><p>2000.0</p></td>
+<td><p>float</p></td>
+<td><p>Epoch of observation</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOUNTAZ</p></td>
+<td><p>266.70224</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount azimuth angle</p></td>
+</tr>
+<tr class="row-even"><td><p>MOUNTDEC</p></td>
+<td><p>28.999221</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount declination</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOUNTEL</p></td>
+<td><p>71.039837</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount elevation angle</p></td>
+</tr>
+<tr class="row-even"><td><p>MOUNTHA</p></td>
+<td><p>21.769281</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Mount hour angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>SKYDEC</p></td>
+<td><p>28.999221</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope declination (pointing on sky)</p></td>
+</tr>
+<tr class="row-even"><td><p>SKYRA</p></td>
+<td><p>355.996551</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope right ascension (pointing on sk</p></td>
+</tr>
+<tr class="row-odd"><td><p>TARGTDEC</p></td>
+<td><p>28.999221</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Target declination (to TCS)</p></td>
+</tr>
+<tr class="row-even"><td><p>TARGTRA</p></td>
+<td><p>355.996551</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Target right ascension (to TCS)</p></td>
+</tr>
+<tr class="row-odd"><td><p>USEETC</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>ETC data available if true</p></td>
+</tr>
+<tr class="row-even"><td><p>USESKY</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>DOS Control: use Sky Monitor</p></td>
+</tr>
+<tr class="row-odd"><td><p>USEFOCUS</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>DOS Control: use focus</p></td>
+</tr>
+<tr class="row-even"><td><p>HEXTRIM</p></td>
+<td><p>0.0,0.0,0.0,0.0,0.0,0.0</p></td>
+<td><p>str</p></td>
+<td><p>Hexapod trim values</p></td>
+</tr>
+<tr class="row-odd"><td><p>USEROTAT</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>DOS Control: use rotator</p></td>
+</tr>
+<tr class="row-even"><td><p>ROTOFFST</p></td>
+<td><p>167.1</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Rotator offset</p></td>
+</tr>
+<tr class="row-odd"><td><p>ROTENBLD</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>Rotator enabled</p></td>
+</tr>
+<tr class="row-even"><td><p>ROTRATE</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec/min] Rotator rate</p></td>
+</tr>
+<tr class="row-odd"><td><p>USEGUIDR</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>DOS Control: use guider</p></td>
+</tr>
+<tr class="row-even"><td><p>USEDONUT</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>DOS Control: use donuts</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPECGRPH</p></td>
+<td><p>6</p></td>
+<td><p>int</p></td>
+<td><p>Spectrograph logical name (SP)</p></td>
+</tr>
+<tr class="row-even"><td><p>SPECID</p></td>
+<td><p>7</p></td>
+<td><p>int</p></td>
+<td><p>Spectrograph serial number (SM)</p></td>
+</tr>
+<tr class="row-odd"><td><p>FEEBOX</p></td>
+<td><p>lbnl075</p></td>
+<td><p>str</p></td>
+<td><p>CCD Controller serial number</p></td>
+</tr>
+<tr class="row-even"><td><p>VESSEL</p></td>
+<td><p>22</p></td>
+<td><p>int</p></td>
+<td><p>Cryostat serial number</p></td>
+</tr>
+<tr class="row-odd"><td><p>FEEVER</p></td>
+<td><p>v20160312</p></td>
+<td><p>str</p></td>
+<td><p>CCD Controller version</p></td>
+</tr>
+<tr class="row-even"><td><p>DETFLVER <a class="footnote-reference brackets" href="#id149" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>FAILED: invalid argument for get command</p></td>
+<td><p>str</p></td>
+<td><p>CCD Controller detector f</p></td>
+</tr>
+<tr class="row-odd"><td><p>FEEPOWER</p></td>
+<td><p>ON</p></td>
+<td><p>str</p></td>
+<td><p>FEE power status</p></td>
+</tr>
+<tr class="row-even"><td><p>FEEDMASK</p></td>
+<td><p>2134851391</p></td>
+<td><p>int</p></td>
+<td><p>FEE dac mask</p></td>
+</tr>
+<tr class="row-odd"><td><p>FEECMASK</p></td>
+<td><p>1048575</p></td>
+<td><p>int</p></td>
+<td><p>FEE clk mask</p></td>
+</tr>
+<tr class="row-even"><td><p>CCDTEMP</p></td>
+<td><p>850.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] CCD controller CCD temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>RADESYS</p></td>
+<td><p>FK5</p></td>
+<td><p>str</p></td>
+<td><p>Coordinate reference frame of major/minor axes</p></td>
+</tr>
+<tr class="row-even"><td><p>FILENAME</p></td>
+<td><p>/exposures/desi/specs/20201220/00069022/sp1-00069022.fits.fz</p></td>
+<td><p>str</p></td>
+<td><p>Name</p></td>
+</tr>
+<tr class="row-odd"><td><p>DOSVER</p></td>
+<td><p>trunk</p></td>
+<td><p>str</p></td>
+<td><p>DOS software version</p></td>
+</tr>
+<tr class="row-even"><td><p>OCSVER</p></td>
+<td><p>1.2</p></td>
+<td><p>float</p></td>
+<td><p>OCS software version</p></td>
+</tr>
+<tr class="row-odd"><td><p>CONSTVER</p></td>
+<td><p>DESI:CURRENT</p></td>
+<td><p>str</p></td>
+<td><p>Constants version</p></td>
+</tr>
+<tr class="row-even"><td><p>INIFILE</p></td>
+<td><p>/data/msdos/dos_home/architectures/kpno/desi.ini</p></td>
+<td><p>str</p></td>
+<td><p>DOS Configuration</p></td>
+</tr>
+<tr class="row-odd"><td><p>DELAYS</p></td>
+<td><p>13, 13, 25, 25, 8, 3000, 7, 7, 7, 7</p></td>
+<td><p>str</p></td>
+<td><p>[10] Delay settings</p></td>
+</tr>
+<tr class="row-even"><td><p>CCDPREP</p></td>
+<td><p>purge,clear</p></td>
+<td><p>str</p></td>
+<td><p>CCD prep actions</p></td>
+</tr>
+<tr class="row-odd"><td><p>DETSECA</p></td>
+<td><p>[1:2048, 1:2048]</p></td>
+<td><p>str</p></td>
+<td><p>Detector section for quadrant A</p></td>
+</tr>
+<tr class="row-even"><td><p>CDSPARMS</p></td>
+<td><p>350, 350, 8, 1000</p></td>
+<td><p>str</p></td>
+<td><p>CDS parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p>CRYOTEMP <a class="footnote-reference brackets" href="#id149" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>162.97</p></td>
+<td><p>float</p></td>
+<td><p>[deg K] Cryostat CCD temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>CLOCK15</p></td>
+<td><p>0.0,0.0</p></td>
+<td><p>str</p></td>
+<td><p>[V] high rail, low rail</p></td>
+</tr>
+<tr class="row-odd"><td><p>CLOCK11</p></td>
+<td><p>0.0,0.0</p></td>
+<td><p>str</p></td>
+<td><p>[V] high rail, low rail</p></td>
+</tr>
+<tr class="row-even"><td><p>ORSECA</p></td>
+<td><p>[5:2052, 2050:2081]</p></td>
+<td><p>str</p></td>
+<td><p>Row overscan section for quadrant A</p></td>
+</tr>
+<tr class="row-odd"><td><p>CASETEMP</p></td>
+<td><p>51.9392</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] CCD controller case temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>AMPSECC</p></td>
+<td><p>[2048:1, 2049:4096]</p></td>
+<td><p>str</p></td>
+<td><p>AMP section for quadrant C</p></td>
+</tr>
+<tr class="row-odd"><td><p>CLOCK4</p></td>
+<td><p>3.9999,-4.0002</p></td>
+<td><p>str</p></td>
+<td><p>[V] high rail, low rail</p></td>
+</tr>
+<tr class="row-even"><td><p>CLOCK17</p></td>
+<td><p>3.9999,-4.0002</p></td>
+<td><p>str</p></td>
+<td><p>[V] high rail, low rail</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAC13</p></td>
+<td><p>0.0,-5.0544</p></td>
+<td><p>str</p></td>
+<td><p>[V] set value, measured value</p></td>
+</tr>
+<tr class="row-even"><td><p>DAC2</p></td>
+<td><p>15.9998,15.9032</p></td>
+<td><p>str</p></td>
+<td><p>[V] set value, measured value</p></td>
+</tr>
+<tr class="row-odd"><td><p>DATASECA</p></td>
+<td><p>[5:2052, 2:2049]</p></td>
+<td><p>str</p></td>
+<td><p>Data section for quadrant A</p></td>
+</tr>
+<tr class="row-even"><td><p>DATASECB</p></td>
+<td><p>[2181:4228, 2:2049]</p></td>
+<td><p>str</p></td>
+<td><p>Data section for quadrant B</p></td>
+</tr>
+<tr class="row-odd"><td><p>PRESECB</p></td>
+<td><p>[4229:4232, 2:2049]</p></td>
+<td><p>str</p></td>
+<td><p>Prescan section for quadrant B</p></td>
+</tr>
+<tr class="row-even"><td><p>DAC14</p></td>
+<td><p>0.0,0.8008</p></td>
+<td><p>str</p></td>
+<td><p>[V] set value, measured value</p></td>
+</tr>
+<tr class="row-odd"><td><p>ORSECD</p></td>
+<td><p>[2181:4228, 2082:2113]</p></td>
+<td><p>str</p></td>
+<td><p>Row bias section for quadrant D</p></td>
+</tr>
+<tr class="row-even"><td><p>CCDSIZE</p></td>
+<td><p>4162,4232</p></td>
+<td><p>str</p></td>
+<td><p>CCD size in pixels (rows, columns)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SETTINGS</p></td>
+<td><p>detectors_sm_20191211.json</p></td>
+<td><p>str</p></td>
+<td><p>Name of DESI CCD settings file</p></td>
+</tr>
+<tr class="row-even"><td><p>PRESECA</p></td>
+<td><p>[1:4, 2:2049]</p></td>
+<td><p>str</p></td>
+<td><p>Prescan section for quadrant A</p></td>
+</tr>
+<tr class="row-odd"><td><p>CLOCK14</p></td>
+<td><p>3.0,-8.0001</p></td>
+<td><p>str</p></td>
+<td><p>[V] high rail, low rail</p></td>
+</tr>
+<tr class="row-even"><td><p>DAC16</p></td>
+<td><p>0.0,64.1256</p></td>
+<td><p>str</p></td>
+<td><p>[V] set value, measured value</p></td>
+</tr>
+<tr class="row-odd"><td><p>CCDNAME</p></td>
+<td><p>CCDSM7B</p></td>
+<td><p>str</p></td>
+<td><p>CCD name</p></td>
+</tr>
+<tr class="row-even"><td><p>AMPSECD</p></td>
+<td><p>[4096:2049, 4096:2049]</p></td>
+<td><p>str</p></td>
+<td><p>AMP section for quadrant D</p></td>
+</tr>
+<tr class="row-odd"><td><p>PRRSECC</p></td>
+<td><p>[5:2052, 4162:4162]</p></td>
+<td><p>str</p></td>
+<td><p>Row prescan section for quadrant C</p></td>
+</tr>
+<tr class="row-even"><td><p>CCDCFG</p></td>
+<td><p>sn22813_sta_20190405.cfg</p></td>
+<td><p>str</p></td>
+<td><p>CCD configuration file</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAC8</p></td>
+<td><p>26.9998,26.0294</p></td>
+<td><p>str</p></td>
+<td><p>[V] set value, measured value</p></td>
+</tr>
+<tr class="row-even"><td><p>BIASSECD</p></td>
+<td><p>[2117:2180, 2114:4161]</p></td>
+<td><p>str</p></td>
+<td><p>Bias section for quadrant D</p></td>
+</tr>
+<tr class="row-odd"><td><p>PRESECC</p></td>
+<td><p>[1:4, 2114:4161]</p></td>
+<td><p>str</p></td>
+<td><p>Prescan section for quadrant C</p></td>
+</tr>
+<tr class="row-even"><td><p>CCDSECD</p></td>
+<td><p>[2049:4096, 2049:4096]</p></td>
+<td><p>str</p></td>
+<td><p>CCD section for quadrant D</p></td>
+</tr>
+<tr class="row-odd"><td><p>CLOCK8</p></td>
+<td><p>3.0,-8.0001</p></td>
+<td><p>str</p></td>
+<td><p>[V] high rail, low rail</p></td>
+</tr>
+<tr class="row-even"><td><p>TRIMSECA</p></td>
+<td><p>[5:2052, 2:2049]</p></td>
+<td><p>str</p></td>
+<td><p>Trim section for quadrant A</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAC5</p></td>
+<td><p>0.0,0.0</p></td>
+<td><p>str</p></td>
+<td><p>[V] set value, measured value</p></td>
+</tr>
+<tr class="row-even"><td><p>BIASSECC</p></td>
+<td><p>[2053:2116, 2114:4161]</p></td>
+<td><p>str</p></td>
+<td><p>Bias section for quadrant C</p></td>
+</tr>
+<tr class="row-odd"><td><p>OFFSET0</p></td>
+<td><p>-1.5,15.8311</p></td>
+<td><p>str</p></td>
+<td><p>[V] set value, measured value</p></td>
+</tr>
+<tr class="row-even"><td><p>CLOCK18</p></td>
+<td><p>3.9999,-4.0002</p></td>
+<td><p>str</p></td>
+<td><p>[V] high rail, low rail</p></td>
+</tr>
+<tr class="row-odd"><td><p>CCDTMING</p></td>
+<td><p>default_sta_timing_20180905.txt</p></td>
+<td><p>str</p></td>
+<td><p>CCD timing file</p></td>
+</tr>
+<tr class="row-even"><td><p>TRIMSECD</p></td>
+<td><p>[2181:4228, 2114:4161]</p></td>
+<td><p>str</p></td>
+<td><p>Trim section for quadrant D</p></td>
+</tr>
+<tr class="row-odd"><td><p>OFFSET1</p></td>
+<td><p>-1.5,15.8208</p></td>
+<td><p>str</p></td>
+<td><p>[V] set value, measured value</p></td>
+</tr>
+<tr class="row-even"><td><p>OFFSET4</p></td>
+<td><p>-1.100000023841858,0.0105</p></td>
+<td><p>str</p></td>
+<td><p>[V] set value, measured value</p></td>
+</tr>
+<tr class="row-odd"><td><p>DATASECD</p></td>
+<td><p>[2181:4228, 2114:4161]</p></td>
+<td><p>str</p></td>
+<td><p>Data section for quadrant D</p></td>
+</tr>
+<tr class="row-even"><td><p>CLOCK3</p></td>
+<td><p>6.9999,-2.0001</p></td>
+<td><p>str</p></td>
+<td><p>[V] high rail, low rail</p></td>
+</tr>
+<tr class="row-odd"><td><p>PGAGAIN</p></td>
+<td><p>5</p></td>
+<td><p>int</p></td>
+<td><p>Controller gain</p></td>
+</tr>
+<tr class="row-even"><td><p>PRRSECA</p></td>
+<td><p>[5:2052, 1:1]</p></td>
+<td><p>str</p></td>
+<td><p>Row prescan section for quadrant A</p></td>
+</tr>
+<tr class="row-odd"><td><p>CLOCK12</p></td>
+<td><p>3.0,-8.0001</p></td>
+<td><p>str</p></td>
+<td><p>[V] high rail, low rail</p></td>
+</tr>
+<tr class="row-even"><td><p>CLOCK6</p></td>
+<td><p>3.9999,-4.0002</p></td>
+<td><p>str</p></td>
+<td><p>[V] high rail, low rail</p></td>
+</tr>
+<tr class="row-odd"><td><p>OFFSET5</p></td>
+<td><p>-1.100000023841858,-0.0053</p></td>
+<td><p>str</p></td>
+<td><p>[V] set value, measured value</p></td>
+</tr>
+<tr class="row-even"><td><p>CLOCK2</p></td>
+<td><p>3.9999,-4.0002</p></td>
+<td><p>str</p></td>
+<td><p>[V] high rail, low rail</p></td>
+</tr>
+<tr class="row-odd"><td><p>CLOCK16</p></td>
+<td><p>0.0,0.0</p></td>
+<td><p>str</p></td>
+<td><p>[V] high rail, low rail</p></td>
+</tr>
+<tr class="row-even"><td><p>ORSECB</p></td>
+<td><p>[2181:4228, 2050:2081]</p></td>
+<td><p>str</p></td>
+<td><p>Row overscan section for quadrant B</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAC12</p></td>
+<td><p>0.0,5.0232</p></td>
+<td><p>str</p></td>
+<td><p>[V] set value, measured value</p></td>
+</tr>
+<tr class="row-even"><td><p>DETSECC</p></td>
+<td><p>[1:2048, 2049:4096]</p></td>
+<td><p>str</p></td>
+<td><p>Detector section for quadrant C</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAC15</p></td>
+<td><p>19.9997,19.6768</p></td>
+<td><p>str</p></td>
+<td><p>[V] set value, measured value</p></td>
+</tr>
+<tr class="row-even"><td><p>CAMERA</p></td>
+<td><p>b6</p></td>
+<td><p>str</p></td>
+<td><p>Camera name</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAC6</p></td>
+<td><p>0.0,0.0053</p></td>
+<td><p>str</p></td>
+<td><p>[V] set value, measured value</p></td>
+</tr>
+<tr class="row-even"><td><p>BIASSECB</p></td>
+<td><p>[2117:2180, 2:2049]</p></td>
+<td><p>str</p></td>
+<td><p>Bias section for quadrant B</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAC4</p></td>
+<td><p>0.0,0.0105</p></td>
+<td><p>str</p></td>
+<td><p>[V] set value, measured value</p></td>
+</tr>
+<tr class="row-even"><td><p>CLOCK1</p></td>
+<td><p>3.9999,-4.0002</p></td>
+<td><p>str</p></td>
+<td><p>[V] high rail, low rail</p></td>
+</tr>
+<tr class="row-odd"><td><p>PRRSECD</p></td>
+<td><p>[2181:4228, 4162:4162]</p></td>
+<td><p>str</p></td>
+<td><p>Row prescan section for quadrant D</p></td>
+</tr>
+<tr class="row-even"><td><p>DAC7</p></td>
+<td><p>0.0,0.0</p></td>
+<td><p>str</p></td>
+<td><p>[V] set value, measured value</p></td>
+</tr>
+<tr class="row-odd"><td><p>DETSECD</p></td>
+<td><p>[2049:4096, 2049:4096]</p></td>
+<td><p>str</p></td>
+<td><p>Detector section for quadrant D</p></td>
+</tr>
+<tr class="row-even"><td><p>ORSECC</p></td>
+<td><p>[5:2052, 2082:2113]</p></td>
+<td><p>str</p></td>
+<td><p>Row overscan section for quadrant C</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAC17</p></td>
+<td><p>-0.0,0.0488</p></td>
+<td><p>str</p></td>
+<td><p>[V] set value, measured value</p></td>
+</tr>
+<tr class="row-even"><td><p>CRYOPRES <a class="footnote-reference brackets" href="#id149" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>9.252e-08</p></td>
+<td><p>str</p></td>
+<td><p>[mb] Cryostat pressure (IP)</p></td>
+</tr>
+<tr class="row-odd"><td><p>AMPSECA</p></td>
+<td><p>[1:2048, 1:2048]</p></td>
+<td><p>str</p></td>
+<td><p>AMP section for quadrant A</p></td>
+</tr>
+<tr class="row-even"><td><p>CLOCK5</p></td>
+<td><p>3.9999,-4.0002</p></td>
+<td><p>str</p></td>
+<td><p>[V] high rail, low rail</p></td>
+</tr>
+<tr class="row-odd"><td><p>CCDSECA</p></td>
+<td><p>[1:2048, 1:2048]</p></td>
+<td><p>str</p></td>
+<td><p>CCD section for quadrant A</p></td>
+</tr>
+<tr class="row-even"><td><p>DAC9</p></td>
+<td><p>26.9998,26.252</p></td>
+<td><p>str</p></td>
+<td><p>[V] set value, measured value</p></td>
+</tr>
+<tr class="row-odd"><td><p>CLOCK0</p></td>
+<td><p>3.9999,-4.0002</p></td>
+<td><p>str</p></td>
+<td><p>[V] high rail, low rail</p></td>
+</tr>
+<tr class="row-even"><td><p>DETSECB</p></td>
+<td><p>[2049:4096, 1:2048]</p></td>
+<td><p>str</p></td>
+<td><p>Detector section for quadrant B</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAC1</p></td>
+<td><p>15.9998,15.8311</p></td>
+<td><p>str</p></td>
+<td><p>[V] set value, measured value</p></td>
+</tr>
+<tr class="row-even"><td><p>DAC3</p></td>
+<td><p>15.9998,15.8517</p></td>
+<td><p>str</p></td>
+<td><p>[V] set value, measured value</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAC11</p></td>
+<td><p>26.9998,26.9198</p></td>
+<td><p>str</p></td>
+<td><p>[V] set value, measured value</p></td>
+</tr>
+<tr class="row-even"><td><p>CLOCK9</p></td>
+<td><p>3.0,-8.0001</p></td>
+<td><p>str</p></td>
+<td><p>[V] high rail, low rail</p></td>
+</tr>
+<tr class="row-odd"><td><p>DIGITIME</p></td>
+<td><p>41.6984</p></td>
+<td><p>float</p></td>
+<td><p>[s] Time to digitize image</p></td>
+</tr>
+<tr class="row-even"><td><p>OFFSET2</p></td>
+<td><p>-1.5,15.9135</p></td>
+<td><p>str</p></td>
+<td><p>[V] set value, measured value</p></td>
+</tr>
+<tr class="row-odd"><td><p>PRESECD</p></td>
+<td><p>[4229:4232, 2114:4161]</p></td>
+<td><p>str</p></td>
+<td><p>Prescan section for quadrant D</p></td>
+</tr>
+<tr class="row-even"><td><p>CLOCK10</p></td>
+<td><p>3.0,-8.0001</p></td>
+<td><p>str</p></td>
+<td><p>[V] high rail, low rail</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAC0</p></td>
+<td><p>15.9998,15.8311</p></td>
+<td><p>str</p></td>
+<td><p>[V] set value, measured value</p></td>
+</tr>
+<tr class="row-even"><td><p>TRIMSECB</p></td>
+<td><p>[2181:4228, 2:2049]</p></td>
+<td><p>str</p></td>
+<td><p>Trim section for quadrant B</p></td>
+</tr>
+<tr class="row-odd"><td><p>OFFSET3</p></td>
+<td><p>-1.5,15.8414</p></td>
+<td><p>str</p></td>
+<td><p>[V] set value, measured value</p></td>
+</tr>
+<tr class="row-even"><td><p>AMPSECB</p></td>
+<td><p>[2049:4096, 2048:1]</p></td>
+<td><p>str</p></td>
+<td><p>AMP section for quadrant B</p></td>
+</tr>
+<tr class="row-odd"><td><p>CPUTEMP</p></td>
+<td><p>51.334</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] CCD controller CPU temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>CCDSECC</p></td>
+<td><p>[1:2048, 2049:4096]</p></td>
+<td><p>str</p></td>
+<td><p>CCD section for quadrant C</p></td>
+</tr>
+<tr class="row-odd"><td><p>OFFSET7</p></td>
+<td><p>-1.100000023841858,0.0</p></td>
+<td><p>str</p></td>
+<td><p>[V] set value, measured value</p></td>
+</tr>
+<tr class="row-even"><td><p>BLDTIME</p></td>
+<td><p>0.3499</p></td>
+<td><p>float</p></td>
+<td><p>[s] Time to build image</p></td>
+</tr>
+<tr class="row-odd"><td><p>DATASECC</p></td>
+<td><p>[5:2052, 2114:4161]</p></td>
+<td><p>str</p></td>
+<td><p>Data section for quadrant C</p></td>
+</tr>
+<tr class="row-even"><td><p>DETECTOR</p></td>
+<td><p>sn22813</p></td>
+<td><p>str</p></td>
+<td><p>Detector (ccd) identification</p></td>
+</tr>
+<tr class="row-odd"><td><p>OFFSET6</p></td>
+<td><p>-1.100000023841858,0.0053</p></td>
+<td><p>str</p></td>
+<td><p>[V] set value, measured value</p></td>
+</tr>
+<tr class="row-even"><td><p>BIASSECA</p></td>
+<td><p>[2053:2116, 2:2049]</p></td>
+<td><p>str</p></td>
+<td><p>Bias section for quadrant A</p></td>
+</tr>
+<tr class="row-odd"><td><p>TRIMSECC</p></td>
+<td><p>[5:2052, 2114:4161]</p></td>
+<td><p>str</p></td>
+<td><p>Trim section for quadrant C</p></td>
+</tr>
+<tr class="row-even"><td><p>PRRSECB</p></td>
+<td><p>[2181:4228, 1:1]</p></td>
+<td><p>str</p></td>
+<td><p>Row prescan section for quadrant B</p></td>
+</tr>
+<tr class="row-odd"><td><p>CCDSECB</p></td>
+<td><p>[2049:4096, 1:2048]</p></td>
+<td><p>str</p></td>
+<td><p>CCD section for quadrant B</p></td>
+</tr>
+<tr class="row-even"><td><p>DAC10</p></td>
+<td><p>26.9998,26.9198</p></td>
+<td><p>str</p></td>
+<td><p>[V] set value, measured value</p></td>
+</tr>
+<tr class="row-odd"><td><p>CLOCK13</p></td>
+<td><p>3.0,-8.0001</p></td>
+<td><p>str</p></td>
+<td><p>[V] high rail, low rail</p></td>
+</tr>
+<tr class="row-even"><td><p>CLOCK7</p></td>
+<td><p>6.9999,-2.0001</p></td>
+<td><p>str</p></td>
+<td><p>[V] high rail, low rail</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQTIME</p></td>
+<td><p>300.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] Requested exposure time</p></td>
+</tr>
+<tr class="row-even"><td><p>OBSID</p></td>
+<td><p>kp4m20201221t023911</p></td>
+<td><p>str</p></td>
+<td><p>Unique observation identifier</p></td>
+</tr>
+<tr class="row-odd"><td><p>PROCTYPE</p></td>
+<td><p>RAW</p></td>
+<td><p>str</p></td>
+<td><p>Data processing level</p></td>
+</tr>
+<tr class="row-even"><td><p>PRODTYPE</p></td>
+<td><p>image</p></td>
+<td><p>str</p></td>
+<td><p>Data product type</p></td>
+</tr>
+<tr class="row-odd"><td><p>CHECKSUM</p></td>
+<td><p>VAChW8AfVAAfV7Af</p></td>
+<td><p>str</p></td>
+<td><p>HDU checksum updated 2022-02-14T06:13:54</p></td>
+</tr>
+<tr class="row-even"><td><p>DATASUM</p></td>
+<td><p>1301167967</p></td>
+<td><p>str</p></td>
+<td><p>data unit checksum updated 2022-02-14T06:13:54</p></td>
+</tr>
+<tr class="row-odd"><td><p>GAINA</p></td>
+<td><p>1.29</p></td>
+<td><p>float</p></td>
+<td><p>e/ADU (gain applied to image)</p></td>
+</tr>
+<tr class="row-even"><td><p>SATULEVA</p></td>
+<td><p>40000.0</p></td>
+<td><p>float</p></td>
+<td><p>saturation or non lin. level, in ADU, inc. bias</p></td>
+</tr>
+<tr class="row-odd"><td><p>OSTEPA</p></td>
+<td><p>1.21893160851323</p></td>
+<td><p>float</p></td>
+<td><p>ADUs (max-min of median overscan per row)</p></td>
+</tr>
+<tr class="row-even"><td><p>OMETHA</p></td>
+<td><p>AVERAGE</p></td>
+<td><p>str</p></td>
+<td><p>use average overscan</p></td>
+</tr>
+<tr class="row-odd"><td><p>OVERSCNA</p></td>
+<td><p>1201.407080585313</p></td>
+<td><p>float</p></td>
+<td><p>ADUs (gain not applied)</p></td>
+</tr>
+<tr class="row-even"><td><p>OBSRDNA</p></td>
+<td><p>3.932320693814749</p></td>
+<td><p>float</p></td>
+<td><p>electrons (gain is applied)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SATUELEA</p></td>
+<td><p>50050.18486604495</p></td>
+<td><p>float</p></td>
+<td><p>saturation or non lin. level, in electrons</p></td>
+</tr>
+<tr class="row-even"><td><p>GAINB</p></td>
+<td><p>1.284</p></td>
+<td><p>float</p></td>
+<td><p>e/ADU (gain applied to image)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SATULEVB</p></td>
+<td><p>65535.0</p></td>
+<td><p>float</p></td>
+<td><p>saturation or non lin. level, in ADU, inc. bias</p></td>
+</tr>
+<tr class="row-even"><td><p>OSTEPB</p></td>
+<td><p>0.9970038118117373</p></td>
+<td><p>float</p></td>
+<td><p>ADUs (max-min of median overscan per row)</p></td>
+</tr>
+<tr class="row-odd"><td><p>OMETHB</p></td>
+<td><p>AVERAGE</p></td>
+<td><p>str</p></td>
+<td><p>use average overscan</p></td>
+</tr>
+<tr class="row-even"><td><p>OVERSCNB</p></td>
+<td><p>1212.197611701435</p></td>
+<td><p>float</p></td>
+<td><p>ADUs (gain not applied)</p></td>
+</tr>
+<tr class="row-odd"><td><p>OBSRDNB</p></td>
+<td><p>3.323361580066672</p></td>
+<td><p>float</p></td>
+<td><p>electrons (gain is applied)</p></td>
+</tr>
+<tr class="row-even"><td><p>SATUELEB</p></td>
+<td><p>82590.47826657536</p></td>
+<td><p>float</p></td>
+<td><p>saturation or non lin. level, in electrons</p></td>
+</tr>
+<tr class="row-odd"><td><p>GAINC</p></td>
+<td><p>1.292</p></td>
+<td><p>float</p></td>
+<td><p>e/ADU (gain applied to image)</p></td>
+</tr>
+<tr class="row-even"><td><p>SATULEVC</p></td>
+<td><p>40000.0</p></td>
+<td><p>float</p></td>
+<td><p>saturation or non lin. level, in ADU, inc. bias</p></td>
+</tr>
+<tr class="row-odd"><td><p>OSTEPC</p></td>
+<td><p>0.7691677607072052</p></td>
+<td><p>float</p></td>
+<td><p>ADUs (max-min of median overscan per row)</p></td>
+</tr>
+<tr class="row-even"><td><p>OMETHC</p></td>
+<td><p>AVERAGE</p></td>
+<td><p>str</p></td>
+<td><p>use average overscan</p></td>
+</tr>
+<tr class="row-odd"><td><p>OVERSCNC</p></td>
+<td><p>1178.422505897216</p></td>
+<td><p>float</p></td>
+<td><p>ADUs (gain not applied)</p></td>
+</tr>
+<tr class="row-even"><td><p>OBSRDNC</p></td>
+<td><p>3.252427649816138</p></td>
+<td><p>float</p></td>
+<td><p>electrons (gain is applied)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SATUELEC</p></td>
+<td><p>50157.4781223808</p></td>
+<td><p>float</p></td>
+<td><p>saturation or non lin. level, in electrons</p></td>
+</tr>
+<tr class="row-even"><td><p>GAIND</p></td>
+<td><p>1.295</p></td>
+<td><p>float</p></td>
+<td><p>e/ADU (gain applied to image)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SATULEVD</p></td>
+<td><p>44000.0</p></td>
+<td><p>float</p></td>
+<td><p>saturation or non lin. level, in ADU, inc. bias</p></td>
+</tr>
+<tr class="row-even"><td><p>OSTEPD</p></td>
+<td><p>0.9395222094608471</p></td>
+<td><p>float</p></td>
+<td><p>ADUs (max-min of median overscan per row)</p></td>
+</tr>
+<tr class="row-odd"><td><p>OMETHD</p></td>
+<td><p>AVERAGE</p></td>
+<td><p>str</p></td>
+<td><p>use average overscan</p></td>
+</tr>
+<tr class="row-even"><td><p>OVERSCND</p></td>
+<td><p>1174.800960708566</p></td>
+<td><p>float</p></td>
+<td><p>ADUs (gain not applied)</p></td>
+</tr>
+<tr class="row-odd"><td><p>OBSRDND</p></td>
+<td><p>3.333804957383686</p></td>
+<td><p>float</p></td>
+<td><p>electrons (gain is applied)</p></td>
+</tr>
+<tr class="row-even"><td><p>SATUELED</p></td>
+<td><p>55458.6327558824</p></td>
+<td><p>float</p></td>
+<td><p>saturation or non lin. level, in electrons</p></td>
+</tr>
+<tr class="row-odd"><td><p>FIBERMIN</p></td>
+<td><p>3000</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>BBKGMINA <a class="footnote-reference brackets" href="#id149" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>-0.2077800596230136</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>BBKGMAXA <a class="footnote-reference brackets" href="#id149" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>0.5254324469128164</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>BBKGMINB <a class="footnote-reference brackets" href="#id149" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>-0.2033242713025349</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>BBKGMAXB <a class="footnote-reference brackets" href="#id149" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>0.4258502359052168</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>BBKGMINC <a class="footnote-reference brackets" href="#id149" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>-0.1314577356495719</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>BBKGMAXC <a class="footnote-reference brackets" href="#id149" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>0.4236035445727393</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>BBKGMIND <a class="footnote-reference brackets" href="#id149" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>-0.2582211042496522</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>BBKGMAXD <a class="footnote-reference brackets" href="#id149" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>0.3659635169905933</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>LONGSTRN</p></td>
+<td><p>OGIP 1.0</p></td>
+<td><p>str</p></td>
+<td><p>The OGIP Long String Convention may be used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>MODULE</p></td>
+<td><p>CI</p></td>
+<td><p>str</p></td>
+<td><p>Image Sources/Component</p></td>
+</tr>
+<tr class="row-even"><td><p>COSMSPLT</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>Cosmics split exposure if true</p></td>
+</tr>
+<tr class="row-odd"><td><p>MAXSPLIT</p></td>
+<td><p>0</p></td>
+<td><p>int</p></td>
+<td><p>Number of allowed exposure splits</p></td>
+</tr>
+<tr class="row-even"><td><p>SPLITIDS <a class="footnote-reference brackets" href="#id149" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>69022</p></td>
+<td><p>str</p></td>
+<td><p>List of expids for split exposures</p></td>
+</tr>
+<tr class="row-odd"><td><p>OBSTYPE</p></td>
+<td><p>SCIENCE</p></td>
+<td><p>str</p></td>
+<td><p>Spectrograph observation type</p></td>
+</tr>
+<tr class="row-even"><td><p>MANIFEST</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>DOS exposure manifest</p></td>
+</tr>
+<tr class="row-odd"><td><p>OBJECT</p></td>
+<td></td>
+<td><p>str</p></td>
+<td><p>Object name</p></td>
+</tr>
+<tr class="row-even"><td><p>SEQNUM</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>Number of exposure in sequence</p></td>
+</tr>
+<tr class="row-odd"><td><p>CAMSHUT</p></td>
+<td><p>open</p></td>
+<td><p>str</p></td>
+<td><p>Shutter status during observation</p></td>
+</tr>
+<tr class="row-even"><td><p>ACQTIME</p></td>
+<td><p>15.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] acqusition image exposure time</p></td>
+</tr>
+<tr class="row-odd"><td><p>GUIDTIME</p></td>
+<td><p>5.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] guider GFA exposure time</p></td>
+</tr>
+<tr class="row-even"><td><p>FOCSTIME <a class="footnote-reference brackets" href="#id149" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>60.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] focus GFA exposure time</p></td>
+</tr>
+<tr class="row-odd"><td><p>SKYTIME <a class="footnote-reference brackets" href="#id149" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>60.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] sky camera exposure time (acquisition)</p></td>
+</tr>
+<tr class="row-even"><td><p>WHITESPT</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>Telescope is at whitespot</p></td>
+</tr>
+<tr class="row-odd"><td><p>ZENITH</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>Telescope is at zenith</p></td>
+</tr>
+<tr class="row-even"><td><p>SEANNEX</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>Telescope is at SE annex</p></td>
+</tr>
+<tr class="row-odd"><td><p>BEYONDP</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>Telescope is beyond pole</p></td>
+</tr>
+<tr class="row-even"><td><p>FIDUCIAL</p></td>
+<td><p>off</p></td>
+<td><p>str</p></td>
+<td><p>Fiducials status during observation</p></td>
+</tr>
+<tr class="row-odd"><td><p>BACKLIT</p></td>
+<td><p>off</p></td>
+<td><p>str</p></td>
+<td><p>Fibers are backlit if True</p></td>
+</tr>
+<tr class="row-even"><td><p>AIRMASS</p></td>
+<td><p>1.060311</p></td>
+<td><p>float</p></td>
+<td><p>Airmass</p></td>
+</tr>
+<tr class="row-odd"><td><p>PMREADY</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>Primary mirror ready</p></td>
+</tr>
+<tr class="row-even"><td><p>PMCOVER</p></td>
+<td><p>open</p></td>
+<td><p>str</p></td>
+<td><p>Primary mirror cover</p></td>
+</tr>
+<tr class="row-odd"><td><p>PMCOOL</p></td>
+<td><p>off</p></td>
+<td><p>str</p></td>
+<td><p>Primary mirror cooling</p></td>
+</tr>
+<tr class="row-even"><td><p>DOMSHUTU</p></td>
+<td><p>open</p></td>
+<td><p>str</p></td>
+<td><p>Upper dome shutter</p></td>
+</tr>
+<tr class="row-odd"><td><p>DOMSHUTL</p></td>
+<td><p>open</p></td>
+<td><p>str</p></td>
+<td><p>Lower dome shutter</p></td>
+</tr>
+<tr class="row-even"><td><p>DOMLIGHH</p></td>
+<td><p>off</p></td>
+<td><p>str</p></td>
+<td><p>High dome lights</p></td>
+</tr>
+<tr class="row-odd"><td><p>DOMLIGHL</p></td>
+<td><p>off</p></td>
+<td><p>str</p></td>
+<td><p>Low dome lights</p></td>
+</tr>
+<tr class="row-even"><td><p>DOMEAZ</p></td>
+<td><p>255.166</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Dome azimuth angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>DOMINPOS</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>Dome is in position</p></td>
+</tr>
+<tr class="row-even"><td><p>GUIDOFFR</p></td>
+<td><p>-0.052283</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Cummulative guider offset (RA)</p></td>
+</tr>
+<tr class="row-odd"><td><p>GUIDOFFD</p></td>
+<td><p>0.136634</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Cummulative guider offset (dec)</p></td>
+</tr>
+<tr class="row-even"><td><p>MOONDEC</p></td>
+<td><p>-8.975162</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Moon declination at start of exposure</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOONRA</p></td>
+<td><p>352.538429</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Moon RA at start of exposure</p></td>
+</tr>
+<tr class="row-even"><td><p>INCTRL</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>DESI in control</p></td>
+</tr>
+<tr class="row-odd"><td><p>INPOS</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>Mount in position</p></td>
+</tr>
+<tr class="row-even"><td><p>MNTOFFD</p></td>
+<td><p>-15.76</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Mount offset (dec)</p></td>
+</tr>
+<tr class="row-odd"><td><p>MNTOFFR</p></td>
+<td><p>29.32</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Mount offset (RA)</p></td>
+</tr>
+<tr class="row-even"><td><p>PARALLAC</p></td>
+<td><p>75.635085</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Parallactic angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>TARGTAZ</p></td>
+<td><p>267.074049</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Target azimuth</p></td>
+</tr>
+<tr class="row-even"><td><p>TARGTEL</p></td>
+<td><p>70.563787</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Target elevation</p></td>
+</tr>
+<tr class="row-odd"><td><p>TRGTOFFD</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Telescope target offset (dec)</p></td>
+</tr>
+<tr class="row-even"><td><p>TRGTOFFR</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] Telescope target offset (RA)</p></td>
+</tr>
+<tr class="row-odd"><td><p>ZD</p></td>
+<td><p>19.436213</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope zenith distance</p></td>
+</tr>
+<tr class="row-even"><td><p>TILERA</p></td>
+<td><p>356.0</p></td>
+<td><p>float</p></td>
+<td><p>RA of tile given in fiberassign file</p></td>
+</tr>
+<tr class="row-odd"><td><p>TILEDEC</p></td>
+<td><p>29.0</p></td>
+<td><p>float</p></td>
+<td><p>DEC of tile given in fiberassign file</p></td>
+</tr>
+<tr class="row-even"><td><p>TCSST</p></td>
+<td><p>01:13:18.668</p></td>
+<td><p>str</p></td>
+<td><p>Local Sidereal time reported by TCS (HH:MM:SS)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCSMJD</p></td>
+<td><p>59204.110981</p></td>
+<td><p>float</p></td>
+<td><p>MJD reported by TCS</p></td>
+</tr>
+<tr class="row-even"><td><p>USETURB <a class="footnote-reference brackets" href="#id149" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>Turbulence corrections are applied if true</p></td>
+</tr>
+<tr class="row-odd"><td><p>ACQCAM</p></td>
+<td><p>GUIDE0,GUIDE2,GUIDE3,GUIDE5,GUIDE7,GUIDE8</p></td>
+<td><p>str</p></td>
+<td><p>Acquisition cameras used</p></td>
+</tr>
+<tr class="row-even"><td><p>GUIDECAM</p></td>
+<td><p>GUIDE0,GUIDE2,GUIDE3,GUIDE5,GUIDE7,GUIDE8</p></td>
+<td><p>str</p></td>
+<td><p>Guide cameras used for t</p></td>
+</tr>
+<tr class="row-odd"><td><p>FOCUSCAM <a class="footnote-reference brackets" href="#id149" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>FOCUS1,FOCUS4,FOCUS6,FOCUS9</p></td>
+<td><p>str</p></td>
+<td><p>Focus cameras used for this exposure</p></td>
+</tr>
+<tr class="row-even"><td><p>SKYCAM <a class="footnote-reference brackets" href="#id149" id="id17" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>SKYCAM0,SKYCAM1</p></td>
+<td><p>str</p></td>
+<td><p>Sky cameras used for this exposure</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQADC</p></td>
+<td><p>65.78,85.28</p></td>
+<td><p>str</p></td>
+<td><p>[deg] requested ADC angles</p></td>
+</tr>
+<tr class="row-even"><td><p>ADCCORR</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>Correct pointing for ADC setting if True</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADC1PHI</p></td>
+<td><p>65.780005</p></td>
+<td><p>float</p></td>
+<td><p>[deg] ADC 1 angle</p></td>
+</tr>
+<tr class="row-even"><td><p>ADC2PHI</p></td>
+<td><p>85.279991</p></td>
+<td><p>float</p></td>
+<td><p>[deg] ADC 2 angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADC1HOME</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>ADC 1 at home position if True</p></td>
+</tr>
+<tr class="row-even"><td><p>ADC2HOME</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>ADC 2 at home position if True</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADC1NREV</p></td>
+<td><p>-1.0</p></td>
+<td><p>float</p></td>
+<td><p>ADC 1 number of revs</p></td>
+</tr>
+<tr class="row-even"><td><p>ADC2NREV</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>ADC 2 number of revs</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADC1STAT</p></td>
+<td><p>STOPPED</p></td>
+<td><p>str</p></td>
+<td><p>ADC 1 status</p></td>
+</tr>
+<tr class="row-even"><td><p>ADC2STAT</p></td>
+<td><p>STOPPED</p></td>
+<td><p>str</p></td>
+<td><p>ADC 2 status</p></td>
+</tr>
+<tr class="row-odd"><td><p>HEXPOS</p></td>
+<td><p>1426.5,-501.3,81.0,-2.6,42.3,171.9</p></td>
+<td><p>str</p></td>
+<td><p>Hexapod position</p></td>
+</tr>
+<tr class="row-even"><td><p>RESETROT</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>DOS Control: reset hex rotator</p></td>
+</tr>
+<tr class="row-odd"><td><p>USEPOS</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>Fiber positioner data available if true</p></td>
+</tr>
+<tr class="row-even"><td><p>PETALS</p></td>
+<td><p>PETAL0,PETAL1,PETAL2,PETAL3,PETAL4,PETAL5,PETAL6,PETAL7,PETAL8,PETAL9</p></td>
+<td><p>str</p></td>
+<td><p>Participating petals</p></td>
+</tr>
+<tr class="row-odd"><td><p>POSCYCLE</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>Number of current iteration</p></td>
+</tr>
+<tr class="row-even"><td><p>POSONTGT</p></td>
+<td><p>3626</p></td>
+<td><p>int</p></td>
+<td><p>Number of positioners on target</p></td>
+</tr>
+<tr class="row-odd"><td><p>POSNOTON <a class="footnote-reference brackets" href="#id149" id="id18" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>6</p></td>
+<td><p>int</p></td>
+<td><p>Number of enabled positioners not on target</p></td>
+</tr>
+<tr class="row-even"><td><p>POSONFRC</p></td>
+<td><p>0.8613</p></td>
+<td><p>float</p></td>
+<td><p>Fraction of positioners on target</p></td>
+</tr>
+<tr class="row-odd"><td><p>POSDISAB</p></td>
+<td><p>37</p></td>
+<td><p>int</p></td>
+<td><p>Number of disabled positioners</p></td>
+</tr>
+<tr class="row-even"><td><p>POSENABL</p></td>
+<td><p>4210</p></td>
+<td><p>int</p></td>
+<td><p>Number of enabled positioners</p></td>
+</tr>
+<tr class="row-odd"><td><p>POSRMS</p></td>
+<td><p>0.0171</p></td>
+<td><p>float</p></td>
+<td><p>[mm] RMS of positioner accuracy</p></td>
+</tr>
+<tr class="row-even"><td><p>TURBRMS <a class="footnote-reference brackets" href="#id149" id="id19" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>0.0071</p></td>
+<td><p>float</p></td>
+<td><p>[mm] RMS of turbulence correction</p></td>
+</tr>
+<tr class="row-odd"><td><p>POSITER</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>Positioning Control: max. number of pos. cycles</p></td>
+</tr>
+<tr class="row-even"><td><p>POSFRACT</p></td>
+<td><p>0.95</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>POSTOLER</p></td>
+<td><p>0.01</p></td>
+<td><p>float</p></td>
+<td><p>Positioning Control: in_position tolerance (mm)</p></td>
+</tr>
+<tr class="row-even"><td><p>POSMVALL</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>Positioning Control: move all positioners</p></td>
+</tr>
+<tr class="row-odd"><td><p>GUIDMODE</p></td>
+<td><p>catalog</p></td>
+<td><p>str</p></td>
+<td><p>Guider mode</p></td>
+</tr>
+<tr class="row-even"><td><p>USEAOS <a class="footnote-reference brackets" href="#id149" id="id20" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>DOS Control: AOS data available if true</p></td>
+</tr>
+<tr class="row-odd"><td><p>USESPCTR</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>DOS Control: use spectrographs</p></td>
+</tr>
+<tr class="row-even"><td><p>SPCGRPHS</p></td>
+<td><p>SP0,SP1,SP2,SP3,SP4,SP5,SP6,SP7,SP8,SP9</p></td>
+<td><p>str</p></td>
+<td><p>Participating spectrograph</p></td>
+</tr>
+<tr class="row-odd"><td><p>ILLSPECS <a class="footnote-reference brackets" href="#id149" id="id21" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>SP0,SP1,SP2,SP3,SP4,SP5,SP6,SP7,SP8,SP9</p></td>
+<td><p>str</p></td>
+<td><p>Participating illuminate s</p></td>
+</tr>
+<tr class="row-even"><td><p>CCDSPECS <a class="footnote-reference brackets" href="#id149" id="id22" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>SP0,SP1,SP2,SP3,SP4,SP5,SP6,SP7,SP8,SP9</p></td>
+<td><p>str</p></td>
+<td><p>Participating ccd spectrog</p></td>
+</tr>
+<tr class="row-odd"><td><p>TDEWPNT</p></td>
+<td><p>-16.043</p></td>
+<td><p>float</p></td>
+<td><p>Telescope air dew point</p></td>
+</tr>
+<tr class="row-even"><td><p>TAIRFLOW</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>Telescope air flow</p></td>
+</tr>
+<tr class="row-odd"><td><p>TAIRITMP</p></td>
+<td><p>11.8</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope air in temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TAIROTMP</p></td>
+<td><p>11.7</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope air out temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TAIRTEMP</p></td>
+<td><p>10.65</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope air temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TCASITMP</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope Cass Cage in temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCASOTMP</p></td>
+<td><p>10.8</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope Cass Cage out temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TCSITEMP</p></td>
+<td><p>9.3</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope center section in temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCSOTEMP</p></td>
+<td><p>10.8</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope center section out temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TCIBTEMP</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope chimney IB temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCIMTEMP</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope chimney IM temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TCITTEMP</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope chimney IT temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCOSTEMP</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope chimney OS temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TCOWTEMP</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope chimney OW temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TDBTEMP</p></td>
+<td><p>9.3</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope dec bore temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TFLOWIN</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>Telescope flow rate in</p></td>
+</tr>
+<tr class="row-odd"><td><p>TFLOWOUT</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>Telescope flow rate out</p></td>
+</tr>
+<tr class="row-even"><td><p>TGLYCOLI</p></td>
+<td><p>9.9</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope glycol in temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TGLYCOLO</p></td>
+<td><p>9.8</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope glycol out temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>THINGES</p></td>
+<td><p>11.4</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope hinge S temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>THINGEW</p></td>
+<td><p>11.2</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope hinge W temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TPMAVERT</p></td>
+<td><p>8.931</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror averagetemperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TPMDESIT</p></td>
+<td><p>7.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror desired temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TPMEIBT</p></td>
+<td><p>8.6</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror EIB temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TPMEITT</p></td>
+<td><p>8.6</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror EIT temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TPMEOBT</p></td>
+<td><p>8.5</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror EOB temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TPMEOTT</p></td>
+<td><p>9.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror EOT temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TPMNIBT</p></td>
+<td><p>8.4</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror NIB temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TPMNITT</p></td>
+<td><p>8.9</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror NIT temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TPMNOBT</p></td>
+<td><p>8.8</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror NOB temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TPMNOTT</p></td>
+<td><p>9.1</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror NOT temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TPMRTDT</p></td>
+<td><p>9.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror RTD temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TPMSIBT</p></td>
+<td><p>8.6</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror SIB temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TPMSITT</p></td>
+<td><p>8.8</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror SIT temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TPMSOBT</p></td>
+<td><p>8.2</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror SOB temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TPMSOTT</p></td>
+<td><p>8.9</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror SOT temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TPMSTAT</p></td>
+<td><p>ready</p></td>
+<td><p>str</p></td>
+<td><p>Telescope mirror status</p></td>
+</tr>
+<tr class="row-even"><td><p>TPMWIBT</p></td>
+<td><p>8.2</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror WIB temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TPMWITT</p></td>
+<td><p>9.1</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror WIT temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TPMWOBT</p></td>
+<td><p>8.3</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror WOB temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TPMWOTT</p></td>
+<td><p>8.9</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope mirror WOT temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TPCITEMP</p></td>
+<td><p>8.5</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope primary cell in temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TPCOTEMP</p></td>
+<td><p>8.6</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope primary cell out temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TPR1HUM</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>Telescope probe 1 humidity</p></td>
+</tr>
+<tr class="row-odd"><td><p>TPR1TEMP</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope probe1 temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TPR2HUM</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>Telescope probe 2 humidity</p></td>
+</tr>
+<tr class="row-odd"><td><p>TPR2TEMP</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope probe2 temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TSERVO</p></td>
+<td><p>40.0</p></td>
+<td><p>float</p></td>
+<td><p>Telescope servo setpoint</p></td>
+</tr>
+<tr class="row-odd"><td><p>TTRSTEMP</p></td>
+<td><p>11.4</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope top ring S temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TTRWTEMP</p></td>
+<td><p>11.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope top ring W temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TTRUETBT</p></td>
+<td><p>-4.2</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope truss ETB temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TTRUETTT</p></td>
+<td><p>11.2</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope truss ETT temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TTRUNTBT</p></td>
+<td><p>10.9</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope truss NTB temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TTRUNTTT</p></td>
+<td><p>11.2</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope truss NTT temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TTRUSTBT</p></td>
+<td><p>10.7</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope truss STB temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TTRUSTST</p></td>
+<td><p>10.8</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope truss STS temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TTRUSTTT</p></td>
+<td><p>11.1</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope truss STT temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TTRUTSBT</p></td>
+<td><p>11.8</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope truss TSB temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TTRUTSMT</p></td>
+<td><p>11.8</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope truss TSM temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TTRUTSTT</p></td>
+<td><p>11.8</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope truss TST temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TTRUWTBT</p></td>
+<td><p>10.5</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope truss WTB temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>TTRUWTTT</p></td>
+<td><p>10.9</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Telescope truss WTT temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>ALARM</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>UPS major alarm or check battery</p></td>
+</tr>
+<tr class="row-even"><td><p>ALARM-ON</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>UPS active alarm condition</p></td>
+</tr>
+<tr class="row-odd"><td><p>BATTERY</p></td>
+<td><p>100.0</p></td>
+<td><p>float</p></td>
+<td><p>[%] UPS Battery left</p></td>
+</tr>
+<tr class="row-even"><td><p>SECLEFT</p></td>
+<td><p>5178.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] UPS Seconds left</p></td>
+</tr>
+<tr class="row-odd"><td><p>UPSSTAT <a class="footnote-reference brackets" href="#id149" id="id23" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>System Normal - On Line(7)</p></td>
+<td><p>str</p></td>
+<td><p>UPS Status</p></td>
+</tr>
+<tr class="row-even"><td><p>INAMPS</p></td>
+<td><p>70.4</p></td>
+<td><p>float</p></td>
+<td><p>[A] UPS total input current</p></td>
+</tr>
+<tr class="row-odd"><td><p>OUTWATTS</p></td>
+<td><p>5000.0,7200.0,4800.0</p></td>
+<td><p>str</p></td>
+<td><p>[W] UPS Phase A, B, C output watts</p></td>
+</tr>
+<tr class="row-even"><td><p>COMPDEW</p></td>
+<td><p>-12.9</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] Computer room dewpoint</p></td>
+</tr>
+<tr class="row-odd"><td><p>COMPHUM</p></td>
+<td><p>7.4</p></td>
+<td><p>float</p></td>
+<td><p>[%] Computer room humidity</p></td>
+</tr>
+<tr class="row-even"><td><p>COMPAMB</p></td>
+<td><p>19.5</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] Computer room ambient temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>COMPTEMP</p></td>
+<td><p>24.5</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] Computer room hygrometer temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>DEWPOINT</p></td>
+<td><p>11.5</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] (outside) dewpoint</p></td>
+</tr>
+<tr class="row-odd"><td><p>HUMIDITY</p></td>
+<td><p>10.0</p></td>
+<td><p>float</p></td>
+<td><p>[%] (outside) humidity</p></td>
+</tr>
+<tr class="row-even"><td><p>PRESSURE</p></td>
+<td><p>795.0</p></td>
+<td><p>float</p></td>
+<td><p>[torr] (outside) air pressure</p></td>
+</tr>
+<tr class="row-odd"><td><p>OUTTEMP</p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] outside temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>WINDDIR</p></td>
+<td><p>55.0</p></td>
+<td><p>float</p></td>
+<td><p>[deg] wind direction</p></td>
+</tr>
+<tr class="row-odd"><td><p>WINDSPD</p></td>
+<td><p>27.3</p></td>
+<td><p>float</p></td>
+<td><p>[m/s] wind speed</p></td>
+</tr>
+<tr class="row-even"><td><p>GUST</p></td>
+<td><p>20.6</p></td>
+<td><p>float</p></td>
+<td><p>[m/s] Wind gusts speed</p></td>
+</tr>
+<tr class="row-odd"><td><p>AMNIENTN</p></td>
+<td><p>13.5</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] ambient temperature north</p></td>
+</tr>
+<tr class="row-even"><td><p>CFLOOR</p></td>
+<td><p>8.9</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature on C floor</p></td>
+</tr>
+<tr class="row-odd"><td><p>NWALLIN</p></td>
+<td><p>13.9</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at north wall inside</p></td>
+</tr>
+<tr class="row-even"><td><p>NWALLOUT</p></td>
+<td><p>9.6</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at north wall outside</p></td>
+</tr>
+<tr class="row-odd"><td><p>WWALLIN</p></td>
+<td><p>12.9</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at west wall inside</p></td>
+</tr>
+<tr class="row-even"><td><p>WWALLOUT</p></td>
+<td><p>10.6</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at west wall outside</p></td>
+</tr>
+<tr class="row-odd"><td><p>AMBIENTS</p></td>
+<td><p>14.8</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] ambient temperature south</p></td>
+</tr>
+<tr class="row-even"><td><p>FLOOR</p></td>
+<td><p>12.6</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at floor (LCR)</p></td>
+</tr>
+<tr class="row-odd"><td><p>EWALLCMP</p></td>
+<td><p>10.8</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at east wall, computer room</p></td>
+</tr>
+<tr class="row-even"><td><p>EWALLCOU</p></td>
+<td><p>10.6</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at east wall, Coude room</p></td>
+</tr>
+<tr class="row-odd"><td><p>ROOF</p></td>
+<td><p>10.3</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature on roof</p></td>
+</tr>
+<tr class="row-even"><td><p>ROOFAMB</p></td>
+<td><p>10.6</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] ambient temperature on roof</p></td>
+</tr>
+<tr class="row-odd"><td><p>DOMEBLOW</p></td>
+<td><p>10.4</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at dome back, lower</p></td>
+</tr>
+<tr class="row-even"><td><p>DOMEBUP</p></td>
+<td><p>10.7</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at dome back, upper</p></td>
+</tr>
+<tr class="row-odd"><td><p>DOMELLOW</p></td>
+<td><p>10.8</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at dome left, lower</p></td>
+</tr>
+<tr class="row-even"><td><p>DOMELUP</p></td>
+<td><p>10.8</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at dome left, upper</p></td>
+</tr>
+<tr class="row-odd"><td><p>DOMERLOW</p></td>
+<td><p>10.6</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at dome right, lower</p></td>
+</tr>
+<tr class="row-even"><td><p>DOMERUP</p></td>
+<td><p>10.5</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at dome right, upper</p></td>
+</tr>
+<tr class="row-odd"><td><p>PLATFORM</p></td>
+<td><p>10.4</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at platform</p></td>
+</tr>
+<tr class="row-even"><td><p>SHACKC</p></td>
+<td><p>14.4</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at shack ceiling</p></td>
+</tr>
+<tr class="row-odd"><td><p>SHACKW</p></td>
+<td><p>13.7</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at shack wall</p></td>
+</tr>
+<tr class="row-even"><td><p>STAIRSL</p></td>
+<td><p>10.5</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at stairs, lower</p></td>
+</tr>
+<tr class="row-odd"><td><p>STAIRSM</p></td>
+<td><p>10.4</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at stairs, mid</p></td>
+</tr>
+<tr class="row-even"><td><p>STAIRSU</p></td>
+<td><p>10.6</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at stairs, upper</p></td>
+</tr>
+<tr class="row-odd"><td><p>TELBASE</p></td>
+<td><p>9.6</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at telescope base</p></td>
+</tr>
+<tr class="row-even"><td><p>UTILWALL</p></td>
+<td><p>11.1</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature at utility room wall</p></td>
+</tr>
+<tr class="row-odd"><td><p>UTILROOM</p></td>
+<td><p>10.9</p></td>
+<td><p>float</p></td>
+<td><p>[deg C] temperature in utilitiy room</p></td>
+</tr>
+<tr class="row-even"><td><p>TNFSPROC <a class="footnote-reference brackets" href="#id149" id="id24" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>8.1963</p></td>
+<td><p>float</p></td>
+<td><p>[s] PlateMaker NFSPROC processing time</p></td>
+</tr>
+<tr class="row-odd"><td><p>TGFAPROC <a class="footnote-reference brackets" href="#id149" id="id25" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>7.9212</p></td>
+<td><p>float</p></td>
+<td><p>[s] PlateMaker GFAPROC processing time</p></td>
+</tr>
+<tr class="row-even"><td><p>SIMGFAP</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>DOS Control: simulate GFAPROC</p></td>
+</tr>
+<tr class="row-odd"><td><p>USEFVC</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>DOS Control: use fvc</p></td>
+</tr>
+<tr class="row-even"><td><p>USEFID</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>DOS Control: use fiducials</p></td>
+</tr>
+<tr class="row-odd"><td><p>USEILLUM</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>DOS Control: use illuminator</p></td>
+</tr>
+<tr class="row-even"><td><p>USEXSRVR</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>DOS Control: use exposure server</p></td>
+</tr>
+<tr class="row-odd"><td><p>USEOPENL</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>DOS Control: use open loop move</p></td>
+</tr>
+<tr class="row-even"><td><p>USEMIDPT <a class="footnote-reference brackets" href="#id149" id="id26" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>Use exposure midpoint if true</p></td>
+</tr>
+<tr class="row-odd"><td><p>STOPGUDR</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>DOS Control: stop guider</p></td>
+</tr>
+<tr class="row-even"><td><p>STOPFOCS</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>DOS Control: stop focus</p></td>
+</tr>
+<tr class="row-odd"><td><p>STOPSKY</p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>DOS Control: stop sky monitor</p></td>
+</tr>
+<tr class="row-even"><td><p>KEEPGUDR</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>DOS Control: keep guider running</p></td>
+</tr>
+<tr class="row-odd"><td><p>KEEPFOCS</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>DOS Control: keep focus running</p></td>
+</tr>
+<tr class="row-even"><td><p>KEEPSKY</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>DOS Control: keep sky mon. running</p></td>
+</tr>
+<tr class="row-odd"><td><p>REACQUIR</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>DOS Control: reacquire same files</p></td>
+</tr>
+<tr class="row-even"><td><p>EXCLUDED</p></td>
+<td></td>
+<td><p>str</p></td>
+<td><p>Components excluded from this exposure</p></td>
+</tr>
+<tr class="row-odd"><td><p>PMVER <a class="footnote-reference brackets" href="#id149" id="id27" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>desi-138368</p></td>
+<td><p>str</p></td>
+<td><p>PlateMaker/Dervish version</p></td>
+</tr>
+<tr class="row-even"><td><p>FVCTIME <a class="footnote-reference brackets" href="#id149" id="id28" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>2.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] FVC exposure time</p></td>
+</tr>
+<tr class="row-odd"><td><p>SIMGFACQ</p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>POSCNVGD <a class="footnote-reference brackets" href="#id149" id="id29" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>Number of positioners converged</p></td>
+</tr>
+<tr class="row-odd"><td><p>GUIEXPID</p></td>
+<td><p>69022</p></td>
+<td><p>int</p></td>
+<td><p>Guider exposure id at start of spectro exp.</p></td>
+</tr>
+<tr class="row-even"><td><p>IGFRMNUM</p></td>
+<td><p>12</p></td>
+<td><p>int</p></td>
+<td><p>Guider frame number at start of spectro exp.</p></td>
+</tr>
+<tr class="row-odd"><td><p>FOCEXPID</p></td>
+<td><p>69022</p></td>
+<td><p>int</p></td>
+<td><p>Focus exposure id at start of spectro exp.</p></td>
+</tr>
+<tr class="row-even"><td><p>IFFRMNUM</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>Focus frame number at start of spectro exp.</p></td>
+</tr>
+<tr class="row-odd"><td><p>TMEBTEXP <a class="footnote-reference brackets" href="#id149" id="id30" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>1219.825</p></td>
+<td><p>float</p></td>
+<td><p>[s] Time between (DESI) exposures</p></td>
+</tr>
+<tr class="row-even"><td><p>SKYEXPID</p></td>
+<td><p>69022</p></td>
+<td><p>int</p></td>
+<td><p>Sky exposure id at start of spectro exp.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ISFRMNUM</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>Sky frame number at start of spectro exp.</p></td>
+</tr>
+<tr class="row-even"><td><p>FGFRMNUM</p></td>
+<td><p>46</p></td>
+<td><p>int</p></td>
+<td><p>Guider frame number at end of spectro exp.</p></td>
+</tr>
+<tr class="row-odd"><td><p>FFFRMNUM</p></td>
+<td><p>6</p></td>
+<td><p>int</p></td>
+<td><p>Focus frame number at end of spectro exp.</p></td>
+</tr>
+<tr class="row-even"><td><p>FSFRMNUM</p></td>
+<td><p>5</p></td>
+<td><p>int</p></td>
+<td><p>Sky frame number at end of spectro exp.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ETCSKYLV <a class="footnote-reference brackets" href="#id149" id="id31" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>15.1381</p></td>
+<td><p>float</p></td>
+<td><p>[unit?] ETC skylevel</p></td>
+</tr>
+<tr class="row-even"><td><p>HELIOCOR</p></td>
+<td><p>0.9999115198216216</p></td>
+<td><p>float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>NSPEC</p></td>
+<td><p>500</p></td>
+<td><p>int</p></td>
+<td><p>Number of spectra</p></td>
+</tr>
+<tr class="row-even"><td><p>WAVEMIN</p></td>
+<td><p>3600.0</p></td>
+<td><p>float</p></td>
+<td><p>First wavelength [Angstroms]</p></td>
+</tr>
+<tr class="row-odd"><td><p>WAVEMAX</p></td>
+<td><p>5800.0</p></td>
+<td><p>float</p></td>
+<td><p>Last wavelength [Angstroms]</p></td>
+</tr>
+<tr class="row-even"><td><p>WAVESTEP</p></td>
+<td><p>0.8</p></td>
+<td><p>float</p></td>
+<td><p>Wavelength step size [Angstroms]</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPECTER</p></td>
+<td><p>0.10.0</p></td>
+<td><p>str</p></td>
+<td><p><a class="reference external" href="https://github.com/desihub/specter">https://github.com/desihub/specter</a></p></td>
+</tr>
+<tr class="row-even"><td><p>IN_PSF</p></td>
+<td><p>SPECPROD/exposures/20201220/00069022/psf-b6-00069022.fits</p></td>
+<td><p>str</p></td>
+<td><p>Input sp</p></td>
+</tr>
+<tr class="row-odd"><td><p>IN_IMG</p></td>
+<td><p>SPECPROD/preproc/20201220/00069022/preproc-b6-00069022.fits</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ORIG_PSF</p></td>
+<td><p>SPECPROD/calibnight/20201220/psfnight-b6-20201220.fits</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>BUNIT</p></td>
+<td><p>electron/Angstrom</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>IN_FRAME</p></td>
+<td><p>SPECPROD/exposures/20201220/00069022/frame-b6-00069022.fits</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>FIBERFLT</p></td>
+<td><p>SPECPROD/exposures/20201220/00069022/fiberflatexp-b6-00069022.fits</p></td>
+<td><p>str</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>SP1NIRT <a class="footnote-reference brackets" href="#id149" id="id32" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>139.91</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP1 NIR temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP4NIRT <a class="footnote-reference brackets" href="#id149" id="id33" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>139.96</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP4 NIR temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>PMTRANS <a class="footnote-reference brackets" href="#id149" id="id34" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>96.38</p></td>
+<td><p>float</p></td>
+<td><p>[%] PlateMaker GFAPROC transparency</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUNRA <a class="footnote-reference brackets" href="#id149" id="id35" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>16.188197</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Sun RA at start of exposure</p></td>
+</tr>
+<tr class="row-even"><td><p>SP3REDT <a class="footnote-reference brackets" href="#id149" id="id36" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>139.96</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP3 red temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP2NIRP <a class="footnote-reference brackets" href="#id149" id="id37" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>5.108e-08</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP2 NIR pressure</p></td>
+</tr>
+<tr class="row-even"><td><p>SP6NIRP <a class="footnote-reference brackets" href="#id149" id="id38" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>2.875e-07</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP6 NIR pressure</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP8REDP <a class="footnote-reference brackets" href="#id149" id="id39" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>6.99e-08</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP8 red pressure</p></td>
+</tr>
+<tr class="row-even"><td><p>SP4REDP <a class="footnote-reference brackets" href="#id149" id="id40" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>4.945e-08</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP4 red pressure</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP0NIRP <a class="footnote-reference brackets" href="#id149" id="id41" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>5.598e-08</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP0 NIR pressure</p></td>
+</tr>
+<tr class="row-even"><td><p>SP1REDP <a class="footnote-reference brackets" href="#id149" id="id42" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>5.142e-08</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP1 red pressure</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP5NIRT <a class="footnote-reference brackets" href="#id149" id="id43" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>139.94</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP5 NIR temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>SP8BLUP <a class="footnote-reference brackets" href="#id149" id="id44" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>8.113e-08</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP8 blue pressure</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP1REDT <a class="footnote-reference brackets" href="#id149" id="id45" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>139.89</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP1 red temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>SP3NIRT <a class="footnote-reference brackets" href="#id149" id="id46" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>140.01</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP3 NIR temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP6BLUP <a class="footnote-reference brackets" href="#id149" id="id47" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>7.209e-08</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP6 blue pressure</p></td>
+</tr>
+<tr class="row-even"><td><p>SP9BLUP <a class="footnote-reference brackets" href="#id149" id="id48" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>1.181e-07</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP9 blue pressure</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP2REDP <a class="footnote-reference brackets" href="#id149" id="id49" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>8.846e-08</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP2 red pressure</p></td>
+</tr>
+<tr class="row-even"><td><p>USESPLIT <a class="footnote-reference brackets" href="#id149" id="id50" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>Exposure splits are allowed</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP7REDT <a class="footnote-reference brackets" href="#id149" id="id51" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>139.99</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP7 red temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>SP9NIRT <a class="footnote-reference brackets" href="#id149" id="id52" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>139.89</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP9 NIR temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP0REDP <a class="footnote-reference brackets" href="#id149" id="id53" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>4.896e-08</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP0 red pressure</p></td>
+</tr>
+<tr class="row-even"><td><p>SP7NIRP <a class="footnote-reference brackets" href="#id149" id="id54" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>4.315e-08</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP7 NIR pressure</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP2REDT <a class="footnote-reference brackets" href="#id149" id="id55" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>139.99</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP2 red temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>SP7REDP <a class="footnote-reference brackets" href="#id149" id="id56" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>5.383e-08</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP7 red pressure</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP6NIRT <a class="footnote-reference brackets" href="#id149" id="id57" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>139.89</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP6 NIR temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>SP6REDP <a class="footnote-reference brackets" href="#id149" id="id58" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>5.397e-08</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP6 red pressure</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP8REDT <a class="footnote-reference brackets" href="#id149" id="id59" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>139.94</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP8 red temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>FRAMES <a class="footnote-reference brackets" href="#id149" id="id60" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>None</p></td>
+<td><p>Unknown</p></td>
+<td><p>Number of Frames in Archive</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP9REDT <a class="footnote-reference brackets" href="#id149" id="id61" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>140.01</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP9 red temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>SP2NIRT <a class="footnote-reference brackets" href="#id149" id="id62" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>139.91</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP2 NIR temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP4BLUP <a class="footnote-reference brackets" href="#id149" id="id63" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>4.978e-08</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP4 blue pressure</p></td>
+</tr>
+<tr class="row-even"><td><p>SP8NIRP <a class="footnote-reference brackets" href="#id149" id="id64" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>4.945e-08</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP8 NIR pressure</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPLITEXP <a class="footnote-reference brackets" href="#id149" id="id65" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>Split exposure part of a visit</p></td>
+</tr>
+<tr class="row-even"><td><p>SEQSTART <a class="footnote-reference brackets" href="#id149" id="id66" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>2021-04-07T03:54:14.413292</p></td>
+<td><p>str</p></td>
+<td><p>Start time of sequence processing</p></td>
+</tr>
+<tr class="row-odd"><td><p>STARTADJ <a class="footnote-reference brackets" href="#id149" id="id67" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>2022-03-18T03:57:35.888348</p></td>
+<td><p>str</p></td>
+<td><p>Time sequence starts adjusting the inst</p></td>
+</tr>
+<tr class="row-even"><td><p>SP8NIRT <a class="footnote-reference brackets" href="#id149" id="id68" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>139.99</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP8 NIR temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP7BLUT <a class="footnote-reference brackets" href="#id149" id="id69" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>163.02</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP7 blue temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>SP5REDP <a class="footnote-reference brackets" href="#id149" id="id70" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>4.693e-08</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP5 red pressure</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP5NIRP <a class="footnote-reference brackets" href="#id149" id="id71" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>7.197e-08</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP5 NIR pressure</p></td>
+</tr>
+<tr class="row-even"><td><p>SP5BLUT <a class="footnote-reference brackets" href="#id149" id="id72" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>163.02</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP5 blue temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP0BLUP <a class="footnote-reference brackets" href="#id149" id="id73" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>9.122e-08</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP0 blue pressure</p></td>
+</tr>
+<tr class="row-even"><td><p>SP1NIRP <a class="footnote-reference brackets" href="#id149" id="id74" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>4.585e-08</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP1 NIR pressure</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCSKDEC <a class="footnote-reference brackets" href="#id149" id="id75" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>0.3 0.003 0.00003</p></td>
+<td><p>str</p></td>
+<td><p>TCS Kalman (dec)</p></td>
+</tr>
+<tr class="row-even"><td><p>SP6REDT <a class="footnote-reference brackets" href="#id149" id="id76" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>139.94</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP6 red temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCSPIDEC <a class="footnote-reference brackets" href="#id149" id="id77" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>1.0,0.0,0.0,0.0</p></td>
+<td><p>str</p></td>
+<td><p>TCS PI settings (P, I (gain, error window, satu</p></td>
+</tr>
+<tr class="row-even"><td><p>TCSGRA <a class="footnote-reference brackets" href="#id149" id="id78" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>0.3</p></td>
+<td><p>float</p></td>
+<td><p>TCS simple gain (RA)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCSGDEC <a class="footnote-reference brackets" href="#id149" id="id79" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>0.3</p></td>
+<td><p>float</p></td>
+<td><p>TCS simple gain (dec)</p></td>
+</tr>
+<tr class="row-even"><td><p>SP1BLUT <a class="footnote-reference brackets" href="#id149" id="id80" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>163.02</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP1 blue temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP9NIRP <a class="footnote-reference brackets" href="#id149" id="id81" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>5.207e-08</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP9 NIR pressure</p></td>
+</tr>
+<tr class="row-even"><td><p>SP0NIRT <a class="footnote-reference brackets" href="#id149" id="id82" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>139.89</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP0 NIR temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP4BLUT <a class="footnote-reference brackets" href="#id149" id="id83" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>163.02</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP4 blue temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>SP9BLUT <a class="footnote-reference brackets" href="#id149" id="id84" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>163.02</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP9 blue temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP9REDP <a class="footnote-reference brackets" href="#id149" id="id85" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>4.884e-08</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP9 red pressure</p></td>
+</tr>
+<tr class="row-even"><td><p>PMSEEING <a class="footnote-reference brackets" href="#id149" id="id86" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>1.19</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] PlateMaker GFAPROC seeing</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP0REDT <a class="footnote-reference brackets" href="#id149" id="id87" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>139.96</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP0 red temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>SP2BLUT <a class="footnote-reference brackets" href="#id149" id="id88" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>163.02</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP2 blue temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCSKRA <a class="footnote-reference brackets" href="#id149" id="id89" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>0.3 0.003 0.00003</p></td>
+<td><p>str</p></td>
+<td><p>TCS Kalman (RA)</p></td>
+</tr>
+<tr class="row-even"><td><p>SP3NIRP <a class="footnote-reference brackets" href="#id149" id="id90" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>4.194e-08</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP3 NIR pressure</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCSPIRA <a class="footnote-reference brackets" href="#id149" id="id91" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>1.0,0.0,0.0,0.0</p></td>
+<td><p>str</p></td>
+<td><p>TCS PI settings (P, I (gain, error window, satu</p></td>
+</tr>
+<tr class="row-even"><td><p>SP8BLUT <a class="footnote-reference brackets" href="#id149" id="id92" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>162.9</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP8 blue temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>VISITIDS <a class="footnote-reference brackets" href="#id149" id="id93" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>83717</p></td>
+<td><p>str</p></td>
+<td><p>List of expids for a visit (same tile)</p></td>
+</tr>
+<tr class="row-even"><td><p>MOONSEP <a class="footnote-reference brackets" href="#id149" id="id94" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>138.187</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Moon Separation</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP5BLUP <a class="footnote-reference brackets" href="#id149" id="id95" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>1.125e-07</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP5 blue pressure</p></td>
+</tr>
+<tr class="row-even"><td><p>TCSMFDEC <a class="footnote-reference brackets" href="#id149" id="id96" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>TCS moving filter length (dec)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP4NIRP <a class="footnote-reference brackets" href="#id149" id="id97" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>6.595e-08</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP4 NIR pressure</p></td>
+</tr>
+<tr class="row-even"><td><p>SP7BLUP <a class="footnote-reference brackets" href="#id149" id="id98" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>9.98e-08</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP7 blue pressure</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP2BLUP <a class="footnote-reference brackets" href="#id149" id="id99" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>6.432e-08</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP2 blue pressure</p></td>
+</tr>
+<tr class="row-even"><td><p>SUNDEC <a class="footnote-reference brackets" href="#id149" id="id100" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>6.890581</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Sun declination at start of exposure</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP1BLUP <a class="footnote-reference brackets" href="#id149" id="id101" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>8.039e-08</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP1 blue pressure</p></td>
+</tr>
+<tr class="row-even"><td><p>SKYLEVEL <a class="footnote-reference brackets" href="#id149" id="id102" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>1.398</p></td>
+<td><p>float</p></td>
+<td><p>[counts?] ETC sky level</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCSMFRA <a class="footnote-reference brackets" href="#id149" id="id103" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>TCS moving filter length (RA)</p></td>
+</tr>
+<tr class="row-even"><td><p>SP3BLUP <a class="footnote-reference brackets" href="#id149" id="id104" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>8.133e-08</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP3 blue pressure</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP5REDT <a class="footnote-reference brackets" href="#id149" id="id105" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>139.99</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP5 red temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>SP7NIRT <a class="footnote-reference brackets" href="#id149" id="id106" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>139.96</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP7 NIR temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP0BLUT <a class="footnote-reference brackets" href="#id149" id="id107" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>163.02</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP0 blue temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>SP3REDP <a class="footnote-reference brackets" href="#id149" id="id108" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>6.033e-08</p></td>
+<td><p>float</p></td>
+<td><p>[mb] SP3 red pressure</p></td>
+</tr>
+<tr class="row-odd"><td><p>NTSSURVY <a class="footnote-reference brackets" href="#id149" id="id109" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>sv3</p></td>
+<td><p>str</p></td>
+<td><p>NTS survey name</p></td>
+</tr>
+<tr class="row-even"><td><p>SP3BLUT <a class="footnote-reference brackets" href="#id149" id="id110" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>163.04</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP3 blue temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>SP4REDT <a class="footnote-reference brackets" href="#id149" id="id111" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>140.01</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP4 red temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>SP6BLUT <a class="footnote-reference brackets" href="#id149" id="id112" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>163.02</p></td>
+<td><p>float</p></td>
+<td><p>[K] SP6 blue temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>SEQID <a class="footnote-reference brackets" href="#id149" id="id113" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>6 requests</p></td>
+<td><p>str</p></td>
+<td><p>Exposure sequence identifier</p></td>
+</tr>
+<tr class="row-even"><td><p>SEQTOT <a class="footnote-reference brackets" href="#id149" id="id114" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>6</p></td>
+<td><p>int</p></td>
+<td><p>Total number of exposures in sequence</p></td>
+</tr>
+<tr class="row-odd"><td><p>MINTIME <a class="footnote-reference brackets" href="#id149" id="id115" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>120.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] Minimum exposure time (from NTS, used by ET</p></td>
+</tr>
+<tr class="row-even"><td><p>MIDTIME <a class="footnote-reference brackets" href="#id149" id="id116" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>840.2095</p></td>
+<td><p>float</p></td>
+<td><p>[s] Exposure midpoint time used by PlateMaker</p></td>
+</tr>
+<tr class="row-odd"><td><p>SEEING <a class="footnote-reference brackets" href="#id149" id="id117" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>None</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] ETC/PM seeing</p></td>
+</tr>
+<tr class="row-even"><td><p>ETCTEFF <a class="footnote-reference brackets" href="#id149" id="id118" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>226.882385</p></td>
+<td><p>float</p></td>
+<td><p>[s] ETC effective exposure time</p></td>
+</tr>
+<tr class="row-odd"><td><p>ETCPREV <a class="footnote-reference brackets" href="#id149" id="id119" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>0.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] ETC cummulative t_eff for visit</p></td>
+</tr>
+<tr class="row-even"><td><p>ETCSPLIT <a class="footnote-reference brackets" href="#id149" id="id120" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>ETC split sequence number for this visit</p></td>
+</tr>
+<tr class="row-odd"><td><p>TOTTEFF <a class="footnote-reference brackets" href="#id149" id="id121" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>225.6017</p></td>
+<td><p>float</p></td>
+<td><p>[s] Total effective exposure time for visit</p></td>
+</tr>
+<tr class="row-even"><td><p>TRANSPAR <a class="footnote-reference brackets" href="#id149" id="id122" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>None</p></td>
+<td><p>float</p></td>
+<td><p>ETC/PM transparency</p></td>
+</tr>
+<tr class="row-odd"><td><p>ACQFWHM <a class="footnote-reference brackets" href="#id149" id="id123" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>0.890634</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] FWHM of guide star PSF in acquisition</p></td>
+</tr>
+<tr class="row-even"><td><p>POSCVFRC <a class="footnote-reference brackets" href="#id149" id="id124" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>0.4956</p></td>
+<td><p>float</p></td>
+<td><p>Fraction of converged positioners</p></td>
+</tr>
+<tr class="row-odd"><td><p>ETCTRANS <a class="footnote-reference brackets" href="#id149" id="id125" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>0.915827</p></td>
+<td><p>float</p></td>
+<td><p>ETC averaged TRANSP normalized to 1</p></td>
+</tr>
+<tr class="row-even"><td><p>SLEWANGL <a class="footnote-reference brackets" href="#id149" id="id126" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>16.255</p></td>
+<td><p>float</p></td>
+<td><p>[deg] Slew Angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>SLEWTIME <a class="footnote-reference brackets" href="#id149" id="id127" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>123.315</p></td>
+<td><p>float</p></td>
+<td><p>[s] Slew Time</p></td>
+</tr>
+<tr class="row-even"><td><p>SBPROF <a class="footnote-reference brackets" href="#id149" id="id128" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>BGS</p></td>
+<td><p>str</p></td>
+<td><p>Profile used by ETC</p></td>
+</tr>
+<tr class="row-odd"><td><p>ETCREAL <a class="footnote-reference brackets" href="#id149" id="id129" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>392.495819</p></td>
+<td><p>float</p></td>
+<td><p>[s] ETC real open shutter time</p></td>
+</tr>
+<tr class="row-even"><td><p>ETCTHRUB <a class="footnote-reference brackets" href="#id149" id="id130" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>0.964227</p></td>
+<td><p>float</p></td>
+<td><p>ETC averaged thruput (BGS profile)</p></td>
+</tr>
+<tr class="row-odd"><td><p>ETCFRACE <a class="footnote-reference brackets" href="#id149" id="id131" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>0.45002</p></td>
+<td><p>float</p></td>
+<td><p>ETC transparency weighted average of FFRAC (ELG</p></td>
+</tr>
+<tr class="row-even"><td><p>ETCPROF <a class="footnote-reference brackets" href="#id149" id="id132" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>BGS</p></td>
+<td><p>str</p></td>
+<td><p>ETC source brightness profile</p></td>
+</tr>
+<tr class="row-odd"><td><p>ACTTEFF <a class="footnote-reference brackets" href="#id149" id="id133" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>226.882385</p></td>
+<td><p>float</p></td>
+<td><p>[s] Actual effective exposure time</p></td>
+</tr>
+<tr class="row-even"><td><p>ESTTIME <a class="footnote-reference brackets" href="#id149" id="id134" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>366.345</p></td>
+<td><p>float</p></td>
+<td><p>[s] Estimated exposure time for visit (from ETC</p></td>
+</tr>
+<tr class="row-odd"><td><p>ETCTHRUP <a class="footnote-reference brackets" href="#id149" id="id135" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>1.034724</p></td>
+<td><p>float</p></td>
+<td><p>ETC averaged thruput (PSF profile)</p></td>
+</tr>
+<tr class="row-even"><td><p>PMTRANSP <a class="footnote-reference brackets" href="#id149" id="id136" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>98.17</p></td>
+<td><p>float</p></td>
+<td><p>[%] PlateMaker GFAPROC transparency</p></td>
+</tr>
+<tr class="row-odd"><td><p>ETCFRACP <a class="footnote-reference brackets" href="#id149" id="id137" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>0.634939</p></td>
+<td><p>float</p></td>
+<td><p>ETC transparency weighted average of FFRAC (PSF</p></td>
+</tr>
+<tr class="row-even"><td><p>ETCVERS <a class="footnote-reference brackets" href="#id149" id="id138" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>0.1.12-3-g12b54bb</p></td>
+<td><p>str</p></td>
+<td><p>ETC version</p></td>
+</tr>
+<tr class="row-odd"><td><p>ETCFRACB <a class="footnote-reference brackets" href="#id149" id="id139" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>0.199883</p></td>
+<td><p>float</p></td>
+<td><p>ETC transparency weighted average of FFRAC (BGS</p></td>
+</tr>
+<tr class="row-even"><td><p>MAXTIME <a class="footnote-reference brackets" href="#id149" id="id140" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>5400.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] Maximum exposure time for entire visit (fro</p></td>
+</tr>
+<tr class="row-odd"><td><p>NTSPROG <a class="footnote-reference brackets" href="#id149" id="id141" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>BRIGHT</p></td>
+<td><p>str</p></td>
+<td><p>NTS program name</p></td>
+</tr>
+<tr class="row-even"><td><p>CONVERGD <a class="footnote-reference brackets" href="#id149" id="id142" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>F</p></td>
+<td><p>bool</p></td>
+<td><p>Positioning loop converged (CNFRC&amp;gt;0.95)</p></td>
+</tr>
+<tr class="row-odd"><td><p>ETCTHRUE <a class="footnote-reference brackets" href="#id149" id="id143" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>0.999856</p></td>
+<td><p>float</p></td>
+<td><p>ETC averaged thruput (ELG profile)</p></td>
+</tr>
+<tr class="row-even"><td><p>ETCSKY <a class="footnote-reference brackets" href="#id149" id="id144" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>1.924707</p></td>
+<td><p>float</p></td>
+<td><p>ETC averaged, normalized sky camera flux</p></td>
+</tr>
+<tr class="row-odd"><td><p>ETCSEENG <a class="footnote-reference brackets" href="#id149" id="id145" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>0.8906</p></td>
+<td><p>float</p></td>
+<td><p>[arcsec] ETC seeing</p></td>
+</tr>
+<tr class="row-even"><td><p>REQTEFF <a class="footnote-reference brackets" href="#id149" id="id146" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>220.0</p></td>
+<td><p>float</p></td>
+<td><p>[s] Requested effective exposure time</p></td>
+</tr>
+<tr class="row-odd"><td><p>USESPLITS <a class="footnote-reference brackets" href="#id149" id="id147" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>T</p></td>
+<td><p>bool</p></td>
+<td><p>Exposure splits are allowed</p></td>
+</tr>
+<tr class="row-even"><td><p>UPSSTAT <a class="footnote-reference brackets" href="#id149" id="id148" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>17826.0</p></td>
+<td><p>float</p></td>
+<td><p>UPS Status</p></td>
+</tr>
+</tbody>
+</table>
+</details><aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id149" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>,<a role="doc-backlink" href="#id3">3</a>,<a role="doc-backlink" href="#id4">4</a>,<a role="doc-backlink" href="#id5">5</a>,<a role="doc-backlink" href="#id6">6</a>,<a role="doc-backlink" href="#id7">7</a>,<a role="doc-backlink" href="#id8">8</a>,<a role="doc-backlink" href="#id9">9</a>,<a role="doc-backlink" href="#id10">10</a>,<a role="doc-backlink" href="#id11">11</a>,<a role="doc-backlink" href="#id12">12</a>,<a role="doc-backlink" href="#id13">13</a>,<a role="doc-backlink" href="#id14">14</a>,<a role="doc-backlink" href="#id15">15</a>,<a role="doc-backlink" href="#id16">16</a>,<a role="doc-backlink" href="#id17">17</a>,<a role="doc-backlink" href="#id18">18</a>,<a role="doc-backlink" href="#id19">19</a>,<a role="doc-backlink" href="#id20">20</a>,<a role="doc-backlink" href="#id21">21</a>,<a role="doc-backlink" href="#id22">22</a>,<a role="doc-backlink" href="#id23">23</a>,<a role="doc-backlink" href="#id24">24</a>,<a role="doc-backlink" href="#id25">25</a>,<a role="doc-backlink" href="#id26">26</a>,<a role="doc-backlink" href="#id27">27</a>,<a role="doc-backlink" href="#id28">28</a>,<a role="doc-backlink" href="#id29">29</a>,<a role="doc-backlink" href="#id30">30</a>,<a role="doc-backlink" href="#id31">31</a>,<a role="doc-backlink" href="#id32">32</a>,<a role="doc-backlink" href="#id33">33</a>,<a role="doc-backlink" href="#id34">34</a>,<a role="doc-backlink" href="#id35">35</a>,<a role="doc-backlink" href="#id36">36</a>,<a role="doc-backlink" href="#id37">37</a>,<a role="doc-backlink" href="#id38">38</a>,<a role="doc-backlink" href="#id39">39</a>,<a role="doc-backlink" href="#id40">40</a>,<a role="doc-backlink" href="#id41">41</a>,<a role="doc-backlink" href="#id42">42</a>,<a role="doc-backlink" href="#id43">43</a>,<a role="doc-backlink" href="#id44">44</a>,<a role="doc-backlink" href="#id45">45</a>,<a role="doc-backlink" href="#id46">46</a>,<a role="doc-backlink" href="#id47">47</a>,<a role="doc-backlink" href="#id48">48</a>,<a role="doc-backlink" href="#id49">49</a>,<a role="doc-backlink" href="#id50">50</a>,<a role="doc-backlink" href="#id51">51</a>,<a role="doc-backlink" href="#id52">52</a>,<a role="doc-backlink" href="#id53">53</a>,<a role="doc-backlink" href="#id54">54</a>,<a role="doc-backlink" href="#id55">55</a>,<a role="doc-backlink" href="#id56">56</a>,<a role="doc-backlink" href="#id57">57</a>,<a role="doc-backlink" href="#id58">58</a>,<a role="doc-backlink" href="#id59">59</a>,<a role="doc-backlink" href="#id60">60</a>,<a role="doc-backlink" href="#id61">61</a>,<a role="doc-backlink" href="#id62">62</a>,<a role="doc-backlink" href="#id63">63</a>,<a role="doc-backlink" href="#id64">64</a>,<a role="doc-backlink" href="#id65">65</a>,<a role="doc-backlink" href="#id66">66</a>,<a role="doc-backlink" href="#id67">67</a>,<a role="doc-backlink" href="#id68">68</a>,<a role="doc-backlink" href="#id69">69</a>,<a role="doc-backlink" href="#id70">70</a>,<a role="doc-backlink" href="#id71">71</a>,<a role="doc-backlink" href="#id72">72</a>,<a role="doc-backlink" href="#id73">73</a>,<a role="doc-backlink" href="#id74">74</a>,<a role="doc-backlink" href="#id75">75</a>,<a role="doc-backlink" href="#id76">76</a>,<a role="doc-backlink" href="#id77">77</a>,<a role="doc-backlink" href="#id78">78</a>,<a role="doc-backlink" href="#id79">79</a>,<a role="doc-backlink" href="#id80">80</a>,<a role="doc-backlink" href="#id81">81</a>,<a role="doc-backlink" href="#id82">82</a>,<a role="doc-backlink" href="#id83">83</a>,<a role="doc-backlink" href="#id84">84</a>,<a role="doc-backlink" href="#id85">85</a>,<a role="doc-backlink" href="#id86">86</a>,<a role="doc-backlink" href="#id87">87</a>,<a role="doc-backlink" href="#id88">88</a>,<a role="doc-backlink" href="#id89">89</a>,<a role="doc-backlink" href="#id90">90</a>,<a role="doc-backlink" href="#id91">91</a>,<a role="doc-backlink" href="#id92">92</a>,<a role="doc-backlink" href="#id93">93</a>,<a role="doc-backlink" href="#id94">94</a>,<a role="doc-backlink" href="#id95">95</a>,<a role="doc-backlink" href="#id96">96</a>,<a role="doc-backlink" href="#id97">97</a>,<a role="doc-backlink" href="#id98">98</a>,<a role="doc-backlink" href="#id99">99</a>,<a role="doc-backlink" href="#id100">100</a>,<a role="doc-backlink" href="#id101">101</a>,<a role="doc-backlink" href="#id102">102</a>,<a role="doc-backlink" href="#id103">103</a>,<a role="doc-backlink" href="#id104">104</a>,<a role="doc-backlink" href="#id105">105</a>,<a role="doc-backlink" href="#id106">106</a>,<a role="doc-backlink" href="#id107">107</a>,<a role="doc-backlink" href="#id108">108</a>,<a role="doc-backlink" href="#id109">109</a>,<a role="doc-backlink" href="#id110">110</a>,<a role="doc-backlink" href="#id111">111</a>,<a role="doc-backlink" href="#id112">112</a>,<a role="doc-backlink" href="#id113">113</a>,<a role="doc-backlink" href="#id114">114</a>,<a role="doc-backlink" href="#id115">115</a>,<a role="doc-backlink" href="#id116">116</a>,<a role="doc-backlink" href="#id117">117</a>,<a role="doc-backlink" href="#id118">118</a>,<a role="doc-backlink" href="#id119">119</a>,<a role="doc-backlink" href="#id120">120</a>,<a role="doc-backlink" href="#id121">121</a>,<a role="doc-backlink" href="#id122">122</a>,<a role="doc-backlink" href="#id123">123</a>,<a role="doc-backlink" href="#id124">124</a>,<a role="doc-backlink" href="#id125">125</a>,<a role="doc-backlink" href="#id126">126</a>,<a role="doc-backlink" href="#id127">127</a>,<a role="doc-backlink" href="#id128">128</a>,<a role="doc-backlink" href="#id129">129</a>,<a role="doc-backlink" href="#id130">130</a>,<a role="doc-backlink" href="#id131">131</a>,<a role="doc-backlink" href="#id132">132</a>,<a role="doc-backlink" href="#id133">133</a>,<a role="doc-backlink" href="#id134">134</a>,<a role="doc-backlink" href="#id135">135</a>,<a role="doc-backlink" href="#id136">136</a>,<a role="doc-backlink" href="#id137">137</a>,<a role="doc-backlink" href="#id138">138</a>,<a role="doc-backlink" href="#id139">139</a>,<a role="doc-backlink" href="#id140">140</a>,<a role="doc-backlink" href="#id141">141</a>,<a role="doc-backlink" href="#id142">142</a>,<a role="doc-backlink" href="#id143">143</a>,<a role="doc-backlink" href="#id144">144</a>,<a role="doc-backlink" href="#id145">145</a>,<a role="doc-backlink" href="#id146">146</a>,<a role="doc-backlink" href="#id147">147</a>,<a role="doc-backlink" href="#id148">148</a>)</span>
+<p>Optional</p>
+</aside>
+</aside>
+<p>Data: FITS image [float32, 2326x500]</p>
+</section>
+</section>
+<section id="hdu1">
+<h3>HDU1<a class="headerlink" href="#hdu1" title="Link to this heading"></a></h3>
+<p>EXTNAME = IVAR</p>
+<p>Inverse variance of sky model in units of (electrons per Ansgtrom)^-2.</p>
+<section id="id150">
+<h4>Required Header Keywords<a class="headerlink" href="#id150" title="Link to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>2326</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>500</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CHECKSUM</p></td>
+<td><p>WMCiXJ9ZWJCfWJ9Z</p></td>
+<td><p>str</p></td>
+<td><p>HDU checksum updated 2021-07-08T02:23:26</p></td>
+</tr>
+<tr class="row-odd"><td><p>DATASUM</p></td>
+<td><p>3732109365</p></td>
+<td><p>str</p></td>
+<td><p>data unit checksum updated 2021-07-08T02:23:26</p></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [float32, 2326x500]</p>
+</section>
+</section>
+<section id="hdu2">
+<h3>HDU2<a class="headerlink" href="#hdu2" title="Link to this heading"></a></h3>
+<p>EXTNAME = MASK</p>
+<p>Sky mask; 0=good. See the <a class="reference internal" href="../../../../../bitmasks.html"><span class="doc">bitmask documentation</span></a> page for the definition of the bits.
+Prior to desispec/0.24.0 and software release 18.9, the MASK HDU was compressed.</p>
+<section id="id151">
+<h4>Required Header Keywords<a class="headerlink" href="#id151" title="Link to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>2326</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>500</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>BSCALE</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>BZERO</p></td>
+<td><p>2147483648</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CHECKSUM</p></td>
+<td><p>kIf3lGc0kGc0kGc0</p></td>
+<td><p>str</p></td>
+<td><p>HDU checksum updated 2021-07-08T02:23:26</p></td>
+</tr>
+<tr class="row-odd"><td><p>DATASUM</p></td>
+<td><p>581500</p></td>
+<td><p>str</p></td>
+<td><p>data unit checksum updated 2021-07-08T02:23:26</p></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [int32, 2326x500]</p>
+</section>
+</section>
+<section id="hdu3">
+<h3>HDU3<a class="headerlink" href="#hdu3" title="Link to this heading"></a></h3>
+<p>EXTNAME = WAVELENGTH</p>
+<p>1D array of wavelengths, in Angstrom. Note the wavelength is in the solar system barycenter frame, so that the sky flux array
+can be directly subtracted to the flat-fielded frame fluxes which are on the same wavelength grid. In order to compare the
+sky spectrum of different exposures, or with litterature data, one has to convert back the wavelength array to the observer frame,
+by dividing it by Doppler factor saved in header keyword HELIOCOR in HDU0. See also the frame <a class="reference internal" href="frame-CAMERA-EXPID.html#frame-hdu3-wavelength"><span class="std std-ref">WAVELENGTH documentation</span></a> for more details.</p>
+<section id="id152">
+<h4>Required Header Keywords<a class="headerlink" href="#id152" title="Link to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>2326</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>BUNIT</p></td>
+<td><p>Angstrom</p></td>
+<td><p>str</p></td>
+<td><p>Wavelength units</p></td>
+</tr>
+<tr class="row-even"><td><p>CHECKSUM</p></td>
+<td><p>7BAoAA3l7A9lAA9l</p></td>
+<td><p>str</p></td>
+<td><p>HDU checksum updated 2021-07-08T02:23:26</p></td>
+</tr>
+<tr class="row-odd"><td><p>DATASUM</p></td>
+<td><p>1502044794</p></td>
+<td><p>str</p></td>
+<td><p>data unit checksum updated 2021-07-08T02:23:26</p></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [float32, 2326]</p>
+</section>
+</section>
+<section id="hdu4">
+<h3>HDU4<a class="headerlink" href="#hdu4" title="Link to this heading"></a></h3>
+<p>EXTNAME = STATIVAR</p>
+<p>Statistical-only inverse variance of sky model.</p>
+<section id="id153">
+<h4>Required Header Keywords<a class="headerlink" href="#id153" title="Link to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>2326</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>500</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CHECKSUM</p></td>
+<td><p>SAMkT5JjSAJjS3Jj</p></td>
+<td><p>str</p></td>
+<td><p>HDU checksum updated 2021-07-08T02:23:27</p></td>
+</tr>
+<tr class="row-odd"><td><p>DATASUM</p></td>
+<td><p>3877575180</p></td>
+<td><p>str</p></td>
+<td><p>data unit checksum updated 2021-07-08T02:23:27</p></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [float32, 2326x500]</p>
+</section>
+</section>
+<section id="hdu5">
+<h3>HDU5<a class="headerlink" href="#hdu5" title="Link to this heading"></a></h3>
+<p>EXTNAME = THRPUTCORR</p>
+<p>Multiplicative achromatic throughput correction per fiber. This term has been measured on the bright sky lines
+of each fiber from the exposure (EXPID). It is used as a correction to the mean sky model.</p>
+<section id="id154">
+<h4>Required Header Keywords<a class="headerlink" href="#id154" title="Link to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>500</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CHECKSUM</p></td>
+<td><p>VPA5WO62VOA2VO52</p></td>
+<td><p>str</p></td>
+<td><p>HDU checksum updated 2021-07-08T02:23:27</p></td>
+</tr>
+<tr class="row-even"><td><p>DATASUM</p></td>
+<td><p>63793519</p></td>
+<td><p>str</p></td>
+<td><p>data unit checksum updated 2021-07-08T02:23:27</p></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [float32, 500]</p>
+</section>
+</section>
+<section id="hdu6">
+<h3>HDU6<a class="headerlink" href="#hdu6" title="Link to this heading"></a></h3>
+<p>EXTNAME = THRPUTCORR_MOD</p>
+<p>Model multiplicative throughput corrections for each fiber.</p>
+<section id="id155">
+<h4>Required Header Keywords<a class="headerlink" href="#id155" title="Link to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>500</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CHECKSUM</p></td>
+<td><p>VPA5WO62VOA2VO52</p></td>
+<td><p>str</p></td>
+<td><p>HDU checksum updated 2021-07-08T02:23:27</p></td>
+</tr>
+<tr class="row-even"><td><p>DATASUM</p></td>
+<td><p>63793519</p></td>
+<td><p>str</p></td>
+<td><p>data unit checksum updated 2021-07-08T02:23:27</p></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [float32, 500]</p>
+</section>
+</section>
+<section id="hdu7">
+<h3>HDU7<a class="headerlink" href="#hdu7" title="Link to this heading"></a></h3>
+<p>EXTNAME = DWAVECOEFF</p>
+<p>Vector of PCA coefficients for wavelength offsets.</p>
+<section id="id156">
+<h4>Required Header Keywords<a class="headerlink" href="#id156" title="Link to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>4</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CHECKSUM</p></td>
+<td><p>VPA5WO62VOA2VO52</p></td>
+<td><p>str</p></td>
+<td><p>HDU checksum updated 2021-07-08T02:23:27</p></td>
+</tr>
+<tr class="row-even"><td><p>DATASUM</p></td>
+<td><p>63793519</p></td>
+<td><p>str</p></td>
+<td><p>data unit checksum updated 2021-07-08T02:23:27</p></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [float32, 4]</p>
+</section>
+</section>
+<section id="hdu8">
+<h3>HDU8<a class="headerlink" href="#hdu8" title="Link to this heading"></a></h3>
+<p>EXTNAME = DLSFCOEFF</p>
+<p>Vector of PCA coefficients for LSF size changes.</p>
+<section id="id157">
+<h4>Required Header Keywords<a class="headerlink" href="#id157" title="Link to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>4</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CHECKSUM</p></td>
+<td><p>VPA5WO62VOA2VO52</p></td>
+<td><p>str</p></td>
+<td><p>HDU checksum updated 2021-07-08T02:23:27</p></td>
+</tr>
+<tr class="row-even"><td><p>DATASUM</p></td>
+<td><p>63793519</p></td>
+<td><p>str</p></td>
+<td><p>data unit checksum updated 2021-07-08T02:23:27</p></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [float32, 4]</p>
+</section>
+</section>
+<section id="hdu9">
+<h3>HDU9<a class="headerlink" href="#hdu9" title="Link to this heading"></a></h3>
+<p>EXTNAME = SKYGRADPCACOEFF</p>
+<p>Vector of gradient amplitudes for sky gradient spectra.</p>
+<section id="id158">
+<h4>Required Header Keywords<a class="headerlink" href="#id158" title="Link to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>4</p></td>
+<td><p>int</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CHECKSUM</p></td>
+<td><p>VPA5WO62VOA2VO52</p></td>
+<td><p>str</p></td>
+<td><p>HDU checksum updated 2021-07-08T02:23:27</p></td>
+</tr>
+<tr class="row-even"><td><p>DATASUM</p></td>
+<td><p>63793519</p></td>
+<td><p>str</p></td>
+<td><p>data unit checksum updated 2021-07-08T02:23:27</p></td>
+</tr>
+</tbody>
+</table>
+</details><p>Data: FITS image [float32, 4]</p>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="shifted-input-psf-CAMERA-EXPID.html" class="btn btn-neutral float-left" title="shifted-input-psf-CAMERA-EXPID.fits" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="stdstars-SPECTROGRAPH-EXPID.html" class="btn btn-neutral float-right" title="stdstars-SPECTROGRAPH-EXPID.fits" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014-2025, DESI Collaboration.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
