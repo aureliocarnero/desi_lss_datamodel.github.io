@@ -1,0 +1,472 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contributing to desidatamodel &mdash; desidatamodel 25.4.dev1530 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/desidatamodel.css?v=f6dbf8d8" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=e580c04a"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="examples" href="examples/index.html" />
+    <link rel="prev" title="Units in Data Files" href="units.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            desidatamodel
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="DESI_ROOT/vac/index.html">vac/ : Value Added Catalogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESI_ROOT/index.html">$DESI_ROOT : represents the top level of the DESI directory tree.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESI_SPECTRO_DATA/index.html">$DESI_SPECTRO_DATA : raw data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESI_SPECTRO_REDUX/index.html">$DESI_SPECTRO_REDUX : processed spectro data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESI_SPECTRO_SIM/index.html">$DESI_SPECTRO_SIM : simulated spectro data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESI_SPECTRO_CALIB/index.html">$DESI_SPECTRO_CALIB : spectro calibration data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESI_SURVEYOPS/index.html">$DESI_SURVEYOPS : data files used for day-to-day survey operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESI_TARGET/index.html">$DESI_TARGET : target selection and fiber assignment (see also Myers et al. 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESIMODEL/index.html">$DESIMODEL : data used for simulating DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESISURVEY_OUTPUT/index.html">$DESISURVEY_OUTPUT : outputs from desisurvey and surveysim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PROTODESI/index.html">$PROTODESI : data and logs from the ProtoDESI campaign</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="bitmasks.html">Bit Masks in DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="column_descriptions.html">Standard Column Descriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="envvar.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="units.html">Units in data files</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing to desidatamodel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples-and-other-documents">Examples and Other Documents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/index.html">examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#directory-tree">Directory Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-setup">Code setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-the-documents">Building the Documents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-tests">Code Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#units">Units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tips-and-tests">Tips and Tests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cross-referencing">Cross-Referencing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#to-a-file">To a file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#within-a-file">Within a file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#to-a-hdu">To a HDU</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#environment-variables">Environment variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optional-keywords-and-columns">Optional Keywords and Columns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optional-hdus">Optional HDUs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#strings">Strings</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">desidatamodel API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changes.html">desidatamodel Change Log</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">desidatamodel</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Contributing to desidatamodel</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/datamodel.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="contributing-to-desidatamodel">
+<h1>Contributing to desidatamodel<a class="headerlink" href="#contributing-to-desidatamodel" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>This page is about contributing to the
+DESI data model documentation; it is not about the data model itself.</p>
+</section>
+<section id="examples-and-other-documents">
+<h2>Examples and Other Documents<a class="headerlink" href="#examples-and-other-documents" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/index.html">examples</a></li>
+</ul>
+</div>
+</section>
+<section id="directory-tree">
+<h2>Directory Tree<a class="headerlink" href="#directory-tree" title="Link to this heading"></a></h2>
+<p>Please follow these rules when creating or updating directories within the
+data model.</p>
+<ol class="arabic">
+<li><p>All directories must have an index.rst file.</p></li>
+<li><p>The title of every index.rst file contains <em>only</em> the name of the directory it is in.</p></li>
+<li><p>Each index.rst contains the following items in its toctree:</p>
+<ol class="loweralpha simple">
+<li><p>Links to index.rst files in any subdirectories.</p></li>
+<li><p>Links to files in that directory.</p></li>
+</ol>
+</li>
+<li><p>Every file must have a title.  For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">===================</span>
+<span class="n">fibermap</span><span class="o">-</span><span class="n">EXPID</span><span class="o">.</span><span class="n">fits</span>
+<span class="o">===================</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="code-setup">
+<h2>Code setup<a class="headerlink" href="#code-setup" title="Link to this heading"></a></h2>
+<p>To build the data model locally, you first need to install the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">sphinx</span><span class="o">-</span><span class="n">toolbox</span> <span class="n">sphinx</span><span class="o">-</span><span class="n">rtd</span><span class="o">-</span><span class="n">theme</span>
+</pre></div>
+</div>
+</section>
+<section id="building-the-documents">
+<h2>Building the Documents<a class="headerlink" href="#building-the-documents" title="Link to this heading"></a></h2>
+<p>To build all the documents, in your git clone directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">doc</span>
+<span class="n">make</span> <span class="n">html</span>
+</pre></div>
+</div>
+<p>Once the build is complete, you can open the file <code class="docutils literal notranslate"><span class="pre">_build/html/index.html</span></code> in
+a browser, <em>e.g.</em>: <code class="docutils literal notranslate"><span class="pre">file:///home/user/desidatamodel/doc/_build/html/index.html</span></code>.
+If you have installed the <a class="reference external" href="https://pypi.org/project/sphinx-rtd-theme/">sphinx-rtd-theme Python package</a>, the docs will be formatted
+using the ReadTheDocs theme as they will appear at <a class="reference external" href="https://desidatamodel.readthedocs.io">https://desidatamodel.readthedocs.io</a>
+In macOS, there is a shortcut for this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">open</span> <span class="n">_build</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
+</pre></div>
+</div>
+<p>Sphinx will often print warnings and claim that the “build succeeded” when
+in fact there were syntax errors that break the output. You must pay attention
+to the warnings and fix them!</p>
+<p>Also note that Sphinx builds documents incrementally.  That is, if you run
+<strong class="command">make html</strong>, change one file, and then run <strong class="command">make html</strong>
+again, it will only rebuild the changed file.  Normally this is fine, but
+if the change causes the directory tree to change, for example, adding
+a file to a table of contents, then the entire document tree should be rebuilt.
+This can be done by simply cleaning up first:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">clean</span>
+<span class="n">make</span> <span class="n">html</span>
+</pre></div>
+</div>
+</section>
+<section id="code-tests">
+<h2>Code Tests<a class="headerlink" href="#code-tests" title="Link to this heading"></a></h2>
+<p><a class="reference external" href="https://github.com/desihub/desidatamodel">desidatamodel</a> also includes unit tests; you can run these locally before
+opening a PR using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pytest</span> <span class="n">py</span><span class="o">/</span><span class="n">desidatamodel</span><span class="o">/</span><span class="n">test</span>
+</pre></div>
+</div>
+</section>
+<section id="units">
+<h2>Units<a class="headerlink" href="#units" title="Link to this heading"></a></h2>
+<p>We encourage the documentation of units as well as types. Although not <em>every</em>
+FITS file specifies units, we want units to be documented anyway.  FITS
+images that have units should have a <code class="docutils literal notranslate"><span class="pre">BUNIT</span></code> header keyword.  FITS
+table columns that have units should have a <code class="docutils literal notranslate"><span class="pre">TUNITxx</span></code> keyword. For the purposes
+of documentation though, we want the units to be specified, even if they
+don’t actually appear in the file being documented.</p>
+<p>Units should follow the <a class="reference external" href="https://fits.gsfc.nasa.gov/standard40/fits_standard40aa-le.pdf">FITS Standard</a>, in particular following Section 4.3, and Tables 3, 4,
+and 5 in that document.</p>
+<p>You can test units for validity by using <a class="reference external" href="https://docs.astropy.org/en/stable/units/index.html">Astropy Units</a>. This package
+already supports the FITS Standard. The <code class="docutils literal notranslate"><span class="pre">desidatamodel</span></code> package itself
+already uses this internally.  In fact, we have added some units that
+DESI considers acceptable, even if they do not strictly follow the FITS Standard.</p>
+<p>Here are some examples of units that are used in this data model, as well as
+a few common gotchas.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Unit</p></th>
+<th class="head"><p>FITS Standard?</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">um</span></code></p></td>
+<td><p>Yes</p></td>
+<td><p>Micrometers, <span class="math notranslate nohighlight">\(\mu m\)</span>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Angstrom</span></code></p></td>
+<td><p>Yes</p></td>
+<td><p>Ångström.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">photon</span></code></p></td>
+<td><p>Yes</p></td>
+<td><p>Number of photons.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">count</span></code></p></td>
+<td><p>Yes</p></td>
+<td><p>Number of counts, usually electrons.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">adu</span></code></p></td>
+<td><p>Yes</p></td>
+<td><p>Closely related to <code class="docutils literal notranslate"><span class="pre">counts</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">deg</span></code></p></td>
+<td><p>Yes</p></td>
+<td><p>Degrees.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">arcsec</span></code></p></td>
+<td><p>Yes</p></td>
+<td><p>Seconds of arc.  Not time!</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mag</span></code></p></td>
+<td><p>Yes</p></td>
+<td><p>Standard astronomical magnitude. <em>Not</em> the same as a <code class="docutils literal notranslate"><span class="pre">maggie</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pc</span></code></p></td>
+<td><p>Yes</p></td>
+<td><p>Parsec.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Jy</span></code></p></td>
+<td><p>Yes</p></td>
+<td><p>Jansky.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">10**-17</span> <span class="pre">erg/(s</span> <span class="pre">cm2</span> <span class="pre">Angstrom)</span></code></p></td>
+<td><p>Yes</p></td>
+<td><p>Common unit of spectrophotometric flux.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">10**+34</span> <span class="pre">(s2</span> <span class="pre">cm4</span> <span class="pre">Angstrom2)</span> <span class="pre">/</span> <span class="pre">erg2</span></code></p></td>
+<td><p>Yes</p></td>
+<td><p>Inverse variance of flux.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">A</span></code></p></td>
+<td><p>Yes, but…</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">A</span></code> is the unit for amperes not Ångström.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">maggie</span></code></p></td>
+<td><p>No, but OK</p></td>
+<td><p>Standard prefix is also OK: <code class="docutils literal notranslate"><span class="pre">nanomaggie</span></code>. <code class="docutils literal notranslate"><span class="pre">nanomaggy</span></code> is also OK.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mgy</span></code></p></td>
+<td><p>No, but OK</p></td>
+<td><p>Abbreviation for <code class="docutils literal notranslate"><span class="pre">maggie</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">electron/Angstrom</span></code></p></td>
+<td><p>No, but OK</p></td>
+<td><p>Used in some calibration files.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ergs</span></code></p></td>
+<td><p><strong>No</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">erg</span></code>, not <code class="docutils literal notranslate"><span class="pre">ergs</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sec</span></code></p></td>
+<td><p><strong>No</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">s</span></code> for seconds, not <code class="docutils literal notranslate"><span class="pre">sec</span></code>. Even though <code class="docutils literal notranslate"><span class="pre">arcsec</span></code> is OK.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">1/deg^2</span></code></p></td>
+<td><p><strong>No</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code> is not a unit.  Use <code class="docutils literal notranslate"><span class="pre">deg^-2</span></code> instead. <code class="docutils literal notranslate"><span class="pre">deg**-2</span></code> is also OK.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tips-and-tests">
+<h2>Tips and Tests<a class="headerlink" href="#tips-and-tests" title="Link to this heading"></a></h2>
+<p>You can browse some <a class="reference internal" href="examples/index.html"><span class="doc">examples</span></a>.</p>
+<section id="cross-referencing">
+<h3>Cross-Referencing<a class="headerlink" href="#cross-referencing" title="Link to this heading"></a></h3>
+<section id="to-a-file">
+<h4>To a file<a class="headerlink" href="#to-a-file" title="Link to this heading"></a></h4>
+<p>Here is how you make a <a class="reference internal" href="examples/spPlate.html"><span class="doc">direct link to a file</span></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Here is how you make a :doc:`direct link to a file &lt;examples/spPlate&gt;`
+</pre></div>
+</div>
+<p>Note that the link must take into account the directory structure.
+So for example, if you’re in the directory <code class="docutils literal notranslate"><span class="pre">DESI_SPECTRO_SIM/PIXPROD/NIGHT</span></code>
+and want to refer to a file in <code class="docutils literal notranslate"><span class="pre">DESI_SPECTRO_DATA/NIGHT</span></code>, the link has
+to have the form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:doc:`link to real data &lt;../../../DESI_SPECTRO_DATA/NIGHT/real_data_file&gt;`
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:doc:`link to real data &lt;/DESI_SPECTRO_DATA/NIGHT/real_data_file&gt;`
+</pre></div>
+</div>
+<p>That is, you can use a relative or absolute path.</p>
+</section>
+<section id="within-a-file">
+<h4>Within a file<a class="headerlink" href="#within-a-file" title="Link to this heading"></a></h4>
+<p>You can also cross-reference sections within files, however the notation is
+somewhat different. There are two methods.  The first involves creating
+an explicit reference point in the target document.  For example, in the
+spPlate file we referenced above, we can label HDU5:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">_spplate</span><span class="o">-</span><span class="n">hdu5</span><span class="o">-</span><span class="n">plugmap</span><span class="p">:</span>
+
+<span class="n">HDU5</span>
+<span class="o">----</span>
+
+<span class="n">EXTNAME</span> <span class="o">=</span> <span class="n">PLUGMAP</span>
+</pre></div>
+</div>
+<p>Then we use <code class="docutils literal notranslate"><span class="pre">:ref:</span></code> to cross-reference that label. Here’s a link to that
+<a class="reference internal" href="examples/spPlate.html#spplate-hdu5-plugmap"><span class="std std-ref">section of the spPlate file</span></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:ref:`section of the spPlate file &lt;spplate-hdu5-plugmap&gt;`
+</pre></div>
+</div>
+<p>Note however, that this label must be globally unique!</p>
+<p>Alternatively, one can use “raw” ReStructuredText constructions. Here’s a link
+to another <a class="reference external" href="examples/spPlate.html#hdu6">section of the spPlate file</a> we already linked to above:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>link to another `section of the spPlate file`_
+
+.. _`section of the spPlate file`: examples/spPlate.html#hdu6
+</pre></div>
+</div>
+<p>Note this time that the section name may be upper case (<code class="docutils literal notranslate"><span class="pre">HDU6</span></code>), but the
+HTML anchor is lower case <code class="docutils literal notranslate"><span class="pre">#hdu6</span></code>.</p>
+</section>
+<section id="to-a-hdu">
+<h4>To a HDU<a class="headerlink" href="#to-a-hdu" title="Link to this heading"></a></h4>
+<p>The latter form can be used to create cross references to individual HDUs in
+other files.  This would have the (strict!) form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>HDU5
+----
+
+See `HDU1 in some-other-file &lt;../../some-other-file.html#hdu2`_.
+</pre></div>
+</div>
+<p>In other words, with this notation, the data model for HDU2 in <code class="docutils literal notranslate"><span class="pre">some-other-file</span></code>
+will be used as the data model for HDU5 in the file with the cross-reference.</p>
+</section>
+</section>
+<section id="environment-variables">
+<h3>Environment variables<a class="headerlink" href="#environment-variables" title="Link to this heading"></a></h3>
+<p>Here is how to highlight an <span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">ENVIRONMENT_VARIABLE</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Here is how to highlight an :envvar:`ENVIRONMENT_VARIABLE`
+</pre></div>
+</div>
+</section>
+<section id="optional-keywords-and-columns">
+<h3>Optional Keywords and Columns<a class="headerlink" href="#optional-keywords-and-columns" title="Link to this heading"></a></h3>
+<p>Sometimes HDU in a file might not have all of the header keywords or a table
+might not have all the columns described in the data model.
+Sometimes this is expected, and these items should be
+marked as optional, so we can focus on <em>required</em> items that might be
+missing. The optional notation leverages reStructuredText’s footnote notation.
+Here is an example using table columns:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Required</span> <span class="n">Data</span> <span class="n">Table</span> <span class="n">Columns</span>
+<span class="o">~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+
+<span class="o">=========</span> <span class="o">========</span> <span class="o">=====</span> <span class="o">===========</span>
+<span class="n">Name</span>      <span class="n">Type</span>     <span class="n">Units</span> <span class="n">Description</span>
+<span class="o">=========</span> <span class="o">========</span> <span class="o">=====</span> <span class="o">===========</span>
+<span class="n">target</span>    <span class="n">char</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span>
+<span class="n">OPT1</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="n">_</span> <span class="n">int16</span>
+<span class="n">V_mag</span>     <span class="n">float32</span>  <span class="n">mag</span>
+<span class="n">vdisp</span>     <span class="n">float64</span>  <span class="n">km</span><span class="o">/</span><span class="n">s</span>
+<span class="n">OPT2</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="n">_</span> <span class="n">float32</span>
+<span class="o">=========</span> <span class="o">========</span> <span class="o">=====</span> <span class="o">===========</span>
+
+<span class="o">..</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">Optional</span>
+</pre></div>
+</div>
+<p>Note how <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">[1]</span> <span class="pre">Optional</span></code> is added to the bottom.  This keeps Sphinx from
+complaining about undefined footnotes, but also makes it easy for humans to
+see what this notation means.  <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">[1]</span> <span class="pre">Optional</span></code> only needs to be added
+once per file, not once per table.</p>
+</section>
+<section id="optional-hdus">
+<h3>Optional HDUs<a class="headerlink" href="#optional-hdus" title="Link to this heading"></a></h3>
+<p>This is a work in progress.</p>
+</section>
+<section id="strings">
+<h3>Strings<a class="headerlink" href="#strings" title="Link to this heading"></a></h3>
+<p>Depending on how data sets are collated, it sometimes happens that sets of
+strings may be written out to FITS files with different lengths.</p>
+<p>For example, data files A and B are supposedly identical (same columns,
+same types, etc.).  However data file A has a string-valued column <code class="docutils literal notranslate"><span class="pre">NAME</span></code> that has values
+from the set <code class="docutils literal notranslate"><span class="pre">{'one',</span> <span class="pre">'two',</span> <span class="pre">'three'}</span></code>, while in data file B the same column has
+values from the set <code class="docutils literal notranslate"><span class="pre">{'one',</span> <span class="pre">'two',</span> <span class="pre">'six'}</span></code>.  When written out, file A
+has the <code class="docutils literal notranslate"><span class="pre">NAME</span></code> column represented as <code class="docutils literal notranslate"><span class="pre">char[5]</span></code> (<code class="docutils literal notranslate"><span class="pre">5A</span></code> in FITS notation), while file B
+has the same column represented as <code class="docutils literal notranslate"><span class="pre">char[3]</span></code> (<code class="docutils literal notranslate"><span class="pre">3A</span></code>).</p>
+<p>To account for differences like this, one can use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Required</span> <span class="n">Data</span> <span class="n">Table</span> <span class="n">Columns</span>
+<span class="o">~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+
+<span class="o">=========</span> <span class="o">========</span> <span class="o">=====</span> <span class="o">===========</span>
+<span class="n">Name</span>      <span class="n">Type</span>     <span class="n">Units</span> <span class="n">Description</span>
+<span class="o">=========</span> <span class="o">========</span> <span class="o">=====</span> <span class="o">===========</span>
+<span class="o">...</span>
+<span class="n">NAME</span>      <span class="n">char</span><span class="p">[</span><span class="o">*</span><span class="p">]</span>
+<span class="o">...</span>
+<span class="o">=========</span> <span class="o">========</span> <span class="o">=====</span> <span class="o">===========</span>
+</pre></div>
+</div>
+<p>to represent the fact that the actual length of the string doesn’t matter.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="units.html" class="btn btn-neutral float-left" title="Units in Data Files" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="examples/index.html" class="btn btn-neutral float-right" title="examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014-2025, DESI Collaboration.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

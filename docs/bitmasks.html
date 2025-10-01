@@ -1,0 +1,849 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bit Masks in DESI &mdash; desidatamodel 25.4.dev1530 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/desidatamodel.css?v=f6dbf8d8" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=e580c04a"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Standard Column Descriptions" href="column_descriptions.html" />
+    <link rel="prev" title="on_sky_movedata" href="PROTODESI/logs/on_sky_summary.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            desidatamodel
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="DESI_ROOT/vac/index.html">vac/ : Value Added Catalogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESI_ROOT/index.html">$DESI_ROOT : represents the top level of the DESI directory tree.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESI_SPECTRO_DATA/index.html">$DESI_SPECTRO_DATA : raw data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESI_SPECTRO_REDUX/index.html">$DESI_SPECTRO_REDUX : processed spectro data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESI_SPECTRO_SIM/index.html">$DESI_SPECTRO_SIM : simulated spectro data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESI_SPECTRO_CALIB/index.html">$DESI_SPECTRO_CALIB : spectro calibration data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESI_SURVEYOPS/index.html">$DESI_SURVEYOPS : data files used for day-to-day survey operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESI_TARGET/index.html">$DESI_TARGET : target selection and fiber assignment (see also Myers et al. 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESIMODEL/index.html">$DESIMODEL : data used for simulating DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DESISURVEY_OUTPUT/index.html">$DESISURVEY_OUTPUT : outputs from desisurvey and surveysim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PROTODESI/index.html">$PROTODESI : data and logs from the ProtoDESI campaign</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Bit Masks in DESI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#summary-of-bit-masks">Summary of Bit Masks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#redshift-fitting-redrock-masks">Redshift Fitting (Redrock) Masks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#zwarn">ZWARN</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#zwarn-mask-locations">ZWARN Mask Locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#zwarn-bit-definitions">ZWARN Bit Definitions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#spectroscopic-reduction-masks">Spectroscopic Reduction Masks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fiberstatus">FIBERSTATUS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#fiberstatus-mask-locations">FIBERSTATUS Mask Locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fiberstatus-bit-definitions">FIBERSTATUS Bit Definitions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#specmask">SPECMASK</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#specmask-mask-locations">SPECMASK Mask Locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#specmask-bit-definitions">SPECMASK Bit Definitions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ccdmask">CCDMASK</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ccdmask-bit-definitions">CCDMASK Bit Definitions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#target-masks">Target masks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#imaging-masks">Imaging masks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="column_descriptions.html">Standard Column Descriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="envvar.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="units.html">Units in data files</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="datamodel.html">Contributing to desidatamodel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">desidatamodel API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changes.html">desidatamodel Change Log</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">desidatamodel</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Bit Masks in DESI</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/bitmasks.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="bit-masks-in-desi">
+<h1>Bit Masks in DESI<a class="headerlink" href="#bit-masks-in-desi" title="Link to this heading"></a></h1>
+<p>DESI uses bitmasks for both target selection (each bit representing a different
+reason why a target is selected for observation) and quality flags (each bit
+representing a different problem).
+This page describes the bitmasks found in DESI files.
+For details on working with these values, please see the <a class="reference external" href="https://github.com/desihub/desitarget/blob/main/doc/nb/target-selection-bits-and-bitmasks.ipynb">tutorial</a> on
+that topic.</p>
+<section id="summary-of-bit-masks">
+<h2>Summary of Bit Masks<a class="headerlink" href="#summary-of-bit-masks" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Spectroscopic Pipeline</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#zwarn-bitmask"><span class="std std-ref">ZWARN</span></a></p></td>
+<td><p>Redshift fitting quality flags</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fiberstatus-bitmask"><span class="std std-ref">FIBERSTATUS</span></a></p></td>
+<td><p>Hardware-related quality flags per fiber</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#specmask-bitmask"><span class="std std-ref">SPECMASK</span></a></p></td>
+<td><p>Spectral quality flag per spectrum per wavelength</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ccdmask-bitmask"><span class="std std-ref">CCDMASK</span></a></p></td>
+<td><p>Spectrograph 2D CCD image quality flags</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Target Selection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#target-bitmasks"><span class="std std-ref">DESI_TARGET</span></a></p></td>
+<td><p>Target selection for dark time targets and calibrators</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#target-bitmasks"><span class="std std-ref">BGS_TARGET</span></a></p></td>
+<td><p>Target selection for the Bright Galaxy Survey</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#target-bitmasks"><span class="std std-ref">MWS_TARGET</span></a></p></td>
+<td><p>Target selection for the Milky Way Survey</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#target-bitmasks"><span class="std std-ref">SCND_TARGET</span></a></p></td>
+<td><p>Target selection for secondary targets</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#target-bitmasks"><span class="std std-ref">OBSCONDITIONS</span></a></p></td>
+<td><p>Observing conditions for target classes</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Imaging for Target Selection Input</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#imaging-bitmasks"><span class="std std-ref">WISEMASK_W1</span></a></p></td>
+<td><p>WISE W1 quality mask</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#imaging-bitmasks"><span class="std std-ref">WISEMASK_W2</span></a></p></td>
+<td><p>WISE W2 quality mask</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#imaging-bitmasks"><span class="std std-ref">MASKBITS</span></a></p></td>
+<td><p>Tractor input imaging quality mask</p></td>
+</tr>
+</tbody>
+</table>
+<p>In addition to the above target selection bitmasks, there are also equivalent
+Survey Validation masks SV1, SV2, and SV3; see <a class="reference internal" href="#target-bitmasks"><span class="std std-ref">Target Selection Bitmasks</span></a>.</p>
+</section>
+<section id="redshift-fitting-redrock-masks">
+<h2>Redshift Fitting (Redrock) Masks<a class="headerlink" href="#redshift-fitting-redrock-masks" title="Link to this heading"></a></h2>
+<section id="zwarn">
+<span id="zwarn-bitmask"></span><h3>ZWARN<a class="headerlink" href="#zwarn" title="Link to this heading"></a></h3>
+<p>The <strong>ZWARN</strong> bitmask in redshift catalogs indicates known problems with a
+particular redshift fit or associated QA.
+ZWARN==0 is good; any non-zero value indicates a potential problem.
+This mask will be described in more detail in the Redrock paper
+(Bailey et al. 2023 in prep), as well as Section 5.3.1 of the
+Survey Operations Paper (<a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2023AJ....166..259S/abstract">Schlafly et al. 2023</a>).</p>
+<p>The canonical code location defining these bits is
+<a class="reference external" href="https://github.com/desihub/desitarget/blob/main/py/desitarget/data/targetmask.yaml#L230">desitarget targetmask.yaml</a>.
+Bits 0-15 are set by Redrock itself (the redshift fitter),
+while bits 16-19 are set by DESI-specific post-processing.</p>
+<section id="zwarn-mask-locations">
+<h4>ZWARN Mask Locations<a class="headerlink" href="#zwarn-mask-locations" title="Link to this heading"></a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>File</p></th>
+<th class="head"><p>Table HDU</p></th>
+<th class="head"><p>Column</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="DESI_SPECTRO_REDUX/SPECPROD/tiles/GROUPTYPE/TILEID/GROUPID/redrock-SPECTROGRAPH-TILEID-GROUPID.html"><span class="doc">redrock</span></a></p></td>
+<td><p>REDSHIFTS</p></td>
+<td><p>ZWARN</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="DESI_SPECTRO_REDUX/SPECPROD/tiles/GROUPTYPE/TILEID/GROUPID/emline-SPECTROGRAPH-TILEID-GROUPID.html"><span class="doc">emline</span></a></p></td>
+<td><p>EMLINEFIT</p></td>
+<td><p>ZWARN</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="DESI_SPECTRO_REDUX/SPECPROD/tiles/GROUPTYPE/TILEID/GROUPID/zmtl-SPECTROGRAPH-TILEID-GROUPID.html"><span class="doc">zmtl</span></a></p></td>
+<td><p>ZMTL</p></td>
+<td><p>ZWARN</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="DESI_SURVEYOPS/mtl/main/dark/mtl-dark-hp-HPX.html"><span class="doc">mtl</span></a></p></td>
+<td><p>MTL</p></td>
+<td><p>ZWARN</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="DESI_SPECTRO_REDUX/SPECPROD/zcatalog/v1/zpix-SURVEY-PROGRAM.html"><span class="doc">zpix</span></a></p></td>
+<td><p>ZCATALOG</p></td>
+<td><p>ZWARN</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="DESI_SPECTRO_REDUX/SPECPROD/zcatalog/v1/ztile-SURVEY-PROGRAM-GROUPTYPE.html"><span class="doc">ztile</span></a></p></td>
+<td><p>ZCATALOG</p></td>
+<td><p>ZWARN</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="DESI_SPECTRO_REDUX/SPECPROD/zcatalog/v1/zall-pix-SPECPROD.html"><span class="doc">zall</span></a></p></td>
+<td><p>ZCATALOG</p></td>
+<td><p>ZWARN</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="DESI_ROOT/vac/RELEASE/lss/VERSION/LSScats/full/fullVETO_dat.html"><span class="doc">lss</span></a></p></td>
+<td><p>LSS</p></td>
+<td><p>ZWARN</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="zwarn-bit-definitions">
+<h4>ZWARN Bit Definitions<a class="headerlink" href="#zwarn-bit-definitions" title="Link to this heading"></a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Bit Name</p></th>
+<th class="head"><p>Bit Number</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SKY</p></td>
+<td><p>0</p></td>
+<td><p>sky fiber</p></td>
+</tr>
+<tr class="row-odd"><td><p>LITTLE_COVERAGE</p></td>
+<td><p>1</p></td>
+<td><p>too little wavelength coverage</p></td>
+</tr>
+<tr class="row-even"><td><p>SMALL_DELTA_CHI2</p></td>
+<td><p>2</p></td>
+<td><p>chi-squared of best fit is too close to that of second best</p></td>
+</tr>
+<tr class="row-odd"><td><p>NEGATIVE_MODEL</p></td>
+<td><p>3</p></td>
+<td><p>synthetic spectrum is negative</p></td>
+</tr>
+<tr class="row-even"><td><p>MANY_OUTLIERS</p></td>
+<td><p>4</p></td>
+<td><p>fraction of points more than 5 sigma away from best model is too large (&gt;0.05)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Z_FITLIMIT</p></td>
+<td><p>5</p></td>
+<td><p>chi-squared minimum at edge of the redshift fitting range</p></td>
+</tr>
+<tr class="row-even"><td><p>NEGATIVE_EMISSION</p></td>
+<td><p>6</p></td>
+<td><p>a QSO line exhibits negative emission, triggered only in QSO spectra, if  C_IV, C_III, Mg_II, H_beta, or H_alpha has LINEAREA + 3 * LINEAREA_ERR &lt; 0</p></td>
+</tr>
+<tr class="row-odd"><td><p>UNPLUGGED</p></td>
+<td><p>7</p></td>
+<td><p>the fiber was unplugged/broken, so no spectrum obtained</p></td>
+</tr>
+<tr class="row-even"><td><p>BAD_TARGET</p></td>
+<td><p>8</p></td>
+<td><p>catastrophically bad targeting data</p></td>
+</tr>
+<tr class="row-odd"><td><p>NODATA</p></td>
+<td><p>9</p></td>
+<td><p>No data for this fiber, e.g. because spectrograph was broken during this exposure (ivar=0 for all pixels)</p></td>
+</tr>
+<tr class="row-even"><td><p>BAD_MINFIT</p></td>
+<td><p>10</p></td>
+<td><p>Bad parabola fit to the chi2 minimum</p></td>
+</tr>
+<tr class="row-odd"><td><p>POORDATA</p></td>
+<td><p>11</p></td>
+<td><p>Poor input data quality but try fitting anyway</p></td>
+</tr>
+<tr class="row-even"><td><p>LOW_DEL_CHI2</p></td>
+<td><p>16</p></td>
+<td><p>DELTACHI2 is lower than 25 for a DESI SV3 target</p></td>
+</tr>
+<tr class="row-odd"><td><p>LOW_DEL_CHI2_BGS</p></td>
+<td><p>17</p></td>
+<td><p>DELTACHI2 is lower than 40 for a DESI SV3 BGS target in bright time</p></td>
+</tr>
+<tr class="row-even"><td><p>BAD_SPECQA</p></td>
+<td><p>18</p></td>
+<td><p>QA rejected due to spectrum-level problems</p></td>
+</tr>
+<tr class="row-odd"><td><p>BAD_PETALQA</p></td>
+<td><p>19</p></td>
+<td><p>QA rejected due to petal-level problems</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="spectroscopic-reduction-masks">
+<h2>Spectroscopic Reduction Masks<a class="headerlink" href="#spectroscopic-reduction-masks" title="Link to this heading"></a></h2>
+<p>The <strong>FIBERSTATUS</strong> bit mask records the state of individual
+fibers for issues that impact the entire spectrum, e.g. a broken fiber.
+The <strong>SPECMASK</strong> bit mask tracks wavelength dependent isses per spectrum,
+e.g. masks for cosmic rays.</p>
+<section id="fiberstatus">
+<span id="fiberstatus-bitmask"></span><h3>FIBERSTATUS<a class="headerlink" href="#fiberstatus" title="Link to this heading"></a></h3>
+<p>The <strong>FIBERSTATUS</strong> mask is kept as a column in FIBERMAP and related HDUs.
+Bits 0-7 are set by fiber assignment from focal plane information known
+before observations; bits 8-24 are set by the spectroscopic pipeline;
+bits 25-30 are set by the final QA step to set bits for all fibers in
+a petal (e.g. because sky model noise makes all spectra questionable).</p>
+<p>Unlike the other quality masks
+(<a class="reference internal" href="#zwarn-bitmask"><span class="std std-ref">ZWARN</span></a>, <a class="reference internal" href="#specmask-bitmask"><span class="std std-ref">SPECMASK</span></a>, <a class="reference internal" href="#ccdmask-bitmask"><span class="std std-ref">CCDMASK</span></a>),
+FIBERSTATUS contains informative bits that aren’t necessarily bad.
+See details in the “FIBERSTATUS Bit Definitions” section below.</p>
+<p>The canonical code location defining FIBERSTATUS bits is
+<a class="reference external" href="https://github.com/desihub/desispec/blob/0.55.0/py/desispec/maskbits.py#L55">desispec.maskbits L55</a>.</p>
+<section id="fiberstatus-mask-locations">
+<h4>FIBERSTATUS Mask Locations<a class="headerlink" href="#fiberstatus-mask-locations" title="Link to this heading"></a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>File</p></th>
+<th class="head"><p>Table HDU</p></th>
+<th class="head"><p>Column</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="DESI_SPECTRO_REDUX/SPECPROD/exposures/NIGHT/EXPID/frame-CAMERA-EXPID.html"><span class="doc">frame</span></a></p></td>
+<td><p>FIBERMAP</p></td>
+<td><p>FIBERSTATUS</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="DESI_SPECTRO_REDUX/SPECPROD/exposures/NIGHT/EXPID/sframe-CAMERA-EXPID.html"><span class="doc">sframe</span></a></p></td>
+<td><p>FIBERMAP</p></td>
+<td><p>FIBERSTATUS</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="DESI_SPECTRO_REDUX/SPECPROD/exposures/NIGHT/EXPID/cframe-CAMERA-EXPID.html"><span class="doc">cframe</span></a></p></td>
+<td><p>FIBERMAP</p></td>
+<td><p>FIBERSTATUS</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="DESI_SPECTRO_REDUX/SPECPROD/healpix/SURVEY/PROGRAM/PIXGROUP/PIXNUM/spectra-SURVEY-PROGRAM-PIXNUM.html"><span class="doc">spectra</span></a></p></td>
+<td><p>FIBERMAP</p></td>
+<td><p>FIBERSTATUS</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="DESI_SPECTRO_REDUX/SPECPROD/healpix/SURVEY/PROGRAM/PIXGROUP/PIXNUM/coadd-SURVEY-PROGRAM-PIXNUM.html"><span class="doc">coadd</span></a></p></td>
+<td><p>EXP_FIBERMAP</p></td>
+<td><p>FIBERSTATUS</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="DESI_SPECTRO_REDUX/SPECPROD/healpix/SURVEY/PROGRAM/PIXGROUP/PIXNUM/coadd-SURVEY-PROGRAM-PIXNUM.html"><span class="doc">coadd</span></a></p></td>
+<td><p>FIBERMAP</p></td>
+<td><p>COADD_FIBERSTATUS</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="DESI_SPECTRO_REDUX/SPECPROD/tiles/GROUPTYPE/TILEID/GROUPID/redrock-SPECTROGRAPH-TILEID-GROUPID.html"><span class="doc">redrock</span></a></p></td>
+<td><p>FIBERMAP</p></td>
+<td><p>COADD_FIBERSTATUS</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="DESI_SPECTRO_REDUX/SPECPROD/exposures/NIGHT/EXPID/exposure-qa-EXPID.html"><span class="doc">exposure-qa</span></a></p></td>
+<td><p>FIBERQA</p></td>
+<td><p>QAFIBERSTATUS</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="DESI_SPECTRO_REDUX/SPECPROD/tiles/GROUPTYPE/TILEID/GROUPID/tile-qa-TILEID-GROUPID.html"><span class="doc">tile-qa</span></a></p></td>
+<td><p>FIBERQA</p></td>
+<td><p>QAFIBERSTATUS</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="fiberstatus-bit-definitions">
+<h4>FIBERSTATUS Bit Definitions<a class="headerlink" href="#fiberstatus-bit-definitions" title="Link to this heading"></a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Bit Name</p></th>
+<th class="head"><p>Bit Number</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>UNASSIGNED</p></td>
+<td><p>0</p></td>
+<td><p>Fiber is not assigned to a known target or sky location</p></td>
+</tr>
+<tr class="row-odd"><td><p>STUCKPOSITIONER</p></td>
+<td><p>1</p></td>
+<td><p>INFO: Stuck positioner (but could still be on a valid sky location, though not a science target)</p></td>
+</tr>
+<tr class="row-even"><td><p>BROKENFIBER</p></td>
+<td><p>2</p></td>
+<td><p>Broken fiber</p></td>
+</tr>
+<tr class="row-odd"><td><p>RESTRICTED</p></td>
+<td><p>3</p></td>
+<td><p>INFO: Positioner has restricted reach (but might still be on valid target)</p></td>
+</tr>
+<tr class="row-even"><td><p>MISSINGPOSITION</p></td>
+<td><p>8</p></td>
+<td><p>Fiber location information is missing</p></td>
+</tr>
+<tr class="row-odd"><td><p>BADPOSITION</p></td>
+<td><p>9</p></td>
+<td><p>Fiber &gt;100 microns from target location</p></td>
+</tr>
+<tr class="row-even"><td><p>POORPOSITION</p></td>
+<td><p>10</p></td>
+<td><p>Fiber &gt;30 microns from target location</p></td>
+</tr>
+<tr class="row-odd"><td><p>LOWTRANSMISSION</p></td>
+<td><p>12</p></td>
+<td><p>Low fiber transmission. Cannot use for sky.</p></td>
+</tr>
+<tr class="row-even"><td><p>NEARCHARGETRAP</p></td>
+<td><p>13</p></td>
+<td><p>INFO: Fiber trace near charge trap in one of the CCDs</p></td>
+</tr>
+<tr class="row-odd"><td><p>VARIABLETHRU</p></td>
+<td><p>14</p></td>
+<td><p>INFO: Fiber has throughput variations we cannot model well</p></td>
+</tr>
+<tr class="row-even"><td><p>LOWEFFTIME</p></td>
+<td><p>15</p></td>
+<td><p>Effective time for this fiber is too low</p></td>
+</tr>
+<tr class="row-odd"><td><p>BADFIBER</p></td>
+<td><p>16</p></td>
+<td><p>Unusable fiber</p></td>
+</tr>
+<tr class="row-even"><td><p>BADTRACE</p></td>
+<td><p>17</p></td>
+<td><p>Bad trace solution</p></td>
+</tr>
+<tr class="row-odd"><td><p>BADFLAT</p></td>
+<td><p>18</p></td>
+<td><p>Bad fiber flat</p></td>
+</tr>
+<tr class="row-even"><td><p>BADARC</p></td>
+<td><p>19</p></td>
+<td><p>Bad arc solution</p></td>
+</tr>
+<tr class="row-odd"><td><p>MANYBADCOL</p></td>
+<td><p>20</p></td>
+<td><p>&gt;10% of pixels are bad columns</p></td>
+</tr>
+<tr class="row-even"><td><p>MANYREJECTED</p></td>
+<td><p>21</p></td>
+<td><p>&gt;10% of pixels rejected in extraction</p></td>
+</tr>
+<tr class="row-odd"><td><p>BADAMPB</p></td>
+<td><p>22</p></td>
+<td><p>Issues in the amplifier readouts of camera B make this unusable</p></td>
+</tr>
+<tr class="row-even"><td><p>BADAMPR</p></td>
+<td><p>23</p></td>
+<td><p>Issues in the amplifier readouts of camera R make this unusable</p></td>
+</tr>
+<tr class="row-odd"><td><p>BADAMPZ</p></td>
+<td><p>24</p></td>
+<td><p>Issues in the amplifier readouts of camera Z make this unusable</p></td>
+</tr>
+<tr class="row-even"><td><p>BADPETALPOS</p></td>
+<td><p>25</p></td>
+<td><p>Too many fibers with bad positioning in petal</p></td>
+</tr>
+<tr class="row-odd"><td><p>BADPETALSKY</p></td>
+<td><p>26</p></td>
+<td><p>Bad sky model across petal</p></td>
+</tr>
+<tr class="row-even"><td><p>BADPETALSTDSTAR</p></td>
+<td><p>27</p></td>
+<td><p>To few standard stars or rms between stars too large in the petal</p></td>
+</tr>
+<tr class="row-odd"><td><p>BADPETALFLUXCAL</p></td>
+<td><p>28</p></td>
+<td><p>Unphysical flux calibration for the petal (calib vector too high or too low)</p></td>
+</tr>
+<tr class="row-even"><td><p>BADPETALSNR</p></td>
+<td><p>29</p></td>
+<td><p>TSNR is too low for this petal compared to the others</p></td>
+</tr>
+<tr class="row-odd"><td><p>BADREADNOISE</p></td>
+<td><p>30</p></td>
+<td><p>Bad read noise in one of the 3 cameras</p></td>
+</tr>
+<tr class="row-even"><td><p>RESERVED31</p></td>
+<td><p>31</p></td>
+<td><p>Reserved sign bit; do not use</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes</strong>:</p>
+<ul class="simple">
+<li><p>Bit 3 (RESTRICTED) is informative and doesn’t necessarily mean that the spectrum is bad,
+i.e. a FIBERSTATUS value of 0 or 8=2**3 is good.</p></li>
+<li><p>Bit 13 (NEARCHARGETRAP) is fine for most targets but indicates a potential problem for analyses
+that need consistent purity/completeness, especially for faint targets.</p></li>
+<li><p>Bit 14 (VARIABLETHRU) have questionable flux calibration, but typically the redshifts are ok.</p></li>
+<li><p>Bits 13 and 14 were added for DR2/Loa, but were not set at the time of DR1/Iron.</p></li>
+</ul>
+</section>
+</section>
+<section id="specmask">
+<span id="specmask-bitmask"></span><h3>SPECMASK<a class="headerlink" href="#specmask" title="Link to this heading"></a></h3>
+<p>The <strong>SPECMASK</strong> is stored as an image HDU in files with spectra,
+matched to the FLUX HDU, i.e. specmask[i,j] is the mask for fiber i
+wavelength j with flux value flux[i,j].  All bits in SPECMASK are bad,
+i.e. non-zero values mean that the corresponding flux should not be used.</p>
+<p>The canonical code location defining SPECMASK bits is
+<a class="reference external" href="https://github.com/desihub/desispec/blob/0.55.0/py/desispec/maskbits.py#L84">desispec.maskbits L84</a>.</p>
+<section id="specmask-mask-locations">
+<h4>SPECMASK Mask Locations<a class="headerlink" href="#specmask-mask-locations" title="Link to this heading"></a></h4>
+<p>Note: the FITS file HDU EXTNAME=MASK or B/R/Z_MASK, not “SPECMASK”.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>File</p></th>
+<th class="head"><p>Image HDU</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="DESI_SPECTRO_REDUX/SPECPROD/exposures/NIGHT/EXPID/frame-CAMERA-EXPID.html"><span class="doc">frame</span></a></p></td>
+<td><p>MASK</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="DESI_SPECTRO_REDUX/SPECPROD/exposures/NIGHT/EXPID/sframe-CAMERA-EXPID.html"><span class="doc">sframe</span></a></p></td>
+<td><p>MASK</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="DESI_SPECTRO_REDUX/SPECPROD/exposures/NIGHT/EXPID/cframe-CAMERA-EXPID.html"><span class="doc">cframe</span></a></p></td>
+<td><p>MASK</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="DESI_SPECTRO_REDUX/SPECPROD/healpix/SURVEY/PROGRAM/PIXGROUP/PIXNUM/spectra-SURVEY-PROGRAM-PIXNUM.html"><span class="doc">spectra</span></a></p></td>
+<td><p>B/R/Z_MASK</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="DESI_SPECTRO_REDUX/SPECPROD/healpix/SURVEY/PROGRAM/PIXGROUP/PIXNUM/coadd-SURVEY-PROGRAM-PIXNUM.html"><span class="doc">coadd</span></a></p></td>
+<td><p>B/R/Z_MASK</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="specmask-bit-definitions">
+<h4>SPECMASK Bit Definitions<a class="headerlink" href="#specmask-bit-definitions" title="Link to this heading"></a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Bit Name</p></th>
+<th class="head"><p>Bit Number</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SOMEBADPIX</p></td>
+<td><p>0</p></td>
+<td><p>Some input pixels were masked or ivar=0</p></td>
+</tr>
+<tr class="row-odd"><td><p>ALLBADPIX</p></td>
+<td><p>1</p></td>
+<td><p>All input pixels were masked or ivar=0</p></td>
+</tr>
+<tr class="row-even"><td><p>COSMIC</p></td>
+<td><p>2</p></td>
+<td><p>Input pixels included a masked cosmic</p></td>
+</tr>
+<tr class="row-odd"><td><p>LOWFLAT</p></td>
+<td><p>3</p></td>
+<td><p>Fiber flat &lt; 0.5</p></td>
+</tr>
+<tr class="row-even"><td><p>BADFIBERFLAT</p></td>
+<td><p>4</p></td>
+<td><p>Bad fiber flat solution</p></td>
+</tr>
+<tr class="row-odd"><td><p>BRIGHTSKY</p></td>
+<td><p>5</p></td>
+<td><p>Bright sky level (details TBD)</p></td>
+</tr>
+<tr class="row-even"><td><p>BADSKY</p></td>
+<td><p>6</p></td>
+<td><p>Bad sky model</p></td>
+</tr>
+<tr class="row-odd"><td><p>BAD2DFIT</p></td>
+<td><p>7</p></td>
+<td><p>Bad fit of extraction 2D model to pixel data</p></td>
+</tr>
+<tr class="row-even"><td><p>NODATA</p></td>
+<td><p>8</p></td>
+<td><p>No data exists</p></td>
+</tr>
+<tr class="row-odd"><td><p>BADFIBER</p></td>
+<td><p>9</p></td>
+<td><p>fibermask has a non-zero bit</p></td>
+</tr>
+<tr class="row-even"><td><p>BADCOLUMN</p></td>
+<td><p>10</p></td>
+<td><p>Bad CCD column biases the flux</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ccdmask">
+<span id="ccdmask-bitmask"></span><h3>CCDMASK<a class="headerlink" href="#ccdmask" title="Link to this heading"></a></h3>
+<p>The <strong>CCDMASK</strong> is used for masking spectrograph CCD images during preprocessing,
+prior to extracting the spectra.  It is stored in the MASK HDU of
+<a class="reference internal" href="DESI_SPECTRO_REDUX/SPECPROD/preproc/NIGHT/EXPID/preproc-CAMERA-EXPID.html"><span class="doc">preproc</span></a> files.</p>
+<p>The canonical code location defining CCDMASK bits is
+<a class="reference external" href="https://github.com/desihub/desispec/blob/0.55.0/py/desispec/maskbits.py#L42">desispec.maskbits L42</a>.</p>
+<section id="ccdmask-bit-definitions">
+<h4>CCDMASK Bit Definitions<a class="headerlink" href="#ccdmask-bit-definitions" title="Link to this heading"></a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Bit Name</p></th>
+<th class="head"><p>Bit Number</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>BAD</p></td>
+<td><p>0</p></td>
+<td><p>Pre-determined bad pixel (any reason)</p></td>
+</tr>
+<tr class="row-odd"><td><p>HOT</p></td>
+<td><p>1</p></td>
+<td><p>Hot pixel</p></td>
+</tr>
+<tr class="row-even"><td><p>DEAD</p></td>
+<td><p>2</p></td>
+<td><p>Dead pixel</p></td>
+</tr>
+<tr class="row-odd"><td><p>SATURATED</p></td>
+<td><p>3</p></td>
+<td><p>Saturated pixel from object</p></td>
+</tr>
+<tr class="row-even"><td><p>COSMIC</p></td>
+<td><p>4</p></td>
+<td><p>Cosmic ray</p></td>
+</tr>
+<tr class="row-odd"><td><p>PIXFLATZERO</p></td>
+<td><p>5</p></td>
+<td><p>pixflat is 0</p></td>
+</tr>
+<tr class="row-even"><td><p>PIXFLATLOW</p></td>
+<td><p>6</p></td>
+<td><p>pixflat &lt; 0.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>HIGHVAR</p></td>
+<td><p>7</p></td>
+<td><p>High variability in pixel value</p></td>
+</tr>
+<tr class="row-even"><td><p>BADREADNOISE</p></td>
+<td><p>8</p></td>
+<td><p>Very high CCD amplifier read noise</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="target-masks">
+<span id="target-bitmasks"></span><h2>Target masks<a class="headerlink" href="#target-masks" title="Link to this heading"></a></h2>
+<p>Target masks record the reasons why each target was selected for DESI
+observations.  These are stored in the <code class="docutils literal notranslate"><span class="pre">*_TARGET</span></code> columns of the
+TARGETS, FIBERASSIGN, and FIBERMAP tables in data files.</p>
+<p>These masks are described in more detail in Section 2 of
+<a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2023AJ....165...50M/abstract">Myers et al. (2023)</a>
+and Appendices A and B of the the DESI EDR Overview paper
+(<a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2024AJ....168...58D/abstract">DESI Collaboration et al. 2024</a>).</p>
+<p>The following table lists a subset of the most commonly used bits that maintained
+the same definition throughout different phases of DESI observations.  For the
+full definition of all bits, see the EDR Overview paper appendices and the
+code links in the second table below.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Bit Name</p></th>
+<th class="head"><p>Bit Number</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>LRG</p></td>
+<td><p>0</p></td>
+<td><p>Luminous Red Galaxies</p></td>
+</tr>
+<tr class="row-odd"><td><p>ELG</p></td>
+<td><p>1</p></td>
+<td><p>Emission Line Galaxies</p></td>
+</tr>
+<tr class="row-even"><td><p>QSO</p></td>
+<td><p>2</p></td>
+<td><p>Quasars</p></td>
+</tr>
+<tr class="row-odd"><td><p>SKY</p></td>
+<td><p>32</p></td>
+<td><p>Blank sky locations</p></td>
+</tr>
+<tr class="row-even"><td><p>(various STD_*)</p></td>
+<td><p>33-35</p></td>
+<td><p>Standard stars</p></td>
+</tr>
+<tr class="row-odd"><td><p>BGS_ANY</p></td>
+<td><p>60</p></td>
+<td><p>Bright Galaxy Survey galaxies</p></td>
+</tr>
+<tr class="row-even"><td><p>MWS_ANY</p></td>
+<td><p>61</p></td>
+<td><p>Milky Way Survey stars</p></td>
+</tr>
+<tr class="row-odd"><td><p>SCND_ANY</p></td>
+<td><p>62</p></td>
+<td><p>Secondary targets</p></td>
+</tr>
+</tbody>
+</table>
+<p>Canonical code locations where targeting bits are defined:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>BIT_MASK</p></th>
+<th class="head"><p>URL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CMX_TARGET</p></td>
+<td><p><a class="reference external" href="https://github.com/desihub/desitarget/blob/2.5.0/py/desitarget/cmx/data/cmx_targetmask.yaml">CMX</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>SV1_DESI_TARGET</p></td>
+<td><p><a class="reference external" href="https://github.com/desihub/desitarget/blob/2.5.0/py/desitarget/sv1/data/sv1_targetmask.yaml">SV1</a></p></td>
+</tr>
+<tr class="row-even"><td><p>SV1_BGS_TARGET</p></td>
+<td><p><a class="reference external" href="https://github.com/desihub/desitarget/blob/2.5.0/py/desitarget/sv1/data/sv1_targetmask.yaml">SV1</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>SV1_MWS_TARGET</p></td>
+<td><p><a class="reference external" href="https://github.com/desihub/desitarget/blob/2.5.0/py/desitarget/sv1/data/sv1_targetmask.yaml">SV1</a></p></td>
+</tr>
+<tr class="row-even"><td><p>SV2_DESI_TARGET</p></td>
+<td><p><a class="reference external" href="https://github.com/desihub/desitarget/blob/2.5.0/py/desitarget/sv2/data/sv2_targetmask.yaml">SV2</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>SV2_BGS_TARGET</p></td>
+<td><p><a class="reference external" href="https://github.com/desihub/desitarget/blob/2.5.0/py/desitarget/sv2/data/sv2_targetmask.yaml">SV2</a></p></td>
+</tr>
+<tr class="row-even"><td><p>SV2_MWS_TARGET</p></td>
+<td><p><a class="reference external" href="https://github.com/desihub/desitarget/blob/2.5.0/py/desitarget/sv2/data/sv2_targetmask.yaml">SV2</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>SV2_SCND_TARGET</p></td>
+<td><p><a class="reference external" href="https://github.com/desihub/desitarget/blob/2.5.0/py/desitarget/sv2/data/sv2_targetmask.yaml">SV2</a></p></td>
+</tr>
+<tr class="row-even"><td><p>SV3_DESI_TARGET</p></td>
+<td><p><a class="reference external" href="https://github.com/desihub/desitarget/blob/2.5.0/py/desitarget/sv3/data/sv3_targetmask.yaml">SV3</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>SV3_BGS_TARGET</p></td>
+<td><p><a class="reference external" href="https://github.com/desihub/desitarget/blob/2.5.0/py/desitarget/sv3/data/sv3_targetmask.yaml">SV3</a></p></td>
+</tr>
+<tr class="row-even"><td><p>SV3_MWS_TARGET</p></td>
+<td><p><a class="reference external" href="https://github.com/desihub/desitarget/blob/2.5.0/py/desitarget/sv3/data/sv3_targetmask.yaml">SV3</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>SV3_SCND_TARGET</p></td>
+<td><p><a class="reference external" href="https://github.com/desihub/desitarget/blob/2.5.0/py/desitarget/sv3/data/sv3_targetmask.yaml">SV3</a></p></td>
+</tr>
+<tr class="row-even"><td><p>DESI_TARGET</p></td>
+<td><p><a class="reference external" href="https://github.com/desihub/desitarget/blob/2.5.0/py/desitarget/data/targetmask.yaml">TARGET</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>BGS_TARGET</p></td>
+<td><p><a class="reference external" href="https://github.com/desihub/desitarget/blob/2.5.0/py/desitarget/data/targetmask.yaml">TARGET</a></p></td>
+</tr>
+<tr class="row-even"><td><p>MWS_TARGET</p></td>
+<td><p><a class="reference external" href="https://github.com/desihub/desitarget/blob/2.5.0/py/desitarget/data/targetmask.yaml">TARGET</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>SCND_TARGET</p></td>
+<td><p><a class="reference external" href="https://github.com/desihub/desitarget/blob/2.5.0/py/desitarget/data/targetmask.yaml">TARGET</a></p></td>
+</tr>
+<tr class="row-even"><td><p>OBSCONDITIONS</p></td>
+<td><p><a class="reference external" href="https://github.com/desihub/desitarget/blob/2.5.0/py/desitarget/data/targetmask.yaml#L188">TARGET_L188</a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="imaging-masks">
+<span id="imaging-bitmasks"></span><h2>Imaging masks<a class="headerlink" href="#imaging-masks" title="Link to this heading"></a></h2>
+<p>These masks were defined or used by the <a class="reference external" href="https://www.legacysurvey.org/">DESI Legacy Imaging Surveys</a>. Please
+see their information on these masks at the links below.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>BIT_MASK</p></th>
+<th class="head"><p>URL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>WISEMASK_W1</p></td>
+<td><p><a class="reference external" href="https://www.legacysurvey.org/dr9/bitmasks/">BITMASKS_LEGACY</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>WISEMASK_W2</p></td>
+<td><p><a class="reference external" href="https://www.legacysurvey.org/dr9/bitmasks/">BITMASKS_LEGACY</a></p></td>
+</tr>
+<tr class="row-even"><td><p>MASKBITS</p></td>
+<td><p><a class="reference external" href="https://www.legacysurvey.org/dr9/bitmasks/">BITMASKS_LEGACY</a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="PROTODESI/logs/on_sky_summary.html" class="btn btn-neutral float-left" title="on_sky_movedata" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="column_descriptions.html" class="btn btn-neutral float-right" title="Standard Column Descriptions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014-2025, DESI Collaboration.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

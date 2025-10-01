@@ -1,0 +1,9 @@
+======
+EZmock
+======
+
+1000 realizations at low resolution to estimate covariance matrices
+
+.. toctree::
+   :maxdepth: 1
+
