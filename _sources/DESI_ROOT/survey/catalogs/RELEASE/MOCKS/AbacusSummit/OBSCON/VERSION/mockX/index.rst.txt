@@ -1,13 +1,14 @@
-.. _clustering_mock_complete_ffa:
-
-=====
-mockX
-=====
+=============
+mock{MOCKREA}
+=============
 
 For each mock realization here you will find 3 classes of file. The FFA or complete flavour is controled by the parameter ``FLAVOUR`` (``complete`` or ``ffa``)
-- Potential assigment files (for all tracers or under some configurations, for each tracer separately)
-- FFA clustering files (only present for ``OBSCON`` = DARK)
-- Complete clustering files
+
+  * Potential assigment files (for all tracers or under some configurations, for each tracer separately)
+
+  * FFA clustering files (only present for ``OBSCON`` = DARK)
+
+  * Complete clustering files
 
 For the FFA clustering catalogs, we also share the ``full`` catalogs.
 

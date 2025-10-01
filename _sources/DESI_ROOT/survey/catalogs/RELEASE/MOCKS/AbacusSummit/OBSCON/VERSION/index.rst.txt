@@ -7,9 +7,12 @@ AbacusSummit
 From the landing page, you will find the initial catalog in the Y1 footprint (called forFA files), the lrg_mask file (used only to mask LRGs, present only on the ``DARK`` obscon) and 2 directories called ``altmtl{MOCKREA}`` and ``mock{MOCKREA}`` where ``{MOCKREA}`` is the mock realization from [0,25). 
 
 Here you can find 3 distinct mock flavours depending on the level of realism:
-* *Complete*: no fiber assigment effects, just the tracers that are reachable by any DESI fiber (found under ``mock{MOCKREA}``)
-* *FFA*: from Fast Fiber Assigment. It estimates fiber assigment probabilistically learning from the data, based on number of passes and local density (found under ``mock{MOCKREA}``)
-* *altmtl*: Estimated using the same fba algorithm, passes and hardware configuration as the data (found under ``altmtl{MOCKREA}``). To replicate the fiber assigment processing, follow the instructions in `LSS repo`_. 
+
+  * *Complete*: no fiber assigment effects, just the tracers that are reachable by any DESI fiber (found under ``mock{MOCKREA}``)
+
+  * *FFA*: from Fast Fiber Assigment. It estimates fiber assigment probabilistically learning from the data, based on number of passes and local density (found under ``mock{MOCKREA}``)
+
+  * *altmtl*: Estimated using the same fba algorithm, passes and hardware configuration as the data (found under ``altmtl{MOCKREA}``). To replicate the fiber assigment processing, follow the instructions in `LSS repo`_. 
 
 
 For one realization in OBSCON = ``DARK``, we have also estimated PIP weights based on 128 fba repetitions (see the AltMTL method; `Lasker et al. (2025)`_)

@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AltMTL MOCK DIRECTORY &mdash; desidatamodel 25.4.dev1530 documentation</title>
+  <title>altmtl{MOCKREA} &mdash; desidatamodel 25.4.dev1530 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/desidatamodel.css?v=f6dbf8d8" />
@@ -19,7 +19,9 @@
       <script src="../../../../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../../../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../../../../../../../search.html" /> 
+    <link rel="search" title="Search" href="../../../../../../../../../search.html" />
+    <link rel="next" title="fba{MOCKREA}" href="fbaX/index.html" />
+    <link rel="prev" title="mock FFA full catalogs" href="../mockX/full_ffa_mock.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -41,9 +43,23 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../../../../../vac/index.html">vac/ : Value Added Catalogs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../index.html">$DESI_ROOT : represents the top level of the DESI directory tree.</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../../../../index.html">$DESI_ROOT : represents the top level of the DESI directory tree.</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../DESI_SPECTRO_REDUX/index.html">spectro</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../../../../index.html">survey</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../fiberassign/index.html">fiberassign</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../../../../index.html">catalogs</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../../../../../index.html">RELEASE</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../GFA/index.html">GFA</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../DESI_TARGET/index.html">target</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../vac/index.html">vac</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../../../../../DESI_SPECTRO_DATA/index.html">$DESI_SPECTRO_DATA : raw data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../../../../../DESI_SPECTRO_REDUX/index.html">$DESI_SPECTRO_REDUX : processed spectro data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../../../../../DESI_SPECTRO_SIM/index.html">$DESI_SPECTRO_SIM : simulated spectro data</a></li>
@@ -80,7 +96,13 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../../../../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">AltMTL MOCK DIRECTORY</li>
+          <li class="breadcrumb-item"><a href="../../../../../../../../index.html">DESI_ROOT</a></li>
+          <li class="breadcrumb-item"><a href="../../../../../../../index.html">survey</a></li>
+          <li class="breadcrumb-item"><a href="../../../../../../index.html">catalogs</a></li>
+          <li class="breadcrumb-item"><a href="../../../../../index.html">RELEASE</a></li>
+          <li class="breadcrumb-item"><a href="../../../../index.html">MOCKS</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">AbacusSummit</a></li>
+      <li class="breadcrumb-item active">altmtl{MOCKREA}</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../../../../../../_sources/DESI_ROOT/survey/catalogs/RELEASE/MOCKS/AbacusSummit/OBSCON/VERSION/altmtlX/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -90,14 +112,20 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="altmtl-mock-directory">
-<h1>AltMTL MOCK DIRECTORY<a class="headerlink" href="#altmtl-mock-directory" title="Link to this heading"></a></h1>
+  <section id="altmtl-mockrea">
+<h1>altmtl{MOCKREA}<a class="headerlink" href="#altmtl-mockrea" title="Link to this heading"></a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">${DESI_ROOT}/survey/catalogs/RELEASE/MOCKS/AbacusSummit/OBSCON/VERSION/altmtl{MOCKREA}</span></code> host the AltMTL LSS mock catalogs (and associated randoms) for each <code class="docutils literal notranslate"><span class="pre">{MOCKREA}</span></code> realization.</p>
-<p>Here you will find two directories, fbaX contains the compilation of running fiber assigment after running the altmtl pipeline (not public, but replicated <a class="reference external" href="https://github.com/desihub/LSS/blob/main/Sandbox/LSSpipe_Y1mock_2ndgen.txt">following the instructions in LSS code</a>) and mockX contains intermediate files and final clustering files (unders LSScats directory, following the same structure as the data)</p>
+<p>Here you will find two directories:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fba{MOCKREA}</span></code> contains the compilation of running fiber assigment after running the altmtl pipeline (not public, but replicated <a class="reference external" href="https://github.com/desihub/LSS/blob/main/Sandbox/LSSpipe_Y1mock_2ndgen.txt">following the instructions in LSS code</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mock{MOCKREA}</span></code> contains intermediate files and final clustering files (unders <code class="docutils literal notranslate"><span class="pre">LSScats</span></code> directory, following the same structure as the data)</p></li>
+</ul>
+</div></blockquote>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="fbaX/index.html">mock fba directory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mockX/index.html">ALTMTL INTERMEDIATE MOCK FILES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fbaX/index.html">fba{MOCKREA}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mockX/index.html">mock{MOCKREA}</a></li>
 </ul>
 </div>
 </section>
@@ -105,7 +133,10 @@
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../mockX/full_ffa_mock.html" class="btn btn-neutral float-left" title="mock FFA full catalogs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="fbaX/index.html" class="btn btn-neutral float-right" title="fba{MOCKREA}" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

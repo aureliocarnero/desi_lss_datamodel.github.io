@@ -1,6 +1,6 @@
-==============================
-ALTMTL INTERMEDIATE MOCK FILES
-==============================
+=============
+mock{MOCKREA}
+=============
 
 ``${DESI_ROOT}/survey/catalogs/{RELEASE}/MOCKS/AbacusSummit/{OBSCON}/{VERSION}/altmtl{MOCKREA}/mock{MOCKREA}`` contains intermediate files reading from the forFA files and altmtl outputs (in the fba directory), as well as intermediate randoms files. Also the directory with the clustering ready catalogs (LSScats) is found here. ``{MOCKREA}`` is the realization number (25 of them) 
 
