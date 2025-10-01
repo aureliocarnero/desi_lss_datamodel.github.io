@@ -20,7 +20,7 @@
     <script src="../../../../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../../../../search.html" />
-    <link rel="next" title="mockX" href="mockX/index.html" />
+    <link rel="next" title="mock{MOCKREA}" href="mockX/index.html" />
     <link rel="prev" title="EZmock" href="../../../EZmock/index.html" /> 
 </head>
 
@@ -115,10 +115,14 @@
 <h1>AbacusSummit<a class="headerlink" href="#abacussummit" title="Link to this heading"></a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">${DESI_ROOT}/survey/catalogs/{RELEASE}/MOCKS/AbacusSummit/{OBSCON}/{VERSION}</span></code> host 25 Abacus LSS catalogs (and associated randoms) separated by OBSCON: <code class="docutils literal notranslate"><span class="pre">DARK</span></code> or <code class="docutils literal notranslate"><span class="pre">BRIGHT</span></code> and followed by internal version, where for <code class="docutils literal notranslate"><span class="pre">DARK</span></code> (LRG, ELG and QSO) is <code class="docutils literal notranslate"><span class="pre">v4.2</span></code> and for <code class="docutils literal notranslate"><span class="pre">BRIGHT</span></code> (BGS) is <code class="docutils literal notranslate"><span class="pre">v1</span></code>.</p>
 <p>From the landing page, you will find the initial catalog in the Y1 footprint (called forFA files), the lrg_mask file (used only to mask LRGs, present only on the <code class="docutils literal notranslate"><span class="pre">DARK</span></code> obscon) and 2 directories called <code class="docutils literal notranslate"><span class="pre">altmtl{MOCKREA}</span></code> and <code class="docutils literal notranslate"><span class="pre">mock{MOCKREA}</span></code> where <code class="docutils literal notranslate"><span class="pre">{MOCKREA}</span></code> is the mock realization from [0,25).</p>
-<p>Here you can find 3 distinct mock flavours depending on the level of realism:
-* <em>Complete</em>: no fiber assigment effects, just the tracers that are reachable by any DESI fiber (found under <code class="docutils literal notranslate"><span class="pre">mock{MOCKREA}</span></code>)
-* <em>FFA</em>: from Fast Fiber Assigment. It estimates fiber assigment probabilistically learning from the data, based on number of passes and local density (found under <code class="docutils literal notranslate"><span class="pre">mock{MOCKREA}</span></code>)
-* <em>altmtl</em>: Estimated using the same fba algorithm, passes and hardware configuration as the data (found under <code class="docutils literal notranslate"><span class="pre">altmtl{MOCKREA}</span></code>). To replicate the fiber assigment processing, follow the instructions in <a class="reference external" href="https://github.com/desihub/LSS/">LSS repo</a>.</p>
+<p>Here you can find 3 distinct mock flavours depending on the level of realism:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>Complete</em>: no fiber assigment effects, just the tracers that are reachable by any DESI fiber (found under <code class="docutils literal notranslate"><span class="pre">mock{MOCKREA}</span></code>)</p></li>
+<li><p><em>FFA</em>: from Fast Fiber Assigment. It estimates fiber assigment probabilistically learning from the data, based on number of passes and local density (found under <code class="docutils literal notranslate"><span class="pre">mock{MOCKREA}</span></code>)</p></li>
+<li><p><em>altmtl</em>: Estimated using the same fba algorithm, passes and hardware configuration as the data (found under <code class="docutils literal notranslate"><span class="pre">altmtl{MOCKREA}</span></code>). To replicate the fiber assigment processing, follow the instructions in <a class="reference external" href="https://github.com/desihub/LSS/">LSS repo</a>.</p></li>
+</ul>
+</div></blockquote>
 <p>For one realization in OBSCON = <code class="docutils literal notranslate"><span class="pre">DARK</span></code>, we have also estimated PIP weights based on 128 fba repetitions (see the AltMTL method; <a class="reference external" href="https://iopscience.iop.org/article/10.1088/1475-7516/2025/01/127">Lasker et al. (2025)</a>)</p>
 <p>Details about the content and production of the LSS catalogs that we follow for the mocks are found in <a class="reference external" href="https://iopscience.iop.org/article/10.1088/1475-7516/2025/01/125">Ross et al. (2025)</a>
 Details comparing the three mock flavous can be found in <a class="reference external" href="https://iopscience.iop.org/article/10.1088/1475-7516/2025/04/074">Bianchi et al. (2025)</a></p>
@@ -137,7 +141,7 @@ Details comparing the three mock flavous can be found in <a class="reference ext
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../../../EZmock/index.html" class="btn btn-neutral float-left" title="EZmock" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="mockX/index.html" class="btn btn-neutral float-right" title="mockX" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="mockX/index.html" class="btn btn-neutral float-right" title="mock{MOCKREA}" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
