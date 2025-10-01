@@ -12,7 +12,10 @@ For each mock realization here you will find 3 classes of file. The FFA or compl
 
 For the FFA clustering catalogs, we also share the ``full`` catalogs.
 
-This directory also includes 18 randoms associated for each realization, for each flavour
+This directory also includes 18 randoms associated for each realization, for each flavour.
+
+  * CAVEAT: for mock realization = 13, the combined NGC+SGC clustering ffa randoms are missing, althought not needed.
+
 
 Large-scale clustering measurements can be accurately obtained via the columns :py:attr:`RA`, :py:attr:`DEC`, :py:attr:`Z`, :py:attr:`WEIGHT`. Samples are split by Galactic hemisphere, defined by GALCAP ``NGC`` and ``SGC`` or combined without distinction.
 
