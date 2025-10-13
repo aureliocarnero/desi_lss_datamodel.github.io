@@ -1,0 +1,452 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../../../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mock FFA full catalogs &mdash; desidatamodel 25.4.dev1530 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/desidatamodel.css?v=f6dbf8d8" />
+
+  
+      <script src="../../../../../../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../../../../../../_static/documentation_options.js?v=e580c04a"></script>
+      <script src="../../../../../../../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../../../../search.html" />
+    <link rel="next" title="altmtl{MOCKREA}" href="../altmtlX/index.html" />
+    <link rel="prev" title="mock FFA and COMPLETE clustering catalogs" href="mock_clustering.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../../../../../../index.html" class="icon icon-home">
+            desidatamodel
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../vac/index.html">vac/ : Value Added Catalogs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../../../../index.html">$DESI_ROOT : represents the top level of the DESI directory tree.</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../DESI_SPECTRO_REDUX/index.html">spectro</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../../../../index.html">survey</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../fiberassign/index.html">fiberassign</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../../../../index.html">catalogs</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../../../../../index.html">RELEASE</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../GFA/index.html">GFA</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../DESI_TARGET/index.html">target</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../vac/index.html">vac</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../../DESI_SPECTRO_DATA/index.html">$DESI_SPECTRO_DATA : raw data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../../DESI_SPECTRO_REDUX/index.html">$DESI_SPECTRO_REDUX : processed spectro data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../../DESI_SPECTRO_SIM/index.html">$DESI_SPECTRO_SIM : simulated spectro data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../../DESI_SPECTRO_CALIB/index.html">$DESI_SPECTRO_CALIB : spectro calibration data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../../DESI_SURVEYOPS/index.html">$DESI_SURVEYOPS : data files used for day-to-day survey operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../../DESI_TARGET/index.html">$DESI_TARGET : target selection and fiber assignment (see also Myers et al. 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../../DESIMODEL/index.html">$DESIMODEL : data used for simulating DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../../DESISURVEY_OUTPUT/index.html">$DESISURVEY_OUTPUT : outputs from desisurvey and surveysim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../../PROTODESI/index.html">$PROTODESI : data and logs from the ProtoDESI campaign</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../../bitmasks.html">Bit Masks in DESI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../../column_descriptions.html">Standard Column Descriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../../envvar.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../../units.html">Units in data files</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../../datamodel.html">Contributing to desidatamodel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../../api.html">desidatamodel API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../../changes.html">desidatamodel Change Log</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../../../../index.html">desidatamodel</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../../../../../index.html">DESI_ROOT</a></li>
+          <li class="breadcrumb-item"><a href="../../../../../../../index.html">survey</a></li>
+          <li class="breadcrumb-item"><a href="../../../../../../index.html">catalogs</a></li>
+          <li class="breadcrumb-item"><a href="../../../../../index.html">RELEASE</a></li>
+          <li class="breadcrumb-item"><a href="../../../../index.html">mocks</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">AbacusSummit</a></li>
+          <li class="breadcrumb-item"><a href="index.html">mock{MOCKREA}</a></li>
+      <li class="breadcrumb-item active">mock FFA full catalogs</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../../../../../../_sources/DESI_ROOT/survey/catalogs/RELEASE/mocks/AbacusSummit/OBSCON/VERSION/mockX/full_ffa_mock.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="mock-ffa-full-catalogs">
+<h1>mock FFA full catalogs<a class="headerlink" href="#mock-ffa-full-catalogs" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Summary<span class="colon">:</span></dt>
+<dd class="field-odd"><p>LSS catalogs containing information on all targets identified as reachable by DESI fiberassign for the FFA flavour, with one entry for each. The files are split by target type</p>
+</dd>
+<dt class="field-even">Naming Convention<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ffa_full_{TARGET}.fits</span></code>, where <code class="docutils literal notranslate"><span class="pre">{TARGET}</span></code> is the target type: <code class="docutils literal notranslate"><span class="pre">QSO</span></code>, <code class="docutils literal notranslate"><span class="pre">ELG_LOP</span></code>, <code class="docutils literal notranslate"><span class="pre">LRG</span></code>, for dark or <code class="docutils literal notranslate"><span class="pre">BGS</span></code> for bright.</p>
+</dd>
+<dt class="field-odd">Regex<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">ffa_full_[A-Za-z].fits</span></code></p>
+</dd>
+<dt class="field-even">File Type<span class="colon">:</span></dt>
+<dd class="field-even"><p>FITS, 11 GB</p>
+</dd>
+</dl>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Number</p></th>
+<th class="head"><p>EXTNAME</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Contents</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#hdu0">HDU0</a></p></td>
+<td></td>
+<td><p>IMAGE</p></td>
+<td><p>Empty</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hdu1">HDU1</a></p></td>
+<td><p>LSS</p></td>
+<td><p>BINTABLE</p></td>
+<td><p>Catalog data</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="fits-header-units">
+<h2>FITS Header Units<a class="headerlink" href="#fits-header-units" title="Link to this heading"></a></h2>
+<section id="hdu0">
+<h3>HDU0<a class="headerlink" href="#hdu0" title="Link to this heading"></a></h3>
+<p>Empty HDU.</p>
+</section>
+<section id="hdu1">
+<h3>HDU1<a class="headerlink" href="#hdu1" title="Link to this heading"></a></h3>
+<p>EXTNAME = LSS</p>
+<p>Catalog data for the given target type; one entry per unique TARGETID</p>
+<section id="required-header-keywords">
+<h4>Required Header Keywords<a class="headerlink" href="#required-header-keywords" title="Link to this heading"></a></h4>
+<details class="summary-required-header-keywords-table">
+<summary>Required Header Keywords Table</summary><table class="keywords docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"><p>Example Value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NAXIS1</p></td>
+<td><p>838</p></td>
+<td><p>int</p></td>
+<td><p>length of dimension 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>NAXIS2</p></td>
+<td><p>15327895</p></td>
+<td><p>int</p></td>
+<td><p>length of dimension 2</p></td>
+</tr>
+<tr class="row-even"><td><p>DESIDR</p></td>
+<td><p>dr1</p></td>
+<td><p>str</p></td>
+<td><p>DESI Data Release</p></td>
+</tr>
+</tbody>
+</table>
+</details></section>
+<section id="required-data-table-columns">
+<h4>Required Data Table Columns<a class="headerlink" href="#required-data-table-columns" title="Link to this heading"></a></h4>
+<table class="columns docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Units</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>LOCATION</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Location on the focal plane PETAL_LOC*1000 + DEVICE_LOC</p></td>
+</tr>
+<tr class="row-odd"><td><p>FIBER</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Fiber ID on the CCDs [0-4999]</p></td>
+</tr>
+<tr class="row-even"><td><p>TARGETID</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Unique DESI target ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>R_MAG_APP <a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Apparent magnitude in R band in mocks</p></td>
+</tr>
+<tr class="row-even"><td><p>R_MAG_ABS <a class="footnote-reference brackets" href="#id3" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Absolute magnitude in R band in mocks</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEC</p></td>
+<td><p>float64</p></td>
+<td><p>deg</p></td>
+<td><p>Barycentric declination in ICRS</p></td>
+</tr>
+<tr class="row-even"><td><p>RA</p></td>
+<td><p>float64</p></td>
+<td><p>deg</p></td>
+<td><p>Barycentric Right Ascension in ICRS</p></td>
+</tr>
+<tr class="row-odd"><td><p>TRUEZ</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>True redshift in a galaxy mock catalog</p></td>
+</tr>
+<tr class="row-even"><td><p>RSDZ</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Redshift in mocks that includes RSD effects</p></td>
+</tr>
+<tr class="row-odd"><td><p>DESI_TARGET</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>DESI (dark time program) target selection bitmask</p></td>
+</tr>
+<tr class="row-even"><td><p>PRIORITY_INIT</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Target initial priority from target selection bitmasks and OBSCONDITIONS</p></td>
+</tr>
+<tr class="row-odd"><td><p>PRIORITY</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Target current priority</p></td>
+</tr>
+<tr class="row-even"><td><p>NUMOBS_MORE</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Number of additional observations needed</p></td>
+</tr>
+<tr class="row-odd"><td><p>NUMOBS_INIT</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Initial number of observations for target calculated across target selection bitmasks and OBSCONDITIONS</p></td>
+</tr>
+<tr class="row-even"><td><p>BRICKID</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Brick ID from tractor input</p></td>
+</tr>
+<tr class="row-odd"><td><p>NOBS_G</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Number of images for central pixel in g-band</p></td>
+</tr>
+<tr class="row-even"><td><p>NOBS_R</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Number of images for central pixel in r-band</p></td>
+</tr>
+<tr class="row-odd"><td><p>NOBS_Z</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Number of images for central pixel in z-band</p></td>
+</tr>
+<tr class="row-even"><td><p>MASKBITS</p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>Bitwise mask from the imaging indicating potential issue or blending</p></td>
+</tr>
+<tr class="row-odd"><td><p>BGS_TARGET</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>BGS (Bright Galaxy Survey) target selection bitmask</p></td>
+</tr>
+<tr class="row-even"><td><p>MWS_TARGET</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Milky Way Survey targeting bits</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUBPRIORITY</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Random subpriority [0-1) to break assignment ties</p></td>
+</tr>
+<tr class="row-even"><td><p>BRICKNAME</p></td>
+<td><p>char[8]</p></td>
+<td></td>
+<td><p>Brick name from tractor input</p></td>
+</tr>
+<tr class="row-odd"><td><p>OBSCONDITIONS</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Bitmask of allowed observing conditions</p></td>
+</tr>
+<tr class="row-even"><td><p>SCND_TARGET</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Target selection bitmask for secondary programs</p></td>
+</tr>
+<tr class="row-odd"><td><p>ZWARN</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Redshift warning bitmask from Redrock</p></td>
+</tr>
+<tr class="row-even"><td><p>COLLISION</p></td>
+<td><p>logical</p></td>
+<td></td>
+<td><p>Boolean for whether given potential assignment had a fiber collision with any keep-out zone</p></td>
+</tr>
+<tr class="row-odd"><td><p>TILEID</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Unique DESI tile ID</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_ELG</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>ELG template (S/N)^2 summed over B,R,Z</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_LYA</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>LYA template (S/N)^2 summed over B,R,Z</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_BGS</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>BGS template (S/N)^2 summed over B,R,Z</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_QSO</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>QSO template (S/N)^2 summed over B,R,Z</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_LRG</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>LRG template (S/N)^2 summed over B,R,Z</p></td>
+</tr>
+<tr class="row-odd"><td><p>TILELOCID</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Is 10000*TILEID+LOCATION</p></td>
+</tr>
+<tr class="row-even"><td><p>NTILE</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Number of tiles target was available on</p></td>
+</tr>
+<tr class="row-odd"><td><p>TILES</p></td>
+<td><p>char[23]</p></td>
+<td></td>
+<td><p>TILEIDs of those tile, in string form separated by -</p></td>
+</tr>
+<tr class="row-even"><td><p>TILELOCIDS</p></td>
+<td><p>char[79]</p></td>
+<td></td>
+<td><p>TILELOCIDs that the target was available for separated by -</p></td>
+</tr>
+<tr class="row-odd"><td><p>WEIGHT_IIP</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Weight coming from the Probability of assignment in alt histories</p></td>
+</tr>
+<tr class="row-even"><td><p>BITWEIGHTS</p></td>
+<td><p>int64[4]</p></td>
+<td></td>
+<td><p>A size of two 64 bit masks that encodes which of the alternative assignment histories that the target was assigned in</p></td>
+</tr>
+<tr class="row-odd"><td><p>PHOTSYS</p></td>
+<td><p>char[1]</p></td>
+<td></td>
+<td><p>N for the MzLS/BASS photometric system, S for DECaLS</p></td>
+</tr>
+</tbody>
+</table>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id3" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>)</span>
+<p>Optional, present only on the BRIGHT TRACERS (BGS)</p>
+</aside>
+</aside>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mock_clustering.html" class="btn btn-neutral float-left" title="mock FFA and COMPLETE clustering catalogs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../altmtlX/index.html" class="btn btn-neutral float-right" title="altmtl{MOCKREA}" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014-2025, DESI Collaboration.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
