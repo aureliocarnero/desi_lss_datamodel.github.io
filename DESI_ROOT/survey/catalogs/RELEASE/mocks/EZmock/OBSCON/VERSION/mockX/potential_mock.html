@@ -101,7 +101,9 @@
           <li class="breadcrumb-item"><a href="../../../../../../index.html">catalogs</a></li>
           <li class="breadcrumb-item"><a href="../../../../../index.html">RELEASE</a></li>
           <li class="breadcrumb-item"><a href="../../../../index.html">mocks</a></li>
-          <li class="breadcrumb-item"><a href="../index.html">EZmock</a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">EZmock</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">OBSCON</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">VERSION</a></li>
           <li class="breadcrumb-item"><a href="index.html">mock{MOCKREA}</a></li>
       <li class="breadcrumb-item active">Potential assigment files</li>
       <li class="wy-breadcrumbs-aside">
@@ -117,13 +119,13 @@
 <h1>Potential assigment files<a class="headerlink" href="#potential-assigment-files" title="Link to this heading"></a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">Summary<span class="colon">:</span></dt>
-<dd class="field-odd"><p>This file includes all reachable sky coordinates, as determined by the DESI fiberassign software, of randoms matching the footprint of DESI target samples as well as information about collisions</p>
+<dd class="field-odd"><p>This file includes all reachable sky coordinates, as determined by the DESI fiberassign software, matching the footprint of DESI target samples as well as information about collisions</p>
 </dd>
 <dt class="field-even">Naming Convention<span class="colon">:</span></dt>
-<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">pota-{OBSCON}.fits</span></code> or <code class="docutils literal notranslate"><span class="pre">pota-{OBSCON}_{TAG}_{TRACER}.fits</span></code>, where <code class="docutils literal notranslate"><span class="pre">{OBSCON}</span></code> can be DARK or BRIGHT and <code class="docutils literal notranslate"><span class="pre">{TAG}</span></code> can be joined_unreduced or withntile and <code class="docutils literal notranslate"><span class="pre">{TRACER}</span></code> can be <code class="docutils literal notranslate"><span class="pre">LRG</span></code>, <code class="docutils literal notranslate"><span class="pre">QSO</span></code>, <code class="docutils literal notranslate"><span class="pre">ELG_LOP</span></code>, <code class="docutils literal notranslate"><span class="pre">LRG+ELG_LOP</span></code> for DARK or <code class="docutils literal notranslate"><span class="pre">BGS</span></code> for BRIGHT</p>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">pota-{OBSCON}.fits</span></code> where <code class="docutils literal notranslate"><span class="pre">{OBSCON}</span></code> can be <code class="docutils literal notranslate"><span class="pre">DARK</span></code> or <code class="docutils literal notranslate"><span class="pre">BRIGHT</span></code>.</p>
 </dd>
 <dt class="field-odd">Regex<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">pota-(BRIGHT|DARK)_(joined_unreduced|withntile)_(LRG|BGS|QSO|ELG)\.fits</span></code></p>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">pota-(BRIGHT|DARK).fits</span></code></p>
 </dd>
 <dt class="field-even">File Type<span class="colon">:</span></dt>
 <dd class="field-even"><p>FITS, 2 GB</p>
@@ -157,7 +159,6 @@
 <h2>FITS Header Units<a class="headerlink" href="#fits-header-units" title="Link to this heading"></a></h2>
 <section id="hdu0">
 <h3>HDU0<a class="headerlink" href="#hdu0" title="Link to this heading"></a></h3>
-<p>This HDU has no non-standard required keywords.</p>
 <p>Empty HDU.</p>
 </section>
 <section id="hdu1">
@@ -205,12 +206,12 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>LOCATION <a class="footnote-reference brackets" href="#id8" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-even"><td><p>LOCATION</p></td>
 <td><p>int64</p></td>
 <td></td>
 <td><p>Location on the focal plane PETAL_LOC*1000 + DEVICE_LOC</p></td>
 </tr>
-<tr class="row-odd"><td><p>FIBER <a class="footnote-reference brackets" href="#id8" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-odd"><td><p>FIBER</p></td>
 <td><p>int64</p></td>
 <td></td>
 <td><p>Fiber ID on the CCDs [0-4999]</p></td>
@@ -221,59 +222,124 @@
 <td><p>Unique DESI target ID</p></td>
 </tr>
 <tr class="row-odd"><td><p>RA</p></td>
-<td><p>float64</p></td>
+<td><p>float32</p></td>
 <td><p>deg</p></td>
 <td><p>Barycentric Right Ascension in ICRS</p></td>
 </tr>
 <tr class="row-even"><td><p>DEC</p></td>
-<td><p>float64</p></td>
+<td><p>float32</p></td>
 <td><p>deg</p></td>
 <td><p>Barycentric declination in ICRS</p></td>
 </tr>
-<tr class="row-odd"><td><p>TILEID <a class="footnote-reference brackets" href="#id8" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-odd"><td><p>RSDZ</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Redshift in mocks that includes RSD effects</p></td>
+</tr>
+<tr class="row-even"><td><p>TRUEZ</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>True redshift in a galaxy mock catalog</p></td>
+</tr>
+<tr class="row-odd"><td><p>STATUS</p></td>
+<td><p>binary</p></td>
+<td></td>
+<td><p>Bit column present in mocks to select according to nz or footprint</p></td>
+</tr>
+<tr class="row-even"><td><p>MASKBITS</p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>Bitwise mask from the imaging indicating potential issue or blending</p></td>
+</tr>
+<tr class="row-odd"><td><p>NOBS_G</p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>Number of images for central pixel in g-band</p></td>
+</tr>
+<tr class="row-even"><td><p>NOBS_R</p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>Number of images for central pixel in r-band</p></td>
+</tr>
+<tr class="row-odd"><td><p>NOBS_Z</p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>Number of images for central pixel in z-band</p></td>
+</tr>
+<tr class="row-even"><td><p>PRIORITY_INIT</p></td>
 <td><p>int64</p></td>
 <td></td>
-<td><p>Unique DESI tile ID</p></td>
+<td><p>Target initial priority from target selection bitmasks and OBSCONDITIONS</p></td>
 </tr>
-<tr class="row-even"><td><p>COLLISION <a class="footnote-reference brackets" href="#id8" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-odd"><td><p>PRIORITY</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Target current priority</p></td>
+</tr>
+<tr class="row-even"><td><p>DESI_TARGET</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>DESI (dark time program) target selection bitmask</p></td>
+</tr>
+<tr class="row-odd"><td><p>NUMOBS_MORE</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Number of additional observations needed</p></td>
+</tr>
+<tr class="row-even"><td><p>NUMOBS_INIT</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Initial number of observations for target calculated across target selection bitmasks and OBSCONDITIONS</p></td>
+</tr>
+<tr class="row-odd"><td><p>BGS_TARGET</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>BGS (Bright Galaxy Survey) target selection bitmask</p></td>
+</tr>
+<tr class="row-even"><td><p>MWS_TARGET</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Milky Way Survey targeting bits</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUBPRIORITY</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Random subpriority [0-1) to break assignment ties</p></td>
+</tr>
+<tr class="row-even"><td><p>BRICKNAME</p></td>
+<td><p>char[8]</p></td>
+<td></td>
+<td><p>Brick name from tractor input</p></td>
+</tr>
+<tr class="row-odd"><td><p>OBSCONDITIONS</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Bitmask of allowed observing conditions</p></td>
+</tr>
+<tr class="row-even"><td><p>SCND_TARGET</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Target selection bitmask for secondary programs</p></td>
+</tr>
+<tr class="row-odd"><td><p>ZWARN</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Redshift warning bitmask from Redrock</p></td>
+</tr>
+<tr class="row-even"><td><p>COLLISION</p></td>
 <td><p>logical</p></td>
 <td></td>
 <td><p>Boolean for whether given potential assignment had a fiber collision with any keep-out zone</p></td>
 </tr>
-<tr class="row-odd"><td><p>NTILE <a class="footnote-reference brackets" href="#id8" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-odd"><td><p>TILEID</p></td>
 <td><p>int64</p></td>
 <td></td>
-<td><p>Number of tiles target was available on</p></td>
-</tr>
-<tr class="row-even"><td><p>TILES <a class="footnote-reference brackets" href="#id8" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
-<td><p>char[36]</p></td>
-<td></td>
-<td><p>TILEIDs of those tile, in string form separated by -</p></td>
-</tr>
-<tr class="row-odd"><td><p>TILELOCIDS <a class="footnote-reference brackets" href="#id8" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
-<td><p>char[110]</p></td>
-<td></td>
-<td><p>TILELOCIDs that the target was available for separated by -</p></td>
+<td><p>Unique DESI tile ID</p></td>
 </tr>
 </tbody>
 </table>
-<aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id8" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
-<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>,<a role="doc-backlink" href="#id3">3</a>,<a role="doc-backlink" href="#id4">4</a>,<a role="doc-backlink" href="#id5">5</a>,<a role="doc-backlink" href="#id6">6</a>,<a role="doc-backlink" href="#id7">7</a>)</span>
-<p>Optional</p>
-</aside>
-</aside>
 </section>
 </section>
-</section>
-<section id="notes-and-examples">
-<h2>Notes and Examples<a class="headerlink" href="#notes-and-examples" title="Link to this heading"></a></h2>
-<p>Optional columns:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">LOCATION</span></code>, <code class="docutils literal notranslate"><span class="pre">FIBER</span></code>, <code class="docutils literal notranslate"><span class="pre">TILEID</span></code>, <code class="docutils literal notranslate"><span class="pre">COLLISION</span></code> present for pota-OBSCON only</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">NTILE</span></code>, <code class="docutils literal notranslate"><span class="pre">TILES</span></code>, <code class="docutils literal notranslate"><span class="pre">TILELOCIDS</span></code> present for TAG = withntile</p></li>
-</ul>
 </section>
 </section>
 
