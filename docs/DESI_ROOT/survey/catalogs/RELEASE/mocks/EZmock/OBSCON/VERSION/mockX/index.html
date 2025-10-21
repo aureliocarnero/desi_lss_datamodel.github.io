@@ -21,7 +21,7 @@
     <link rel="index" title="Index" href="../../../../../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../../../../../search.html" />
     <link rel="next" title="Potential assigment files" href="potential_mock.html" />
-    <link rel="prev" title="EZmock" href="../index.html" /> 
+    <link rel="prev" title="VERSION" href="../index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -101,7 +101,9 @@
           <li class="breadcrumb-item"><a href="../../../../../../index.html">catalogs</a></li>
           <li class="breadcrumb-item"><a href="../../../../../index.html">RELEASE</a></li>
           <li class="breadcrumb-item"><a href="../../../../index.html">mocks</a></li>
-          <li class="breadcrumb-item"><a href="../index.html">EZmock</a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">EZmock</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">OBSCON</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">VERSION</a></li>
       <li class="breadcrumb-item active">mock{MOCKREA}</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../../../../../../_sources/DESI_ROOT/survey/catalogs/RELEASE/mocks/EZmock/OBSCON/VERSION/mockX/index.rst.txt" rel="nofollow"> View page source</a>
@@ -114,7 +116,7 @@
              
   <section id="mock-mockrea">
 <h1>mock{MOCKREA}<a class="headerlink" href="#mock-mockrea" title="Link to this heading"></a></h1>
-<p>For each EZmock realization here you will find  the FFA flavour (<code class="docutils literal notranslate"><span class="pre">ffa</span></code>)</p>
+<p>For each EZmock realization here you will find  the FFA flavour (<code class="docutils literal notranslate"><span class="pre">ffa</span></code>). <code class="docutils literal notranslate"><span class="pre">{OBSCON}</span></code> can be either <code class="docutils literal notranslate"><span class="pre">dark</span></code> or <code class="docutils literal notranslate"><span class="pre">bright</span></code>.</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>FFA clustering files</p></li>
@@ -124,13 +126,18 @@
 <p>This directory also includes 18 randoms associated for each realization.</p>
 <p>We add another sample unique to EZmock (not present for Abacus) defined as the combination of LRGs and ELGs, called <code class="docutils literal notranslate"><span class="pre">LRG+ELG_LOP</span></code>. More information about this can be found in: <a class="reference external" href="https://arxiv.org/abs/2508.05467v2">Valcin et al. (2025)</a></p>
 <p>Large-scale clustering measurements can be accurately obtained via the columns <code class="xref py py-attr docutils literal notranslate"><span class="pre">RA</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">DEC</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">Z</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">WEIGHT</span></code>. Samples are split by Galactic hemisphere, defined by GALCAP <code class="docutils literal notranslate"><span class="pre">NGC</span></code> and <code class="docutils literal notranslate"><span class="pre">SGC</span></code> or combined without distinction.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>CAVEAT WITH REALIZATION 925 for OBSCON = DARK:</strong> In this realization we are missing the files pota-DARK.fits and combdark_wdupspec_zdone.fits, therefore this realization is not replicable from scratch. Nonetheless, the rest of files are good, including the clustering catalogs.</p>
+</div>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="potential_mock.html">pota-{OBSCON}.fits and pota-{OBSCON}_{TAG}_{TARGET}.fits : potential assigment for all tracers combined, or separated by TRACER under TAG circumstances (joined_unreduced or withntile)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="potential_mock.html">pota-{OBSCON}.fits : potential assigment for all tracers combined</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nz_lss_mock.html">{TRACER}_{FLAVOUR}_nz.txt : Tracer densities as a function of redshift, in the given flavour</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mock_ran_clustering.html">{TRACER}_{FLAVOUR}_{GALCAP}_{RANN}_clustering.ran.fits : Use for clustering measurements (randoms)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mock_clustering.html">{TRACER}_{FLAVOUR}_{GALCAP}_clustering.dat.fits : Use for clustering measurements (data)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="full_ffa_mock.html">ffa_full_{TRACER}.fits : full sample for the ffa flavour, separated by tracer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comb_wdupspec_zdone.html">comb{OBSCON}_wdupspec_zdone.fits : Match of potential assigments with parent mock catalog</a></li>
 </ul>
 </div>
 </section>
@@ -139,7 +146,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../index.html" class="btn btn-neutral float-left" title="EZmock" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="VERSION" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="potential_mock.html" class="btn btn-neutral float-right" title="Potential assigment files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

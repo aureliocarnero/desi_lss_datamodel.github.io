@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>mock FFA full catalogs &mdash; desidatamodel 25.4.dev1530 documentation</title>
+  <title>COMB FILE ZDONE &mdash; desidatamodel 25.4.dev1530 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/desidatamodel.css?v=f6dbf8d8" />
@@ -20,8 +20,8 @@
     <script src="../../../../../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../../../../../search.html" />
-    <link rel="next" title="altmtl{MOCKREA}" href="../altmtlX/index.html" />
-    <link rel="prev" title="mock FFA and COMPLETE clustering catalogs" href="mock_clustering.html" /> 
+    <link rel="next" title="forFA" href="../forFA/index.html" />
+    <link rel="prev" title="mock FFA full" href="full_ffa_mock.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -101,13 +101,13 @@
           <li class="breadcrumb-item"><a href="../../../../../../index.html">catalogs</a></li>
           <li class="breadcrumb-item"><a href="../../../../../index.html">RELEASE</a></li>
           <li class="breadcrumb-item"><a href="../../../../index.html">mocks</a></li>
-          <li class="breadcrumb-item"><a href="../../../index.html">AbacusSummit</a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">EZmock</a></li>
           <li class="breadcrumb-item"><a href="../../index.html">OBSCON</a></li>
           <li class="breadcrumb-item"><a href="../index.html">VERSION</a></li>
           <li class="breadcrumb-item"><a href="index.html">mock{MOCKREA}</a></li>
-      <li class="breadcrumb-item active">mock FFA full catalogs</li>
+      <li class="breadcrumb-item active">COMB FILE ZDONE</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../../../../../../../../_sources/DESI_ROOT/survey/catalogs/RELEASE/mocks/AbacusSummit/OBSCON/VERSION/mockX/full_ffa_mock.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../../../../../../../_sources/DESI_ROOT/survey/catalogs/RELEASE/mocks/EZmock/OBSCON/VERSION/mockX/comb_wdupspec_zdone.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -115,20 +115,20 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="mock-ffa-full-catalogs">
-<h1>mock FFA full catalogs<a class="headerlink" href="#mock-ffa-full-catalogs" title="Link to this heading"></a></h1>
+  <section id="comb-file-zdone">
+<h1>COMB FILE ZDONE<a class="headerlink" href="#comb-file-zdone" title="Link to this heading"></a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">Summary<span class="colon">:</span></dt>
-<dd class="field-odd"><p>LSS catalogs containing information on all targets identified as reachable by DESI fiberassign for the FFA flavour, with one entry for each. The files are split by target type</p>
+<dd class="field-odd"><p>Match of potential assignments with information from the mock parent sample given the TILEID and the LOCATION</p>
 </dd>
 <dt class="field-even">Naming Convention<span class="colon">:</span></dt>
-<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ffa_full_{TARGET}.fits</span></code>, where <code class="docutils literal notranslate"><span class="pre">{TARGET}</span></code> is the target type: <code class="docutils literal notranslate"><span class="pre">QSO</span></code>, <code class="docutils literal notranslate"><span class="pre">ELG_LOP</span></code>, <code class="docutils literal notranslate"><span class="pre">LRG</span></code>, for dark or <code class="docutils literal notranslate"><span class="pre">BGS</span></code> for bright.</p>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">comb{OBSCON}_wdupspec_zdone.fits</span></code>, , where <code class="docutils literal notranslate"><span class="pre">{OBSCON}</span></code> is the observing program, either <code class="docutils literal notranslate"><span class="pre">dark</span></code> or <code class="docutils literal notranslate"><span class="pre">bright</span></code>.</p>
 </dd>
 <dt class="field-odd">Regex<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">ffa_full_[A-Za-z_]+\.fits</span></code></p>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">comb+(dark|bright)_wdupspec_zdone.fits</span></code></p>
 </dd>
 <dt class="field-even">File Type<span class="colon">:</span></dt>
-<dd class="field-even"><p>FITS, 11 GB</p>
+<dd class="field-even"><p>FITS, 3 GB</p>
 </dd>
 </dl>
 <section id="contents">
@@ -159,12 +159,13 @@
 <h2>FITS Header Units<a class="headerlink" href="#fits-header-units" title="Link to this heading"></a></h2>
 <section id="hdu0">
 <h3>HDU0<a class="headerlink" href="#hdu0" title="Link to this heading"></a></h3>
+<p>This HDU has no non-standard required keywords.</p>
 <p>Empty HDU.</p>
 </section>
 <section id="hdu1">
 <h3>HDU1<a class="headerlink" href="#hdu1" title="Link to this heading"></a></h3>
 <p>EXTNAME = LSS</p>
-<p>Catalog data for the given target type; one entry per unique TARGETID</p>
+<p>Main data HDU. Merger of randoms to target info in given fibers</p>
 <section id="required-header-keywords">
 <h4>Required Header Keywords<a class="headerlink" href="#required-header-keywords" title="Link to this heading"></a></h4>
 <details class="summary-required-header-keywords-table">
@@ -178,12 +179,12 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>NAXIS1</p></td>
-<td><p>838</p></td>
+<td><p>221</p></td>
 <td><p>int</p></td>
 <td><p>length of dimension 1</p></td>
 </tr>
 <tr class="row-odd"><td><p>NAXIS2</p></td>
-<td><p>15327895</p></td>
+<td><p>1624343</p></td>
 <td><p>int</p></td>
 <td><p>length of dimension 2</p></td>
 </tr>
@@ -221,35 +222,65 @@
 <td></td>
 <td><p>Unique DESI target ID</p></td>
 </tr>
-<tr class="row-odd"><td><p>R_MAG_APP <a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-odd"><td><p>RA</p></td>
 <td><p>float32</p></td>
-<td></td>
-<td><p>Apparent magnitude in R band in mocks</p></td>
-</tr>
-<tr class="row-even"><td><p>R_MAG_ABS <a class="footnote-reference brackets" href="#id3" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
-<td><p>float32</p></td>
-<td></td>
-<td><p>Absolute magnitude in R band in mocks</p></td>
-</tr>
-<tr class="row-odd"><td><p>DEC</p></td>
-<td><p>float64</p></td>
-<td><p>deg</p></td>
-<td><p>Barycentric declination in ICRS</p></td>
-</tr>
-<tr class="row-even"><td><p>RA</p></td>
-<td><p>float64</p></td>
 <td><p>deg</p></td>
 <td><p>Barycentric Right Ascension in ICRS</p></td>
 </tr>
-<tr class="row-odd"><td><p>TRUEZ</p></td>
+<tr class="row-even"><td><p>DEC</p></td>
+<td><p>float32</p></td>
+<td><p>deg</p></td>
+<td><p>Barycentric declination in ICRS</p></td>
+</tr>
+<tr class="row-odd"><td><p>RSDZ</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Redshift in mocks that includes RSD effects</p></td>
+</tr>
+<tr class="row-even"><td><p>TRUEZ</p></td>
 <td><p>float32</p></td>
 <td></td>
 <td><p>True redshift in a galaxy mock catalog</p></td>
 </tr>
-<tr class="row-even"><td><p>RSDZ</p></td>
+<tr class="row-odd"><td><p>RAN_NUM_0_1</p></td>
 <td><p>float32</p></td>
 <td></td>
-<td><p>Redshift in mocks that includes RSD effects</p></td>
+<td><p>Random number between 0 and 1</p></td>
+</tr>
+<tr class="row-even"><td><p>STATUS</p></td>
+<td><p>binary</p></td>
+<td></td>
+<td><p>Bit column present in Mocks to select according to nz or footprint</p></td>
+</tr>
+<tr class="row-odd"><td><p>MASKBITS</p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>Bitwise mask from the imaging indicating potential issue or blending</p></td>
+</tr>
+<tr class="row-even"><td><p>NOBS_G</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Number of images for central pixel in g-band</p></td>
+</tr>
+<tr class="row-odd"><td><p>NOBS_R</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Number of images for central pixel in r-band</p></td>
+</tr>
+<tr class="row-even"><td><p>NOBS_Z</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Number of images for central pixel in z-band</p></td>
+</tr>
+<tr class="row-odd"><td><p>NZ</p></td>
+<td><p>float64</p></td>
+<td><p>h^3 Mpc^-3</p></td>
+<td><p>The comoving number density of the tracer at the given redshift, assuming complete sample</p></td>
+</tr>
+<tr class="row-even"><td><p>GALCAP</p></td>
+<td><p>char[1]</p></td>
+<td></td>
+<td><p>Galactic cap (N or S)</p></td>
 </tr>
 <tr class="row-odd"><td><p>DESI_TARGET</p></td>
 <td><p>int64</p></td>
@@ -280,26 +311,6 @@
 <td><p>int64</p></td>
 <td></td>
 <td><p>Brick ID from tractor input</p></td>
-</tr>
-<tr class="row-odd"><td><p>NOBS_G</p></td>
-<td><p>int64</p></td>
-<td></td>
-<td><p>Number of images for central pixel in g-band</p></td>
-</tr>
-<tr class="row-even"><td><p>NOBS_R</p></td>
-<td><p>int64</p></td>
-<td></td>
-<td><p>Number of images for central pixel in r-band</p></td>
-</tr>
-<tr class="row-odd"><td><p>NOBS_Z</p></td>
-<td><p>int64</p></td>
-<td></td>
-<td><p>Number of images for central pixel in z-band</p></td>
-</tr>
-<tr class="row-even"><td><p>MASKBITS</p></td>
-<td><p>int16</p></td>
-<td></td>
-<td><p>Bitwise mask from the imaging indicating potential issue or blending</p></td>
 </tr>
 <tr class="row-odd"><td><p>BGS_TARGET</p></td>
 <td><p>int64</p></td>
@@ -376,45 +387,8 @@
 <td></td>
 <td><p>Is 10000*TILEID+LOCATION</p></td>
 </tr>
-<tr class="row-even"><td><p>NTILE</p></td>
-<td><p>int64</p></td>
-<td></td>
-<td><p>Number of tiles target was available on</p></td>
-</tr>
-<tr class="row-odd"><td><p>TILES</p></td>
-<td><p>char[23]</p></td>
-<td></td>
-<td><p>TILEIDs of those tile, in string form separated by -</p></td>
-</tr>
-<tr class="row-even"><td><p>TILELOCIDS</p></td>
-<td><p>char[79]</p></td>
-<td></td>
-<td><p>TILELOCIDs that the target was available for separated by -</p></td>
-</tr>
-<tr class="row-odd"><td><p>WEIGHT_IIP</p></td>
-<td><p>float32</p></td>
-<td></td>
-<td><p>Weight coming from the Probability of assignment in alt histories</p></td>
-</tr>
-<tr class="row-even"><td><p>BITWEIGHTS</p></td>
-<td><p>int64[4]</p></td>
-<td></td>
-<td><p>A size of two 64 bit masks that encodes which of the alternative assignment histories that the target was assigned in</p></td>
-</tr>
-<tr class="row-odd"><td><p>PHOTSYS</p></td>
-<td><p>char[1]</p></td>
-<td></td>
-<td><p>N for the MzLS/BASS photometric system, S for DECaLS</p></td>
-</tr>
 </tbody>
 </table>
-<aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id3" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
-<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>)</span>
-<p>Optional, present only on the BRIGHT TRACERS (BGS)</p>
-</aside>
-</aside>
 </section>
 </section>
 </section>
@@ -424,8 +398,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="mock_clustering.html" class="btn btn-neutral float-left" title="mock FFA and COMPLETE clustering catalogs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../altmtlX/index.html" class="btn btn-neutral float-right" title="altmtl{MOCKREA}" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="full_ffa_mock.html" class="btn btn-neutral float-left" title="mock FFA full" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../forFA/index.html" class="btn btn-neutral float-right" title="forFA" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
