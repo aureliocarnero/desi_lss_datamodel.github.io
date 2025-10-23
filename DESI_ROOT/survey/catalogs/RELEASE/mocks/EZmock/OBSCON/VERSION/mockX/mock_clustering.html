@@ -237,6 +237,36 @@ for dark or <code class="docutils literal notranslate"><span class="pre">BGS</sp
 <td></td>
 <td><p>Redshift measured by Redrock</p></td>
 </tr>
+<tr class="row-even"><td><p>TRUEZ</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>True redshift in a galaxy mock catalog</p></td>
+</tr>
+<tr class="row-odd"><td><p>STATUS</p></td>
+<td><p>binary</p></td>
+<td></td>
+<td><p>Bit column present in mocks to select according to nz or footprint</p></td>
+</tr>
+<tr class="row-even"><td><p>MASKBITS</p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>Bitwise mask from the imaging indicating potential issue or blending</p></td>
+</tr>
+<tr class="row-odd"><td><p>NOBS_G</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Number of images for central pixel in g-band. Note that NOBS_G for dark tracer is type = int16</p></td>
+</tr>
+<tr class="row-even"><td><p>NOBS_R</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Number of images for central pixel in r-band. Note that NOBS_R for dark tracer is type = int16</p></td>
+</tr>
+<tr class="row-odd"><td><p>NOBS_Z</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Number of images for central pixel in z-band. Note that NOBS_Z for dark tracer is type = int16</p></td>
+</tr>
 <tr class="row-even"><td><p>PRIORITY_INIT</p></td>
 <td><p>int64</p></td>
 <td></td>
@@ -252,70 +282,140 @@ for dark or <code class="docutils literal notranslate"><span class="pre">BGS</sp
 <td></td>
 <td><p>DESI (dark time program) target selection bitmask</p></td>
 </tr>
-<tr class="row-odd"><td><p>BRICKID</p></td>
+<tr class="row-odd"><td><p>NUMOBS_MORE</p></td>
 <td><p>int64</p></td>
 <td></td>
-<td><p>Brick ID from tractor input</p></td>
+<td><p>Number of additional observations needed</p></td>
 </tr>
-<tr class="row-even"><td><p>NOBS_G</p></td>
+<tr class="row-even"><td><p>NUMOBS_INIT</p></td>
 <td><p>int64</p></td>
 <td></td>
-<td><p>Number of images for central pixel in g-band</p></td>
+<td><p>Initial number of observations for target calculated across target selection bitmasks and OBSCONDITIONS</p></td>
 </tr>
-<tr class="row-odd"><td><p>NOBS_R</p></td>
+<tr class="row-odd"><td><p>BGS_TARGET</p></td>
 <td><p>int64</p></td>
 <td></td>
-<td><p>Number of images for central pixel in r-band</p></td>
+<td><p>BGS (Bright Galaxy Survey) target selection bitmask</p></td>
 </tr>
-<tr class="row-even"><td><p>NOBS_Z</p></td>
+<tr class="row-even"><td><p>MWS_TARGET</p></td>
 <td><p>int64</p></td>
 <td></td>
-<td><p>Number of images for central pixel in z-band</p></td>
+<td><p>Milky Way Survey targeting bits</p></td>
 </tr>
-<tr class="row-odd"><td><p>MASKBITS</p></td>
-<td><p>int16</p></td>
+<tr class="row-odd"><td><p>SUBPRIORITY</p></td>
+<td><p>float64</p></td>
 <td></td>
-<td><p>Bitwise mask from the imaging indicating potential issue or blending</p></td>
+<td><p>Random subpriority [0-1) to break assignment ties</p></td>
 </tr>
-<tr class="row-even"><td><p>ZWARN</p></td>
+<tr class="row-even"><td><p>BRICKNAME</p></td>
+<td><p>char[8]</p></td>
+<td></td>
+<td><p>Brick name from tractor input</p></td>
+</tr>
+<tr class="row-odd"><td><p>OBSCONDITIONS</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Bitmask of allowed observing conditions</p></td>
+</tr>
+<tr class="row-even"><td><p>SCND_TARGET</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Target selection bitmask for secondary programs</p></td>
+</tr>
+<tr class="row-odd"><td><p>ZWARN</p></td>
 <td><p>int64</p></td>
 <td></td>
 <td><p>Redshift warning bitmask from Redrock</p></td>
 </tr>
-<tr class="row-odd"><td><p>COLLISION</p></td>
+<tr class="row-even"><td><p>COLLISION</p></td>
 <td><p>logical</p></td>
 <td></td>
 <td><p>Boolean for whether given potential assignment had a fiber collision with any keep-out zone</p></td>
 </tr>
-<tr class="row-even"><td><p>TILEID</p></td>
+<tr class="row-odd"><td><p>TILEID</p></td>
 <td><p>int64</p></td>
 <td></td>
 <td><p>Unique DESI tile ID</p></td>
 </tr>
-<tr class="row-odd"><td><p>R_MAG_ABS <a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-even"><td><p>TSNR2_ELG</p></td>
 <td><p>float32</p></td>
 <td></td>
-<td><p>Absolute magnitude in R band in mocks</p></td>
+<td><p>ELG template (S/N)^2 summed over B,R,Z</p></td>
 </tr>
-<tr class="row-even"><td><p>lrg_mask <a class="footnote-reference brackets" href="#id3" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
-<td><p>binary</p></td>
+<tr class="row-odd"><td><p>TSNR2_LYA</p></td>
+<td><p>float32</p></td>
 <td></td>
-<td><p>label for field  18</p></td>
+<td><p>LYA template (S/N)^2 summed over B,R,Z</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_BGS</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>BGS template (S/N)^2 summed over B,R,Z</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_QSO</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>QSO template (S/N)^2 summed over B,R,Z</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_LRG</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>LRG template (S/N)^2 summed over B,R,Z</p></td>
+</tr>
+<tr class="row-odd"><td><p>TILELOCID</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Is 10000*TILEID+LOCATION</p></td>
+</tr>
+<tr class="row-even"><td><p>NTILE</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Number of tiles target was available on</p></td>
+</tr>
+<tr class="row-odd"><td><p>TILES</p></td>
+<td><p>char[*]</p></td>
+<td></td>
+<td><p>TILEIDs of those tile, in string form separated by -</p></td>
+</tr>
+<tr class="row-even"><td><p>TILELOCIDS</p></td>
+<td><p>char[*]</p></td>
+<td></td>
+<td><p>TILELOCIDs that the target was available for separated by -</p></td>
+</tr>
+<tr class="row-odd"><td><p>WEIGHT_IIP</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Weight coming from the probability of assignment in alt histories</p></td>
+</tr>
+<tr class="row-even"><td><p>BITWEIGHTS</p></td>
+<td><p>int64[4]</p></td>
+<td></td>
+<td><p>A size of two 64 bit masks that encodes which of the alternative assignment histories that the target was assigned in</p></td>
 </tr>
 <tr class="row-odd"><td><p>PHOTSYS</p></td>
 <td><p>char[1]</p></td>
 <td></td>
 <td><p>N for the MzLS/BASS photometric system, S for DECaLS</p></td>
 </tr>
-<tr class="row-even"><td><p>WEIGHT_SYS</p></td>
+<tr class="row-even"><td><p>WEIGHT_COMP</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Completeness weight accounting for the local chance of being assigned a fiber</p></td>
+</tr>
+<tr class="row-odd"><td><p>lrg_mask <a class="footnote-reference brackets" href="#id7" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>binary</p></td>
+<td></td>
+<td><p>Imaging mask bits relevant to LRG targets</p></td>
+</tr>
+<tr class="row-even"><td><p>R_MAG_ABS <a class="footnote-reference brackets" href="#id7" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Absolute magnitude in R band in mocks</p></td>
+</tr>
+<tr class="row-odd"><td><p>WEIGHT_SYS</p></td>
 <td><p>float64</p></td>
 <td></td>
 <td><p>Correction for fluctuations in projected density with imaging conditions, from random forrest method</p></td>
-</tr>
-<tr class="row-odd"><td><p>WEIGHT_COMP</p></td>
-<td><p>float64</p></td>
-<td></td>
-<td><p>Completeness weight accounting for the local chance of being assigned a fiber</p></td>
 </tr>
 <tr class="row-even"><td><p>WEIGHT_ZFAIL</p></td>
 <td><p>float64</p></td>
@@ -327,27 +427,42 @@ for dark or <code class="docutils literal notranslate"><span class="pre">BGS</sp
 <td></td>
 <td><p>The combination of all weights to use</p></td>
 </tr>
-<tr class="row-even"><td><p>NTILE</p></td>
-<td><p>int64</p></td>
-<td></td>
-<td><p>Number of tiles target was available on</p></td>
-</tr>
-<tr class="row-odd"><td><p>NX</p></td>
+<tr class="row-even"><td><p>NX</p></td>
 <td><p>float64</p></td>
 <td></td>
 <td><p>Estimated mean number density given the redshift and number of overlapping tiles (NTILE)</p></td>
 </tr>
-<tr class="row-even"><td><p>WEIGHT_FKP</p></td>
+<tr class="row-odd"><td><p>WEIGHT_FKP</p></td>
 <td><p>float64</p></td>
 <td></td>
 <td><p>1/(1+NZ*P0), with P0 different for each tracer</p></td>
 </tr>
+<tr class="row-even"><td><p>RAN_NUM_0_1 <a class="footnote-reference brackets" href="#id7" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Random number between 0 and 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>NZ <a class="footnote-reference brackets" href="#id7" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>float64</p></td>
+<td><p>h^3 Mpc^-3</p></td>
+<td><p>The comoving number density of the tracer at the given redshift, assuming complete sample</p></td>
+</tr>
+<tr class="row-even"><td><p>GALCAP <a class="footnote-reference brackets" href="#id7" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>char[1]</p></td>
+<td></td>
+<td><p>Galactic cap N or S</p></td>
+</tr>
+<tr class="row-odd"><td><p>BRICKID <a class="footnote-reference brackets" href="#id7" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Brick ID from tractor input</p></td>
+</tr>
 </tbody>
 </table>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id3" role="doc-footnote">
+<aside class="footnote brackets" id="id7" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
-<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>)</span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>,<a role="doc-backlink" href="#id3">3</a>,<a role="doc-backlink" href="#id4">4</a>,<a role="doc-backlink" href="#id5">5</a>,<a role="doc-backlink" href="#id6">6</a>)</span>
 <p>Optional</p>
 </aside>
 </aside>
@@ -358,8 +473,12 @@ for dark or <code class="docutils literal notranslate"><span class="pre">BGS</sp
 <h2>Notes and Examples<a class="headerlink" href="#notes-and-examples" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">lrg_mask</span></code> only present in LRG catalogs</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">R_MAG_ABS</span></code> only present in BGS catalogs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">R_MAG_ABS</span></code>, <code class="docutils literal notranslate"><span class="pre">NZ</span></code>, <code class="docutils literal notranslate"><span class="pre">RAN_NUM_0_1</span></code>, <code class="docutils literal notranslate"><span class="pre">GALCAP</span></code>, <code class="docutils literal notranslate"><span class="pre">BRICKID</span></code> only present in BGS catalogs</p></li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For OBSCON = dark, dtypes of NOBS_G, NOBS_R, NOBS_Z is int16, instead of int64</p>
+</div>
 </section>
 </section>
 

@@ -253,14 +253,14 @@
 <td><p>Fiber ID on the CCDs [0-4999]</p></td>
 </tr>
 <tr class="row-odd"><td><p>RA <a class="footnote-reference brackets" href="#id13" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
-<td><p>float32</p></td>
+<td><p>float64</p></td>
 <td><p>deg</p></td>
-<td><p>Barycentric Right Ascension in ICRS</p></td>
+<td><p>Barycentric Right Ascension in ICRS. Note that RA for dark tracer is type = float32</p></td>
 </tr>
 <tr class="row-even"><td><p>DEC <a class="footnote-reference brackets" href="#id13" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
-<td><p>float32</p></td>
+<td><p>float64</p></td>
 <td><p>deg</p></td>
-<td><p>Barycentric declination in ICRS</p></td>
+<td><p>Barycentric declination in ICRS. Note that DEC for dark tracer is type = float32</p></td>
 </tr>
 <tr class="row-odd"><td><p>PRIORITY_INIT <a class="footnote-reference brackets" href="#id13" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>int64</p></td>
@@ -302,6 +302,10 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">FIBER</span></code>, <code class="docutils literal notranslate"><span class="pre">RA</span></code>, <code class="docutils literal notranslate"><span class="pre">DEC</span></code>, <code class="docutils literal notranslate"><span class="pre">PRIORITY_INIT</span></code>, <code class="docutils literal notranslate"><span class="pre">DESI_TARGET</span></code> : Present in wdup potential file, both for dark and bright</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">BGS_TARGET</span></code>, <code class="docutils literal notranslate"><span class="pre">R_MAG_ABS</span></code> : Only present in bright wdup potential file</p></li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For OBSCON = dark, dtypes of RA,DEC is float32, instead of float64</p>
+</div>
 </section>
 </section>
 

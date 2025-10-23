@@ -207,12 +207,12 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>LOCATION <a class="footnote-reference brackets" href="#id8" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-even"><td><p>LOCATION</p></td>
 <td><p>int64</p></td>
 <td></td>
 <td><p>Location on the focal plane PETAL_LOC*1000 + DEVICE_LOC</p></td>
 </tr>
-<tr class="row-odd"><td><p>FIBER <a class="footnote-reference brackets" href="#id8" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-odd"><td><p>FIBER</p></td>
 <td><p>int64</p></td>
 <td></td>
 <td><p>Fiber ID on the CCDs [0-4999]</p></td>
@@ -222,47 +222,187 @@
 <td></td>
 <td><p>Unique DESI target ID</p></td>
 </tr>
-<tr class="row-odd"><td><p>RA</p></td>
+<tr class="row-odd"><td><p>R_MAG_APP <a class="footnote-reference brackets" href="#id13" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Apparent magnitude in r band in mocks</p></td>
+</tr>
+<tr class="row-even"><td><p>R_MAG_ABS <a class="footnote-reference brackets" href="#id13" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Absolute magnitude in r band in mocks</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEC</p></td>
 <td><p>float64</p></td>
 <td><p>deg</p></td>
-<td><p>Barycentric Right Ascension in ICRS</p></td>
+<td><p>Barycentric declination in ICRS. Note that DEC for dark tracer is type = float32</p></td>
 </tr>
-<tr class="row-even"><td><p>DEC</p></td>
+<tr class="row-even"><td><p>RA</p></td>
 <td><p>float64</p></td>
 <td><p>deg</p></td>
-<td><p>Barycentric declination in ICRS</p></td>
+<td><p>Barycentric Right Ascension in ICRS. Note that RA for dark tracer is type = float32</p></td>
 </tr>
-<tr class="row-odd"><td><p>TILEID <a class="footnote-reference brackets" href="#id8" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-odd"><td><p>TRUEZ</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>True redshift in a galaxy mock catalog</p></td>
+</tr>
+<tr class="row-even"><td><p>RSDZ</p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Redshift in mocks that includes RSD effects</p></td>
+</tr>
+<tr class="row-odd"><td><p>DESI_TARGET</p></td>
 <td><p>int64</p></td>
 <td></td>
-<td><p>Unique DESI tile ID</p></td>
+<td><p>DESI (dark time program) target selection bitmask</p></td>
 </tr>
-<tr class="row-even"><td><p>COLLISION <a class="footnote-reference brackets" href="#id8" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-even"><td><p>PRIORITY_INIT</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Target initial priority from target selection bitmasks and OBSCONDITIONS</p></td>
+</tr>
+<tr class="row-odd"><td><p>PRIORITY</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Target current priority</p></td>
+</tr>
+<tr class="row-even"><td><p>NUMOBS_MORE</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Number of additional observations needed</p></td>
+</tr>
+<tr class="row-odd"><td><p>NUMOBS_INIT</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Initial number of observations for target calculated across target selection bitmasks and OBSCONDITIONS</p></td>
+</tr>
+<tr class="row-even"><td><p>BRICKID</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Brick ID from tractor input</p></td>
+</tr>
+<tr class="row-odd"><td><p>NOBS_G</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Number of images for central pixel in g-band</p></td>
+</tr>
+<tr class="row-even"><td><p>NOBS_R</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Number of images for central pixel in r-band</p></td>
+</tr>
+<tr class="row-odd"><td><p>NOBS_Z</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Number of images for central pixel in z-band</p></td>
+</tr>
+<tr class="row-even"><td><p>MASKBITS</p></td>
+<td><p>int16</p></td>
+<td></td>
+<td><p>Bitwise mask from the imaging indicating potential issue or blending</p></td>
+</tr>
+<tr class="row-odd"><td><p>BGS_TARGET</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>BGS (Bright Galaxy Survey) target selection bitmask</p></td>
+</tr>
+<tr class="row-even"><td><p>MWS_TARGET</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Milky Way Survey targeting bits</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUBPRIORITY</p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Random subpriority [0-1) to break assignment ties</p></td>
+</tr>
+<tr class="row-even"><td><p>BRICKNAME</p></td>
+<td><p>char[8]</p></td>
+<td></td>
+<td><p>Brick name from tractor input</p></td>
+</tr>
+<tr class="row-odd"><td><p>OBSCONDITIONS</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Bitmask of allowed observing conditions</p></td>
+</tr>
+<tr class="row-even"><td><p>SCND_TARGET</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Target selection bitmask for secondary programs</p></td>
+</tr>
+<tr class="row-odd"><td><p>ZWARN</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Redshift warning bitmask from Redrock</p></td>
+</tr>
+<tr class="row-even"><td><p>COLLISION</p></td>
 <td><p>logical</p></td>
 <td></td>
 <td><p>Boolean for whether given potential assignment had a fiber collision with any keep-out zone</p></td>
 </tr>
-<tr class="row-odd"><td><p>NTILE <a class="footnote-reference brackets" href="#id8" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-odd"><td><p>TILEID</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Unique DESI tile ID</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_ELG <a class="footnote-reference brackets" href="#id13" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>ELG template (S/N)^2 summed over B,R,Z</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_LYA <a class="footnote-reference brackets" href="#id13" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>LYA template (S/N)^2 summed over B,R,Z</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_BGS <a class="footnote-reference brackets" href="#id13" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>BGS template (S/N)^2 summed over B,R,Z</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_QSO <a class="footnote-reference brackets" href="#id13" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>QSO template (S/N)^2 summed over B,R,Z</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_LRG <a class="footnote-reference brackets" href="#id13" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>LRG template (S/N)^2 summed over B,R,Z</p></td>
+</tr>
+<tr class="row-odd"><td><p>TILELOCID <a class="footnote-reference brackets" href="#id13" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Is 10000*TILEID+LOCATION</p></td>
+</tr>
+<tr class="row-even"><td><p>NTILE <a class="footnote-reference brackets" href="#id13" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>int64</p></td>
 <td></td>
 <td><p>Number of tiles target was available on</p></td>
 </tr>
-<tr class="row-even"><td><p>TILES <a class="footnote-reference brackets" href="#id8" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
-<td><p>char[36]</p></td>
+<tr class="row-odd"><td><p>TILES <a class="footnote-reference brackets" href="#id13" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>char[*]</p></td>
 <td></td>
 <td><p>TILEIDs of those tile, in string form separated by -</p></td>
 </tr>
-<tr class="row-odd"><td><p>TILELOCIDS <a class="footnote-reference brackets" href="#id8" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
-<td><p>char[110]</p></td>
+<tr class="row-even"><td><p>TILELOCIDS <a class="footnote-reference brackets" href="#id13" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>char[*]</p></td>
 <td></td>
 <td><p>TILELOCIDs that the target was available for separated by -</p></td>
+</tr>
+<tr class="row-odd"><td><p>STATUS <a class="footnote-reference brackets" href="#id13" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int32</p></td>
+<td></td>
+<td><p>Bit column present in mocks to select according to nz or footprint</p></td>
 </tr>
 </tbody>
 </table>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id8" role="doc-footnote">
+<aside class="footnote brackets" id="id13" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
-<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>,<a role="doc-backlink" href="#id3">3</a>,<a role="doc-backlink" href="#id4">4</a>,<a role="doc-backlink" href="#id5">5</a>,<a role="doc-backlink" href="#id6">6</a>,<a role="doc-backlink" href="#id7">7</a>)</span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>,<a role="doc-backlink" href="#id3">3</a>,<a role="doc-backlink" href="#id4">4</a>,<a role="doc-backlink" href="#id5">5</a>,<a role="doc-backlink" href="#id6">6</a>,<a role="doc-backlink" href="#id7">7</a>,<a role="doc-backlink" href="#id8">8</a>,<a role="doc-backlink" href="#id9">9</a>,<a role="doc-backlink" href="#id10">10</a>,<a role="doc-backlink" href="#id11">11</a>,<a role="doc-backlink" href="#id12">12</a>)</span>
 <p>Optional</p>
 </aside>
 </aside>
@@ -272,9 +412,15 @@
 <section id="notes-and-examples">
 <h2>Notes and Examples<a class="headerlink" href="#notes-and-examples" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">LOCATION</span></code>, <code class="docutils literal notranslate"><span class="pre">FIBER</span></code>, <code class="docutils literal notranslate"><span class="pre">TILEID</span></code>, <code class="docutils literal notranslate"><span class="pre">COLLISION</span></code> present for pota-OBSCON only</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">NTILE</span></code>, <code class="docutils literal notranslate"><span class="pre">TILES</span></code>, <code class="docutils literal notranslate"><span class="pre">TILELOCIDS</span></code> present for TAG = withntile</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">R_MAG_APP</span></code> and <code class="docutils literal notranslate"><span class="pre">R_MAG_ABS</span></code> present in bright samples only</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TSNR2_ELG</span></code>, <code class="docutils literal notranslate"><span class="pre">TSNR2_LYA</span></code>, <code class="docutils literal notranslate"><span class="pre">TSNR2_BGS</span></code>, <code class="docutils literal notranslate"><span class="pre">TSNR2_QSO</span></code>, <code class="docutils literal notranslate"><span class="pre">TSNR2_LRG</span></code>, <code class="docutils literal notranslate"><span class="pre">TILELOCID</span></code> present for TAG = joined_unreduced only</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NTILE</span></code>, <code class="docutils literal notranslate"><span class="pre">TILES</span></code>, <code class="docutils literal notranslate"><span class="pre">TILELOCIDS</span></code> present for TAG = joined_unreduced and TAG = withntile</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STATUS</span></code> present in pota-DARK samples only</p></li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For OBSCON = dark, dtypes of RA,DEC is float32, instead of float64</p>
+</div>
 </section>
 </section>
 

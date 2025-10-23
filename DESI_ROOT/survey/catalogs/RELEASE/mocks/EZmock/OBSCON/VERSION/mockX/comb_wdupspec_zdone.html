@@ -20,7 +20,7 @@
     <script src="../../../../../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../../../../../search.html" />
-    <link rel="next" title="forFA" href="../forFA/index.html" />
+    <link rel="next" title="AbacusSummit" href="../../../../AbacusSummit/index.html" />
     <link rel="prev" title="mock FFA full" href="full_ffa_mock.html" /> 
 </head>
 
@@ -260,17 +260,17 @@
 <tr class="row-even"><td><p>NOBS_G</p></td>
 <td><p>int64</p></td>
 <td></td>
-<td><p>Number of images for central pixel in g-band</p></td>
+<td><p>Number of images for central pixel in g-band. Note that NOBS_G for dark tracer is type = int16</p></td>
 </tr>
 <tr class="row-odd"><td><p>NOBS_R</p></td>
 <td><p>int64</p></td>
 <td></td>
-<td><p>Number of images for central pixel in r-band</p></td>
+<td><p>Number of images for central pixel in r-band. Note that NOBS_R for dark tracer is type = int16</p></td>
 </tr>
 <tr class="row-even"><td><p>NOBS_Z</p></td>
 <td><p>int64</p></td>
 <td></td>
-<td><p>Number of images for central pixel in z-band</p></td>
+<td><p>Number of images for central pixel in z-band. Note that NOBS_Z for dark tracer is type = int16</p></td>
 </tr>
 <tr class="row-odd"><td><p>NZ</p></td>
 <td><p>float64</p></td>
@@ -389,6 +389,10 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For OBSCON = dark, dtypes of NOBS_G, NOBS_R, NOBS_Z is int16, instead of int64</p>
+</div>
 </section>
 </section>
 </section>
@@ -399,7 +403,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="full_ffa_mock.html" class="btn btn-neutral float-left" title="mock FFA full" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../forFA/index.html" class="btn btn-neutral float-right" title="forFA" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../../../../AbacusSummit/index.html" class="btn btn-neutral float-right" title="AbacusSummit" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

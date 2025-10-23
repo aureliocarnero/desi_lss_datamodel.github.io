@@ -234,12 +234,12 @@
 <tr class="row-odd"><td><p>DEC</p></td>
 <td><p>float64</p></td>
 <td><p>deg</p></td>
-<td><p>Barycentric declination in ICRS</p></td>
+<td><p>Barycentric declination in ICRS. Note that DEC for dark tracer is type = float32</p></td>
 </tr>
 <tr class="row-even"><td><p>RA</p></td>
 <td><p>float64</p></td>
 <td><p>deg</p></td>
-<td><p>Barycentric Right Ascension in ICRS</p></td>
+<td><p>Barycentric Right Ascension in ICRS. Note that RA for dark tracer is type = float32</p></td>
 </tr>
 <tr class="row-odd"><td><p>TRUEZ</p></td>
 <td><p>float32</p></td>
@@ -382,12 +382,12 @@
 <td><p>Number of tiles target was available on</p></td>
 </tr>
 <tr class="row-odd"><td><p>TILES</p></td>
-<td><p>char[23]</p></td>
+<td><p>char[*]</p></td>
 <td></td>
 <td><p>TILEIDs of those tile, in string form separated by -</p></td>
 </tr>
 <tr class="row-even"><td><p>TILELOCIDS</p></td>
-<td><p>char[79]</p></td>
+<td><p>char[*]</p></td>
 <td></td>
 <td><p>TILELOCIDs that the target was available for separated by -</p></td>
 </tr>
@@ -415,6 +415,10 @@
 <p>Optional, present only on the BRIGHT TRACERS (BGS)</p>
 </aside>
 </aside>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For OBSCON = dark, dtypes of RA,DEC is float32, instead of float64</p>
+</div>
 </section>
 </section>
 </section>
