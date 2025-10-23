@@ -235,12 +235,12 @@
 <tr class="row-odd"><td><p>DEC</p></td>
 <td><p>float64</p></td>
 <td><p>deg</p></td>
-<td><p>Barycentric declination in ICRS</p></td>
+<td><p>Barycentric declination in ICRS. Note that DEC for dark tracer is type = float32</p></td>
 </tr>
 <tr class="row-even"><td><p>RA</p></td>
 <td><p>float64</p></td>
 <td><p>deg</p></td>
-<td><p>Barycentric Right Ascension in ICRS</p></td>
+<td><p>Barycentric Right Ascension in ICRS. Note that RA for dark tracer is type = float32</p></td>
 </tr>
 <tr class="row-odd"><td><p>DESI_TARGET</p></td>
 <td><p>int64</p></td>
@@ -301,6 +301,10 @@
 <p>Optional, only present on bright samples</p>
 </aside>
 </aside>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For OBSCON = dark, dtypes of RA,DEC is float32, instead of float64</p>
+</div>
 </section>
 </section>
 </section>

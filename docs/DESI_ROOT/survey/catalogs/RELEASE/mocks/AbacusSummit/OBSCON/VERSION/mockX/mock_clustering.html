@@ -122,11 +122,11 @@
 <dd class="field-odd"><p>For each target type, LSS catalogs for the data, ready to be used for clustering measurements, are provided.</p>
 </dd>
 <dt class="field-even">Naming Convention<span class="colon">:</span></dt>
-<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">{TARGET}_{GALCAP}_clustering.dat.fits</span></code>, where <code class="docutils literal notranslate"><span class="pre">{TARGET}</span></code> is the target: <code class="docutils literal notranslate"><span class="pre">QSO</span></code>, <code class="docutils literal notranslate"><span class="pre">ELG_LOP</span></code>, <code class="docutils literal notranslate"><span class="pre">LRG</span></code>,
-for dark or <code class="docutils literal notranslate"><span class="pre">BGS_BRIGHT-21.5</span></code> for bright. <code class="docutils literal notranslate"><span class="pre">{GALCAP}</span></code> is the Galactic hemisphere region <code class="docutils literal notranslate"><span class="pre">NGC</span></code> or <code class="docutils literal notranslate"><span class="pre">SGC</span></code>.</p>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">{TARGET}_{FLAVOUR}_{GALCAP}_clustering.dat.fits</span></code>, where <code class="docutils literal notranslate"><span class="pre">{TARGET}</span></code> is the target: <code class="docutils literal notranslate"><span class="pre">QSO</span></code>, <code class="docutils literal notranslate"><span class="pre">ELG_LOP</span></code>, <code class="docutils literal notranslate"><span class="pre">LRG</span></code>,
+for dark or <code class="docutils literal notranslate"><span class="pre">BGS_BRIGHT-21.5</span></code> for bright. <code class="docutils literal notranslate"><span class="pre">{FLAVOUR}</span></code> is <code class="docutils literal notranslate"><span class="pre">ffa</span></code> or <code class="docutils literal notranslate"><span class="pre">complete</span></code> and <code class="docutils literal notranslate"><span class="pre">{GALCAP}</span></code> is the Galactic hemisphere region <code class="docutils literal notranslate"><span class="pre">NGC</span></code> or <code class="docutils literal notranslate"><span class="pre">SGC</span></code>.</p>
 </dd>
 <dt class="field-odd">Regex<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">[A-Za-z0-9._+-]+_(NGC|SGC)_clustering\.dat\.fits</span></code></p>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">[A-Za-z0-9._+-]+_(ffa|complete)+_(NGC|SGC)_clustering\.dat\.fits</span></code></p>
 </dd>
 <dt class="field-even">File Type<span class="colon">:</span></dt>
 <dd class="field-even"><p>FITS, 237 MB</p>
@@ -222,20 +222,30 @@ for dark or <code class="docutils literal notranslate"><span class="pre">BGS_BRI
 <td></td>
 <td><p>Unique DESI target ID</p></td>
 </tr>
-<tr class="row-odd"><td><p>RA</p></td>
+<tr class="row-odd"><td><p>R_MAG_ABS <a class="footnote-reference brackets" href="#id23" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>float32</p></td>
-<td><p>deg</p></td>
-<td><p>Barycentric Right Ascension in ICRS</p></td>
+<td></td>
+<td><p>Absolute magnitude in r band in mocks</p></td>
 </tr>
 <tr class="row-even"><td><p>DEC</p></td>
-<td><p>float32</p></td>
+<td><p>float64</p></td>
 <td><p>deg</p></td>
-<td><p>Barycentric declination in ICRS</p></td>
+<td><p>Barycentric declination in ICRS. Note that DEC for dark tracer is type = float32</p></td>
 </tr>
-<tr class="row-odd"><td><p>Z</p></td>
+<tr class="row-odd"><td><p>RA</p></td>
+<td><p>float64</p></td>
+<td><p>deg</p></td>
+<td><p>Barycentric Right Ascension in ICRS. Note that RA for dark tracer is type = float32</p></td>
+</tr>
+<tr class="row-even"><td><p>Z</p></td>
 <td><p>float32</p></td>
 <td></td>
 <td><p>Redshift measured by Redrock</p></td>
+</tr>
+<tr class="row-odd"><td><p>DESI_TARGET</p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>DESI (dark time program) target selection bitmask</p></td>
 </tr>
 <tr class="row-even"><td><p>PRIORITY_INIT</p></td>
 <td><p>int64</p></td>
@@ -247,107 +257,197 @@ for dark or <code class="docutils literal notranslate"><span class="pre">BGS_BRI
 <td></td>
 <td><p>Target current priority</p></td>
 </tr>
-<tr class="row-even"><td><p>DESI_TARGET</p></td>
-<td><p>int64</p></td>
-<td></td>
-<td><p>DESI (dark time program) target selection bitmask</p></td>
-</tr>
-<tr class="row-odd"><td><p>BRICKID</p></td>
+<tr class="row-even"><td><p>BRICKID</p></td>
 <td><p>int64</p></td>
 <td></td>
 <td><p>Brick ID from tractor input</p></td>
 </tr>
-<tr class="row-even"><td><p>NOBS_G</p></td>
+<tr class="row-odd"><td><p>NOBS_G</p></td>
 <td><p>int64</p></td>
 <td></td>
 <td><p>Number of images for central pixel in g-band</p></td>
 </tr>
-<tr class="row-odd"><td><p>NOBS_R</p></td>
+<tr class="row-even"><td><p>NOBS_R</p></td>
 <td><p>int64</p></td>
 <td></td>
 <td><p>Number of images for central pixel in r-band</p></td>
 </tr>
-<tr class="row-even"><td><p>NOBS_Z</p></td>
+<tr class="row-odd"><td><p>NOBS_Z</p></td>
 <td><p>int64</p></td>
 <td></td>
 <td><p>Number of images for central pixel in z-band</p></td>
 </tr>
-<tr class="row-odd"><td><p>MASKBITS</p></td>
+<tr class="row-even"><td><p>MASKBITS</p></td>
 <td><p>int16</p></td>
 <td></td>
 <td><p>Bitwise mask from the imaging indicating potential issue or blending</p></td>
 </tr>
-<tr class="row-even"><td><p>ZWARN</p></td>
+<tr class="row-odd"><td><p>ZWARN</p></td>
 <td><p>int64</p></td>
 <td></td>
 <td><p>Redshift warning bitmask from Redrock</p></td>
 </tr>
-<tr class="row-odd"><td><p>COLLISION</p></td>
+<tr class="row-even"><td><p>COLLISION</p></td>
 <td><p>logical</p></td>
 <td></td>
 <td><p>Boolean for whether given potential assignment had a fiber collision with any keep-out zone</p></td>
 </tr>
-<tr class="row-even"><td><p>TILEID</p></td>
+<tr class="row-odd"><td><p>TILEID</p></td>
 <td><p>int64</p></td>
 <td></td>
 <td><p>Unique DESI tile ID</p></td>
 </tr>
-<tr class="row-odd"><td><p>R_MAG_ABS <a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
-<td><p>float32</p></td>
-<td></td>
-<td><p>Absolute magnitude in R band in mocks</p></td>
-</tr>
-<tr class="row-even"><td><p>lrg_mask <a class="footnote-reference brackets" href="#id3" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
-<td><p>binary</p></td>
-<td></td>
-<td><p>label for field  18</p></td>
-</tr>
-<tr class="row-odd"><td><p>PHOTSYS</p></td>
+<tr class="row-even"><td><p>PHOTSYS</p></td>
 <td><p>char[1]</p></td>
 <td></td>
 <td><p>N for the MzLS/BASS photometric system, S for DECaLS</p></td>
 </tr>
-<tr class="row-even"><td><p>WEIGHT_SYS</p></td>
+<tr class="row-odd"><td><p>WEIGHT_SYS</p></td>
 <td><p>float64</p></td>
 <td></td>
 <td><p>Correction for fluctuations in projected density with imaging conditions, from random forrest method</p></td>
 </tr>
-<tr class="row-odd"><td><p>WEIGHT_COMP</p></td>
+<tr class="row-even"><td><p>WEIGHT_COMP</p></td>
 <td><p>float64</p></td>
 <td></td>
 <td><p>Completeness weight accounting for the local chance of being assigned a fiber</p></td>
 </tr>
-<tr class="row-even"><td><p>WEIGHT_ZFAIL</p></td>
+<tr class="row-odd"><td><p>WEIGHT_ZFAIL</p></td>
 <td><p>float64</p></td>
 <td></td>
 <td><p>Should be all 1 at this point for main survey</p></td>
 </tr>
-<tr class="row-odd"><td><p>WEIGHT</p></td>
+<tr class="row-even"><td><p>WEIGHT</p></td>
 <td><p>float64</p></td>
 <td></td>
 <td><p>The combination of all weights to use</p></td>
 </tr>
-<tr class="row-even"><td><p>NTILE</p></td>
+<tr class="row-odd"><td><p>NTILE</p></td>
 <td><p>int64</p></td>
 <td></td>
 <td><p>Number of tiles target was available on</p></td>
 </tr>
-<tr class="row-odd"><td><p>NX</p></td>
+<tr class="row-even"><td><p>NX</p></td>
 <td><p>float64</p></td>
 <td></td>
 <td><p>Estimated mean number density given the redshift and number of overlapping tiles (NTILE)</p></td>
 </tr>
-<tr class="row-even"><td><p>WEIGHT_FKP</p></td>
+<tr class="row-odd"><td><p>WEIGHT_FKP</p></td>
 <td><p>float64</p></td>
 <td></td>
 <td><p>1/(1+NZ*P0), with P0 different for each tracer</p></td>
 </tr>
+<tr class="row-even"><td><p>lrg_mask <a class="footnote-reference brackets" href="#id23" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>binary</p></td>
+<td></td>
+<td><p>(lower or upper case) Imaging mask bits relevant to LRG targets</p></td>
+</tr>
+<tr class="row-odd"><td><p>R_MAG_APP <a class="footnote-reference brackets" href="#id23" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Apparent magnitude in r band in mocks</p></td>
+</tr>
+<tr class="row-even"><td><p>NUMOBS_MORE <a class="footnote-reference brackets" href="#id23" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Number of additional observations needed</p></td>
+</tr>
+<tr class="row-odd"><td><p>NUMOBS_INIT <a class="footnote-reference brackets" href="#id23" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Initial number of observations for target calculated across target selection bitmasks and OBSCONDITIONS</p></td>
+</tr>
+<tr class="row-even"><td><p>BGS_TARGET <a class="footnote-reference brackets" href="#id23" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>BGS (Bright Galaxy Survey) target selection bitmask</p></td>
+</tr>
+<tr class="row-odd"><td><p>MWS_TARGET <a class="footnote-reference brackets" href="#id23" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Milky Way Survey targeting bits</p></td>
+</tr>
+<tr class="row-even"><td><p>SUBPRIORITY <a class="footnote-reference brackets" href="#id23" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Random subpriority [0-1) to break assignment ties</p></td>
+</tr>
+<tr class="row-odd"><td><p>BRICKNAME <a class="footnote-reference brackets" href="#id23" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>char[8]</p></td>
+<td></td>
+<td><p>Brick name from tractor input</p></td>
+</tr>
+<tr class="row-even"><td><p>OBSCONDITIONS <a class="footnote-reference brackets" href="#id23" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Bitmask of allowed observing conditions</p></td>
+</tr>
+<tr class="row-odd"><td><p>SCND_TARGET <a class="footnote-reference brackets" href="#id23" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Target selection bitmask for secondary programs</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_ELG <a class="footnote-reference brackets" href="#id23" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>ELG template (S/N)^2 summed over B,R,Z</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_LYA <a class="footnote-reference brackets" href="#id23" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>LYA template (S/N)^2 summed over B,R,Z</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_BGS <a class="footnote-reference brackets" href="#id23" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>BGS template (S/N)^2 summed over B,R,Z</p></td>
+</tr>
+<tr class="row-odd"><td><p>TSNR2_QSO <a class="footnote-reference brackets" href="#id23" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>QSO template (S/N)^2 summed over B,R,Z</p></td>
+</tr>
+<tr class="row-even"><td><p>TSNR2_LRG <a class="footnote-reference brackets" href="#id23" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>LRG template (S/N)^2 summed over B,R,Z</p></td>
+</tr>
+<tr class="row-odd"><td><p>TILELOCID <a class="footnote-reference brackets" href="#id23" id="id17" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Is 10000*TILEID+LOCATION</p></td>
+</tr>
+<tr class="row-even"><td><p>TILES <a class="footnote-reference brackets" href="#id23" id="id18" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>char[*]</p></td>
+<td></td>
+<td><p>TILEIDs of those tile, in string form separated by -</p></td>
+</tr>
+<tr class="row-odd"><td><p>TILELOCIDS <a class="footnote-reference brackets" href="#id23" id="id19" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>char[*]</p></td>
+<td></td>
+<td><p>TILELOCIDs that the target was available for separated by -</p></td>
+</tr>
+<tr class="row-even"><td><p>WEIGHT_IIP <a class="footnote-reference brackets" href="#id23" id="id20" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Weight coming from the probability of assignment in alt histories</p></td>
+</tr>
+<tr class="row-odd"><td><p>BITWEIGHTS <a class="footnote-reference brackets" href="#id23" id="id21" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64[4]</p></td>
+<td></td>
+<td><p>A size of two 64 bit masks that encodes which of the alternative assignment histories that the target was assigned in</p></td>
+</tr>
+<tr class="row-even"><td><p>WEIGHT_IMLIN <a class="footnote-reference brackets" href="#id23" id="id22" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Imaging systematics weights derived with the eBOSS linear regression method</p></td>
+</tr>
 </tbody>
 </table>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id3" role="doc-footnote">
+<aside class="footnote brackets" id="id23" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
-<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>)</span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>,<a role="doc-backlink" href="#id3">3</a>,<a role="doc-backlink" href="#id4">4</a>,<a role="doc-backlink" href="#id5">5</a>,<a role="doc-backlink" href="#id6">6</a>,<a role="doc-backlink" href="#id7">7</a>,<a role="doc-backlink" href="#id8">8</a>,<a role="doc-backlink" href="#id9">9</a>,<a role="doc-backlink" href="#id10">10</a>,<a role="doc-backlink" href="#id11">11</a>,<a role="doc-backlink" href="#id12">12</a>,<a role="doc-backlink" href="#id13">13</a>,<a role="doc-backlink" href="#id14">14</a>,<a role="doc-backlink" href="#id15">15</a>,<a role="doc-backlink" href="#id16">16</a>,<a role="doc-backlink" href="#id17">17</a>,<a role="doc-backlink" href="#id18">18</a>,<a role="doc-backlink" href="#id19">19</a>,<a role="doc-backlink" href="#id20">20</a>,<a role="doc-backlink" href="#id21">21</a>,<a role="doc-backlink" href="#id22">22</a>)</span>
 <p>Optional</p>
 </aside>
 </aside>
@@ -359,7 +459,13 @@ for dark or <code class="docutils literal notranslate"><span class="pre">BGS_BRI
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">lrg_mask</span></code> only present in LRG catalogs</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">R_MAG_ABS</span></code> only present in BGS catalogs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">R_MAG_APP</span></code> only present in BGS ffa catalogs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NUMOBS_MORE</span></code>, <code class="docutils literal notranslate"><span class="pre">NUMOBS_INIT</span></code>, <code class="docutils literal notranslate"><span class="pre">BGS_TARGET</span></code>, <code class="docutils literal notranslate"><span class="pre">MWS_TARGET</span></code>, <code class="docutils literal notranslate"><span class="pre">SUBPRIORITY</span></code>, <code class="docutils literal notranslate"><span class="pre">BRICKNAME</span></code>, <code class="docutils literal notranslate"><span class="pre">OBSCONDITIONS</span></code>, <code class="docutils literal notranslate"><span class="pre">SCND_TARGET</span></code>, <code class="docutils literal notranslate"><span class="pre">TSNR2_ELG</span></code>, <code class="docutils literal notranslate"><span class="pre">TSNR2_LYA</span></code>, <code class="docutils literal notranslate"><span class="pre">TSNR2_BGS</span></code>, <code class="docutils literal notranslate"><span class="pre">TSNR2_QSO</span></code>, <code class="docutils literal notranslate"><span class="pre">TSNR2_LRG</span></code>, <code class="docutils literal notranslate"><span class="pre">TILELOCID</span></code>, <code class="docutils literal notranslate"><span class="pre">TILES</span></code>, <code class="docutils literal notranslate"><span class="pre">TILELOCIDS</span></code>, <code class="docutils literal notranslate"><span class="pre">WEIGHT_IIP</span></code>, <code class="docutils literal notranslate"><span class="pre">BITWEIGHTS</span></code> and <code class="docutils literal notranslate"><span class="pre">WEIGHT_IMLIN</span></code> only present in ffa catalogs</p></li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For OBSCON = dark, dtypes of RA,DEC is float32, instead of float64</p>
+</div>
 </section>
 </section>
 

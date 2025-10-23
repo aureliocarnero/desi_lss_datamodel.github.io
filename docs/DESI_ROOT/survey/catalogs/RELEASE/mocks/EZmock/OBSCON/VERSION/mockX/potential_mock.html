@@ -119,13 +119,13 @@
 <h1>Potential assigment files<a class="headerlink" href="#potential-assigment-files" title="Link to this heading"></a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">Summary<span class="colon">:</span></dt>
-<dd class="field-odd"><p>This file includes all reachable sky coordinates, as determined by the DESI fiberassign software, matching the footprint of DESI target samples as well as information about collisions</p>
+<dd class="field-odd"><p>This file includes all reachable sky coordinates, as determined by the DESI fiberassign software, matching the footprint of DESI target samples as well as information about collisions.</p>
 </dd>
 <dt class="field-even">Naming Convention<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">pota-{OBSCON}.fits</span></code> where <code class="docutils literal notranslate"><span class="pre">{OBSCON}</span></code> can be <code class="docutils literal notranslate"><span class="pre">DARK</span></code> or <code class="docutils literal notranslate"><span class="pre">BRIGHT</span></code>.</p>
 </dd>
 <dt class="field-odd">Regex<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">pota-(BRIGHT|DARK).fits</span></code></p>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">pota-(BRIGHT|DARK)\.fits</span></code></p>
 </dd>
 <dt class="field-even">File Type<span class="colon">:</span></dt>
 <dd class="field-even"><p>FITS, 2 GB</p>
@@ -164,7 +164,7 @@
 <section id="hdu1">
 <h3>HDU1<a class="headerlink" href="#hdu1" title="Link to this heading"></a></h3>
 <p>EXTNAME = LSS</p>
-<p>All reachable randoms for the given realization in the directory (18 randoms) for the given OBSCON (DARK or BRIGHT)</p>
+<p>All reachable tracers for the given realization for the given OBSCON (DARK or BRIGHT)</p>
 <section id="required-header-keywords">
 <h4>Required Header Keywords<a class="headerlink" href="#required-header-keywords" title="Link to this heading"></a></h4>
 <details class="summary-required-header-keywords-table">
@@ -252,19 +252,19 @@
 <td><p>Bitwise mask from the imaging indicating potential issue or blending</p></td>
 </tr>
 <tr class="row-odd"><td><p>NOBS_G</p></td>
-<td><p>int16</p></td>
+<td><p>int64</p></td>
 <td></td>
-<td><p>Number of images for central pixel in g-band</p></td>
+<td><p>Number of images for central pixel in g-band. Note that NOBS_G for dark tracer is type = int16</p></td>
 </tr>
 <tr class="row-even"><td><p>NOBS_R</p></td>
-<td><p>int16</p></td>
+<td><p>int64</p></td>
 <td></td>
-<td><p>Number of images for central pixel in r-band</p></td>
+<td><p>Number of images for central pixel in r-band. Note that NOBS_R for dark tracer is type = int16</p></td>
 </tr>
 <tr class="row-odd"><td><p>NOBS_Z</p></td>
-<td><p>int16</p></td>
+<td><p>int64</p></td>
 <td></td>
-<td><p>Number of images for central pixel in z-band</p></td>
+<td><p>Number of images for central pixel in z-band. Note that NOBS_Z for dark tracer is type = int16</p></td>
 </tr>
 <tr class="row-even"><td><p>PRIORITY_INIT</p></td>
 <td><p>int64</p></td>
@@ -336,8 +336,39 @@
 <td></td>
 <td><p>Unique DESI tile ID</p></td>
 </tr>
+<tr class="row-even"><td><p>RAN_NUM_0_1 <a class="footnote-reference brackets" href="#id5" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>float32</p></td>
+<td></td>
+<td><p>Random number between 0 and 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>NZ <a class="footnote-reference brackets" href="#id5" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>float64</p></td>
+<td><p>h^3 Mpc^-3</p></td>
+<td><p>The comoving number density of the tracer at the given redshift, assuming complete sample</p></td>
+</tr>
+<tr class="row-even"><td><p>BRICKID <a class="footnote-reference brackets" href="#id5" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Brick ID from tractor input</p></td>
+</tr>
+<tr class="row-odd"><td><p>GALCAP <a class="footnote-reference brackets" href="#id5" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>char[1]</p></td>
+<td></td>
+<td><p>Galactic cap N or S</p></td>
+</tr>
 </tbody>
 </table>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id5" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>,<a role="doc-backlink" href="#id3">3</a>,<a role="doc-backlink" href="#id4">4</a>)</span>
+<p>Optional, only present in BRIGHT sample</p>
+</aside>
+</aside>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For OBSCON = dark, dtypes of NOBS_G, NOBS_R, NOBS_Z is int16, instead of int64</p>
+</div>
 </section>
 </section>
 </section>

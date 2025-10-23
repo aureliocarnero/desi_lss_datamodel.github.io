@@ -122,11 +122,11 @@
 <dd class="field-odd"><p>For each target type, LSS catalogs for the randoms, ready to be used for clustering measurements, are provided.</p>
 </dd>
 <dt class="field-even">Naming Convention<span class="colon">:</span></dt>
-<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">{TARGET}_{GALCAP}_{RANN}_clustering.ran.fits</span></code>, where <code class="docutils literal notranslate"><span class="pre">{TARGET}</span></code> is the target: <code class="docutils literal notranslate"><span class="pre">QSO</span></code>, <code class="docutils literal notranslate"><span class="pre">ELG_LOP</span></code> or <code class="docutils literal notranslate"><span class="pre">LRG</span></code>
-for dark or <code class="docutils literal notranslate"><span class="pre">BGS_BRIGHT-21.5</span></code> for bright. <code class="docutils literal notranslate"><span class="pre">{GALCAP}</span></code> is the Galactic hemisphere region <code class="docutils literal notranslate"><span class="pre">NGC</span></code> or <code class="docutils literal notranslate"><span class="pre">SGC</span></code>. And <code class="docutils literal notranslate"><span class="pre">{RANN}</span></code> is the number for the random file (18 total, numbered 0 through 17). Each are random with respect to each other.</p>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">{TARGET}_{FLAVOUR}_{GALCAP}_{RANN}_clustering.ran.fits</span></code>, where <code class="docutils literal notranslate"><span class="pre">{TARGET}</span></code> is the target: <code class="docutils literal notranslate"><span class="pre">QSO</span></code>, <code class="docutils literal notranslate"><span class="pre">ELG_LOP</span></code> or <code class="docutils literal notranslate"><span class="pre">LRG</span></code>
+for dark or <code class="docutils literal notranslate"><span class="pre">BGS_BRIGHT-21.5</span></code> for bright. <code class="docutils literal notranslate"><span class="pre">{FLAVOUR}</span></code> is <code class="docutils literal notranslate"><span class="pre">complete</span></code> or <code class="docutils literal notranslate"><span class="pre">ffa</span></code>, <code class="docutils literal notranslate"><span class="pre">{GALCAP}</span></code> is the Galactic hemisphere region <code class="docutils literal notranslate"><span class="pre">NGC</span></code> or <code class="docutils literal notranslate"><span class="pre">SGC</span></code>. And <code class="docutils literal notranslate"><span class="pre">{RANN}</span></code> is the number for the random file (18 total, numbered 0 through 17). Each are random with respect to each other.</p>
 </dd>
 <dt class="field-odd">Regex<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">[A-Za-z0-9._+-]+_(NGC|SGC)_[0-9]+_clustering\.ran\.fits</span></code></p>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">[A-Za-z0-9._+-]+_(ffa|complete)+_(NGC|SGC)_[0-9]+_clustering\.ran\.fits</span></code></p>
 </dd>
 <dt class="field-even">File Type<span class="colon">:</span></dt>
 <dd class="field-even"><p>FITS, 1 GB</p>
@@ -237,52 +237,74 @@ for dark or <code class="docutils literal notranslate"><span class="pre">BGS_BRI
 <td></td>
 <td><p>1/(1+NZ*P0), with P0 different for each tracer</p></td>
 </tr>
-<tr class="row-even"><td><p>TARGETID <a class="footnote-reference brackets" href="#id8" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-even"><td><p>TARGETID <a class="footnote-reference brackets" href="#id11" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>int64</p></td>
 <td></td>
 <td><p>Unique DESI target ID</p></td>
 </tr>
-<tr class="row-odd"><td><p>NTILE <a class="footnote-reference brackets" href="#id8" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-odd"><td><p>NTILE <a class="footnote-reference brackets" href="#id11" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>int64</p></td>
 <td></td>
 <td><p>Number of tiles target was available on</p></td>
 </tr>
-<tr class="row-even"><td><p>PHOTSYS <a class="footnote-reference brackets" href="#id8" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-even"><td><p>PHOTSYS <a class="footnote-reference brackets" href="#id11" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>char[1]</p></td>
 <td></td>
 <td><p>N for the MzLS/BASS photometric system, S for DECaLS</p></td>
 </tr>
-<tr class="row-odd"><td><p>WEIGHT_COMP <a class="footnote-reference brackets" href="#id8" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-odd"><td><p>WEIGHT_COMP <a class="footnote-reference brackets" href="#id11" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>float64</p></td>
 <td></td>
 <td><p>Completeness weight accounting for the local chance of being assigned a fiber</p></td>
 </tr>
-<tr class="row-even"><td><p>WEIGHT_SYS <a class="footnote-reference brackets" href="#id8" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-even"><td><p>WEIGHT_SYS <a class="footnote-reference brackets" href="#id11" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>float64</p></td>
 <td></td>
 <td><p>Correction for fluctuations in projected density with imaging conditions, from random forrest method</p></td>
 </tr>
-<tr class="row-odd"><td><p>WEIGHT_ZFAIL <a class="footnote-reference brackets" href="#id8" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-odd"><td><p>WEIGHT_ZFAIL <a class="footnote-reference brackets" href="#id11" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>float64</p></td>
 <td></td>
 <td><p>Should be all 1 at this point for main survey</p></td>
 </tr>
-<tr class="row-even"><td><p>FRAC_TLOBS_TILES <a class="footnote-reference brackets" href="#id8" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-even"><td><p>FRAC_TLOBS_TILES <a class="footnote-reference brackets" href="#id11" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>float64</p></td>
 <td></td>
 <td><p>Fraction of targets with the same TILES value that contribute to FRACZ_TILELOCID</p></td>
 </tr>
+<tr class="row-odd"><td><p>TILELOCID <a class="footnote-reference brackets" href="#id11" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>int64</p></td>
+<td></td>
+<td><p>Is 10000*TILEID+LOCATION</p></td>
+</tr>
+<tr class="row-even"><td><p>NX <a class="footnote-reference brackets" href="#id11" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Estimated mean number density given the redshift and number of overlapping tiles (NTILE)</p></td>
+</tr>
+<tr class="row-odd"><td><p>WEIGHT_IMLIN <a class="footnote-reference brackets" href="#id11" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>Imaging systematics weights derived with the eBOSS linear regression method</p></td>
+</tr>
 </tbody>
 </table>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id8" role="doc-footnote">
+<aside class="footnote brackets" id="id11" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
-<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>,<a role="doc-backlink" href="#id3">3</a>,<a role="doc-backlink" href="#id4">4</a>,<a role="doc-backlink" href="#id5">5</a>,<a role="doc-backlink" href="#id6">6</a>,<a role="doc-backlink" href="#id7">7</a>)</span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>,<a role="doc-backlink" href="#id3">3</a>,<a role="doc-backlink" href="#id4">4</a>,<a role="doc-backlink" href="#id5">5</a>,<a role="doc-backlink" href="#id6">6</a>,<a role="doc-backlink" href="#id7">7</a>,<a role="doc-backlink" href="#id8">8</a>,<a role="doc-backlink" href="#id9">9</a>,<a role="doc-backlink" href="#id10">10</a>)</span>
 <p>Optional</p>
 </aside>
 </aside>
 </section>
 </section>
+</section>
+<section id="notes-and-examples">
+<h2>Notes and Examples<a class="headerlink" href="#notes-and-examples" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">TARGETID</span></code> present in ffa samples, dark and bright.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NTILE</span></code>, <code class="docutils literal notranslate"><span class="pre">PHOTSYS</span></code>, <code class="docutils literal notranslate"><span class="pre">WEIGHT_COMP</span></code>, <code class="docutils literal notranslate"><span class="pre">WEIGHT_SYS</span></code>, <code class="docutils literal notranslate"><span class="pre">WEIGHT_ZFAIL</span></code>, <code class="docutils literal notranslate"><span class="pre">FRAC_TLOBS_TILES</span></code>, <code class="docutils literal notranslate"><span class="pre">TILELOCID</span></code>, <code class="docutils literal notranslate"><span class="pre">NX</span></code>, <code class="docutils literal notranslate"><span class="pre">WEIGHT_IMLIN</span></code> only present in bright ffa samples.</p></li>
+</ul>
 </section>
 </section>
 

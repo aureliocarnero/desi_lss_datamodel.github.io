@@ -101,10 +101,12 @@
           <li class="breadcrumb-item"><a href="../../../../../../../../index.html">catalogs</a></li>
           <li class="breadcrumb-item"><a href="../../../../../../../index.html">RELEASE</a></li>
           <li class="breadcrumb-item"><a href="../../../../../../index.html">mocks</a></li>
-          <li class="breadcrumb-item"><a href="../../../index.html">AbacusSummit</a></li>
+          <li class="breadcrumb-item"><a href="../../../../../index.html">AbacusSummit</a></li>
+          <li class="breadcrumb-item"><a href="../../../../index.html">OBSCON</a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">VERSION</a></li>
           <li class="breadcrumb-item"><a href="../../index.html">altmtl{MOCKREA}</a></li>
           <li class="breadcrumb-item"><a href="../index.html">mock{MOCKREA}</a></li>
-          <li class="breadcrumb-item"><a href="index.html">LSScats AbacusSummit</a></li>
+          <li class="breadcrumb-item"><a href="index.html">LSScats</a></li>
       <li class="breadcrumb-item active">MOCK full catalogs</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../../../../../../../../_sources/DESI_ROOT/survey/catalogs/RELEASE/mocks/AbacusSummit/OBSCON/VERSION/altmtlX/mockX/LSScats/data_full_mock_altmtl.rst.txt" rel="nofollow"> View page source</a>
@@ -227,14 +229,14 @@
 <td><p>Unique DESI tile ID</p></td>
 </tr>
 <tr class="row-even"><td><p>RA</p></td>
-<td><p>float32</p></td>
+<td><p>float64</p></td>
 <td><p>deg</p></td>
-<td><p>Barycentric Right Ascension in ICRS</p></td>
+<td><p>Barycentric Right Ascension in ICRS. Note that RA for dark tracer is type = float32</p></td>
 </tr>
 <tr class="row-odd"><td><p>DEC</p></td>
-<td><p>float32</p></td>
+<td><p>float64</p></td>
 <td><p>deg</p></td>
-<td><p>Barycentric declination in ICRS</p></td>
+<td><p>Barycentric declination in ICRS. Note that DEC for dark tracer is type = float32</p></td>
 </tr>
 <tr class="row-even"><td><p>PRIORITY_INIT</p></td>
 <td><p>int64</p></td>
@@ -312,12 +314,12 @@
 <td><p>Number of tiles target was available on</p></td>
 </tr>
 <tr class="row-odd"><td><p>TILES</p></td>
-<td><p>char[36]</p></td>
+<td><p>char[*]</p></td>
 <td></td>
 <td><p>TILEIDs of those tile, in string form separated by -</p></td>
 </tr>
 <tr class="row-even"><td><p>TILELOCIDS</p></td>
-<td><p>char[109]</p></td>
+<td><p>char[*]</p></td>
 <td></td>
 <td><p>TILELOCIDs that the target was available for separated by -</p></td>
 </tr>
@@ -336,7 +338,7 @@
 <td></td>
 <td><p>N for the MzLS/BASS photometric system, S for DECaLS</p></td>
 </tr>
-<tr class="row-even"><td><p>lrg_mask <a class="footnote-reference brackets" href="#id4" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-even"><td><p>lrg_mask <a class="footnote-reference brackets" href="#id6" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>binary</p></td>
 <td></td>
 <td><p>lrg imaging mask</p></td>
@@ -361,22 +363,32 @@
 <td></td>
 <td><p>Bitwise mask from the imaging indicating potential issue or blending</p></td>
 </tr>
-<tr class="row-odd"><td><p>BGS_TARGET <a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-odd"><td><p>BGS_TARGET <a class="footnote-reference brackets" href="#id6" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>int64</p></td>
 <td></td>
 <td><p>BGS (Bright Galaxy Survey) target selection bitmask</p></td>
 </tr>
-<tr class="row-even"><td><p>R_MAG_ABS <a class="footnote-reference brackets" href="#id4" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-even"><td><p>R_MAG_ABS <a class="footnote-reference brackets" href="#id6" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><p>float32</p></td>
 <td></td>
 <td><p>Absolute magnitude in R band in mocks</p></td>
 </tr>
+<tr class="row-odd"><td><p>TSNR2_BGS <a class="footnote-reference brackets" href="#id6" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>float64</p></td>
+<td></td>
+<td><p>BGS template (S/N)^2 summed over B,R,Z</p></td>
+</tr>
+<tr class="row-even"><td><p>GOODTSNR <a class="footnote-reference brackets" href="#id6" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>logical</p></td>
+<td></td>
+<td><p>True/False whether the TSNR (class) value used was above the minimum threshold for the given target class</p></td>
+</tr>
 </tbody>
 </table>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id4" role="doc-footnote">
+<aside class="footnote brackets" id="id6" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
-<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>,<a role="doc-backlink" href="#id3">3</a>)</span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>,<a role="doc-backlink" href="#id3">3</a>,<a role="doc-backlink" href="#id4">4</a>,<a role="doc-backlink" href="#id5">5</a>)</span>
 <p>Optional</p>
 </aside>
 </aside>
@@ -387,9 +399,13 @@
 <h2>Notes and Examples<a class="headerlink" href="#notes-and-examples" title="Link to this heading"></a></h2>
 <p>Optional columns:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">BGS_TARGET</span></code> and <code class="docutils literal notranslate"><span class="pre">R_MAG_ABS</span></code> only present in BGS samples.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BGS_TARGET</span></code>, <code class="docutils literal notranslate"><span class="pre">R_MAG_ABS</span></code>, <code class="docutils literal notranslate"><span class="pre">TSNR2_BGS</span></code> and <code class="docutils literal notranslate"><span class="pre">GOODTSNR</span></code> only present in BGS samples.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">lrg_mask</span></code> only present in LRG samples.</p></li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For OBSCON = dark, dtypes of RA,DEC is float32, instead of float64</p>
+</div>
 </section>
 </section>
 
